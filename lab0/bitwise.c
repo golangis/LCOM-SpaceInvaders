@@ -87,6 +87,17 @@ int main(int argc, char *argv[])
             case 'r':
 
                 //switch bit to 0
+                                printf("Initial state: %s.\n", byte2bin(atoi(argv[2]), &binary)); 
+                
+                for (int i = 0; i < 8; i ++){
+
+                    if (i == 7 - atoi(argv[3]))
+                        final[i] = '0';
+                    else 
+                        final[i] = byte2bin(atoi(argv[2]), &binary)[i];
+                }
+
+                printf("Final state: %s.\n", final); 
 
                 break;
 
