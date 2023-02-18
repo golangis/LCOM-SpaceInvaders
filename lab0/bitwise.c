@@ -52,10 +52,18 @@ int main(int argc, char *argv[])
 
                 break;
             case 'l':
-                //testar se bit é 0
+                //testar if bit is 0
+                printf(byte2bin(atoi(argv[2]), &binary)); // <- representaçao binario - n percebo pq q aqui se puser *argv[2] dá mal, mas so começou a dar bem dps de trocar 
+                
+                if (byte2bin(atoi(argv[2]), &binary)[ 7 - atoi(argv[3])] == '0')
+                    printf("\ntrue\n");
+                else
+                    printf("\nfalse\n");
+            
                 break;
             case 's':
                 //poe bit a 1
+                
                 break;
             case 'r':
                 //poe bit a 0
