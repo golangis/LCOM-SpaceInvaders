@@ -36,13 +36,16 @@ int main(int argc, char *argv[])
 	int bit; // bit to operate on: must be between 0 an 7
     char binary[9]; // array for binary representation of n,
 					//  remember that in C strings are terminated with a 0
- 
+    char final[9];
+
 	if (argc != 4){
         printf("\nInvalid number of arguments provided.\nThe function receives 3 args, but %d were received.\n", argc-1);
     }
             switch (*argv[1]){
-                //test if bit is 1
+                
             case 'h':
+
+                //test if bit is 1
                 printf(byte2bin(atoi(argv[2]), &binary)); // <- representaçao binario - n percebo pq q aqui se puser *argv[2] dá mal, mas so começou a dar bem dps de trocar 
                 
                 if (byte2bin(atoi(argv[2]), &binary)[ 7 - atoi(argv[3])] == '1')
@@ -51,8 +54,10 @@ int main(int argc, char *argv[])
                     printf("\nfalse\n");
 
                 break;
+
             case 'l':
-                //testar if bit is 0
+    
+                //test if bit is 0
                 printf(byte2bin(atoi(argv[2]), &binary)); // <- representaçao binario - n percebo pq q aqui se puser *argv[2] dá mal, mas so começou a dar bem dps de trocar 
                 
                 if (byte2bin(atoi(argv[2]), &binary)[ 7 - atoi(argv[3])] == '0')
@@ -61,18 +66,40 @@ int main(int argc, char *argv[])
                     printf("\nfalse\n");
             
                 break;
+
             case 's':
-                //poe bit a 1
+
+                //switch bit to 1
+                printf("Initial state: %s.\n", byte2bin(atoi(argv[2]), &binary)); 
                 
+                for (int i = 0; i < 8; i ++){
+
+                    if (i == 7 - atoi(argv[3]))
+                        final[i] = '1';
+                    else 
+                        final[i] = byte2bin(atoi(argv[2]), &binary)[i];
+                }
+
+                printf("Final state: %s.\n", final); 
+
                 break;
+
             case 'r':
-                //poe bit a 0
+
+                //switch bit to 0
+
                 break;
+
             case 't':
-                //inverte bit
+
+                //negates bit
+
                 break;        
+
             default:
+
                 printf("\nInvalid input.\n");
+
                 break;
         }
         
