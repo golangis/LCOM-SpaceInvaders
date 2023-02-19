@@ -56,7 +56,6 @@ int main(int argc, char *argv[])
         print_usage("bitwise");
         return 1;
     }
-    //printf("%s %s %s\n", argv[1], argv[2], argv[3]);
 
     a = *argv[1];
     n = atol(argv[2]);
@@ -65,14 +64,33 @@ int main(int argc, char *argv[])
 
 	// Print to stdout the binary representation of n
 
+    printf("Your option: %c\n", a);
     printf("Your original number in binary: %s\n", byte2bin(n, binary));
+    printf("Your selected bit: %i\n", bit);
 
 	// Do what the user asked and print the result
 
-    if (strcmp(&a,"h\0") == 0 || strcmp(&a,"l\0") == 0) {
+    if (a == 104 || a == 108) {
         n >>= bit;
         if (n % 2 != 0) printf("The bit %i of your number is high.\n", bit);
         else printf("The bit %i if your number is low.\n", bit);
+        return 0;
+    } else if (a == 115) {
+        uint8_t mask = BIT(bit);
+        n |= mask;
+        printf("Your modified number is: %s\n", byte2bin(n, binary));
+        return 0;
+    } else if (a == 114) {
+        uint8_t mask = BIT(bit);
+        mask = ~mask;
+        n &= mask;
+        printf("Your modified number is: %s\n", byte2bin(n, binary));
+        return 0;
+    } else if (a == 116) {
+        uint8_t mask = BIT(bit);
+        n ^= mask;
+        printf("Your modified number is: %s\n", byte2bin(n, binary));
+        return 0;
     }
 	
     return 0;
