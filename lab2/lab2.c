@@ -7,7 +7,7 @@
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
-  lcf_set_language("EN-US");
+  lcf_set_language("PT-PT");
 
   // enables to log function invocations that are being "wrapped" by LCF
   // [comment this out if you don't want/need it]

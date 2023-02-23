@@ -32,10 +32,10 @@ void (timer_int_handler)() {
 }
 
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {
-  /* To be implemented by the students */
-  printf("%s is not yet implemented!\n", __func__);
-
-  return 1;
+  uint8_t rb = TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(timer);
+  
+  sys_outb(TIMER_CTRL, (uint32_t) rb);
+  return 0;
 }
 
 int (timer_display_conf)(uint8_t timer, uint8_t st,
