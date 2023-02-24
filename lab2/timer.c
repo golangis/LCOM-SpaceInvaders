@@ -6,6 +6,19 @@
 #include "i8254.h"
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
+  uint8_t st = 0;
+  if (timer_get_conf(timer, &st) != 0) return 1;
+  st &= BIT(3) | BIT(2) | BIT(1) | BIT(0);
+  st |= TIMER_LSB_MSB;
+  st &= ((TIMER_0+timer)<<7);
+  if (sys_outb(TIMER_CTRL, st) != 0) return 1;
+  uint16_t freq16 = (uint16_t)(TIMER_FREQ/freq);
+  uint8_t timerLSB = 0;
+  uint8_t timerMSB = 0;
+  if (util_get_LSB(freq16, &timerLSB) != 0) return 1;
+  if (util_get_MSB(freq16, &timerMSB) != 0) return 1;
+  if (sys_outb(TIMER_0+timer, timerLSB) != 0) return 1;
+  if (sys_outb(TIMER_0+timer, timerMSB) != 0) return 1;
   return 0;
 }
 
