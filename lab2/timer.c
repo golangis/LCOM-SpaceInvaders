@@ -6,26 +6,20 @@
 #include "i8254.h"
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
+  if (timer < 0 || timer > 3) return 1;
   uint8_t st = 0;
-  if (timer_get_conf(timer, &st) != 0) return 1;
-  st &= BIT(7) | BIT(6) | BIT(3) | BIT(2) | BIT(1) | BIT(0);
-  st |= TIMER_LSB_MSB;
-  uint16_t divisor = (uint16_t)(TIMER_FREQ/freq);
-  uint8_t divisorLSB = 0;
-  uint8_t divisorMSB = 0;
-  if (util_get_LSB(divisor, &divisorLSB) != 0) return 1;
-  if (util_get_MSB(divisor, &divisorMSB) != 0) return 1;
-  printf("st:%u\n", st);
-  printf("LSB:%u\nMSB:%u\n", divisorLSB, divisorMSB);
-  if (sys_outb(TIMER_CTRL, st) != 0) return 1;
-  if (st % 2 == 0) {  // binary mode
-    printf("here\n");
-    if (sys_outb(TIMER_0+timer, divisorLSB) != 0) return 1;
-    if (sys_outb(TIMER_0+timer, divisorMSB) != 0) return 1;
-  }
-  /*else {  // BCD mode
-
-  }*/
+  timer_get_conf(timer, &st);
+  uint8_t mask = (BIT(3) | BIT(2) | BIT(1) | BIT(0));
+  st &= mask;
+  uint8_t control = (TIMER_SEL0+timer) | TIMER_LSB_MSB | st;
+  uint16_t div = TIMER_FREQ/freq;
+  uint8_t divLSB = 0;
+  uint8_t divMSB = 0;
+  if (util_get_LSB(div, &divLSB) != 0) return 1;
+  if (util_get_MSB(div, &divMSB) != 0) return 1;
+  if (sys_outb(TIMER_CTRL, control) != 0) return 1;
+  if (sys_outb(TIMER_0+timer, divLSB) != 0) return 1;
+  if (sys_outb(TIMER_0+timer, divMSB) != 0) return 1;
   return 0;
 }
 
@@ -61,7 +55,7 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st) {
     uint8_t rb = TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(2);
     if (sys_outb(TIMER_CTRL, rb) != 0) return 1;
     if (util_sys_inb(TIMER_2, st) != 0) return 1;
-  }
+  } else return 1;
   return 0;
 }
 
