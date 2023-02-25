@@ -8,17 +8,24 @@
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
   uint8_t st = 0;
   if (timer_get_conf(timer, &st) != 0) return 1;
-  st &= BIT(3) | BIT(2) | BIT(1) | BIT(0);
+  st &= BIT(7) | BIT(6) | BIT(3) | BIT(2) | BIT(1) | BIT(0);
   st |= TIMER_LSB_MSB;
-  st &= ((TIMER_0+timer)<<7);
+  uint16_t divisor = (uint16_t)(TIMER_FREQ/freq);
+  uint8_t divisorLSB = 0;
+  uint8_t divisorMSB = 0;
+  if (util_get_LSB(divisor, &divisorLSB) != 0) return 1;
+  if (util_get_MSB(divisor, &divisorMSB) != 0) return 1;
+  printf("st:%u\n", st);
+  printf("LSB:%u\nMSB:%u\n", divisorLSB, divisorMSB);
   if (sys_outb(TIMER_CTRL, st) != 0) return 1;
-  uint16_t freq16 = (uint16_t)(TIMER_FREQ/freq);
-  uint8_t timerLSB = 0;
-  uint8_t timerMSB = 0;
-  if (util_get_LSB(freq16, &timerLSB) != 0) return 1;
-  if (util_get_MSB(freq16, &timerMSB) != 0) return 1;
-  if (sys_outb(TIMER_0+timer, timerLSB) != 0) return 1;
-  if (sys_outb(TIMER_0+timer, timerMSB) != 0) return 1;
+  if (st % 2 == 0) {  // binary mode
+    printf("here\n");
+    if (sys_outb(TIMER_0+timer, divisorLSB) != 0) return 1;
+    if (sys_outb(TIMER_0+timer, divisorMSB) != 0) return 1;
+  }
+  /*else {  // BCD mode
+
+  }*/
   return 0;
 }
 
@@ -42,9 +49,19 @@ void (timer_int_handler)() {
 }
 
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {
-  uint32_t rb = 0 | TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(timer);
-  if (sys_outb(TIMER_CTRL, rb) != 0) return 1;
-  if (util_sys_inb(TIMER_0+timer, st) != 0) return 1;
+  if (timer == 0) {
+    uint8_t rb = TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(0);
+    if (sys_outb(TIMER_CTRL, rb) != 0) return 1;
+    if (util_sys_inb(TIMER_0, st) != 0) return 1;
+  } else if (timer == 1) {
+    uint8_t rb = TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(1);
+    if (sys_outb(TIMER_CTRL, rb) != 0) return 1;
+    if (util_sys_inb(TIMER_1, st) != 0) return 1;
+  } else if (timer == 2) {
+    uint8_t rb = TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(2);
+    if (sys_outb(TIMER_CTRL, rb) != 0) return 1;
+    if (util_sys_inb(TIMER_2, st) != 0) return 1;
+  }
   return 0;
 }
 
@@ -53,12 +70,14 @@ int (timer_display_conf)(uint8_t timer, uint8_t st,
   
   union timer_status_field_val val;
   
-  bool bcd = !(st % 2);
+  bool bcd = (st % 2);
   
   uint8_t programmed_mode = st;
   uint8_t mask = BIT(3) | BIT(2) | BIT(1);
   programmed_mode &= mask;
   programmed_mode >>= 1;
+  if (programmed_mode == 6) programmed_mode = 2;
+  else if (programmed_mode == 7) programmed_mode = 3;
   
   uint8_t access = st;
   mask = BIT(5) | BIT(4);
