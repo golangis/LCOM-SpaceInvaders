@@ -6,20 +6,46 @@
 #include "i8254.h"
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
-  if (timer < 0 || timer > 3) return 1;
-  uint8_t st = 0;
-  timer_get_conf(timer, &st);
-  uint8_t mask = (BIT(3) | BIT(2) | BIT(1) | BIT(0));
-  st &= mask;
-  uint8_t control = (TIMER_SEL0+timer) | TIMER_LSB_MSB | st;
-  uint16_t div = TIMER_FREQ/freq;
-  uint8_t divLSB = 0;
-  uint8_t divMSB = 0;
-  if (util_get_LSB(div, &divLSB) != 0) return 1;
-  if (util_get_MSB(div, &divMSB) != 0) return 1;
-  if (sys_outb(TIMER_CTRL, control) != 0) return 1;
-  if (sys_outb(TIMER_0+timer, divLSB) != 0) return 1;
-  if (sys_outb(TIMER_0+timer, divMSB) != 0) return 1;
+  if (timer == 0) {
+    uint8_t st = 0;
+    if (timer_get_conf(timer, &st) != 0) return 1;
+    st &= 0x0F;
+    uint32_t control = (TIMER_SEL0 | TIMER_LSB_MSB | st);
+    uint16_t div = TIMER_FREQ/freq;
+    uint8_t divLSB = 0;
+    uint8_t divMSB = 0;
+    if (util_get_LSB(div, &divLSB) != 0) return 1;
+    if (util_get_MSB(div, &divMSB) != 0) return 1;
+    if (sys_outb(TIMER_CTRL, control) != 0) return 1;
+    if (sys_outb(TIMER_0, divLSB) != 0) return 1;
+    if (sys_outb(TIMER_0, divMSB) != 0) return 1;
+  } else if (timer == 1) {
+    uint8_t st = 0;
+    if (timer_get_conf(timer, &st) != 0) return 1;
+    st &= 0x0F;
+    uint32_t control = (TIMER_SEL1 | TIMER_LSB_MSB | st);
+    uint16_t div = TIMER_FREQ/freq;
+    uint8_t divLSB = 0;
+    uint8_t divMSB = 0;
+    if (util_get_LSB(div, &divLSB) != 0) return 1;
+    if (util_get_MSB(div, &divMSB) != 0) return 1;
+    if (sys_outb(TIMER_CTRL, control) != 0) return 1;
+    if (sys_outb(TIMER_1, divLSB) != 0) return 1;
+    if (sys_outb(TIMER_1, divMSB) != 0) return 1;
+  } else if (timer == 2) {
+    uint8_t st = 0;
+    if (timer_get_conf(timer, &st) != 0) return 1;
+    st &= 0x0F;
+    uint32_t control = (TIMER_SEL2 | TIMER_LSB_MSB | st);
+    uint16_t div = TIMER_FREQ/freq;
+    uint8_t divLSB = 0;
+    uint8_t divMSB = 0;
+    if (util_get_LSB(div, &divLSB) != 0) return 1;
+    if (util_get_MSB(div, &divMSB) != 0) return 1;
+    if (sys_outb(TIMER_CTRL, control) != 0) return 1;
+    if (sys_outb(TIMER_2, divLSB) != 0) return 1;
+    if (sys_outb(TIMER_2, divMSB) != 0) return 1;
+  } else return 1;
   return 0;
 }
 
@@ -44,15 +70,15 @@ void (timer_int_handler)() {
 
 int (timer_get_conf)(uint8_t timer, uint8_t *st) {
   if (timer == 0) {
-    uint8_t rb = TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(0);
+    uint32_t rb = TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(0);
     if (sys_outb(TIMER_CTRL, rb) != 0) return 1;
     if (util_sys_inb(TIMER_0, st) != 0) return 1;
   } else if (timer == 1) {
-    uint8_t rb = TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(1);
+    uint32_t rb = TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(1);
     if (sys_outb(TIMER_CTRL, rb) != 0) return 1;
     if (util_sys_inb(TIMER_1, st) != 0) return 1;
   } else if (timer == 2) {
-    uint8_t rb = TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(2);
+    uint32_t rb = TIMER_RB_CMD | TIMER_RB_COUNT_ | TIMER_RB_SEL(2);
     if (sys_outb(TIMER_CTRL, rb) != 0) return 1;
     if (util_sys_inb(TIMER_2, st) != 0) return 1;
   } else return 1;
