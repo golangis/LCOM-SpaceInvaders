@@ -6,6 +6,7 @@
 #include "i8254.h"
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
+  if (freq < 19) return 1;
   if (timer == 0) {
     uint8_t st = 0;
     if (timer_get_conf(timer, &st) != 0) return 1;
