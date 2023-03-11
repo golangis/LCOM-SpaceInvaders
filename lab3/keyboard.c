@@ -1,4 +1,5 @@
 #include <lcom/lcf.h>
+
 #include "keyboard.h"
 #include "i8042.h"
 
@@ -15,5 +16,13 @@ int (kbc_unsubscribe_int)() {
 }
 
 void (kbc_ih)() {
-
+    uint8_t status = 0;
+    while (1) {
+        if (util_sys_inb(KBC_STAT_REG, &status) != 0) data = 0;
+        if (status & BIT(0)) {
+            if (util_sys_inb(KBC_OUT_BUF, &data) != 0) data = 0;
+            if (status & BIT(7) || status & BIT(6)) data = 0;
+            break;
+        }
+    }
 }

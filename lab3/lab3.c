@@ -35,17 +35,19 @@ int main(int argc, char *argv[]) {
 
 extern int hook_id;
 extern uint8_t data;
-int cnt = 0;
+uint32_t cnt = 0;
 
 int(kbd_test_scan)() {
   int ipc_status = 0;
   int r = 0;
   message msg;
   bool two_byte = false;
+  uint8_t bit_no = KBC_HOOK_BIT;
+  int irq_set = BIT(KBC_HOOK_BIT);
+  uint8_t* scan = (uint8_t*) malloc(2);
 
-  if (kbc_subscribe_int(HOOK_BIT) != 0) return 1;
-
-  while (data != KBC_ESC) {
+  if (kbc_subscribe_int(&bit_no) != 0) return 1;
+  while (data != KBD_ESC_BREAK) {
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
       printf("drive_receive failed with: %d", r);
       continue;
@@ -53,13 +55,24 @@ int(kbd_test_scan)() {
     if (is_ipc_notify(ipc_status)) {
       switch (_ENDPOINT_P(msg.m_source)) {
         case HARDWARE:
-          if (msg.m_notify.interrupts & BIT(HOOK_BIT)) {
+          if (msg.m_notify.interrupts & irq_set) {
             kbc_ih();
-            if (data == KBC_TWO_BYTE && !two_byte) two_byte = true;
+            if (two_byte) {
+              two_byte = false;
+              scan[1] = data;
+              if (kbd_print_scancode(!(data & BIT(7)), 2, scan) != 0) return 1;
+            } else {
+              scan[0] = data;
+              if (data == KBD_TWO_BYTE) two_byte = true;
+              else if (kbd_print_scancode(!(data & BIT(7)), 1, scan) != 0) return 1;
+            }
           }
+          break;
+        default: break;
       }
     }
   }
+  free(scan);
   if (kbc_unsubscribe_int() != 0) return 1;
   return kbd_print_no_sysinb(cnt);
 }
