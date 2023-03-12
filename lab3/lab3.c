@@ -38,6 +38,8 @@ extern uint8_t data;
 uint32_t cnt = 0;
 
 int(kbd_test_scan)() {
+  cnt = 0;
+  data = 0;
   int ipc_status = 0;
   int r = 0;
   message msg;
@@ -74,14 +76,24 @@ int(kbd_test_scan)() {
   }
   free(scan);
   if (kbc_unsubscribe_int() != 0) return 1;
-  return kbd_print_no_sysinb(cnt);
+  if (kbd_print_no_sysinb(cnt) != 0) return 1;
+  return 0;
 }
 
 int(kbd_test_poll)() {
-  /* To be completed by the students */
-  printf("%s is not yet implemented!\n", __func__);
+  uint8_t cmd = 0;
+  if (kbc_read_cmd_byte(&cmd) != 0) return 1;
 
-  return 1;
+  cnt = 0;
+  data = 0;
+  bool two_byte = false;
+  uint8_t* scan = (uint8_t*) malloc(2);
+
+  /* polling goes here */
+
+  if (kbc_write_cmd_byte(cmd) != 0) return 1;
+  if (kbd_print_no_sysinb(cnt) != 0) return 1;
+  return 0;
 }
 
 int(kbd_test_timed_scan)(uint8_t n) {
