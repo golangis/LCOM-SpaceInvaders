@@ -19,9 +19,9 @@ void (kbc_ih)() {
     uint8_t status = 0;
     while (1) {
         if (util_sys_inb(KBC_STAT_REG, &status) != 0) data = 0;
-        if (status & BIT(0)) {
+        if (status & KBC_OBF_FULL) {
             if (util_sys_inb(KBC_OUT_BUF, &data) != 0) data = 0;
-            if (status & (BIT(6) | BIT(7))) data = 0;
+            if (status & (KBC_PAR_ERR | KBC_TO_ERR)) data = 0;
             break;
         }
     }
@@ -29,7 +29,19 @@ void (kbc_ih)() {
 
 int (kbc_read_cmd_byte)(uint8_t* byte) {
     uint8_t status = 0;
-    while (1) {
+    int tries = 5;
+    while (tries > 0) {
+        if (util_sys_inb(KBC_STAT_REG, &status) != 0) return 1;
+        if (status & KBC_IBF_FULL) {
+            tries--;
+            continue;
+        }
+        else if (sys_outb(KBC_CMD_REG, KBC_READ_CMD) != 0) return 1;
+        tickdelay(micros_to_ticks(DELAY_US));
+        break;
+    }
+    tries = 5;
+    while (tries > 0) {
         if (util_sys_inb(KBC_STAT_REG, &status) != 0) return 1;
         if (status & KBC_OBF_FULL) {
             if (util_sys_inb(KBC_OUT_BUF, byte) != 0) return 1;
@@ -37,16 +49,30 @@ int (kbc_read_cmd_byte)(uint8_t* byte) {
             else return -1;
         }
         tickdelay(micros_to_ticks(DELAY_US));
+        tries--;
     }
     return 0;
 }
 
 int (kbc_write_cmd_byte)(uint8_t cmd) {
     uint8_t status = 0;
-    while (1) {
+    int tries = 5;
+    while (tries > 0) {
+        if (util_sys_inb(KBC_STAT_REG, &status) != 0) return 1;
+        if (status & KBC_IBF_FULL) {
+           tries--;
+           continue;
+        }
+        else if (sys_outb(KBC_CMD_REG, KBC_WRITE_CMD) != 0) return 1;
+        tickdelay(micros_to_ticks(DELAY_US));
+        break;
+    }
+    tries = 5;
+    while (tries > 0) {
         if (util_sys_inb(KBC_STAT_REG, &status) != 0) return 1;
         if (!(status & KBC_IBF_FULL)) return sys_outb(KBC_CMD_REG, cmd);
         tickdelay(micros_to_ticks(DELAY_US));
+        tries--;
     }
     return 0;
 }

@@ -1,6 +1,7 @@
 #include <lcom/lcf.h>
 
 #include <lcom/lab3.h>
+#include <lcom/lab2.h>
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -47,7 +48,7 @@ int(kbd_test_scan)() {
   bool two_byte = false;
   uint8_t bit_no = KBC_HOOK_BIT;
   int irq_set = BIT(KBC_HOOK_BIT);
-  uint8_t* scan = (uint8_t*) malloc(2);
+  uint8_t scan[2];
 
   if (kbc_subscribe_int(&bit_no) != 0) return 1;
   while (data != KBD_ESC_BREAK) {
@@ -75,7 +76,6 @@ int(kbd_test_scan)() {
       }
     }
   }
-  free(scan);
   if (kbc_unsubscribe_int() != 0) return 1;
   if (kbd_print_no_sysinb(cnt) != 0) return 1;
   return 0;
@@ -124,7 +124,9 @@ int(kbd_test_poll)() {
   return 0;
 }
 
-int(kbd_test_timed_scan)(uint8_t n) {
+extern int counter;
+
+int(kbd_test_timed_scan)(uint8_t idle) {
   cnt = 0;
   data = 0;
   int ipc_status = 0;
@@ -139,7 +141,8 @@ int(kbd_test_timed_scan)(uint8_t n) {
 
   if (kbc_subscribe_int(&kbc_bit_no) != 0) return 1;
   if (timer_subscribe_int(&timer_bit_no) != 0) return 1;
-  while (data != KBD_ESC_BREAK) {
+  
+  while (idle > 0 && data != KBD_ESC_BREAK) {
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
       printf("drive_receive failed with: %d", r);
       continue;
@@ -161,6 +164,7 @@ int(kbd_test_timed_scan)(uint8_t n) {
           }
           if (msg.m_notify.interrupts & timer_irq_set) {
             timer_int_handler();
+            if (counter % 60 == 0) idle--;
           }
           break;
         default: break;

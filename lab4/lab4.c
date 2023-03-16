@@ -4,6 +4,8 @@
 #include <stdint.h>
 #include <stdio.h>
 
+#include "mouse.h"
+
 // Any header files included below this line should have been created by you
 
 int main(int argc, char *argv[]) {
@@ -30,11 +32,44 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 
+extern int mouse_hook_id;
+extern uint8_t data;
 
 int (mouse_test_packet)(uint32_t cnt) {
-    /* To be completed */
-    printf("%s(%u): under construction\n", __func__, cnt);
-    return 1;
+  if (mouse_enable_data_reporting() != 0) return 1;
+  if (mouse_subscribe_int(MOUSE_HOOK_BIT) != 0) return 1;
+
+  int ipc_status = 0;
+  int r = 0;
+  message msg;
+  int irq_set = BIT(MOUSE_HOOK_BIT);
+  struct packet pp;
+
+  int index = 0;
+
+  while (cnt > 0) {
+    if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
+      printf("drive_receive failed with: %d", r);
+      continue;
+    }
+    if (is_ipc_notify(ipc_status)) {
+      switch (_ENDPOINT_P(msg.m_source)) {
+        case HARDWARE:
+          if (msg.m_notify.interrupts & irq_set) {
+            data = 0;
+            mouse_ih();
+            if (!(data & BIT(3)) && index == 0) index = 2;
+            if (index == 0) {
+              pp.
+            }
+            index++;
+            index %= 3;
+          }
+          break;
+        default: break;
+      }
+    }
+  }
 }
 
 int (mouse_test_async)(uint8_t idle_time) {
