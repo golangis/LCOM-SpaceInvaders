@@ -16,6 +16,11 @@
 #define KBC_READ_CMD 0x20
 #define KBC_WRITE_CMD 0x60
 
+#define KBC_CMD_INT BIT(0)
+#define KBC_CMD_INT2 BIT(1)
+#define KBC_CMD_DIS BIT(4)
+#define KBC_CMD_DIS2 BIT(5)
+
 #define KBD_ESC_BREAK 0x81
 #define KBD_TWO_BYTE 0xe0
 
