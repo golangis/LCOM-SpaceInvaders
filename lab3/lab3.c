@@ -89,7 +89,24 @@ int(kbd_test_poll)() {
   bool two_byte = false;
   uint8_t* scan = (uint8_t*) malloc(2);
 
-  /* polling goes here */
+  while (data != KBD_ESC_BREAK) {
+    uint8_t status = 0;
+    if (util_sys_inb(KBC_STAT_REG, &status) != 0) continue;
+    if (status & KBC_OBF_FULL) {
+      if (util_sys_inb(KBC_OUT_BUF, &data) != 0) continue;
+      if (status & (KBC_PAR_ERR | KBC_TO_ERR)) continue;
+      if (two_byte) {
+        two_byte = false;
+        scan[1] = data;
+        if (kbd_print_scancode(!(data & BIT(7)), 2, scan) != 0) continue;
+      } else {
+        scan[0] = data;
+        if (data == KBD_TWO_BYTE) two_byte = true;
+        else if (kbd_print_scancode(!(data & BIT(7)), 1, scan) != 0) continue;
+      }
+    }
+    tickdelay(micros_to_ticks(DELAY_US));
+  }
 
   if (kbc_write_cmd_byte(cmd) != 0) return 1;
   if (kbd_print_no_sysinb(cnt) != 0) return 1;
