@@ -13,8 +13,8 @@
 #define KBC_IBF_FULL BIT(1)
 #define KBC_OBF_FULL BIT(0)
 
-#define KBC_READ_CMD 0x20
-#define KBC_WRITE_CMD 0x60
+#define KBC_READ_CMD_BYTE 0x20
+#define KBC_WRITE_CMD_BYTE 0x60
 
 #define KBC_CMD_INT BIT(0)
 #define KBC_CMD_INT2 BIT(1)

@@ -29,46 +29,30 @@ void (kbc_ih)() {
 
 int (kbc_read_cmd_byte)(uint8_t* byte) {
     uint8_t status = 0;
-    int tries = 5;
-    while (tries > 0) {
-        tries--;
-        if (util_sys_inb(KBC_STAT_REG, &status) != 0) return 1;
-        if (status & KBC_IBF_FULL) continue;
-        else if (sys_outb(KBC_CMD_REG, KBC_READ_CMD) != 0) return 1;
-        tickdelay(micros_to_ticks(DELAY_US));
-        break;
-    }
-    tries = 5;
-    while (tries > 0) {
-        tries--;
+    
+    if (sys_outb(KBC_CMD_REG, KBC_READ_CMD_BYTE) != 0) return 1;
+
+    for (int i = 0; i < 5; i++) {
         if (util_sys_inb(KBC_STAT_REG, &status) != 0) return 1;
         if (status & KBC_OBF_FULL) {
-            if (util_sys_inb(KBC_OUT_BUF, byte) != 0) return 1;
-            if (!(status & (KBC_PAR_ERR | KBC_TO_ERR))) return 0;
-            else return -1;
+            if (status & (KBC_PAR_ERR | KBC_TO_ERR)) return 1;
+            return util_sys_inb(KBC_OUT_BUF, byte);
         }
         tickdelay(micros_to_ticks(DELAY_US));
     }
-    return 0;
+    return 1;
 }
 
 int (kbc_write_cmd_byte)(uint8_t cmd) {
     uint8_t status = 0;
-    int tries = 5;
-    while (tries > 0) {
-        tries--;
+
+    for (int i = 0; i < 5; i++) {
         if (util_sys_inb(KBC_STAT_REG, &status) != 0) return 1;
-        if (status & KBC_IBF_FULL) continue;
-        else if (sys_outb(KBC_CMD_REG, KBC_WRITE_CMD) != 0) return 1;
-        tickdelay(micros_to_ticks(DELAY_US));
-        break;
-    }
-    tries = 5;
-    while (tries > 0) {
-        tries--;
-        if (util_sys_inb(KBC_STAT_REG, &status) != 0) return 1;
-        if (!(status & KBC_IBF_FULL)) return sys_outb(KBC_CMD_REG, cmd);
+        if (!(status & KBC_IBF_FULL)) {
+            if (sys_outb(KBC_CMD_REG, KBC_WRITE_CMD_BYTE) != 0) return 1;
+            return sys_outb(KBC_IN_BUF, cmd);
+        }
         tickdelay(micros_to_ticks(DELAY_US));
     }
-    return 0;
+    return 1;
 }

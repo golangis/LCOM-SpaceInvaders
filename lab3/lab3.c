@@ -131,7 +131,7 @@ int(kbd_test_timed_scan)(uint8_t idle) {
   uint8_t timer_bit_no = 31;
   int kbc_irq_set = BIT(KBC_HOOK_BIT);
   int timer_irq_set = BIT(31);
-  uint8_t* scan = (uint8_t*) malloc(2);
+  uint8_t scan[2];
 
   if (kbc_subscribe_int(&kbc_bit_no) != 0) return 1;
   if (timer_subscribe_int(&timer_bit_no) != 0) return 1;
@@ -165,9 +165,13 @@ int(kbd_test_timed_scan)(uint8_t idle) {
       }
     }
   }
-  free(scan);
-  if (kbc_unsubscribe_int() != 0) return 1;
-  if (timer_unsubscribe_int() != 0) return 1;
+  if (timer_hook_id == kbc_hook_id) {
+    if (kbc_unsubscribe_int() != 0) return 1;
+  }
+  else {
+    if (kbc_unsubscribe_int() != 0) return 1;
+    if (timer_unsubscribe_int() != 0) return 1;
+  }
   if (kbd_print_no_sysinb(cnt) != 0) return 1;
   return 0;
 }
