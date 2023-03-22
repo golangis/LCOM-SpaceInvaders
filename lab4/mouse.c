@@ -16,10 +16,28 @@ void (mouse_ih)() {
     uint8_t status = 0;
     while (1) {
         if (util_sys_inb(KBC_STAT_REG, &status) != 0) data = 0;
-        if (status & KBC_OBF_FULL) {
+        if (status & KBC_AUX) {
             if (util_sys_inb(KBC_OUT_BUF, &data) != 0) data = 0;
             if (status & (KBC_PAR_ERR | KBC_TO_ERR)) data = 0;
             break;
         }
+        tickdelay(micros_to_ticks(DELAY_US));
     }
+}
+
+int (mouse_reset_state)() {
+    uint8_t status = 0;
+
+    while (1) {
+        if (util_sys_inb(KBC_STAT_REG, &status) != 0) return 1;
+        if (!(status & KBC_IBF_FULL)) {
+            if (sys_outb(KBC_CMD_REG, KBC_WRITE_MOUSE_BYTE) != 0) return 1;
+            if (sys_outb(KBC_IN_BUF, MOUSE_DIS_REPORT) != 0) return 1;
+            data = 0;
+            mouse_ih();
+            if (data == MOUSE_ACK) break;
+        }
+        tickdelay(micros_to_ticks(DELAY_US));
+    }
+    return 0;
 }

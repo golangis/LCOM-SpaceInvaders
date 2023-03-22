@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include <stdio.h>
 
+#include "i8042.h"
 #include "mouse.h"
 
 // Any header files included below this line should have been created by you
@@ -37,7 +38,8 @@ extern uint8_t data;
 
 int (mouse_test_packet)(uint32_t cnt) {
   if (mouse_enable_data_reporting() != 0) return 1;
-  if (mouse_subscribe_int(MOUSE_HOOK_BIT) != 0) return 1;
+  uint8_t bitno = MOUSE_HOOK_BIT;
+  if (mouse_subscribe_int(&bitno) != 0) return 1;
 
   int ipc_status = 0;
   int r = 0;
@@ -46,6 +48,8 @@ int (mouse_test_packet)(uint32_t cnt) {
   struct packet pp;
 
   int index = 0;
+  uint8_t bytes[3];
+  bool msb_y_delta, msb_x_delta;
 
   while (cnt > 0) {
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
@@ -58,9 +62,29 @@ int (mouse_test_packet)(uint32_t cnt) {
           if (msg.m_notify.interrupts & irq_set) {
             data = 0;
             mouse_ih();
-            if (!(data & BIT(3)) && index == 0) index = 2;
+            bytes[index] = data;
             if (index == 0) {
-              pp.
+              bool y_ov = data & BIT(7);
+              bool x_ov = data & BIT(6);
+              msb_y_delta = data & BIT(5);
+              msb_x_delta = data & BIT(4);
+              bool mb = data & BIT(2);
+              bool rb = data & BIT(1);
+              bool lb = data & BIT(0);
+              pp.y_ov = y_ov;
+              pp.x_ov = x_ov;
+              pp.mb = mb;
+              pp.rb = rb;
+              pp.lb = lb;
+            } else if (index == 1) {
+              if (msb_x_delta) pp.delta_x = data | 0xFF00;
+              else pp.delta_x = data;
+            } else if (index == 2) {
+              if (msb_y_delta) pp.delta_y = data | 0xFF00;
+              else pp.delta_y = data;
+              for (int i = 0; i < 3; i++) pp.bytes[i] = bytes[i];
+              mouse_print_packet(&pp);
+              cnt--;
             }
             index++;
             index %= 3;
@@ -70,6 +94,8 @@ int (mouse_test_packet)(uint32_t cnt) {
       }
     }
   }
+  if (mouse_unsubscribe_int() != 0) return 1;
+  return mouse_reset_state();
 }
 
 int (mouse_test_async)(uint8_t idle_time) {
@@ -78,7 +104,7 @@ int (mouse_test_async)(uint8_t idle_time) {
     return 1;
 }
 
-int (mouse_test_gesture)() {
+int (mouse_test_gesture)(uint8_t x_len, uint8_t tolerance) {
     /* To be completed */
     printf("%s: under construction\n", __func__);
     return 1;
