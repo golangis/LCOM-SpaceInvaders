@@ -9,7 +9,39 @@ int counter = 0;
 int hook_id = 0;
 
 int (timer_set_frequency)(uint8_t timer, uint32_t freq) {
-  return 1;
+  if (freq < 19) return 1;
+  uint16_t div = TIMER_FREQ/freq;
+  uint8_t divLSB = 0;
+  uint8_t divMSB = 0;
+  if (util_get_LSB(div, &divLSB) != 0) return 1;
+  if (util_get_MSB(div, &divMSB) != 0) return 1;
+  uint8_t status = 0;
+  if (timer_get_conf(timer, &status) != 0) return 1;
+  status &= 0xF;
+  status |= TIMER_LSB_MSB;
+  switch (timer) {
+    case 0: status |= TIMER_SEL0; break;
+    case 1: status |= TIMER_SEL1; break;
+    case 2: status |= TIMER_SEL2; break;
+    default: break;
+  }
+  if (sys_outb(TIMER_CTRL, status) != 0) return 1;
+  switch (timer) {
+    case 0:
+      if (sys_outb(TIMER_0, divLSB) != 0) return 1;
+      if (sys_outb(TIMER_0, divMSB) != 0) return 1;
+      break;
+    case 1:
+      if (sys_outb(TIMER_1, divLSB) != 0) return 1;
+      if (sys_outb(TIMER_1, divMSB) != 0) return 1;
+      break;
+    case 2:
+      if (sys_outb(TIMER_2, divLSB) != 0) return 1;
+      if (sys_outb(TIMER_2, divMSB) != 0) return 1;
+      break;
+    default: break;
+  }
+  return 0;
 }
 
 int (timer_subscribe_int)(uint8_t *bit_no) {
