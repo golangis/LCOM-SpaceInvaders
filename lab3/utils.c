@@ -1,17 +1,15 @@
 #include <lcom/lcf.h>
 
-#include "utils.h"
+#include "i8042.h"
 
-#ifdef LAB3
-extern int cnt;
-#endif
+extern int counter;
 
 int (util_sys_inb)(int port, uint8_t* value) {
     #ifdef LAB3
-    cnt++;
+    counter++;
     #endif
     uint32_t v32 = 0;
     if (sys_inb(port, &v32) != 0) return 1;
-    *value = v32 & 0xFF;
+    *value = (uint8_t) v32;
     return 0;
 }

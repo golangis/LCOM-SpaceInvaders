@@ -9,10 +9,9 @@
 #include "i8042.h"
 #include "keyboard.h"
 
-
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
-  lcf_set_language("EN-US");
+  lcf_set_language("PT-PT");
 
   // enables to log function invocations that are being "wrapped" by LCF
   // [comment this out if you don't want/need it]
@@ -34,26 +33,24 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 
-extern int kbc_hook_id;
-extern int timer_hook_id;
 extern uint8_t data;
-uint32_t cnt = 0;
+int counter = 0;
 
 int(kbd_test_scan)() {
-  cnt = 0;
-  data = 0;
+  int r;
   int ipc_status = 0;
-  int r = 0;
   message msg;
-  bool two_byte = false;
-  uint8_t bit_no = KBC_HOOK_BIT;
-  int irq_set = BIT(KBC_HOOK_BIT);
-  uint8_t scan[2];
+  uint8_t bit_no = 12;
+  int irq_set = BIT(12);
 
   if (kbc_subscribe_int(&bit_no) != 0) return 1;
-  while (data != KBD_ESC_BREAK) {
+
+  bool two_byte = false;
+  uint8_t scan[2];
+
+  while (data != KBC_ESC_BREAK) {
     if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
-      printf("drive_receive failed with: %d", r);
+      printf("driver_receive failed with: %d", r);
       continue;
     }
     if (is_ipc_notify(ipc_status)) {
@@ -67,7 +64,7 @@ int(kbd_test_scan)() {
               if (kbd_print_scancode(!(data & BIT(7)), 2, scan) != 0) return 1;
             } else {
               scan[0] = data;
-              if (data == KBD_TWO_BYTE) two_byte = true;
+              if (data == KBC_DOUBLE_BYTE) two_byte = true;
               else if (kbd_print_scancode(!(data & BIT(7)), 1, scan) != 0) return 1;
             }
           }
@@ -77,101 +74,13 @@ int(kbd_test_scan)() {
     }
   }
   if (kbc_unsubscribe_int() != 0) return 1;
-  if (kbd_print_no_sysinb(cnt) != 0) return 1;
-  return 0;
+  return kbd_print_no_sysinb(counter);
 }
 
 int(kbd_test_poll)() {
-  uint8_t cmd = 0;
-  if (kbc_read_cmd_byte(&cmd) != 0) return 1;
-
-  cnt = 0;
-  data = 0;
-  bool two_byte = false;
-  uint8_t scan[2];
-
-  while (data != KBD_ESC_BREAK) {
-    uint8_t status = 0;
-    if (util_sys_inb(KBC_STAT_REG, &status) != 0) return 1;
-
-    if (status & KBC_OBF_FULL) {
-      if (util_sys_inb(KBC_OUT_BUF, &data) != 0) return 1;
-      if (status & (KBC_PAR_ERR | KBC_TO_ERR)) break;
-
-      if (two_byte) {
-        scan[1] = data;
-        if (kbd_print_scancode(!(data & BIT(7)), 2, scan) != 0) return 1;
-        two_byte = false;
-      } else {
-        scan[0] = data;
-        if (data == KBD_TWO_BYTE) two_byte = true;
-        else if (kbd_print_scancode(!(data & BIT(7)), 1, scan) != 0) return 1;
-      }
-      tickdelay(micros_to_ticks(DELAY_US));
-    }
-  }
-
-  cmd &= ~BIT(4);
-  cmd |= BIT(0);
-  if (kbc_write_cmd_byte(cmd) != 0) return 1;
-  if (kbd_print_no_sysinb(cnt) != 0) return 1;
-  return 0;
+  return 1;
 }
 
-extern int counter;
-
 int(kbd_test_timed_scan)(uint8_t idle) {
-  cnt = 0;
-  data = 0;
-  int ipc_status = 0;
-  int r = 0;
-  message msg;
-  bool two_byte = false;
-  uint8_t kbc_bit_no = KBC_HOOK_BIT;
-  uint8_t timer_bit_no = 31;
-  int kbc_irq_set = BIT(KBC_HOOK_BIT);
-  int timer_irq_set = BIT(31);
-  uint8_t scan[2];
-
-  if (kbc_subscribe_int(&kbc_bit_no) != 0) return 1;
-  if (timer_subscribe_int(&timer_bit_no) != 0) return 1;
-  
-  while (idle > 0 && data != KBD_ESC_BREAK) {
-    if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
-      printf("drive_receive failed with: %d", r);
-      continue;
-    }
-    if (is_ipc_notify(ipc_status)) {
-      switch (_ENDPOINT_P(msg.m_source)) {
-        case HARDWARE:
-          if (msg.m_notify.interrupts & kbc_irq_set) {
-            kbc_ih();
-            if (two_byte) {
-              two_byte = false;
-              scan[1] = data;
-              if (kbd_print_scancode(!(data & BIT(7)), 2, scan) != 0) return 1;
-            } else {
-              scan[0] = data;
-              if (data == KBD_TWO_BYTE) two_byte = true;
-              else if (kbd_print_scancode(!(data & BIT(7)), 1, scan) != 0) return 1;
-            }
-          }
-          if (msg.m_notify.interrupts & timer_irq_set) {
-            timer_int_handler();
-            if (counter % 60 == 0) idle--;
-          }
-          break;
-        default: break;
-      }
-    }
-  }
-  if (timer_hook_id == kbc_hook_id) {
-    if (kbc_unsubscribe_int() != 0) return 1;
-  }
-  else {
-    if (kbc_unsubscribe_int() != 0) return 1;
-    if (timer_unsubscribe_int() != 0) return 1;
-  }
-  if (kbd_print_no_sysinb(cnt) != 0) return 1;
-  return 0;
+  return 1;
 }
