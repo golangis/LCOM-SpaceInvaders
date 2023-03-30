@@ -33,14 +33,12 @@ int main(int argc, char *argv[]) {
 }
 
 int(video_test_init)(uint16_t mode, uint8_t delay) {
-  /* To be completed */
-  printf("%s(0x%03x, %u): under construction\n", __func__, mode, delay);
-
-  return 1;
+  vg_init(mode);
+  sleep(delay);
+  return vg_exit();
 }
 
-int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y,
-                          uint16_t width, uint16_t height, uint32_t color) {
+int(video_test_rectangle)(uint16_t mode, uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color) {
   /* To be completed */
   printf("%s(0x%03X, %u, %u, %u, %u, 0x%08x): under construction\n",
          __func__, mode, x, y, width, height, color);
@@ -63,8 +61,7 @@ int(video_test_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
   return 1;
 }
 
-int(video_test_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf,
-                     int16_t speed, uint8_t fr_rate) {
+int(video_test_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf, int16_t speed, uint8_t fr_rate) {
   /* To be completed */
   printf("%s(%8p, %u, %u, %u, %u, %d, %u): under construction\n",
          __func__, xpm, xi, yi, xf, yf, speed, fr_rate);
