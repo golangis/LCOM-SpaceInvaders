@@ -1,0 +1,1530 @@
+@lcflib.a:2019, lcf_start
+  video_test_rectangle(mode, x, y, width, height, color)
+> video_test_rectangle(0x14c, 50, 50, 500, 500, 0xffffffff [4294967295])
+  @lab5.c:42, video_test_rectangle
+    vg_init(mode)
+  > vg_init(0x14c)
+    @video.c:13, vg_init
+      vbe_get_mode_info(mode, &info)
+    > vbe_get_mode_info(0x14c, addr: 0xeffff440)
+    < vbe_get_mode_info(0x14c, addr: 0xeffff440 [0xe0000000, 1152x864, 8:8:8 (32) <3.79688 MiB>]) -> (ret: 0)
+    @video.c:23, vg_init
+      sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr)
+    > sys_privctl(SELF, SYS_PRIV_ADD_MEM, addr: 0xeffff438 [0xe0000000 - 0xe03cc000 <3.79688 MiB>])
+    < sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr) -> (ret: 0)
+    @video.c:26, vg_init
+      vm_map_phys(SELF, (void *)mr.mr_base, vram_size)
+    < vm_map_phys(SELF, addr: 0xe0000000, 3.79688 MiB) -> (ret: 0xef62f000)
+    @video.c:41, vg_init
+      sys_int86(&r_86)
+    > sys_int86(addr: 0xeffff410 [AX: 4f02, BX: 414c, CX: 0000, DX: 0000, ES: 0000, DI: 0000])
+    < sys_int86(addr: 0xeffff410 [AX: 004f, BX: 414c, CX: 0000, DX: 0000, ES: 0000, DI: 0000]) -> (ret: 0)
+  < vg_init(0x14c) -> (ret: 0x0)
+  @lab5.c:43, video_test_rectangle
+    vg_draw_rectangle(x, y, width, height, color)
+  > vg_draw_rectangle(50, 50, 500, 500, 0xffffffff [4294967295])
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 50, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 51, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 52, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 53, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 54, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 55, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 56, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 57, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 58, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 59, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 60, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 61, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 62, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 63, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 64, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 65, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 66, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 67, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 68, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 69, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 70, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 71, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 72, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 73, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 74, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 75, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 76, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 77, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 78, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 79, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 80, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 81, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 82, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 83, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 84, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 85, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 86, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 87, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 88, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 89, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 90, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 91, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 92, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 93, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 94, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 95, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 96, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 97, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 98, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 99, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 100, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 101, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 102, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 103, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 104, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 105, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 106, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 107, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 108, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 109, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 110, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 111, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 112, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 113, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 114, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 115, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 116, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 117, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 118, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 119, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 120, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 121, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 122, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 123, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 124, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 125, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 126, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 127, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 128, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 129, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 130, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 131, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 132, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 133, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 134, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 135, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 136, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 137, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 138, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 139, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 140, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 141, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 142, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 143, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 144, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 145, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 146, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 147, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 148, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 149, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 150, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 151, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 152, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 153, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 154, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 155, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 156, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 157, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 158, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 159, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 160, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 161, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 162, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 163, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 164, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 165, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 166, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 167, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 168, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 169, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 170, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 171, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 172, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 173, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 174, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 175, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 176, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 177, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 178, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 179, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 180, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 181, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 182, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 183, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 184, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 185, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 186, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 187, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 188, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 189, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 190, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 191, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 192, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 193, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 194, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 195, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 196, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 197, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 198, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 199, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 200, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 201, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 202, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 203, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 204, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 205, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 206, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 207, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 208, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 209, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 210, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 211, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 212, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 213, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 214, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 215, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 216, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 217, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 218, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 219, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 220, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 221, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 222, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 223, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 224, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 225, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 226, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 227, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 228, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 229, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 230, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 231, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 232, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 233, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 234, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 235, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 236, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 237, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 238, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 239, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 240, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 241, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 242, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 243, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 244, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 245, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 246, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 247, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 248, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 249, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 250, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 251, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 252, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 253, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 254, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 255, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 256, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 257, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 258, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 259, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 260, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 261, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 262, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 263, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 264, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 265, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 266, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 267, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 268, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 269, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 270, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 271, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 272, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 273, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 274, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 275, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 276, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 277, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 278, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 279, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 280, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 281, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 282, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 283, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 284, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 285, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 286, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 287, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 288, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 289, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 290, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 291, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 292, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 293, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 294, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 295, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 296, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 297, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 298, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 299, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 300, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 301, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 302, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 303, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 304, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 305, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 306, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 307, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 308, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 309, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 310, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 311, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 312, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 313, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 314, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 315, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 316, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 317, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 318, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 319, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 320, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 321, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 322, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 323, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 324, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 325, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 326, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 327, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 328, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 329, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 330, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 331, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 332, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 333, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 334, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 335, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 336, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 337, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 338, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 339, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 340, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 341, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 342, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 343, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 344, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 345, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 346, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 347, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 348, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 349, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 350, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 351, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 352, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 353, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 354, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 355, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 356, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 357, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 358, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 359, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 360, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 361, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 362, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 363, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 364, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 365, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 366, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 367, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 368, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 369, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 370, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 371, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 372, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 373, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 374, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 375, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 376, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 377, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 378, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 379, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 380, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 381, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 382, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 383, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 384, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 385, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 386, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 387, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 388, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 389, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 390, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 391, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 392, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 393, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 394, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 395, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 396, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 397, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 398, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 399, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 400, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 401, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 402, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 403, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 404, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 405, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 406, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 407, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 408, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 409, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 410, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 411, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 412, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 413, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 414, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 415, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 416, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 417, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 418, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 419, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 420, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 421, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 422, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 423, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 424, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 425, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 426, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 427, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 428, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 429, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 430, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 431, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 432, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 433, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 434, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 435, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 436, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 437, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 438, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 439, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 440, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 441, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 442, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 443, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 444, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 445, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 446, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 447, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 448, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 449, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 450, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 451, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 452, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 453, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 454, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 455, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 456, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 457, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 458, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 459, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 460, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 461, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 462, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 463, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 464, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 465, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 466, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 467, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 468, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 469, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 470, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 471, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 472, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 473, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 474, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 475, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 476, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 477, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 478, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 479, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 480, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 481, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 482, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 483, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 484, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 485, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 486, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 487, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 488, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 489, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 490, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 491, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 492, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 493, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 494, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 495, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 496, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 497, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 498, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 499, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 500, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 501, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 502, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 503, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 504, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 505, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 506, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 507, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 508, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 509, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 510, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 511, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 512, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 513, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 514, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 515, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 516, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 517, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 518, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 519, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 520, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 521, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 522, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 523, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 524, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 525, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 526, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 527, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 528, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 529, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 530, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 531, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 532, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 533, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 534, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 535, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 536, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 537, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 538, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 539, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 540, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 541, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 542, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 543, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 544, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 545, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 546, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 547, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 548, 500, 0xffffffff [4294967295]) -> (ret: 0)
+    @video.c:100, vg_draw_rectangle
+      vg_draw_hline(x, y+i, width, color)
+    < vg_draw_hline(50, 549, 500, 0xffffffff [4294967295]) -> (ret: 0)
+  < vg_draw_rectangle(50, 50, 500, 500, 0xffffffff [4294967295]) -> (ret: 0)
+  @lab5.c:44, video_test_rectangle
+    vg_exit()
+  < vg_exit() -> (ret: 0)
+< video_test_rectangle(0x14c, 50, 50, 500, 500, 0xffffffff [4294967295]) -> (ret: 0)
