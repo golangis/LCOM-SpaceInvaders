@@ -12,7 +12,10 @@ static char direct_or_indexed;
 static uint8_t RedMaskSize;
 static uint8_t GreenMaskSize;
 static uint8_t BlueMaskSize;
-static uint8_t RsvdMaskSize;
+
+static uint8_t RedFieldPosition;
+static uint8_t GreenFieldPosition;
+static uint8_t BlueFieldPosition;
 
 void* (vg_init)(uint16_t mode) {
     vbe_mode_info_t info;
@@ -45,7 +48,10 @@ void* (vg_init)(uint16_t mode) {
     RedMaskSize = info.RedMaskSize;
     GreenMaskSize = info.GreenMaskSize;
     BlueMaskSize = info.BlueMaskSize;
-    RsvdMaskSize = info.LinRsvdMaskSize;
+
+    RedFieldPosition = info.RedFieldPosition;
+    GreenFieldPosition = info.GreenFieldPosition;
+    BlueFieldPosition = info.BlueFieldPosition;
 
     reg86_t r_86;
     memset(&r_86, 0, sizeof(r_86));
@@ -78,10 +84,42 @@ uint8_t (vg_get_blue)(uint32_t color) {
 uint8_t (vg_get_alpha)(uint32_t color) {
     return color >> 24;
 }
-/*
-uint32_t (vg_build_color)(uint8_t red, uint8_t green, uint8_t blue) {
-    return (red << RedFieldPosition) | (green << GreenFieldPosition) | (blue << BlueFieldPosition);
-}*/
+
+uint32_t (vg_build_color)(uint32_t color) {
+    uint32_t red = (uint32_t) vg_get_red(color);
+    uint32_t green = (uint32_t) vg_get_green(color);
+    uint32_t blue = (uint32_t) vg_get_blue(color);
+
+    uint32_t c = 0;
+    
+    uint8_t red_mask = 0;
+    uint8_t green_mask = 0;
+    uint8_t blue_mask = 0;
+
+    for (int i = 0; i < RedMaskSize; i++) {
+        red_mask |= BIT(i);
+    }
+
+    for (int i = 0; i < GreenMaskSize; i++) {
+        green_mask |= BIT(i);
+    }
+
+    for (int i = 0; i < BlueMaskSize; i++) {
+        blue_mask |= BIT(i);
+    }
+
+    red &= red_mask;
+    green &= green_mask;
+    blue &= blue_mask;
+
+    red <<= RedFieldPosition;
+    green <<= GreenFieldPosition;
+    blue <<= BlueFieldPosition;
+
+    c = (red | green | blue);
+
+    return c;
+}
 
 int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
     uint8_t* pixel_mem = (uint8_t*)video_mem + (x * bytes_per_pixel) + (y * h_res * bytes_per_pixel);
@@ -90,11 +128,13 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
         *pixel_mem = (uint8_t) color;
         return 0;
     }
+
+    color = vg_build_color(color);
     
-    /*for (uint8_t i = 0; i < bytes_per_pixel; i++) {
+    for (uint8_t i = 0; i < bytes_per_pixel; i++) {
         *(pixel_mem + i) = (uint8_t) color;
         color >>= 8;
-    }*/
+    }
 
     return 0;
 }
