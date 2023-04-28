@@ -17,6 +17,8 @@ static uint8_t RedFieldPosition;
 static uint8_t GreenFieldPosition;
 static uint8_t BlueFieldPosition;
 
+static uint8_t* buffer;
+
 void* (vg_init)(uint16_t mode) {
     vbe_mode_info_t info;
     if (vbe_get_mode_info(mode, &info) != 0) return NULL;
@@ -52,6 +54,8 @@ void* (vg_init)(uint16_t mode) {
     RedFieldPosition = info.RedFieldPosition;
     GreenFieldPosition = info.GreenFieldPosition;
     BlueFieldPosition = info.BlueFieldPosition;
+
+    buffer = (uint8_t*) malloc(h_res*v_res*bytes_per_pixel);
 
     reg86_t r_86;
     memset(&r_86, 0, sizeof(r_86));
@@ -122,7 +126,7 @@ uint32_t (vg_build_color)(uint32_t color) {
 }
 
 int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
-    uint8_t* pixel_mem = (uint8_t*)video_mem + (x * bytes_per_pixel) + (y * h_res * bytes_per_pixel);
+    uint8_t* pixel_mem = (uint8_t*)buffer + (x * bytes_per_pixel) + (y * h_res * bytes_per_pixel);
 
     if (direct_or_indexed == 'i') {
         *pixel_mem = (uint8_t) color;
@@ -150,6 +154,7 @@ int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height,
     for (uint16_t i = 0; i < height; i++) {
         if (vg_draw_hline(x, y+i, width, color) != 0) return 1;
     }
+    memcpy(video_mem, buffer, h_res*v_res*bytes_per_pixel);
     sleep(2);
     return 0;
 }
