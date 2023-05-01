@@ -171,11 +171,11 @@ int (vg_draw_xpm)(uint16_t x, uint16_t y, xpm_map_t xpm) {
 
     for (uint8_t i = 0; i < img.width; i++) {
         for (uint8_t j = 0; j < img.height; j++) {
-            vg_draw_pixel(x + i, y + j, *(map + (((j * img.width) + i)) * bytes_per_pixel));
+            vg_draw_pixel(x + i, y + j, *(map + ((i + (j * img.width)) * bytes_per_pixel)));
         }
     }
 
     memcpy(video_mem, buffer, h_res*v_res*bytes_per_pixel);
-    sleep(2);
+    sleep(3);
     return 0;
 }

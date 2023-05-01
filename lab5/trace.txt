@@ -1,6 +1,6 @@
 @lcflib.a:2019, lcf_start
   video_test_xpm(xpm, x, y)
-> video_test_xpm(0x81e06bc, 100, 100)
+> video_test_xpm(0x81e06bc, 300, 300)
   @lab5.c:58, video_test_xpm
     vg_init(0x105)
   > vg_init(0x105)
@@ -25,9 +25,9 @@
   > xpm_load(addr: 0x81e06bc, XPM_INDEXED, addr: 0xeffff638)
   < xpm_load(addr: 0x81e06bc, XPM_INDEXED, addr: 0xeffff638 [64x64 : 4096 bytes]) -> (ret: 0x824f000)
   @video.c:179, vg_draw_xpm
-    sleep(2)
-  > sleep(2)
+    sleep(3)
+  > sleep(3)
   @lab5.c:60, video_test_xpm
     vg_exit()
   < vg_exit() -> (ret: 0)
-< video_test_xpm(0x81e06bc, 100, 100) -> (ret: 0)
+< video_test_xpm(0x81e06bc, 300, 300) -> (ret: 0)
