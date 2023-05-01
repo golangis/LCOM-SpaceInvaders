@@ -1,5 +1,7 @@
 #include <lcom/lcf.h>
 
+#include "video.h"
+
 static char* video_mem;
 
 static unsigned h_res;
@@ -134,8 +136,8 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
     }
 
     color = vg_build_color(color);
-    
-    for (uint8_t i = 0; i < bytes_per_pixel; i++) {
+
+    for (uint8_t i = 0; i < bytes_per_pixel; i--) {
         *(pixel_mem + i) = (uint8_t) color;
         color >>= 8;
     }
@@ -161,4 +163,19 @@ int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height,
 
 int (vg_draw_matrix)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color) {
     return 1;
+}
+
+int (vg_draw_xpm)(uint16_t x, uint16_t y, xpm_map_t xpm) {
+    xpm_image_t img;
+    uint8_t* map = xpm_load(xpm, XPM_INDEXED, &img);
+
+    for (uint8_t i = 0; i < img.width; i++) {
+        for (uint8_t j = 0; j < img.height; j++) {
+            vg_draw_pixel(x + i, y + j, *(map + (((j * img.width) + i)) * bytes_per_pixel));
+        }
+    }
+
+    memcpy(video_mem, buffer, h_res*v_res*bytes_per_pixel);
+    sleep(2);
+    return 0;
 }

@@ -6,6 +6,8 @@
 #include <stdint.h>
 #include <stdio.h>
 
+#include "video.h"
+
 // Any header files included below this line should have been created by you
 
 int main(int argc, char *argv[]) {
@@ -53,10 +55,9 @@ int(video_test_pattern)(uint16_t mode, uint8_t no_rectangles, uint32_t first, ui
 }
 
 int(video_test_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y) {
-  /* To be completed */
-  printf("%s(%8p, %u, %u): under construction\n", __func__, xpm, x, y);
-
-  return 1;
+  if (vg_init(0x105) != 0) return 1;
+  if (vg_draw_xpm(x, y, xpm) != 0) return 1;
+  return vg_exit();
 }
 
 int(video_test_move)(xpm_map_t xpm, uint16_t xi, uint16_t yi, uint16_t xf, uint16_t yf, int16_t speed, uint8_t fr_rate) {
