@@ -6,18 +6,17 @@
 
 extern int counter;
 
-
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
   lcf_set_language("EN-US");
 
   // enables to log function invocations that are being "wrapped" by LCF
   // [comment this out if you don't want/need it]
-  lcf_trace_calls("/home/lcom/labs/g3/lab2/trace.txt");
+  lcf_trace_calls("/home/lcom/labs/lab2/trace.txt");
 
   // enables to save the output of printf function calls on a file
   // [comment this out if you don't want/need it]
-  lcf_log_output("/home/lcom/labs/g3/lab2/output.txt");
+  lcf_log_output("/home/lcom/labs/lab2/output.txt");
 
   // handles control over to LCF
   // [LCF handles command line arguments and invokes the right function]
@@ -32,48 +31,48 @@ int main(int argc, char *argv[]) {
 }
 
 int(timer_test_read_config)(uint8_t timer, enum timer_status_field field) {
-  uint8_t status;
-  if(timer_get_conf(timer, &status) != 0){
-    printf("timer config error");
-    return 1;
-  }  
-  if(timer_display_conf(timer, status, field) != 0){
-    printf("timer display conf");
-    return 1;
-  }
+  uint8_t st;
+  if (timer_get_conf(timer, &st) != 0) return 1;
+  if(timer_display_conf(timer, st, field) != 0) return 1;
   return 0;
 }
 
 int(timer_test_time_base)(uint8_t timer, uint32_t freq) {
-  return timer_set_frequency(timer, freq);
+  if(timer_set_frequency(timer, freq) != 0) return 1;
+  return 0;
 }
 
 int(timer_test_int)(uint8_t time) {
-  uint8_t bit_no = 14;
+  uint8_t bit_no = 31;
   int ipc_status;
   message msg;
-  int irq_set = BIT(14);
+  int r;
+  int irq_set = BIT(31);
 
-  if(timer_subscribe_int(&bit_no) != 0) return 1;
+  timer_subscribe_int(&bit_no);
 
-  while(time > 0){ 
-    if (driver_receive(ANY, &msg, &ipc_status) != 0 ) continue;
-    if (is_ipc_notify(ipc_status)){ 
-      switch (_ENDPOINT_P(msg.m_source)) {
+  while(time > 0){
+    if((r = driver_receive(ANY, &msg, &ipc_status)) != 0){
+      printf("driver_recieve failed with: %d", r);
+      continue;
+    }
+
+    if(is_ipc_notify(ipc_status)){
+      switch(_ENDPOINT_P(msg.m_source)){
         case HARDWARE:
-          if (msg.m_notify.interrupts & irq_set) {
+          if((msg.m_notify.interrupts & irq_set) != 0){
             timer_int_handler();
-            if(counter % 60 == 0){
+            if (counter % 60 == 0 ){
               timer_print_elapsed_time();
               time--;
             }
           }
           break;
-        default :
-          break; 
+        default:
+          break;  
       }
     }
   }
-  if(timer_unsubscribe_int() != 0) return 1;
+  timer_unsubscribe_int();
   return 0;
-}        
+}

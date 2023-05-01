@@ -1,0 +1,1470 @@
+@lcflib.a:2019, lcf_start
+  proj_main_loop(argc, argv)
+> proj_main_loop(0, [NULL])
+  @kbdframework.c:31, kbc_subscribe_int
+    sys_irqsetpolicy(KBC_IRQ, IRQ_REENABLE | IRQ_EXCLUSIVE, &hook)
+  > sys_irqsetpolicy(1, 3, addr: 0x822d8b8 [1])
+  < sys_irqsetpolicy(1, 3, addr: 0x822d8b8 [10]) -> (ret: 0)
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x11 = 0b00010001])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "MAKECODE: 17 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x91 = 0b10010001])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "BREAKCODE: 145 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x1e = 0b00011110])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "MAKECODE: 30 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x9e = 0b10011110])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "BREAKCODE: 158 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x1f = 0b00011111])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "MAKECODE: 31 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x9f = 0b10011111])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "BREAKCODE: 159 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x20 = 0b00100000])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "MAKECODE: 32 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x11 = 0b00010001])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "MAKECODE: 17 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xa0 = 0b10100000])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "BREAKCODE: 160 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x91 = 0b10010001])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "BREAKCODE: 145 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x1e = 0b00011110])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "MAKECODE: 30 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x1f = 0b00011111])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "MAKECODE: 31 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x9e = 0b10011110])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "BREAKCODE: 158 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x20 = 0b00100000])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "MAKECODE: 32 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x9f = 0b10011111])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "BREAKCODE: 159 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xa0 = 0b10100000])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "BREAKCODE: 160 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x11 = 0b00010001])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "MAKECODE: 17 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x91 = 0b10010001])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "BREAKCODE: 145 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x1e = 0b00011110])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "MAKECODE: 30 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x20 = 0b00100000])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "MAKECODE: 32 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x9e = 0b10011110])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "BREAKCODE: 158 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x11 = 0b00010001])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "MAKECODE: 17 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xa0 = 0b10100000])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "BREAKCODE: 160 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x91 = 0b10010001])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "BREAKCODE: 145 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x1e = 0b00011110])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "MAKECODE: 30 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x1f = 0b00011111])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "MAKECODE: 31 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x9e = 0b10011110])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "BREAKCODE: 158 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x20 = 0b00100000])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "MAKECODE: 32 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x9f = 0b10011111])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "BREAKCODE: 159 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xa0 = 0b10100000])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "BREAKCODE: 160 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x11 = 0b00010001])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "MAKECODE: 17 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x91 = 0b10010001])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "BREAKCODE: 145 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x1e = 0b00011110])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "MAKECODE: 30 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x1f = 0b00011111])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "MAKECODE: 31 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x9e = 0b10011110])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "BREAKCODE: 158 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x20 = 0b00100000])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "MAKECODE: 32 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x9f = 0b10011111])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "BREAKCODE: 159 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x11 = 0b00010001])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "MAKECODE: 17 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xa0 = 0b10100000])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "BREAKCODE: 160 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x91 = 0b10010001])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "BREAKCODE: 145 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x48 = 0b01001000])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "UP KEY PRESSED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xc8 = 0b11001000])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "UP KEY RELEASED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x4b = 0b01001011])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "LEFT KEY PRESSED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xcb = 0b11001011])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "LEFT KEY RELEASED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x4d = 0b01001101])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "RIGHT KEY PRESSED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xcd = 0b11001101])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "RIGHT KEY RELEASED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x50 = 0b01010000])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "DOWN KEY PRESSED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xd0 = 0b11010000])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "DOWN KEY RELEASED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x4b = 0b01001011])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "LEFT KEY PRESSED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x48 = 0b01001000])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "UP KEY PRESSED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xcb = 0b11001011])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "LEFT KEY RELEASED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xc8 = 0b11001000])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "UP KEY RELEASED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x4d = 0b01001101])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "RIGHT KEY PRESSED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x50 = 0b01010000])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "DOWN KEY PRESSED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xcd = 0b11001101])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "RIGHT KEY RELEASED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xd0 = 0b11010000])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "DOWN KEY RELEASED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x4b = 0b01001011])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "LEFT KEY PRESSED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xcb = 0b11001011])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "LEFT KEY RELEASED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x48 = 0b01001000])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "UP KEY PRESSED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xc8 = 0b11001000])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "UP KEY RELEASED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x50 = 0b01010000])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "DOWN KEY PRESSED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xd0 = 0b11010000])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "DOWN KEY RELEASED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x4b = 0b01001011])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "LEFT KEY PRESSED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xe0 = 0b11100000])
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0xcb = 0b11001011])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "LEFT KEY RELEASED "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x01 = 0b00000001])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "MAKECODE: 1 "
+  @kbdframework.c:123, kbd_scan
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff750, addr: 0xeffff74c)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @kbdframework.c:132, kbd_scan
+    kbc_ih()
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff680)
+    < sys_inb(0x64, addr: 0xeffff680 [0x1d = 0b00011101])
+    @kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff684)
+    < sys_inb(0x60, addr: 0xeffff684 [0x81 = 0b10000001])
+  @kbdframework.c:91, translate
+    printf("%s \n", string)
+    "QUIT "
+  @kbdframework.c:35, kbc_unsubscribe_int
+    sys_irqrmpolicy(&hook)
+  > sys_irqrmpolicy(addr: 0x822d8b8 [10])
+  < sys_irqrmpolicy(addr: 0x822d8b8 [10]) -> (ret: 0)
+< proj_main_loop(0, [NULL]) -> (ret: 0)
