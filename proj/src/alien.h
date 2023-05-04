@@ -16,6 +16,8 @@ typedef struct {
     int size = 30;
 } AlienGroup;
 
+/*
 void init(AlienGroup* group);
 void move(AlienGroup* group, direction direction, int speed);
 void die(AlienGroup* group, Alien* alien);
+*/

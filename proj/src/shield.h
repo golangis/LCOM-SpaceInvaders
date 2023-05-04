@@ -1,8 +1,14 @@
+#ifndef SHIELD_H
+#define SHIELD_H
+
 typedef struct {
     int x;
     int y;
-    int thickness = 3;
-    int lives = 15;
+    int thickness;
+    int lives;
 } Shield;
 
-void draw(Shield* shield);
+Shield* initShield();
+void drawShield(Shield* shield);
+
+#endif
