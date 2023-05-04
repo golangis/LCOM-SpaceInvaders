@@ -41,12 +41,13 @@
 #define RIGHT_BREAK 205
 
 typedef enum kbd_key {
-  right,
-  left,
-  up,
-  down,
-  space,
-  esc
+  kbd_right,
+  kbd_left,
+  kbd_up,
+  kbd_down,
+  kbd_space,
+  kbd_esc,
+  INVALID
 } kbd_key;
 
 int (util_get_LSB)(uint16_t val, uint8_t *lsb);

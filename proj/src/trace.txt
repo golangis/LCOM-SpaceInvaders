@@ -1,0 +1,735 @@
+@lcflib.a:2019, lcf_start
+  proj_main_loop(argc, argv)
+> proj_main_loop(0, [NULL])
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:31, kbc_subscribe_int
+    sys_irqsetpolicy(KBC_IRQ, IRQ_REENABLE | IRQ_EXCLUSIVE, &hook)
+  > sys_irqsetpolicy(1, 3, addr: 0x822d5c8 [1])
+  < sys_irqsetpolicy(1, 3, addr: 0x822d5c8 [10]) -> (ret: 0)
+  @main.c:42, proj_main_loop
+    printf("%s \n", "asseguir ao sub")
+    "asseguir ao sub "
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xe0 = 0b11100000])
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0x48 = 0b01001000])
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:51, translate
+    printf("%s \n", "passa do print")
+    "passa do print "
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:75, translate
+    printf("%d \n", print)
+    "6 "
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xe0 = 0b11100000])
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xc8 = 0b11001000])
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:51, translate
+    printf("%s \n", "passa do print")
+    "passa do print "
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:75, translate
+    printf("%d \n", print)
+    "2 "
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xe0 = 0b11100000])
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0x48 = 0b01001000])
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:51, translate
+    printf("%s \n", "passa do print")
+    "passa do print "
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:75, translate
+    printf("%d \n", print)
+    "6 "
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xe0 = 0b11100000])
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xc8 = 0b11001000])
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:51, translate
+    printf("%s \n", "passa do print")
+    "passa do print "
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:75, translate
+    printf("%d \n", print)
+    "2 "
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xe0 = 0b11100000])
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0x48 = 0b01001000])
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:51, translate
+    printf("%s \n", "passa do print")
+    "passa do print "
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:75, translate
+    printf("%d \n", print)
+    "6 "
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xe0 = 0b11100000])
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xc8 = 0b11001000])
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:51, translate
+    printf("%s \n", "passa do print")
+    "passa do print "
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:75, translate
+    printf("%d \n", print)
+    "2 "
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xe0 = 0b11100000])
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0x4d = 0b01001101])
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:51, translate
+    printf("%s \n", "passa do print")
+    "passa do print "
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:75, translate
+    printf("%d \n", print)
+    "6 "
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xe0 = 0b11100000])
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xcd = 0b11001101])
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:51, translate
+    printf("%s \n", "passa do print")
+    "passa do print "
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:75, translate
+    printf("%d \n", print)
+    "0 "
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xe0 = 0b11100000])
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0x4b = 0b01001011])
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:51, translate
+    printf("%s \n", "passa do print")
+    "passa do print "
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:75, translate
+    printf("%d \n", print)
+    "6 "
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xe0 = 0b11100000])
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xcb = 0b11001011])
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:51, translate
+    printf("%s \n", "passa do print")
+    "passa do print "
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:75, translate
+    printf("%d \n", print)
+    "1 "
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xe0 = 0b11100000])
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0x50 = 0b01010000])
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:51, translate
+    printf("%s \n", "passa do print")
+    "passa do print "
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:75, translate
+    printf("%d \n", print)
+    "6 "
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xe0 = 0b11100000])
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xd0 = 0b11010000])
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:51, translate
+    printf("%s \n", "passa do print")
+    "passa do print "
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:75, translate
+    printf("%d \n", print)
+    "3 "
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xe0 = 0b11100000])
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0x48 = 0b01001000])
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:51, translate
+    printf("%s \n", "passa do print")
+    "passa do print "
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:75, translate
+    printf("%d \n", print)
+    "6 "
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xe0 = 0b11100000])
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xc8 = 0b11001000])
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:51, translate
+    printf("%s \n", "passa do print")
+    "passa do print "
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:75, translate
+    printf("%d \n", print)
+    "2 "
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xe0 = 0b11100000])
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0x4b = 0b01001011])
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:51, translate
+    printf("%s \n", "passa do print")
+    "passa do print "
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:75, translate
+    printf("%d \n", print)
+    "6 "
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xe0 = 0b11100000])
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xcb = 0b11001011])
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:51, translate
+    printf("%s \n", "passa do print")
+    "passa do print "
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:75, translate
+    printf("%d \n", print)
+    "1 "
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xe0 = 0b11100000])
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0x4d = 0b01001101])
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:51, translate
+    printf("%s \n", "passa do print")
+    "passa do print "
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:75, translate
+    printf("%d \n", print)
+    "6 "
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xe0 = 0b11100000])
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xcd = 0b11001101])
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:51, translate
+    printf("%s \n", "passa do print")
+    "passa do print "
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:75, translate
+    printf("%d \n", print)
+    "0 "
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xe0 = 0b11100000])
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0x48 = 0b01001000])
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:51, translate
+    printf("%s \n", "passa do print")
+    "passa do print "
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:75, translate
+    printf("%d \n", print)
+    "6 "
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xe0 = 0b11100000])
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0xc8 = 0b11001000])
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:51, translate
+    printf("%s \n", "passa do print")
+    "passa do print "
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:75, translate
+    printf("%d \n", print)
+    "2 "
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0x01 = 0b00000001])
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:51, translate
+    printf("%s \n", "passa do print")
+    "passa do print "
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:75, translate
+    printf("%d \n", print)
+    "6 "
+  @main.c:48, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a8)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @main.c:57, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x64, addr: 0xeffff690)
+    < sys_inb(0x64, addr: 0xeffff690 [0x1d = 0b00011101])
+    @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:24, util_sys_inb
+      sys_inb(port, &value1)
+    > sys_inb(0x60, addr: 0xeffff694)
+    < sys_inb(0x60, addr: 0xeffff694 [0x81 = 0b10000001])
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:51, translate
+    printf("%s \n", "passa do print")
+    "passa do print "
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:75, translate
+    printf("%d \n", print)
+    "5 "
+  @/home/lcom/labs/g3/proj/src/framework/keyboard/kbdframework.c:35, kbc_unsubscribe_int
+    sys_irqrmpolicy(&hook)
+  > sys_irqrmpolicy(addr: 0x822d5c8 [10])
+  < sys_irqrmpolicy(addr: 0x822d5c8 [10]) -> (ret: 0)
+< proj_main_loop(0, [NULL]) -> (ret: 0)

@@ -48,30 +48,29 @@ void (kbc_ih)(){
 }
 
 kbd_key translate(uint8_t value, bool make){
-  kbd_key print;
+  kbd_key print = INVALID;
   switch(value){
     case SPACE_BREAK:
-      print = space; 
+      print = kbd_space; 
       break;
     case RIGHT_BREAK:
-      print = right;  
+      print = kbd_right;  
       break;
     case LEFT_BREAK:
-      print = left; 
+      print = kbd_left; 
       break;
     case UP_BREAK:
-      print = up; 
+      print = kbd_up; 
       break;
     case DOWN_BREAK:
-      print = down; 
+      print = kbd_down; 
       break;
     case KBD_ESC_KEY:
-      print = esc;
+      print = kbd_esc;
       break;
     default:
       break;
   }
-  printf("%s \n", print);
   return print;
 }
 
