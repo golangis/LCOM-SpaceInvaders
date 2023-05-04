@@ -2,7 +2,7 @@
 PROG=proj
 
 # source code files to be compiled
-SRCS = main.c kbdframework.c
+SRCS = main.c framework/keyboard/kbdframework.c
 
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set

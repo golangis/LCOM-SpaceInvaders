@@ -47,48 +47,32 @@ void (kbc_ih)(){
     }
 }
 
-void translate(uint8_t value, bool make){
-  char string[100];
+kbd_key translate(uint8_t value, bool make){
+  kbd_key print;
   switch(value){
-    case SPACE_MAKE :
-      sprintf(string, "SPACE BAR PRESSED"); 
-      break;
     case SPACE_BREAK:
-      sprintf(string, "SPACE BAR RELEASED"); 
-      break;
-    case RIGHT_MAKE:
-      sprintf(string, "RIGHT KEY PRESSED"); 
+      print = space; 
       break;
     case RIGHT_BREAK:
-      sprintf(string, "RIGHT KEY RELEASED");  
-      break;
-    case LEFT_MAKE:
-      sprintf(string, "LEFT KEY PRESSED"); 
+      print = right;  
       break;
     case LEFT_BREAK:
-      sprintf(string, "LEFT KEY RELEASED"); 
-      break;
-    case UP_MAKE:
-      sprintf(string, "UP KEY PRESSED"); 
+      print = left; 
       break;
     case UP_BREAK:
-      sprintf(string, "UP KEY RELEASED"); 
-      break;   
-    case DOWN_MAKE:
-      sprintf(string, "DOWN KEY PRESSED"); 
+      print = up; 
       break;
     case DOWN_BREAK:
-      sprintf(string, "DOWN KEY RELEASED"); 
+      print = down; 
       break;
     case KBD_ESC_KEY:
-      sprintf(string, "QUIT");
+      print = esc;
       break;
     default:
-      if(make) sprintf(string, "MAKECODE: %d", value);
-      else sprintf(string, "BREAKCODE: %d", value);
       break;
   }
-  printf("%s \n", string);
+  printf("%s \n", print);
+  return print;
 }
 
 void kbd_print_code(bool make, uint8_t size, uint8_t bytes[]){
