@@ -11,7 +11,7 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 
-#include "kbdframework.h"
+#include "framework/keyboard/kbdframework.h"
 #include "alien.h"
 #include "player.h"
 #include "shield.h"
@@ -42,7 +42,6 @@ int (proj_main_loop)(int argc, char **argv) {
     uint8_t* scan = (uint8_t*) malloc(2);
     bool two_bytes = false;
     bool make;
-    
 
     while(data != KBD_ESC_KEY) {
         if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
