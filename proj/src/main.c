@@ -14,25 +14,12 @@ int main(int argc, char *argv[]) {
 #include "framework/keyboard/kbdframework.h"
 #include "framework/video/video.h"
 
-#include "draw.h"
-
-#include "alien.h"
-#include "player.h"
-#include "shield.h"
-#include "shot.h"
 #include "spaceinvaders.h"
 
-//Player* player;
-Shield* shield1;
-Shield* shield2;
-Shield* shield3;
-
-void (init_game)() {
-    //player = (Player*) malloc(sizeof(Player));
-    shield1 = initShield(100);
-    shield2 = initShield(350);
-    shield3 = initShield(600);
-}
+extern Player* player;
+extern Shield* shield1;
+extern Shield* shield2;
+extern Shield* shield3;
 
 extern int data;
 
@@ -51,7 +38,6 @@ int (proj_main_loop)(int argc, char **argv) {
     data = 0;
     uint8_t kbc_hook_bit = 1;
     if (kbc_subscribe_int(&kbc_hook_bit) != 0) return 1;
-    printf("%s \n", "asseguir ao sub");
     uint8_t* scan = (uint8_t*) malloc(2);
     bool two_bytes = false;
     bool make;
@@ -77,12 +63,12 @@ int (proj_main_loop)(int argc, char **argv) {
                             scan[1] = data;
                             two_bytes = false;
                             make = data & BIT(7);
-                            kbd_print_code(!make, 2, scan);
+                            //kbd_print_code(!make, 2, scan);
                         } else {
                             scan[0] = data;
                             make = data & BIT(7);
                             if (data == KBD_TWO_BYTE) two_bytes = true;
-                            else kbd_print_code(!make, 1, scan);
+                            //else kbd_print_code(!make, 1, scan);
                         }
                     } else if (msg.m_notify.interrupts & ipc_mouse) {}
                     break;

@@ -8,6 +8,7 @@
   "editor.wordWrapColumn": 100,
   "files.associations": {
     "*.embeddedhtml": "html",
-    "spaceinvaders.h": "c"
+    "spaceinvaders.h": "c",
+    "stdlib.h": "c"
   },
 }

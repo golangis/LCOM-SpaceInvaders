@@ -10,11 +10,11 @@ typedef struct {
     int score;
 } Player;
 
-void initPlayer();
+Player* initPlayer();
 void move(Player* player, direction direction);
 void fire(Player* player);
 void looseLife(Player* player);
-void draw(Player* player);
+void drawPlayer(Player* player);
 void incrementScore(Player* player, int n);
 
 #endif

@@ -4,7 +4,6 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-#include "framework/video/video.h"
 #include "spaceinvaders.h"
 
 typedef struct {
@@ -15,13 +14,15 @@ typedef struct {
 } Alien;
 
 typedef struct {
-    Alien* aliens;
+    Alien* first;
     int size;
 } AlienGroup;
 
 
-void initAliens(AlienGroup* group);
-void moveAliens(AlienGroup* group, direction dir, int speed);
-void dieAliens(AlienGroup* group, Alien* alien);
+AlienGroup* (initAliens)();
+void (moveAliens)(AlienGroup* group, enum direction dir, int speed);
+void (dieAlien)(AlienGroup* group, Alien* alien);
+void (drawAliens)(AlienGroup* group);
+void (drawAlien)(Alien* alien);
 
 #endif
