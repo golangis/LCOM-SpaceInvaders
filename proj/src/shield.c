@@ -11,5 +11,10 @@ Shield* initShield(int x) {
 }
 
 void drawShield(Shield* shield) {
-  video_draw_rectangle(shield->x, 400, 100, (shield->thickness) * 10, 0xffffff);
+  if (shield->lives > 0) video_draw_rectangle(shield->x, 400, 100, (shield->thickness) * 10, 0xffffff);
+}
+
+void damage(Shield* shield) {
+  shield->thickness--;
+  shield->lives--;
 }
