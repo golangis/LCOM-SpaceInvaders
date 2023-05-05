@@ -1,9 +1,12 @@
-#include <lcom/lcf.h>
-#include <stdbool.h>
-#include <stdint.h>
+#ifndef ALIEN_H
+#define ALIEN_H
 
+#include <stdbool.h>
+#include <stdlib.h>
+
+#include "framework/video/video.h"
 #include "spaceinvaders.h"
-/*
+
 typedef struct {
     int id;
     int x;
@@ -12,11 +15,13 @@ typedef struct {
 } Alien;
 
 typedef struct {
-    Alien* aliens = (Alien*) malloc(sizeof(Alien) * 30);
-    int size = 30;
+    Alien* aliens;
+    int size;
 } AlienGroup;
 
-void init(AlienGroup* group);
-void move(AlienGroup* group, direction direction, int speed);
-void die(AlienGroup* group, Alien* alien);
-*/
+
+void initAliens(AlienGroup* group);
+void moveAliens(AlienGroup* group, direction dir, int speed);
+void dieAliens(AlienGroup* group, Alien* alien);
+
+#endif

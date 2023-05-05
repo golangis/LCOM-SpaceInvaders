@@ -1,6 +1,8 @@
 #ifndef SHIELD_H
 #define SHIELD_H
 
+#include "framework/video/video.h"
+
 typedef struct {
     int x;
     int y;

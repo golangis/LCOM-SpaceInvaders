@@ -51,6 +51,7 @@ int (proj_main_loop)(int argc, char **argv) {
     data = 0;
     uint8_t kbc_hook_bit = 1;
     if (kbc_subscribe_int(&kbc_hook_bit) != 0) return 1;
+    printf("%s \n", "asseguir ao sub");
     uint8_t* scan = (uint8_t*) malloc(2);
     bool two_bytes = false;
     bool make;
@@ -76,12 +77,12 @@ int (proj_main_loop)(int argc, char **argv) {
                             scan[1] = data;
                             two_bytes = false;
                             make = data & BIT(7);
-                            //kbd_print_code(!make, 2, scan);
+                            kbd_print_code(!make, 2, scan);
                         } else {
                             scan[0] = data;
                             make = data & BIT(7);
                             if (data == KBD_TWO_BYTE) two_bytes = true;
-                            //else kbd_print_code(!make, 1, scan);
+                            else kbd_print_code(!make, 1, scan);
                         }
                     } else if (msg.m_notify.interrupts & ipc_mouse) {}
                     break;

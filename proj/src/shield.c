@@ -1,5 +1,4 @@
 #include "shield.h"
-#include "framework/video/video.h"
 
 Shield* initShield(int x) {
   Shield* shield = (Shield*) malloc (sizeof(Shield));
