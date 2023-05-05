@@ -10,8 +10,8 @@ typedef struct {
     int lives;
 } Shield;
 
-Shield* initShield(int x);
-void drawShield(Shield* shield);
-void damage(Shield* shield);
+Shield* (initShield)(int x);
+void (drawShield)(Shield* shield);
+void (damage)(Shield* shield);
 
 #endif

@@ -3,12 +3,19 @@
 
 #include "spaceinvaders.h"
 
+enum {
+    alien,
+    player
+} shot_source;
+
 typedef struct{
     int x;
     int y;
+    enum shot_source source;
 } Shot;
 
-void moveShot(Shot* shot, direction direction);
-void drawShot(Shot* shot);
+Shot* (initShot)(int x, int y, enum shot_source source);
+void (moveShot)(Shot* shot);
+void (drawShot)(Shot* shot);
 
 #endif

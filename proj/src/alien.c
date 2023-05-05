@@ -30,12 +30,15 @@ void (drawAliens)(AlienGroup* group) {
 
 void (dieAlien)(AlienGroup* group, Alien* alien){
   Alien* a;
-  for (size_t i = 0; i < group->size; i++) {
+  size_t i = 0;
+  for (i = 0; i < group->size; i++) {
     if (group->first[i].id == alien->id) a = &(group->first[i]);
   }
-  /*
-  remove alien, shrink array and decrement size
-  */
+  for (size_t x = i; x < group->size-1; x++) {
+    group->first[x] = group->first[x+1];
+  }
+  free(a);
+  group->size--;
 }
 
 void (drawAlien)(Alien* alien) {
