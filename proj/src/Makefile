@@ -7,7 +7,7 @@ PROG=proj
 .PATH: ${.CURDIR}/framework/video
 
 # source code files to be compiled
-SRCS = main.c kbdframework.c
+SRCS = main.c kbdframework.c video.c draw.c shield.c
 
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set

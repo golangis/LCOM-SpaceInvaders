@@ -8,7 +8,7 @@ typedef struct {
     int lives;
 } Shield;
 
-Shield* initShield();
+Shield* initShield(int x);
 void drawShield(Shield* shield);
 
 #endif

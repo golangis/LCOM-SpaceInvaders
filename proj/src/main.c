@@ -12,16 +12,26 @@ int main(int argc, char *argv[]) {
 }
 
 #include "framework/keyboard/kbdframework.h"
+#include "framework/video/video.h"
+
+#include "draw.h"
+
 #include "alien.h"
 #include "player.h"
 #include "shield.h"
 #include "shot.h"
 #include "spaceinvaders.h"
 
-Player* player;
+//Player* player;
+Shield* shield1;
+Shield* shield2;
+Shield* shield3;
 
 void (init_game)() {
-    player = (Player*) malloc(sizeof(Player));
+    //player = (Player*) malloc(sizeof(Player));
+    shield1 = initShield(100);
+    shield2 = initShield(350);
+    shield3 = initShield(600);
 }
 
 extern int data;
@@ -35,6 +45,8 @@ int (proj_main_loop)(int argc, char **argv) {
     int ipc_keyboard = BIT(KBC_HOOK_BIT);   // check if 1
     int ipc_mouse = BIT(10);  // check if 10
 
+    // timer
+
     // keyboard
     data = 0;
     uint8_t kbc_hook_bit = 1;
@@ -43,7 +55,13 @@ int (proj_main_loop)(int argc, char **argv) {
     bool two_bytes = false;
     bool make;
 
+    // video
+    video_init(0x115);
+
+    init_game();
+
     while(data != KBD_ESC_KEY) {
+        draw();
         if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
             printf("driver_receive failed with: %d", r);
             continue;
@@ -75,5 +93,6 @@ int (proj_main_loop)(int argc, char **argv) {
 
     free(scan);
     if (kbc_unsubscribe_int() != 0) return 1;
+    vg_exit();
     return 0;
 }
