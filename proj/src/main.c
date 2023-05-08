@@ -12,15 +12,21 @@ int main(int argc, char *argv[]) {
 }
 
 #include "framework/keyboard/kbdframework.h"
+#include "framework/timer/timer.h"
 #include "framework/video/video.h"
 
 #include "spaceinvaders.h"
 
+// Game
 extern Player* player;
 extern Shield* shield1;
 extern Shield* shield2;
 extern Shield* shield3;
 
+// Timer
+extern int timer_count;
+
+// Keyboard
 extern int data;
 
 int (proj_main_loop)(int argc, char **argv) {
@@ -28,15 +34,18 @@ int (proj_main_loop)(int argc, char **argv) {
     message msg;
     int r;
 
-    int ipc_timer = BIT(31);  // check if 31
+    int ipc_timer = BIT(TIMER_HOOK_BIT);  // check if 31
     int ipc_keyboard = BIT(KBC_HOOK_BIT);   // check if 1
     int ipc_mouse = BIT(10);  // check if 10
 
     // timer
+    timer_count = 0;
+    uint8_t timer_hook_bit = TIMER_HOOK_BIT;
+    if (subscribe_timer_int(&timer_hook_bit) != 0) return 1;
 
     // keyboard
     data = 0;
-    uint8_t kbc_hook_bit = 1;
+    uint8_t kbc_hook_bit = KBC_HOOK_BIT;
     if (kbc_subscribe_int(&kbc_hook_bit) != 0) return 1;
     uint8_t* scan = (uint8_t*) malloc(2);
     bool two_bytes = false;
@@ -57,6 +66,7 @@ int (proj_main_loop)(int argc, char **argv) {
             switch(_ENDPOINT_P(msg.m_source)) {
                 case HARDWARE:
                     if (msg.m_notify.interrupts & ipc_timer) {
+                        timer_int_handler();
                     } else if (msg.m_notify.interrupts & ipc_keyboard) {
                         kbc_ih();
                         if(two_bytes){
@@ -80,6 +90,7 @@ int (proj_main_loop)(int argc, char **argv) {
 
     free(scan);
     if (kbc_unsubscribe_int() != 0) return 1;
+    if (unsubscribe_timer_int() != 0) return 1;
     vg_exit();
     return 0;
 }
