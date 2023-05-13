@@ -57,7 +57,6 @@ int (proj_main_loop)(int argc, char **argv) {
     init_game();
 
     while(data != KBD_ESC_KEY) {
-        draw();
         if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
             printf("driver_receive failed with: %d", r);
             continue;
@@ -67,6 +66,7 @@ int (proj_main_loop)(int argc, char **argv) {
                 case HARDWARE:
                     if (msg.m_notify.interrupts & ipc_timer) {
                         timer_int_handler();
+                        if (timer_count % 2 == 0) draw();
                     } else if (msg.m_notify.interrupts & ipc_keyboard) {
                         kbc_ih();
                         if(two_bytes){
