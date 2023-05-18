@@ -15,18 +15,11 @@ extern unsigned h_res;
 extern unsigned v_res;
 extern unsigned bytes_per_pixel;
 
-Player* player;
+Player* ship;
 Shield* shield1;
 Shield* shield2;
 Shield* shield3;
 AlienGroup* aliens;
-
-typedef enum direction {
-    right,
-    left,
-    up,
-    down
-} direction;
 
 void (init_game)();
 void (draw)();

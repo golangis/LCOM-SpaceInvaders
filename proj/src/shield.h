@@ -4,13 +4,13 @@
 #include "framework/video/video.h"
 
 typedef struct {
-    int x;
-    int y;
-    int thickness;
-    int lives;
+    unsigned int x;
+    unsigned int y;
+    unsigned int thickness;
+    unsigned int lives;
 } Shield;
 
-Shield* (initShield)(int x);
+Shield* (initShield)(unsigned int x);
 void (drawShield)(Shield* shield);
 void (damage)(Shield* shield);
 

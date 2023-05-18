@@ -1,6 +1,6 @@
 #include "shot.h"
 
-Shot* (initShot)(int x, int y, enum shot_source source) {
+Shot* (initShot)(unsigned int x, unsigned int y, enum shot_source source) {
   Shot* shot = (Shot*) malloc (sizeof(shot));
   shot->x = x;
   shot->y = y;

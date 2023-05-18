@@ -7,6 +7,8 @@
 #include <stdint.h>
 #include <stdio.h>
 
+#include "../utils/utils.h"
+
 #define KBC_IRQ 1
 
 #define KBC_STAT_REG 0x64
@@ -52,7 +54,7 @@ typedef enum kbd_key {
 
 int (util_get_LSB)(uint16_t val, uint8_t *lsb);
 int (util_get_MSB)(uint16_t val, uint8_t *msb);
-int (util_sys_inb)(int port, uint8_t *value);
+int (ut_sys_inb)(int port, uint8_t *value);
 int (kbc_subscribe_int)(uint8_t *bit_no);
 int (kbc_unsubscribe_int)();
 void (kbc_ih)();

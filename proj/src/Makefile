@@ -4,11 +4,11 @@ PROG=proj
 .PATH: ${.CURDIR}/framework/keyboard
 .PATH: ${.CURDIR}/framework/mouse
 .PATH: ${.CURDIR}/framework/timer
-.PATH: ${.CURDIR}/framework/video
 .PATH: ${.CURDIR}/framework/utils
+.PATH: ${.CURDIR}/framework/video
 
 # source code files to be compiled
-SRCS = main.c kbdframework.c utils.c video.c draw.c shield.c
+SRCS = kbdframework.c timer.c utils.c video.c alien.c main.c player.c shield.c shot.c spaceinvaders.c
 
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set

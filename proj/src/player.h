@@ -1,20 +1,22 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "spaceinvaders.h"
+#include "direction.h"
+
+#include "framework/video/video.h"
 
 typedef struct {
-    int x;
-    int y;
-    int lives;
-    int score;
+    unsigned int x;
+    unsigned int y;
+    unsigned int lives;
+    unsigned int score;
 } Player;
 
 Player* (initPlayer)();
-void (movePlayer)(Player* player, direction dir);
-void (fire)(Player* player);
-void (looseLife)(Player* player);
-void (drawPlayer)(Player* player);
-void (incrementScore)(Player* player, int n);
+void (movePlayer)(Player* ship, enum direction dir);
+void (fire)(Player* ship);
+void (looseLife)(Player* ship);
+void (drawPlayer)(Player* ship);
+void (incrementScore)(Player* ship, unsigned int n);
 
 #endif

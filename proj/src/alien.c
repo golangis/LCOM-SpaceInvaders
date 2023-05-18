@@ -9,7 +9,7 @@ AlienGroup* (initAliens)(){
   return group;
 }
 
-void (moveAliens)(AlienGroup* group, enum direction dir, int speed) {
+void (moveAliens)(AlienGroup* group, enum direction dir, unsigned int speed) {
   switch (dir) {
     case right:
       for (size_t i = 0; i < group->size; i++) group->first[i].x += speed;

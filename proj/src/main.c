@@ -18,13 +18,13 @@ int main(int argc, char *argv[]) {
 #include "spaceinvaders.h"
 
 // Game
-extern Player* player;
+extern Player* ship;
 extern Shield* shield1;
 extern Shield* shield2;
 extern Shield* shield3;
 
 // Timer
-extern int timer_count;
+extern int timer_counter;
 
 // Keyboard
 extern int data;
@@ -39,7 +39,7 @@ int (proj_main_loop)(int argc, char **argv) {
     int ipc_mouse = BIT(10);  // check if 10
 
     // timer
-    timer_count = 0;
+    timer_counter = 0;
     uint8_t timer_hook_bit = TIMER_HOOK_BIT;
     if (subscribe_timer_int(&timer_hook_bit) != 0) return 1;
 
@@ -65,8 +65,8 @@ int (proj_main_loop)(int argc, char **argv) {
             switch(_ENDPOINT_P(msg.m_source)) {
                 case HARDWARE:
                     if (msg.m_notify.interrupts & ipc_timer) {
-                        timer_int_handler();
-                        if (timer_count % 2 == 0) draw();
+                        timer_interrupt_handler();
+                        if (timer_counter % 2 == 0) draw();
                     } else if (msg.m_notify.interrupts & ipc_keyboard) {
                         kbc_ih();
                         if(two_bytes){

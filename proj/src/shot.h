@@ -1,20 +1,20 @@
 #ifndef SHOT_H
 #define SHOT_H
 
-#include "spaceinvaders.h"
+#include "framework/video/video.h"
 
-enum {
+enum shot_source {
     alien,
     player
-} shot_source;
+};
 
 typedef struct{
-    int x;
-    int y;
+    unsigned int x;
+    unsigned int y;
     enum shot_source source;
 } Shot;
 
-Shot* (initShot)(int x, int y, enum shot_source source);
+Shot* (initShot)(unsigned int x, unsigned int y, enum shot_source source);
 void (moveShot)(Shot* shot);
 void (drawShot)(Shot* shot);
 

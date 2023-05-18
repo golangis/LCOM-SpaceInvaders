@@ -1,7 +1,7 @@
 #include "spaceinvaders.h"
 
 void (init_game)() {
-  player = initPlayer();
+  ship = initPlayer();
   shield1 = initShield(100);
   shield2 = initShield(350);
   shield3 = initShield(600);
@@ -9,6 +9,7 @@ void (init_game)() {
 }
 
 void (draw)() {
+  printf("Drew\n");
   drawShield(shield1);
   drawShield(shield2);
   drawShield(shield3);

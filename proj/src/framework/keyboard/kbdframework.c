@@ -19,13 +19,6 @@ int (util_get_MSB)(uint16_t val, uint8_t *msb) {
   return 0;
 }
 
-int (util_sys_inb)(int port, uint8_t *value) {
-  uint32_t value1 = 0;
-  if(sys_inb(port, &value1) != 0) return 1;
-  *value = (uint8_t)value1;
-  return 0;
-}
-
 int (kbc_subscribe_int)(uint8_t *bit_no) {
   hook = *bit_no;
   return sys_irqsetpolicy(KBC_IRQ, IRQ_REENABLE | IRQ_EXCLUSIVE, &hook);
@@ -38,10 +31,10 @@ int (kbc_unsubscribe_int)(){
 void (kbc_ih)(){
     uint8_t status = 0;
     while(true){
-        if(util_sys_inb(KBC_STAT_REG, &status) != 0) data = 0; 
+        if(ut_sys_inb(KBC_STAT_REG, &status) != 0) data = 0; 
         if((status & BIT(0)) != 0){
             if((status & BIT(7)) != 0 || (status & BIT(6)) != 0) data = 0;
-            if(util_sys_inb(KBC_OUT_BUF, &data) != 0) data = 0;
+            if(ut_sys_inb(KBC_OUT_BUF, &data) != 0) data = 0;
             break;
         }
     }
