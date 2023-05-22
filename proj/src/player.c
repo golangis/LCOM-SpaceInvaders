@@ -12,7 +12,7 @@ Player* (initPlayer)(){
 }
 
 void (movePlayer)(Player* ship, enum direction dir) {
-  ship->x += dir == left ? -1 : 1;
+  ship->x += dir == left ? -5 : 5;
 }
 
 void (fire)(Player* ship) {
@@ -26,7 +26,7 @@ void (looseLife)(Player* ship) {
 }
 
 void (drawPlayer)(Player* ship) {
-  vg_draw_rectangle(ship->x, ship->y, 20, 20, 0xfffffff);
+  video_draw_rectangle(ship->x, ship->y, 20, 20, 0xfffffff);
 }
 
 void (incrementScore)(Player* ship, unsigned int n) {

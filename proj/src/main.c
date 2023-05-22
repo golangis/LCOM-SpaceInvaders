@@ -24,7 +24,7 @@ extern Shield* shield2;
 extern Shield* shield3;
 
 // Timer
-extern int timer_counter;
+extern unsigned int timer_counter;
 
 // Keyboard
 extern int data;
@@ -36,7 +36,7 @@ int (proj_main_loop)(int argc, char **argv) {
 
     int ipc_timer = BIT(TIMER_HOOK_BIT);  // check if 31
     int ipc_keyboard = BIT(KBC_HOOK_BIT);   // check if 1
-    int ipc_mouse = BIT(10);  // check if 10
+    //int ipc_mouse = BIT(10);  // check if 10
 
     // timer
     timer_counter = 0;
@@ -59,7 +59,7 @@ int (proj_main_loop)(int argc, char **argv) {
 
     while(key != kbd_esc) {
         if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
-            printf("driver_receive failed with: %d", r);
+            printf("driver_receive failed with: %d", r);            
             continue;
         }
         if (is_ipc_notify(ipc_status)) {
@@ -68,20 +68,35 @@ int (proj_main_loop)(int argc, char **argv) {
                     if (msg.m_notify.interrupts & ipc_timer) {
                         timer_interrupt_handler();
                         if (timer_counter % 2 == 0) draw();
-                    } else if (msg.m_notify.interrupts & ipc_keyboard) {
+                        if (timer_counter == UINT_MAX) timer_counter = 0;
+                    }
+                    if (msg.m_notify.interrupts & ipc_keyboard) {
                         kbc_ih();
-                        if(two_bytes){
+                        if (two_bytes) {
                             scan[1] = data;
                             two_bytes = false;
                             make = data & BIT(7);
                             key = kbd_get_key(!make, 2, scan);
+                            switch (key) {
+                                case kbd_left: movePlayer(ship, left); key = INVALID; break;
+                                case kbd_right: movePlayer(ship, right); key = INVALID; break;
+                                default: break;
+                            }
                         } else {
                             scan[0] = data;
                             make = data & BIT(7);
                             if (data == KBD_TWO_BYTE) two_bytes = true;
-                            else key = kbd_get_key(!make, 1, scan);
+                            else {
+                                key = kbd_get_key(!make, 1, scan);
+                                switch (key) {
+                                    case kbd_left: movePlayer(ship, left); key = INVALID; break;
+                                    case kbd_right: movePlayer(ship, right); key = INVALID; break;
+                                    default: break;
+                                }
+                            }
                         }
-                    } else if (msg.m_notify.interrupts & ipc_mouse) {}
+                    }
+                    //if (msg.m_notify.interrupts & ipc_mouse) {}
                     break;
                 default:
                     break;

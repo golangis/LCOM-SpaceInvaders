@@ -9,6 +9,7 @@
   "files.associations": {
     "*.embeddedhtml": "html",
     "spaceinvaders.h": "c",
-    "stdlib.h": "c"
+    "stdlib.h": "c",
+    "timer.h": "c"
   },
 }

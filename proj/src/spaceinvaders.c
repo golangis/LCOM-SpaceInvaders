@@ -9,10 +9,13 @@ void (init_game)() {
 }
 
 void (draw)() {
-  //printf("Drew\n");
+  memset(video_mem, 0, h_res*v_res*bytes_per_pixel);
+
   drawShield(shield1);
   drawShield(shield2);
   drawShield(shield3);
+
+  drawPlayer(ship);
 
   memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
 }
