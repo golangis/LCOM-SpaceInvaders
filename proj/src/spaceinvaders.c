@@ -9,7 +9,7 @@ void (init_game)() {
 }
 
 void (draw)() {
-  printf("Drew\n");
+  //printf("Drew\n");
   drawShield(shield1);
   drawShield(shield2);
   drawShield(shield3);

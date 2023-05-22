@@ -42,7 +42,7 @@
 #define RIGHT_MAKE 77
 #define RIGHT_BREAK 205
 
-typedef enum kbd_key {
+enum kbd_key {
   kbd_right,
   kbd_left,
   kbd_up,
@@ -50,7 +50,7 @@ typedef enum kbd_key {
   kbd_space,
   kbd_esc,
   INVALID
-} kbd_key;
+};
 
 int (util_get_LSB)(uint16_t val, uint8_t *lsb);
 int (util_get_MSB)(uint16_t val, uint8_t *msb);
@@ -58,6 +58,6 @@ int (ut_sys_inb)(int port, uint8_t *value);
 int (kbc_subscribe_int)(uint8_t *bit_no);
 int (kbc_unsubscribe_int)();
 void (kbc_ih)();
-void kbd_print_code(bool make, uint8_t size, uint8_t bytes[]);
+enum kbd_key kbd_get_key(bool make, uint8_t size, uint8_t bytes[]);
 
 #endif

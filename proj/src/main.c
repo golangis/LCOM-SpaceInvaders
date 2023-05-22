@@ -50,13 +50,14 @@ int (proj_main_loop)(int argc, char **argv) {
     uint8_t* scan = (uint8_t*) malloc(2);
     bool two_bytes = false;
     bool make;
+    enum kbd_key key = INVALID;
 
     // video
     video_init(0x115);
 
     init_game();
 
-    while(data != KBD_ESC_KEY) {
+    while(key != kbd_esc) {
         if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
             printf("driver_receive failed with: %d", r);
             continue;
@@ -73,12 +74,12 @@ int (proj_main_loop)(int argc, char **argv) {
                             scan[1] = data;
                             two_bytes = false;
                             make = data & BIT(7);
-                            //kbd_print_code(!make, 2, scan);
+                            key = kbd_get_key(!make, 2, scan);
                         } else {
                             scan[0] = data;
                             make = data & BIT(7);
                             if (data == KBD_TWO_BYTE) two_bytes = true;
-                            //else kbd_print_code(!make, 1, scan);
+                            else key = kbd_get_key(!make, 1, scan);
                         }
                     } else if (msg.m_notify.interrupts & ipc_mouse) {}
                     break;

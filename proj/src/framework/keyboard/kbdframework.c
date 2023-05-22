@@ -40,8 +40,8 @@ void (kbc_ih)(){
     }
 }
 
-kbd_key translate(uint8_t value, bool make){
-  kbd_key print = INVALID;
+enum kbd_key translate(uint8_t value, bool make){
+  enum kbd_key print = INVALID;
   switch(value){
     case SPACE_BREAK:
       print = kbd_space; 
@@ -67,9 +67,10 @@ kbd_key translate(uint8_t value, bool make){
   return print;
 }
 
-void kbd_print_code(bool make, uint8_t size, uint8_t bytes[]){
-  if(size == 1) translate(bytes[0], make);  
-  else if (size == 2) translate(bytes[1], make);
+enum kbd_key kbd_get_key(bool make, uint8_t size, uint8_t bytes[]){
+  if(size == 1) return translate(bytes[0], make);  
+  else if (size == 2) return translate(bytes[1], make);
+  else return INVALID;
 }
 
 /*
