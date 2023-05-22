@@ -3,8 +3,10 @@
 Player* (initPlayer)(){
   Player* ship = (Player*) malloc (sizeof(Player));
 
-  ship->x = 400;
-  ship->y = 480;
+  ship->x_min = 400;
+  ship->y_min = 480;
+  ship->x_max = 440;
+  ship->y_max = 520;
   ship->lives = 3;
   ship->score = 0;
 
@@ -12,7 +14,8 @@ Player* (initPlayer)(){
 }
 
 void (movePlayer)(Player* ship, enum direction dir) {
-  ship->x += dir == left ? -5 : 5;
+  ship->x_min += dir == left ? -5 : 5;
+  ship->x_max += dir == left ? -5 : 5;
 }
 
 void (fire)(Player* ship) {
@@ -26,7 +29,7 @@ void (looseLife)(Player* ship) {
 }
 
 void (drawPlayer)(Player* ship) {
-  video_draw_rectangle(ship->x, ship->y, 20, 20, 0xfffffff);
+  video_draw_xpm(ship->x_min, ship->y_min, rocket_xpm);
 }
 
 void (incrementScore)(Player* ship, unsigned int n) {

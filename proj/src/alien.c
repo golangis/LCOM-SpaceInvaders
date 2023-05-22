@@ -1,10 +1,22 @@
 #include "alien.h"
 
+void (initAlien)(Alien* alien, unsigned int id, unsigned int x_min, unsigned int y_min) {
+  alien->id = id;
+  alien->x_min = x_min;
+  alien->y_min = y_min;
+  alien->x_max = x_min + 10;
+  alien->y_max = y_min + 10;
+  alien->isAlive = true;
+}
+
 AlienGroup* (initAliens)(){
-  Alien* first = (Alien*) malloc (sizeof(Alien) * 30);
+  Alien* array = (Alien*) malloc (sizeof(Alien) * 30);
   AlienGroup* group = (AlienGroup*) malloc (sizeof(AlienGroup));
   group->size = 30;
-  group->first = first;
+
+  //for (size_t i = 0; i < 30; i++) 
+
+  group->first = array;
 
   return group;
 }
@@ -12,13 +24,22 @@ AlienGroup* (initAliens)(){
 void (moveAliens)(AlienGroup* group, enum direction dir, unsigned int speed) {
   switch (dir) {
     case right:
-      for (size_t i = 0; i < group->size; i++) group->first[i].x += speed;
+      for (size_t i = 0; i < group->size; i++) {
+        group->first[i].x_min += speed;
+        group->first[i].x_max += speed;
+      }
       break;
     case left:
-      for (size_t i = 0; i < group->size; i++) group->first[i].x -= speed;
+      for (size_t i = 0; i < group->size; i++) {
+        group->first[i].x_min -= speed;
+        group->first[i].x_max -= speed;
+      }
       break;
     case down:
-      for (size_t i = 0; i < group->size; i++) group->first[i].y += speed;
+      for (size_t i = 0; i < group->size; i++) {
+        group->first[i].y_min += speed;
+        group->first[i].y_max += speed;
+      }
       break;
     default: break;
   }
@@ -42,5 +63,5 @@ void (dieAlien)(AlienGroup* group, Alien* alien){
 }
 
 void (drawAlien)(Alien* alien) {
-  video_draw_rectangle(alien->x, alien->y, 10, 10, 0xffffff);
+  video_draw_rectangle(alien->x_min, alien->y_min, 10, 10, 0xffffff);
 }

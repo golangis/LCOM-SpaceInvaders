@@ -20,8 +20,11 @@ Shield* shield1;
 Shield* shield2;
 Shield* shield3;
 AlienGroup* aliens;
+Shot* shots;
+unsigned int shot_count;
 
 void (init_game)();
 void (draw)();
+void (check_collisions)();
 
 #endif

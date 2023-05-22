@@ -4,10 +4,13 @@
 #include "direction.h"
 
 #include "framework/video/video.h"
+#include "xpm/rocket.xpm"
 
 typedef struct {
-    unsigned int x;
-    unsigned int y;
+    unsigned int x_min;
+    unsigned int y_min;
+    unsigned int x_max;
+    unsigned int y_max;
     unsigned int lives;
     unsigned int score;
 } Player;

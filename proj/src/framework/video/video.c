@@ -71,22 +71,25 @@ int (video_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t heig
     for (uint16_t i = 0; i < height; i++) {
         if (video_draw_hline(x, y+i, width, color) != 0) return 1;
     }
-    //memcpy(video_mem, buffer, h_res*v_res*bytes_per_pixel);
-    //sleep(2);
+
     return 0;
 }
 
 int (video_draw_xpm)(uint16_t x, uint16_t y, xpm_map_t xpm) {
     xpm_image_t img;
-    uint8_t* map = xpm_load(xpm, XPM_INDEXED, &img);
+    uint8_t* map = xpm_load(xpm, XPM_8_8_8, &img);
 
     for (uint8_t i = 0; i < img.width; i++) {
         for (uint8_t j = 0; j < img.height; j++) {
-            video_draw_pixel(x + i, y + j, *(map + ((i + (j * img.width)) * bytes_per_pixel)));
+            uint32_t color = 0;
+
+            for(size_t k = 0; k < 3; k++){
+                color += ((uint32_t) map[j*img.width*3 + i*3 + k]) << (k*8);
+            }
+
+            video_draw_pixel(x + i, y + j, color);
         }
     }
 
-    //memcpy(video_mem, buffer, h_res*v_res*bytes_per_pixel);
-    //sleep(3);
     return 0;
 }

@@ -6,10 +6,11 @@ void (init_game)() {
   shield2 = initShield(350);
   shield3 = initShield(600);
   aliens = initAliens();
+  shot_count = 0;
 }
 
 void (draw)() {
-  memset(video_mem, 0, h_res*v_res*bytes_per_pixel);
+  memset(video_buffer, 0, h_res*v_res*bytes_per_pixel);
 
   drawShield(shield1);
   drawShield(shield2);
@@ -18,4 +19,10 @@ void (draw)() {
   drawPlayer(ship);
 
   memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
+}
+
+void (check_collisions)() {
+  /*for (size_t i = 0; i < shot_count; i++) {
+    Shot shot = shots[i];
+  }*/
 }
