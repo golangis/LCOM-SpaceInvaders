@@ -21,6 +21,14 @@ void (draw)() {
   memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
 }
 
+void (updateShots)() {
+  for (size_t i = 0; i < ship->shots_no; i++) {
+    moveShot(&(ship->shots[i]));
+    if (ship->shots[i].y <= 0) deletePlayerShot(ship, i);
+  }
+  // update alien shots
+}
+
 void (check_collisions)() {
   /*for (size_t i = 0; i < shot_count; i++) {
     Shot shot = shots[i];

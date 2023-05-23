@@ -14,7 +14,7 @@ typedef struct{
     enum shot_source source;
 } Shot;
 
-Shot* (initShot)(unsigned int x, unsigned int y, enum shot_source source);
+Shot (initShot)(unsigned int x, unsigned int y, enum shot_source source);
 void (moveShot)(Shot* shot);
 void (drawShot)(Shot* shot);
 

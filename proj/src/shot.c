@@ -1,10 +1,10 @@
 #include "shot.h"
 
-Shot* (initShot)(unsigned int x, unsigned int y, enum shot_source source) {
-  Shot* shot = (Shot*) malloc (sizeof(shot));
-  shot->x = x;
-  shot->y = y;
-  shot->source = source;
+Shot (initShot)(unsigned int x, unsigned int y, enum shot_source source) {
+  Shot shot;
+  shot.x = x;
+  shot.y = y;
+  shot.source = source;
 
   return shot;
 }
@@ -12,10 +12,10 @@ Shot* (initShot)(unsigned int x, unsigned int y, enum shot_source source) {
 void (moveShot)(Shot* shot) {
   switch (shot->source) {
     case alien:
-      shot->y--;
+      shot->y += 2;
       break;
     case player:
-      shot->y++;
+      shot->y -= 2;
       break;
   }
 }

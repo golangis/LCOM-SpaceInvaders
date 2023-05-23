@@ -67,7 +67,10 @@ int (proj_main_loop)(int argc, char **argv) {
                 case HARDWARE:
                     if (msg.m_notify.interrupts & ipc_timer) {
                         timer_interrupt_handler();
-                        if (timer_counter % 2 == 0) draw();
+                        if (timer_counter % 2 == 0) {
+                            draw();
+                            updateShots();
+                        }
                         if (timer_counter == UINT_MAX) timer_counter = 0;
                     }
                     if (msg.m_notify.interrupts & ipc_keyboard) {
@@ -80,6 +83,7 @@ int (proj_main_loop)(int argc, char **argv) {
                             switch (key) {
                                 case kbd_left: movePlayer(ship, left); key = INVALID; break;
                                 case kbd_right: movePlayer(ship, right); key = INVALID; break;
+                                case kbd_up: case kbd_space: fire(ship); key = INVALID; break;
                                 default: break;
                             }
                         } else {
@@ -91,6 +95,7 @@ int (proj_main_loop)(int argc, char **argv) {
                                 switch (key) {
                                     case kbd_left: movePlayer(ship, left); key = INVALID; break;
                                     case kbd_right: movePlayer(ship, right); key = INVALID; break;
+                                    case kbd_up: case kbd_space: fire(ship); key = INVALID; break;
                                     default: break;
                                 }
                             }
