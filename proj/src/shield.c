@@ -1,10 +1,12 @@
 #include "shield.h"
 
-Shield* (initShield)(unsigned int x) {
+Shield* (initShield)(unsigned int x_min) {
   Shield* shield = (Shield*) malloc (sizeof(Shield));
   
-  shield->x = x;
-  shield->y = 450;
+  shield->x_min = x_min;
+  shield->x_max = x_min + 100;
+  shield->y_min = 400;
+  shield->y_max = 430;
   shield->lives = 15;
   shield->thickness = 3;
 
@@ -12,7 +14,7 @@ Shield* (initShield)(unsigned int x) {
 }
 
 void (drawShield)(Shield* shield) {
-  if (shield->lives > 0) video_draw_rectangle(shield->x, 400, 100, (shield->thickness) * 10, 0xffffff);
+  if (shield->lives > 0) video_draw_rectangle(shield->x_min, 400, 100, (shield->thickness) * 10, 0xffffff);
 }
 
 void (damage)(Shield* shield) {
