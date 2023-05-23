@@ -22,29 +22,24 @@ void (draw)() {
 }
 
 void (update)() {
-  for (size_t i = 0; i < ship->shots_no; i++) {
+  for (int i = 0; i < ship->shots_no; i++) {
     moveShot(&(ship->shots[i]));
-    if (ship->shots[i].y == 0) {
+    if ((ship->shots[i].y) <= 0) {
       deletePlayerShot(ship, i);
       return;
-    }
-    else if (ship->shots[i].y == shield1->y_max && ship->shots[i].x >= shield1->x_min && ship->shots[i].x <= shield1->x_max) {
-      printf("shield1\n");
+    } else if (ship->shots[i].y <= shield1->y_max && ship->shots[i].x >= shield1->x_min && ship->shots[i].x <= shield1->x_max) {
       deletePlayerShot(ship, i);
       damage(shield1);
-      //return false;
-    } else if (ship->shots[i].y == shield2->y_max && ship->shots[i].x >= shield2->x_min && ship->shots[i].x <= shield2->x_max) {
-      printf("shield2\n");
+      return;
+    } else if (ship->shots[i].y <= shield2->y_max && ship->shots[i].x >= shield2->x_min && ship->shots[i].x <= shield2->x_max) {
       deletePlayerShot(ship, i);
       damage(shield2);
-      //return false;
-    } else if (ship->shots[i].y == shield3->y_max && ship->shots[i].x >= shield3->x_min && ship->shots[i].x <= shield3->x_max) {
-      printf("shield3\n");
+      return;
+    } else if (ship->shots[i].y <= shield3->y_max && ship->shots[i].x >= shield3->x_min && ship->shots[i].x <= shield3->x_max) {
       deletePlayerShot(ship, i);
       damage(shield3);
-      //return false;
+      return;
     }
   }
   // update alien shots
-  //return true;
 }

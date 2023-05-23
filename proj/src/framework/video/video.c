@@ -7,8 +7,8 @@ void* (video_init)(uint16_t mode) {
     if (vbe_get_mode_info(mode, &info) != 0) return NULL;
 
     struct minix_mem_range mr;
-    unsigned int vram_base = info.PhysBasePtr;
-    unsigned int vram_size = info.XResolution * info.YResolution * ((info.BitsPerPixel + 7)/8);
+    int vram_base = info.PhysBasePtr;
+    int vram_size = info.XResolution * info.YResolution * ((info.BitsPerPixel + 7)/8);
     int r;
 
     mr.mr_base = (phys_bytes) vram_base;	
@@ -49,33 +49,25 @@ void* (video_init)(uint16_t mode) {
     return 0;
 }
 
-int (video_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
+void (video_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
+    if (x < 0 || x >= h_res || y < 0 || y >= v_res) return;
     uint8_t* pixel_mem = (uint8_t*)video_buffer + (x * bytes_per_pixel) + (y * h_res * bytes_per_pixel);
 
     for (uint8_t i = 0; i < bytes_per_pixel; i++) {
         *(pixel_mem + i) = (uint8_t) (color & 0xff);
         color >>= 8;
     }
-
-    return 0;
 }
 
-int (video_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
-    for (uint16_t i = 0; i < len; i++) {
-        if (video_draw_pixel(x+i, y, color) != 0) return 1;
-    }
-    return 0;
+void (video_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
+    for (uint16_t i = 0; i < len; i++) video_draw_pixel(x+i, y, color);
 }
 
-int (video_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color) {
-    for (uint16_t i = 0; i < height; i++) {
-        if (video_draw_hline(x, y+i, width, color) != 0) return 1;
-    }
-
-    return 0;
+void (video_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color) {
+    for (uint16_t i = 0; i < height; i++) video_draw_hline(x, y+i, width, color);
 }
 
-int (video_draw_xpm)(uint16_t x, uint16_t y, xpm_map_t xpm) {
+void (video_draw_xpm)(uint16_t x, uint16_t y, xpm_map_t xpm) {
     xpm_image_t img;
     uint8_t* map = xpm_load(xpm, XPM_8_8_8, &img);
 
@@ -83,13 +75,11 @@ int (video_draw_xpm)(uint16_t x, uint16_t y, xpm_map_t xpm) {
         for (uint8_t j = 0; j < img.height; j++) {
             uint32_t color = 0;
 
-            for(size_t k = 0; k < 3; k++){
+            for(int k = 0; k < 3; k++){
                 color += ((uint32_t) map[j*img.width*3 + i*3 + k]) << (k*8);
             }
 
             video_draw_pixel(x + i, y + j, color);
         }
     }
-
-    return 0;
 }

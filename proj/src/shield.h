@@ -4,16 +4,16 @@
 #include "framework/video/video.h"
 
 typedef struct {
-    unsigned int x_min;
-    unsigned int x_max;
-    unsigned int y_min;
-    unsigned int y_max;
-    unsigned int y;
-    unsigned int thickness;
-    unsigned int lives;
+    int x_min;
+    int x_max;
+    int y_min;
+    int y_max;
+    int y;
+    int thickness;
+    int lives;
 } Shield;
 
-Shield* (initShield)(unsigned int x_min);
+Shield* (initShield)(int x_min);
 void (drawShield)(Shield* shield);
 void (damage)(Shield* shield);
 

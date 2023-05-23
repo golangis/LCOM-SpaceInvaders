@@ -8,13 +8,13 @@ enum shot_source {
     player
 };
 
-typedef struct{
-    unsigned int x;
-    unsigned int y;
+typedef struct {
+    int x;
+    int y;
     enum shot_source source;
 } Shot;
 
-Shot (initShot)(unsigned int x, unsigned int y, enum shot_source source);
+Shot (initShot)(int x, int y, enum shot_source source);
 void (moveShot)(Shot* shot);
 void (drawShot)(Shot* shot);
 

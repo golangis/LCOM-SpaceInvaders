@@ -8,22 +8,22 @@
 #include "xpm/rocket.xpm"
 
 typedef struct {
-    unsigned int x_min;
-    unsigned int y_min;
-    unsigned int x_max;
-    unsigned int y_max;
-    unsigned int lives;
-    unsigned int score;
+    int x_min;
+    int y_min;
+    int x_max;
+    int y_max;
+    int lives;
+    int score;
     Shot* shots;
-    unsigned int shots_no;
+    int shots_no;
 } Player;
 
 Player* (initPlayer)();
 void (movePlayer)(Player* ship, enum direction dir);
 void (fire)(Player* ship);
 void (looseLife)(Player* ship);
-void (deletePlayerShot)(Player* ship, unsigned int i);
+void (deletePlayerShot)(Player* ship, int i);
 void (drawPlayer)(Player* ship);
-void (incrementScore)(Player* ship, unsigned int n);
+void (incrementScore)(Player* ship, int n);
 
 #endif

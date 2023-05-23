@@ -1,6 +1,6 @@
 #include "shield.h"
 
-Shield* (initShield)(unsigned int x_min) {
+Shield* (initShield)(int x_min) {
   Shield* shield = (Shield*) malloc (sizeof(Shield));
   
   shield->x_min = x_min;

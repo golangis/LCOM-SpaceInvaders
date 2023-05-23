@@ -24,7 +24,7 @@ extern Shield* shield2;
 extern Shield* shield3;
 
 // Timer
-extern unsigned int timer_counter;
+extern int timer_counter;
 
 // Keyboard
 extern int data;
@@ -40,6 +40,7 @@ int (proj_main_loop)(int argc, char **argv) {
 
     // timer
     timer_counter = 0;
+    two_secs = 0;
     uint8_t timer_hook_bit = TIMER_HOOK_BIT;
     if (subscribe_timer_int(&timer_hook_bit) != 0) return 1;
 
@@ -71,7 +72,8 @@ int (proj_main_loop)(int argc, char **argv) {
                             draw();
                             update();
                         }
-                        if (timer_counter == UINT_MAX) timer_counter = 0;
+                        if (timer_counter == INT_MAX) timer_counter = 0;
+                        if (two_secs == INT_MAX) two_secs = 0;
                     }
                     if (msg.m_notify.interrupts & ipc_keyboard) {
                         kbc_ih();
@@ -83,7 +85,13 @@ int (proj_main_loop)(int argc, char **argv) {
                             switch (key) {
                                 case kbd_left: movePlayer(ship, left); key = INVALID; break;
                                 case kbd_right: movePlayer(ship, right); key = INVALID; break;
-                                case kbd_up: case kbd_space: fire(ship); key = INVALID; break;
+                                case kbd_up: case kbd_space: 
+                                    if (two_secs >= 120) {
+                                        two_secs = 0;
+                                        fire(ship);
+                                        key = INVALID;
+                                    }
+                                    break;
                                 default: break;
                             }
                         } else {
@@ -95,7 +103,13 @@ int (proj_main_loop)(int argc, char **argv) {
                                 switch (key) {
                                     case kbd_left: movePlayer(ship, left); key = INVALID; break;
                                     case kbd_right: movePlayer(ship, right); key = INVALID; break;
-                                    case kbd_up: case kbd_space: fire(ship); key = INVALID; break;
+                                    case kbd_up: case kbd_space:
+                                        if (two_secs >= 120) {
+                                            two_secs = 0;
+                                            fire(ship);
+                                            key = INVALID;
+                                        }
+                                    break;
                                     default: break;
                                 }
                             }

@@ -8,7 +8,8 @@
 
 #include "i8254.h"
 
-unsigned int timer_counter;
+int timer_counter;
+int two_secs;
 int hook_id;
 
 int (subscribe_timer_int)(uint8_t *bit_no);

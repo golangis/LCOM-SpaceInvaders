@@ -1,6 +1,6 @@
 #include "shot.h"
 
-Shot (initShot)(unsigned int x, unsigned int y, enum shot_source source) {
+Shot (initShot)(int x, int y, enum shot_source source) {
   Shot shot;
   shot.x = x;
   shot.y = y;

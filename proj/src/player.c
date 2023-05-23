@@ -21,7 +21,7 @@ void (movePlayer)(Player* ship, enum direction dir) {
 
 void (fire)(Player* ship) {
   Shot* array = (Shot*) malloc (sizeof(Shot) * (ship->shots_no + 1));
-  for (size_t i = 0; i < ship->shots_no; i++) array[i] = ship->shots[i];
+  for (int i = 0; i < ship->shots_no; i++) array[i] = ship->shots[i];
   Shot new_shot = initShot((ship->x_min + ship->x_max)/2, (ship->y_min - 1), player);
   ship->shots_no = ship->shots_no + 1;
   array[ship->shots_no - 1] = new_shot;
@@ -32,19 +32,22 @@ void (looseLife)(Player* ship) {
   ship->lives--;
 }
 
-void (deletePlayerShot)(Player* ship, unsigned int i) {
-  Shot* array = (Shot*) malloc (sizeof(Shot) * (ship->shots_no - 1));
-  for (size_t x = 0; x < i; x++) array[x] = ship->shots[x];
-  for (size_t x = i + 1; x < ship->shots_no; x++) array[x-1] = ship->shots[x];
+void (deletePlayerShot)(Player* ship, int i) {
+  /*Shot* array = (Shot*) malloc (sizeof(Shot) * (ship->shots_no - 1));
+  for (int x = 0; x < i; x++) array[x] = ship->shots[x];
+  for (int x = i + 1; x < ship->shots_no; x++) array[x-1] = ship->shots[x];
   ship->shots_no = ship->shots_no - 1;
-  ship->shots = array;
+  ship->shots = array;*/
+
+  for (int x = i; x < ship->shots_no; x++) ship->shots[x] = ship->shots[i+1];
+  ship->shots_no--;
 }
 
 void (drawPlayer)(Player* ship) {
-  for (size_t i = 0; i < ship->shots_no; i++) drawShot(&(ship->shots[i]));
+  for (int i = 0; i < ship->shots_no; i++) drawShot(&(ship->shots[i]));
   video_draw_xpm(ship->x_min, ship->y_min, rocket_xpm);
 }
 
-void (incrementScore)(Player* ship, unsigned int n) {
+void (incrementScore)(Player* ship, int n) {
   ship->score = ship->score + n;
 }
