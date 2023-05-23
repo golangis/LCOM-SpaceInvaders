@@ -2,7 +2,10 @@
 
 Player* (initPlayer)(){
   Player* ship = (Player*) malloc (sizeof(Player));
-
+  /*
+  width = 40px;
+  height = 40px;
+  */
   ship->x_min = 400;
   ship->y_min = 480;
   ship->x_max = 440;

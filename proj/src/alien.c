@@ -1,12 +1,15 @@
 #include "alien.h"
 
+/*
+reduzir tamanho aliens!
+*/
+
 void (initAlien)(Alien* alien, int id, int x_min, int y_min) {
   alien->id = id;
   alien->x_min = x_min;
   alien->y_min = y_min;
-  alien->x_max = x_min + 10;
-  alien->y_max = y_min + 10;
-  alien->isAlive = true;
+  alien->x_max = x_min + 40;
+  alien->y_max = y_min + 32;
 }
 
 AlienGroup* (initAliens)(){
@@ -63,5 +66,10 @@ void (dieAlien)(AlienGroup* group, Alien* alien){
 }
 
 void (drawAlien)(Alien* alien) {
-  video_draw_rectangle(alien->x_min, alien->y_min, 10, 10, 0xffffff);
+  int id = alien->id;
+  if (id >= 0 && id < 10) video_draw_xpm(alien->x_min, alien->y_min, alien1_xpm);
+  else if (id >= 10 && id < 20) video_draw_xpm(alien->x_min, alien->y_min, alien2_xpm);
+  else if (id >= 20 && id < 30) video_draw_xpm(alien->x_min, alien->y_min, alien3_xpm);
+  else if (id >= 30 && id < 40) video_draw_xpm(alien->x_min, alien->y_min, alien4_xpm);
+  else if (id >= 40 && id < 50) video_draw_xpm(alien->x_min, alien->y_min, alien5_xpm);
 }

@@ -6,6 +6,8 @@
 
 #include "direction.h"
 
+#include "xpm/aliens.xpm"
+
 #include "framework/video/video.h"
 
 typedef struct {
@@ -14,7 +16,6 @@ typedef struct {
     int y_min;
     int x_max;
     int y_max;
-    bool isAlive;
 } Alien;
 
 typedef struct {
