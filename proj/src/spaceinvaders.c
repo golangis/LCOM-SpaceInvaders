@@ -21,36 +21,30 @@ void (draw)() {
   memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
 }
 
-bool (update)() {
+void (update)() {
   for (size_t i = 0; i < ship->shots_no; i++) {
     moveShot(&(ship->shots[i]));
-    if (ship->shots[i].y <= 0) {
-      printf("out of screen\n");
+    if (ship->shots[i].y == 0) {
       deletePlayerShot(ship, i);
-      return false;
-    } else if (ship->shots[i].y == shield1->y_max && ship->shots[i].x >= shield1->x_min && ship->shots[i].x <= shield1->x_max) {
+      return;
+    }
+    else if (ship->shots[i].y == shield1->y_max && ship->shots[i].x >= shield1->x_min && ship->shots[i].x <= shield1->x_max) {
       printf("shield1\n");
       deletePlayerShot(ship, i);
       damage(shield1);
-      return false;
+      //return false;
     } else if (ship->shots[i].y == shield2->y_max && ship->shots[i].x >= shield2->x_min && ship->shots[i].x <= shield2->x_max) {
       printf("shield2\n");
       deletePlayerShot(ship, i);
       damage(shield2);
-      return false;
+      //return false;
     } else if (ship->shots[i].y == shield3->y_max && ship->shots[i].x >= shield3->x_min && ship->shots[i].x <= shield3->x_max) {
       printf("shield3\n");
       deletePlayerShot(ship, i);
       damage(shield3);
-      return false;
+      //return false;
     }
   }
   // update alien shots
-  return true;
-}
-
-void (check_collisions)() {
-  /*for (size_t i = 0; i < shot_count; i++) {
-    Shot shot = shots[i];
-  }*/
+  //return true;
 }

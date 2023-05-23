@@ -69,7 +69,7 @@ int (proj_main_loop)(int argc, char **argv) {
                         timer_interrupt_handler();
                         if (timer_counter % 2 == 0) {
                             draw();
-                            while (!update());
+                            update();
                         }
                         if (timer_counter == UINT_MAX) timer_counter = 0;
                     }

@@ -25,7 +25,6 @@ unsigned int shot_count;
 
 void (init_game)();
 void (draw)();
-bool (update)();
-void (check_collisions)();
+void (update)();
 
 #endif
