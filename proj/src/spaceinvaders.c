@@ -47,18 +47,18 @@ void (update)() {
   }
   for (int i = 0; i < ship->shots_no; i++) {
     moveShot(&(ship->shots[i]));
-    if ((ship->shots[i].y) <= 0) {
+    if ((ship->shots[i].y_min) <= 0) {
       deletePlayerShot(ship, i);
       return;
-    } else if (shield1->lives > 0 && ship->shots[i].y <= shield1->y_max && ship->shots[i].x >= shield1->x_min && ship->shots[i].x <= shield1->x_max) {
+    } else if (shield1->lives > 0 && ship->shots[i].y_min <= shield1->y_max && ship->shots[i].x_min >= shield1->x_min && ship->shots[i].x_max <= shield1->x_max) {
       deletePlayerShot(ship, i);
       damage(shield1, player);
       return;
-    } else if (shield2->lives > 0 && ship->shots[i].y <= shield2->y_max && ship->shots[i].x >= shield2->x_min && ship->shots[i].x <= shield2->x_max) {
+    } else if (shield2->lives > 0 && ship->shots[i].y_min <= shield2->y_max && ship->shots[i].x_min >= shield2->x_min && ship->shots[i].x_max <= shield2->x_max) {
       deletePlayerShot(ship, i);
       damage(shield2, player);
       return;
-    } else if (shield3->lives > 0 && ship->shots[i].y <= shield3->y_max && ship->shots[i].x >= shield3->x_min && ship->shots[i].x <= shield3->x_max) {
+    } else if (shield3->lives > 0 && ship->shots[i].y_min <= shield3->y_max && ship->shots[i].x_min >= shield3->x_min && ship->shots[i].x_max <= shield3->x_max) {
       deletePlayerShot(ship, i);
       damage(shield3, player);
       return;

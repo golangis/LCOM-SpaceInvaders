@@ -3,14 +3,18 @@
 
 #include "framework/video/video.h"
 
+#include "xpm/shot.xpm"
+
 enum shot_source {
     alien,
     player
 };
 
 typedef struct {
-    int x;
-    int y;
+    int x_min;
+    int x_max;
+    int y_min;
+    int y_max;
     enum shot_source source;
 } Shot;
 

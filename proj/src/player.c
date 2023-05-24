@@ -36,7 +36,7 @@ bool (canPlayerMove)(Player* ship, enum direction dir) {
 void (fire)(Player* ship) {
   Shot* array = (Shot*) malloc (sizeof(Shot) * (ship->shots_no + 1));
   for (int i = 0; i < ship->shots_no; i++) array[i] = ship->shots[i];
-  Shot new_shot = initShot((ship->x_min + ship->x_max)/2, (ship->y_min - 1), player);
+  Shot new_shot = initShot(ship->x_min + 10, (ship->y_min - 60), player);
   ship->shots_no = ship->shots_no + 1;
   array[ship->shots_no - 1] = new_shot;
   ship->shots = array;
