@@ -2,9 +2,9 @@
 
 void (init_game)() {
   ship = initPlayer();
-  shield1 = initShield(100);
-  shield2 = initShield(350);
-  shield3 = initShield(600);
+  shield1 = initShield(100, 1);
+  shield2 = initShield(350, 2);
+  shield3 = initShield(600, 3);
   aliens = initAliens();
   last_alien_mov = right;
   updates = 0;

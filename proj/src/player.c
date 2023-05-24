@@ -7,9 +7,9 @@ Player* (initPlayer)(){
   height = 40px;
   */
   ship->x_min = 400;
-  ship->y_min = 480;
   ship->x_max = 440;
-  ship->y_max = 520;
+  ship->y_min = 540;
+  ship->y_max = 580;
   ship->lives = 3;
   ship->score = 0;
   ship->shots_no = 0;
