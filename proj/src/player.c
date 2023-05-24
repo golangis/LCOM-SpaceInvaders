@@ -19,8 +19,8 @@ Player* (initPlayer)(){
 
 void (movePlayer)(Player* ship, enum direction dir) {
   if (canPlayerMove(ship, dir)) {
-    ship->x_min += dir == left ? -5 : 5;
-    ship->x_max += dir == left ? -5 : 5;
+    ship->x_min += dir == left ? -10 : 10;
+    ship->x_max += dir == left ? -10 : 10;
   }
 }
 
@@ -47,12 +47,6 @@ void (looseLife)(Player* ship) {
 }
 
 void (deletePlayerShot)(Player* ship, int i) {
-  /*Shot* array = (Shot*) malloc (sizeof(Shot) * (ship->shots_no - 1));
-  for (int x = 0; x < i; x++) array[x] = ship->shots[x];
-  for (int x = i + 1; x < ship->shots_no; x++) array[x-1] = ship->shots[x];
-  ship->shots_no = ship->shots_no - 1;
-  ship->shots = array;*/
-
   for (int x = i; x < ship->shots_no; x++) ship->shots[x] = ship->shots[i+1];
   ship->shots_no--;
 }

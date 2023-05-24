@@ -12,10 +12,10 @@ Shot (initShot)(int x, int y, enum shot_source source) {
 void (moveShot)(Shot* shot) {
   switch (shot->source) {
     case alien:
-      shot->y += 2;
+      shot->y += 10;
       break;
     case player:
-      shot->y -= 2;
+      shot->y -= 10;
       break;
   }
 }
