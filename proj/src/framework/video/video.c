@@ -2,6 +2,17 @@
 
 #include "video.h"
 
+#include "xpm/zero.xpm"
+#include "xpm/um.xpm"
+#include "xpm/dois.xpm"
+#include "xpm/tres.xpm"
+#include "xpm/quatro.xpm"
+#include "xpm/cinco.xpm"
+#include "xpm/seis.xpm"
+#include "xpm/sete.xpm"
+#include "xpm/oito.xpm"
+#include "xpm/nove.xpm"
+
 void* (video_init)(uint16_t mode) {
     vbe_mode_info_t info;
     if (vbe_get_mode_info(mode, &info) != 0) return NULL;
@@ -80,6 +91,120 @@ void (video_draw_xpm)(uint16_t x, uint16_t y, xpm_map_t xpm) {
             }
 
             video_draw_pixel(x + i, y + j, color);
+        }
+    }
+}
+
+void (video_draw_score)(uint16_t x, uint16_t y, int score){
+    if(score < 10){
+        switch(score){
+            case 0:
+                video_draw_xpm(x, y, zero_xpm);
+                break;
+            case 1:
+                video_draw_xpm(x, y, um_xpm);
+                break;
+            case 2:
+                video_draw_xpm(x, y, dois_xpm);
+                break;
+            case 3:
+                video_draw_xpm(x, y, tres_xpm);
+                break;
+            case 4:
+                video_draw_xpm(x, y, quatro_xpm);
+                break;            
+            case 5:
+                video_draw_xpm(x, y, cinco_xpm);
+                break;    
+            case 6:
+                video_draw_xpm(x, y, seis_xpm);
+                break;
+            case 7:
+                video_draw_xpm(x, y, sete_xpm);
+                break;        
+            case 8:
+                video_draw_xpm(x, y, oito_xpm);
+                break;    
+            case 9:
+                video_draw_xpm(x, y, nove_xpm);
+                break;
+            default:
+                video_draw_xpm(x, y, zero_xpm);
+                break;    
+        }            
+    }
+    else if(score < 100){
+        int second_half = score % 10;
+        int first_half = score / 10;
+        switch(first_half){
+            case 0:
+                video_draw_xpm(x, y, zero_xpm);
+                break;
+            case 1:
+                video_draw_xpm(x, y, um_xpm);
+                break;
+            case 2:
+                video_draw_xpm(x, y, dois_xpm);
+                break;
+            case 3:
+                video_draw_xpm(x, y, tres_xpm);
+                break;
+            case 4:
+                video_draw_xpm(x, y, quatro_xpm);
+                break;            
+            case 5:
+                video_draw_xpm(x, y, cinco_xpm);
+                break;    
+            case 6:
+                video_draw_xpm(x, y, seis_xpm);
+                break;
+            case 7:
+                video_draw_xpm(x, y, sete_xpm);
+                break;        
+            case 8:
+                video_draw_xpm(x, y, oito_xpm);
+                break;    
+            case 9:
+                video_draw_xpm(x, y, nove_xpm);
+                break;
+            default:
+                video_draw_xpm(x, y, zero_xpm);
+                break;    
+        }
+        switch(second_half){
+            case 0:
+                video_draw_xpm(x + 17, y, zero_xpm);
+                break;
+            case 1:
+                video_draw_xpm(x + 17, y, um_xpm);
+                break;
+            case 2:
+                video_draw_xpm(x + 17, y, dois_xpm);
+                break;
+            case 3:
+                video_draw_xpm(x + 17, y, tres_xpm);
+                break;
+            case 4:
+                video_draw_xpm(x + 17, y, quatro_xpm);
+                break;            
+            case 5:
+                video_draw_xpm(x + 17, y, cinco_xpm);
+                break;    
+            case 6:
+                video_draw_xpm(x + 17, y, seis_xpm);
+                break;
+            case 7:
+                video_draw_xpm(x + 17, y, sete_xpm);
+                break;        
+            case 8:
+                video_draw_xpm(x + 17, y, oito_xpm);
+                break;    
+            case 9:
+                video_draw_xpm(x + 17, y, nove_xpm);
+                break;
+            default:
+                video_draw_xpm(x + 17, y, zero_xpm);
+                break;    
         }
     }
 }

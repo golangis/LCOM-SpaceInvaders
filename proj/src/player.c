@@ -59,3 +59,9 @@ void (drawPlayer)(Player* ship) {
 void (incrementScore)(Player* ship, int n) {
   ship->score = ship->score + n;
 }
+
+void (drawScore)(Player* ship){
+  int score = ship->score;
+  video_draw_xpm(10, 570, score_xpm);
+  video_draw_score(112, 570, score);
+}
