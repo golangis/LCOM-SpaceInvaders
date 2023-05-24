@@ -19,12 +19,12 @@ typedef struct {
 } Alien;
 
 typedef struct {
-    Alien* first;
+    Alien* set;
     int size;
 } AlienGroup;
 
 AlienGroup* (initAliens)();
-void (initAlien)(Alien* alien, int id, int x_min, int y_min);
+Alien (initAlien)(int id, int x_min, int y_min);
 void (moveAliens)(AlienGroup* group, enum direction dir, int speed);
 void (dieAlien)(AlienGroup* group, Alien* alien);
 void (drawAliens)(AlienGroup* group);

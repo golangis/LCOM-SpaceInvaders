@@ -16,6 +16,8 @@ void (draw)() {
   drawShield(shield2);
   drawShield(shield3);
 
+  drawAliens(aliens);
+
   drawPlayer(ship);
 
   memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
@@ -29,15 +31,15 @@ void (update)() {
       return;
     } else if (shield1->lives > 0 && ship->shots[i].y <= shield1->y_max && ship->shots[i].x >= shield1->x_min && ship->shots[i].x <= shield1->x_max) {
       deletePlayerShot(ship, i);
-      damage(shield1);
+      damage(shield1, player);
       return;
     } else if (shield2->lives > 0 && ship->shots[i].y <= shield2->y_max && ship->shots[i].x >= shield2->x_min && ship->shots[i].x <= shield2->x_max) {
       deletePlayerShot(ship, i);
-      damage(shield2);
+      damage(shield2, player);
       return;
     } else if (shield3->lives > 0 && ship->shots[i].y <= shield3->y_max && ship->shots[i].x >= shield3->x_min && ship->shots[i].x <= shield3->x_max) {
       deletePlayerShot(ship, i);
-      damage(shield3);
+      damage(shield3, player);
       return;
     }
   }
