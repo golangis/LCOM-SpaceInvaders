@@ -27,6 +27,8 @@ AlienGroup* (initAliens)();
 Alien (initAlien)(int id, int x_min, int y_min);
 void (moveAliens)(AlienGroup* group, enum direction dir, int speed);
 void (dieAlien)(AlienGroup* group, Alien* alien);
+bool (canAlienMove)(Alien* alien, enum direction dir);
+bool (canAlienGroupMove)(AlienGroup* group, enum direction dir);
 void (drawAliens)(AlienGroup* group);
 void (drawAlien)(Alien* alien);
 

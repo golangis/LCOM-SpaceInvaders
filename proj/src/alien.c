@@ -84,6 +84,20 @@ void (dieAlien)(AlienGroup* group, Alien* alien){
   group->size--;
 }
 
+bool (canAlienMove)(Alien* alien, enum direction dir) {
+  switch (dir) {
+    case down: return true;
+    case left: if (alien->x_min == 1) return false;
+    case right: if (alien->x_max == 798) return false;
+  }
+  return true;
+}
+
+bool (canAlienGroupMove)(AlienGroup* group, enum direction dir) {
+  for (int i = 0; i < group->size; i++) if (!canAlienMove(&(group->set[i]), dir)) return false;
+  return true;
+}
+
 void (drawAlien)(Alien* alien) {
   int id = alien->id;
   if (id >= 0 && id < 10) video_draw_xpm(alien->x_min, alien->y_min, alien1_xpm);
