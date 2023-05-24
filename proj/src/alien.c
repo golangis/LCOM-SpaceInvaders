@@ -92,7 +92,7 @@ bool (canAlienGroupMove)(AlienGroup* group, enum direction dir) {
 }
 
 bool (wasIHit)(Alien* alien, Shot* shot) {
-  return shot->x_min >= alien->x_min && shot->x_max <= alien->x_max && shot->y_min <= alien->y_max;
+  return shot->x_min >= alien->x_min && shot->x_max <= alien->x_max && shot->y_min <= alien->y_max - 40;
 }
 
 int (hitIndex)(AlienGroup* group, Shot* shot) {

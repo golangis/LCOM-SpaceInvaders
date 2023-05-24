@@ -17,9 +17,9 @@ void (draw)() {
   drawShield(shield2);
   drawShield(shield3);
 
-  drawAliens(aliens);
-
   drawPlayer(ship);
+
+  drawAliens(aliens);
 
   memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
 }
@@ -46,6 +46,7 @@ void (update)() {
     updates = 0;
   }
   for (int i = 0; i < ship->shots_no; i++) {
+    int alien_idx;
     moveShot(&(ship->shots[i]));
     if ((ship->shots[i].y_min) <= -50) {
       deletePlayerShot(ship, i);
@@ -62,7 +63,10 @@ void (update)() {
       deletePlayerShot(ship, i);
       damage(shield3, player);
       return;
-    } // check hitting alien
+    } else if ((alien_idx = hitIndex(aliens, &(ship->shots[i]))) != -1) {
+      deletePlayerShot(ship, i);
+      dieAlien(aliens, alien_idx);
+    }
   }
   // update alien shots
   updates++;

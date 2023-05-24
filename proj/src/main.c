@@ -40,7 +40,6 @@ int (proj_main_loop)(int argc, char **argv) {
 
     // timer
     timer_counter = 0;
-    two_secs = 0;
     uint8_t timer_hook_bit = TIMER_HOOK_BIT;
     if (subscribe_timer_int(&timer_hook_bit) != 0) return 1;
 
@@ -58,7 +57,7 @@ int (proj_main_loop)(int argc, char **argv) {
 
     init_game();
 
-    while(key != kbd_esc) {
+    while (key != kbd_esc) {
         if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
             printf("driver_receive failed with: %d", r);            
             continue;
@@ -69,11 +68,10 @@ int (proj_main_loop)(int argc, char **argv) {
                     if (msg.m_notify.interrupts & ipc_timer) {
                         timer_interrupt_handler();
                         if (timer_counter % 2 == 0) {
-                            draw();
                             update();
+                            draw();
                         }
                         if (timer_counter == INT_MAX) timer_counter = 0;
-                        if (two_secs == INT_MAX) two_secs = 0;
                     }
                     if (msg.m_notify.interrupts & ipc_keyboard) {
                         kbc_ih();
@@ -85,13 +83,7 @@ int (proj_main_loop)(int argc, char **argv) {
                             switch (key) {
                                 case kbd_left: movePlayer(ship, left); key = INVALID; break;
                                 case kbd_right: movePlayer(ship, right); key = INVALID; break;
-                                case kbd_up: case kbd_space: 
-                                    if (two_secs >= 120) {
-                                        two_secs = 0;
-                                        fire(ship);
-                                        key = INVALID;
-                                    }
-                                    break;
+                                case kbd_up: case kbd_space: fire(ship); key = INVALID; break;
                                 default: break;
                             }
                         } else {
@@ -103,13 +95,7 @@ int (proj_main_loop)(int argc, char **argv) {
                                 switch (key) {
                                     case kbd_left: movePlayer(ship, left); key = INVALID; break;
                                     case kbd_right: movePlayer(ship, right); key = INVALID; break;
-                                    case kbd_up: case kbd_space:
-                                        if (two_secs >= 120) {
-                                            two_secs = 0;
-                                            fire(ship);
-                                            key = INVALID;
-                                        }
-                                    break;
+                                    case kbd_up: case kbd_space: fire(ship); key = INVALID; break;
                                     default: break;
                                 }
                             }

@@ -11,5 +11,4 @@ int (unsubscribe_timer_int)() {
 
 void (timer_interrupt_handler)() {
   timer_counter++;
-  two_secs++;
 }
