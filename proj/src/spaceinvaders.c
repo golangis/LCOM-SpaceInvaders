@@ -6,7 +6,8 @@ void (init_game)() {
   shield2 = initShield(350);
   shield3 = initShield(600);
   aliens = initAliens();
-  shot_count = 0;
+  last_alien_mov = right;
+  updates = 0;
 }
 
 void (draw)() {
@@ -24,6 +25,26 @@ void (draw)() {
 }
 
 void (update)() {
+  if (updates == 30) {
+    switch (last_alien_mov) {
+      case right:
+        if (!canAlienGroupMove(aliens, right)) {
+          moveAliens(aliens, down);
+          last_alien_mov = down_after_right;
+        } else moveAliens(aliens, right);
+        break;
+      case left:
+        if (!canAlienGroupMove(aliens, left)) {
+          moveAliens(aliens, down);
+          last_alien_mov = down_after_left;
+        } else moveAliens(aliens, left);
+        break;
+      case down_after_right: moveAliens(aliens, left); last_alien_mov = left; break;
+      case down_after_left: moveAliens(aliens, right); last_alien_mov = right; break;
+      default: break;
+    }
+    updates = 0;
+  }
   for (int i = 0; i < ship->shots_no; i++) {
     moveShot(&(ship->shots[i]));
     if ((ship->shots[i].y) <= 0) {
@@ -44,4 +65,5 @@ void (update)() {
     }
   }
   // update alien shots
+  updates++;
 }

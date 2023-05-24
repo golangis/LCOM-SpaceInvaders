@@ -43,24 +43,24 @@ AlienGroup* (initAliens)(){
   return group;
 }
 
-void (moveAliens)(AlienGroup* group, enum direction dir, int speed) {
+void (moveAliens)(AlienGroup* group, enum direction dir) {
   switch (dir) {
     case right:
       for (int i = 0; i < group->size; i++) {
-        group->set[i].x_min += speed;
-        group->set[i].x_max += speed;
+        group->set[i].x_min += 5;
+        group->set[i].x_max += 5;
       }
       break;
     case left:
       for (int i = 0; i < group->size; i++) {
-        group->set[i].x_min -= speed;
-        group->set[i].x_max -= speed;
+        group->set[i].x_min -= 5;
+        group->set[i].x_max -= 5;
       }
       break;
     case down:
       for (int i = 0; i < group->size; i++) {
-        group->set[i].y_min += speed;
-        group->set[i].y_max += speed;
+        group->set[i].y_min += 5;
+        group->set[i].y_max += 5;
       }
       break;
     default: break;
@@ -87,8 +87,9 @@ void (dieAlien)(AlienGroup* group, Alien* alien){
 bool (canAlienMove)(Alien* alien, enum direction dir) {
   switch (dir) {
     case down: return true;
-    case left: if (alien->x_min == 1) return false;
-    case right: if (alien->x_max == 798) return false;
+    case left: if (alien->x_min <= 1) return false;
+    case right: if (alien->x_max >= 798) return false;
+    default: break;
   }
   return true;
 }

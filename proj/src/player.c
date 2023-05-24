@@ -18,8 +18,19 @@ Player* (initPlayer)(){
 }
 
 void (movePlayer)(Player* ship, enum direction dir) {
-  ship->x_min += dir == left ? -5 : 5;
-  ship->x_max += dir == left ? -5 : 5;
+  if (canPlayerMove(ship, dir)) {
+    ship->x_min += dir == left ? -5 : 5;
+    ship->x_max += dir == left ? -5 : 5;
+  }
+}
+
+bool (canPlayerMove)(Player* ship, enum direction dir) {
+  switch (dir) {
+    case left: if (ship->x_min <= 1) return false; break;
+    case right: if (ship->x_max >= 798) return false; break;
+    default: break;
+  }
+  return true;
 }
 
 void (fire)(Player* ship) {

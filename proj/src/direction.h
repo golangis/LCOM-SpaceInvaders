@@ -5,7 +5,9 @@ enum direction {
   right,
   left,
   up,
-  down
+  down,
+  down_after_left,
+  down_after_right
 };
 
 #endif

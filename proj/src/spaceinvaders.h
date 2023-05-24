@@ -4,10 +4,13 @@
 #include <stdlib.h>
 
 #include "framework/video/video.h"
+
 #include "alien.h"
 #include "player.h"
 #include "shield.h"
 #include "shot.h"
+
+#include "direction.h"
 
 extern char* video_mem;
 extern uint8_t* vg_buffer;
@@ -21,7 +24,9 @@ Shield* shield2;
 Shield* shield3;
 AlienGroup* aliens;
 Shot* shots;
-int shot_count;
+
+enum direction last_alien_mov;
+unsigned int updates;
 
 void (init_game)();
 void (draw)();

@@ -20,6 +20,7 @@ typedef struct {
 
 Player* (initPlayer)();
 void (movePlayer)(Player* ship, enum direction dir);
+bool (canPlayerMove)(Player* ship, enum direction dir);
 void (fire)(Player* ship);
 void (looseLife)(Player* ship);
 void (deletePlayerShot)(Player* ship, int i);
