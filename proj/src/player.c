@@ -47,7 +47,7 @@ void (looseLife)(Player* ship) {
 }
 
 void (deletePlayerShot)(Player* ship, int i) {
-  for (int x = i; x < ship->shots_no; x++) ship->shots[x] = ship->shots[i+1];
+  for (int x = i; x < ship->shots_no - 1; x++) ship->shots[x] = ship->shots[x + 1];
   ship->shots_no--;
 }
 

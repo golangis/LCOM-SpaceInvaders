@@ -71,16 +71,8 @@ void (drawAliens)(AlienGroup* group) {
   for (int i = 0; i < group->size; i++) drawAlien(&(group->set[i]));
 }
 
-void (dieAlien)(AlienGroup* group, Alien* alien){
-  Alien* a;
-  int i = 0;
-  for (i = 0; i < group->size; i++) {
-    if (group->set[i].id == alien->id) a = &(group->set[i]);
-  }
-  for (int x = i; x < group->size-1; x++) {
-    group->set[x] = group->set[x+1];
-  }
-  free(a);
+void (dieAlien)(AlienGroup* group, int i) {
+  for (int x = i; x < group->size - 1; x++) group->set[x] = group->set[x + 1];
   group->size--;
 }
 
@@ -97,6 +89,15 @@ bool (canAlienMove)(Alien* alien, enum direction dir) {
 bool (canAlienGroupMove)(AlienGroup* group, enum direction dir) {
   for (int i = 0; i < group->size; i++) if (!canAlienMove(&(group->set[i]), dir)) return false;
   return true;
+}
+
+bool (wasIHit)(Alien* alien, Shot* shot) {
+  return shot->x_min >= alien->x_min && shot->x_max <= alien->x_max && shot->y_min <= alien->y_max;
+}
+
+int (hitIndex)(AlienGroup* group, Shot* shot) {
+  for (int i = 0; i < group->size; i++) if (wasIHit(&(group->set[i]), shot)) return i;
+  return -1;
 }
 
 void (drawAlien)(Alien* alien) {

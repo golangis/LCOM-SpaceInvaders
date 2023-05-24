@@ -47,7 +47,7 @@ void (update)() {
   }
   for (int i = 0; i < ship->shots_no; i++) {
     moveShot(&(ship->shots[i]));
-    if ((ship->shots[i].y_min) <= 0) {
+    if ((ship->shots[i].y_min) <= -50) {
       deletePlayerShot(ship, i);
       return;
     } else if (shield1->lives > 0 && ship->shots[i].y_min <= shield1->y_max && ship->shots[i].x_min >= shield1->x_min && ship->shots[i].x_max <= shield1->x_max) {
@@ -62,7 +62,7 @@ void (update)() {
       deletePlayerShot(ship, i);
       damage(shield3, player);
       return;
-    }
+    } // check hitting alien
   }
   // update alien shots
   updates++;
