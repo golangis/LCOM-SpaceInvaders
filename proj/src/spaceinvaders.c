@@ -97,5 +97,10 @@ void (update)() {
       return;
     }
   }
+  if (aliens->alive_no == 0) {
+    int score = ship->score;
+    init_game();
+    ship->score = score;
+  }
   updates++;
 }

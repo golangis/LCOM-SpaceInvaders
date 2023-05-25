@@ -20,11 +20,13 @@ typedef struct {
     int y_max;
     Shot* shots;
     int shots_no;
+    bool alive;
 } Alien;
 
 typedef struct {
     Alien* set;
     int size;
+    int alive_no;
 } AlienGroup;
 
 AlienGroup* (initAliens)();

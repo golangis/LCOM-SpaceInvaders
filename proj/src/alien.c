@@ -8,14 +8,16 @@ Alien (initAlien)(int id, int x_min, int y_min) {
   alien.x_max = x_min + 40;
   alien.y_max = y_min + 32;
   alien.shots_no = 0;
+  alien.alive = true;
 
   return alien;
 }
 
 AlienGroup* (initAliens)(){
-  Alien* array = (Alien*) malloc (sizeof(Alien) * 30);
+  Alien* array = (Alien*) malloc (sizeof(Alien) * 50);
   AlienGroup* group = (AlienGroup*) malloc (sizeof(AlienGroup));
   group->size = 50;
+  group->alive_no = 50;
 
   for (int i = 0; i < group->size; i++) {
     int x_min;
@@ -65,8 +67,8 @@ void (moveAliens)(AlienGroup* group, enum direction dir) {
 }
 
 void (dieAlien)(AlienGroup* group, int i) {
-  for (int x = i; x < group->size - 1; x++) group->set[x] = group->set[x + 1];
-  group->size--;
+  group->set[i].alive = false;
+  group->alive_no--;
 }
 
 void (shootAlien)(Alien* a) {
@@ -75,17 +77,21 @@ void (shootAlien)(Alien* a) {
   Shot new_shot = initShot(a->x_min + 10, a->y_max + 20, alien);
   a->shots_no++;
   array[a->shots_no - 1] = new_shot;
+  free(a->shots);
   a->shots = array;
 }
 
 void (deleteAlienShot)(Alien* alien, int i) {
+  Shot* s = &(alien->shots[i]);
   for (int x = i; x < alien->shots_no - 1; x++) alien->shots[x] = alien->shots[x + 1];
+  free(s);
   alien->shots_no--;
 }
 
 void (shootAliens)(AlienGroup* group) {
   int index = rand() % group->size;
-  shootAlien(&(group->set[index]));
+  Alien* a = &(group->set[index]);
+  if (a->alive) shootAlien(a);
 }
 
 bool (canAlienMove)(Alien* alien, enum direction dir) {
@@ -99,7 +105,7 @@ bool (canAlienMove)(Alien* alien, enum direction dir) {
 }
 
 bool (canAlienGroupMove)(AlienGroup* group, enum direction dir) {
-  for (int i = 0; i < group->size; i++) if (!canAlienMove(&(group->set[i]), dir)) return false;
+  for (int i = 0; i < group->size; i++) if (group->set[i].alive && !canAlienMove(&(group->set[i]), dir)) return false;
   return true;
 }
 
@@ -108,7 +114,7 @@ bool (wasIHit)(Alien* alien, Shot* shot) {
 }
 
 int (hitIndex)(AlienGroup* group, Shot* shot) {
-  for (int i = 0; i < group->size; i++) if (wasIHit(&(group->set[i]), shot)) return i;
+  for (int i = 0; i < group->size; i++) if (wasIHit(&(group->set[i]), shot) && group->set[i].alive) return i;
   return -1;
 }
 
@@ -126,5 +132,7 @@ void (drawAlien)(Alien* alien) {
 }
 
 void (drawAliens)(AlienGroup* group) {
-  for (int i = 0; i < group->size; i++) drawAlien(&(group->set[i]));
+  for (int i = 0; i < group->size; i++) {
+    if (group->set[i].alive) drawAlien(&(group->set[i]));
+  }
 }
