@@ -109,12 +109,12 @@ bool (canAlienGroupMove)(AlienGroup* group, enum direction dir) {
   return true;
 }
 
-bool (wasIHit)(Alien* alien, Shot* shot) {
-  return shot->x_min >= alien->x_min && shot->x_max <= alien->x_max && shot->y_min <= alien->y_max - 40;
+bool (wasIHitAlien)(Alien* alien, Shot* shot) {
+  return shot->x_min <= alien->x_max && shot->x_max >= alien->x_min && shot->y_min <= alien->y_max - 40;
 }
 
 int (hitIndex)(AlienGroup* group, Shot* shot) {
-  for (int i = 0; i < group->size; i++) if (wasIHit(&(group->set[i]), shot) && group->set[i].alive) return i;
+  for (int i = 0; i < group->size; i++) if (wasIHitAlien(&(group->set[i]), shot) && group->set[i].alive) return i;
   return -1;
 }
 

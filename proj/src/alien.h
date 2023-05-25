@@ -38,7 +38,7 @@ void (shootAliens)(AlienGroup* group);
 void (deleteAlienShot)(Alien* alien, int i);
 bool (canAlienMove)(Alien* alien, enum direction dir);
 bool (canAlienGroupMove)(AlienGroup* group, enum direction dir);
-bool (wasIHit)(Alien* alien, Shot* shot);
+bool (wasIHitAlien)(Alien* alien, Shot* shot);
 int (hitIndex)(AlienGroup* group, Shot* shot);
 void (drawAliens)(AlienGroup* group);
 void (drawAlien)(Alien* alien);
