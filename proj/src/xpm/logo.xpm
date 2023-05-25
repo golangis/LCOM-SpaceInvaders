@@ -1,5 +1,5 @@
 /* XPM */
-static char * logo_xpm[] = {
+static const char * logo_xpm[] = {
 "600 250 635 2",
 "  	c #000000",
 ". 	c #2E2E2E",
