@@ -36,8 +36,8 @@ bool (canPlayerMove)(Player* ship, enum direction dir) {
 void (fire)(Player* ship) {
   Shot* array = (Shot*) malloc (sizeof(Shot) * (ship->shots_no + 1));
   for (int i = 0; i < ship->shots_no; i++) array[i] = ship->shots[i];
-  Shot new_shot = initShot(ship->x_min + 10, (ship->y_min - 60), player);
-  ship->shots_no = ship->shots_no + 1;
+  Shot new_shot = initShot(ship->x_min + 10, ship->y_min - 60, player);
+  ship->shots_no++;
   array[ship->shots_no - 1] = new_shot;
   ship->shots = array;
 }
@@ -47,13 +47,15 @@ void (looseLife)(Player* ship) {
 }
 
 void (deletePlayerShot)(Player* ship, int i) {
+  Shot* s = &(ship->shots[i]);
   for (int x = i; x < ship->shots_no - 1; x++) ship->shots[x] = ship->shots[x + 1];
+  free(s);
   ship->shots_no--;
 }
 
 void (drawPlayer)(Player* ship) {
-  for (int i = 0; i < ship->shots_no; i++) drawShot(&(ship->shots[i]));
   video_draw_xpm(ship->x_min, ship->y_min, rocket_xpm);
+  for (int i = 0; i < ship->shots_no; i++) drawShot(&(ship->shots[i]));
 }
 
 void (incrementScore)(Player* ship, int id) {
