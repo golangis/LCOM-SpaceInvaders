@@ -50,6 +50,7 @@ int (proj_main_loop)(int argc, char **argv) {
     uint8_t* scan = (uint8_t*) malloc(2);
     bool two_bytes = false;
     bool make;
+    bool can_shoot = false;
     enum kbd_key key = INVALID;
 
     // video
@@ -71,6 +72,9 @@ int (proj_main_loop)(int argc, char **argv) {
                             update();
                             draw();
                         }
+                        if(timer_counter % 30 == 0){
+                            can_shoot = true;
+                        }
                         if (timer_counter == INT_MAX) timer_counter = 0;
                     }
                     if (msg.m_notify.interrupts & ipc_keyboard) {
@@ -83,7 +87,13 @@ int (proj_main_loop)(int argc, char **argv) {
                             switch (key) {
                                 case kbd_left: movePlayer(ship, left); key = INVALID; break;
                                 case kbd_right: movePlayer(ship, right); key = INVALID; break;
-                                case kbd_up: case kbd_space: fire(ship); key = INVALID; break;
+                                case kbd_up: case kbd_space: 
+                                    if(can_shoot){
+                                        fire(ship); 
+                                        can_shoot = false;
+                                    } 
+                                    key = INVALID; 
+                                    break;
                                 default: break;
                             }
                         } else {
@@ -95,7 +105,13 @@ int (proj_main_loop)(int argc, char **argv) {
                                 switch (key) {
                                     case kbd_left: movePlayer(ship, left); key = INVALID; break;
                                     case kbd_right: movePlayer(ship, right); key = INVALID; break;
-                                    case kbd_up: case kbd_space: fire(ship); key = INVALID; break;
+                                    case kbd_up: case kbd_space: 
+                                        if(can_shoot){
+                                            fire(ship); 
+                                            can_shoot = false;
+                                        } 
+                                        key = INVALID;
+                                        break;
                                     default: break;
                                 }
                             }
