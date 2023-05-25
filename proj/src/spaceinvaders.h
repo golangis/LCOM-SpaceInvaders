@@ -11,6 +11,8 @@
 #include "shot.h"
 
 #include "direction.h"
+#include "xpm/logo.xpm"
+#include "xpm/play-button.xpm"
 
 extern char* video_mem;
 extern uint8_t* vg_buffer;
@@ -31,6 +33,7 @@ unsigned int updates;
 void (init_game)();
 void (draw)();
 void (update)();
+void (drawMenu)();
 
 enum state {
   game,

@@ -151,6 +151,7 @@ int (proj_main_loop)(int argc, char **argv) {
                     switch(state){
                         case menu:
                             menu_loop(&make, &key, &two_bytes, scan, ipc_keyboard, msg, &state);
+                            drawMenu();
                             break;
                         case game:    
                             game_loop(&make, &key, &two_bytes, scan, &can_shoot, ipc_timer, ipc_keyboard, msg, &state);

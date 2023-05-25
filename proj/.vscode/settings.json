@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "spaceinvaders.h": "c",
+        "*.xpm": "c",
+        "video.h": "c",
+        "player.h": "c",
+        "alien.h": "c"
+    }
+}
