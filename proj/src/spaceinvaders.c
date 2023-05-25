@@ -93,7 +93,7 @@ void (update)() {
     } else if ((alien_idx = hitIndex(aliens, &(ship->shots[i]))) != -1) {
       deletePlayerShot(ship, i);
       dieAlien(aliens, alien_idx);
-      incrementScore(ship, 1);
+      incrementScore(ship, alien_idx);
       return;
     }
   }
@@ -103,4 +103,10 @@ void (update)() {
     ship->score = score;
   }
   updates++;
+}
+
+void (drawMenu)() {
+  memset(video_buffer, 0, h_res*v_res*bytes_per_pixel);
+  video_draw_xpm(20, 20, play_button_xpm);
+  memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
 }

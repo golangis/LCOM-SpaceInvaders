@@ -58,8 +58,14 @@ void (drawPlayer)(Player* ship) {
   for (int i = 0; i < ship->shots_no; i++) drawShot(&(ship->shots[i]));
 }
 
-void (incrementScore)(Player* ship, int n) {
-  ship->score = ship->score + n;
+void (incrementScore)(Player* ship, int id) {
+  int increment;
+  if(id >= 0 && id <= 9) increment = 5;
+  else if(id >= 10 && id <= 19) increment = 4;
+  else if(id >= 20 && id <= 29) increment = 3;
+  else if(id >= 30 && id <= 39) increment = 2;
+  else increment = 1;
+  ship->score = ship->score + increment;
 }
 
 void (drawScore)(Player* ship){
