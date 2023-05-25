@@ -68,7 +68,7 @@ void (update)() {
     } else if ((alien_idx = hitIndex(aliens, &(ship->shots[i]))) != -1) {
       deletePlayerShot(ship, i);
       dieAlien(aliens, alien_idx);
-      incrementScore(ship, 1);
+      incrementScore(ship, alien_idx);
     }
   }
   // update alien shots

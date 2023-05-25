@@ -28,7 +28,7 @@ void (fire)(Player* ship);
 void (looseLife)(Player* ship);
 void (deletePlayerShot)(Player* ship, int i);
 void (drawPlayer)(Player* ship);
-void (incrementScore)(Player* ship, int n);
+void (incrementScore)(Player* ship, int id);
 void (drawScore)(Player* ship);
 
 #endif

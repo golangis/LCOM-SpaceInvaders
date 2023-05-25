@@ -32,4 +32,9 @@ void (init_game)();
 void (draw)();
 void (update)();
 
+enum state {
+  game,
+  menu
+};
+
 #endif
