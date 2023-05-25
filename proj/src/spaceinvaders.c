@@ -27,6 +27,7 @@ void (draw)() {
 }
 
 void (update)() {
+  updates++;
   if (updates == 300) {
     shootAliens(aliens);
     updates = 0;
@@ -69,6 +70,10 @@ void (update)() {
         deleteAlienShot(a, j);
         damage(shield3, alien);
         return;
+      } else if (a->shots[j].y_max >= ship->y_min && a->shots[j].x_min <= ship->x_max && a->shots[j].x_max >= ship->x_min) {
+        deleteAlienShot(a, j);
+        ship->lives--;
+        return;
       }
     }
   }
@@ -102,7 +107,6 @@ void (update)() {
     init_game();
     ship->score = score;
   }
-  updates++;
 }
 
 void (drawMenu)() {
