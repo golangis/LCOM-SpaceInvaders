@@ -18,6 +18,8 @@ typedef struct {
     int y_min;
     int x_max;
     int y_max;
+    Shot* shots;
+    int shots_no;
 } Alien;
 
 typedef struct {
@@ -29,6 +31,9 @@ AlienGroup* (initAliens)();
 Alien (initAlien)(int id, int x_min, int y_min);
 void (moveAliens)(AlienGroup* group, enum direction dir);
 void (dieAlien)(AlienGroup* group, int i);
+void (shootAlien)(Alien* a);
+void (shootAliens)(AlienGroup* group);
+void (deleteAlienShot)(Alien* alien, int i);
 bool (canAlienMove)(Alien* alien, enum direction dir);
 bool (canAlienGroupMove)(AlienGroup* group, enum direction dir);
 bool (wasIHit)(Alien* alien, Shot* shot);

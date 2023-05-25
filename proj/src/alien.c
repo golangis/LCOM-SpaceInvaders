@@ -1,9 +1,5 @@
 #include "alien.h"
 
-/*
-reduzir tamanho aliens!
-*/
-
 Alien (initAlien)(int id, int x_min, int y_min) {
   Alien alien;
   alien.id = id;
@@ -11,6 +7,7 @@ Alien (initAlien)(int id, int x_min, int y_min) {
   alien.y_min = y_min;
   alien.x_max = x_min + 40;
   alien.y_max = y_min + 32;
+  alien.shots_no = 0;
 
   return alien;
 }
@@ -67,13 +64,28 @@ void (moveAliens)(AlienGroup* group, enum direction dir) {
   }
 }
 
-void (drawAliens)(AlienGroup* group) {
-  for (int i = 0; i < group->size; i++) drawAlien(&(group->set[i]));
-}
-
 void (dieAlien)(AlienGroup* group, int i) {
   for (int x = i; x < group->size - 1; x++) group->set[x] = group->set[x + 1];
   group->size--;
+}
+
+void (shootAlien)(Alien* a) {
+  Shot* array = (Shot*) malloc (sizeof(Shot) * (a->shots_no + 1));
+  for (int i = 0; i < a->shots_no; i++) array[i] = a->shots[i];
+  Shot new_shot = initShot(a->x_min + 10, a->y_max + 20, alien);
+  a->shots_no++;
+  array[a->shots_no - 1] = new_shot;
+  a->shots = array;
+}
+
+void (deleteAlienShot)(Alien* alien, int i) {
+  for (int x = i; x < alien->shots_no - 1; x++) alien->shots[x] = alien->shots[x + 1];
+  alien->shots_no--;
+}
+
+void (shootAliens)(AlienGroup* group) {
+  int index = rand() % group->size;
+  shootAlien(&(group->set[index]));
 }
 
 bool (canAlienMove)(Alien* alien, enum direction dir) {
@@ -101,10 +113,18 @@ int (hitIndex)(AlienGroup* group, Shot* shot) {
 }
 
 void (drawAlien)(Alien* alien) {
-  int id = alien->id;
-  if (id >= 0 && id < 10) video_draw_xpm(alien->x_min, alien->y_min, alien1_xpm);
-  else if (id >= 10 && id < 20) video_draw_xpm(alien->x_min, alien->y_min, alien2_xpm);
-  else if (id >= 20 && id < 30) video_draw_xpm(alien->x_min, alien->y_min, alien3_xpm);
-  else if (id >= 30 && id < 40) video_draw_xpm(alien->x_min, alien->y_min, alien4_xpm);
-  else if (id >= 40 && id < 50) video_draw_xpm(alien->x_min, alien->y_min, alien5_xpm);
+  switch (alien->id / 10) {
+    case 0: video_draw_xpm(alien->x_min, alien->y_min, alien1_xpm); break;
+    case 1: video_draw_xpm(alien->x_min, alien->y_min, alien2_xpm);
+    break;
+    case 2: video_draw_xpm(alien->x_min, alien->y_min, alien3_xpm); break;
+    case 3: video_draw_xpm(alien->x_min, alien->y_min, alien4_xpm); break;
+    case 4: video_draw_xpm(alien->x_min, alien->y_min, alien5_xpm); break;
+    default: break;
+  }
+  for (int i = 0; i < alien->shots_no; i++) drawShot(&(alien->shots[i]));
+}
+
+void (drawAliens)(AlienGroup* group) {
+  for (int i = 0; i < group->size; i++) drawAlien(&(group->set[i]));
 }

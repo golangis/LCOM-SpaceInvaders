@@ -27,7 +27,11 @@ void (draw)() {
 }
 
 void (update)() {
-  if (updates == 30) {
+  if (updates == 300) {
+    shootAliens(aliens);
+    updates = 0;
+  }
+  else if (updates % 30 == 0) {
     switch (last_alien_mov) {
       case right:
         if (!canAlienGroupMove(aliens, right)) {
@@ -45,7 +49,28 @@ void (update)() {
       case down_after_left: moveAliens(aliens, right); last_alien_mov = right; break;
       default: break;
     }
-    updates = 0;
+  }
+  for (int i = 0; i < aliens->size; i++) {
+    Alien* a = &(aliens->set[i]);
+    for (int j = 0; j < a->shots_no; j++) {
+      moveShot(&(a->shots[j]));
+      if ((a->shots[j].y_min) >= 650) {
+        deleteAlienShot(a, j);
+        return;
+      } else if (shield1->lives > 0 && a->shots[j].y_min <= shield1->y_max && a->shots[j].x_min >= shield1->x_min && a->shots[j].x_max <= shield1->x_max) {
+        deleteAlienShot(a, j);
+        damage(shield1, alien);
+        return;
+      } else if (shield2->lives > 0 && a->shots[j].y_min <= shield2->y_max && a->shots[j].x_min >= shield2->x_min && a->shots[j].x_max <= shield2->x_max) {
+        deleteAlienShot(a, j);
+        damage(shield2, alien);
+        return;
+      } else if (shield3->lives > 0 && a->shots[j].y_min <= shield3->y_max && a->shots[j].x_min >= shield3->x_min && a->shots[j].x_max <= shield3->x_max) {
+        deleteAlienShot(a, j);
+        damage(shield3, alien);
+        return;
+      }
+    }
   }
   for (int i = 0; i < ship->shots_no; i++) {
     int alien_idx;
@@ -69,8 +94,8 @@ void (update)() {
       deletePlayerShot(ship, i);
       dieAlien(aliens, alien_idx);
       incrementScore(ship, 1);
+      return;
     }
   }
-  // update alien shots
   updates++;
 }
