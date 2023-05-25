@@ -97,114 +97,58 @@ void (video_draw_xpm)(uint16_t x, uint16_t y, xpm_map_t xpm) {
 
 void (video_draw_score)(uint16_t x, uint16_t y, int score){
     if(score < 10){
-        switch(score){
-            case 0:
-                video_draw_xpm(x, y, zero_xpm);
-                break;
-            case 1:
-                video_draw_xpm(x, y, um_xpm);
-                break;
-            case 2:
-                video_draw_xpm(x, y, dois_xpm);
-                break;
-            case 3:
-                video_draw_xpm(x, y, tres_xpm);
-                break;
-            case 4:
-                video_draw_xpm(x, y, quatro_xpm);
-                break;            
-            case 5:
-                video_draw_xpm(x, y, cinco_xpm);
-                break;    
-            case 6:
-                video_draw_xpm(x, y, seis_xpm);
-                break;
-            case 7:
-                video_draw_xpm(x, y, sete_xpm);
-                break;        
-            case 8:
-                video_draw_xpm(x, y, oito_xpm);
-                break;    
-            case 9:
-                video_draw_xpm(x, y, nove_xpm);
-                break;
-            default:
-                video_draw_xpm(x, y, zero_xpm);
-                break;    
-        }            
+        loop_draw_score(x, y, score);
     }
     else if(score < 100){
         int second_half = score % 10;
         int first_half = score / 10;
-        switch(first_half){
-            case 0:
-                video_draw_xpm(x, y, zero_xpm);
-                break;
-            case 1:
-                video_draw_xpm(x, y, um_xpm);
-                break;
-            case 2:
-                video_draw_xpm(x, y, dois_xpm);
-                break;
-            case 3:
-                video_draw_xpm(x, y, tres_xpm);
-                break;
-            case 4:
-                video_draw_xpm(x, y, quatro_xpm);
-                break;            
-            case 5:
-                video_draw_xpm(x, y, cinco_xpm);
-                break;    
-            case 6:
-                video_draw_xpm(x, y, seis_xpm);
-                break;
-            case 7:
-                video_draw_xpm(x, y, sete_xpm);
-                break;        
-            case 8:
-                video_draw_xpm(x, y, oito_xpm);
-                break;    
-            case 9:
-                video_draw_xpm(x, y, nove_xpm);
-                break;
-            default:
-                video_draw_xpm(x, y, zero_xpm);
-                break;    
-        }
-        switch(second_half){
-            case 0:
-                video_draw_xpm(x + 17, y, zero_xpm);
-                break;
-            case 1:
-                video_draw_xpm(x + 17, y, um_xpm);
-                break;
-            case 2:
-                video_draw_xpm(x + 17, y, dois_xpm);
-                break;
-            case 3:
-                video_draw_xpm(x + 17, y, tres_xpm);
-                break;
-            case 4:
-                video_draw_xpm(x + 17, y, quatro_xpm);
-                break;            
-            case 5:
-                video_draw_xpm(x + 17, y, cinco_xpm);
-                break;    
-            case 6:
-                video_draw_xpm(x + 17, y, seis_xpm);
-                break;
-            case 7:
-                video_draw_xpm(x + 17, y, sete_xpm);
-                break;        
-            case 8:
-                video_draw_xpm(x + 17, y, oito_xpm);
-                break;    
-            case 9:
-                video_draw_xpm(x + 17, y, nove_xpm);
-                break;
-            default:
-                video_draw_xpm(x + 17, y, zero_xpm);
-                break;    
-        }
+        loop_draw_score(x, y, first_half);
+        loop_draw_score(x + 17, y, second_half);    
     }
+    else if(score < 1000){
+        int third_half = score % 10;
+        int second_half = (score / 10) % 10;
+        int first_half = (score / 100) % 10;
+        loop_draw_score(x, y, first_half);
+        loop_draw_score(x + 17, y, second_half);
+        loop_draw_score(x + 34, y, third_half);
+    }
+}
+
+void (loop_draw_score)(uint16_t x, uint16_t y, int score) {
+    switch(score){
+        case 0:
+            video_draw_xpm(x, y, zero_xpm);
+            break;
+        case 1:
+            video_draw_xpm(x, y, um_xpm);
+            break;
+        case 2:
+            video_draw_xpm(x, y, dois_xpm);
+            break;
+        case 3:
+            video_draw_xpm(x, y, tres_xpm);
+            break;
+        case 4:
+            video_draw_xpm(x, y, quatro_xpm);
+            break;            
+        case 5:
+            video_draw_xpm(x, y, cinco_xpm);
+            break;    
+        case 6:
+            video_draw_xpm(x, y, seis_xpm);
+            break;
+        case 7:
+            video_draw_xpm(x, y, sete_xpm);
+            break;        
+        case 8:
+            video_draw_xpm(x, y, oito_xpm);
+            break;    
+        case 9:
+            video_draw_xpm(x, y, nove_xpm);
+            break;
+        default:
+            video_draw_xpm(x, y, zero_xpm);
+            break;    
+    } 
 }
