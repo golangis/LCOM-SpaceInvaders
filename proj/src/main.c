@@ -20,6 +20,7 @@ int main(int argc, char *argv[]) {
 }
 
 #include "framework/keyboard/kbdframework.h"
+#include "framework/rtc/rtc.h"
 #include "framework/timer/timer.h"
 #include "framework/video/video.h"
 
@@ -178,6 +179,9 @@ int (proj_main_loop)(int argc, char **argv) {
             }
         }
     }
+
+    rtc_time time;
+    while (get_time(&time));
 
     free(scan);
     if (kbc_unsubscribe_int() != 0) return 1;
