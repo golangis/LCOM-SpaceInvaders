@@ -65,7 +65,7 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
                     } 
                     *key = INVALID; 
                     break;
-                case kbd_esc: *state = menu; break;
+                case kbd_esc: *state = mainMenu; break;
                 default: break;
             }
         } else {
@@ -84,7 +84,7 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
                         } 
                         *key = INVALID;
                         break;
-                    case kbd_esc: *state = menu; break;
+                    case kbd_esc: *state = mainMenu; break;
                     default: break;
                 }
             }
@@ -93,7 +93,7 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
     //if (msg.m_notify.interrupts & ipc_mouse) {}
 }
 
-void (menu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_keyboard, message msg, enum state* state){
+void (mainMenu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_keyboard, message msg, enum state* state){
     if (msg.m_notify.interrupts & ipc_keyboard) {
         kbc_ih();
         if (*two_bytes) {
@@ -148,7 +148,7 @@ int (proj_main_loop)(int argc, char **argv) {
     bool make;
     bool can_shoot = false;
     enum kbd_key key = INVALID;
-    enum state state = menu;
+    enum state state = mainMenu;
 
     // video
     video_init(0x115);
@@ -163,9 +163,9 @@ int (proj_main_loop)(int argc, char **argv) {
             switch(_ENDPOINT_P(msg.m_source)) {
                 case HARDWARE:
                     switch (state) {
-                        case menu:
-                            menu_loop(&make, &key, &two_bytes, scan, ipc_keyboard, msg, &state);
-                            drawMenu();
+                        case mainMenu:
+                            mainMenu_loop(&make, &key, &two_bytes, scan, ipc_keyboard, msg, &state);
+                            drawmainMenu();
                             break;
                         case game:    
                             game_loop(&make, &key, &two_bytes, scan, &can_shoot, ipc_timer, ipc_keyboard, msg, &state);
@@ -184,5 +184,6 @@ int (proj_main_loop)(int argc, char **argv) {
     if (kbc_unsubscribe_int() != 0) return 1;
     if (unsubscribe_timer_int() != 0) return 1;
     vg_exit();
+    
     return 0;
 }

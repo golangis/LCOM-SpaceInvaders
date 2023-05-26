@@ -33,11 +33,11 @@ unsigned int updates;
 void (init_game)();
 void (draw)();
 void (update)();
-void (drawMenu)();
+void (drawmainMenu)();
 
 enum state {
   game,
-  menu,
+  mainMenu,
   quit
 };
 
