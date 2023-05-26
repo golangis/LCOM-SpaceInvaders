@@ -1,0 +1,52 @@
+\hypertarget{alien_8h_source}{}\doxysection{alien.\+h}
+\label{alien_8h_source}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/alien.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/alien.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef ALIEN\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define ALIEN\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}direction.h"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}xpm/aliens.xpm"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}framework/video/video.h"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}shot.h"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{16     \textcolor{keywordtype}{int} id;}
+\DoxyCodeLine{17     \textcolor{keywordtype}{int} x\_min;}
+\DoxyCodeLine{18     \textcolor{keywordtype}{int} y\_min;}
+\DoxyCodeLine{19     \textcolor{keywordtype}{int} x\_max;}
+\DoxyCodeLine{20     \textcolor{keywordtype}{int} y\_max;}
+\DoxyCodeLine{21     \mbox{\hyperlink{struct_shot}{Shot}}* shots;}
+\DoxyCodeLine{22     \textcolor{keywordtype}{int} shots\_no;}
+\DoxyCodeLine{23     \textcolor{keywordtype}{bool} alive;}
+\DoxyCodeLine{24 \} \mbox{\hyperlink{struct_alien}{Alien}};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{27     \mbox{\hyperlink{struct_alien}{Alien}}* set;}
+\DoxyCodeLine{28     \textcolor{keywordtype}{int} size;}
+\DoxyCodeLine{29     \textcolor{keywordtype}{int} alive\_no;}
+\DoxyCodeLine{30 \} \mbox{\hyperlink{struct_alien_group}{AlienGroup}};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \mbox{\hyperlink{struct_alien_group}{AlienGroup}}* (initAliens)();}
+\DoxyCodeLine{33 \mbox{\hyperlink{struct_alien}{Alien}} (initAlien)(\textcolor{keywordtype}{int} id, \textcolor{keywordtype}{int} x\_min, \textcolor{keywordtype}{int} y\_min);}
+\DoxyCodeLine{34 void (moveAliens)(\mbox{\hyperlink{struct_alien_group}{AlienGroup}}* group, \textcolor{keyword}{enum} direction dir);}
+\DoxyCodeLine{35 void (dieAlien)(\mbox{\hyperlink{struct_alien_group}{AlienGroup}}* group, \textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{36 void (shootAlien)(\mbox{\hyperlink{struct_alien}{Alien}}* a);}
+\DoxyCodeLine{37 void (shootAliens)(\mbox{\hyperlink{struct_alien_group}{AlienGroup}}* group);}
+\DoxyCodeLine{38 void (deleteAlienShot)(\mbox{\hyperlink{struct_alien}{Alien}}* alien, \textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{39 bool (canAlienMove)(\mbox{\hyperlink{struct_alien}{Alien}}* alien, \textcolor{keyword}{enum} direction dir);}
+\DoxyCodeLine{40 bool (canAlienGroupMove)(\mbox{\hyperlink{struct_alien_group}{AlienGroup}}* group, \textcolor{keyword}{enum} direction dir);}
+\DoxyCodeLine{41 bool (wasIHitAlien)(\mbox{\hyperlink{struct_alien}{Alien}}* alien, \mbox{\hyperlink{struct_shot}{Shot}}* shot);}
+\DoxyCodeLine{42 int (hitIndex)(\mbox{\hyperlink{struct_alien_group}{AlienGroup}}* group, \mbox{\hyperlink{struct_shot}{Shot}}* shot);}
+\DoxyCodeLine{43 void (drawAliens)(\mbox{\hyperlink{struct_alien_group}{AlienGroup}}* group);}
+\DoxyCodeLine{44 void (drawAlien)(\mbox{\hyperlink{struct_alien}{Alien}}* alien);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

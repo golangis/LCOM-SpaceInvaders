@@ -10,7 +10,7 @@ Player* (initPlayer)(){
   ship->x_max = 440;
   ship->y_min = 540;
   ship->y_max = 580;
-  ship->lives = 3;
+  ship->lives = 6;
   ship->score = 0;
   ship->shots_no = 0;
 
@@ -36,8 +36,8 @@ bool (canPlayerMove)(Player* ship, enum direction dir) {
 void (fire)(Player* ship) {
   Shot* array = (Shot*) malloc (sizeof(Shot) * (ship->shots_no + 1));
   for (int i = 0; i < ship->shots_no; i++) array[i] = ship->shots[i];
-  Shot new_shot = initShot(ship->x_min + 10, (ship->y_min - 60), player);
-  ship->shots_no = ship->shots_no + 1;
+  Shot new_shot = initShot(ship->x_min + 10, ship->y_min - 60, player);
+  ship->shots_no++;
   array[ship->shots_no - 1] = new_shot;
   ship->shots = array;
 }
@@ -47,13 +47,15 @@ void (looseLife)(Player* ship) {
 }
 
 void (deletePlayerShot)(Player* ship, int i) {
+  Shot* s = &(ship->shots[i]);
   for (int x = i; x < ship->shots_no - 1; x++) ship->shots[x] = ship->shots[x + 1];
+  free(s);
   ship->shots_no--;
 }
 
 void (drawPlayer)(Player* ship) {
-  for (int i = 0; i < ship->shots_no; i++) drawShot(&(ship->shots[i]));
   video_draw_xpm(ship->x_min, ship->y_min, rocket_xpm);
+  for (int i = 0; i < ship->shots_no; i++) drawShot(&(ship->shots[i]));
 }
 
 void (incrementScore)(Player* ship, int id) {
@@ -68,6 +70,43 @@ void (incrementScore)(Player* ship, int id) {
 
 void (drawScore)(Player* ship){
   int score = ship->score;
-  video_draw_xpm(10, 570, score_xpm);
-  video_draw_score(112, 570, score);
+  video_draw_xpm(10, 10, score_xpm);
+  video_draw_score(112, 10, score);
 }
+
+void (drawLives)(int lives){
+  switch(lives){
+    case 6:
+      video_draw_xpm(751, 10, heart_xpm);
+      video_draw_xpm(702, 10, heart_xpm);
+      video_draw_xpm(653, 10, heart_xpm);
+      break;
+    case 5:
+      video_draw_xpm(751, 10, heart_xpm);
+      video_draw_xpm(702, 10, heart_xpm);
+      video_draw_xpm(653, 10, heart_bad_xpm);
+      break;
+    case 4:
+      video_draw_xpm(751, 10, heart_xpm);
+      video_draw_xpm(702, 10, heart_xpm);
+      break;
+    case 3:
+      video_draw_xpm(751, 10, heart_xpm);
+      video_draw_xpm(702, 10, heart_bad_xpm);
+      break;    
+    case 2:
+      video_draw_xpm(751, 10, heart_xpm);
+      break;
+    case 1:
+      video_draw_xpm(751, 10, heart_bad_xpm);
+      break;
+    case 0:
+      break;
+    default:
+      video_draw_xpm(751, 10, heart_xpm);
+      video_draw_xpm(702, 10, heart_xpm);
+      video_draw_xpm(653, 10, heart_xpm);
+      break;
+  }
+}
+

@@ -25,5 +25,6 @@ void (video_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t hei
 void (video_draw_pixel)(uint16_t x, uint16_t y, uint32_t color);
 void (video_draw_xpm)(uint16_t x, uint16_t y, xpm_map_t xpm);
 void (video_draw_score)(uint16_t x, uint16_t y, int score);
+void (loop_draw_score)(uint16_t x, uint16_t y, int score);
 
 #endif

@@ -1,3 +1,11 @@
+/**
+ * @mainpage
+ * This is our project for the Laboratório de Computadores course.\n\n
+ * It is a recreation of the game Space Invaders.\n
+ * A ship is controlled by the player, who tries to kill a group of aliens before they kill them.\n\n\n
+ * The project was developed by Guilherme Ribeiro (up202108731@up.pt), Mariana Rocha (up202004656@up.pt) and Pedro Januário (up202108768@up.pt).
+ */
+
 #include <lcom/lcf.h>
 #include <stdint.h>
 
@@ -12,6 +20,7 @@ int main(int argc, char *argv[]) {
 }
 
 #include "framework/keyboard/kbdframework.h"
+#include "framework/rtc/rtc.h"
 #include "framework/timer/timer.h"
 #include "framework/mouse/mouse.h"
 #include "framework/video/video.h"
@@ -31,15 +40,15 @@ extern int timer_counter;
 extern int data;
 
 void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, bool* can_shoot, int ipc_timer, int ipc_keyboard, message msg, enum state* state){
-    printf("%d\n", msg.m_notify.interrupts);
-    
+    int no_lives = 0;
     if (msg.m_notify.interrupts & ipc_timer) {
         timer_interrupt_handler();
         if (timer_counter % 2 == 0) {
-            update();
+            update(&no_lives);
+            if(no_lives == 1) *state = mainMenu;
             draw();
         }
-        if(timer_counter % 30 == 0) *can_shoot = true;
+        if(timer_counter % 40 == 0) *can_shoot = true;
         if (timer_counter == INT_MAX) timer_counter = 0;
     }
     if (msg.m_notify.interrupts & ipc_keyboard) {
@@ -59,6 +68,7 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
                     } 
                     *key = INVALID; 
                     break;
+                case kbd_esc: *state = mainMenu; break;
                 default: break;
             }
         } else {
@@ -77,6 +87,7 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
                         } 
                         *key = INVALID;
                         break;
+                    case kbd_esc: *state = mainMenu; break;
                     default: break;
                 }
             }
@@ -85,7 +96,7 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
     //if (msg.m_notify.interrupts & ipc_mouse) {}
 }
 
-void (menu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_keyboard, int ipc_mouse, message msg, enum state* state){
+void (mainMenu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_keyboard, int ipc_mouse, message msg, enum state* state){
     if (msg.m_notify.interrupts & ipc_keyboard) {
         kbc_ih();
         if (*two_bytes) {
@@ -93,20 +104,22 @@ void (menu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
             *two_bytes = false;
             *make = data & BIT(7);
             *key = kbd_get_key(!make, 2, scan);
-            if (*key == kbd_space){
-                    *state = game;
-                    init_game();
-            }    
+            switch (*key) {
+                case kbd_space: *state = game; init_game(); break;
+                case kbd_esc: *state = quit; break;
+                default: break;
+            }
         } else {
             scan[0] = data;
             *make = data & BIT(7);
             if (data == KBD_TWO_BYTE) *two_bytes = true;
             else {
                 *key = kbd_get_key(!make, 1, scan);
-                if (*key == kbd_space){
-                    *state = game;
-                    init_game();
-                }    
+                switch (*key) {
+                    case kbd_space: *state = game; init_game(); break;
+                    case kbd_esc: *state = quit; break;
+                    default: break;
+                }  
             }
         }
     }
@@ -126,6 +139,8 @@ int (proj_main_loop)(int argc, char **argv) {
     int ipc_keyboard = BIT(KBC_HOOK_BIT);   // check if 1
     int ipc_mouse = BIT(MOUSE_HOOK_BIT);  // check if 10
 
+    //mouse
+
     // timer
     timer_counter = 0;
     uint8_t timer_hook_bit = TIMER_HOOK_BIT;
@@ -140,7 +155,8 @@ int (proj_main_loop)(int argc, char **argv) {
     bool make;
     bool can_shoot = false;
     enum kbd_key key = INVALID;
-    enum state state = menu;
+    enum state state = mainMenu;
+    wave = 1;
 
     // mouse
     uint8_t mouse_hook_bit = MOUSE_HOOK_BIT;
@@ -148,10 +164,8 @@ int (proj_main_loop)(int argc, char **argv) {
 
     // video
     video_init(0x115);
-    init_game();
 
-
-    while (key != kbd_esc) {
+    while (state != quit) {
         if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
             printf("driver_receive failed with: %d", r);            
             continue;
@@ -159,10 +173,10 @@ int (proj_main_loop)(int argc, char **argv) {
         if (is_ipc_notify(ipc_status)) {
             switch(_ENDPOINT_P(msg.m_source)) {
                 case HARDWARE:
-                    switch(state){
-                        case menu:
-                            menu_loop(&make, &key, &two_bytes, scan, ipc_keyboard, ipc_mouse, msg, &state);
-                            drawMenu();
+                    switch (state) {
+                        case mainMenu:
+                            mainMenu_loop(&make, &key, &two_bytes, scan, ipc_keyboard, ipc_mouse, msg, &state);
+                            drawMainMenu();
                             break;
                         case game:    
                             game_loop(&make, &key, &two_bytes, scan, &can_shoot, ipc_timer, ipc_keyboard, msg, &state);
@@ -182,5 +196,6 @@ int (proj_main_loop)(int argc, char **argv) {
     if (unsubscribe_timer_int() != 0) return 1;
     if (unsubscribe_mouse_int() != 0) return 1;
     vg_exit();
+    
     return 0;
 }

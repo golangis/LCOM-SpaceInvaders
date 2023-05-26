@@ -1,0 +1,35 @@
+\hypertarget{video_8h_source}{}\doxysection{video.\+h}
+\label{video_8h_source}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/video/video.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/video/video.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef VIDEO\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define VIDEO\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <lcom/lcf.h>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keywordtype}{unsigned} h\_res;}
+\DoxyCodeLine{7 \textcolor{keywordtype}{unsigned} v\_res;}
+\DoxyCodeLine{8 \textcolor{keywordtype}{unsigned} bits\_per\_pixel;}
+\DoxyCodeLine{9 \textcolor{keywordtype}{unsigned} bytes\_per\_pixel;}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 uint8\_t RedMaskSize;}
+\DoxyCodeLine{12 uint8\_t GreenMaskSize;}
+\DoxyCodeLine{13 uint8\_t BlueMaskSize;}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 uint8\_t RedFieldPosition;}
+\DoxyCodeLine{16 uint8\_t GreenFieldPosition;}
+\DoxyCodeLine{17 uint8\_t BlueFieldPosition;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keywordtype}{char}* video\_mem;}
+\DoxyCodeLine{20 uint8\_t* video\_buffer;}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keywordtype}{void}* (video\_init)(uint16\_t mode);}
+\DoxyCodeLine{23 void (video\_draw\_hline)(uint16\_t x, uint16\_t y, uint16\_t len, uint32\_t color);}
+\DoxyCodeLine{24 void (video\_draw\_rectangle)(uint16\_t x, uint16\_t y, uint16\_t width, uint16\_t height, uint32\_t color);}
+\DoxyCodeLine{25 void (video\_draw\_pixel)(uint16\_t x, uint16\_t y, uint32\_t color);}
+\DoxyCodeLine{26 void (video\_draw\_xpm)(uint16\_t x, uint16\_t y, xpm\_map\_t xpm);}
+\DoxyCodeLine{27 void (video\_draw\_score)(uint16\_t x, uint16\_t y, \textcolor{keywordtype}{int} score);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

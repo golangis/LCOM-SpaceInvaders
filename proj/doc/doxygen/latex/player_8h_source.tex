@@ -1,0 +1,40 @@
+\hypertarget{player_8h_source}{}\doxysection{player.\+h}
+\label{player_8h_source}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/player.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/player.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef PLAYER\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define PLAYER\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}direction.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}shot.h"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}framework/video/video.h"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}xpm/rocket.xpm"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}xpm/SCORE.xpm"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}xpm/um.xpm"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}xpm/dois.xpm"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{14     \textcolor{keywordtype}{int} x\_min;}
+\DoxyCodeLine{15     \textcolor{keywordtype}{int} y\_min;}
+\DoxyCodeLine{16     \textcolor{keywordtype}{int} x\_max;}
+\DoxyCodeLine{17     \textcolor{keywordtype}{int} y\_max;}
+\DoxyCodeLine{18     \textcolor{keywordtype}{int} lives;}
+\DoxyCodeLine{19     \textcolor{keywordtype}{int} score;}
+\DoxyCodeLine{20     \mbox{\hyperlink{struct_shot}{Shot}}* shots;}
+\DoxyCodeLine{21     \textcolor{keywordtype}{int} shots\_no;}
+\DoxyCodeLine{22 \} \mbox{\hyperlink{struct_player}{Player}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \mbox{\hyperlink{struct_player}{Player}}* (initPlayer)();}
+\DoxyCodeLine{25 void (movePlayer)(\mbox{\hyperlink{struct_player}{Player}}* ship, \textcolor{keyword}{enum} direction dir);}
+\DoxyCodeLine{26 bool (canPlayerMove)(\mbox{\hyperlink{struct_player}{Player}}* ship, \textcolor{keyword}{enum} direction dir);}
+\DoxyCodeLine{27 void (fire)(\mbox{\hyperlink{struct_player}{Player}}* ship);}
+\DoxyCodeLine{28 void (looseLife)(\mbox{\hyperlink{struct_player}{Player}}* ship);}
+\DoxyCodeLine{29 void (deletePlayerShot)(\mbox{\hyperlink{struct_player}{Player}}* ship, \textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{30 void (drawPlayer)(\mbox{\hyperlink{struct_player}{Player}}* ship);}
+\DoxyCodeLine{31 void (incrementScore)(\mbox{\hyperlink{struct_player}{Player}}* ship, \textcolor{keywordtype}{int} id);}
+\DoxyCodeLine{32 void (drawScore)(\mbox{\hyperlink{struct_player}{Player}}* ship);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
