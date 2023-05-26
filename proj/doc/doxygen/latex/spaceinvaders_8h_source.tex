@@ -1,0 +1,49 @@
+\hypertarget{spaceinvaders_8h_source}{}\doxysection{spaceinvaders.\+h}
+\label{spaceinvaders_8h_source}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/spaceinvaders.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/spaceinvaders.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SPACEINVADERS\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define SPACEINVADERS\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}framework/video/video.h"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}alien.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}player.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}shield.h"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}shot.h"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}direction.h"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}xpm/logo.xpm"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}xpm/play-\/button.xpm"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{extern} \textcolor{keywordtype}{char}* video\_mem;}
+\DoxyCodeLine{18 \textcolor{keyword}{extern} uint8\_t* vg\_buffer;}
+\DoxyCodeLine{19 \textcolor{keyword}{extern} \textcolor{keywordtype}{unsigned} h\_res;}
+\DoxyCodeLine{20 \textcolor{keyword}{extern} \textcolor{keywordtype}{unsigned} v\_res;}
+\DoxyCodeLine{21 \textcolor{keyword}{extern} \textcolor{keywordtype}{unsigned} bytes\_per\_pixel;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \mbox{\hyperlink{struct_player}{Player}}* ship;}
+\DoxyCodeLine{24 \mbox{\hyperlink{struct_shield}{Shield}}* shield1;}
+\DoxyCodeLine{25 \mbox{\hyperlink{struct_shield}{Shield}}* shield2;}
+\DoxyCodeLine{26 \mbox{\hyperlink{struct_shield}{Shield}}* shield3;}
+\DoxyCodeLine{27 \mbox{\hyperlink{struct_alien_group}{AlienGroup}}* aliens;}
+\DoxyCodeLine{28 \mbox{\hyperlink{struct_shot}{Shot}}* shots;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{keyword}{enum} direction last\_alien\_mov;}
+\DoxyCodeLine{31 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} updates;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 void (init\_game)();}
+\DoxyCodeLine{34 void (draw)();}
+\DoxyCodeLine{35 void (update)();}
+\DoxyCodeLine{36 void (drawMenu)();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{enum} state \{}
+\DoxyCodeLine{39   game,}
+\DoxyCodeLine{40   menu}
+\DoxyCodeLine{41 \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

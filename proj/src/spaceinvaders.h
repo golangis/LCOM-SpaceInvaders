@@ -37,7 +37,8 @@ void (drawMenu)();
 
 enum state {
   game,
-  menu
+  menu,
+  quit
 };
 
 #endif
