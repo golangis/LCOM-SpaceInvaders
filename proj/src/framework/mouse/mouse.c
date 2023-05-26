@@ -1,7 +1,6 @@
 #include "mouse.h"
 
 uint8_t counter_byte = 0;
-uint8_t current_byte;
 
 
 // Coordenadas Iniciais do Mouse
@@ -55,6 +54,9 @@ int (readPacket)() {
     mouse_read = false;
 
     if (counter_byte % 3 == 0){
+      if ((data & BIT(3)) == 0)
+        return 1;
+
       printf("Caralho Byte 1: 0x%x\n", data);
       // LER O BIT DE CONTROLO DO PACOTE
       mouse_packet.lb = data & MOUSE_LB;
@@ -66,24 +68,14 @@ int (readPacket)() {
       mouse_packet.y_ov = data & MOUSE_Y_OV;
     }
     else if (counter_byte % 3 == 1){
-      if (mouse_packet.delta_x != 0){
-        mouse_packet.delta_x = -((int16_t)data);
-      }
-      else{
-        mouse_packet.delta_x = ((int16_t)data);
-      }
+        mouse_packet.delta_x = (mouse_packet.delta_x) ? (0xFF00 | data) : data;
     }
     else if (counter_byte % 3 == 2){
-      if (mouse_packet.delta_y != 0){
-        mouse_packet.delta_y = -((int16_t)data);
-      }
-      else{
-        mouse_packet.delta_y = ((int16_t)data);
-      }
+        mouse_packet.delta_y = (mouse_packet.delta_y) ? (0xFF00 | data) : data;
       mouse_read = true;
     }
     
-    counter_byte++;
+    counter_byte = (counter_byte + 1) % 3;
     return 0;
 }
 
@@ -101,20 +93,20 @@ int (unsubscribe_mouse_int)() {
 int (update_mouse)(){
   if (mouse_read == true){
     // dar update às coordenadas do rato
-    x_mouse += mouse_packet.delta_x;
-    y_mouse += mouse_packet.delta_y;
+    x_mouse += mouse_packet.delta_x / 2;
+    y_mouse -= mouse_packet.delta_y / 2;
 
     // verificar se o rato está dentro dos limites do ecrã
     if (x_mouse < 0)
       x_mouse = 0;
-    else if (x_mouse > 800)
-      x_mouse = 800;
+    else if (x_mouse > 800 - 32)
+      x_mouse = 800 - 32;
 
     if (y_mouse < 0)
       y_mouse = 0;
-    else if (y_mouse > 600)
-      y_mouse = 600;
-
+    else if (y_mouse > 600 - 32)
+      y_mouse = 600 - 32;
+    mouse_read = false;
     return 0;
   }
   return 1;
