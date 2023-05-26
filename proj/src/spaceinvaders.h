@@ -4,6 +4,7 @@
 #include <stdlib.h>
 
 #include "framework/video/video.h"
+#include "framework/mouse/mouse.h"
 
 #include "alien.h"
 #include "player.h"
@@ -13,6 +14,7 @@
 #include "direction.h"
 #include "xpm/logo.xpm"
 #include "xpm/play-button.xpm"
+#include "xpm/mouse.xpm"
 
 extern char* video_mem;
 extern uint8_t* vg_buffer;

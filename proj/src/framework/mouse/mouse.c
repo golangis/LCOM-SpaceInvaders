@@ -2,13 +2,21 @@
 
 uint8_t counter_byte = 0;
 uint8_t current_byte;
-struct packet pp;
 
+
+// Coordenadas Iniciais do Mouse
+int x_mouse = 400;
+int y_mouse = 300;
+
+bool mouse_read = false;
+struct packet mouse_packet;
 
 int (mouse_interrupt_handler)() {
   if (readStatusByte() != 0) return 1; // DEU ERRO
   if (readPacket() != 0) return 1; // DEU ERRO
-
+  if(update_mouse() != 0) return 1; // DEU ERRO
+  printf("x_mouse: %d\n", x_mouse);
+  printf("y_mouse: %d\n", y_mouse);
   return 0;
 }
 
@@ -44,32 +52,37 @@ int (readPacket)() {
         return 1;
     }
 
+    mouse_read = false;
+
     if (counter_byte % 3 == 0){
+      printf("Caralho Byte 1: 0x%x\n", data);
       // LER O BIT DE CONTROLO DO PACOTE
-      pp.lb = data & MOUSE_LB;
-      pp.rb = data & MOUSE_RB;
-      pp.mb = data & MOUSE_MB;
-      pp.delta_x = data & MOUSE_X_SIGN;
-      pp.delta_y = data & MOUSE_Y_SIGN;
-      pp.x_ov = data & MOUSE_X_OV;
-      pp.y_ov = data & MOUSE_Y_OV;
+      mouse_packet.lb = data & MOUSE_LB;
+      mouse_packet.rb = data & MOUSE_RB;
+      mouse_packet.mb = data & MOUSE_MB;
+      mouse_packet.delta_x = data & MOUSE_X_SIGN;
+      mouse_packet.delta_y = data & MOUSE_Y_SIGN;
+      mouse_packet.x_ov = data & MOUSE_X_OV;
+      mouse_packet.y_ov = data & MOUSE_Y_OV;
     }
     else if (counter_byte % 3 == 1){
-      if (pp.delta_x != 0){
-        pp.delta_x = -((int16_t)data);
+      if (mouse_packet.delta_x != 0){
+        mouse_packet.delta_x = -((int16_t)data);
       }
       else{
-        pp.delta_x = ((int16_t)data);
+        mouse_packet.delta_x = ((int16_t)data);
       }
     }
     else if (counter_byte % 3 == 2){
-      if (pp.delta_y != 0){
-        pp.delta_y = -((int16_t)data);
+      if (mouse_packet.delta_y != 0){
+        mouse_packet.delta_y = -((int16_t)data);
       }
       else{
-        pp.delta_y = ((int16_t)data);
+        mouse_packet.delta_y = ((int16_t)data);
       }
+      mouse_read = true;
     }
+    
     counter_byte++;
     return 0;
 }
@@ -83,4 +96,26 @@ int (subscribe_mouse_int)(uint8_t* bit_no) {
 
 int (unsubscribe_mouse_int)() {
   return sys_irqrmpolicy(&hook_id_mouse);
+}
+
+int (update_mouse)(){
+  if (mouse_read == true){
+    // dar update às coordenadas do rato
+    x_mouse += mouse_packet.delta_x;
+    y_mouse += mouse_packet.delta_y;
+
+    // verificar se o rato está dentro dos limites do ecrã
+    if (x_mouse < 0)
+      x_mouse = 0;
+    else if (x_mouse > 800)
+      x_mouse = 800;
+
+    if (y_mouse < 0)
+      y_mouse = 0;
+    else if (y_mouse > 600)
+      y_mouse = 600;
+
+    return 0;
+  }
+  return 1;
 }

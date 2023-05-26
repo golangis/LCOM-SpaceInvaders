@@ -75,8 +75,14 @@ void (update)() {
   updates++;
 }
 
+extern int x_mouse;
+extern int y_mouse;
+
 void (drawMenu)() {
   memset(video_buffer, 0, h_res*v_res*bytes_per_pixel);
-  video_draw_xpm(20, 20, play_button_xpm);
+ // video_draw_xpm(100, 40, logo_xpm);
+  //video_draw_xpm(200, 400, play_button_xpm);
+  video_draw_xpm(x_mouse, y_mouse, mouse_xpm);
+  //video_draw_pixel(x_mouse, y_mouse, 0x00ff00);
   memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
 }

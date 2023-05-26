@@ -30,7 +30,7 @@ extern int timer_counter;
 // Keyboard
 extern int data;
 
-void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, bool* can_shoot, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state){
+void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, bool* can_shoot, int ipc_timer, int ipc_keyboard, message msg, enum state* state){
     printf("%d\n", msg.m_notify.interrupts);
     
     if (msg.m_notify.interrupts & ipc_timer) {
@@ -41,10 +41,6 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
         }
         if(timer_counter % 30 == 0) *can_shoot = true;
         if (timer_counter == INT_MAX) timer_counter = 0;
-    }
-    if (msg.m_notify.interrupts & ipc_mouse) {
-        mouse_interrupt_handler();
-        printf("%s\n", "encontrei o rato");
     }
     if (msg.m_notify.interrupts & ipc_keyboard) {
         kbc_ih();
@@ -89,7 +85,7 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
     //if (msg.m_notify.interrupts & ipc_mouse) {}
 }
 
-void (menu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_keyboard, message msg, enum state* state){
+void (menu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_keyboard, int ipc_mouse, message msg, enum state* state){
     if (msg.m_notify.interrupts & ipc_keyboard) {
         kbc_ih();
         if (*two_bytes) {
@@ -113,6 +109,10 @@ void (menu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
                 }    
             }
         }
+    }
+    if (msg.m_notify.interrupts & ipc_mouse) {
+        mouse_interrupt_handler();
+        printf("%s\n", "encontrei o rato");
     }
     //if (msg.m_notify.interrupts & ipc_mouse) {}
 }
@@ -161,11 +161,11 @@ int (proj_main_loop)(int argc, char **argv) {
                 case HARDWARE:
                     switch(state){
                         case menu:
-                            menu_loop(&make, &key, &two_bytes, scan, ipc_keyboard, msg, &state);
+                            menu_loop(&make, &key, &two_bytes, scan, ipc_keyboard, ipc_mouse, msg, &state);
                             drawMenu();
                             break;
                         case game:    
-                            game_loop(&make, &key, &two_bytes, scan, &can_shoot, ipc_timer, ipc_keyboard, ipc_mouse, msg, &state);
+                            game_loop(&make, &key, &two_bytes, scan, &can_shoot, ipc_timer, ipc_keyboard, msg, &state);
                             break;
                         default:
                             break;    
