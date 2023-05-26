@@ -1,3 +1,12 @@
+/**
+ * \mainpage
+ * This is our project for the Laboratório de Computadores course.\n\n
+ * It is a recreation of the game Space Invaders.\n
+ * A ship is controlled by the player, who tries to kill a group of aliens before they kill them.\n\n\n
+ * The project was developed by Guilherme Ribeiro (up202108731@up.pt), Mariana Rocha (up202004656@up.pt) and Pedro
+ * Januário (up202108768@up.pt).
+ */
+
 #include <lcom/lcf.h>
 #include <stdint.h>
 
