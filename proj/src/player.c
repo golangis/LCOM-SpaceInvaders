@@ -10,7 +10,7 @@ Player* (initPlayer)(){
   ship->x_max = 440;
   ship->y_min = 540;
   ship->y_max = 580;
-  ship->lives = 3;
+  ship->lives = 6;
   ship->score = 0;
   ship->shots_no = 0;
 
@@ -70,6 +70,43 @@ void (incrementScore)(Player* ship, int id) {
 
 void (drawScore)(Player* ship){
   int score = ship->score;
-  video_draw_xpm(10, 570, score_xpm);
-  video_draw_score(112, 570, score);
+  video_draw_xpm(10, 10, score_xpm);
+  video_draw_score(112, 10, score);
 }
+
+void (drawLives)(int lives){
+  switch(lives){
+    case 6:
+      video_draw_xpm(751, 10, heart_xpm);
+      video_draw_xpm(702, 10, heart_xpm);
+      video_draw_xpm(653, 10, heart_xpm);
+      break;
+    case 5:
+      video_draw_xpm(751, 10, heart_xpm);
+      video_draw_xpm(702, 10, heart_xpm);
+      video_draw_xpm(653, 10, heart_bad_xpm);
+      break;
+    case 4:
+      video_draw_xpm(751, 10, heart_xpm);
+      video_draw_xpm(702, 10, heart_xpm);
+      break;
+    case 3:
+      video_draw_xpm(751, 10, heart_xpm);
+      video_draw_xpm(702, 10, heart_bad_xpm);
+      break;    
+    case 2:
+      video_draw_xpm(751, 10, heart_xpm);
+      break;
+    case 1:
+      video_draw_xpm(751, 10, heart_bad_xpm);
+      break;
+    case 0:
+      break;
+    default:
+      video_draw_xpm(751, 10, heart_xpm);
+      video_draw_xpm(702, 10, heart_xpm);
+      video_draw_xpm(653, 10, heart_xpm);
+      break;
+  }
+}
+

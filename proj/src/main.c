@@ -39,10 +39,12 @@ extern int timer_counter;
 extern int data;
 
 void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, bool* can_shoot, int ipc_timer, int ipc_keyboard, message msg, enum state* state){
+    int no_lives = 0;
     if (msg.m_notify.interrupts & ipc_timer) {
         timer_interrupt_handler();
         if (timer_counter % 2 == 0) {
-            update();
+            update(&no_lives);
+            if(no_lives == 1) *state = menu;
             draw();
         }
         if(timer_counter % 40 == 0) *can_shoot = true;

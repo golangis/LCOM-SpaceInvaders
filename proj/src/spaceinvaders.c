@@ -28,11 +28,12 @@ void (draw)() {
   drawAliens(aliens);
 
   drawScore(ship);
+  drawLives(ship->lives);
 
   memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
 }
 
-void (update)() {
+void (update)(int* no_lives) {
   updates++;
   unsigned int shootAlienTime = 0;
   unsigned int moveAlienTime = 0;
@@ -103,7 +104,8 @@ void (update)() {
         return;
       } else if (a->shots[j].y_max >= ship->y_min && a->shots[j].x_min <= ship->x_max && a->shots[j].x_max >= ship->x_min) {
         deleteAlienShot(a, j);
-        ship->lives--;
+        looseLife(ship);
+        if(ship->lives == 0) *no_lives = 1;
         return;
       }
     }

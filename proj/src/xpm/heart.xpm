@@ -1,5 +1,5 @@
 /* XPM */
-static char * heart_xpm[] = {
+static const char * heart_xpm[] = {
 "39 36 3 1",
 " 	c #000000",
 ".	c #FFFFFF",

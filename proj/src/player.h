@@ -9,6 +9,9 @@
 #include "xpm/SCORE.xpm"
 #include "xpm/um.xpm"
 #include "xpm/dois.xpm"
+#include "xpm/heart.xpm"
+#include "xpm/heart-bad.xpm"
+
 
 typedef struct {
     int x_min;
@@ -30,5 +33,6 @@ void (deletePlayerShot)(Player* ship, int i);
 void (drawPlayer)(Player* ship);
 void (incrementScore)(Player* ship, int id);
 void (drawScore)(Player* ship);
+void (drawLives)(int lives);
 
 #endif

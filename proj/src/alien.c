@@ -33,7 +33,7 @@ AlienGroup* (initAliens)(){
       case 8: x_min = 555; break;
       case 9: x_min = 605; break;
     }
-    int y_min = 40 * ((i / 10) + 1);
+    int y_min = (40 * ((i / 10) + 1)) + 14;
     array[i] = initAlien(i, x_min, y_min);
   }
 
