@@ -143,7 +143,7 @@ void (update)(int* no_lives) {
   }
 }
 
-void (drawMenu)() {
+void (drawMainMenu)() {
   memset(video_buffer, 0, h_res*v_res*bytes_per_pixel);
   video_draw_xpm(20, 20, play_button_xpm);
   memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);

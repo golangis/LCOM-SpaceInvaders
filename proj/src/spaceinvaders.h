@@ -34,12 +34,12 @@ unsigned int updates;
 void (init_game)();
 void (draw)();
 void (update)(int* no_lives);
-void (drawMenu)();
+void (drawMainMenu)();
 void (reload_aliens)();
 
 enum state {
   game,
-  menu,
+  mainMenu,
   quit
 };
 
