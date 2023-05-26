@@ -3,8 +3,8 @@
 
 int main(int argc, char *argv[]) {
   lcf_set_language("EN-US");
-  lcf_trace_calls("/home/lcom/labs/g3/proj/src/trace.txt");
-  lcf_log_output("/home/lcom/labs/g3/proj/src/output.txt");
+  lcf_trace_calls("/home/lcom/labs/proj/src/trace.txt");
+  lcf_log_output("/home/lcom/labs/proj/src/output.txt");
   if (lcf_start(argc, argv))
     return 1;
   lcf_cleanup();
@@ -13,6 +13,7 @@ int main(int argc, char *argv[]) {
 
 #include "framework/keyboard/kbdframework.h"
 #include "framework/timer/timer.h"
+#include "framework/mouse/mouse.h"
 #include "framework/video/video.h"
 
 #include "spaceinvaders.h"
@@ -29,7 +30,9 @@ extern int timer_counter;
 // Keyboard
 extern int data;
 
-void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, bool* can_shoot, int ipc_timer, int ipc_keyboard, message msg, enum state* state){
+void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, bool* can_shoot, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state){
+    printf("%d\n", msg.m_notify.interrupts);
+    
     if (msg.m_notify.interrupts & ipc_timer) {
         timer_interrupt_handler();
         if (timer_counter % 2 == 0) {
@@ -38,6 +41,10 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
         }
         if(timer_counter % 30 == 0) *can_shoot = true;
         if (timer_counter == INT_MAX) timer_counter = 0;
+    }
+    if (msg.m_notify.interrupts & ipc_mouse) {
+        mouse_interrupt_handler();
+        printf("%s\n", "encontrei o rato");
     }
     if (msg.m_notify.interrupts & ipc_keyboard) {
         kbc_ih();
@@ -117,7 +124,7 @@ int (proj_main_loop)(int argc, char **argv) {
 
     int ipc_timer = BIT(TIMER_HOOK_BIT);  // check if 31
     int ipc_keyboard = BIT(KBC_HOOK_BIT);   // check if 1
-    //int ipc_mouse = BIT(10);  // check if 10
+    int ipc_mouse = BIT(MOUSE_HOOK_BIT);  // check if 10
 
     // timer
     timer_counter = 0;
@@ -134,6 +141,10 @@ int (proj_main_loop)(int argc, char **argv) {
     bool can_shoot = false;
     enum kbd_key key = INVALID;
     enum state state = menu;
+
+    // mouse
+    uint8_t mouse_hook_bit = MOUSE_HOOK_BIT;
+    if (subscribe_mouse_int(&mouse_hook_bit) != 0) return 1;
 
     // video
     video_init(0x115);
@@ -154,7 +165,7 @@ int (proj_main_loop)(int argc, char **argv) {
                             drawMenu();
                             break;
                         case game:    
-                            game_loop(&make, &key, &two_bytes, scan, &can_shoot, ipc_timer, ipc_keyboard, msg, &state);
+                            game_loop(&make, &key, &two_bytes, scan, &can_shoot, ipc_timer, ipc_keyboard, ipc_mouse, msg, &state);
                             break;
                         default:
                             break;    
@@ -169,6 +180,7 @@ int (proj_main_loop)(int argc, char **argv) {
     free(scan);
     if (kbc_unsubscribe_int() != 0) return 1;
     if (unsubscribe_timer_int() != 0) return 1;
+    if (unsubscribe_mouse_int() != 0) return 1;
     vg_exit();
     return 0;
 }
