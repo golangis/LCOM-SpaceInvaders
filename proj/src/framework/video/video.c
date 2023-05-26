@@ -82,8 +82,8 @@ void (video_draw_xpm)(uint16_t x, uint16_t y, xpm_map_t xpm) {
     xpm_image_t img;
     uint8_t* map = xpm_load(xpm, XPM_8_8_8, &img);
 
-    for (uint8_t i = 0; i < img.width; i++) {
-        for (uint8_t j = 0; j < img.height; j++) {
+    for (uint16_t i = 0; i < img.width; i++) {
+        for (uint16_t j = 0; j < img.height; j++) {
             uint32_t color = 0;
 
             for(int k = 0; k < 3; k++){
