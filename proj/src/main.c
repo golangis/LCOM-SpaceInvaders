@@ -180,9 +180,6 @@ int (proj_main_loop)(int argc, char **argv) {
         }
     }
 
-    rtc_time time;
-    while (get_time(&time));
-
     free(scan);
     if (kbc_unsubscribe_int() != 0) return 1;
     if (unsubscribe_timer_int() != 0) return 1;
