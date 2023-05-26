@@ -26,6 +26,7 @@ Shield* shield2;
 Shield* shield3;
 AlienGroup* aliens;
 Shot* shots;
+int wave;
 
 enum direction last_alien_mov;
 unsigned int updates;
@@ -34,6 +35,7 @@ void (init_game)();
 void (draw)();
 void (update)();
 void (drawMenu)();
+void (reload_aliens)();
 
 enum state {
   game,

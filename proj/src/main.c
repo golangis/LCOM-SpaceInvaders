@@ -149,10 +149,10 @@ int (proj_main_loop)(int argc, char **argv) {
     bool can_shoot = false;
     enum kbd_key key = INVALID;
     enum state state = menu;
+    wave = 1;
 
     // video
     video_init(0x115);
-    init_game();
 
     while (state != quit) {
         if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {

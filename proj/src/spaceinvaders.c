@@ -10,6 +10,12 @@ void (init_game)() {
   updates = 0;
 }
 
+void (reload_aliens)() {
+  aliens = initAliens();
+  last_alien_mov = right;
+  updates = 0;
+}
+
 void (draw)() {
   memset(video_buffer, 0, h_res*v_res*bytes_per_pixel);
 
@@ -28,11 +34,36 @@ void (draw)() {
 
 void (update)() {
   updates++;
-  if (updates == 50) {
+  unsigned int shootAlienTime = 0;
+  unsigned int moveAlienTime = 0;
+
+  switch(wave){
+    case 1:
+      shootAlienTime = 50;
+      moveAlienTime = 30;
+      break;
+    case 2:
+      shootAlienTime = 40;
+      moveAlienTime = 25;
+      break;
+    case 3:
+      shootAlienTime = 30;
+      moveAlienTime = 22;
+      break;
+    case 4:
+      shootAlienTime = 20;
+      moveAlienTime = 20;
+      break;
+    default:
+      shootAlienTime = 20;
+      moveAlienTime = 20; 
+      break; 
+  }
+  if (updates == shootAlienTime) {
     shootAliens(aliens);
     updates = 0;
   }
-  else if (updates % 30 == 0) {
+  else if (updates % moveAlienTime == 0) {
     switch (last_alien_mov) {
       case right:
         if (!canAlienGroupMove(aliens, right)) {
@@ -104,7 +135,8 @@ void (update)() {
   }
   if (aliens->alive_no == 0) {
     int score = ship->score;
-    init_game();
+    wave++;
+    reload_aliens();
     ship->score = score;
   }
 }
