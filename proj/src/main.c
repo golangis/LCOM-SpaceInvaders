@@ -11,8 +11,8 @@
 
 int main(int argc, char *argv[]) {
   lcf_set_language("EN-US");
-  lcf_trace_calls("/home/lcom/labs/g3/proj/src/trace.txt");
-  lcf_log_output("/home/lcom/labs/g3/proj/src/output.txt");
+  lcf_trace_calls("/home/lcom/labs/proj/src/trace.txt");
+  lcf_log_output("/home/lcom/labs/proj/src/output.txt");
   if (lcf_start(argc, argv))
     return 1;
   lcf_cleanup();
@@ -22,6 +22,7 @@ int main(int argc, char *argv[]) {
 #include "framework/keyboard/kbdframework.h"
 #include "framework/rtc/rtc.h"
 #include "framework/timer/timer.h"
+#include "framework/mouse/mouse.h"
 #include "framework/video/video.h"
 
 #include "spaceinvaders.h"
@@ -38,7 +39,7 @@ extern int timer_counter;
 // Keyboard
 extern int data;
 
-void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, bool* can_shoot, int ipc_timer, int ipc_keyboard, message msg, enum state* state){
+void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, bool* can_shoot, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state){
     int no_lives = 0;
     if (msg.m_notify.interrupts & ipc_timer) {
         timer_interrupt_handler();
@@ -92,10 +93,14 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
             }
         }
     }
+        if (msg.m_notify.interrupts & ipc_mouse) {
+        mouse_interrupt_handler();
+        printf("%s\n", "encontrei o rato");
+    }
     //if (msg.m_notify.interrupts & ipc_mouse) {}
 }
 
-void (mainMenu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_keyboard, message msg, enum state* state){
+void (mainMenu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_keyboard, int ipc_mouse, message msg, enum state* state){
     if (msg.m_notify.interrupts & ipc_keyboard) {
         kbc_ih();
         if (*two_bytes) {
@@ -122,6 +127,10 @@ void (mainMenu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* sc
             }
         }
     }
+    if (msg.m_notify.interrupts & ipc_mouse) {
+        mouse_interrupt_handler();
+        printf("%s\n", "encontrei o rato");
+    }
     //if (msg.m_notify.interrupts & ipc_mouse) {}
 }
 
@@ -132,7 +141,7 @@ int (proj_main_loop)(int argc, char **argv) {
 
     int ipc_timer = BIT(TIMER_HOOK_BIT);  // check if 31
     int ipc_keyboard = BIT(KBC_HOOK_BIT);   // check if 1
-    //int ipc_mouse = BIT(10);  // check if 10
+    int ipc_mouse = BIT(MOUSE_HOOK_BIT);  // check if 10
 
     //mouse
 
@@ -153,6 +162,10 @@ int (proj_main_loop)(int argc, char **argv) {
     enum state state = mainMenu;
     wave = 1;
 
+    // mouse
+    uint8_t mouse_hook_bit = MOUSE_HOOK_BIT;
+    if (subscribe_mouse_int(&mouse_hook_bit) != 0) return 1;
+
     // video
     video_init(0x115);
 
@@ -166,11 +179,11 @@ int (proj_main_loop)(int argc, char **argv) {
                 case HARDWARE:
                     switch (state) {
                         case mainMenu:
-                            mainMenu_loop(&make, &key, &two_bytes, scan, ipc_keyboard, msg, &state);
+                            mainMenu_loop(&make, &key, &two_bytes, scan, ipc_keyboard, ipc_mouse, msg, &state);
                             drawMainMenu();
                             break;
                         case game:    
-                            game_loop(&make, &key, &two_bytes, scan, &can_shoot, ipc_timer, ipc_keyboard, msg, &state);
+                            game_loop(&make, &key, &two_bytes, scan, &can_shoot, ipc_timer, ipc_keyboard, ipc_mouse, msg, &state);
                             break;
                         default:
                             break;    
@@ -185,6 +198,7 @@ int (proj_main_loop)(int argc, char **argv) {
     free(scan);
     if (kbc_unsubscribe_int() != 0) return 1;
     if (unsubscribe_timer_int() != 0) return 1;
+    if (unsubscribe_mouse_int() != 0) return 1;
     vg_exit();
     
     return 0;

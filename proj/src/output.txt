@@ -1,0 +1,435 @@
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 399
+y_mouse: 306
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 397
+y_mouse: 315
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 393
+y_mouse: 330
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 381
+y_mouse: 370
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 373
+y_mouse: 371
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 361
+y_mouse: 429
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 356
+y_mouse: 457
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 347
+y_mouse: 516
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 342
+y_mouse: 542
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 336
+y_mouse: 567
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 326
+y_mouse: 568
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 321
+y_mouse: 568
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 313
+y_mouse: 568
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 310
+y_mouse: 568
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 307
+y_mouse: 568
+encontrei o rato
+Caralho Byte 1: 0x18
+encontrei o rato
+encontrei o rato
+x_mouse: 285
+y_mouse: 564
+encontrei o rato
+Caralho Byte 1: 0x18
+encontrei o rato
+encontrei o rato
+x_mouse: 261
+y_mouse: 561
+encontrei o rato
+Caralho Byte 1: 0x18
+encontrei o rato
+encontrei o rato
+x_mouse: 238
+y_mouse: 556
+encontrei o rato
+Caralho Byte 1: 0x18
+encontrei o rato
+encontrei o rato
+x_mouse: 186
+y_mouse: 545
+encontrei o rato
+Caralho Byte 1: 0x18
+encontrei o rato
+encontrei o rato
+x_mouse: 161
+y_mouse: 539
+encontrei o rato
+Caralho Byte 1: 0x18
+encontrei o rato
+encontrei o rato
+x_mouse: 127
+y_mouse: 524
+encontrei o rato
+Caralho Byte 1: 0x18
+encontrei o rato
+encontrei o rato
+x_mouse: 84
+y_mouse: 507
+encontrei o rato
+Caralho Byte 1: 0x18
+encontrei o rato
+encontrei o rato
+x_mouse: 66
+y_mouse: 500
+encontrei o rato
+Caralho Byte 1: 0x18
+encontrei o rato
+encontrei o rato
+x_mouse: 47
+y_mouse: 492
+encontrei o rato
+Caralho Byte 1: 0x18
+encontrei o rato
+encontrei o rato
+x_mouse: 14
+y_mouse: 471
+encontrei o rato
+Caralho Byte 1: 0x18
+encontrei o rato
+encontrei o rato
+x_mouse: 5
+y_mouse: 462
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 1
+y_mouse: 463
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 0
+y_mouse: 465
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 0
+y_mouse: 467
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 0
+y_mouse: 472
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 0
+y_mouse: 475
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 0
+y_mouse: 480
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 0
+y_mouse: 482
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 0
+y_mouse: 485
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 0
+y_mouse: 488
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 0
+y_mouse: 489
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 0
+y_mouse: 492
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 0
+y_mouse: 493
+encontrei o rato
+Caralho Byte 1: 0x38
+encontrei o rato
+encontrei o rato
+x_mouse: 0
+y_mouse: 493
+encontrei o rato
+Caralho Byte 1: 0x18
+encontrei o rato
+encontrei o rato
+x_mouse: 0
+y_mouse: 493
+encontrei o rato
+Caralho Byte 1: 0x18
+encontrei o rato
+encontrei o rato
+x_mouse: 0
+y_mouse: 493
+encontrei o rato
+Caralho Byte 1: 0x18
+encontrei o rato
+encontrei o rato
+x_mouse: 0
+y_mouse: 492
+encontrei o rato
+Caralho Byte 1: 0x18
+encontrei o rato
+encontrei o rato
+x_mouse: 0
+y_mouse: 489
+encontrei o rato
+Caralho Byte 1: 0x18
+encontrei o rato
+encontrei o rato
+x_mouse: 0
+y_mouse: 485
+encontrei o rato
+Caralho Byte 1: 0x18
+encontrei o rato
+encontrei o rato
+x_mouse: 0
+y_mouse: 484
+encontrei o rato
+Caralho Byte 1: 0x18
+encontrei o rato
+encontrei o rato
+x_mouse: 0
+y_mouse: 479
+encontrei o rato
+Caralho Byte 1: 0x8
+encontrei o rato
+encontrei o rato
+x_mouse: 0
+y_mouse: 477
+encontrei o rato
+Caralho Byte 1: 0x8
+encontrei o rato
+encontrei o rato
+x_mouse: 1
+y_mouse: 472
+encontrei o rato
+Caralho Byte 1: 0x8
+encontrei o rato
+encontrei o rato
+x_mouse: 1
+y_mouse: 470
+encontrei o rato
+Caralho Byte 1: 0x8
+encontrei o rato
+encontrei o rato
+x_mouse: 4
+y_mouse: 466
+encontrei o rato
+Caralho Byte 1: 0x8
+encontrei o rato
+encontrei o rato
+x_mouse: 6
+y_mouse: 463
+encontrei o rato
+Caralho Byte 1: 0x8
+encontrei o rato
+encontrei o rato
+x_mouse: 9
+y_mouse: 459
+encontrei o rato
+Caralho Byte 1: 0x8
+encontrei o rato
+encontrei o rato
+x_mouse: 17
+y_mouse: 453
+encontrei o rato
+Caralho Byte 1: 0x8
+encontrei o rato
+encontrei o rato
+x_mouse: 22
+y_mouse: 451
+encontrei o rato
+Caralho Byte 1: 0x8
+encontrei o rato
+encontrei o rato
+x_mouse: 33
+y_mouse: 446
+encontrei o rato
+Caralho Byte 1: 0x8
+encontrei o rato
+encontrei o rato
+x_mouse: 39
+y_mouse: 444
+encontrei o rato
+Caralho Byte 1: 0x8
+encontrei o rato
+encontrei o rato
+x_mouse: 51
+y_mouse: 440
+encontrei o rato
+Caralho Byte 1: 0x8
+encontrei o rato
+encontrei o rato
+x_mouse: 56
+y_mouse: 440
+encontrei o rato
+Caralho Byte 1: 0x8
+encontrei o rato
+encontrei o rato
+x_mouse: 64
+y_mouse: 440
+encontrei o rato
+Caralho Byte 1: 0x8
+encontrei o rato
+encontrei o rato
+x_mouse: 66
+y_mouse: 440
+encontrei o rato
+Caralho Byte 1: 0x8
+encontrei o rato
+encontrei o rato
+x_mouse: 67
+y_mouse: 440
+encontrei o rato
+Caralho Byte 1: 0x8
+encontrei o rato
+encontrei o rato
+x_mouse: 68
+y_mouse: 440
+encontrei o rato
+Caralho Byte 1: 0x8
+encontrei o rato
+encontrei o rato
+x_mouse: 70
+y_mouse: 440
+encontrei o rato
+Caralho Byte 1: 0x28
+encontrei o rato
+encontrei o rato
+x_mouse: 71
+y_mouse: 440
+encontrei o rato
+Caralho Byte 1: 0x28
+encontrei o rato
+encontrei o rato
+x_mouse: 74
+y_mouse: 444
+encontrei o rato
+Caralho Byte 1: 0x18
+encontrei o rato
+encontrei o rato
+x_mouse: 74
+y_mouse: 444
+encontrei o rato
+Caralho Byte 1: 0x28
+encontrei o rato
+encontrei o rato
+x_mouse: 75
+y_mouse: 451
+encontrei o rato
+Caralho Byte 1: 0x28
+encontrei o rato
+encontrei o rato
+x_mouse: 75
+y_mouse: 454
+encontrei o rato
+Caralho Byte 1: 0x28
+encontrei o rato
+encontrei o rato
+x_mouse: 75
+y_mouse: 456
+encontrei o rato
+Caralho Byte 1: 0x28
+encontrei o rato
+encontrei o rato
+x_mouse: 75
+y_mouse: 457
+encontrei o rato
+Caralho Byte 1: 0x28
+encontrei o rato
+encontrei o rato
+x_mouse: 75
+y_mouse: 461
+encontrei o rato
+Caralho Byte 1: 0x28
+encontrei o rato
+encontrei o rato
+x_mouse: 75
+y_mouse: 463
+encontrei o rato
+Caralho Byte 1: 0x28
+encontrei o rato
+encontrei o rato
