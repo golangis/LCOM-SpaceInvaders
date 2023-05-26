@@ -39,7 +39,7 @@ extern int timer_counter;
 // Keyboard
 extern int data;
 
-void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, bool* can_shoot, int ipc_timer, int ipc_keyboard, message msg, enum state* state){
+void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, bool* can_shoot, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state){
     int no_lives = 0;
     if (msg.m_notify.interrupts & ipc_timer) {
         timer_interrupt_handler();
@@ -92,6 +92,10 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
                 }
             }
         }
+    }
+        if (msg.m_notify.interrupts & ipc_mouse) {
+        mouse_interrupt_handler();
+        printf("%s\n", "encontrei o rato");
     }
     //if (msg.m_notify.interrupts & ipc_mouse) {}
 }
@@ -179,7 +183,7 @@ int (proj_main_loop)(int argc, char **argv) {
                             drawMainMenu();
                             break;
                         case game:    
-                            game_loop(&make, &key, &two_bytes, scan, &can_shoot, ipc_timer, ipc_keyboard, msg, &state);
+                            game_loop(&make, &key, &two_bytes, scan, &can_shoot, ipc_timer, ipc_keyboard, ipc_mouse, msg, &state);
                             break;
                         default:
                             break;    

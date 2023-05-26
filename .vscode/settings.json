@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "timer.h": "c",
+        "video.h": "c",
+        "kbdframework.h": "c",
+        "*.xpm": "c"
+    }
+}
