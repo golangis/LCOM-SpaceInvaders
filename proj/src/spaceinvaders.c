@@ -28,7 +28,7 @@ void (draw)() {
 
 void (update)() {
   updates++;
-  if (updates == 300) {
+  if (updates == 50) {
     shootAliens(aliens);
     updates = 0;
   }

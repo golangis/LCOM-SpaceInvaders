@@ -36,7 +36,7 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
             update();
             draw();
         }
-        if(timer_counter % 30 == 0) *can_shoot = true;
+        if(timer_counter % 45 == 0) *can_shoot = true;
         if (timer_counter == INT_MAX) timer_counter = 0;
     }
     if (msg.m_notify.interrupts & ipc_keyboard) {
