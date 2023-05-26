@@ -152,6 +152,9 @@ int (proj_main_loop)(int argc, char **argv) {
 
     // video
     video_init(0x115);
+
+    Score* highscores = loadScores();
+
     init_game();
 
     while (state != quit) {
@@ -184,6 +187,8 @@ int (proj_main_loop)(int argc, char **argv) {
     if (kbc_unsubscribe_int() != 0) return 1;
     if (unsubscribe_timer_int() != 0) return 1;
     vg_exit();
+
+    loadScores();
     
     return 0;
 }

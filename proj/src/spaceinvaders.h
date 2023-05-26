@@ -2,8 +2,12 @@
 #define SPACEINVADERS_H
 
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
 
 #include "framework/video/video.h"
+#include "framework/rtc/rtc.h"
 
 #include "alien.h"
 #include "player.h"
@@ -30,7 +34,17 @@ Shot* shots;
 enum direction last_alien_mov;
 unsigned int updates;
 
+typedef struct {
+  int points;
+  char datetime[16];
+} Score;
+
 void (init_game)();
+Score* (loadScores)();
+/*
+leitura sacada de https://www.geeksforgeeks.org/relational-database-from-csv-files-in-c/
+*/
+void (updateScores)(Score* array);
 void (draw)();
 void (update)();
 void (drawmainMenu)();

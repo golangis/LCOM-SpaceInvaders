@@ -10,6 +10,56 @@ void (init_game)() {
   updates = 0;
 }
 
+Score* (loadScores)() {
+  Score* array = (Score*) malloc (sizeof(Score) * 10);
+
+  FILE* fp = fopen("/home/lcom/labs/proj/src/highscores.csv", "r");
+
+  if (!fp) fp = fopen("/home/lcom/labs/g3/proj/src/highscore.csv", "r");
+  if (!fp) {
+    printf("Error opening file\n");
+    return;
+  }
+
+  char buffer[1024];
+
+  int row = 0;
+  int column = 0;
+
+  while (fgets(buffer, 1024, fp)) {
+    column = 0;
+
+    int points;
+    char datetime[16];
+
+    char* value = strtok(buffer, ",");
+
+    while (value) {
+      switch (column) {
+        case 0: points = atoi(value); printf("%d\n", points); break;
+        case 1: value = strcpy(datetime, value); printf("%s\n", datetime); break;
+        default: break;
+      }
+      value = strtok(NULL, ",");
+      column++;
+    }
+
+    Score score;
+    score.points = points;
+    strcpy(score.datetime, datetime);
+
+    array[row] = score;
+
+    row++;
+  }
+
+  fclose(fp);
+
+  return array;
+}
+
+void (updateScores)(Score* array) {}
+
 void (draw)() {
   memset(video_buffer, 0, h_res*v_res*bytes_per_pixel);
 
