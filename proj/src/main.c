@@ -45,7 +45,14 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
         timer_interrupt_handler();
         if (timer_counter % 2 == 0) {
             update(&no_lives);
-            if(no_lives == 1) *state = mainMenu;
+            if(no_lives == 1) {
+                Score* scores = loadScores();
+                rtc_time time;
+                while (get_time(&time));
+                Score score = buildScore(ship->score, &time);
+                if (processScore(score, scores)) storeScores(scores);
+                *state = mainMenu;
+            }
             draw();
         }
         if (timer_counter % 40 == 0) *can_shoot = true;
@@ -144,8 +151,6 @@ int (proj_main_loop)(int argc, char **argv) {
     int ipc_keyboard = BIT(KBC_HOOK_BIT);   // check if 1
     int ipc_mouse = BIT(MOUSE_HOOK_BIT);  // check if 10
 
-    //mouse
-
     // timer
     timer_counter = 0;
     uint8_t timer_hook_bit = TIMER_HOOK_BIT;
@@ -169,8 +174,6 @@ int (proj_main_loop)(int argc, char **argv) {
 
     // video
     video_init(0x115);
-
-    //Score* highscores = loadScores();
 
     init_game();
 

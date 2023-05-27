@@ -52,6 +52,7 @@ Score* (loadScores)() {
 
     Score score;
     score.points = points;
+    datetime[16] = 0;
     strcpy(score.datetime, datetime);
 
     array[row] = score;
@@ -64,7 +65,38 @@ Score* (loadScores)() {
   return array;
 }
 
-void (updateScores)(Score* array) {
+Score (buildScore)(int points, rtc_time* time) {
+  Score score;
+  score.points = points;
+  char str[17];
+  if (time->month < 10 && time->hour < 10) sprintf(str, "%d/0%d/%d 0%d:%d", time->day, time->month, time->year, time->hour, time->minute);
+  else if (time->month < 10) sprintf(str, "%d/0%d/%d %d:%d", time->day, time->month, time->year, time->hour, time->minute);
+  else if (time->hour < 10) sprintf(str, "%d/%d/%d 0%d:%d", time->day, time->month, time->year, time->hour, time->minute);
+  else sprintf(str, "%d/%d/%d %d:%d", time->day, time->month, time->year, time->hour, time->minute);
+  strcpy(score.datetime, str);
+  return score;
+}
+
+bool (processScore)(Score score, Score* array) {
+  for (size_t i = 0; i < 10; i++) {
+    if (score.points > array[i].points) {
+      for (size_t j = 9; j > i; j--) array[j] = array[j - 1];
+      array[i] = score;
+      return true;
+    }
+  }
+  return false;
+}
+
+void (initScores)() {
+  FILE *fp = fopen("/home/lcom/labs/proj/src/highscores.csv", "w");
+
+  for (size_t i = 0; i < 10; i++) fprintf(fp, "0,00/00/0000 00:00\n");
+
+  fclose(fp);
+}
+
+void (storeScores)(Score* array) {
   FILE* fp = fopen("/home/lcom/labs/proj/src/highscores.csv", "w");
 
   if (!fp) fp = fopen("/home/lcom/labs/g3/proj/src/highscore.csv", "w");
@@ -75,7 +107,7 @@ void (updateScores)(Score* array) {
 
   for (size_t i = 0; i < 10; i++) {
     Score score = array[i];
-    fprintf(fp, "%d,%s", score.points, score.datetime);
+    fprintf(fp, "%d,%s\n", score.points, score.datetime);
   }
 
   fclose(fp);

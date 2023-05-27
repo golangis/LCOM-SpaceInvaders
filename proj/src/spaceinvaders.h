@@ -41,10 +41,12 @@ typedef struct {
 
 void (init_game)();
 Score* (loadScores)();
+Score (buildScore)(int points, rtc_time* time);
+bool (processScore)(Score score, Score* array);
 /*
 leitura sacada de https://www.geeksforgeeks.org/relational-database-from-csv-files-in-c/
 */
-void (updateScores)(Score* array);
+void (storeScores)(Score* array);
 /*
 escrita sacada de https://www.programiz.com/c-programming/c-file-input-output
 */
@@ -52,6 +54,8 @@ void (draw)();
 void (update)(int* no_lives);
 void (drawMainMenu)();
 void (reload_aliens)();
+
+void (initScores)();
 
 enum state {
   game,
