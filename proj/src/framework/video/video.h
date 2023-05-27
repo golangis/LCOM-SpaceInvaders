@@ -31,6 +31,7 @@ uint8_t* video_buffer;
 #include "xpm/score.xpm"
 #include "xpm/shield.xpm"
 #include "xpm/shot.xpm"
+#include "xpm/GameOver.xpm"
 
 xpm_image_t zero_img;
 xpm_image_t one_img;
@@ -59,6 +60,7 @@ xpm_image_t shield2_img;
 xpm_image_t shield1_img;
 xpm_image_t ship_shot_img;
 xpm_image_t alien_shot_img;
+xpm_image_t gameOver_img;
 
 uint8_t* zero_map;
 uint8_t* one_map;
@@ -87,6 +89,7 @@ uint8_t* shield2_map;
 uint8_t* shield1_map;
 uint8_t* ship_shot_map;
 uint8_t* alien_shot_map;
+uint8_t* gameOver_map;
 
 void* (video_init)(uint16_t mode);
 void (video_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color);

@@ -97,6 +97,7 @@ void (video_load_xpms)() {
     shield1_map = xpm_load(shield1_xpm, XPM_8_8_8, &shield1_img);
     ship_shot_map = xpm_load(ship_shot_xpm, XPM_8_8_8, &ship_shot_img);
     alien_shot_map = xpm_load(alien_shot_xpm, XPM_8_8_8, &alien_shot_img);
+    gameOver_map = xpm_load(gameOver_xpm, XPM_8_8_8, &gameOver_img);
 }
 
 void (video_draw_xpm)(uint16_t x, uint16_t y, char xpm[]) {
@@ -184,7 +185,11 @@ void (video_draw_xpm)(uint16_t x, uint16_t y, char xpm[]) {
     } else if (strcmp(xpm, "alien_shot") == 0) {
         map = alien_shot_map;
         img = alien_shot_img;
-    } else return;
+    } else if (strcmp(xpm, "gameOver") == 0) {
+        map = gameOver_map;
+        img = gameOver_img;
+    }    
+    else return;
 
     for (uint16_t i = 0; i < img.width; i++) {
         for (uint16_t j = 0; j < img.height; j++) {

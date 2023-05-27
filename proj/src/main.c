@@ -45,7 +45,7 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
         timer_interrupt_handler();
         if (timer_counter % 2 == 0) {
             update(&no_lives);
-            if(no_lives == 1) *state = mainMenu;
+            if(no_lives == 1) *state = gameOverMenu;
             draw();
         }
         if (timer_counter % 40 == 0) *can_shoot = true;
@@ -135,6 +135,43 @@ void (mainMenu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* sc
     }
 }
 
+void gameOverMenu_loop(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state){
+    if (msg.m_notify.interrupts & ipc_timer) {
+        timer_interrupt_handler();
+        if (timer_counter % 2 == 0) drawGameOverMenu();
+        if (timer_counter >= 600) timer_counter = 0;
+    }
+    if (msg.m_notify.interrupts & ipc_keyboard) {
+        kbc_ih();
+        if (*two_bytes) {
+            scan[1] = data;
+            *two_bytes = false;
+            *make = data & BIT(7);
+            *key = kbd_get_key(!make, 2, scan);
+            switch (*key) {
+                case kbd_space: *state = mainMenu; break;
+                case kbd_esc: *state = quit; break;
+                default: break;
+            }
+        } else {
+            scan[0] = data;
+            *make = data & BIT(7);
+            if (data == KBD_TWO_BYTE) *two_bytes = true;
+            else {
+                *key = kbd_get_key(!make, 1, scan);
+                switch (*key) {
+                    case kbd_space: *state = mainMenu; break;
+                    case kbd_esc: *state = quit; break;
+                    default: break;
+                }  
+            }
+        }
+    }
+    if (msg.m_notify.interrupts & ipc_mouse) {
+        mouse_interrupt_handler();
+    }
+}
+
 int (proj_main_loop)(int argc, char **argv) {
     int ipc_status;
     message msg;
@@ -167,7 +204,6 @@ int (proj_main_loop)(int argc, char **argv) {
 
     // video
     video_init(0x115);
-    uint8_t* vb = drawMainMenu();
 
     //Score* highscores = loadScores();
 
@@ -188,8 +224,11 @@ int (proj_main_loop)(int argc, char **argv) {
                         case game:    
                             game_loop(&make, &key, &two_bytes, scan, &can_shoot, ipc_timer, ipc_keyboard, ipc_mouse, msg, &state);
                             break;
-                        default:
-                            break;    
+                        case quit:
+                            break;
+                        case gameOverMenu:
+                            gameOverMenu_loop(&make, &key, &two_bytes, scan, ipc_timer, ipc_keyboard, ipc_mouse, msg, &state);
+                            break;   
                     }
                     break;
                 default:

@@ -218,3 +218,10 @@ void (drawMainMenu)() {
   video_draw_xpm(x_mouse, y_mouse, "mouse");
   memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
 }
+
+void (drawGameOverMenu)() {
+  memset(video_buffer, 0, h_res*v_res*bytes_per_pixel);
+  video_draw_xpm(250, 250, "gameOver");
+  video_draw_xpm(x_mouse, y_mouse, "mouse");
+  memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
+}
