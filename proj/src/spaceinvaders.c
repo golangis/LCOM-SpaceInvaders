@@ -250,3 +250,35 @@ void (drawMainMenu)() {
   video_draw_xpm(x_mouse, y_mouse, "mouse");
   memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
 }
+
+void (drawHighscores)(Score* scores) {
+  memset(video_buffer, 0, h_res*v_res*bytes_per_pixel);
+  for (int i = 0; i < 10; i++) {
+    int points = scores[i].points;
+    int alg_count = 0;
+    while (points != 0) {
+      points /= 10;
+      alg_count++;
+    }
+    points = scores[i].points;
+    for (int j = alg_count; j > 0; j--) {
+      int x = 10 + (22 * j);
+      int y = 20 + (50 * i);
+      switch (points % 10) {
+        case 0: video_draw_xpm(x, y, "zero"); break;
+        case 1: video_draw_xpm(x, y, "one"); break;
+        case 2: video_draw_xpm(x, y, "two"); break;
+        case 3: video_draw_xpm(x, y, "three"); break;
+        case 4: video_draw_xpm(x, y, "four"); break;
+        case 5: video_draw_xpm(x, y, "five"); break;
+        case 6: video_draw_xpm(x, y, "six"); break;
+        case 7: video_draw_xpm(x, y, "seven"); break;
+        case 8: video_draw_xpm(x, y, "eight"); break;
+        case 9: video_draw_xpm(x, y, "nine"); break;
+        default: break;
+      }
+      points /= 10;
+    }
+  }
+  memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
+}

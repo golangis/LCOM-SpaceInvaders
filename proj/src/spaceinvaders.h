@@ -53,6 +53,7 @@ escrita sacada de https://www.programiz.com/c-programming/c-file-input-output
 void (draw)();
 void (update)(int* no_lives);
 void (drawMainMenu)();
+void (drawHighscores)(Score* scores);
 void (reload_aliens)();
 
 void (initScores)();
@@ -60,6 +61,7 @@ void (initScores)();
 enum state {
   game,
   mainMenu,
+  highscores,
   quit
 };
 
