@@ -2,9 +2,13 @@
 #define SPACEINVADERS_H
 
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
 
 #include "framework/video/video.h"
 #include "framework/mouse/mouse.h"
+#include "framework/rtc/rtc.h"
 
 #include "alien.h"
 #include "player.h"
@@ -33,7 +37,20 @@ int wave;
 enum direction last_alien_mov;
 unsigned int updates;
 
+typedef struct {
+  int points;
+  char datetime[17];
+} Score;
+
 void (init_game)();
+Score* (loadScores)();
+/*
+leitura sacada de https://www.geeksforgeeks.org/relational-database-from-csv-files-in-c/
+*/
+void (updateScores)(Score* array);
+/*
+escrita sacada de https://www.programiz.com/c-programming/c-file-input-output
+*/
 void (draw)();
 void (update)(int* no_lives);
 void (drawMainMenu)();

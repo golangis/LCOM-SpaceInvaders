@@ -169,6 +169,10 @@ int (proj_main_loop)(int argc, char **argv) {
     // video
     video_init(0x115);
 
+    //Score* highscores = loadScores();
+
+    init_game();
+
     while (state != quit) {
         if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
             printf("driver_receive failed with: %d", r);            
@@ -200,6 +204,11 @@ int (proj_main_loop)(int argc, char **argv) {
     if (unsubscribe_timer_int() != 0) return 1;
     if (unsubscribe_mouse_int() != 0) return 1;
     vg_exit();
+
+    Score* array = (Score*) malloc (sizeof(Score) * 10);
+    array = loadScores();
+    for (size_t i = 0; i < 10; i++) printf("%d,%s", array[i].points, array[i].datetime);
+    updateScores(array);
     
     return 0;
 }
