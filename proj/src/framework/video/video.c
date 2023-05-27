@@ -61,14 +61,6 @@ void (video_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
     }
 }
 
-void (video_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
-    for (uint16_t i = 0; i < len; i++) video_draw_pixel(x+i, y, color);
-}
-
-void (video_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color) {
-    for (uint16_t i = 0; i < height; i++) video_draw_hline(x, y+i, width, color);
-}
-
 void (video_load_xpms)() {
     zero_map = xpm_load(zero_xpm, XPM_8_8_8, &zero_img);
     one_map = xpm_load(one_xpm, XPM_8_8_8, &one_img);

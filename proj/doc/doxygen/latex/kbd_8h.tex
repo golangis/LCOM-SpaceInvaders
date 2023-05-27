@@ -1,0 +1,185 @@
+\hypertarget{kbd_8h}{}\doxysection{C\+:/\+Users/\+Pedro/\+Documents/2\+LEIC/2º semestre/\+LC/\+MINIX-\/\+LCOM/shared/proj/src/framework/keyboard/kbd.h File Reference}
+\label{kbd_8h}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/keyboard/kbd.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/keyboard/kbd.h}}
+
+
+Constants for programming the KBC. Functions of the KBC framework.  
+
+
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../utils/utils.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{kbd_8h_a16c5827f043d82f87c726c2d4369c11d}\label{kbd_8h_a16c5827f043d82f87c726c2d4369c11d}} 
+\#define {\bfseries KBC\+\_\+\+IRQ}~1
+\item 
+\mbox{\Hypertarget{kbd_8h_a34b14687d83496940a236351fbbb1aea}\label{kbd_8h_a34b14687d83496940a236351fbbb1aea}} 
+\#define {\bfseries KBC\+\_\+\+STAT\+\_\+\+REG}~0x64
+\item 
+\mbox{\Hypertarget{kbd_8h_a1ccde68b2b6d4e45b50eef1403e10bb7}\label{kbd_8h_a1ccde68b2b6d4e45b50eef1403e10bb7}} 
+\#define {\bfseries KBC\+\_\+\+OUT\+\_\+\+BUF}~0x60
+\item 
+\mbox{\Hypertarget{kbd_8h_aac9289c99cf0a693a211da6d6cb1bb65}\label{kbd_8h_aac9289c99cf0a693a211da6d6cb1bb65}} 
+\#define {\bfseries KBC\+\_\+\+IN\+\_\+\+BUF}~0x60
+\item 
+\mbox{\Hypertarget{kbd_8h_a6d57c7927a10f638c83046b52c8caac9}\label{kbd_8h_a6d57c7927a10f638c83046b52c8caac9}} 
+\#define {\bfseries KBC\+\_\+\+CMD\+\_\+\+REG}~0x64
+\item 
+\mbox{\Hypertarget{kbd_8h_a595a5cad2d3c793963da50865b2c1b47}\label{kbd_8h_a595a5cad2d3c793963da50865b2c1b47}} 
+\#define {\bfseries KBC\+\_\+\+READ\+\_\+\+CMD}~0x20
+\item 
+\mbox{\Hypertarget{kbd_8h_aaa62a6987753a109d2f7a609ce8b7334}\label{kbd_8h_aaa62a6987753a109d2f7a609ce8b7334}} 
+\#define {\bfseries KBC\+\_\+\+WRITE\+\_\+\+CMD}~0x60
+\item 
+\mbox{\Hypertarget{kbd_8h_a52f707af5bc6d693c1d6ce1b78d17d93}\label{kbd_8h_a52f707af5bc6d693c1d6ce1b78d17d93}} 
+\#define {\bfseries KBC\+\_\+\+HOOK\+\_\+\+BIT}~1
+\item 
+\mbox{\Hypertarget{kbd_8h_a72cdf0038a85a698fce1c4fea5630937}\label{kbd_8h_a72cdf0038a85a698fce1c4fea5630937}} 
+\#define {\bfseries KBD\+\_\+\+TWO\+\_\+\+BYTE}~0xe0
+\item 
+\mbox{\Hypertarget{kbd_8h_a62249e384b997229a3e2ae74ade334e2}\label{kbd_8h_a62249e384b997229a3e2ae74ade334e2}} 
+\#define {\bfseries DELAY}~20000
+\item 
+\mbox{\Hypertarget{kbd_8h_aa6addd819c1594c0f9285169048db5ab}\label{kbd_8h_aa6addd819c1594c0f9285169048db5ab}} 
+\#define {\bfseries KBD\+\_\+\+ESC\+\_\+\+KEY}~129
+\item 
+\mbox{\Hypertarget{kbd_8h_ae986fbe55c87e6470ce26129fe08f3aa}\label{kbd_8h_ae986fbe55c87e6470ce26129fe08f3aa}} 
+\#define {\bfseries SPACE\+\_\+\+MAKE}~57
+\item 
+\mbox{\Hypertarget{kbd_8h_a95d6e4b61bac77469ecc47b205709af6}\label{kbd_8h_a95d6e4b61bac77469ecc47b205709af6}} 
+\#define {\bfseries SPACE\+\_\+\+BREAK}~185
+\item 
+\mbox{\Hypertarget{kbd_8h_ab3a9e08d95e1ed804eabefc24bd43c1f}\label{kbd_8h_ab3a9e08d95e1ed804eabefc24bd43c1f}} 
+\#define {\bfseries LEFT\+\_\+\+MAKE}~75
+\item 
+\mbox{\Hypertarget{kbd_8h_aa94f3bc417dddecbbb61868652497e9f}\label{kbd_8h_aa94f3bc417dddecbbb61868652497e9f}} 
+\#define {\bfseries LEFT\+\_\+\+BREAK}~203
+\item 
+\mbox{\Hypertarget{kbd_8h_af1729ecbd84901fd8bd712f6cf1efa6c}\label{kbd_8h_af1729ecbd84901fd8bd712f6cf1efa6c}} 
+\#define {\bfseries UP\+\_\+\+MAKE}~72
+\item 
+\mbox{\Hypertarget{kbd_8h_a7da1c128f696c681cbbe81a540865cc8}\label{kbd_8h_a7da1c128f696c681cbbe81a540865cc8}} 
+\#define {\bfseries UP\+\_\+\+BREAK}~200
+\item 
+\mbox{\Hypertarget{kbd_8h_ae6c7e1fc7d0f7e024bee1f0091a52e02}\label{kbd_8h_ae6c7e1fc7d0f7e024bee1f0091a52e02}} 
+\#define {\bfseries DOWN\+\_\+\+MAKE}~80
+\item 
+\mbox{\Hypertarget{kbd_8h_a9bda5a4305170a4f4433d2bc03be423c}\label{kbd_8h_a9bda5a4305170a4f4433d2bc03be423c}} 
+\#define {\bfseries DOWN\+\_\+\+BREAK}~208
+\item 
+\mbox{\Hypertarget{kbd_8h_a80b3878eb7339923b42f0acd492a5fd3}\label{kbd_8h_a80b3878eb7339923b42f0acd492a5fd3}} 
+\#define {\bfseries RIGHT\+\_\+\+MAKE}~77
+\item 
+\mbox{\Hypertarget{kbd_8h_a4c2291f3ce4b075fe429b7c661260774}\label{kbd_8h_a4c2291f3ce4b075fe429b7c661260774}} 
+\#define {\bfseries RIGHT\+\_\+\+BREAK}~205
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} \{ \newline
+{\bfseries kbd\+\_\+right}
+, {\bfseries kbd\+\_\+left}
+, {\bfseries kbd\+\_\+up}
+, {\bfseries kbd\+\_\+down}
+, \newline
+{\bfseries kbd\+\_\+space}
+, {\bfseries kbd\+\_\+esc}
+, {\bfseries INVALID}
+ \}
+\begin{DoxyCompactList}\small\item\em Represents different keys that the information received from the keyboard can be mapped to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{kbd_8h_a02884ada1971dbade466081413210b18}{kbc\+\_\+subscribe\+\_\+int}} (uint8\+\_\+t $\ast$bit\+\_\+no)
+\begin{DoxyCompactList}\small\item\em Subscribes and enables Keyboard interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{kbd_8h_a1102381e6a9e876e05dd78c58ccb5673}{kbc\+\_\+unsubscribe\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes Keyboard interrupts. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{kbd_8h_aea970a154161a35f6894898a092ed70a}{kbc\+\_\+ih}} ()
+\begin{DoxyCompactList}\small\item\em Handles Keyboard interrupts. Reads and stores the KBD data for later processing/interpretation. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} \mbox{\hyperlink{kbd_8h_a349e104e331ffa69feb42f7c6d5682ff}{kbd\+\_\+get\+\_\+key}} (bool make, uint8\+\_\+t size, uint8\+\_\+t bytes\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Translates the KBD data into a key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Constants for programming the KBC. Functions of the KBC framework. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{kbd_8h_a635055f02cc43001acef32526cac2a45}\label{kbd_8h_a635055f02cc43001acef32526cac2a45}} 
+\index{kbd.h@{kbd.h}!kbd\_key@{kbd\_key}}
+\index{kbd\_key@{kbd\_key}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{kbd\_key}{kbd\_key}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}}}
+
+
+
+Represents different keys that the information received from the keyboard can be mapped to. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{kbd_8h_aea970a154161a35f6894898a092ed70a}\label{kbd_8h_aea970a154161a35f6894898a092ed70a}} 
+\index{kbd.h@{kbd.h}!kbc\_ih@{kbc\_ih}}
+\index{kbc\_ih@{kbc\_ih}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{kbc\_ih()}{kbc\_ih()}}
+{\footnotesize\ttfamily void() kbc\+\_\+ih (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles Keyboard interrupts. Reads and stores the KBD data for later processing/interpretation. 
+
+\mbox{\Hypertarget{kbd_8h_a02884ada1971dbade466081413210b18}\label{kbd_8h_a02884ada1971dbade466081413210b18}} 
+\index{kbd.h@{kbd.h}!kbc\_subscribe\_int@{kbc\_subscribe\_int}}
+\index{kbc\_subscribe\_int@{kbc\_subscribe\_int}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{kbc\_subscribe\_int()}{kbc\_subscribe\_int()}}
+{\footnotesize\ttfamily int() kbc\+\_\+subscribe\+\_\+int (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{bit\+\_\+no }\end{DoxyParamCaption})}
+
+
+
+Subscribes and enables Keyboard interrupts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+\_\+no} & Variable to store the keyboard\textquotesingle{}s hook id correspondent bit number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return 0 upon success and non-\/zero otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{kbd_8h_a1102381e6a9e876e05dd78c58ccb5673}\label{kbd_8h_a1102381e6a9e876e05dd78c58ccb5673}} 
+\index{kbd.h@{kbd.h}!kbc\_unsubscribe\_int@{kbc\_unsubscribe\_int}}
+\index{kbc\_unsubscribe\_int@{kbc\_unsubscribe\_int}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{kbc\_unsubscribe\_int()}{kbc\_unsubscribe\_int()}}
+{\footnotesize\ttfamily int() kbc\+\_\+unsubscribe\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Unsubscribes Keyboard interrupts. 
+
+\begin{DoxyReturn}{Returns}
+Return 0 upon success and non-\/zero otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{kbd_8h_a349e104e331ffa69feb42f7c6d5682ff}\label{kbd_8h_a349e104e331ffa69feb42f7c6d5682ff}} 
+\index{kbd.h@{kbd.h}!kbd\_get\_key@{kbd\_get\_key}}
+\index{kbd\_get\_key@{kbd\_get\_key}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{kbd\_get\_key()}{kbd\_get\_key()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} kbd\+\_\+get\+\_\+key (\begin{DoxyParamCaption}\item[{bool}]{make,  }\item[{uint8\+\_\+t}]{size,  }\item[{uint8\+\_\+t}]{bytes\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Translates the KBD data into a key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & KBD data. \\
+\hline
+{\em make} & Whether the data is a makecode or a breakcode. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return the key correspondent to the KBD data. 
+\end{DoxyReturn}

@@ -1,0 +1,69 @@
+\hypertarget{kbd_8h_source}{}\doxysection{kbd.\+h}
+\label{kbd_8h_source}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/keyboard/kbd.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/keyboard/kbd.h}}
+\mbox{\hyperlink{kbd_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef KBD\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define KBD\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <lcom/lcf.h>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}../utils/utils.h"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define KBC\_IRQ 1}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define KBC\_STAT\_REG 0x64}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define KBC\_OUT\_BUF 0x60}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define KBC\_IN\_BUF 0x60}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define KBC\_CMD\_REG 0x64}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define KBC\_READ\_CMD 0x20}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define KBC\_WRITE\_CMD 0x60}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define KBC\_HOOK\_BIT 1}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define KBD\_TWO\_BYTE 0xe0}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define DELAY 20000}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define KBD\_ESC\_KEY 129}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define SPACE\_MAKE 57}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define SPACE\_BREAK 185}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define LEFT\_MAKE 75}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define LEFT\_BREAK 203}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define UP\_MAKE 72}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define UP\_BREAK 200}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define DOWN\_MAKE 80}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define DOWN\_BREAK 208}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define RIGHT\_MAKE 77}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define RIGHT\_BREAK 205}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{55 \textcolor{keyword}{enum} \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\_key}} \{}
+\DoxyCodeLine{56   kbd\_right,}
+\DoxyCodeLine{57   kbd\_left,}
+\DoxyCodeLine{58   kbd\_up,}
+\DoxyCodeLine{59   kbd\_down,}
+\DoxyCodeLine{60   kbd\_space,}
+\DoxyCodeLine{61   kbd\_esc,}
+\DoxyCodeLine{62   INVALID}
+\DoxyCodeLine{63 \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{71 int (\mbox{\hyperlink{kbd_8h_a02884ada1971dbade466081413210b18}{kbc\_subscribe\_int}})(uint8\_t *bit\_no);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{78 int (\mbox{\hyperlink{kbd_8h_a1102381e6a9e876e05dd78c58ccb5673}{kbc\_unsubscribe\_int}})();}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{84 void (\mbox{\hyperlink{kbd_8h_aea970a154161a35f6894898a092ed70a}{kbc\_ih}})();}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{93 \textcolor{keyword}{enum} \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\_key}} \mbox{\hyperlink{kbd_8h_a349e104e331ffa69feb42f7c6d5682ff}{kbd\_get\_key}}(\textcolor{keywordtype}{bool} make, uint8\_t size, uint8\_t bytes[]);}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

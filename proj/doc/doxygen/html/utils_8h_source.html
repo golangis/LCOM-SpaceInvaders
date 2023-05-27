@@ -76,15 +76,25 @@ $(function() {
   <div class="headertitle"><div class="title">utils.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef UTILS_H</span></div>
+<a href="utils_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef UTILS_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define UTILS_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;lcom/lcf.h&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>int (ut_sys_inb)(<span class="keywordtype">int</span> port, uint8_t* value);</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>int (<a class="code hl_function" href="utils_8h.html#a81621440b3d65680979425e39aa8c789">util_get_LSB</a>)(uint16_t val, uint8_t *lsb);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>int (<a class="code hl_function" href="utils_8h.html#a6a880076cd2ec468834438b6e0c58836">util_get_MSB</a>)(uint16_t val, uint8_t *msb);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>int (<a class="code hl_function" href="utils_8h.html#ac001a9276b9ecff0ddabd111fac79211">ut_sys_inb</a>)(<span class="keywordtype">int</span> port, uint8_t* value);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>uint8_t (<a class="code hl_function" href="utils_8h.html#aff3396c8be829b5b1dd36fc4f81382ff">bcd_to_bin</a>)(uint8_t value);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="autils_8h_html_a6a880076cd2ec468834438b6e0c58836"><div class="ttname"><a href="utils_8h.html#a6a880076cd2ec468834438b6e0c58836">util_get_MSB</a></div><div class="ttdeci">int() util_get_MSB(uint16_t val, uint8_t *msb)</div><div class="ttdoc">Gets a 16-bit value's most significant byte.</div><div class="ttdef"><b>Definition:</b> utils.c:9</div></div>
+<div class="ttc" id="autils_8h_html_a81621440b3d65680979425e39aa8c789"><div class="ttname"><a href="utils_8h.html#a81621440b3d65680979425e39aa8c789">util_get_LSB</a></div><div class="ttdeci">int() util_get_LSB(uint16_t val, uint8_t *lsb)</div><div class="ttdoc">Gets a 16-bit value's least significant byte.</div><div class="ttdef"><b>Definition:</b> utils.c:3</div></div>
+<div class="ttc" id="autils_8h_html_ac001a9276b9ecff0ddabd111fac79211"><div class="ttname"><a href="utils_8h.html#ac001a9276b9ecff0ddabd111fac79211">ut_sys_inb</a></div><div class="ttdeci">int() ut_sys_inb(int port, uint8_t *value)</div><div class="ttdoc">Reads a byte from a given port.</div><div class="ttdef"><b>Definition:</b> utils.c:16</div></div>
+<div class="ttc" id="autils_8h_html_aff3396c8be829b5b1dd36fc4f81382ff"><div class="ttname"><a href="utils_8h.html#aff3396c8be829b5b1dd36fc4f81382ff">bcd_to_bin</a></div><div class="ttdeci">uint8_t() bcd_to_bin(uint8_t value)</div><div class="ttdoc">Converts a given value in BCD to binary. Adapted from https://github.com/Fabio-A-Sa/Y2S2-LabComputado...</div><div class="ttdef"><b>Definition:</b> utils.c:23</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

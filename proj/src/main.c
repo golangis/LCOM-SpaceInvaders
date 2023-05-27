@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 
-#include "framework/keyboard/kbdframework.h"
+#include "framework/keyboard/kbd.h"
 #include "framework/rtc/rtc.h"
 #include "framework/timer/timer.h"
 #include "framework/mouse/mouse.h"

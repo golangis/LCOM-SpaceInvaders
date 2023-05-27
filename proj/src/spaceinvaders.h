@@ -1,6 +1,12 @@
 #ifndef SPACEINVADERS_H
 #define SPACEINVADERS_H
 
+/**
+ * @file spaceinvaders.h
+ * @brief Game logic functions. Stores the game elements and assures the interaction between them.
+ * 
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -34,12 +40,21 @@ int wave;
 enum direction last_alien_mov;
 unsigned int updates;
 
+/**
+ * @brief A struct to represent a score by its number of points and the date and time it was achieved.
+ * 
+ */
 typedef struct {
   int points;
   char datetime[17];
 } Score;
 
+/**
+ * @brief Initializes the game elements.
+ * 
+ */
 void (init_game)();
+
 Score* (loadScores)();
 /*
 leitura sacada de https://www.geeksforgeeks.org/relational-database-from-csv-files-in-c/

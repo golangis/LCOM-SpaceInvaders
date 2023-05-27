@@ -4,10 +4,6 @@ int (rtc_write_control)(uint8_t addr) {
   return sys_outb(RTC_ADDR_REG, addr);
 }
 
-int (rtc_write_data)(uint8_t data) {
-  return sys_outb(RTC_DATA_REG, data);
-}
-
 int (rtc_read)(uint8_t* data) {
   return ut_sys_inb(RTC_DATA_REG, data);
 }

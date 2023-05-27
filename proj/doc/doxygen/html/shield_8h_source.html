@@ -79,27 +79,26 @@ $(function() {
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef SHIELD_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define SHIELD_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;framework/video/video.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="video_8h.html">framework/video/video.h</a>&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;shot.h&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;xpm/shield.xpm&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="struct_shield.html">   10</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">int</span> x_min;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">int</span> x_max;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">int</span> y_min;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordtype">int</span> y_max;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">int</span> lives;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordtype">int</span> id;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>} <a class="code hl_struct" href="struct_shield.html">Shield</a>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><a class="code hl_struct" href="struct_shield.html">Shield</a>* (initShield)(<span class="keywordtype">int</span> x_min, <span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>void (drawShield)(<a class="code hl_struct" href="struct_shield.html">Shield</a>* shield);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>void (damage)(<a class="code hl_struct" href="struct_shield.html">Shield</a>* shield, <span class="keyword">enum</span> shot_source src);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="astruct_shield_html"><div class="ttname"><a href="struct_shield.html">Shield</a></div><div class="ttdef"><b>Definition:</b> shield.h:10</div></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_shield.html">    8</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordtype">int</span> x_min;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">int</span> x_max;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">int</span> y_min;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">int</span> y_max;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">int</span> lives;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordtype">int</span> id;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>} <a class="code hl_struct" href="struct_shield.html">Shield</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><a class="code hl_struct" href="struct_shield.html">Shield</a>* (initShield)(<span class="keywordtype">int</span> x_min, <span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>void (drawShield)(<a class="code hl_struct" href="struct_shield.html">Shield</a>* shield);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>void (damage)(<a class="code hl_struct" href="struct_shield.html">Shield</a>* shield, <span class="keyword">enum</span> shot_source src);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="astruct_shield_html"><div class="ttname"><a href="struct_shield.html">Shield</a></div><div class="ttdef"><b>Definition:</b> shield.h:8</div></div>
+<div class="ttc" id="avideo_8h_html"><div class="ttname"><a href="video_8h.html">video.h</a></div><div class="ttdoc">Functions for programming the video card. Also contains variables to store the xpm images and maps dr...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

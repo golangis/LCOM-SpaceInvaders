@@ -1,0 +1,42 @@
+\hypertarget{rtc_8h_source}{}\doxysection{rtc.\+h}
+\label{rtc_8h_source}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/rtc/rtc.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/rtc/rtc.h}}
+\mbox{\hyperlink{rtc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef RTC\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define RTC\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <lcom/lcf.h>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}../utils/utils.h"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define RTC\_ADDR\_REG 0x70}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define RTC\_DATA\_REG 0x71}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define RTC\_MINUTES\_ADDR 2}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define RTC\_HOURS\_ADDR 4}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define RTC\_DAY\_ADDR 7}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define RTC\_MONTH\_ADDR 8}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define RTC\_YEAR\_ADDR 9}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define RTC\_REGISTER\_A 10}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define RTC\_REGISTER\_B 11}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define RTC\_DM BIT(2)}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define RTC\_UIP BIT(7)}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{32 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{33   uint8\_t year;}
+\DoxyCodeLine{34   uint8\_t month;}
+\DoxyCodeLine{35   uint8\_t day;}
+\DoxyCodeLine{36   uint8\_t hour;}
+\DoxyCodeLine{37   uint8\_t minute;}
+\DoxyCodeLine{38 \} \mbox{\hyperlink{structrtc__time}{rtc\_time}};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{45 int (\mbox{\hyperlink{rtc_8h_a3d0e0832042b95a85fc00e7baa9f1e19}{rtc\_write\_control}})(uint8\_t addr);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{52 int (\mbox{\hyperlink{rtc_8h_a200e0e9e22af694e13f67b81022196e7}{rtc\_read}})(uint8\_t* data);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{59 int (\mbox{\hyperlink{rtc_8h_a4ad822f0b94f8d0c1e0071219174b6ef}{get\_time}})(\mbox{\hyperlink{structrtc__time}{rtc\_time}}* time);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
