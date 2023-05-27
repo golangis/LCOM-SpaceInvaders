@@ -52,7 +52,7 @@ void* (video_init)(uint16_t mode) {
 }
 
 void (video_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
-    if (x < 0 || x >= h_res || y < 0 || y >= v_res) return;
+    if (x < 0 || x >= h_res || y < 0 || y >= v_res || color == 0) return;
     uint8_t* pixel_mem = (uint8_t*)video_buffer + (x * bytes_per_pixel) + (y * h_res * bytes_per_pixel);
 
     for (uint8_t i = 0; i < bytes_per_pixel; i++) {
@@ -85,6 +85,8 @@ void (video_load_xpms)() {
     alien3_map = xpm_load(alien3_xpm, XPM_8_8_8, &alien3_img);
     alien4_map = xpm_load(alien4_xpm, XPM_8_8_8, &alien4_img);
     alien5_map = xpm_load(alien5_xpm, XPM_8_8_8, &alien5_img);
+    heart_map = xpm_load(heart_xpm, XPM_8_8_8, &heart_img);
+    heart_bad_map = xpm_load(heart_bad_xpm, XPM_8_8_8, &heart_bad_img);
     logo_map = xpm_load(logo_xpm, XPM_8_8_8, &logo_img);
     mouse_map = xpm_load(mouse_xpm, XPM_8_8_8, &mouse_img);
     play_button_map = xpm_load(play_button_xpm, XPM_8_8_8, &play_button_img);

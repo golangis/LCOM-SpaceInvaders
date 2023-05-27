@@ -212,9 +212,7 @@ extern int x_mouse;
 extern int y_mouse;
 
 void (drawMainMenu)() {
-  printf("drawing main menu\n");
   memset(video_buffer, 0, h_res*v_res*bytes_per_pixel);
-  printf("memset\n");
   video_draw_xpm(100, 40, "logo");
   video_draw_xpm(200, 400, "play_button");
   video_draw_xpm(x_mouse, y_mouse, "mouse");

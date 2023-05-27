@@ -136,31 +136,31 @@ void (loop_draw_score_aux)(uint16_t x, uint16_t y, int score) {
       video_draw_xpm(x, y, "zero");
       break;
     case 1:
-      video_draw_xpm(x, y, "um");
+      video_draw_xpm(x, y, "one");
       break;
     case 2:
-      video_draw_xpm(x, y, "dois");
+      video_draw_xpm(x, y, "two");
       break;
     case 3:
-      video_draw_xpm(x, y, "tres");
+      video_draw_xpm(x, y, "three");
       break;
     case 4:
-      video_draw_xpm(x, y, "quatro");
+      video_draw_xpm(x, y, "four");
       break;            
     case 5:
-      video_draw_xpm(x, y, "cinco");
+      video_draw_xpm(x, y, "five");
       break;    
     case 6:
-      video_draw_xpm(x, y, "seis");
+      video_draw_xpm(x, y, "six");
       break;
     case 7:
-      video_draw_xpm(x, y, "sete");
+      video_draw_xpm(x, y, "seven");
       break;        
     case 8:
-      video_draw_xpm(x, y, "oito");
+      video_draw_xpm(x, y, "eight");
       break;    
     case 9:
-      video_draw_xpm(x, y, "nove");
+      video_draw_xpm(x, y, "nine");
       break;
     default: break;    
   } 

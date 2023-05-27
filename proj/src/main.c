@@ -49,7 +49,7 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
             draw();
         }
         if (timer_counter % 40 == 0) *can_shoot = true;
-        if (timer_counter == 1000) timer_counter = 0;
+        if (timer_counter >= 600) timer_counter = 0;
     }
     if (msg.m_notify.interrupts & ipc_keyboard) {
         kbc_ih();
@@ -95,14 +95,14 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
     }
     if (msg.m_notify.interrupts & ipc_mouse) {
         mouse_interrupt_handler();
-        printf("%s\n", "encontrei o rato");
     }
 }
 
 void (mainMenu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state) {
     if (msg.m_notify.interrupts & ipc_timer) {
+        timer_interrupt_handler();
         if (timer_counter % 30 == 0) drawMainMenu();
-        if (timer_counter == 1000) timer_counter = 0;
+        if (timer_counter >= 600) timer_counter = 0;
     }
     if (msg.m_notify.interrupts & ipc_keyboard) {
         kbc_ih();
@@ -132,7 +132,6 @@ void (mainMenu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* sc
     }
     if (msg.m_notify.interrupts & ipc_mouse) {
         mouse_interrupt_handler();
-        printf("%s\n", "encontrei o rato");
     }
 }
 
