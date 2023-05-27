@@ -69,10 +69,10 @@ Score (buildScore)(int points, rtc_time* time) {
   Score score;
   score.points = points;
   char str[17];
-  if (time->month < 10 && time->hour < 10) sprintf(str, "%d/0%d/%d 0%d:%d", time->day, time->month, time->year, time->hour, time->minute);
-  else if (time->month < 10) sprintf(str, "%d/0%d/%d %d:%d", time->day, time->month, time->year, time->hour, time->minute);
-  else if (time->hour < 10) sprintf(str, "%d/%d/%d 0%d:%d", time->day, time->month, time->year, time->hour, time->minute);
-  else sprintf(str, "%d/%d/%d %d:%d", time->day, time->month, time->year, time->hour, time->minute);
+  if (time->month < 10 && time->hour < 10) sprintf(str, "%d/0%d/20%d 0%d:%d", time->day, time->month, time->year, time->hour, time->minute);
+  else if (time->month < 10) sprintf(str, "%d/0%d/20%d %d:%d", time->day, time->month, time->year, time->hour, time->minute);
+  else if (time->hour < 10) sprintf(str, "%d/%d/20%d 0%d:%d", time->day, time->month, time->year, time->hour, time->minute);
+  else sprintf(str, "%d/%d/20%d %d:%d", time->day, time->month, time->year, time->hour, time->minute);
   strcpy(score.datetime, str);
   return score;
 }
@@ -264,6 +264,7 @@ void (drawHighscores)(Score* scores) {
     for (int j = alg_count; j > 0; j--) {
       int x = 10 + (22 * j);
       int y = 20 + (50 * i);
+
       switch (points % 10) {
         case 0: video_draw_xpm(x, y, "zero"); break;
         case 1: video_draw_xpm(x, y, "one"); break;
@@ -279,6 +280,40 @@ void (drawHighscores)(Score* scores) {
       }
       points /= 10;
     }
+
+    for (int j = 0; j < 16; j++) {
+      char c = scores[i].datetime[j];
+
+      int x = 278 + (32 * j);
+      int y = 20 + (50 * i);
+
+      if (c == '0') {
+        video_draw_xpm(x, y, "zero");
+      } else if (c == '1') {
+        video_draw_xpm(x, y, "one");
+      } else if (c == '2') {
+        video_draw_xpm(x, y, "two");
+      } else if (c == '3') {
+        video_draw_xpm(x, y, "three");
+      } else if (c == '4') {
+        video_draw_xpm(x, y, "four");
+      } else if (c == '5') {
+        video_draw_xpm(x, y, "five");
+      } else if (c == '6') {
+        video_draw_xpm(x, y, "six");
+      } else if (c == '7') {
+        video_draw_xpm(x, y, "seven");
+      } else if (c == '8') {
+        video_draw_xpm(x, y, "eight");
+      } else if (c == '9') {
+        video_draw_xpm(x, y, "nine");
+      } else if (c == '/') {
+        video_draw_xpm(x, y, "slash");
+      } else if (c == ':') {
+        video_draw_xpm(x, y, "h");
+      } else continue;
+    }
   }
+  //video_draw_xpm(x_mouse, y_mouse, "mouse");
   memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
 }
