@@ -91,7 +91,7 @@ void (draw)() {
   drawPlayer(ship);
 
   drawAliens(aliens);
-
+  
   drawScore(ship);
   drawLives(ship->lives);
 
@@ -106,23 +106,23 @@ void (update)(int* no_lives) {
   switch(wave){
     case 1:
       shootAlienTime = 50;
-      moveAlienTime = 30;
+      moveAlienTime = 20;
       break;
     case 2:
       shootAlienTime = 40;
-      moveAlienTime = 25;
+      moveAlienTime = 15;
       break;
     case 3:
       shootAlienTime = 30;
-      moveAlienTime = 22;
+      moveAlienTime = 12;
       break;
     case 4:
       shootAlienTime = 20;
-      moveAlienTime = 20;
+      moveAlienTime = 10;
       break;
     default:
       shootAlienTime = 20;
-      moveAlienTime = 20; 
+      moveAlienTime = 10; 
       break; 
   }
   if (updates == shootAlienTime) {
@@ -215,6 +215,13 @@ void (drawMainMenu)() {
   memset(video_buffer, 0, h_res*v_res*bytes_per_pixel);
   video_draw_xpm(100, 40, "logo");
   video_draw_xpm(200, 400, "play_button");
+  video_draw_xpm(x_mouse, y_mouse, "mouse");
+  memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
+}
+
+void (drawGameOverMenu)() {
+  memset(video_buffer, 0, h_res*v_res*bytes_per_pixel);
+  video_draw_xpm(250, 250, "gameOver");
   video_draw_xpm(x_mouse, y_mouse, "mouse");
   memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
 }

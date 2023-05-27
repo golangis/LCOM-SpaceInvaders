@@ -66,12 +66,14 @@ escrita sacada de https://www.programiz.com/c-programming/c-file-input-output
 void (draw)();
 void (update)(int* no_lives);
 void (drawMainMenu)();
+void (drawGameOverMenu)();
 void (reload_aliens)();
 
 enum state {
   game,
   mainMenu,
-  quit
+  quit,
+  gameOverMenu
 };
 
 #endif
