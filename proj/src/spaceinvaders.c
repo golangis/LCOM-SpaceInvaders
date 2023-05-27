@@ -18,7 +18,7 @@ Score* (loadScores)() {
   if (!fp) fp = fopen("/home/lcom/labs/g3/proj/src/highscore.csv", "r");
   if (!fp) {
     printf("Error opening file\n");
-    return;
+    return array;
   }
 
   char buffer[1024];
@@ -30,14 +30,14 @@ Score* (loadScores)() {
     column = 0;
 
     int points;
-    char datetime[16];
+    char datetime[17];
 
     char* value = strtok(buffer, ",");
 
     while (value) {
       switch (column) {
-        case 0: points = atoi(value); printf("%d\n", points); break;
-        case 1: value = strcpy(datetime, value); printf("%s\n", datetime); break;
+        case 0: points = atoi(value); break;
+        case 1: value = strcpy(datetime, value); break;
         default: break;
       }
       value = strtok(NULL, ",");
@@ -58,7 +58,22 @@ Score* (loadScores)() {
   return array;
 }
 
-void (updateScores)(Score* array) {}
+void (updateScores)(Score* array) {
+  FILE* fp = fopen("/home/lcom/labs/proj/src/highscores.csv", "w");
+
+  if (!fp) fp = fopen("/home/lcom/labs/g3/proj/src/highscore.csv", "w");
+  if (!fp) {
+    printf("Error opening file\n");
+    return;
+  }
+
+  for (size_t i = 0; i < 10; i++) {
+    Score score = array[i];
+    fprintf(fp, "%d,%s", score.points, score.datetime);
+  }
+
+  fclose(fp);
+}
 
 void (draw)() {
   memset(video_buffer, 0, h_res*v_res*bytes_per_pixel);

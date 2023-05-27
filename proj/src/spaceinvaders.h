@@ -36,7 +36,7 @@ unsigned int updates;
 
 typedef struct {
   int points;
-  char datetime[16];
+  char datetime[17];
 } Score;
 
 void (init_game)();
@@ -45,6 +45,9 @@ Score* (loadScores)();
 leitura sacada de https://www.geeksforgeeks.org/relational-database-from-csv-files-in-c/
 */
 void (updateScores)(Score* array);
+/*
+escrita sacada de https://www.programiz.com/c-programming/c-file-input-output
+*/
 void (draw)();
 void (update)();
 void (drawmainMenu)();
