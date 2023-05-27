@@ -57,7 +57,7 @@ int (readPacket)() {
       if ((data & BIT(3)) == 0)
         return 1;
 
-      printf("Caralho Byte 1: 0x%x\n", data);
+      printf("Palavra Mágica Byte 1: 0x%x\n", data);
       // LER O BIT DE CONTROLO DO PACOTE
       mouse_packet.lb = data & MOUSE_LB;
       mouse_packet.rb = data & MOUSE_RB;
