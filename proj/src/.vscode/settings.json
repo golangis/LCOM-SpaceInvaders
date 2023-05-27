@@ -10,6 +10,8 @@
     "*.embeddedhtml": "html",
     "spaceinvaders.h": "c",
     "stdlib.h": "c",
-    "timer.h": "c"
+    "timer.h": "c",
+    "*.xpm": "c",
+    "player.h": "c"
   },
 }

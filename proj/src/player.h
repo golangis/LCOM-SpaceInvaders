@@ -5,13 +5,6 @@
 #include "shot.h"
 
 #include "framework/video/video.h"
-#include "xpm/rocket.xpm"
-#include "xpm/SCORE.xpm"
-#include "xpm/um.xpm"
-#include "xpm/dois.xpm"
-#include "xpm/heart.xpm"
-#include "xpm/heart-bad.xpm"
-
 
 typedef struct {
     int x_min;
@@ -33,6 +26,8 @@ void (deletePlayerShot)(Player* ship, int i);
 void (drawPlayer)(Player* ship);
 void (incrementScore)(Player* ship, int id);
 void (drawScore)(Player* ship);
+void (draw_score_aux)(uint16_t x, uint16_t y, int score);
+void (loop_draw_score_aux)(uint16_t x, uint16_t y, int score);
 void (drawLives)(int lives);
 
 #endif
