@@ -148,9 +148,9 @@ extern int y_mouse;
 
 void (drawMainMenu)() {
   memset(video_buffer, 0, h_res*v_res*bytes_per_pixel);
- // video_draw_xpm(100, 40, logo_xpm);
-  //video_draw_xpm(200, 400, play_button_xpm);
-  //video_draw_xpm(x_mouse, y_mouse, mouse_xpm);
-  video_draw_rectangle(x_mouse, y_mouse, 20, 20, 0x00ff00);
+  video_draw_xpm(100, 40, logo_xpm);
+  video_draw_xpm(200, 400, play_button_xpm);
+  video_draw_xpm(x_mouse, y_mouse, mouse_xpm);
+  //video_draw_rectangle(x_mouse, y_mouse, 20, 20, 0x00ff00);
   memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
 }
