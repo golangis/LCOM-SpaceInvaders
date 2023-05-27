@@ -3,8 +3,6 @@
 
 #include "framework/video/video.h"
 
-#include "xpm/shot.xpm"
-
 enum shot_source {
     alien,
     player

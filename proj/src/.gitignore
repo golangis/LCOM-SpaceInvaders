@@ -1,5 +1,4 @@
 *.o
 *.d
 proj
-trace.txt
-output.txt
+core.892

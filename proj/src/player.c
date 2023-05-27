@@ -54,7 +54,7 @@ void (deletePlayerShot)(Player* ship, int i) {
 }
 
 void (drawPlayer)(Player* ship) {
-  video_draw_xpm(ship->x_min, ship->y_min, rocket_xpm);
+  video_draw_xpm(ship->x_min, ship->y_min, "rocket");
   for (int i = 0; i < ship->shots_no; i++) drawShot(&(ship->shots[i]));
 }
 
@@ -70,43 +70,98 @@ void (incrementScore)(Player* ship, int id) {
 
 void (drawScore)(Player* ship){
   int score = ship->score;
-  video_draw_xpm(10, 10, score_xpm);
-  video_draw_score(112, 10, score);
+  video_draw_xpm(10, 10, "score");
+  draw_score_aux(112, 10, score);
 }
 
 void (drawLives)(int lives){
   switch(lives){
     case 6:
-      video_draw_xpm(751, 10, heart_xpm);
-      video_draw_xpm(702, 10, heart_xpm);
-      video_draw_xpm(653, 10, heart_xpm);
+      video_draw_xpm(751, 10, "heart");
+      video_draw_xpm(702, 10, "heart");
+      video_draw_xpm(653, 10, "heart");
       break;
     case 5:
-      video_draw_xpm(751, 10, heart_xpm);
-      video_draw_xpm(702, 10, heart_xpm);
-      video_draw_xpm(653, 10, heart_bad_xpm);
+      video_draw_xpm(751, 10, "heart");
+      video_draw_xpm(702, 10, "heart");
+      video_draw_xpm(653, 10, "heart_bad");
       break;
     case 4:
-      video_draw_xpm(751, 10, heart_xpm);
-      video_draw_xpm(702, 10, heart_xpm);
+      video_draw_xpm(751, 10, "heart");
+      video_draw_xpm(702, 10, "heart");
       break;
     case 3:
-      video_draw_xpm(751, 10, heart_xpm);
-      video_draw_xpm(702, 10, heart_bad_xpm);
+      video_draw_xpm(751, 10, "heart");
+      video_draw_xpm(702, 10, "heart_bad");
       break;    
     case 2:
-      video_draw_xpm(751, 10, heart_xpm);
+      video_draw_xpm(751, 10, "heart");
       break;
     case 1:
-      video_draw_xpm(751, 10, heart_bad_xpm);
+      video_draw_xpm(751, 10, "heart_bad");
       break;
     case 0:
       break;
     default:
-      video_draw_xpm(751, 10, heart_xpm);
-      video_draw_xpm(702, 10, heart_xpm);
-      video_draw_xpm(653, 10, heart_xpm);
+      video_draw_xpm(751, 10, "heart");
+      video_draw_xpm(702, 10, "heart");
+      video_draw_xpm(653, 10, "heart");
       break;
   }
 }
 
+void (draw_score_aux)(uint16_t x, uint16_t y, int score){
+  if(score < 10){
+    loop_draw_score_aux(x, y, score);
+  }
+  else if(score < 100){
+    int second_half = score % 10;
+    int first_half = score / 10;
+    loop_draw_score_aux(x, y, first_half);
+    loop_draw_score_aux(x + 17, y, second_half);    
+  }
+  else if(score < 1000){
+    int third_half = score % 10;
+    int second_half = (score / 10) % 10;
+    int first_half = (score / 100) % 10;
+    loop_draw_score_aux(x, y, first_half);
+    loop_draw_score_aux(x + 17, y, second_half);
+    loop_draw_score_aux(x + 34, y, third_half);
+  }
+}
+
+void (loop_draw_score_aux)(uint16_t x, uint16_t y, int score) {
+  switch(score){
+    case 0:
+      video_draw_xpm(x, y, "zero");
+      break;
+    case 1:
+      video_draw_xpm(x, y, "one");
+      break;
+    case 2:
+      video_draw_xpm(x, y, "two");
+      break;
+    case 3:
+      video_draw_xpm(x, y, "three");
+      break;
+    case 4:
+      video_draw_xpm(x, y, "four");
+      break;            
+    case 5:
+      video_draw_xpm(x, y, "five");
+      break;    
+    case 6:
+      video_draw_xpm(x, y, "six");
+      break;
+    case 7:
+      video_draw_xpm(x, y, "seven");
+      break;        
+    case 8:
+      video_draw_xpm(x, y, "eight");
+      break;    
+    case 9:
+      video_draw_xpm(x, y, "nine");
+      break;
+    default: break;    
+  } 
+}

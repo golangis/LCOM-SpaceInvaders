@@ -15,9 +15,9 @@ Shield* (initShield)(int x_min, int id) {
 
 void (drawShield)(Shield* shield) {
   switch (shield->lives) {
-    case 1: video_draw_xpm(shield->x_min, shield->y_min, shield1_xpm); break;
-    case 2: video_draw_xpm(shield->x_min, shield->y_min, shield2_xpm); break;
-    case 3: video_draw_xpm(shield->x_min, shield->y_min, shield3_xpm); break;
+    case 1: video_draw_xpm(shield->x_min, shield->y_min, "shield1"); break;
+    case 2: video_draw_xpm(shield->x_min, shield->y_min, "shield2"); break;
+    case 3: video_draw_xpm(shield->x_min, shield->y_min, "shield3"); break;
     default: break;
   }
 }

@@ -48,8 +48,8 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
             if(no_lives == 1) *state = mainMenu;
             draw();
         }
-        if(timer_counter % 40 == 0) *can_shoot = true;
-        if (timer_counter == INT_MAX) timer_counter = 0;
+        if (timer_counter % 40 == 0) *can_shoot = true;
+        if (timer_counter >= 600) timer_counter = 0;
     }
     if (msg.m_notify.interrupts & ipc_keyboard) {
         kbc_ih();
@@ -93,14 +93,17 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
             }
         }
     }
-        if (msg.m_notify.interrupts & ipc_mouse) {
+    if (msg.m_notify.interrupts & ipc_mouse) {
         mouse_interrupt_handler();
-        printf("%s\n", "encontrei o rato");
     }
-    //if (msg.m_notify.interrupts & ipc_mouse) {}
 }
 
-void (mainMenu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_keyboard, int ipc_mouse, message msg, enum state* state){
+void (mainMenu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state) {
+    if (msg.m_notify.interrupts & ipc_timer) {
+        timer_interrupt_handler();
+        if (timer_counter % 2 == 0) drawMainMenu();
+        if (timer_counter >= 600) timer_counter = 0;
+    }
     if (msg.m_notify.interrupts & ipc_keyboard) {
         kbc_ih();
         if (*two_bytes) {
@@ -129,9 +132,7 @@ void (mainMenu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* sc
     }
     if (msg.m_notify.interrupts & ipc_mouse) {
         mouse_interrupt_handler();
-        printf("%s\n", "encontrei o rato");
     }
-    //if (msg.m_notify.interrupts & ipc_mouse) {}
 }
 
 int (proj_main_loop)(int argc, char **argv) {
@@ -168,6 +169,10 @@ int (proj_main_loop)(int argc, char **argv) {
     video_init(0x115);
     uint8_t* vb = drawMainMenu();
 
+    //Score* highscores = loadScores();
+
+    init_game();
+
     while (state != quit) {
         if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
             printf("driver_receive failed with: %d", r);            
@@ -178,8 +183,7 @@ int (proj_main_loop)(int argc, char **argv) {
                 case HARDWARE:
                     switch (state) {
                         case mainMenu:
-                            mainMenu_loop(&make, &key, &two_bytes, scan, ipc_keyboard, ipc_mouse, msg, &state);
-                            drawMouse(vb);
+                            mainMenu_loop(&make, &key, &two_bytes, scan, ipc_timer, ipc_keyboard, ipc_mouse, msg, &state);
                             break;
                         case game:    
                             game_loop(&make, &key, &two_bytes, scan, &can_shoot, ipc_timer, ipc_keyboard, ipc_mouse, msg, &state);
@@ -195,10 +199,16 @@ int (proj_main_loop)(int argc, char **argv) {
     }
 
     free(scan);
-    if (kbc_unsubscribe_int() != 0) return 1;
     if (unsubscribe_timer_int() != 0) return 1;
+    if (kbc_unsubscribe_int() != 0) return 1;
     if (unsubscribe_mouse_int() != 0) return 1;
     vg_exit();
-    
+
+    /*
+    Score* array = (Score*) malloc (sizeof(Score) * 10);
+    array = loadScores();
+    for (size_t i = 0; i < 10; i++) printf("%d,%s", array[i].points, array[i].datetime);
+    updateScores(array);
+    */
     return 0;
 }

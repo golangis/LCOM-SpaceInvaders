@@ -16,6 +16,71 @@ void (reload_aliens)() {
   updates = 0;
 }
 
+Score* (loadScores)() {
+  Score* array = (Score*) malloc (sizeof(Score) * 10);
+
+  FILE* fp = fopen("/home/lcom/labs/proj/src/highscores.csv", "r");
+
+  if (!fp) fp = fopen("/home/lcom/labs/g3/proj/src/highscore.csv", "r");
+  if (!fp) {
+    printf("Error opening file\n");
+    return array;
+  }
+
+  char buffer[1024];
+
+  int row = 0;
+  int column = 0;
+
+  while (fgets(buffer, 1024, fp)) {
+    column = 0;
+
+    int points;
+    char datetime[17];
+
+    char* value = strtok(buffer, ",");
+
+    while (value) {
+      switch (column) {
+        case 0: points = atoi(value); break;
+        case 1: value = strcpy(datetime, value); break;
+        default: break;
+      }
+      value = strtok(NULL, ",");
+      column++;
+    }
+
+    Score score;
+    score.points = points;
+    strcpy(score.datetime, datetime);
+
+    array[row] = score;
+
+    row++;
+  }
+
+  fclose(fp);
+
+  return array;
+}
+
+void (updateScores)(Score* array) {
+  FILE* fp = fopen("/home/lcom/labs/proj/src/highscores.csv", "w");
+
+  if (!fp) fp = fopen("/home/lcom/labs/g3/proj/src/highscore.csv", "w");
+  if (!fp) {
+    printf("Error opening file\n");
+    return;
+  }
+
+  for (size_t i = 0; i < 10; i++) {
+    Score score = array[i];
+    fprintf(fp, "%d,%s", score.points, score.datetime);
+  }
+
+  fclose(fp);
+}
+
 void (draw)() {
   memset(video_buffer, 0, h_res*v_res*bytes_per_pixel);
 
@@ -148,9 +213,8 @@ extern int y_mouse;
 
 void (drawMainMenu)() {
   memset(video_buffer, 0, h_res*v_res*bytes_per_pixel);
-  video_draw_xpm(100, 40, logo_xpm);
-  video_draw_xpm(100, 440, play_button_xpm);
-  //video_draw_xpm(x_mouse, y_mouse, mouse_xpm);
-  video_draw_rectangle(x_mouse, y_mouse, 20, 20, 0x00ff00);
+  video_draw_xpm(100, 40, "logo");
+  video_draw_xpm(200, 400, "play_button");
+  video_draw_xpm(x_mouse, y_mouse, "mouse");
   memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
 }
