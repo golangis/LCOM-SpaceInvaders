@@ -90,8 +90,9 @@ void (deleteAlienShot)(Alien* alien, int i) {
 
 void (shootAliens)(AlienGroup* group) {
   int index = rand() % group->size;
+  while (!(group->set[index].alive)) index = rand() % group->size;
   Alien* a = &(group->set[index]);
-  if (a->alive) shootAlien(a);
+  shootAlien(a);
 }
 
 bool (canAlienMove)(Alien* alien, enum direction dir) {

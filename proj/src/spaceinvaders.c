@@ -26,7 +26,7 @@ void (draw)() {
   drawPlayer(ship);
 
   drawAliens(aliens);
-
+  
   drawScore(ship);
   drawLives(ship->lives);
 
@@ -41,23 +41,23 @@ void (update)(int* no_lives) {
   switch(wave){
     case 1:
       shootAlienTime = 50;
-      moveAlienTime = 30;
+      moveAlienTime = 20;
       break;
     case 2:
       shootAlienTime = 40;
-      moveAlienTime = 25;
+      moveAlienTime = 15;
       break;
     case 3:
       shootAlienTime = 30;
-      moveAlienTime = 22;
+      moveAlienTime = 12;
       break;
     case 4:
       shootAlienTime = 20;
-      moveAlienTime = 20;
+      moveAlienTime = 10;
       break;
     default:
       shootAlienTime = 20;
-      moveAlienTime = 20; 
+      moveAlienTime = 10; 
       break; 
   }
   if (updates == shootAlienTime) {

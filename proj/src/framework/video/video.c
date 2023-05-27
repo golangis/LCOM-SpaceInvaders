@@ -82,14 +82,10 @@ void (video_draw_xpm)(uint16_t x, uint16_t y, xpm_map_t xpm) {
     xpm_image_t img;
     uint8_t* map = xpm_load(xpm, XPM_8_8_8, &img);
 
-<<<<<<< HEAD
-=======
     if (map == NULL) {
         printf("Error loading xpm\n");
         return;
     }
-
->>>>>>> 2feecef2d3bd0af1c524057ea8800b948010e2dc
     for (uint16_t i = 0; i < img.width; i++) {
         for (uint16_t j = 0; j < img.height; j++) {
             uint32_t color = 0;

@@ -143,8 +143,6 @@ int (proj_main_loop)(int argc, char **argv) {
     int ipc_keyboard = BIT(KBC_HOOK_BIT);   // check if 1
     int ipc_mouse = BIT(MOUSE_HOOK_BIT);  // check if 10
 
-    //mouse
-
     // timer
     timer_counter = 0;
     uint8_t timer_hook_bit = TIMER_HOOK_BIT;
@@ -168,6 +166,7 @@ int (proj_main_loop)(int argc, char **argv) {
 
     // video
     video_init(0x115);
+    uint8_t* vb = drawMainMenu();
 
     while (state != quit) {
         if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
@@ -180,7 +179,7 @@ int (proj_main_loop)(int argc, char **argv) {
                     switch (state) {
                         case mainMenu:
                             mainMenu_loop(&make, &key, &two_bytes, scan, ipc_keyboard, ipc_mouse, msg, &state);
-                            drawMainMenu();
+                            drawMouse(vb);
                             break;
                         case game:    
                             game_loop(&make, &key, &two_bytes, scan, &can_shoot, ipc_timer, ipc_keyboard, ipc_mouse, msg, &state);
