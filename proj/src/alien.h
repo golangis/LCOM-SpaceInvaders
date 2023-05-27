@@ -6,8 +6,6 @@
 
 #include "direction.h"
 
-#include "xpm/aliens.xpm"
-
 #include "framework/video/video.h"
 
 #include "shot.h"

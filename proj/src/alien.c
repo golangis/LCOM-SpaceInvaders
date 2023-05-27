@@ -90,8 +90,9 @@ void (deleteAlienShot)(Alien* alien, int i) {
 
 void (shootAliens)(AlienGroup* group) {
   int index = rand() % group->size;
+  while (!(group->set[index].alive)) index = rand() % group->size;
   Alien* a = &(group->set[index]);
-  if (a->alive) shootAlien(a);
+  shootAlien(a);
 }
 
 bool (canAlienMove)(Alien* alien, enum direction dir) {
@@ -120,12 +121,11 @@ int (hitIndex)(AlienGroup* group, Shot* shot) {
 
 void (drawAlien)(Alien* alien) {
   switch (alien->id / 10) {
-    case 0: video_draw_xpm(alien->x_min, alien->y_min, alien1_xpm); break;
-    case 1: video_draw_xpm(alien->x_min, alien->y_min, alien2_xpm);
-    break;
-    case 2: video_draw_xpm(alien->x_min, alien->y_min, alien3_xpm); break;
-    case 3: video_draw_xpm(alien->x_min, alien->y_min, alien4_xpm); break;
-    case 4: video_draw_xpm(alien->x_min, alien->y_min, alien5_xpm); break;
+    case 0: video_draw_xpm(alien->x_min, alien->y_min, "alien1"); break;
+    case 1: video_draw_xpm(alien->x_min, alien->y_min, "alien2"); break;
+    case 2: video_draw_xpm(alien->x_min, alien->y_min, "alien3"); break;
+    case 3: video_draw_xpm(alien->x_min, alien->y_min, "alien4"); break;
+    case 4: video_draw_xpm(alien->x_min, alien->y_min, "alien5"); break;
     default: break;
   }
   for (int i = 0; i < alien->shots_no; i++) drawShot(&(alien->shots[i]));

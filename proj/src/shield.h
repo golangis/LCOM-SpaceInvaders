@@ -5,8 +5,6 @@
 
 #include "shot.h"
 
-#include "xpm/shield.xpm"
-
 typedef struct {
     int x_min;
     int x_max;

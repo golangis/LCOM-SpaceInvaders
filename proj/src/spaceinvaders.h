@@ -16,9 +16,6 @@
 #include "shot.h"
 
 #include "direction.h"
-#include "xpm/logo.xpm"
-#include "xpm/play-button.xpm"
-#include "xpm/mouse.xpm"
 
 extern char* video_mem;
 extern uint8_t* vg_buffer;

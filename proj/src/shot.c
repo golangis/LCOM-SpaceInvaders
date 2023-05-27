@@ -31,8 +31,8 @@ void (moveShot)(Shot* shot) {
 
 void (drawShot)(Shot* shot) {
   switch (shot->source) {
-    case alien: video_draw_xpm(shot->x_min, shot->y_max, alien_shot_xpm); break;
-    case player: video_draw_xpm(shot->x_min, shot->y_max, ship_shot_xpm); break;
+    case alien: video_draw_xpm(shot->x_min, shot->y_max, "alien_shot"); break;
+    case player: video_draw_xpm(shot->x_min, shot->y_max, "ship_shot"); break;
     default: break;
   }
 }
