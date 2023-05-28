@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
 #include "framework/mouse/mouse.h"
 #include "framework/video/video.h"
 
-#include "spaceinvaders.h"
+#include "logic/spaceinvaders.h"
 
 // Game
 extern Player* ship;

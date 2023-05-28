@@ -7,8 +7,8 @@
  * Note: The terms "Ship" and "Player" are used interchangeably.
  */
 
-#include "direction.h"
-#include "shot.h"
+#include "logic/direction.h"
+#include "logic/shot.h"
 
 #include "framework/video/video.h"
 

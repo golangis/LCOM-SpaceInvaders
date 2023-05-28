@@ -16,12 +16,12 @@
 #include "framework/mouse/mouse.h"
 #include "framework/rtc/rtc.h"
 
-#include "alien.h"
-#include "player.h"
-#include "shield.h"
-#include "shot.h"
+#include "logic/alien.h"
+#include "logic/player.h"
+#include "logic/shield.h"
+#include "logic/shot.h"
 
-#include "direction.h"
+#include "logic/direction.h"
 
 extern char* video_mem;
 extern uint8_t* vg_buffer;

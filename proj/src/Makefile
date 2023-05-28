@@ -7,6 +7,8 @@ PROG=proj
 .PATH: ${.CURDIR}/framework/timer
 .PATH: ${.CURDIR}/framework/utils
 .PATH: ${.CURDIR}/framework/video
+.PATH: ${.CURDIR}/logic
+
 
 # source code files to be compiled
 SRCS = kbd.c rtc.c timer.c utils.c video.c alien.c main.c player.c shield.c shot.c spaceinvaders.c mouse.c

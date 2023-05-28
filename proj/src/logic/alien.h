@@ -9,11 +9,11 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-#include "direction.h"
+#include "logic/direction.h"
 
 #include "framework/video/video.h"
 
-#include "shot.h"
+#include "logic/shot.h"
 
 /**
  * @brief Represents a Space Invaders alien.

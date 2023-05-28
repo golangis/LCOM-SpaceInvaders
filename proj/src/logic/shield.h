@@ -3,7 +3,7 @@
 
 #include "framework/video/video.h"
 
-#include "shot.h"
+#include "logic/shot.h"
 
 /**
  * @file shield.h
