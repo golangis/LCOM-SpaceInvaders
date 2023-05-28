@@ -72,10 +72,29 @@ Score (build_score)(int points, rtc_time* time) {
   Score score;
   score.points = points;
   char str[17];
-  if (time->month < 10 && time->hour < 10) sprintf(str, "%d/0%d/20%d 0%d:%d", time->day, time->month, time->year, time->hour, time->minute);
-  else if (time->month < 10) sprintf(str, "%d/0%d/20%d %d:%d", time->day, time->month, time->year, time->hour, time->minute);
-  else if (time->hour < 10) sprintf(str, "%d/%d/20%d 0%d:%d", time->day, time->month, time->year, time->hour, time->minute);
-  else sprintf(str, "%d/%d/20%d %d:%d", time->day, time->month, time->year, time->hour, time->minute);
+
+  char day[3];
+  char month[3];
+  char year[5];
+  char hour[3];
+  char minute[3];
+  
+  if (time->day < 10) sprintf(day, "0%d", time->day);
+  else sprintf(day, "%d", time->day);
+
+  if (time->month < 10) sprintf(month, "0%d", time->month);
+  else sprintf(month, "%d", time->month);
+
+  sprintf(year, "20%d", time->year);
+
+  if (time->hour < 10) sprintf(hour, "0%d", time->hour);
+  else sprintf(hour, "%d", time->hour);
+
+  if (time->minute < 10) sprintf(minute, "0%d", time->minute);
+  else sprintf(minute, "%d", time->minute);
+
+  sprintf(str, "%c%c/%c%c/%c%c%c%c %c%c:%c%c", day[0], day[1], month[0], month[1], year[0], year[1], year[2], year[3], hour[0], hour[1], minute[0], minute[1]);
+
   strcpy(score.datetime, str);
   return score;
 }

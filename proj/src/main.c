@@ -48,6 +48,8 @@ extern int timer_counter;
 // Keyboard
 extern int data;
 
+Score* hs;
+
 void (highscores_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state, Score* scores) {
     if (msg.m_notify.interrupts & ipc_timer) {
         timer_interrupt_handler();
@@ -90,11 +92,11 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
         if (timer_counter % 2 == 0) {
             update(&no_lives);
             if(no_lives == 1) {
-                Score* scores = load_scores();
+                hs = load_scores();
                 rtc_time time;
                 while (get_time(&time));
                 Score score = build_score(ship->score, &time);
-                if (process_score(score, scores)) store_scores(scores);
+                if (process_score(score, hs)) store_scores(hs);
                 *state = gameOverMenu;
             }
             draw();
@@ -287,9 +289,9 @@ int (proj_main_loop)(int argc, char **argv) {
     enum state state = mainMenu;
     wave = 1;
 
-    state = mainMenu;
+    hs = load_scores();
 
-    Score* hs = load_scores();
+    state = mainMenu;
 
     while (state != quit) {
         if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
