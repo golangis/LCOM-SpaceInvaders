@@ -11,10 +11,10 @@ void (init_game)() {
 }
 
 void (reload_aliens)() {
-  aliens = initAliens();
-  shield1 = initShield(100, 1);
-  shield2 = initShield(350, 2);
-  shield3 = initShield(600, 3);
+  aliens = init_aliens();
+  shield1 = init_shield(100, 1);
+  shield2 = init_shield(350, 2);
+  shield3 = init_shield(600, 3);
   last_alien_mov = right;
   updates = 0;
 }
@@ -140,23 +140,23 @@ void (update)(int* no_lives) {
 
   switch(wave){
     case 1:
-      shootAlienTime = (100 - (aliens->alive_no));
+      shoot_alienTime = (100 - (aliens->alive_no));
       moveAlienTime = 25;
       break;
     case 2:
-      shootAlienTime = (90 - (aliens->alive_no));
+      shoot_alienTime = (90 - (aliens->alive_no));
       moveAlienTime = 20;
       break;
     case 3:
-      shootAlienTime = (80 - (aliens->alive_no));
+      shoot_alienTime = (80 - (aliens->alive_no));
       moveAlienTime = 17;
       break;
     case 4:
-      shootAlienTime = (75 - (aliens->alive_no));
+      shoot_alienTime = (75 - (aliens->alive_no));
       moveAlienTime = 15;
       break;
     default:
-      shootAlienTime = (70 - (aliens->alive_no));
+      shoot_alienTime = (70 - (aliens->alive_no));
       moveAlienTime = 15; 
       break; 
   }
@@ -186,9 +186,9 @@ void (update)(int* no_lives) {
   for (int i = 0; i < aliens->size; i++) {
     Alien* a = &(aliens->set[i]);
     for (int j = 0; j < a->shots_no; j++) {
-      moveShot(&(a->shots[j]));
+      move_shot(&(a->shots[j]));
       if ((a->shots[j].y_max) >= 630) {
-        deleteAlienShot(a, j);
+        delete_alien_shot(a, j);
         return;
       } else if (shield1->lives > 0 && a->shots[j].y_max >= shield1->y_min && a->shots[j].x_min <= shield1->x_max && a->shots[j].x_max >= shield1->x_min) {
         delete_alien_shot(a, j);

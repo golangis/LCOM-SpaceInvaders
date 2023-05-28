@@ -91,8 +91,8 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
                 Score* scores = load_scores();
                 rtc_time time;
                 while (get_time(&time));
-                Score score = buildScore(ship->score, &time);
-                if (processScore(score, scores)) storeScores(scores);
+                Score score = build_score(ship->score, &time);
+                if (process_score(score, scores)) store_scores(scores);
                 *state = gameOverMenu;
             }
             draw();
