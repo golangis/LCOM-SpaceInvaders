@@ -90,6 +90,7 @@ void (video_load_xpms)() {
     logo_map = xpm_load(logo_xpm, XPM_8_8_8, &logo_img);
     mouse_map = xpm_load(mouse_xpm, XPM_8_8_8, &mouse_img);
     play_button_map = xpm_load(play_button_xpm, XPM_8_8_8, &play_button_img);
+    ranking_button_map = xpm_load(ranking_button_xpm, XPM_8_8_8, &ranking_button_img);
     rocket_map = xpm_load(rocket_xpm, XPM_8_8_8, &rocket_img);
     score_map = xpm_load(score_xpm, XPM_8_8_8, &score_img);
     shield3_map = xpm_load(shield3_xpm, XPM_8_8_8, &shield3_img);
@@ -163,6 +164,9 @@ void (video_draw_xpm)(uint16_t x, uint16_t y, char xpm[]) {
     } else if (strcmp(xpm, "play_button") == 0) {
         map = play_button_map;
         img = play_button_img;
+    } else if (strcmp(xpm, "ranking_button") == 0) {
+        map = ranking_button_map;
+        img = ranking_button_img;           
     } else if (strcmp(xpm, "rocket") == 0) {
         map = rocket_map;
         img = rocket_img;
