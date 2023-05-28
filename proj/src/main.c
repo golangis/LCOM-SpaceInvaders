@@ -8,6 +8,8 @@
 
 #include <lcom/lcf.h>
 #include <stdint.h>
+extern int x_mouse_delta;
+
 
 /**
  * @file main.c
@@ -143,6 +145,9 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
         }
     }
     if (msg.m_notify.interrupts & ipc_mouse) {
+        if (x_mouse_delta < -30) move_player(ship, left);
+        if (x_mouse_delta > 30) move_player(ship, right);
+  
         if (left_click()){
             if(*can_shoot){
                 fire(ship); 
@@ -239,7 +244,9 @@ void (game_over_menu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8
     }
     if (msg.m_notify.interrupts & ipc_mouse) {
         if (is_on_replay_button && left_click()) {
+            extern struct packet mouse_packet;
             *state = game;
+            mouse_packet.lb = false;
             init_game();
         }
         mouse_interrupt_handler();

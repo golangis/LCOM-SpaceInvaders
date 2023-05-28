@@ -6,9 +6,10 @@ uint8_t counter_byte = 0;
 // Coordenadas Iniciais do Mouse
 int x_mouse = 400;
 int y_mouse = 300;
-//Coordenadas que mudam
+
+// Coordenadas que muda no x
 int x_mouse_delta = 0;
-int y_mouse_delta = 0;
+
 
 bool mouse_read = false;
 struct packet mouse_packet;
@@ -92,8 +93,7 @@ int (update_mouse)(){
     // dar update às coordenadas do rato
     x_mouse += mouse_packet.delta_x / 2;
     y_mouse -= mouse_packet.delta_y / 2;
-    x_mouse_delta = mouse_packet.delta_x / 2;
-    y_mouse_delta = mouse_packet.delta_y / 2;
+    x_mouse_delta = mouse_packet.delta_x;
 
     // verificar se o rato está dentro dos limites do ecrã
     if (x_mouse < 0)
