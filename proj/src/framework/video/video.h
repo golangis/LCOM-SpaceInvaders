@@ -39,6 +39,7 @@ uint8_t* video_buffer;
 #include "xpm/shield.xpm"
 #include "xpm/shot.xpm"
 #include "xpm/GameOver.xpm"
+#include "xpm/replay-button.xpm"
 
 xpm_image_t h_img;
 xpm_image_t slash_img;
@@ -70,6 +71,7 @@ xpm_image_t shield1_img;
 xpm_image_t ship_shot_img;
 xpm_image_t alien_shot_img;
 xpm_image_t gameOver_img;
+xpm_image_t replay_button_img;
 
 uint8_t* h_map;
 uint8_t* slash_map;
@@ -101,6 +103,7 @@ uint8_t* shield1_map;
 uint8_t* ship_shot_map;
 uint8_t* alien_shot_map;
 uint8_t* gameOver_map;
+uint8_t* replay_button_map;
 
 /**
  * @brief Initializes the video card in the given mode and maps the VRAM.

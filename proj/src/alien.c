@@ -58,8 +58,8 @@ void (moveAliens)(AlienGroup* group, enum direction dir) {
       break;
     case down:
       for (int i = 0; i < group->size; i++) {
-        group->set[i].y_min += 5;
-        group->set[i].y_max += 5;
+        group->set[i].y_min += 12;
+        group->set[i].y_max += 12;
       }
       break;
     default: break;

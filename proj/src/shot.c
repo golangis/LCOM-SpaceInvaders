@@ -18,12 +18,12 @@ Shot (initShot)(int x_min, int y_min, enum shot_source source) {
 void (moveShot)(Shot* shot) {
   switch (shot->source) {
     case alien:
-      shot->y_min += 5;
-      shot->y_max += 5;
+      shot->y_min += 4;
+      shot->y_max += 4;
       break;
     case player:
-      shot->y_min -= 10;
-      shot->y_max -= 10;
+      shot->y_min -= 7;
+      shot->y_max -= 7;
       break;
     default: break;
   }

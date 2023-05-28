@@ -12,6 +12,9 @@ void (init_game)() {
 
 void (reload_aliens)() {
   aliens = initAliens();
+  shield1 = initShield(100, 1);
+  shield2 = initShield(350, 2);
+  shield3 = initShield(600, 3);
   last_alien_mov = right;
   updates = 0;
 }
@@ -137,24 +140,24 @@ void (update)(int* no_lives) {
 
   switch(wave){
     case 1:
-      shootAlienTime = 50;
-      moveAlienTime = 20;
+      shootAlienTime = (100 - (aliens->alive_no));
+      moveAlienTime = 25;
       break;
     case 2:
-      shootAlienTime = 40;
-      moveAlienTime = 15;
+      shootAlienTime = (90 - (aliens->alive_no));
+      moveAlienTime = 20;
       break;
     case 3:
-      shootAlienTime = 30;
-      moveAlienTime = 12;
+      shootAlienTime = (80 - (aliens->alive_no));
+      moveAlienTime = 17;
       break;
     case 4:
-      shootAlienTime = 20;
-      moveAlienTime = 10;
+      shootAlienTime = (75 - (aliens->alive_no));
+      moveAlienTime = 15;
       break;
     default:
-      shootAlienTime = 20;
-      moveAlienTime = 10; 
+      shootAlienTime = (70 - (aliens->alive_no));
+      moveAlienTime = 15; 
       break; 
   }
   if (updates == shootAlienTime) {
@@ -184,7 +187,7 @@ void (update)(int* no_lives) {
     Alien* a = &(aliens->set[i]);
     for (int j = 0; j < a->shots_no; j++) {
       moveShot(&(a->shots[j]));
-      if ((a->shots[j].y_max) >= 650) {
+      if ((a->shots[j].y_max) >= 630) {
         deleteAlienShot(a, j);
         return;
       } else if (shield1->lives > 0 && a->shots[j].y_max >= shield1->y_min && a->shots[j].x_min <= shield1->x_max && a->shots[j].x_max >= shield1->x_min) {
@@ -320,7 +323,8 @@ void (drawHighscores)(Score* scores) {
 
 void (drawGameOverMenu)() {
   memset(video_buffer, 0, h_res*v_res*bytes_per_pixel);
-  video_draw_xpm(250, 250, "gameOver");
+  video_draw_xpm(250, 200, "gameOver");
+  video_draw_xpm(312, 420, "replay_button");
   video_draw_xpm(x_mouse, y_mouse, "mouse");
   memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
 }

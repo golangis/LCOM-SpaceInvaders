@@ -93,11 +93,11 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
                 while (get_time(&time));
                 Score score = buildScore(ship->score, &time);
                 if (processScore(score, scores)) storeScores(scores);
-                *state = mainMenu;
+                *state = gameOverMenu;
             }
             draw();
         }
-        if (timer_counter % 40 == 0) *can_shoot = true;
+        if (timer_counter % 90 == 0) *can_shoot = true;
         if (timer_counter >= 600) timer_counter = 0;
     }
     if (msg.m_notify.interrupts & ipc_keyboard) {
