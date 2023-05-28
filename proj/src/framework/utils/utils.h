@@ -34,7 +34,7 @@ int (util_get_MSB)(uint16_t val, uint8_t *msb);
 int (ut_sys_inb)(int port, uint8_t* value);
 
 /**
- * @brief Converts a given value in BCD to binary. Adapted from https://github.com/Fabio-A-Sa/Y2S2-LabComputadores/tree/main/Labs/lab6#bcd-vs-bin%C3%A1rio.
+ * @brief Converts a given value in BCD to binary. Got the function body from https://github.com/Fabio-A-Sa/Y2S2-LabComputadores/tree/main/Labs/lab6#bcd-vs-bin%C3%A1rio.
  * @param value Value to convert.
  * @return uint8_t Converted value in binary.
  */

@@ -50,6 +50,10 @@ extern int data;
 
 Score* hs;
 
+/**
+ * @brief Processes the interrupts and calls correct functions while in the Highscores menu state.
+ * 
+ */
 void (highscores_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state, Score* scores) {
     if (msg.m_notify.interrupts & ipc_timer) {
         timer_interrupt_handler();
@@ -85,6 +89,10 @@ void (highscores_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* 
     }
 }
 
+/**
+ * @brief Processes the interrupts and calls correct functions while in the Game state.
+ * 
+ */
 void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, bool* can_shoot, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state){
     int no_lives = 0;
     if (msg.m_notify.interrupts & ipc_timer) {
@@ -160,6 +168,10 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
     }
 }
 
+/**
+ * @brief Processes the interrupts and calls correct functions while in the Main menu state.
+ * 
+ */
 void (main_menu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state) {
     extern int x_mouse;
     extern int y_mouse;
@@ -210,6 +222,10 @@ void (main_menu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* s
     }
 }
 
+/**
+ * @brief Processes the interrupts and calls correct functions while in the Game Over menu state.
+ * 
+ */
 void (game_over_menu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state){
     extern int x_mouse;
     extern int y_mouse;
@@ -263,6 +279,10 @@ void (game_over_menu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8
     }
 }
 
+/**
+ * @brief App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts. Checks interrupt existance and calls different loops according to the state, sending the interrupt flags for the loops to process them. Unsubscribes interrupts and exits video card video mode to text mode.
+ * @return 0 upon success in all operations, non-zero otherwise.
+ */
 int (proj_main_loop)(int argc, char **argv) {
     int ipc_status;
     message msg;
