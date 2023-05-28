@@ -76,35 +76,117 @@ $(function() {
   <div class="headertitle"><div class="title">video.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef VIDEO_H</span></div>
+<a href="video_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef VIDEO_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define VIDEO_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;lcom/lcf.h&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keywordtype">unsigned</span> h_res;</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keywordtype">unsigned</span> v_res;</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keywordtype">unsigned</span> bits_per_pixel;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keywordtype">unsigned</span> bytes_per_pixel;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>uint8_t RedMaskSize;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>uint8_t GreenMaskSize;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>uint8_t BlueMaskSize;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>uint8_t RedFieldPosition;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>uint8_t GreenFieldPosition;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>uint8_t BlueFieldPosition;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;lcom/lcf.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keywordtype">unsigned</span> h_res;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keywordtype">unsigned</span> v_res;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keywordtype">unsigned</span> bits_per_pixel;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">unsigned</span> bytes_per_pixel;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">char</span>* video_mem;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>uint8_t* video_buffer;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keywordtype">void</span>* (video_init)(uint16_t mode);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>void (video_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>void (video_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>void (video_draw_pixel)(uint16_t x, uint16_t y, uint32_t color);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>void (video_draw_xpm)(uint16_t x, uint16_t y, xpm_map_t xpm);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>void (video_draw_score)(uint16_t x, uint16_t y, <span class="keywordtype">int</span> score);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>uint8_t RedMaskSize;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>uint8_t GreenMaskSize;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>uint8_t BlueMaskSize;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>uint8_t RedFieldPosition;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>uint8_t GreenFieldPosition;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>uint8_t BlueFieldPosition;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keywordtype">char</span>* video_mem;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>uint8_t* video_buffer;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &quot;xpm/alphabet.xpm&quot;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &quot;xpm/algarisms.xpm&quot;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &quot;xpm/aliens.xpm&quot;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &quot;xpm/heart.xpm&quot;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;xpm/logo.xpm&quot;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;xpm/mouse.xpm&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;xpm/play-button.xpm&quot;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;xpm/rocket.xpm&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &quot;xpm/score.xpm&quot;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &quot;xpm/shield.xpm&quot;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &quot;xpm/shot.xpm&quot;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &quot;xpm/GameOver.xpm&quot;</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>xpm_image_t h_img;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>xpm_image_t slash_img;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>xpm_image_t zero_img;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>xpm_image_t one_img;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>xpm_image_t two_img;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>xpm_image_t three_img;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>xpm_image_t four_img;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>xpm_image_t five_img;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>xpm_image_t six_img;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>xpm_image_t seven_img;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>xpm_image_t eight_img;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>xpm_image_t nine_img;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>xpm_image_t alien1_img;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>xpm_image_t alien2_img;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>xpm_image_t alien3_img;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>xpm_image_t alien4_img;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>xpm_image_t alien5_img;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>xpm_image_t heart_img;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>xpm_image_t heart_bad_img;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>xpm_image_t logo_img;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>xpm_image_t mouse_img;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>xpm_image_t play_button_img;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>xpm_image_t rocket_img;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>xpm_image_t score_img;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>xpm_image_t shield3_img;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>xpm_image_t shield2_img;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>xpm_image_t shield1_img;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>xpm_image_t ship_shot_img;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>xpm_image_t alien_shot_img;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>xpm_image_t gameOver_img;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>uint8_t* h_map;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>uint8_t* slash_map;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>uint8_t* zero_map;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>uint8_t* one_map;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>uint8_t* two_map;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>uint8_t* three_map;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>uint8_t* four_map;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>uint8_t* five_map;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>uint8_t* six_map;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>uint8_t* seven_map;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>uint8_t* eight_map;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>uint8_t* nine_map;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>uint8_t* alien1_map;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>uint8_t* alien2_map;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>uint8_t* alien3_map;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>uint8_t* alien4_map;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>uint8_t* alien5_map;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>uint8_t* heart_map;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>uint8_t* heart_bad_map;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>uint8_t* logo_map;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>uint8_t* mouse_map;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>uint8_t* play_button_map;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>uint8_t* rocket_map;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>uint8_t* score_map;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>uint8_t* shield3_map;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>uint8_t* shield2_map;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>uint8_t* shield1_map;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>uint8_t* ship_shot_map;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>uint8_t* alien_shot_map;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>uint8_t* gameOver_map;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="keywordtype">void</span>* (<a class="code hl_function" href="video_8h.html#a27f9047879cee35f24ae69729e89c732">video_init</a>)(uint16_t mode);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>void (<a class="code hl_function" href="video_8h.html#ab0332ee565f978f725c021b4eb35958e">video_draw_pixel</a>)(uint16_t x, uint16_t y, uint32_t color);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>void (<a class="code hl_function" href="video_8h.html#a43eca9753118b540d01327d3c4a7068c">video_load_xpms</a>)();</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>void (<a class="code hl_function" href="video_8h.html#a1d7817e4e5198831c8e33e05a64e8ecf">video_draw_xpm</a>)(uint16_t x, uint16_t y, <span class="keywordtype">char</span> xpm[]);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="avideo_8h_html_a1d7817e4e5198831c8e33e05a64e8ecf"><div class="ttname"><a href="video_8h.html#a1d7817e4e5198831c8e33e05a64e8ecf">video_draw_xpm</a></div><div class="ttdeci">void() video_draw_xpm(uint16_t x, uint16_t y, char xpm[])</div><div class="ttdoc">Draws a XPM image with the leftmost upper pixel at the given coordinates.</div><div class="ttdef"><b>Definition:</b> video.c:97</div></div>
+<div class="ttc" id="avideo_8h_html_a27f9047879cee35f24ae69729e89c732"><div class="ttname"><a href="video_8h.html#a27f9047879cee35f24ae69729e89c732">video_init</a></div><div class="ttdeci">void *() video_init(uint16_t mode)</div><div class="ttdoc">Initializes the video card in the given mode and maps the VRAM.</div><div class="ttdef"><b>Definition:</b> video.c:5</div></div>
+<div class="ttc" id="avideo_8h_html_a43eca9753118b540d01327d3c4a7068c"><div class="ttname"><a href="video_8h.html#a43eca9753118b540d01327d3c4a7068c">video_load_xpms</a></div><div class="ttdeci">void() video_load_xpms()</div><div class="ttdoc">Loads the XPM images used in the app.</div><div class="ttdef"><b>Definition:</b> video.c:64</div></div>
+<div class="ttc" id="avideo_8h_html_ab0332ee565f978f725c021b4eb35958e"><div class="ttname"><a href="video_8h.html#ab0332ee565f978f725c021b4eb35958e">video_draw_pixel</a></div><div class="ttdeci">void() video_draw_pixel(uint16_t x, uint16_t y, uint32_t color)</div><div class="ttdoc">Sets the pixel at the given coordinates to the given color.</div><div class="ttdef"><b>Definition:</b> video.c:54</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

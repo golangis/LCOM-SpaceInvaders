@@ -1,0 +1,103 @@
+\hypertarget{utils_8h}{}\doxysection{C\+:/\+Users/\+Pedro/\+Documents/2\+LEIC/2º semestre/\+LC/\+MINIX-\/\+LCOM/shared/proj/src/framework/utils/utils.h File Reference}
+\label{utils_8h}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/utils/utils.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/utils/utils.h}}
+
+
+Set of auxiliary functions to be used in the framework.  
+
+
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{utils_8h_a81621440b3d65680979425e39aa8c789}{util\+\_\+get\+\_\+\+LSB}} (uint16\+\_\+t val, uint8\+\_\+t $\ast$lsb)
+\begin{DoxyCompactList}\small\item\em Gets a 16-\/bit value\textquotesingle{}s least significant byte. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{utils_8h_a6a880076cd2ec468834438b6e0c58836}{util\+\_\+get\+\_\+\+MSB}} (uint16\+\_\+t val, uint8\+\_\+t $\ast$msb)
+\begin{DoxyCompactList}\small\item\em Gets a 16-\/bit value\textquotesingle{}s most significant byte. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{utils_8h_ac001a9276b9ecff0ddabd111fac79211}{ut\+\_\+sys\+\_\+inb}} (int port, uint8\+\_\+t $\ast$value)
+\begin{DoxyCompactList}\small\item\em Reads a byte from a given port. \end{DoxyCompactList}\item 
+uint8\+\_\+t() \mbox{\hyperlink{utils_8h_aff3396c8be829b5b1dd36fc4f81382ff}{bcd\+\_\+to\+\_\+bin}} (uint8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Converts a given value in BCD to binary. Adapted from \href{https://github.com/Fabio-A-Sa/Y2S2-LabComputadores/tree/main/Labs/lab6\#bcd-vs-bin\%C3\%A1rio}{\texttt{ https\+://github.\+com/\+Fabio-\/\+A-\/\+Sa/\+Y2\+S2-\/\+Lab\+Computadores/tree/main/\+Labs/lab6\#bcd-\/vs-\/bin\%\+C3\%\+A1rio}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Set of auxiliary functions to be used in the framework. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{utils_8h_aff3396c8be829b5b1dd36fc4f81382ff}\label{utils_8h_aff3396c8be829b5b1dd36fc4f81382ff}} 
+\index{utils.h@{utils.h}!bcd\_to\_bin@{bcd\_to\_bin}}
+\index{bcd\_to\_bin@{bcd\_to\_bin}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{bcd\_to\_bin()}{bcd\_to\_bin()}}
+{\footnotesize\ttfamily uint8\+\_\+t() bcd\+\_\+to\+\_\+bin (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Converts a given value in BCD to binary. Adapted from \href{https://github.com/Fabio-A-Sa/Y2S2-LabComputadores/tree/main/Labs/lab6\#bcd-vs-bin\%C3\%A1rio}{\texttt{ https\+://github.\+com/\+Fabio-\/\+A-\/\+Sa/\+Y2\+S2-\/\+Lab\+Computadores/tree/main/\+Labs/lab6\#bcd-\/vs-\/bin\%\+C3\%\+A1rio}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Value to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t Converted value in binary. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utils_8h_ac001a9276b9ecff0ddabd111fac79211}\label{utils_8h_ac001a9276b9ecff0ddabd111fac79211}} 
+\index{utils.h@{utils.h}!ut\_sys\_inb@{ut\_sys\_inb}}
+\index{ut\_sys\_inb@{ut\_sys\_inb}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{ut\_sys\_inb()}{ut\_sys\_inb()}}
+{\footnotesize\ttfamily int() ut\+\_\+sys\+\_\+inb (\begin{DoxyParamCaption}\item[{int}]{port,  }\item[{uint8\+\_\+t $\ast$}]{value }\end{DoxyParamCaption})}
+
+
+
+Reads a byte from a given port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Port to read from. \\
+\hline
+{\em value} & Variable to store the byte read from the port. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{utils_8h_a81621440b3d65680979425e39aa8c789}\label{utils_8h_a81621440b3d65680979425e39aa8c789}} 
+\index{utils.h@{utils.h}!util\_get\_LSB@{util\_get\_LSB}}
+\index{util\_get\_LSB@{util\_get\_LSB}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{util\_get\_LSB()}{util\_get\_LSB()}}
+{\footnotesize\ttfamily int() util\+\_\+get\+\_\+\+LSB (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{val,  }\item[{uint8\+\_\+t $\ast$}]{lsb }\end{DoxyParamCaption})}
+
+
+
+Gets a 16-\/bit value\textquotesingle{}s least significant byte. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & Value to get the LSB from. \\
+\hline
+{\em lsb} & Variable to store the LSB. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 upon success, non-\/zero otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utils_8h_a6a880076cd2ec468834438b6e0c58836}\label{utils_8h_a6a880076cd2ec468834438b6e0c58836}} 
+\index{utils.h@{utils.h}!util\_get\_MSB@{util\_get\_MSB}}
+\index{util\_get\_MSB@{util\_get\_MSB}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{util\_get\_MSB()}{util\_get\_MSB()}}
+{\footnotesize\ttfamily int() util\+\_\+get\+\_\+\+MSB (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{val,  }\item[{uint8\+\_\+t $\ast$}]{msb }\end{DoxyParamCaption})}
+
+
+
+Gets a 16-\/bit value\textquotesingle{}s most significant byte. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & Value to get the MSB from. \\
+\hline
+{\em msb} & Variable to store the MSB. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 upon success, non-\/zero otherwise 
+\end{DoxyReturn}

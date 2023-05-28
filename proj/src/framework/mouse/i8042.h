@@ -1,6 +1,12 @@
 #ifndef I8042_H
 #define I8042_H
 
+/**
+ * @file i8042.h
+ * @brief Constants for programming the i8042 (mouse oriented).
+ * 
+ */
+
 #define MOUSE_IRQ 12
 #define INPUT_BUFFER 0x64
 #define OUTPUT_BUFFER 0x60

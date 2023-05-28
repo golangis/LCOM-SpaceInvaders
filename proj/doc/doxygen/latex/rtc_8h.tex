@@ -1,0 +1,121 @@
+\hypertarget{rtc_8h}{}\doxysection{C\+:/\+Users/\+Pedro/\+Documents/2\+LEIC/2º semestre/\+LC/\+MINIX-\/\+LCOM/shared/proj/src/framework/rtc/rtc.h File Reference}
+\label{rtc_8h}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/rtc/rtc.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/rtc/rtc.h}}
+
+
+Constants for programming the RTC. Functions of the RTC framework.  
+
+
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../utils/utils.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structrtc__time}{rtc\+\_\+time}}
+\begin{DoxyCompactList}\small\item\em Represents a time by its day, month, year, hour and minute. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{rtc_8h_a710b98232df2c563009e6f8a6cd18220}\label{rtc_8h_a710b98232df2c563009e6f8a6cd18220}} 
+\#define {\bfseries RTC\+\_\+\+ADDR\+\_\+\+REG}~0x70
+\item 
+\mbox{\Hypertarget{rtc_8h_a2f258a00c59c3f347c8d2d4a75471ce0}\label{rtc_8h_a2f258a00c59c3f347c8d2d4a75471ce0}} 
+\#define {\bfseries RTC\+\_\+\+DATA\+\_\+\+REG}~0x71
+\item 
+\mbox{\Hypertarget{rtc_8h_a0be087b000470f0f0b946e1fb8cd664f}\label{rtc_8h_a0be087b000470f0f0b946e1fb8cd664f}} 
+\#define {\bfseries RTC\+\_\+\+MINUTES\+\_\+\+ADDR}~2
+\item 
+\mbox{\Hypertarget{rtc_8h_afceedd20f914a7de606cfbfce573900d}\label{rtc_8h_afceedd20f914a7de606cfbfce573900d}} 
+\#define {\bfseries RTC\+\_\+\+HOURS\+\_\+\+ADDR}~4
+\item 
+\mbox{\Hypertarget{rtc_8h_a81fafd6693c7a55be3dc0af8173a7ffb}\label{rtc_8h_a81fafd6693c7a55be3dc0af8173a7ffb}} 
+\#define {\bfseries RTC\+\_\+\+DAY\+\_\+\+ADDR}~7
+\item 
+\mbox{\Hypertarget{rtc_8h_a799f1313bf364226bf55e5697e52430f}\label{rtc_8h_a799f1313bf364226bf55e5697e52430f}} 
+\#define {\bfseries RTC\+\_\+\+MONTH\+\_\+\+ADDR}~8
+\item 
+\mbox{\Hypertarget{rtc_8h_a6a033369d06041f0f64b1eee4f66ff72}\label{rtc_8h_a6a033369d06041f0f64b1eee4f66ff72}} 
+\#define {\bfseries RTC\+\_\+\+YEAR\+\_\+\+ADDR}~9
+\item 
+\mbox{\Hypertarget{rtc_8h_a81f35849e2c8fe00b1e66b085db986fa}\label{rtc_8h_a81f35849e2c8fe00b1e66b085db986fa}} 
+\#define {\bfseries RTC\+\_\+\+REGISTER\+\_\+A}~10
+\item 
+\mbox{\Hypertarget{rtc_8h_aa7c10a34d778f2e5bc0f8867ba205f0d}\label{rtc_8h_aa7c10a34d778f2e5bc0f8867ba205f0d}} 
+\#define {\bfseries RTC\+\_\+\+REGISTER\+\_\+B}~11
+\item 
+\mbox{\Hypertarget{rtc_8h_afe5d31647d8882e7fa9ea7030baa2780}\label{rtc_8h_afe5d31647d8882e7fa9ea7030baa2780}} 
+\#define {\bfseries RTC\+\_\+\+DM}~BIT(2)
+\item 
+\mbox{\Hypertarget{rtc_8h_a2ebe3d816d8b2e9f1be075554e4135b3}\label{rtc_8h_a2ebe3d816d8b2e9f1be075554e4135b3}} 
+\#define {\bfseries RTC\+\_\+\+UIP}~BIT(7)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{rtc_8h_a3d0e0832042b95a85fc00e7baa9f1e19}{rtc\+\_\+write\+\_\+control}} (uint8\+\_\+t addr)
+\begin{DoxyCompactList}\small\item\em Writes a given address to be read from the RTC to the RTC\textquotesingle{}s address register. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{rtc_8h_a200e0e9e22af694e13f67b81022196e7}{rtc\+\_\+read}} (uint8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Reads a byte from the RTC\textquotesingle{}s data register. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{rtc_8h_a4ad822f0b94f8d0c1e0071219174b6ef}{get\+\_\+time}} (\mbox{\hyperlink{structrtc__time}{rtc\+\_\+time}} $\ast$time)
+\begin{DoxyCompactList}\small\item\em Gets the current time from the RTC and stores into a given \mbox{\hyperlink{structrtc__time}{rtc\+\_\+time}} struct instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Constants for programming the RTC. Functions of the RTC framework. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{rtc_8h_a4ad822f0b94f8d0c1e0071219174b6ef}\label{rtc_8h_a4ad822f0b94f8d0c1e0071219174b6ef}} 
+\index{rtc.h@{rtc.h}!get\_time@{get\_time}}
+\index{get\_time@{get\_time}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{get\_time()}{get\_time()}}
+{\footnotesize\ttfamily int() get\+\_\+time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrtc__time}{rtc\+\_\+time}} $\ast$}]{time }\end{DoxyParamCaption})}
+
+
+
+Gets the current time from the RTC and stores into a given \mbox{\hyperlink{structrtc__time}{rtc\+\_\+time}} struct instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Variable to store the read current time. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 upon success, non-\/zero otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{rtc_8h_a200e0e9e22af694e13f67b81022196e7}\label{rtc_8h_a200e0e9e22af694e13f67b81022196e7}} 
+\index{rtc.h@{rtc.h}!rtc\_read@{rtc\_read}}
+\index{rtc\_read@{rtc\_read}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{rtc\_read()}{rtc\_read()}}
+{\footnotesize\ttfamily int() rtc\+\_\+read (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Reads a byte from the RTC\textquotesingle{}s data register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Variable to store the byte read from the RTC. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 upon success, non-\/zero otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{rtc_8h_a3d0e0832042b95a85fc00e7baa9f1e19}\label{rtc_8h_a3d0e0832042b95a85fc00e7baa9f1e19}} 
+\index{rtc.h@{rtc.h}!rtc\_write\_control@{rtc\_write\_control}}
+\index{rtc\_write\_control@{rtc\_write\_control}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{rtc\_write\_control()}{rtc\_write\_control()}}
+{\footnotesize\ttfamily int() rtc\+\_\+write\+\_\+control (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{addr }\end{DoxyParamCaption})}
+
+
+
+Writes a given address to be read from the RTC to the RTC\textquotesingle{}s address register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & Address to be read later from the RTC. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 upon success, non-\/zero otherwise 
+\end{DoxyReturn}

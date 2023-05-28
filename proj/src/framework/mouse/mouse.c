@@ -62,10 +62,10 @@ int (readPacket)() {
     mouse_packet.y_ov = data & MOUSE_Y_OV;
   }
   else if (counter_byte % 3 == 1){
-      mouse_packet.delta_x = (mouse_packet.delta_x) ? (0xFF00 | data) : data;
+    mouse_packet.delta_x = (mouse_packet.delta_x) ? (0xFF00 | data) : data;
   }
   else if (counter_byte % 3 == 2){
-      mouse_packet.delta_y = (mouse_packet.delta_y) ? (0xFF00 | data) : data;
+    mouse_packet.delta_y = (mouse_packet.delta_y) ? (0xFF00 | data) : data;
     mouse_read = true;
   }
   

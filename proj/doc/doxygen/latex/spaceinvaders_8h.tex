@@ -1,0 +1,138 @@
+\hypertarget{spaceinvaders_8h}{}\doxysection{C\+:/\+Users/\+Pedro/\+Documents/2\+LEIC/2º semestre/\+LC/\+MINIX-\/\+LCOM/shared/proj/src/spaceinvaders.h File Reference}
+\label{spaceinvaders_8h}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/spaceinvaders.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/spaceinvaders.h}}
+
+
+Game logic functions. Stores the game elements and assures the interaction between them.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}framework/video/video.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}framework/mouse/mouse.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}framework/rtc/rtc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}alien.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}player.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}shield.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}shot.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}direction.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_score}{Score}}
+\begin{DoxyCompactList}\small\item\em A struct to represent a score by its number of points and the date and time it was achieved. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90}\label{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90}} 
+enum {\bfseries state} \{ \newline
+{\bfseries game}
+, {\bfseries main\+Menu}
+, {\bfseries highscores}
+, {\bfseries quit}
+, \newline
+{\bfseries game\+Over\+Menu}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void() \mbox{\hyperlink{spaceinvaders_8h_aff9ce2c80067181fa64a67450da2c6fa}{init\+\_\+game}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the game elements. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a5c1ddfb8c2734979f5bc00098a2aed89}\label{spaceinvaders_8h_a5c1ddfb8c2734979f5bc00098a2aed89}} 
+\mbox{\hyperlink{struct_score}{Score}} $\ast$() {\bfseries load\+Scores} ()
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a6f64c8195800ea7b368c2fa4fa584c38}\label{spaceinvaders_8h_a6f64c8195800ea7b368c2fa4fa584c38}} 
+\mbox{\hyperlink{struct_score}{Score}}() {\bfseries build\+Score} (int points, \mbox{\hyperlink{structrtc__time}{rtc\+\_\+time}} $\ast$time)
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a7d4fb88b1ced99ae8c99cb239a8e9f84}\label{spaceinvaders_8h_a7d4fb88b1ced99ae8c99cb239a8e9f84}} 
+bool() {\bfseries process\+Score} (\mbox{\hyperlink{struct_score}{Score}} score, \mbox{\hyperlink{struct_score}{Score}} $\ast$array)
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a549e0bafccc40da52849a07356235789}\label{spaceinvaders_8h_a549e0bafccc40da52849a07356235789}} 
+void() {\bfseries store\+Scores} (\mbox{\hyperlink{struct_score}{Score}} $\ast$array)
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a84aa668c4684547c795670fc72531598}\label{spaceinvaders_8h_a84aa668c4684547c795670fc72531598}} 
+void() {\bfseries draw} ()
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a0b2a6a62c1f41986be80686c764dd19a}\label{spaceinvaders_8h_a0b2a6a62c1f41986be80686c764dd19a}} 
+void() {\bfseries update} (int $\ast$no\+\_\+lives)
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_ab6265073efb7030ef133d31ac663e9ad}\label{spaceinvaders_8h_ab6265073efb7030ef133d31ac663e9ad}} 
+void() {\bfseries draw\+Main\+Menu} ()
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_ae6b62536175593ead3bcd3bf919f054a}\label{spaceinvaders_8h_ae6b62536175593ead3bcd3bf919f054a}} 
+void() {\bfseries draw\+Highscores} (\mbox{\hyperlink{struct_score}{Score}} $\ast$scores)
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a48aac508e55818d757f7e28ac7229a6c}\label{spaceinvaders_8h_a48aac508e55818d757f7e28ac7229a6c}} 
+void() {\bfseries draw\+Game\+Over\+Menu} ()
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a0b361528e5b1e54470b00ef064464b95}\label{spaceinvaders_8h_a0b361528e5b1e54470b00ef064464b95}} 
+void() {\bfseries reload\+\_\+aliens} ()
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a278ccf0c99908024f4b96d1d2c7d4747}\label{spaceinvaders_8h_a278ccf0c99908024f4b96d1d2c7d4747}} 
+void() {\bfseries init\+Scores} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a93a24e067b9083bed6fb5c0336fd7a01}\label{spaceinvaders_8h_a93a24e067b9083bed6fb5c0336fd7a01}} 
+char $\ast$ {\bfseries video\+\_\+mem}
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a6f27020d1fd79626a71c9c65cd61ca8c}\label{spaceinvaders_8h_a6f27020d1fd79626a71c9c65cd61ca8c}} 
+uint8\+\_\+t $\ast$ {\bfseries vg\+\_\+buffer}
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a43e7e5a0a8f9069e6413b2066ca52f3e}\label{spaceinvaders_8h_a43e7e5a0a8f9069e6413b2066ca52f3e}} 
+unsigned {\bfseries h\+\_\+res}
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a5bda1b499253a8fbf3cab646f8760391}\label{spaceinvaders_8h_a5bda1b499253a8fbf3cab646f8760391}} 
+unsigned {\bfseries v\+\_\+res}
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a144d9a9cabab9de0142a6baee835ca6b}\label{spaceinvaders_8h_a144d9a9cabab9de0142a6baee835ca6b}} 
+unsigned {\bfseries bytes\+\_\+per\+\_\+pixel}
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}\label{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}} 
+\mbox{\hyperlink{struct_player}{Player}} $\ast$ {\bfseries ship}
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a8f621f1e0b4e4176f1e67dc5031d891a}\label{spaceinvaders_8h_a8f621f1e0b4e4176f1e67dc5031d891a}} 
+\mbox{\hyperlink{struct_shield}{Shield}} $\ast$ {\bfseries shield1}
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a48c72259ab4c049372115f62cd64d41f}\label{spaceinvaders_8h_a48c72259ab4c049372115f62cd64d41f}} 
+\mbox{\hyperlink{struct_shield}{Shield}} $\ast$ {\bfseries shield2}
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_ae216136d85958771f5667b34391f6b80}\label{spaceinvaders_8h_ae216136d85958771f5667b34391f6b80}} 
+\mbox{\hyperlink{struct_shield}{Shield}} $\ast$ {\bfseries shield3}
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a6bce1d88738df39ce6fb4603118aaf4c}\label{spaceinvaders_8h_a6bce1d88738df39ce6fb4603118aaf4c}} 
+\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$ {\bfseries aliens}
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_aa573dfe9991bd08b90eb8edaf34a19f6}\label{spaceinvaders_8h_aa573dfe9991bd08b90eb8edaf34a19f6}} 
+\mbox{\hyperlink{struct_shot}{Shot}} $\ast$ {\bfseries shots}
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a05b298baa5d10b97c81240a52890aee5}\label{spaceinvaders_8h_a05b298baa5d10b97c81240a52890aee5}} 
+int {\bfseries wave}
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a911a4532bbc485f9a6b43e24878c9096}\label{spaceinvaders_8h_a911a4532bbc485f9a6b43e24878c9096}} 
+enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} {\bfseries last\+\_\+alien\+\_\+mov}
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a7c957f768142ea25b66fd1e434c52c54}\label{spaceinvaders_8h_a7c957f768142ea25b66fd1e434c52c54}} 
+unsigned int {\bfseries updates}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Game logic functions. Stores the game elements and assures the interaction between them. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{spaceinvaders_8h_aff9ce2c80067181fa64a67450da2c6fa}\label{spaceinvaders_8h_aff9ce2c80067181fa64a67450da2c6fa}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!init\_game@{init\_game}}
+\index{init\_game@{init\_game}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{init\_game()}{init\_game()}}
+{\footnotesize\ttfamily void() init\+\_\+game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the game elements. 
+

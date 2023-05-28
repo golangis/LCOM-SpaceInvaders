@@ -1,25 +1,27 @@
 \hypertarget{timer_8h_source}{}\doxysection{timer.\+h}
 \label{timer_8h_source}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/timer/timer.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/timer/timer.h}}
-
+\mbox{\hyperlink{timer_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef TIMER\_H}}
 \DoxyCodeLine{2 \textcolor{preprocessor}{\#define TIMER\_H}}
 \DoxyCodeLine{3 }
-\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <lcom/lcf.h>}}
-\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <lcom/timer.h>}}
-\DoxyCodeLine{6 }
-\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <stdint.h>}}
-\DoxyCodeLine{8 }
-\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}i8254.h"{}}}
-\DoxyCodeLine{10 }
-\DoxyCodeLine{11 \textcolor{keywordtype}{int} timer\_counter;}
-\DoxyCodeLine{12 \textcolor{keywordtype}{int} timer\_shot;}
-\DoxyCodeLine{13 \textcolor{keywordtype}{int} hook\_id;}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <lcom/lcf.h>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <lcom/timer.h>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <stdint.h>}}
 \DoxyCodeLine{14 }
-\DoxyCodeLine{15 int (subscribe\_timer\_int)(uint8\_t *bit\_no);}
-\DoxyCodeLine{16 int (unsubscribe\_timer\_int)();}
-\DoxyCodeLine{17 void (timer\_interrupt\_handler)();}
-\DoxyCodeLine{18 }
-\DoxyCodeLine{19 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}i8254.h"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keywordtype}{int} timer\_counter;}
+\DoxyCodeLine{18 \textcolor{keywordtype}{int} timer\_shot;}
+\DoxyCodeLine{19 \textcolor{keywordtype}{int} hook\_id;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{26 int (\mbox{\hyperlink{timer_8h_a0ceff2b17079610e025042290d1fae99}{subscribe\_timer\_int}})(uint8\_t *bit\_no);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{32 int (\mbox{\hyperlink{timer_8h_a5fbfca26bec887463f37e7f66527dad4}{unsubscribe\_timer\_int}})();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{37 void (\mbox{\hyperlink{timer_8h_aa327d05db9461ba7bcfc05072fc28b3e}{timer\_interrupt\_handler}})();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

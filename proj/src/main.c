@@ -9,6 +9,13 @@
 #include <lcom/lcf.h>
 #include <stdint.h>
 
+/**
+ * @file main.c
+ * @brief General functions that manage the app logic.
+ * 
+ * Loops that receive interrupt information, call the interrupt handlers and send commands and information to the functions delcared in spaceinvaders.h.
+ */
+
 int main(int argc, char *argv[]) {
   lcf_set_language("EN-US");
   lcf_trace_calls("/home/lcom/labs/proj/src/trace.txt");
@@ -19,7 +26,7 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 
-#include "framework/keyboard/kbdframework.h"
+#include "framework/keyboard/kbd.h"
 #include "framework/rtc/rtc.h"
 #include "framework/timer/timer.h"
 #include "framework/mouse/mouse.h"
@@ -39,13 +46,55 @@ extern int timer_counter;
 // Keyboard
 extern int data;
 
+void (highscores_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state, Score* scores) {
+    if (msg.m_notify.interrupts & ipc_timer) {
+        timer_interrupt_handler();
+        if (timer_counter % 2 == 0) drawHighscores(scores);
+        if (timer_counter >= 600) timer_counter = 0;
+    }
+    if (msg.m_notify.interrupts & ipc_keyboard) {
+        kbc_ih();
+        if (*two_bytes) {
+            scan[1] = data;
+            *two_bytes = false;
+            *make = data & BIT(7);
+            *key = kbd_get_key(!make, 2, scan);
+            switch (*key) {
+                case kbd_esc: *state = mainMenu; break;
+                default: break;
+            }
+        } else {
+            scan[0] = data;
+            *make = data & BIT(7);
+            if (data == KBD_TWO_BYTE) *two_bytes = true;
+            else {
+                *key = kbd_get_key(!make, 1, scan);
+                switch (*key) {
+                    case kbd_esc: *state = mainMenu; break;
+                    default: break;
+                }  
+            }
+        }
+    }
+    if (msg.m_notify.interrupts & ipc_mouse) {
+        mouse_interrupt_handler();
+    }
+}
+
 void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, bool* can_shoot, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state){
     int no_lives = 0;
     if (msg.m_notify.interrupts & ipc_timer) {
         timer_interrupt_handler();
         if (timer_counter % 2 == 0) {
             update(&no_lives);
-            if(no_lives == 1) *state = mainMenu;
+            if(no_lives == 1) {
+                Score* scores = loadScores();
+                rtc_time time;
+                while (get_time(&time));
+                Score score = buildScore(ship->score, &time);
+                if (processScore(score, scores)) storeScores(scores);
+                *state = mainMenu;
+            }
             draw();
         }
         if (timer_counter % 40 == 0) *can_shoot = true;
@@ -149,6 +198,43 @@ void (mainMenu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* sc
     }
 }
 
+void gameOverMenu_loop(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state){
+    if (msg.m_notify.interrupts & ipc_timer) {
+        timer_interrupt_handler();
+        if (timer_counter % 2 == 0) drawGameOverMenu();
+        if (timer_counter >= 600) timer_counter = 0;
+    }
+    if (msg.m_notify.interrupts & ipc_keyboard) {
+        kbc_ih();
+        if (*two_bytes) {
+            scan[1] = data;
+            *two_bytes = false;
+            *make = data & BIT(7);
+            *key = kbd_get_key(!make, 2, scan);
+            switch (*key) {
+                case kbd_space: *state = mainMenu; break;
+                case kbd_esc: *state = quit; break;
+                default: break;
+            }
+        } else {
+            scan[0] = data;
+            *make = data & BIT(7);
+            if (data == KBD_TWO_BYTE) *two_bytes = true;
+            else {
+                *key = kbd_get_key(!make, 1, scan);
+                switch (*key) {
+                    case kbd_space: *state = mainMenu; break;
+                    case kbd_esc: *state = quit; break;
+                    default: break;
+                }  
+            }
+        }
+    }
+    if (msg.m_notify.interrupts & ipc_mouse) {
+        mouse_interrupt_handler();
+    }
+}
+
 int (proj_main_loop)(int argc, char **argv) {
     int ipc_status;
     message msg;
@@ -157,8 +243,6 @@ int (proj_main_loop)(int argc, char **argv) {
     int ipc_timer = BIT(TIMER_HOOK_BIT);  // check if 31
     int ipc_keyboard = BIT(KBC_HOOK_BIT);   // check if 1
     int ipc_mouse = BIT(MOUSE_HOOK_BIT);  // check if 10
-
-    //mouse
 
     // timer
     timer_counter = 0;
@@ -174,8 +258,6 @@ int (proj_main_loop)(int argc, char **argv) {
     bool make;
     bool can_shoot = false;
     enum kbd_key key = INVALID;
-    enum state state = mainMenu;
-    wave = 1;
 
     // mouse
     uint8_t mouse_hook_bit = MOUSE_HOOK_BIT;
@@ -184,9 +266,12 @@ int (proj_main_loop)(int argc, char **argv) {
     // video
     video_init(0x115);
 
-    //Score* highscores = loadScores();
+    enum state state = mainMenu;
+    wave = 1;
 
-    init_game();
+    state = highscores;
+
+    Score* hs = loadScores();
 
     while (state != quit) {
         if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
@@ -203,8 +288,16 @@ int (proj_main_loop)(int argc, char **argv) {
                         case game:    
                             game_loop(&make, &key, &two_bytes, scan, &can_shoot, ipc_timer, ipc_keyboard, ipc_mouse, msg, &state);
                             break;
+                        case highscores:
+                            highscores_loop(&make, &key, &two_bytes, scan, ipc_timer, ipc_keyboard, ipc_mouse, msg, &state, hs);
+                            break;
+                        case quit:
+                            break;
+                        case gameOverMenu:
+                            gameOverMenu_loop(&make, &key, &two_bytes, scan, ipc_timer, ipc_keyboard, ipc_mouse, msg, &state);
+                            break;
                         default:
-                            break;    
+                            break;
                     }
                     break;
                 default:
@@ -219,11 +312,5 @@ int (proj_main_loop)(int argc, char **argv) {
     if (unsubscribe_mouse_int() != 0) return 1;
     vg_exit();
 
-    /*
-    Score* array = (Score*) malloc (sizeof(Score) * 10);
-    array = loadScores();
-    for (size_t i = 0; i < 10; i++) printf("%d,%s", array[i].points, array[i].datetime);
-    updateScores(array);
-    */
     return 0;
 }

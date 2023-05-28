@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['player_0',['Player',['../struct_player.html',1,'']]],
-  ['projeto_20lc_202023_3a_20space_20invaders_1',['Projeto LC 2023: Space Invaders',['../index.html',1,'']]]
+  ['bcd_5fto_5fbin_0',['bcd_to_bin',['../utils_8h.html#aff3396c8be829b5b1dd36fc4f81382ff',1,'utils.c']]]
 ];

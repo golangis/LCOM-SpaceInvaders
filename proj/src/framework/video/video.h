@@ -1,6 +1,12 @@
 #ifndef VIDEO_H
 #define VIDEO_H
 
+/**
+ * @file video.h
+ * @brief Functions for programming the video card. Also contains variables to store the xpm images and maps drawn in the app.
+ * 
+ */
+
 #include <lcom/lcf.h>
 
 #include <string.h>
@@ -21,6 +27,7 @@ uint8_t BlueFieldPosition;
 char* video_mem;
 uint8_t* video_buffer;
 
+#include "xpm/alphabet.xpm"
 #include "xpm/algarisms.xpm"
 #include "xpm/aliens.xpm"
 #include "xpm/heart.xpm"
@@ -32,7 +39,10 @@ uint8_t* video_buffer;
 #include "xpm/score.xpm"
 #include "xpm/shield.xpm"
 #include "xpm/shot.xpm"
+#include "xpm/GameOver.xpm"
 
+xpm_image_t h_img;
+xpm_image_t slash_img;
 xpm_image_t zero_img;
 xpm_image_t one_img;
 xpm_image_t two_img;
@@ -61,7 +71,10 @@ xpm_image_t shield2_img;
 xpm_image_t shield1_img;
 xpm_image_t ship_shot_img;
 xpm_image_t alien_shot_img;
+xpm_image_t gameOver_img;
 
+uint8_t* h_map;
+uint8_t* slash_map;
 uint8_t* zero_map;
 uint8_t* one_map;
 uint8_t* two_map;
@@ -90,12 +103,34 @@ uint8_t* shield2_map;
 uint8_t* shield1_map;
 uint8_t* ship_shot_map;
 uint8_t* alien_shot_map;
+uint8_t* gameOver_map;
 
+/**
+ * @brief Initializes the video card in the given mode and maps the VRAM.
+ * @param mode Mode to initialize the video card in.
+ */
 void* (video_init)(uint16_t mode);
-void (video_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color);
-void (video_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color);
+
+/**
+ * @brief Sets the pixel at the given coordinates to the given color.
+ * @param x X coordinate of the pixel.
+ * @param y Y coordinate of the pixel.
+ * @param color Color to set the pixel to.
+ */
 void (video_draw_pixel)(uint16_t x, uint16_t y, uint32_t color);
+
+/**
+ * @brief Loads the XPM images used in the app.
+ * 
+ */
 void (video_load_xpms)();
+
+/**
+ * @brief Draws a XPM image with the leftmost upper pixel at the given coordinates.
+ * @param x X coordinate of the leftmost upper pixel.
+ * @param y Y coordinate of the leftmost upper pixel.
+ * @param xpm Name of the XPM image to draw.
+ */
 void (video_draw_xpm)(uint16_t x, uint16_t y, char xpm[]);
 
 #endif
