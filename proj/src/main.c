@@ -145,8 +145,8 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
         }
     }
     if (msg.m_notify.interrupts & ipc_mouse) {
-        if (x_mouse_delta < -30) move_player(ship, left);
-        if (x_mouse_delta > 30) move_player(ship, right);
+        if (x_mouse_delta < -100) move_player(ship, left);
+        if (x_mouse_delta > 100) move_player(ship, right);
   
         if (left_click()){
             if(*can_shoot){
