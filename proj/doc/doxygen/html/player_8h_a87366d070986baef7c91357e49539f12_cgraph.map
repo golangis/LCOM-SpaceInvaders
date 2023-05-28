@@ -1,0 +1,4 @@
+<map id="move_player" name="move_player">
+<area shape="rect" id="node1" title="Moves a given player in the desired direction if possible." alt="" coords="5,5,99,32"/>
+<area shape="rect" id="node2" href="$player_8c.html#a3d5d52b16a8103ff777bfa1ff14ea44f" title="Returns whether the given player can be moved in the given direction." alt="" coords="147,5,268,32"/>
+</map>

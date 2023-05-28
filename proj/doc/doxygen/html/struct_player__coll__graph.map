@@ -1,0 +1,4 @@
+<map id="Player" name="Player">
+<area shape="rect" id="node1" title="Represents a player (space ship) by its coordinates, lives, score and fired shots that are still acti..." alt="" coords="5,96,64,123"/>
+<area shape="rect" id="node2" href="$struct_shot.html" title="Represents a Shot by its coordinates (area) and its source." alt="" coords="10,5,59,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="draw_main_menu" name="draw_main_menu">
+<area shape="rect" id="node1" title="Draws the main menu." alt="" coords="329,5,451,32"/>
+<area shape="rect" id="node2" href="$main_8c.html#a85ddf0bf65650526685ffbfddd3e897f" title="Processes the interrupts and calls correct functions while in the Main menu state." alt="" coords="162,5,281,32"/>
+<area shape="rect" id="node3" href="$main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,5,114,32"/>
+</map>

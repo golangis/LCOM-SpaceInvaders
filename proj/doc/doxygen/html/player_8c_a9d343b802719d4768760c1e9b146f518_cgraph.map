@@ -1,0 +1,6 @@
+<map id="draw_score_aux" name="draw_score_aux">
+<area shape="rect" id="node1" title="Auxiliary function to draw the score." alt="" coords="5,5,121,32"/>
+<area shape="rect" id="node2" href="$player_8c.html#a236e6165c9a260f6a7a6eaa3eeea252c" title="Draws the provided algarism&#39;s XPM image." alt="" coords="169,5,315,32"/>
+<area shape="rect" id="node3" href="$video_8c.html#a1d7817e4e5198831c8e33e05a64e8ecf" title="Draws a XPM image with the leftmost upper pixel at the given coordinates." alt="" coords="363,5,479,32"/>
+<area shape="rect" id="node4" href="$video_8c.html#ab0332ee565f978f725c021b4eb35958e" title="Sets the pixel at the given coordinates to the given color." alt="" coords="527,5,646,32"/>
+</map>

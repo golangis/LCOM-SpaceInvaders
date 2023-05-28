@@ -7,6 +7,22 @@ Constants for programming the RTC. Functions of the RTC framework.
 
 {\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}../utils/utils.\+h\char`\"{}}\newline
+Include dependency graph for rtc.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{rtc_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
@@ -15,45 +31,34 @@ struct \mbox{\hyperlink{structrtc__time}{rtc\+\_\+time}}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{rtc_8h_a710b98232df2c563009e6f8a6cd18220}\label{rtc_8h_a710b98232df2c563009e6f8a6cd18220}} 
-\#define {\bfseries RTC\+\_\+\+ADDR\+\_\+\+REG}~0x70
+\#define \mbox{\hyperlink{rtc_8h_a710b98232df2c563009e6f8a6cd18220}{RTC\+\_\+\+ADDR\+\_\+\+REG}}~0x70
 \item 
-\mbox{\Hypertarget{rtc_8h_a2f258a00c59c3f347c8d2d4a75471ce0}\label{rtc_8h_a2f258a00c59c3f347c8d2d4a75471ce0}} 
-\#define {\bfseries RTC\+\_\+\+DATA\+\_\+\+REG}~0x71
+\#define \mbox{\hyperlink{rtc_8h_a2f258a00c59c3f347c8d2d4a75471ce0}{RTC\+\_\+\+DATA\+\_\+\+REG}}~0x71
 \item 
-\mbox{\Hypertarget{rtc_8h_a0be087b000470f0f0b946e1fb8cd664f}\label{rtc_8h_a0be087b000470f0f0b946e1fb8cd664f}} 
-\#define {\bfseries RTC\+\_\+\+MINUTES\+\_\+\+ADDR}~2
+\#define \mbox{\hyperlink{rtc_8h_a0be087b000470f0f0b946e1fb8cd664f}{RTC\+\_\+\+MINUTES\+\_\+\+ADDR}}~2
 \item 
-\mbox{\Hypertarget{rtc_8h_afceedd20f914a7de606cfbfce573900d}\label{rtc_8h_afceedd20f914a7de606cfbfce573900d}} 
-\#define {\bfseries RTC\+\_\+\+HOURS\+\_\+\+ADDR}~4
+\#define \mbox{\hyperlink{rtc_8h_afceedd20f914a7de606cfbfce573900d}{RTC\+\_\+\+HOURS\+\_\+\+ADDR}}~4
 \item 
-\mbox{\Hypertarget{rtc_8h_a81fafd6693c7a55be3dc0af8173a7ffb}\label{rtc_8h_a81fafd6693c7a55be3dc0af8173a7ffb}} 
-\#define {\bfseries RTC\+\_\+\+DAY\+\_\+\+ADDR}~7
+\#define \mbox{\hyperlink{rtc_8h_a81fafd6693c7a55be3dc0af8173a7ffb}{RTC\+\_\+\+DAY\+\_\+\+ADDR}}~7
 \item 
-\mbox{\Hypertarget{rtc_8h_a799f1313bf364226bf55e5697e52430f}\label{rtc_8h_a799f1313bf364226bf55e5697e52430f}} 
-\#define {\bfseries RTC\+\_\+\+MONTH\+\_\+\+ADDR}~8
+\#define \mbox{\hyperlink{rtc_8h_a799f1313bf364226bf55e5697e52430f}{RTC\+\_\+\+MONTH\+\_\+\+ADDR}}~8
 \item 
-\mbox{\Hypertarget{rtc_8h_a6a033369d06041f0f64b1eee4f66ff72}\label{rtc_8h_a6a033369d06041f0f64b1eee4f66ff72}} 
-\#define {\bfseries RTC\+\_\+\+YEAR\+\_\+\+ADDR}~9
+\#define \mbox{\hyperlink{rtc_8h_a6a033369d06041f0f64b1eee4f66ff72}{RTC\+\_\+\+YEAR\+\_\+\+ADDR}}~9
 \item 
-\mbox{\Hypertarget{rtc_8h_a81f35849e2c8fe00b1e66b085db986fa}\label{rtc_8h_a81f35849e2c8fe00b1e66b085db986fa}} 
-\#define {\bfseries RTC\+\_\+\+REGISTER\+\_\+A}~10
+\#define \mbox{\hyperlink{rtc_8h_a81f35849e2c8fe00b1e66b085db986fa}{RTC\+\_\+\+REGISTER\+\_\+A}}~10
 \item 
-\mbox{\Hypertarget{rtc_8h_aa7c10a34d778f2e5bc0f8867ba205f0d}\label{rtc_8h_aa7c10a34d778f2e5bc0f8867ba205f0d}} 
-\#define {\bfseries RTC\+\_\+\+REGISTER\+\_\+B}~11
+\#define \mbox{\hyperlink{rtc_8h_aa7c10a34d778f2e5bc0f8867ba205f0d}{RTC\+\_\+\+REGISTER\+\_\+B}}~11
 \item 
-\mbox{\Hypertarget{rtc_8h_afe5d31647d8882e7fa9ea7030baa2780}\label{rtc_8h_afe5d31647d8882e7fa9ea7030baa2780}} 
-\#define {\bfseries RTC\+\_\+\+DM}~BIT(2)
+\#define \mbox{\hyperlink{rtc_8h_afe5d31647d8882e7fa9ea7030baa2780}{RTC\+\_\+\+DM}}~BIT(2)
 \item 
-\mbox{\Hypertarget{rtc_8h_a2ebe3d816d8b2e9f1be075554e4135b3}\label{rtc_8h_a2ebe3d816d8b2e9f1be075554e4135b3}} 
-\#define {\bfseries RTC\+\_\+\+UIP}~BIT(7)
+\#define \mbox{\hyperlink{rtc_8h_a2ebe3d816d8b2e9f1be075554e4135b3}{RTC\+\_\+\+UIP}}~BIT(7)
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 int() \mbox{\hyperlink{rtc_8h_a3d0e0832042b95a85fc00e7baa9f1e19}{rtc\+\_\+write\+\_\+control}} (uint8\+\_\+t addr)
 \begin{DoxyCompactList}\small\item\em Writes a given address to be read from the RTC to the RTC\textquotesingle{}s address register. \end{DoxyCompactList}\item 
-int() \mbox{\hyperlink{rtc_8h_a200e0e9e22af694e13f67b81022196e7}{rtc\+\_\+read}} (uint8\+\_\+t $\ast$data)
+int() \mbox{\hyperlink{rtc_8h_a200e0e9e22af694e13f67b81022196e7}{rtc\+\_\+read}} (uint8\+\_\+t $\ast$\mbox{\hyperlink{kbd_8c_a325819a8e492ac69542e8b31705af6e9}{data}})
 \begin{DoxyCompactList}\small\item\em Reads a byte from the RTC\textquotesingle{}s data register. \end{DoxyCompactList}\item 
 int() \mbox{\hyperlink{rtc_8h_a4ad822f0b94f8d0c1e0071219174b6ef}{get\+\_\+time}} (\mbox{\hyperlink{structrtc__time}{rtc\+\_\+time}} $\ast$time)
 \begin{DoxyCompactList}\small\item\em Gets the current time from the RTC and stores into a given \mbox{\hyperlink{structrtc__time}{rtc\+\_\+time}} struct instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -61,6 +66,75 @@ int() \mbox{\hyperlink{rtc_8h_a4ad822f0b94f8d0c1e0071219174b6ef}{get\+\_\+time}}
 
 \doxysubsection{Detailed Description}
 Constants for programming the RTC. Functions of the RTC framework. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{rtc_8h_a710b98232df2c563009e6f8a6cd18220}\label{rtc_8h_a710b98232df2c563009e6f8a6cd18220}} 
+\index{rtc.h@{rtc.h}!RTC\_ADDR\_REG@{RTC\_ADDR\_REG}}
+\index{RTC\_ADDR\_REG@{RTC\_ADDR\_REG}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{RTC\_ADDR\_REG}{RTC\_ADDR\_REG}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+ADDR\+\_\+\+REG~0x70}
+
+\mbox{\Hypertarget{rtc_8h_a2f258a00c59c3f347c8d2d4a75471ce0}\label{rtc_8h_a2f258a00c59c3f347c8d2d4a75471ce0}} 
+\index{rtc.h@{rtc.h}!RTC\_DATA\_REG@{RTC\_DATA\_REG}}
+\index{RTC\_DATA\_REG@{RTC\_DATA\_REG}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{RTC\_DATA\_REG}{RTC\_DATA\_REG}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+DATA\+\_\+\+REG~0x71}
+
+\mbox{\Hypertarget{rtc_8h_a81fafd6693c7a55be3dc0af8173a7ffb}\label{rtc_8h_a81fafd6693c7a55be3dc0af8173a7ffb}} 
+\index{rtc.h@{rtc.h}!RTC\_DAY\_ADDR@{RTC\_DAY\_ADDR}}
+\index{RTC\_DAY\_ADDR@{RTC\_DAY\_ADDR}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{RTC\_DAY\_ADDR}{RTC\_DAY\_ADDR}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+DAY\+\_\+\+ADDR~7}
+
+\mbox{\Hypertarget{rtc_8h_afe5d31647d8882e7fa9ea7030baa2780}\label{rtc_8h_afe5d31647d8882e7fa9ea7030baa2780}} 
+\index{rtc.h@{rtc.h}!RTC\_DM@{RTC\_DM}}
+\index{RTC\_DM@{RTC\_DM}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{RTC\_DM}{RTC\_DM}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+DM~BIT(2)}
+
+\mbox{\Hypertarget{rtc_8h_afceedd20f914a7de606cfbfce573900d}\label{rtc_8h_afceedd20f914a7de606cfbfce573900d}} 
+\index{rtc.h@{rtc.h}!RTC\_HOURS\_ADDR@{RTC\_HOURS\_ADDR}}
+\index{RTC\_HOURS\_ADDR@{RTC\_HOURS\_ADDR}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{RTC\_HOURS\_ADDR}{RTC\_HOURS\_ADDR}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+HOURS\+\_\+\+ADDR~4}
+
+\mbox{\Hypertarget{rtc_8h_a0be087b000470f0f0b946e1fb8cd664f}\label{rtc_8h_a0be087b000470f0f0b946e1fb8cd664f}} 
+\index{rtc.h@{rtc.h}!RTC\_MINUTES\_ADDR@{RTC\_MINUTES\_ADDR}}
+\index{RTC\_MINUTES\_ADDR@{RTC\_MINUTES\_ADDR}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{RTC\_MINUTES\_ADDR}{RTC\_MINUTES\_ADDR}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+MINUTES\+\_\+\+ADDR~2}
+
+\mbox{\Hypertarget{rtc_8h_a799f1313bf364226bf55e5697e52430f}\label{rtc_8h_a799f1313bf364226bf55e5697e52430f}} 
+\index{rtc.h@{rtc.h}!RTC\_MONTH\_ADDR@{RTC\_MONTH\_ADDR}}
+\index{RTC\_MONTH\_ADDR@{RTC\_MONTH\_ADDR}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{RTC\_MONTH\_ADDR}{RTC\_MONTH\_ADDR}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+MONTH\+\_\+\+ADDR~8}
+
+\mbox{\Hypertarget{rtc_8h_a81f35849e2c8fe00b1e66b085db986fa}\label{rtc_8h_a81f35849e2c8fe00b1e66b085db986fa}} 
+\index{rtc.h@{rtc.h}!RTC\_REGISTER\_A@{RTC\_REGISTER\_A}}
+\index{RTC\_REGISTER\_A@{RTC\_REGISTER\_A}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{RTC\_REGISTER\_A}{RTC\_REGISTER\_A}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+REGISTER\+\_\+A~10}
+
+\mbox{\Hypertarget{rtc_8h_aa7c10a34d778f2e5bc0f8867ba205f0d}\label{rtc_8h_aa7c10a34d778f2e5bc0f8867ba205f0d}} 
+\index{rtc.h@{rtc.h}!RTC\_REGISTER\_B@{RTC\_REGISTER\_B}}
+\index{RTC\_REGISTER\_B@{RTC\_REGISTER\_B}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{RTC\_REGISTER\_B}{RTC\_REGISTER\_B}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+REGISTER\+\_\+B~11}
+
+\mbox{\Hypertarget{rtc_8h_a2ebe3d816d8b2e9f1be075554e4135b3}\label{rtc_8h_a2ebe3d816d8b2e9f1be075554e4135b3}} 
+\index{rtc.h@{rtc.h}!RTC\_UIP@{RTC\_UIP}}
+\index{RTC\_UIP@{RTC\_UIP}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{RTC\_UIP}{RTC\_UIP}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+UIP~BIT(7)}
+
+\mbox{\Hypertarget{rtc_8h_a6a033369d06041f0f64b1eee4f66ff72}\label{rtc_8h_a6a033369d06041f0f64b1eee4f66ff72}} 
+\index{rtc.h@{rtc.h}!RTC\_YEAR\_ADDR@{RTC\_YEAR\_ADDR}}
+\index{RTC\_YEAR\_ADDR@{RTC\_YEAR\_ADDR}!rtc.h@{rtc.h}}
+\doxysubsubsection{\texorpdfstring{RTC\_YEAR\_ADDR}{RTC\_YEAR\_ADDR}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+YEAR\+\_\+\+ADDR~9}
 
 
 
@@ -83,6 +157,22 @@ Gets the current time from the RTC and stores into a given \mbox{\hyperlink{stru
 \begin{DoxyReturn}{Returns}
 int 0 upon success, non-\/zero otherwise 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_a4ad822f0b94f8d0c1e0071219174b6ef_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_a4ad822f0b94f8d0c1e0071219174b6ef_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{rtc_8h_a200e0e9e22af694e13f67b81022196e7}\label{rtc_8h_a200e0e9e22af694e13f67b81022196e7}} 
 \index{rtc.h@{rtc.h}!rtc\_read@{rtc\_read}}
 \index{rtc\_read@{rtc\_read}!rtc.h@{rtc.h}}
@@ -101,6 +191,22 @@ Reads a byte from the RTC\textquotesingle{}s data register.
 \begin{DoxyReturn}{Returns}
 int 0 upon success, non-\/zero otherwise 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{rtc_8h_a200e0e9e22af694e13f67b81022196e7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_a200e0e9e22af694e13f67b81022196e7_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{rtc_8h_a3d0e0832042b95a85fc00e7baa9f1e19}\label{rtc_8h_a3d0e0832042b95a85fc00e7baa9f1e19}} 
 \index{rtc.h@{rtc.h}!rtc\_write\_control@{rtc\_write\_control}}
 \index{rtc\_write\_control@{rtc\_write\_control}!rtc.h@{rtc.h}}
@@ -119,3 +225,11 @@ Writes a given address to be read from the RTC to the RTC\textquotesingle{}s add
 \begin{DoxyReturn}{Returns}
 int 0 upon success, non-\/zero otherwise 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{rtc_8h_a3d0e0832042b95a85fc00e7baa9f1e19_icgraph}
+\end{center}
+\end{figure}

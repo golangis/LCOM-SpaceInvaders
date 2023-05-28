@@ -1,0 +1,7 @@
+<map id="C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX&#45;LCOM/shared/proj/src/logic/player.h" name="C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX&#45;LCOM/shared/proj/src/logic/player.h">
+<area shape="rect" id="node1" title="Represents and manipulates the game&#39;s player (space ship). Note: The terms &quot;Ship&quot; and &quot;Player&quot; are us..." alt="" coords="107,5,287,80"/>
+<area shape="rect" id="node2" href="$player_8c.html" title=" " alt="" coords="5,128,186,203"/>
+<area shape="rect" id="node3" href="$spaceinvaders_8h.html" title="Game logic functions. Stores the game elements and assures the interaction between them." alt="" coords="209,128,390,203"/>
+<area shape="rect" id="node4" href="$spaceinvaders_8c.html" title=" " alt="" coords="107,251,287,325"/>
+<area shape="rect" id="node5" href="$main_8c.html" title="General functions that manage the app logic." alt="" coords="311,251,491,325"/>
+</map>

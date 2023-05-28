@@ -1,0 +1,4 @@
+<map id="subscribe_timer_int" name="subscribe_timer_int">
+<area shape="rect" id="node1" title="Subscribes and enables Timer 0 interrupts." alt="" coords="162,5,296,32"/>
+<area shape="rect" id="node2" href="$main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,5,114,32"/>
+</map>

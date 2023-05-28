@@ -1,0 +1,107 @@
+\hypertarget{shot_8c}{}\doxysection{C\+:/\+Users/\+Pedro/\+Documents/2\+LEIC/2º semestre/\+LC/\+MINIX-\/\+LCOM/shared/proj/src/logic/shot.c File Reference}
+\label{shot_8c}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/shot.c@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/shot.c}}
+{\ttfamily \#include \char`\"{}shot.\+h\char`\"{}}\newline
+Include dependency graph for shot.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{shot_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_shot}{Shot}}() \mbox{\hyperlink{shot_8c_adbf78f340c9cb30ad382b64ad88b3bb4}{init\+\_\+shot}} (int x\+\_\+min, int y\+\_\+min, enum \mbox{\hyperlink{shot_8h_aabe4a9c6d80770059ada9f0808ee586c}{shot\+\_\+source}} source)
+\begin{DoxyCompactList}\small\item\em Initializes a shot with given left uppermost coordinates and source. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{shot_8c_af59b390a2e0c4b2a0e2f648a42bb1b91}{move\+\_\+shot}} (\mbox{\hyperlink{struct_shot}{Shot}} $\ast$shot)
+\begin{DoxyCompactList}\small\item\em Moves the given shot according to its source. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{shot_8c_a3c1b5ef797a64fc81d09d04f68f99673}{draw\+\_\+shot}} (\mbox{\hyperlink{struct_shot}{Shot}} $\ast$shot)
+\begin{DoxyCompactList}\small\item\em Draws a given shot in the screen according to its position and source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{shot_8c_a3c1b5ef797a64fc81d09d04f68f99673}\label{shot_8c_a3c1b5ef797a64fc81d09d04f68f99673}} 
+\index{shot.c@{shot.c}!draw\_shot@{draw\_shot}}
+\index{draw\_shot@{draw\_shot}!shot.c@{shot.c}}
+\doxysubsubsection{\texorpdfstring{draw\_shot()}{draw\_shot()}}
+{\footnotesize\ttfamily void() draw\+\_\+shot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_shot}{Shot}} $\ast$}]{shot }\end{DoxyParamCaption})}
+
+
+
+Draws a given shot in the screen according to its position and source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shot} & Pointer to the shot to be drawn. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{shot_8c_a3c1b5ef797a64fc81d09d04f68f99673_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{shot_8c_a3c1b5ef797a64fc81d09d04f68f99673_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{shot_8c_adbf78f340c9cb30ad382b64ad88b3bb4}\label{shot_8c_adbf78f340c9cb30ad382b64ad88b3bb4}} 
+\index{shot.c@{shot.c}!init\_shot@{init\_shot}}
+\index{init\_shot@{init\_shot}!shot.c@{shot.c}}
+\doxysubsubsection{\texorpdfstring{init\_shot()}{init\_shot()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_shot}{Shot}}() init\+\_\+shot (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{enum \mbox{\hyperlink{shot_8h_aabe4a9c6d80770059ada9f0808ee586c}{shot\+\_\+source}}}]{source }\end{DoxyParamCaption})}
+
+
+
+Initializes a shot with given left uppermost coordinates and source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Left uppermost x coordinate. \\
+\hline
+{\em y} & Left uppermost y coordinate. \\
+\hline
+{\em source} & \mbox{\hyperlink{struct_shot}{Shot}} source. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The generated and initialized shot. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{shot_8c_adbf78f340c9cb30ad382b64ad88b3bb4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{shot_8c_af59b390a2e0c4b2a0e2f648a42bb1b91}\label{shot_8c_af59b390a2e0c4b2a0e2f648a42bb1b91}} 
+\index{shot.c@{shot.c}!move\_shot@{move\_shot}}
+\index{move\_shot@{move\_shot}!shot.c@{shot.c}}
+\doxysubsubsection{\texorpdfstring{move\_shot()}{move\_shot()}}
+{\footnotesize\ttfamily void() move\+\_\+shot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_shot}{Shot}} $\ast$}]{shot }\end{DoxyParamCaption})}
+
+
+
+Moves the given shot according to its source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shot} & Pointer to the shot to be moved. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{shot_8c_af59b390a2e0c4b2a0e2f648a42bb1b91_icgraph}
+\end{center}
+\end{figure}

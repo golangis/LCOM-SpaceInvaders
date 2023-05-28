@@ -1,39 +1,50 @@
 \hypertarget{player_8h_source}{}\doxysection{player.\+h}
-\label{player_8h_source}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/player.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/player.h}}
-
+\label{player_8h_source}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/player.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/player.h}}
+\mbox{\hyperlink{player_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef PLAYER\_H}}
 \DoxyCodeLine{2 \textcolor{preprocessor}{\#define PLAYER\_H}}
 \DoxyCodeLine{3 }
-\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{direction_8h}{direction.h}}"{}}}
-\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}shot.h"{}}}
-\DoxyCodeLine{6 }
-\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{video_8h}{framework/video/video.h}}"{}}}
-\DoxyCodeLine{8 }
-\DoxyCodeLine{9 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
-\DoxyCodeLine{10     \textcolor{keywordtype}{int} x\_min;}
-\DoxyCodeLine{11     \textcolor{keywordtype}{int} y\_min;}
-\DoxyCodeLine{12     \textcolor{keywordtype}{int} x\_max;}
-\DoxyCodeLine{13     \textcolor{keywordtype}{int} y\_max;}
-\DoxyCodeLine{14     \textcolor{keywordtype}{int} lives;}
-\DoxyCodeLine{15     \textcolor{keywordtype}{int} score;}
-\DoxyCodeLine{16     \mbox{\hyperlink{struct_shot}{Shot}}* shots;}
-\DoxyCodeLine{17     \textcolor{keywordtype}{int} shots\_no;}
-\DoxyCodeLine{18 \} \mbox{\hyperlink{struct_player}{Player}};}
-\DoxyCodeLine{19 }
-\DoxyCodeLine{20 \mbox{\hyperlink{struct_player}{Player}}* (initPlayer)();}
-\DoxyCodeLine{21 void (movePlayer)(\mbox{\hyperlink{struct_player}{Player}}* ship, \textcolor{keyword}{enum} \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} dir);}
-\DoxyCodeLine{22 bool (canPlayerMove)(\mbox{\hyperlink{struct_player}{Player}}* ship, \textcolor{keyword}{enum} \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} dir);}
-\DoxyCodeLine{23 void (fire)(\mbox{\hyperlink{struct_player}{Player}}* ship);}
-\DoxyCodeLine{24 void (looseLife)(\mbox{\hyperlink{struct_player}{Player}}* ship);}
-\DoxyCodeLine{25 void (deletePlayerShot)(\mbox{\hyperlink{struct_player}{Player}}* ship, \textcolor{keywordtype}{int} i);}
-\DoxyCodeLine{26 void (drawPlayer)(\mbox{\hyperlink{struct_player}{Player}}* ship);}
-\DoxyCodeLine{27 void (incrementScore)(\mbox{\hyperlink{struct_player}{Player}}* ship, \textcolor{keywordtype}{int} id);}
-\DoxyCodeLine{28 void (drawScore)(\mbox{\hyperlink{struct_player}{Player}}* ship);}
-\DoxyCodeLine{29 void (draw\_score\_aux)(uint16\_t x, uint16\_t y, \textcolor{keywordtype}{int} score);}
-\DoxyCodeLine{30 void (loop\_draw\_score\_aux)(uint16\_t x, uint16\_t y, \textcolor{keywordtype}{int} score);}
-\DoxyCodeLine{31 void (drawLives)(\textcolor{keywordtype}{int} lives);}
-\DoxyCodeLine{32 }
-\DoxyCodeLine{33 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{direction_8h}{logic/direction.h}}"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{shot_8h}{logic/shot.h}}"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{video_8h}{framework/video/video.h}}"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{19 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{20     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_player_ae0951dcafafdc96ac1d8361c672d47e2}{x\_min}};}
+\DoxyCodeLine{21     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_player_a7941ddc7e35fffb8864af1e922814401}{y\_min}};}
+\DoxyCodeLine{22     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_player_a5f0bb6d8a3e66525c3e6264cb8288e43}{x\_max}};}
+\DoxyCodeLine{23     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_player_ad033aea530fbbcf5bcd6cd98d882e3a5}{y\_max}};}
+\DoxyCodeLine{24     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_player_ac1d68ef9a5dd304c5015e07af7f2bb19}{lives}};}
+\DoxyCodeLine{25     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_player_aef160b7437d94056f1dc59646cd5b87d}{score}};}
+\DoxyCodeLine{26     \mbox{\hyperlink{struct_shot}{Shot}}* \mbox{\hyperlink{struct_player_aa573dfe9991bd08b90eb8edaf34a19f6}{shots}};}
+\DoxyCodeLine{27     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_player_af5bcd50f7d9d121824b07ad8e62fab80}{shots\_no}};}
+\DoxyCodeLine{28 \} \mbox{\hyperlink{struct_player}{Player}};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{34 \mbox{\hyperlink{struct_player}{Player}}* (\mbox{\hyperlink{player_8h_a94d01ea7c997ed46d9f77cedbeb149c9}{init\_player}})();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{41 void (\mbox{\hyperlink{player_8h_a87366d070986baef7c91357e49539f12}{move\_player}})(\mbox{\hyperlink{struct_player}{Player}}* \mbox{\hyperlink{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}{ship}}, \textcolor{keyword}{enum} \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} dir);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{49 bool (\mbox{\hyperlink{player_8h_a3d5d52b16a8103ff777bfa1ff14ea44f}{can\_player\_move}})(\mbox{\hyperlink{struct_player}{Player}}* \mbox{\hyperlink{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}{ship}}, \textcolor{keyword}{enum} \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} dir);}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{55 void (\mbox{\hyperlink{player_8h_a0df41d797d15f08f94cbf3fa3edbef3d}{fire}})(\mbox{\hyperlink{struct_player}{Player}}* \mbox{\hyperlink{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}{ship}});}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{61 void (\mbox{\hyperlink{player_8h_a03020012085a4bc95ab704a0a858d7b3}{loose\_life}})(\mbox{\hyperlink{struct_player}{Player}}* \mbox{\hyperlink{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}{ship}});}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{68 void (\mbox{\hyperlink{player_8h_a05477977a2ba3cb090037ee5bb753bdf}{delete\_player\_shot}})(\mbox{\hyperlink{struct_player}{Player}}* \mbox{\hyperlink{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}{ship}}, \textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{74 void (\mbox{\hyperlink{player_8h_a6a7c558ce856f450303ab6ad449ad50f}{draw\_player}})(\mbox{\hyperlink{struct_player}{Player}}* \mbox{\hyperlink{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}{ship}});}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{81 void (\mbox{\hyperlink{player_8h_a7ea936c93adb43f078c34be6a831b0c2}{increment\_score}})(\mbox{\hyperlink{struct_player}{Player}}* \mbox{\hyperlink{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}{ship}}, \textcolor{keywordtype}{int} id);}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{87 void (\mbox{\hyperlink{player_8h_af50ad9e73493590a4d110b25b70030c6}{draw\_score}})(\mbox{\hyperlink{struct_player}{Player}}* \mbox{\hyperlink{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}{ship}});}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{96 void (\mbox{\hyperlink{player_8h_a9d343b802719d4768760c1e9b146f518}{draw\_score\_aux}})(uint16\_t x, uint16\_t y, \textcolor{keywordtype}{int} score);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{104 void (\mbox{\hyperlink{player_8h_a236e6165c9a260f6a7a6eaa3eeea252c}{loop\_draw\_score\_aux}})(uint16\_t x, uint16\_t y, \textcolor{keywordtype}{int} score);}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{111 void (\mbox{\hyperlink{player_8h_a06db67ec61088b16360980f24230e62f}{draw\_lives}})(\textcolor{keywordtype}{int} lives);}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

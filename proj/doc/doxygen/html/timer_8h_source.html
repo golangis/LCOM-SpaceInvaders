@@ -84,11 +84,11 @@ $(function() {
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;i8254.h&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="i8254_8h.html">i8254.h</a>&quot;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">int</span> timer_counter;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">int</span> timer_shot;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">int</span> hook_id;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="timer_8h.html#a0f08eb193e0aedb134a1481913b6a823">   17</a></span><span class="keywordtype">int</span> <a class="code hl_variable" href="timer_8h.html#a0f08eb193e0aedb134a1481913b6a823">timer_counter</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="timer_8h.html#a443498bf889ce76f4d27ceadd3d29fd9">   18</a></span><span class="keywordtype">int</span> <a class="code hl_variable" href="timer_8h.html#a443498bf889ce76f4d27ceadd3d29fd9">timer_shot</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="timer_8h.html#a96f78a87d064e47d627d222f67a8d012">   19</a></span><span class="keywordtype">int</span> <a class="code hl_variable" href="timer_8h.html#a96f78a87d064e47d627d222f67a8d012">hook_id</a>;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>int (<a class="code hl_function" href="timer_8h.html#a0ceff2b17079610e025042290d1fae99">subscribe_timer_int</a>)(uint8_t *bit_no);</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
@@ -97,8 +97,12 @@ $(function() {
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>void (<a class="code hl_function" href="timer_8h.html#aa327d05db9461ba7bcfc05072fc28b3e">timer_interrupt_handler</a>)();</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="ai8254_8h_html"><div class="ttname"><a href="i8254_8h.html">i8254.h</a></div><div class="ttdoc">Constants for programming the i8254 Timer.</div></div>
 <div class="ttc" id="atimer_8h_html_a0ceff2b17079610e025042290d1fae99"><div class="ttname"><a href="timer_8h.html#a0ceff2b17079610e025042290d1fae99">subscribe_timer_int</a></div><div class="ttdeci">int() subscribe_timer_int(uint8_t *bit_no)</div><div class="ttdoc">Subscribes and enables Timer 0 interrupts.</div><div class="ttdef"><b>Definition:</b> timer.c:3</div></div>
+<div class="ttc" id="atimer_8h_html_a0f08eb193e0aedb134a1481913b6a823"><div class="ttname"><a href="timer_8h.html#a0f08eb193e0aedb134a1481913b6a823">timer_counter</a></div><div class="ttdeci">int timer_counter</div><div class="ttdef"><b>Definition:</b> timer.h:17</div></div>
+<div class="ttc" id="atimer_8h_html_a443498bf889ce76f4d27ceadd3d29fd9"><div class="ttname"><a href="timer_8h.html#a443498bf889ce76f4d27ceadd3d29fd9">timer_shot</a></div><div class="ttdeci">int timer_shot</div><div class="ttdef"><b>Definition:</b> timer.h:18</div></div>
 <div class="ttc" id="atimer_8h_html_a5fbfca26bec887463f37e7f66527dad4"><div class="ttname"><a href="timer_8h.html#a5fbfca26bec887463f37e7f66527dad4">unsubscribe_timer_int</a></div><div class="ttdeci">int() unsubscribe_timer_int()</div><div class="ttdoc">Unsubscribes Timer 0 interrupts.</div><div class="ttdef"><b>Definition:</b> timer.c:8</div></div>
+<div class="ttc" id="atimer_8h_html_a96f78a87d064e47d627d222f67a8d012"><div class="ttname"><a href="timer_8h.html#a96f78a87d064e47d627d222f67a8d012">hook_id</a></div><div class="ttdeci">int hook_id</div><div class="ttdef"><b>Definition:</b> timer.h:19</div></div>
 <div class="ttc" id="atimer_8h_html_aa327d05db9461ba7bcfc05072fc28b3e"><div class="ttname"><a href="timer_8h.html#aa327d05db9461ba7bcfc05072fc28b3e">timer_interrupt_handler</a></div><div class="ttdeci">void() timer_interrupt_handler()</div><div class="ttdoc">Timer interrupt handler. Increments the timer counter.</div><div class="ttdef"><b>Definition:</b> timer.c:12</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

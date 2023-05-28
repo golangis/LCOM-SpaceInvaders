@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['get_5ftime_0',['get_time',['../rtc_8h.html#a4ad822f0b94f8d0c1e0071219174b6ef',1,'rtc.c']]]
+  ['fire_0',['fire',['../player_8c.html#a0df41d797d15f08f94cbf3fa3edbef3d',1,'fire(Player *ship):&#160;player.c'],['../player_8h.html#a0df41d797d15f08f94cbf3fa3edbef3d',1,'fire(Player *ship):&#160;player.c']]]
 ];

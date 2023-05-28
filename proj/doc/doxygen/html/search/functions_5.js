@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['init_5fgame_0',['init_game',['../spaceinvaders_8h.html#aff9ce2c80067181fa64a67450da2c6fa',1,'spaceinvaders.c']]],
-  ['initalien_1',['initAlien',['../alien_8h.html#af0a5d39d7904876961a7f25d6756bfec',1,'alien.c']]],
-  ['initaliens_2',['initAliens',['../alien_8h.html#a4398d0a22fab3bc7954d339f2095e6f3',1,'alien.c']]]
+  ['highscores_5floop_0',['highscores_loop',['../main_8c.html#a31f00e3232e268b63b905a17a164542b',1,'main.c']]],
+  ['hit_5findex_1',['hit_index',['../alien_8c.html#a682db2db98543956c7eb146ea0cc5731',1,'hit_index(AlienGroup *group, Shot *shot):&#160;alien.c'],['../alien_8h.html#a682db2db98543956c7eb146ea0cc5731',1,'hit_index(AlienGroup *group, Shot *shot):&#160;alien.c']]]
 ];

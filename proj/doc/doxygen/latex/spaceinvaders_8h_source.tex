@@ -1,5 +1,5 @@
 \hypertarget{spaceinvaders_8h_source}{}\doxysection{spaceinvaders.\+h}
-\label{spaceinvaders_8h_source}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/spaceinvaders.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/spaceinvaders.h}}
+\label{spaceinvaders_8h_source}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/spaceinvaders.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/spaceinvaders.h}}
 \mbox{\hyperlink{spaceinvaders_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SPACEINVADERS\_H}}
@@ -14,64 +14,65 @@
 \DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mouse_8h}{framework/mouse/mouse.h}}"{}}}
 \DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{rtc_8h}{framework/rtc/rtc.h}}"{}}}
 \DoxyCodeLine{18 }
-\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{alien_8h}{alien.h}}"{}}}
-\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}player.h"{}}}
-\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}shield.h"{}}}
-\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}shot.h"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{alien_8h}{logic/alien.h}}"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{player_8h}{logic/player.h}}"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{shield_8h}{logic/shield.h}}"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{shot_8h}{logic/shot.h}}"{}}}
 \DoxyCodeLine{23 }
-\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{direction_8h}{direction.h}}"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{direction_8h}{logic/direction.h}}"{}}}
 \DoxyCodeLine{25 }
-\DoxyCodeLine{26 \textcolor{keyword}{extern} \textcolor{keywordtype}{char}* video\_mem;}
-\DoxyCodeLine{27 \textcolor{keyword}{extern} uint8\_t* vg\_buffer;}
-\DoxyCodeLine{28 \textcolor{keyword}{extern} \textcolor{keywordtype}{unsigned} h\_res;}
-\DoxyCodeLine{29 \textcolor{keyword}{extern} \textcolor{keywordtype}{unsigned} v\_res;}
-\DoxyCodeLine{30 \textcolor{keyword}{extern} \textcolor{keywordtype}{unsigned} bytes\_per\_pixel;}
+\DoxyCodeLine{26 \textcolor{keyword}{extern} \textcolor{keywordtype}{char}* \mbox{\hyperlink{spaceinvaders_8h_a93a24e067b9083bed6fb5c0336fd7a01}{video\_mem}};}
+\DoxyCodeLine{27 \textcolor{keyword}{extern} uint8\_t* \mbox{\hyperlink{spaceinvaders_8h_a6f27020d1fd79626a71c9c65cd61ca8c}{vg\_buffer}};}
+\DoxyCodeLine{28 \textcolor{keyword}{extern} \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{spaceinvaders_8h_a43e7e5a0a8f9069e6413b2066ca52f3e}{h\_res}};}
+\DoxyCodeLine{29 \textcolor{keyword}{extern} \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{spaceinvaders_8h_a5bda1b499253a8fbf3cab646f8760391}{v\_res}};}
+\DoxyCodeLine{30 \textcolor{keyword}{extern} \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{spaceinvaders_8h_a144d9a9cabab9de0142a6baee835ca6b}{bytes\_per\_pixel}};}
 \DoxyCodeLine{31 }
-\DoxyCodeLine{32 \mbox{\hyperlink{struct_player}{Player}}* ship;}
-\DoxyCodeLine{33 \mbox{\hyperlink{struct_shield}{Shield}}* shield1;}
-\DoxyCodeLine{34 \mbox{\hyperlink{struct_shield}{Shield}}* shield2;}
-\DoxyCodeLine{35 \mbox{\hyperlink{struct_shield}{Shield}}* shield3;}
-\DoxyCodeLine{36 \mbox{\hyperlink{struct_alien_group}{AlienGroup}}* aliens;}
-\DoxyCodeLine{37 \mbox{\hyperlink{struct_shot}{Shot}}* shots;}
-\DoxyCodeLine{38 \textcolor{keywordtype}{int} wave;}
+\DoxyCodeLine{32 \mbox{\hyperlink{struct_player}{Player}}* \mbox{\hyperlink{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}{ship}};}
+\DoxyCodeLine{33 \mbox{\hyperlink{struct_shield}{Shield}}* \mbox{\hyperlink{spaceinvaders_8h_a8f621f1e0b4e4176f1e67dc5031d891a}{shield1}};}
+\DoxyCodeLine{34 \mbox{\hyperlink{struct_shield}{Shield}}* \mbox{\hyperlink{spaceinvaders_8h_a48c72259ab4c049372115f62cd64d41f}{shield2}};}
+\DoxyCodeLine{35 \mbox{\hyperlink{struct_shield}{Shield}}* \mbox{\hyperlink{spaceinvaders_8h_ae216136d85958771f5667b34391f6b80}{shield3}};}
+\DoxyCodeLine{36 \mbox{\hyperlink{struct_alien_group}{AlienGroup}}* \mbox{\hyperlink{spaceinvaders_8h_a6bce1d88738df39ce6fb4603118aaf4c}{aliens}};}
+\DoxyCodeLine{37 \mbox{\hyperlink{struct_shot}{Shot}}* \mbox{\hyperlink{spaceinvaders_8h_aa573dfe9991bd08b90eb8edaf34a19f6}{shots}};}
+\DoxyCodeLine{38 \textcolor{keywordtype}{int} \mbox{\hyperlink{spaceinvaders_8h_a05b298baa5d10b97c81240a52890aee5}{wave}};}
 \DoxyCodeLine{39 }
-\DoxyCodeLine{40 \textcolor{keyword}{enum} \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} last\_alien\_mov;}
-\DoxyCodeLine{41 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} updates;}
+\DoxyCodeLine{40 \textcolor{keyword}{enum} \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} \mbox{\hyperlink{spaceinvaders_8h_a911a4532bbc485f9a6b43e24878c9096}{last\_alien\_mov}};}
+\DoxyCodeLine{41 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{spaceinvaders_8h_a7c957f768142ea25b66fd1e434c52c54}{updates}};}
 \DoxyCodeLine{42 }
 \DoxyCodeLine{47 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
-\DoxyCodeLine{48   \textcolor{keywordtype}{int} points;}
+\DoxyCodeLine{48   \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_score_af7f8f4a4e39e09fdb5e9f02330ecabef}{points}};}
 \DoxyCodeLine{49   \textcolor{keywordtype}{char} datetime[17];}
 \DoxyCodeLine{50 \} \mbox{\hyperlink{struct_score}{Score}};}
 \DoxyCodeLine{51 }
 \DoxyCodeLine{56 void (\mbox{\hyperlink{spaceinvaders_8h_aff9ce2c80067181fa64a67450da2c6fa}{init\_game}})();}
 \DoxyCodeLine{57 }
-\DoxyCodeLine{58 \mbox{\hyperlink{struct_score}{Score}}* (loadScores)();}
-\DoxyCodeLine{59 \mbox{\hyperlink{struct_score}{Score}} (buildScore)(\textcolor{keywordtype}{int} points, \mbox{\hyperlink{structrtc__time}{rtc\_time}}* time);}
-\DoxyCodeLine{60 bool (processScore)(\mbox{\hyperlink{struct_score}{Score}} score, \mbox{\hyperlink{struct_score}{Score}}* array);}
-\DoxyCodeLine{61 \textcolor{comment}{/*}}
-\DoxyCodeLine{62 \textcolor{comment}{leitura sacada de https://www.geeksforgeeks.org/relational-\/database-\/from-\/csv-\/files-\/in-\/c/}}
-\DoxyCodeLine{63 \textcolor{comment}{*/}}
-\DoxyCodeLine{64 void (storeScores)(\mbox{\hyperlink{struct_score}{Score}}* array);}
-\DoxyCodeLine{65 \textcolor{comment}{/*}}
-\DoxyCodeLine{66 \textcolor{comment}{escrita sacada de https://www.programiz.com/c-\/programming/c-\/file-\/input-\/output}}
-\DoxyCodeLine{67 \textcolor{comment}{*/}}
-\DoxyCodeLine{68 void (draw)();}
-\DoxyCodeLine{69 void (update)(\textcolor{keywordtype}{int}* no\_lives);}
-\DoxyCodeLine{70 void (drawMainMenu)();}
-\DoxyCodeLine{71 void (drawHighscores)(\mbox{\hyperlink{struct_score}{Score}}* scores);}
-\DoxyCodeLine{72 void (drawGameOverMenu)();}
-\DoxyCodeLine{73 void (reload\_aliens)();}
+\DoxyCodeLine{65 \mbox{\hyperlink{struct_score}{Score}}* (\mbox{\hyperlink{spaceinvaders_8h_a4c53c60b9eb88e3c00d9d0fc59dae462}{load\_scores}})();}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{73 \mbox{\hyperlink{struct_score}{Score}} (\mbox{\hyperlink{spaceinvaders_8h_abd975f557a5c526551dafdb6242ea898}{build\_score}})(\textcolor{keywordtype}{int} points, \mbox{\hyperlink{structrtc__time}{rtc\_time}}* time);}
 \DoxyCodeLine{74 }
-\DoxyCodeLine{75 void (initScores)();}
-\DoxyCodeLine{76 }
-\DoxyCodeLine{77 \textcolor{keyword}{enum} state \{}
-\DoxyCodeLine{78   game,}
-\DoxyCodeLine{79   mainMenu,}
-\DoxyCodeLine{80   highscores,}
-\DoxyCodeLine{81   quit,}
-\DoxyCodeLine{82   gameOverMenu}
-\DoxyCodeLine{83 \};}
-\DoxyCodeLine{84 }
-\DoxyCodeLine{85 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{81 bool (\mbox{\hyperlink{spaceinvaders_8h_ae0cafa3b93c40f3eb66676d574f9985e}{process\_score}})(\mbox{\hyperlink{struct_score}{Score}} score, \mbox{\hyperlink{struct_score}{Score}}* array);}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{89 void (\mbox{\hyperlink{spaceinvaders_8h_afceda483e03bbe9320d74e45df9f9c32}{store\_scores}})(\mbox{\hyperlink{struct_score}{Score}}* array);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{95 void (\mbox{\hyperlink{spaceinvaders_8h_a84aa668c4684547c795670fc72531598}{draw}})();}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{101 void (\mbox{\hyperlink{spaceinvaders_8h_a0b2a6a62c1f41986be80686c764dd19a}{update}})(\textcolor{keywordtype}{int}* no\_lives);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{107 void (\mbox{\hyperlink{spaceinvaders_8h_a867892903e6eb31b07fcbc8da05bee16}{draw\_main\_menu}})();}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{113 void (\mbox{\hyperlink{spaceinvaders_8h_ad571496285082d7d70e3ca362c1b04bb}{draw\_high\_scores}})(\mbox{\hyperlink{struct_score}{Score}}* scores);}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{119 void (\mbox{\hyperlink{spaceinvaders_8h_a0af91f71746c9e649dd1f2305c674e38}{draw\_game\_over\_menu}})();}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{125 void (\mbox{\hyperlink{spaceinvaders_8h_a0b361528e5b1e54470b00ef064464b95}{reload\_aliens}})();}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{131 \textcolor{keyword}{enum} \mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90}{state}} \{}
+\DoxyCodeLine{132   \mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90a98ed613d1d1a3c9820695fdac4f79a3d}{game}},}
+\DoxyCodeLine{133   \mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90a3766dca84536a644e2f680f520e63180}{mainMenu}},}
+\DoxyCodeLine{134   \mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90a7e8f96001f5407266d3c582135bcc095}{highscores}},}
+\DoxyCodeLine{135   \mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90a3b81dce366295e52b47ca4d263ba8335}{quit}},}
+\DoxyCodeLine{136   \mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90a479968c9f06486d3c41d83567f978bad}{gameOverMenu}}}
+\DoxyCodeLine{137 \};}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

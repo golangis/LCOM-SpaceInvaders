@@ -1,0 +1,5 @@
+<map id="AlienGroup" name="AlienGroup">
+<area shape="rect" id="node1" title="Represents a group of Space Invaders aliens." alt="" coords="5,187,91,213"/>
+<area shape="rect" id="node2" href="$struct_alien.html" title="Represents a Space Invaders alien." alt="" coords="23,96,73,123"/>
+<area shape="rect" id="node3" href="$struct_shot.html" title="Represents a Shot by its coordinates (area) and its source." alt="" coords="24,5,72,32"/>
+</map>

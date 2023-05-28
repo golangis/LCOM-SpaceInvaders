@@ -1,8 +1,13 @@
 var searchData=
 [
-  ['video_2eh_0',['video.h',['../video_8h.html',1,'']]],
-  ['video_5fdraw_5fpixel_1',['video_draw_pixel',['../video_8h.html#ab0332ee565f978f725c021b4eb35958e',1,'video.c']]],
-  ['video_5fdraw_5fxpm_2',['video_draw_xpm',['../video_8h.html#a1d7817e4e5198831c8e33e05a64e8ecf',1,'video.c']]],
-  ['video_5finit_3',['video_init',['../video_8h.html#a27f9047879cee35f24ae69729e89c732',1,'video.c']]],
-  ['video_5fload_5fxpms_4',['video_load_xpms',['../video_8h.html#a43eca9753118b540d01327d3c4a7068c',1,'video.c']]]
+  ['play_5fbutton_5fimg_0',['play_button_img',['../video_8h.html#abd25f542d85b6a1a10b48e425a288f79',1,'video.h']]],
+  ['play_5fbutton_5fmap_1',['play_button_map',['../video_8h.html#a53f3e055578ec24a86de76f12c20b40c',1,'video.h']]],
+  ['player_2',['Player',['../struct_player.html',1,'']]],
+  ['player_3',['player',['../shot_8h.html#aabe4a9c6d80770059ada9f0808ee586cac37f0609760d22ed92a4d81c3f46dcdb',1,'shot.h']]],
+  ['player_2ec_4',['player.c',['../player_8c.html',1,'']]],
+  ['player_2eh_5',['player.h',['../player_8h.html',1,'']]],
+  ['points_6',['points',['../struct_score.html#af7f8f4a4e39e09fdb5e9f02330ecabef',1,'Score']]],
+  ['process_5fscore_7',['process_score',['../spaceinvaders_8c.html#ae0cafa3b93c40f3eb66676d574f9985e',1,'process_score(Score score, Score *array):&#160;spaceinvaders.c'],['../spaceinvaders_8h.html#ae0cafa3b93c40f3eb66676d574f9985e',1,'process_score(Score score, Score *array):&#160;spaceinvaders.c']]],
+  ['proj_5fmain_5floop_8',['proj_main_loop',['../main_8c.html#ad290208c74ef25eb347d1d96a390cd66',1,'main.c']]],
+  ['projeto_20lc_202023_3a_20space_20invaders_9',['Projeto LC 2023: Space Invaders',['../index.html',1,'']]]
 ];

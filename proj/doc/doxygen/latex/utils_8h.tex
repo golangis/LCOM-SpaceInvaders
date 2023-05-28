@@ -7,6 +7,22 @@ Set of auxiliary functions to be used in the framework.
 
 {\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for utils.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{utils_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utils_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -17,7 +33,7 @@ int() \mbox{\hyperlink{utils_8h_a6a880076cd2ec468834438b6e0c58836}{util\+\_\+get
 int() \mbox{\hyperlink{utils_8h_ac001a9276b9ecff0ddabd111fac79211}{ut\+\_\+sys\+\_\+inb}} (int port, uint8\+\_\+t $\ast$value)
 \begin{DoxyCompactList}\small\item\em Reads a byte from a given port. \end{DoxyCompactList}\item 
 uint8\+\_\+t() \mbox{\hyperlink{utils_8h_aff3396c8be829b5b1dd36fc4f81382ff}{bcd\+\_\+to\+\_\+bin}} (uint8\+\_\+t value)
-\begin{DoxyCompactList}\small\item\em Converts a given value in BCD to binary. Adapted from \href{https://github.com/Fabio-A-Sa/Y2S2-LabComputadores/tree/main/Labs/lab6\#bcd-vs-bin\%C3\%A1rio}{\texttt{ https\+://github.\+com/\+Fabio-\/\+A-\/\+Sa/\+Y2\+S2-\/\+Lab\+Computadores/tree/main/\+Labs/lab6\#bcd-\/vs-\/bin\%\+C3\%\+A1rio}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Converts a given value in BCD to binary. Got the function body from \href{https://github.com/Fabio-A-Sa/Y2S2-LabComputadores/tree/main/Labs/lab6\#bcd-vs-bin\%C3\%A1rio}{\texttt{ https\+://github.\+com/\+Fabio-\/\+A-\/\+Sa/\+Y2\+S2-\/\+Lab\+Computadores/tree/main/\+Labs/lab6\#bcd-\/vs-\/bin\%\+C3\%\+A1rio}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -34,7 +50,7 @@ Set of auxiliary functions to be used in the framework.
 
 
 
-Converts a given value in BCD to binary. Adapted from \href{https://github.com/Fabio-A-Sa/Y2S2-LabComputadores/tree/main/Labs/lab6\#bcd-vs-bin\%C3\%A1rio}{\texttt{ https\+://github.\+com/\+Fabio-\/\+A-\/\+Sa/\+Y2\+S2-\/\+Lab\+Computadores/tree/main/\+Labs/lab6\#bcd-\/vs-\/bin\%\+C3\%\+A1rio}}. 
+Converts a given value in BCD to binary. Got the function body from \href{https://github.com/Fabio-A-Sa/Y2S2-LabComputadores/tree/main/Labs/lab6\#bcd-vs-bin\%C3\%A1rio}{\texttt{ https\+://github.\+com/\+Fabio-\/\+A-\/\+Sa/\+Y2\+S2-\/\+Lab\+Computadores/tree/main/\+Labs/lab6\#bcd-\/vs-\/bin\%\+C3\%\+A1rio}}. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -44,6 +60,14 @@ Converts a given value in BCD to binary. Adapted from \href{https://github.com/F
 \begin{DoxyReturn}{Returns}
 uint8\+\_\+t Converted value in binary. 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utils_8h_aff3396c8be829b5b1dd36fc4f81382ff_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{utils_8h_ac001a9276b9ecff0ddabd111fac79211}\label{utils_8h_ac001a9276b9ecff0ddabd111fac79211}} 
 \index{utils.h@{utils.h}!ut\_sys\_inb@{ut\_sys\_inb}}
 \index{ut\_sys\_inb@{ut\_sys\_inb}!utils.h@{utils.h}}
@@ -61,6 +85,14 @@ Reads a byte from a given port.
 {\em value} & Variable to store the byte read from the port. \\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utils_8h_ac001a9276b9ecff0ddabd111fac79211_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{utils_8h_a81621440b3d65680979425e39aa8c789}\label{utils_8h_a81621440b3d65680979425e39aa8c789}} 
 \index{utils.h@{utils.h}!util\_get\_LSB@{util\_get\_LSB}}
 \index{util\_get\_LSB@{util\_get\_LSB}!utils.h@{utils.h}}

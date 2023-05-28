@@ -1,0 +1,4 @@
+<map id="init_aliens" name="init_aliens">
+<area shape="rect" id="node1" title="Initializes a group of aliens." alt="" coords="5,5,85,32"/>
+<area shape="rect" id="node2" href="$alien_8c.html#af19ba8e0046253fb160c07592b0e1be2" title="Initializes an alien with a given id and leftmost upper position." alt="" coords="133,5,205,32"/>
+</map>

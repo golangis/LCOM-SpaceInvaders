@@ -1,0 +1,14 @@
+<map id="draw" name="draw">
+<area shape="rect" id="node1" title="General game drawing function. Calls the elements&#39; respective drawing functions." alt="" coords="5,136,54,162"/>
+<area shape="rect" id="node2" href="$alien_8c.html#a54999c9c1299cdf99a0c3b8a2a176fae" title="Draws a group of aliens." alt="" coords="102,34,191,61"/>
+<area shape="rect" id="node7" href="$player_8c.html#a06db67ec61088b16360980f24230e62f" title="Draws hearts representing the given (player&#39;s) lives." alt="" coords="435,136,516,162"/>
+<area shape="rect" id="node8" href="$player_8c.html#a6a7c558ce856f450303ab6ad449ad50f" title="Draws a player by its coordinates and corresponding XPM image." alt="" coords="252,85,342,112"/>
+<area shape="rect" id="node9" href="$player_8c.html#af50ad9e73493590a4d110b25b70030c6" title="Draws the given player&#39;s score in the screen." alt="" coords="103,186,190,213"/>
+<area shape="rect" id="node12" href="$shield_8c.html#aa29aea8cc95d1b319a3d12697032d6b1" title="Draws a given shield according to its position and lives." alt="" coords="102,262,191,289"/>
+<area shape="rect" id="node3" href="$alien_8c.html#a7a09a76bbff752e5cb6eeac7c56fd622" title="Draws an alien." alt="" coords="256,34,338,61"/>
+<area shape="rect" id="node4" href="$shot_8c.html#a3c1b5ef797a64fc81d09d04f68f99673" title="Draws a given shot in the screen according to its position and source." alt="" coords="435,34,516,61"/>
+<area shape="rect" id="node5" href="$video_8c.html#a1d7817e4e5198831c8e33e05a64e8ecf" title="Draws a XPM image with the leftmost upper pixel at the given coordinates." alt="" coords="597,136,713,162"/>
+<area shape="rect" id="node6" href="$video_8c.html#ab0332ee565f978f725c021b4eb35958e" title="Sets the pixel at the given coordinates to the given color." alt="" coords="761,136,879,162"/>
+<area shape="rect" id="node10" href="$player_8c.html#a9d343b802719d4768760c1e9b146f518" title="Auxiliary function to draw the score." alt="" coords="239,237,354,264"/>
+<area shape="rect" id="node11" href="$player_8c.html#a236e6165c9a260f6a7a6eaa3eeea252c" title="Draws the provided algarism&#39;s XPM image." alt="" coords="402,237,549,264"/>
+</map>

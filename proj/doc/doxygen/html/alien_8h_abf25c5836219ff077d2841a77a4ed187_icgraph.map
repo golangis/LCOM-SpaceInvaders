@@ -1,0 +1,6 @@
+<map id="die_alien" name="die_alien">
+<area shape="rect" id="node1" title="Kills an alien with a given id from a group." alt="" coords="402,5,475,32"/>
+<area shape="rect" id="node2" href="$spaceinvaders_8c.html#a0b2a6a62c1f41986be80686c764dd19a" title="Updates the game&#39;s elements position (if appliable), checks colisions and updates the involved elemen..." alt="" coords="294,5,354,32"/>
+<area shape="rect" id="node3" href="$main_8c.html#aca94587a192dc9d6e25886d009f3ee76" title="Processes the interrupts and calls correct functions while in the Game state." alt="" coords="162,5,246,32"/>
+<area shape="rect" id="node4" href="$main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,5,114,32"/>
+</map>

@@ -1,29 +1,31 @@
 \hypertarget{shot_8h_source}{}\doxysection{shot.\+h}
-\label{shot_8h_source}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/shot.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/shot.h}}
-
+\label{shot_8h_source}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/shot.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/shot.h}}
+\mbox{\hyperlink{shot_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SHOT\_H}}
 \DoxyCodeLine{2 \textcolor{preprocessor}{\#define SHOT\_H}}
 \DoxyCodeLine{3 }
 \DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{video_8h}{framework/video/video.h}}"{}}}
 \DoxyCodeLine{5 }
-\DoxyCodeLine{6 \textcolor{keyword}{enum} shot\_source \{}
-\DoxyCodeLine{7     alien,}
-\DoxyCodeLine{8     player}
-\DoxyCodeLine{9 \};}
-\DoxyCodeLine{10 }
-\DoxyCodeLine{11 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
-\DoxyCodeLine{12     \textcolor{keywordtype}{int} x\_min;}
-\DoxyCodeLine{13     \textcolor{keywordtype}{int} x\_max;}
-\DoxyCodeLine{14     \textcolor{keywordtype}{int} y\_min;}
-\DoxyCodeLine{15     \textcolor{keywordtype}{int} y\_max;}
-\DoxyCodeLine{16     \textcolor{keyword}{enum} shot\_source source;}
-\DoxyCodeLine{17 \} \mbox{\hyperlink{struct_shot}{Shot}};}
-\DoxyCodeLine{18 }
-\DoxyCodeLine{19 \mbox{\hyperlink{struct_shot}{Shot}} (initShot)(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keyword}{enum} shot\_source source);}
-\DoxyCodeLine{20 void (moveShot)(\mbox{\hyperlink{struct_shot}{Shot}}* shot);}
-\DoxyCodeLine{21 void (drawShot)(\mbox{\hyperlink{struct_shot}{Shot}}* shot);}
-\DoxyCodeLine{22 }
-\DoxyCodeLine{23 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{16 \textcolor{keyword}{enum} \mbox{\hyperlink{shot_8h_aabe4a9c6d80770059ada9f0808ee586c}{shot\_source}} \{}
+\DoxyCodeLine{17     \mbox{\hyperlink{shot_8h_aabe4a9c6d80770059ada9f0808ee586ca1a78895fb22dbb259b5520694212090c}{alien}},}
+\DoxyCodeLine{18     \mbox{\hyperlink{shot_8h_aabe4a9c6d80770059ada9f0808ee586cac37f0609760d22ed92a4d81c3f46dcdb}{player}}}
+\DoxyCodeLine{19 \};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{25 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{26     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_shot_ae0951dcafafdc96ac1d8361c672d47e2}{x\_min}};}
+\DoxyCodeLine{27     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_shot_a5f0bb6d8a3e66525c3e6264cb8288e43}{x\_max}};}
+\DoxyCodeLine{28     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_shot_a7941ddc7e35fffb8864af1e922814401}{y\_min}};}
+\DoxyCodeLine{29     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_shot_ad033aea530fbbcf5bcd6cd98d882e3a5}{y\_max}};}
+\DoxyCodeLine{30     \textcolor{keyword}{enum} \mbox{\hyperlink{shot_8h_aabe4a9c6d80770059ada9f0808ee586c}{shot\_source}} \mbox{\hyperlink{struct_shot_aea82f68ee6084cb04323fc80bae13aab}{source}};}
+\DoxyCodeLine{31 \} \mbox{\hyperlink{struct_shot}{Shot}};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{40 \mbox{\hyperlink{struct_shot}{Shot}} (\mbox{\hyperlink{shot_8h_abdeb3d4efd4511a28da6a4a589c85ab3}{init\_shot}})(\textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keyword}{enum} \mbox{\hyperlink{shot_8h_aabe4a9c6d80770059ada9f0808ee586c}{shot\_source}} source);}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{46 void (\mbox{\hyperlink{shot_8h_af59b390a2e0c4b2a0e2f648a42bb1b91}{move\_shot}})(\mbox{\hyperlink{struct_shot}{Shot}}* shot);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{52 void (\mbox{\hyperlink{shot_8h_a3c1b5ef797a64fc81d09d04f68f99673}{draw\_shot}})(\mbox{\hyperlink{struct_shot}{Shot}}* shot);}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -1,0 +1,353 @@
+\hypertarget{spaceinvaders_8c}{}\doxysection{C\+:/\+Users/\+Pedro/\+Documents/2\+LEIC/2º semestre/\+LC/\+MINIX-\/\+LCOM/shared/proj/src/logic/spaceinvaders.c File Reference}
+\label{spaceinvaders_8c}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/spaceinvaders.c@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/spaceinvaders.c}}
+{\ttfamily \#include \char`\"{}spaceinvaders.\+h\char`\"{}}\newline
+Include dependency graph for spaceinvaders.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void() \mbox{\hyperlink{spaceinvaders_8c_aff9ce2c80067181fa64a67450da2c6fa}{init\+\_\+game}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the game elements. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{spaceinvaders_8c_a0b361528e5b1e54470b00ef064464b95}{reload\+\_\+aliens}} ()
+\begin{DoxyCompactList}\small\item\em Regenerates all the aliens when a new game wave is started. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_score}{Score}} $\ast$() \mbox{\hyperlink{spaceinvaders_8c_a4c53c60b9eb88e3c00d9d0fc59dae462}{load\+\_\+scores}} ()
+\begin{DoxyCompactList}\small\item\em Loads information from the file the top-\/10 highscores are stored in, parses them into \mbox{\hyperlink{struct_score}{Score}} struct instances and returns them in an array. The file reading was adapted from \href{https://www.geeksforgeeks.org/relational-database-from-csv-files-in-c/}{\texttt{ https\+://www.\+geeksforgeeks.\+org/relational-\/database-\/from-\/csv-\/files-\/in-\/c/}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_score}{Score}}() \mbox{\hyperlink{spaceinvaders_8c_abd975f557a5c526551dafdb6242ea898}{build\+\_\+score}} (int points, \mbox{\hyperlink{structrtc__time}{rtc\+\_\+time}} $\ast$time)
+\begin{DoxyCompactList}\small\item\em Builds a \mbox{\hyperlink{struct_score}{Score}} struct instance according to a given points number and \mbox{\hyperlink{structrtc__time}{rtc\+\_\+time}} struct instance. \end{DoxyCompactList}\item 
+bool() \mbox{\hyperlink{spaceinvaders_8c_ae0cafa3b93c40f3eb66676d574f9985e}{process\+\_\+score}} (\mbox{\hyperlink{struct_score}{Score}} score, \mbox{\hyperlink{struct_score}{Score}} $\ast$array)
+\begin{DoxyCompactList}\small\item\em Processes a score and determines if it is elegible to be amongst the top-\/10. If so, stores it in the scores array and returns true, returning false otherwise. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{spaceinvaders_8c_afceda483e03bbe9320d74e45df9f9c32}{store\+\_\+scores}} (\mbox{\hyperlink{struct_score}{Score}} $\ast$array)
+\begin{DoxyCompactList}\small\item\em Stores the given score array in the highscores file. File writing adapted from \href{https://www.programiz.com/c-programming/c-file-input-output}{\texttt{ https\+://www.\+programiz.\+com/c-\/programming/c-\/file-\/input-\/output}}. NOTE\+: The file path must be absolute. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{spaceinvaders_8c_a84aa668c4684547c795670fc72531598}{draw}} ()
+\begin{DoxyCompactList}\small\item\em General game drawing function. Calls the elements\textquotesingle{} respective drawing functions. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{spaceinvaders_8c_a0b2a6a62c1f41986be80686c764dd19a}{update}} (int $\ast$no\+\_\+lives)
+\begin{DoxyCompactList}\small\item\em Updates the game\textquotesingle{}s elements position (if appliable), checks colisions and updates the involved elements\textquotesingle{} lives/state. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{spaceinvaders_8c_a867892903e6eb31b07fcbc8da05bee16}{draw\+\_\+main\+\_\+menu}} ()
+\begin{DoxyCompactList}\small\item\em Draws the main menu. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{spaceinvaders_8c_ad571496285082d7d70e3ca362c1b04bb}{draw\+\_\+high\+\_\+scores}} (\mbox{\hyperlink{struct_score}{Score}} $\ast$scores)
+\begin{DoxyCompactList}\small\item\em Draws the highscore page, given a pre-\/generated top-\/10 score array. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{spaceinvaders_8c_a0af91f71746c9e649dd1f2305c674e38}{draw\+\_\+game\+\_\+over\+\_\+menu}} ()
+\begin{DoxyCompactList}\small\item\em Draws the game over menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{spaceinvaders_8c_a35a74a52bea7b832dc8631092d567881}{x\+\_\+mouse}}
+\item 
+int \mbox{\hyperlink{spaceinvaders_8c_a71a2343b1f1be8aa683af2f581daa604}{y\+\_\+mouse}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{spaceinvaders_8c_abd975f557a5c526551dafdb6242ea898}\label{spaceinvaders_8c_abd975f557a5c526551dafdb6242ea898}} 
+\index{spaceinvaders.c@{spaceinvaders.c}!build\_score@{build\_score}}
+\index{build\_score@{build\_score}!spaceinvaders.c@{spaceinvaders.c}}
+\doxysubsubsection{\texorpdfstring{build\_score()}{build\_score()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_score}{Score}}() build\+\_\+score (\begin{DoxyParamCaption}\item[{int}]{points,  }\item[{\mbox{\hyperlink{structrtc__time}{rtc\+\_\+time}} $\ast$}]{time }\end{DoxyParamCaption})}
+
+
+
+Builds a \mbox{\hyperlink{struct_score}{Score}} struct instance according to a given points number and \mbox{\hyperlink{structrtc__time}{rtc\+\_\+time}} struct instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & Number of the score\textquotesingle{}s points. \\
+\hline
+{\em time} & \mbox{\hyperlink{structrtc__time}{rtc\+\_\+time}} struct instance representing the date and time the score was achieved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Built score struct instance. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8c_abd975f557a5c526551dafdb6242ea898_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{spaceinvaders_8c_a84aa668c4684547c795670fc72531598}\label{spaceinvaders_8c_a84aa668c4684547c795670fc72531598}} 
+\index{spaceinvaders.c@{spaceinvaders.c}!draw@{draw}}
+\index{draw@{draw}!spaceinvaders.c@{spaceinvaders.c}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void() draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+General game drawing function. Calls the elements\textquotesingle{} respective drawing functions. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8c_a84aa668c4684547c795670fc72531598_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{spaceinvaders_8c_a84aa668c4684547c795670fc72531598_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{spaceinvaders_8c_a0af91f71746c9e649dd1f2305c674e38}\label{spaceinvaders_8c_a0af91f71746c9e649dd1f2305c674e38}} 
+\index{spaceinvaders.c@{spaceinvaders.c}!draw\_game\_over\_menu@{draw\_game\_over\_menu}}
+\index{draw\_game\_over\_menu@{draw\_game\_over\_menu}!spaceinvaders.c@{spaceinvaders.c}}
+\doxysubsubsection{\texorpdfstring{draw\_game\_over\_menu()}{draw\_game\_over\_menu()}}
+{\footnotesize\ttfamily void() draw\+\_\+game\+\_\+over\+\_\+menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the game over menu. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8c_a0af91f71746c9e649dd1f2305c674e38_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8c_a0af91f71746c9e649dd1f2305c674e38_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{spaceinvaders_8c_ad571496285082d7d70e3ca362c1b04bb}\label{spaceinvaders_8c_ad571496285082d7d70e3ca362c1b04bb}} 
+\index{spaceinvaders.c@{spaceinvaders.c}!draw\_high\_scores@{draw\_high\_scores}}
+\index{draw\_high\_scores@{draw\_high\_scores}!spaceinvaders.c@{spaceinvaders.c}}
+\doxysubsubsection{\texorpdfstring{draw\_high\_scores()}{draw\_high\_scores()}}
+{\footnotesize\ttfamily void() draw\+\_\+high\+\_\+scores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_score}{Score}} $\ast$}]{scores }\end{DoxyParamCaption})}
+
+
+
+Draws the highscore page, given a pre-\/generated top-\/10 score array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scores} & Array with the top-\/10 scores to be drawn. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8c_ad571496285082d7d70e3ca362c1b04bb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8c_ad571496285082d7d70e3ca362c1b04bb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{spaceinvaders_8c_a867892903e6eb31b07fcbc8da05bee16}\label{spaceinvaders_8c_a867892903e6eb31b07fcbc8da05bee16}} 
+\index{spaceinvaders.c@{spaceinvaders.c}!draw\_main\_menu@{draw\_main\_menu}}
+\index{draw\_main\_menu@{draw\_main\_menu}!spaceinvaders.c@{spaceinvaders.c}}
+\doxysubsubsection{\texorpdfstring{draw\_main\_menu()}{draw\_main\_menu()}}
+{\footnotesize\ttfamily void() draw\+\_\+main\+\_\+menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the main menu. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8c_a867892903e6eb31b07fcbc8da05bee16_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8c_a867892903e6eb31b07fcbc8da05bee16_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{spaceinvaders_8c_aff9ce2c80067181fa64a67450da2c6fa}\label{spaceinvaders_8c_aff9ce2c80067181fa64a67450da2c6fa}} 
+\index{spaceinvaders.c@{spaceinvaders.c}!init\_game@{init\_game}}
+\index{init\_game@{init\_game}!spaceinvaders.c@{spaceinvaders.c}}
+\doxysubsubsection{\texorpdfstring{init\_game()}{init\_game()}}
+{\footnotesize\ttfamily void() init\+\_\+game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the game elements. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{spaceinvaders_8c_aff9ce2c80067181fa64a67450da2c6fa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8c_aff9ce2c80067181fa64a67450da2c6fa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{spaceinvaders_8c_a4c53c60b9eb88e3c00d9d0fc59dae462}\label{spaceinvaders_8c_a4c53c60b9eb88e3c00d9d0fc59dae462}} 
+\index{spaceinvaders.c@{spaceinvaders.c}!load\_scores@{load\_scores}}
+\index{load\_scores@{load\_scores}!spaceinvaders.c@{spaceinvaders.c}}
+\doxysubsubsection{\texorpdfstring{load\_scores()}{load\_scores()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_score}{Score}} $\ast$() load\+\_\+scores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads information from the file the top-\/10 highscores are stored in, parses them into \mbox{\hyperlink{struct_score}{Score}} struct instances and returns them in an array. The file reading was adapted from \href{https://www.geeksforgeeks.org/relational-database-from-csv-files-in-c/}{\texttt{ https\+://www.\+geeksforgeeks.\+org/relational-\/database-\/from-\/csv-\/files-\/in-\/c/}}. 
+
+NOTE\+: The file path must be absolute. \begin{DoxyReturn}{Returns}
+Dinamically alocated array of read scores. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8c_a4c53c60b9eb88e3c00d9d0fc59dae462_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{spaceinvaders_8c_ae0cafa3b93c40f3eb66676d574f9985e}\label{spaceinvaders_8c_ae0cafa3b93c40f3eb66676d574f9985e}} 
+\index{spaceinvaders.c@{spaceinvaders.c}!process\_score@{process\_score}}
+\index{process\_score@{process\_score}!spaceinvaders.c@{spaceinvaders.c}}
+\doxysubsubsection{\texorpdfstring{process\_score()}{process\_score()}}
+{\footnotesize\ttfamily bool() process\+\_\+score (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_score}{Score}}}]{score,  }\item[{\mbox{\hyperlink{struct_score}{Score}} $\ast$}]{array }\end{DoxyParamCaption})}
+
+
+
+Processes a score and determines if it is elegible to be amongst the top-\/10. If so, stores it in the scores array and returns true, returning false otherwise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em score} & The score to be processed. \\
+\hline
+{\em array} & Current top-\/10 scores array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the given score is elegible to be amongst the top-\/10. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8c_ae0cafa3b93c40f3eb66676d574f9985e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{spaceinvaders_8c_a0b361528e5b1e54470b00ef064464b95}\label{spaceinvaders_8c_a0b361528e5b1e54470b00ef064464b95}} 
+\index{spaceinvaders.c@{spaceinvaders.c}!reload\_aliens@{reload\_aliens}}
+\index{reload\_aliens@{reload\_aliens}!spaceinvaders.c@{spaceinvaders.c}}
+\doxysubsubsection{\texorpdfstring{reload\_aliens()}{reload\_aliens()}}
+{\footnotesize\ttfamily void() reload\+\_\+aliens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Regenerates all the aliens when a new game wave is started. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{spaceinvaders_8c_a0b361528e5b1e54470b00ef064464b95_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8c_a0b361528e5b1e54470b00ef064464b95_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{spaceinvaders_8c_afceda483e03bbe9320d74e45df9f9c32}\label{spaceinvaders_8c_afceda483e03bbe9320d74e45df9f9c32}} 
+\index{spaceinvaders.c@{spaceinvaders.c}!store\_scores@{store\_scores}}
+\index{store\_scores@{store\_scores}!spaceinvaders.c@{spaceinvaders.c}}
+\doxysubsubsection{\texorpdfstring{store\_scores()}{store\_scores()}}
+{\footnotesize\ttfamily void() store\+\_\+scores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_score}{Score}} $\ast$}]{array }\end{DoxyParamCaption})}
+
+
+
+Stores the given score array in the highscores file. File writing adapted from \href{https://www.programiz.com/c-programming/c-file-input-output}{\texttt{ https\+://www.\+programiz.\+com/c-\/programming/c-\/file-\/input-\/output}}. NOTE\+: The file path must be absolute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & Array of the scores to be stored. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8c_afceda483e03bbe9320d74e45df9f9c32_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{spaceinvaders_8c_a0b2a6a62c1f41986be80686c764dd19a}\label{spaceinvaders_8c_a0b2a6a62c1f41986be80686c764dd19a}} 
+\index{spaceinvaders.c@{spaceinvaders.c}!update@{update}}
+\index{update@{update}!spaceinvaders.c@{spaceinvaders.c}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void() update (\begin{DoxyParamCaption}\item[{int $\ast$}]{no\+\_\+lives }\end{DoxyParamCaption})}
+
+
+
+Updates the game\textquotesingle{}s elements position (if appliable), checks colisions and updates the involved elements\textquotesingle{} lives/state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no\+\_\+lives} & Current number of the game\textquotesingle{}s player lives. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8c_a0b2a6a62c1f41986be80686c764dd19a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{spaceinvaders_8c_a0b2a6a62c1f41986be80686c764dd19a_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{spaceinvaders_8c_a35a74a52bea7b832dc8631092d567881}\label{spaceinvaders_8c_a35a74a52bea7b832dc8631092d567881}} 
+\index{spaceinvaders.c@{spaceinvaders.c}!x\_mouse@{x\_mouse}}
+\index{x\_mouse@{x\_mouse}!spaceinvaders.c@{spaceinvaders.c}}
+\doxysubsubsection{\texorpdfstring{x\_mouse}{x\_mouse}}
+{\footnotesize\ttfamily int x\+\_\+mouse\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{spaceinvaders_8c_a71a2343b1f1be8aa683af2f581daa604}\label{spaceinvaders_8c_a71a2343b1f1be8aa683af2f581daa604}} 
+\index{spaceinvaders.c@{spaceinvaders.c}!y\_mouse@{y\_mouse}}
+\index{y\_mouse@{y\_mouse}!spaceinvaders.c@{spaceinvaders.c}}
+\doxysubsubsection{\texorpdfstring{y\_mouse}{y\_mouse}}
+{\footnotesize\ttfamily int y\+\_\+mouse\hspace{0.3cm}{\ttfamily [extern]}}
+

@@ -1,0 +1,4 @@
+<map id="video_draw_xpm" name="video_draw_xpm">
+<area shape="rect" id="node1" title="Draws a XPM image with the leftmost upper pixel at the given coordinates." alt="" coords="5,5,122,32"/>
+<area shape="rect" id="node2" href="$video_8c.html#ab0332ee565f978f725c021b4eb35958e" title="Sets the pixel at the given coordinates to the given color." alt="" coords="170,5,288,32"/>
+</map>

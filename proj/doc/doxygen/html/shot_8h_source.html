@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Projeto LC 2023: Space Invaders: C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-LCOM/shared/proj/src/shot.h Source File</title>
+<title>Projeto LC 2023: Space Invaders: C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-LCOM/shared/proj/src/logic/shot.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,37 +69,50 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_cd73a1c98487b92de1ef3d4bc4e428b0.html">2º semestre</a></li><li class="navelem"><a class="el" href="dir_9ce376de49d21ec23a1f6f2ef17492bf.html">LC</a></li><li class="navelem"><a class="el" href="dir_fcc1d5c1cc1aed31abbaa4d06a599a62.html">MINIX-LCOM</a></li><li class="navelem"><a class="el" href="dir_6ae0393e90a68bed17b0544184a065d7.html">shared</a></li><li class="navelem"><a class="el" href="dir_c63b9caa9881ed0d7ad16a0256d70e6d.html">proj</a></li><li class="navelem"><a class="el" href="dir_d1dcee3ee35c8572178473e6033bc9c3.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_cd73a1c98487b92de1ef3d4bc4e428b0.html">2º semestre</a></li><li class="navelem"><a class="el" href="dir_9ce376de49d21ec23a1f6f2ef17492bf.html">LC</a></li><li class="navelem"><a class="el" href="dir_fcc1d5c1cc1aed31abbaa4d06a599a62.html">MINIX-LCOM</a></li><li class="navelem"><a class="el" href="dir_6ae0393e90a68bed17b0544184a065d7.html">shared</a></li><li class="navelem"><a class="el" href="dir_c63b9caa9881ed0d7ad16a0256d70e6d.html">proj</a></li><li class="navelem"><a class="el" href="dir_d1dcee3ee35c8572178473e6033bc9c3.html">src</a></li><li class="navelem"><a class="el" href="dir_2c899e54e647f5fc21fc1e8172ef8b30.html">logic</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">shot.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef SHOT_H</span></div>
+<a href="shot_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef SHOT_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define SHOT_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="video_8h.html">framework/video/video.h</a>&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">enum</span> shot_source {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    alien,</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    player</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>};</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="struct_shot.html">   11</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">int</span> x_min;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">int</span> x_max;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordtype">int</span> y_min;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">int</span> y_max;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">enum</span> shot_source source;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>} <a class="code hl_struct" href="struct_shot.html">Shot</a>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><a class="code hl_struct" href="struct_shot.html">Shot</a> (initShot)(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keyword">enum</span> shot_source source);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>void (moveShot)(<a class="code hl_struct" href="struct_shot.html">Shot</a>* shot);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>void (drawShot)(<a class="code hl_struct" href="struct_shot.html">Shot</a>* shot);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="astruct_shot_html"><div class="ttname"><a href="struct_shot.html">Shot</a></div><div class="ttdef"><b>Definition:</b> shot.h:11</div></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="shot_8h.html#aabe4a9c6d80770059ada9f0808ee586c">   16</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="shot_8h.html#aabe4a9c6d80770059ada9f0808ee586c">shot_source</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="shot_8h.html#aabe4a9c6d80770059ada9f0808ee586ca1a78895fb22dbb259b5520694212090c">   17</a></span>    <a class="code hl_enumvalue" href="shot_8h.html#aabe4a9c6d80770059ada9f0808ee586ca1a78895fb22dbb259b5520694212090c">alien</a>,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_enumvalue" href="shot_8h.html#aabe4a9c6d80770059ada9f0808ee586cac37f0609760d22ed92a4d81c3f46dcdb">player</a></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="shot_8h.html#aabe4a9c6d80770059ada9f0808ee586cac37f0609760d22ed92a4d81c3f46dcdb">   19</a></span>};</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="struct_shot.html">   25</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="struct_shot.html#ae0951dcafafdc96ac1d8361c672d47e2">   26</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_shot.html#ae0951dcafafdc96ac1d8361c672d47e2">x_min</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="struct_shot.html#a5f0bb6d8a3e66525c3e6264cb8288e43">   27</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_shot.html#a5f0bb6d8a3e66525c3e6264cb8288e43">x_max</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="struct_shot.html#a7941ddc7e35fffb8864af1e922814401">   28</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_shot.html#a7941ddc7e35fffb8864af1e922814401">y_min</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_shot.html#ad033aea530fbbcf5bcd6cd98d882e3a5">   29</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_shot.html#ad033aea530fbbcf5bcd6cd98d882e3a5">y_max</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="struct_shot.html#aea82f68ee6084cb04323fc80bae13aab">   30</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="shot_8h.html#aabe4a9c6d80770059ada9f0808ee586c">shot_source</a> <a class="code hl_variable" href="struct_shot.html#aea82f68ee6084cb04323fc80bae13aab">source</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>} <a class="code hl_struct" href="struct_shot.html">Shot</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><a class="code hl_struct" href="struct_shot.html">Shot</a> (<a class="code hl_function" href="shot_8h.html#abdeb3d4efd4511a28da6a4a589c85ab3">init_shot</a>)(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keyword">enum</span> <a class="code hl_enumeration" href="shot_8h.html#aabe4a9c6d80770059ada9f0808ee586c">shot_source</a> source);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>void (<a class="code hl_function" href="shot_8h.html#af59b390a2e0c4b2a0e2f648a42bb1b91">move_shot</a>)(<a class="code hl_struct" href="struct_shot.html">Shot</a>* shot);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>void (<a class="code hl_function" href="shot_8h.html#a3c1b5ef797a64fc81d09d04f68f99673">draw_shot</a>)(<a class="code hl_struct" href="struct_shot.html">Shot</a>* shot);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="ashot_8h_html_a3c1b5ef797a64fc81d09d04f68f99673"><div class="ttname"><a href="shot_8h.html#a3c1b5ef797a64fc81d09d04f68f99673">draw_shot</a></div><div class="ttdeci">void() draw_shot(Shot *shot)</div><div class="ttdoc">Draws a given shot in the screen according to its position and source.</div><div class="ttdef"><b>Definition:</b> shot.c:32</div></div>
+<div class="ttc" id="ashot_8h_html_aabe4a9c6d80770059ada9f0808ee586c"><div class="ttname"><a href="shot_8h.html#aabe4a9c6d80770059ada9f0808ee586c">shot_source</a></div><div class="ttdeci">shot_source</div><div class="ttdoc">Represents possible shot sources (alien or player).</div><div class="ttdef"><b>Definition:</b> shot.h:16</div></div>
+<div class="ttc" id="ashot_8h_html_aabe4a9c6d80770059ada9f0808ee586ca1a78895fb22dbb259b5520694212090c"><div class="ttname"><a href="shot_8h.html#aabe4a9c6d80770059ada9f0808ee586ca1a78895fb22dbb259b5520694212090c">alien</a></div><div class="ttdeci">@ alien</div><div class="ttdef"><b>Definition:</b> shot.h:17</div></div>
+<div class="ttc" id="ashot_8h_html_aabe4a9c6d80770059ada9f0808ee586cac37f0609760d22ed92a4d81c3f46dcdb"><div class="ttname"><a href="shot_8h.html#aabe4a9c6d80770059ada9f0808ee586cac37f0609760d22ed92a4d81c3f46dcdb">player</a></div><div class="ttdeci">@ player</div><div class="ttdef"><b>Definition:</b> shot.h:18</div></div>
+<div class="ttc" id="ashot_8h_html_abdeb3d4efd4511a28da6a4a589c85ab3"><div class="ttname"><a href="shot_8h.html#abdeb3d4efd4511a28da6a4a589c85ab3">init_shot</a></div><div class="ttdeci">Shot() init_shot(int x, int y, enum shot_source source)</div><div class="ttdoc">Initializes a shot with given left uppermost coordinates and source.</div><div class="ttdef"><b>Definition:</b> shot.c:3</div></div>
+<div class="ttc" id="ashot_8h_html_af59b390a2e0c4b2a0e2f648a42bb1b91"><div class="ttname"><a href="shot_8h.html#af59b390a2e0c4b2a0e2f648a42bb1b91">move_shot</a></div><div class="ttdeci">void() move_shot(Shot *shot)</div><div class="ttdoc">Moves the given shot according to its source.</div><div class="ttdef"><b>Definition:</b> shot.c:18</div></div>
+<div class="ttc" id="astruct_shot_html"><div class="ttname"><a href="struct_shot.html">Shot</a></div><div class="ttdoc">Represents a Shot by its coordinates (area) and its source.</div><div class="ttdef"><b>Definition:</b> shot.h:25</div></div>
+<div class="ttc" id="astruct_shot_html_a5f0bb6d8a3e66525c3e6264cb8288e43"><div class="ttname"><a href="struct_shot.html#a5f0bb6d8a3e66525c3e6264cb8288e43">Shot::x_max</a></div><div class="ttdeci">int x_max</div><div class="ttdef"><b>Definition:</b> shot.h:27</div></div>
+<div class="ttc" id="astruct_shot_html_a7941ddc7e35fffb8864af1e922814401"><div class="ttname"><a href="struct_shot.html#a7941ddc7e35fffb8864af1e922814401">Shot::y_min</a></div><div class="ttdeci">int y_min</div><div class="ttdef"><b>Definition:</b> shot.h:28</div></div>
+<div class="ttc" id="astruct_shot_html_ad033aea530fbbcf5bcd6cd98d882e3a5"><div class="ttname"><a href="struct_shot.html#ad033aea530fbbcf5bcd6cd98d882e3a5">Shot::y_max</a></div><div class="ttdeci">int y_max</div><div class="ttdef"><b>Definition:</b> shot.h:29</div></div>
+<div class="ttc" id="astruct_shot_html_ae0951dcafafdc96ac1d8361c672d47e2"><div class="ttname"><a href="struct_shot.html#ae0951dcafafdc96ac1d8361c672d47e2">Shot::x_min</a></div><div class="ttdeci">int x_min</div><div class="ttdef"><b>Definition:</b> shot.h:26</div></div>
+<div class="ttc" id="astruct_shot_html_aea82f68ee6084cb04323fc80bae13aab"><div class="ttname"><a href="struct_shot.html#aea82f68ee6084cb04323fc80bae13aab">Shot::source</a></div><div class="ttdeci">enum shot_source source</div><div class="ttdef"><b>Definition:</b> shot.h:30</div></div>
 <div class="ttc" id="avideo_8h_html"><div class="ttname"><a href="video_8h.html">video.h</a></div><div class="ttdoc">Functions for programming the video card. Also contains variables to store the xpm images and maps dr...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

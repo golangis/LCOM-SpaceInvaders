@@ -1,0 +1,4 @@
+<map id="rtc_read" name="rtc_read">
+<area shape="rect" id="node1" title="Reads a byte from the RTC&#39;s data register." alt="" coords="5,5,74,32"/>
+<area shape="rect" id="node2" href="$utils_8c.html#ac001a9276b9ecff0ddabd111fac79211" title="Reads a byte from a given port." alt="" coords="122,5,206,32"/>
+</map>

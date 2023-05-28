@@ -1,0 +1,6 @@
+<map id="can_player_move" name="can_player_move">
+<area shape="rect" id="node1" title="Returns whether the given player can be moved in the given direction." alt="" coords="435,5,557,32"/>
+<area shape="rect" id="node2" href="$player_8c.html#a87366d070986baef7c91357e49539f12" title="Moves a given player in the desired direction if possible." alt="" coords="294,5,387,32"/>
+<area shape="rect" id="node3" href="$main_8c.html#aca94587a192dc9d6e25886d009f3ee76" title="Processes the interrupts and calls correct functions while in the Game state." alt="" coords="162,5,246,32"/>
+<area shape="rect" id="node4" href="$main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,5,114,32"/>
+</map>

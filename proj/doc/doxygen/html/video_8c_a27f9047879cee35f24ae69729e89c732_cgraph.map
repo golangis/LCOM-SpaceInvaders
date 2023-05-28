@@ -1,0 +1,4 @@
+<map id="video_init" name="video_init">
+<area shape="rect" id="node1" title="Initializes the video card in the given mode and maps the VRAM." alt="" coords="5,5,80,32"/>
+<area shape="rect" id="node2" href="$video_8c.html#a43eca9753118b540d01327d3c4a7068c" title="Loads the XPM images used in the app." alt="" coords="128,5,248,32"/>
+</map>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Projeto LC 2023: Space Invaders: C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-LCOM/shared/proj/src/shield.h Source File</title>
+<title>Projeto LC 2023: Space Invaders: C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-LCOM/shared/proj/src/logic/shield.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,35 +69,47 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_cd73a1c98487b92de1ef3d4bc4e428b0.html">2º semestre</a></li><li class="navelem"><a class="el" href="dir_9ce376de49d21ec23a1f6f2ef17492bf.html">LC</a></li><li class="navelem"><a class="el" href="dir_fcc1d5c1cc1aed31abbaa4d06a599a62.html">MINIX-LCOM</a></li><li class="navelem"><a class="el" href="dir_6ae0393e90a68bed17b0544184a065d7.html">shared</a></li><li class="navelem"><a class="el" href="dir_c63b9caa9881ed0d7ad16a0256d70e6d.html">proj</a></li><li class="navelem"><a class="el" href="dir_d1dcee3ee35c8572178473e6033bc9c3.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_cd73a1c98487b92de1ef3d4bc4e428b0.html">2º semestre</a></li><li class="navelem"><a class="el" href="dir_9ce376de49d21ec23a1f6f2ef17492bf.html">LC</a></li><li class="navelem"><a class="el" href="dir_fcc1d5c1cc1aed31abbaa4d06a599a62.html">MINIX-LCOM</a></li><li class="navelem"><a class="el" href="dir_6ae0393e90a68bed17b0544184a065d7.html">shared</a></li><li class="navelem"><a class="el" href="dir_c63b9caa9881ed0d7ad16a0256d70e6d.html">proj</a></li><li class="navelem"><a class="el" href="dir_d1dcee3ee35c8572178473e6033bc9c3.html">src</a></li><li class="navelem"><a class="el" href="dir_2c899e54e647f5fc21fc1e8172ef8b30.html">logic</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">shield.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef SHIELD_H</span></div>
+<a href="shield_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef SHIELD_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define SHIELD_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="video_8h.html">framework/video/video.h</a>&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;shot.h&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="shot_8h.html">logic/shot.h</a>&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="struct_shield.html">    8</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordtype">int</span> x_min;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">int</span> x_max;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">int</span> y_min;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">int</span> y_max;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">int</span> lives;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordtype">int</span> id;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>} <a class="code hl_struct" href="struct_shield.html">Shield</a>;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><a class="code hl_struct" href="struct_shield.html">Shield</a>* (initShield)(<span class="keywordtype">int</span> x_min, <span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>void (drawShield)(<a class="code hl_struct" href="struct_shield.html">Shield</a>* shield);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>void (damage)(<a class="code hl_struct" href="struct_shield.html">Shield</a>* shield, <span class="keyword">enum</span> shot_source src);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="astruct_shield_html"><div class="ttname"><a href="struct_shield.html">Shield</a></div><div class="ttdef"><b>Definition:</b> shield.h:8</div></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct_shield.html">   18</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="struct_shield.html#ae0951dcafafdc96ac1d8361c672d47e2">   19</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_shield.html#ae0951dcafafdc96ac1d8361c672d47e2">x_min</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="struct_shield.html#a5f0bb6d8a3e66525c3e6264cb8288e43">   20</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_shield.html#a5f0bb6d8a3e66525c3e6264cb8288e43">x_max</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="struct_shield.html#a7941ddc7e35fffb8864af1e922814401">   21</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_shield.html#a7941ddc7e35fffb8864af1e922814401">y_min</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_shield.html#ad033aea530fbbcf5bcd6cd98d882e3a5">   22</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_shield.html#ad033aea530fbbcf5bcd6cd98d882e3a5">y_max</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct_shield.html#ac1d68ef9a5dd304c5015e07af7f2bb19">   23</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_shield.html#ac1d68ef9a5dd304c5015e07af7f2bb19">lives</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="struct_shield.html#a7441ef0865bcb3db9b8064dd7375c1ea">   24</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_shield.html#a7441ef0865bcb3db9b8064dd7375c1ea">id</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>} <a class="code hl_struct" href="struct_shield.html">Shield</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><a class="code hl_struct" href="struct_shield.html">Shield</a>* (<a class="code hl_function" href="shield_8h.html#a46f87a7a9730d61f4db91cc66d61b2c6">init_shield</a>)(<span class="keywordtype">int</span> x_min, <span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>void (<a class="code hl_function" href="shield_8h.html#aa29aea8cc95d1b319a3d12697032d6b1">draw_shield</a>)(<a class="code hl_struct" href="struct_shield.html">Shield</a>* shield);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>void (<a class="code hl_function" href="shield_8h.html#a05c98b39588bdedcdf3876bd81acca62">damage</a>)(<a class="code hl_struct" href="struct_shield.html">Shield</a>* shield);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="ashield_8h_html_a05c98b39588bdedcdf3876bd81acca62"><div class="ttname"><a href="shield_8h.html#a05c98b39588bdedcdf3876bd81acca62">damage</a></div><div class="ttdeci">void() damage(Shield *shield)</div><div class="ttdoc">Causes damage to a given shield (decrements its lives) and alters its coordinates to match the new th...</div><div class="ttdef"><b>Definition:</b> shield.c:25</div></div>
+<div class="ttc" id="ashield_8h_html_a46f87a7a9730d61f4db91cc66d61b2c6"><div class="ttname"><a href="shield_8h.html#a46f87a7a9730d61f4db91cc66d61b2c6">init_shield</a></div><div class="ttdeci">Shield *() init_shield(int x_min, int id)</div><div class="ttdoc">Initializes a Shield with a given left uppermost x coordinate and id.</div><div class="ttdef"><b>Definition:</b> shield.c:3</div></div>
+<div class="ttc" id="ashield_8h_html_aa29aea8cc95d1b319a3d12697032d6b1"><div class="ttname"><a href="shield_8h.html#aa29aea8cc95d1b319a3d12697032d6b1">draw_shield</a></div><div class="ttdeci">void() draw_shield(Shield *shield)</div><div class="ttdoc">Draws a given shield according to its position and lives.</div><div class="ttdef"><b>Definition:</b> shield.c:16</div></div>
+<div class="ttc" id="ashot_8h_html"><div class="ttname"><a href="shot_8h.html">shot.h</a></div><div class="ttdoc">Represents and manipulates the game's shots.</div></div>
+<div class="ttc" id="astruct_shield_html"><div class="ttname"><a href="struct_shield.html">Shield</a></div><div class="ttdoc">Represents a game's shield by its position (area/hitbox), lives and id. The thickness of the shield i...</div><div class="ttdef"><b>Definition:</b> shield.h:18</div></div>
+<div class="ttc" id="astruct_shield_html_a5f0bb6d8a3e66525c3e6264cb8288e43"><div class="ttname"><a href="struct_shield.html#a5f0bb6d8a3e66525c3e6264cb8288e43">Shield::x_max</a></div><div class="ttdeci">int x_max</div><div class="ttdef"><b>Definition:</b> shield.h:20</div></div>
+<div class="ttc" id="astruct_shield_html_a7441ef0865bcb3db9b8064dd7375c1ea"><div class="ttname"><a href="struct_shield.html#a7441ef0865bcb3db9b8064dd7375c1ea">Shield::id</a></div><div class="ttdeci">int id</div><div class="ttdef"><b>Definition:</b> shield.h:24</div></div>
+<div class="ttc" id="astruct_shield_html_a7941ddc7e35fffb8864af1e922814401"><div class="ttname"><a href="struct_shield.html#a7941ddc7e35fffb8864af1e922814401">Shield::y_min</a></div><div class="ttdeci">int y_min</div><div class="ttdef"><b>Definition:</b> shield.h:21</div></div>
+<div class="ttc" id="astruct_shield_html_ac1d68ef9a5dd304c5015e07af7f2bb19"><div class="ttname"><a href="struct_shield.html#ac1d68ef9a5dd304c5015e07af7f2bb19">Shield::lives</a></div><div class="ttdeci">int lives</div><div class="ttdef"><b>Definition:</b> shield.h:23</div></div>
+<div class="ttc" id="astruct_shield_html_ad033aea530fbbcf5bcd6cd98d882e3a5"><div class="ttname"><a href="struct_shield.html#ad033aea530fbbcf5bcd6cd98d882e3a5">Shield::y_max</a></div><div class="ttdeci">int y_max</div><div class="ttdef"><b>Definition:</b> shield.h:22</div></div>
+<div class="ttc" id="astruct_shield_html_ae0951dcafafdc96ac1d8361c672d47e2"><div class="ttname"><a href="struct_shield.html#ae0951dcafafdc96ac1d8361c672d47e2">Shield::x_min</a></div><div class="ttdeci">int x_min</div><div class="ttdef"><b>Definition:</b> shield.h:19</div></div>
 <div class="ttc" id="avideo_8h_html"><div class="ttname"><a href="video_8h.html">video.h</a></div><div class="ttdoc">Functions for programming the video card. Also contains variables to store the xpm images and maps dr...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.5"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Projeto LC 2023: Space Invaders: C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-LCOM/shared/proj/src/direction.h Source File</title>
+<title>Projeto LC 2023: Space Invaders: C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-LCOM/shared/proj/src/logic/direction.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,7 +69,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_cd73a1c98487b92de1ef3d4bc4e428b0.html">2º semestre</a></li><li class="navelem"><a class="el" href="dir_9ce376de49d21ec23a1f6f2ef17492bf.html">LC</a></li><li class="navelem"><a class="el" href="dir_fcc1d5c1cc1aed31abbaa4d06a599a62.html">MINIX-LCOM</a></li><li class="navelem"><a class="el" href="dir_6ae0393e90a68bed17b0544184a065d7.html">shared</a></li><li class="navelem"><a class="el" href="dir_c63b9caa9881ed0d7ad16a0256d70e6d.html">proj</a></li><li class="navelem"><a class="el" href="dir_d1dcee3ee35c8572178473e6033bc9c3.html">src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_cd73a1c98487b92de1ef3d4bc4e428b0.html">2º semestre</a></li><li class="navelem"><a class="el" href="dir_9ce376de49d21ec23a1f6f2ef17492bf.html">LC</a></li><li class="navelem"><a class="el" href="dir_fcc1d5c1cc1aed31abbaa4d06a599a62.html">MINIX-LCOM</a></li><li class="navelem"><a class="el" href="dir_6ae0393e90a68bed17b0544184a065d7.html">shared</a></li><li class="navelem"><a class="el" href="dir_c63b9caa9881ed0d7ad16a0256d70e6d.html">proj</a></li><li class="navelem"><a class="el" href="dir_d1dcee3ee35c8572178473e6033bc9c3.html">src</a></li><li class="navelem"><a class="el" href="dir_2c899e54e647f5fc21fc1e8172ef8b30.html">logic</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -80,16 +80,22 @@ $(function() {
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define DIRECTION_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098">   14</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098">direction</a> {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  right,</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  left,</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  up,</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  down,</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  down_after_left,</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  down_after_right</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>};</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098af763d610923b0c4614e8ecd65212666a">   15</a></span>  <a class="code hl_enumvalue" href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098af763d610923b0c4614e8ecd65212666a">right</a>,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098ab0ac36b187aa60c167ffcead3d5a03c0">   16</a></span>  <a class="code hl_enumvalue" href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098ab0ac36b187aa60c167ffcead3d5a03c0">left</a>,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098aebc281bf093563220c2270ba57dedfce">   17</a></span>  <a class="code hl_enumvalue" href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098aebc281bf093563220c2270ba57dedfce">up</a>,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098a00156fc42b17a87d0746d97b42caf296">   18</a></span>  <a class="code hl_enumvalue" href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098a00156fc42b17a87d0746d97b42caf296">down</a>,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098a0006f370da7777f0a6d88e93001a7d09">   19</a></span>  <a class="code hl_enumvalue" href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098a0006f370da7777f0a6d88e93001a7d09">down_after_left</a>,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <a class="code hl_enumvalue" href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098a9b0feb8be057b8fe2ae849a35b1b4336">down_after_right</a></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098a9b0feb8be057b8fe2ae849a35b1b4336">   21</a></span>};</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="adirection_8h_html_a99f26e6ee9fcd62f75203b5402df8098"><div class="ttname"><a href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098">direction</a></div><div class="ttdeci">direction</div><div class="ttdoc">Enumerated type for a game's movement direction.</div><div class="ttdef"><b>Definition:</b> direction.h:14</div></div>
+<div class="ttc" id="adirection_8h_html_a99f26e6ee9fcd62f75203b5402df8098a0006f370da7777f0a6d88e93001a7d09"><div class="ttname"><a href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098a0006f370da7777f0a6d88e93001a7d09">down_after_left</a></div><div class="ttdeci">@ down_after_left</div><div class="ttdef"><b>Definition:</b> direction.h:19</div></div>
+<div class="ttc" id="adirection_8h_html_a99f26e6ee9fcd62f75203b5402df8098a00156fc42b17a87d0746d97b42caf296"><div class="ttname"><a href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098a00156fc42b17a87d0746d97b42caf296">down</a></div><div class="ttdeci">@ down</div><div class="ttdef"><b>Definition:</b> direction.h:18</div></div>
+<div class="ttc" id="adirection_8h_html_a99f26e6ee9fcd62f75203b5402df8098a9b0feb8be057b8fe2ae849a35b1b4336"><div class="ttname"><a href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098a9b0feb8be057b8fe2ae849a35b1b4336">down_after_right</a></div><div class="ttdeci">@ down_after_right</div><div class="ttdef"><b>Definition:</b> direction.h:20</div></div>
+<div class="ttc" id="adirection_8h_html_a99f26e6ee9fcd62f75203b5402df8098ab0ac36b187aa60c167ffcead3d5a03c0"><div class="ttname"><a href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098ab0ac36b187aa60c167ffcead3d5a03c0">left</a></div><div class="ttdeci">@ left</div><div class="ttdef"><b>Definition:</b> direction.h:16</div></div>
+<div class="ttc" id="adirection_8h_html_a99f26e6ee9fcd62f75203b5402df8098aebc281bf093563220c2270ba57dedfce"><div class="ttname"><a href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098aebc281bf093563220c2270ba57dedfce">up</a></div><div class="ttdeci">@ up</div><div class="ttdef"><b>Definition:</b> direction.h:17</div></div>
+<div class="ttc" id="adirection_8h_html_a99f26e6ee9fcd62f75203b5402df8098af763d610923b0c4614e8ecd65212666a"><div class="ttname"><a href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098af763d610923b0c4614e8ecd65212666a">right</a></div><div class="ttdeci">@ right</div><div class="ttdef"><b>Definition:</b> direction.h:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

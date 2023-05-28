@@ -1,0 +1,175 @@
+\hypertarget{kbd_8c}{}\doxysection{C\+:/\+Users/\+Pedro/\+Documents/2\+LEIC/2º semestre/\+LC/\+MINIX-\/\+LCOM/shared/proj/src/framework/keyboard/kbd.c File Reference}
+\label{kbd_8c}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/keyboard/kbd.c@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/keyboard/kbd.c}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}kbd.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for kbd.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbd_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{kbd_8c_a02884ada1971dbade466081413210b18}{kbc\+\_\+subscribe\+\_\+int}} (uint8\+\_\+t $\ast$bit\+\_\+no)
+\begin{DoxyCompactList}\small\item\em Subscribes and enables Keyboard interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{kbd_8c_a1102381e6a9e876e05dd78c58ccb5673}{kbc\+\_\+unsubscribe\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes Keyboard interrupts. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{kbd_8c_aea970a154161a35f6894898a092ed70a}{kbc\+\_\+ih}} ()
+\begin{DoxyCompactList}\small\item\em Handles Keyboard interrupts. Reads and stores the KBD data for later processing/interpretation. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} \mbox{\hyperlink{kbd_8c_ac687b1a8ed53a6d9a506dbf1ccb920e1}{translate}} (uint8\+\_\+t value, bool make)
+\item 
+enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} \mbox{\hyperlink{kbd_8c_a349e104e331ffa69feb42f7c6d5682ff}{kbd\+\_\+get\+\_\+key}} (bool make, uint8\+\_\+t size, uint8\+\_\+t bytes\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Translates the KBD data into a key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{kbd_8c_a6e78e3e23f5f4b4a24be7bf33f3b6e50}{hook}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{kbd_8c_a325819a8e492ac69542e8b31705af6e9}{data}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{kbd_8c_aea970a154161a35f6894898a092ed70a}\label{kbd_8c_aea970a154161a35f6894898a092ed70a}} 
+\index{kbd.c@{kbd.c}!kbc\_ih@{kbc\_ih}}
+\index{kbc\_ih@{kbc\_ih}!kbd.c@{kbd.c}}
+\doxysubsubsection{\texorpdfstring{kbc\_ih()}{kbc\_ih()}}
+{\footnotesize\ttfamily void() kbc\+\_\+ih (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles Keyboard interrupts. Reads and stores the KBD data for later processing/interpretation. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{kbd_8c_aea970a154161a35f6894898a092ed70a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbd_8c_aea970a154161a35f6894898a092ed70a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{kbd_8c_a02884ada1971dbade466081413210b18}\label{kbd_8c_a02884ada1971dbade466081413210b18}} 
+\index{kbd.c@{kbd.c}!kbc\_subscribe\_int@{kbc\_subscribe\_int}}
+\index{kbc\_subscribe\_int@{kbc\_subscribe\_int}!kbd.c@{kbd.c}}
+\doxysubsubsection{\texorpdfstring{kbc\_subscribe\_int()}{kbc\_subscribe\_int()}}
+{\footnotesize\ttfamily int() kbc\+\_\+subscribe\+\_\+int (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{bit\+\_\+no }\end{DoxyParamCaption})}
+
+
+
+Subscribes and enables Keyboard interrupts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+\_\+no} & Variable to store the keyboard\textquotesingle{}s hook id correspondent bit number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return 0 upon success and non-\/zero otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{kbd_8c_a02884ada1971dbade466081413210b18_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{kbd_8c_a1102381e6a9e876e05dd78c58ccb5673}\label{kbd_8c_a1102381e6a9e876e05dd78c58ccb5673}} 
+\index{kbd.c@{kbd.c}!kbc\_unsubscribe\_int@{kbc\_unsubscribe\_int}}
+\index{kbc\_unsubscribe\_int@{kbc\_unsubscribe\_int}!kbd.c@{kbd.c}}
+\doxysubsubsection{\texorpdfstring{kbc\_unsubscribe\_int()}{kbc\_unsubscribe\_int()}}
+{\footnotesize\ttfamily int() kbc\+\_\+unsubscribe\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Unsubscribes Keyboard interrupts. 
+
+\begin{DoxyReturn}{Returns}
+Return 0 upon success and non-\/zero otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{kbd_8c_a1102381e6a9e876e05dd78c58ccb5673_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{kbd_8c_a349e104e331ffa69feb42f7c6d5682ff}\label{kbd_8c_a349e104e331ffa69feb42f7c6d5682ff}} 
+\index{kbd.c@{kbd.c}!kbd\_get\_key@{kbd\_get\_key}}
+\index{kbd\_get\_key@{kbd\_get\_key}!kbd.c@{kbd.c}}
+\doxysubsubsection{\texorpdfstring{kbd\_get\_key()}{kbd\_get\_key()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} kbd\+\_\+get\+\_\+key (\begin{DoxyParamCaption}\item[{bool}]{make,  }\item[{uint8\+\_\+t}]{size,  }\item[{uint8\+\_\+t}]{bytes\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Translates the KBD data into a key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & KBD data. \\
+\hline
+{\em make} & Whether the data is a makecode or a breakcode. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the key correspondent to the KBD data. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{kbd_8c_a349e104e331ffa69feb42f7c6d5682ff_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbd_8c_a349e104e331ffa69feb42f7c6d5682ff_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{kbd_8c_ac687b1a8ed53a6d9a506dbf1ccb920e1}\label{kbd_8c_ac687b1a8ed53a6d9a506dbf1ccb920e1}} 
+\index{kbd.c@{kbd.c}!translate@{translate}}
+\index{translate@{translate}!kbd.c@{kbd.c}}
+\doxysubsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} translate (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{value,  }\item[{bool}]{make }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbd_8c_ac687b1a8ed53a6d9a506dbf1ccb920e1_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{kbd_8c_a325819a8e492ac69542e8b31705af6e9}\label{kbd_8c_a325819a8e492ac69542e8b31705af6e9}} 
+\index{kbd.c@{kbd.c}!data@{data}}
+\index{data@{data}!kbd.c@{kbd.c}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily uint8\+\_\+t data = 0}
+
+\mbox{\Hypertarget{kbd_8c_a6e78e3e23f5f4b4a24be7bf33f3b6e50}\label{kbd_8c_a6e78e3e23f5f4b4a24be7bf33f3b6e50}} 
+\index{kbd.c@{kbd.c}!hook@{hook}}
+\index{hook@{hook}!kbd.c@{kbd.c}}
+\doxysubsubsection{\texorpdfstring{hook}{hook}}
+{\footnotesize\ttfamily int hook = 0}
+

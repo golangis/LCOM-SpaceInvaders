@@ -1,0 +1,105 @@
+\hypertarget{shield_8c}{}\doxysection{C\+:/\+Users/\+Pedro/\+Documents/2\+LEIC/2º semestre/\+LC/\+MINIX-\/\+LCOM/shared/proj/src/logic/shield.c File Reference}
+\label{shield_8c}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/shield.c@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/shield.c}}
+{\ttfamily \#include \char`\"{}shield.\+h\char`\"{}}\newline
+Include dependency graph for shield.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{shield_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_shield}{Shield}} $\ast$() \mbox{\hyperlink{shield_8c_a46f87a7a9730d61f4db91cc66d61b2c6}{init\+\_\+shield}} (int x\+\_\+min, int id)
+\begin{DoxyCompactList}\small\item\em Initializes a \mbox{\hyperlink{struct_shield}{Shield}} with a given left uppermost x coordinate and id. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{shield_8c_aa29aea8cc95d1b319a3d12697032d6b1}{draw\+\_\+shield}} (\mbox{\hyperlink{struct_shield}{Shield}} $\ast$shield)
+\begin{DoxyCompactList}\small\item\em Draws a given shield according to its position and lives. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{shield_8c_a05c98b39588bdedcdf3876bd81acca62}{damage}} (\mbox{\hyperlink{struct_shield}{Shield}} $\ast$shield)
+\begin{DoxyCompactList}\small\item\em Causes damage to a given shield (decrements its lives) and alters its coordinates to match the new thickness and mantain its center\textquotesingle{}s position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{shield_8c_a05c98b39588bdedcdf3876bd81acca62}\label{shield_8c_a05c98b39588bdedcdf3876bd81acca62}} 
+\index{shield.c@{shield.c}!damage@{damage}}
+\index{damage@{damage}!shield.c@{shield.c}}
+\doxysubsubsection{\texorpdfstring{damage()}{damage()}}
+{\footnotesize\ttfamily void() damage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_shield}{Shield}} $\ast$}]{shield }\end{DoxyParamCaption})}
+
+
+
+Causes damage to a given shield (decrements its lives) and alters its coordinates to match the new thickness and mantain its center\textquotesingle{}s position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shield} & Pointer to the shield to be damaged. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{shield_8c_a05c98b39588bdedcdf3876bd81acca62_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{shield_8c_aa29aea8cc95d1b319a3d12697032d6b1}\label{shield_8c_aa29aea8cc95d1b319a3d12697032d6b1}} 
+\index{shield.c@{shield.c}!draw\_shield@{draw\_shield}}
+\index{draw\_shield@{draw\_shield}!shield.c@{shield.c}}
+\doxysubsubsection{\texorpdfstring{draw\_shield()}{draw\_shield()}}
+{\footnotesize\ttfamily void() draw\+\_\+shield (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_shield}{Shield}} $\ast$}]{shield }\end{DoxyParamCaption})}
+
+
+
+Draws a given shield according to its position and lives. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shield} & Pointer to the shield to be drawn. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{shield_8c_aa29aea8cc95d1b319a3d12697032d6b1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{shield_8c_aa29aea8cc95d1b319a3d12697032d6b1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{shield_8c_a46f87a7a9730d61f4db91cc66d61b2c6}\label{shield_8c_a46f87a7a9730d61f4db91cc66d61b2c6}} 
+\index{shield.c@{shield.c}!init\_shield@{init\_shield}}
+\index{init\_shield@{init\_shield}!shield.c@{shield.c}}
+\doxysubsubsection{\texorpdfstring{init\_shield()}{init\_shield()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_shield}{Shield}} $\ast$() init\+\_\+shield (\begin{DoxyParamCaption}\item[{int}]{x\+\_\+min,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Initializes a \mbox{\hyperlink{struct_shield}{Shield}} with a given left uppermost x coordinate and id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+\_\+min} & Left uppermost x coordinate. \\
+\hline
+{\em id} & \mbox{\hyperlink{struct_shield}{Shield}}\textquotesingle{}s id. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the initialized shield. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{shield_8c_a46f87a7a9730d61f4db91cc66d61b2c6_icgraph}
+\end{center}
+\end{figure}

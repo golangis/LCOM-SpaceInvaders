@@ -1,5 +1,5 @@
-\hypertarget{spaceinvaders_8h}{}\doxysection{C\+:/\+Users/\+Pedro/\+Documents/2\+LEIC/2º semestre/\+LC/\+MINIX-\/\+LCOM/shared/proj/src/spaceinvaders.h File Reference}
-\label{spaceinvaders_8h}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/spaceinvaders.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/spaceinvaders.h}}
+\hypertarget{spaceinvaders_8h}{}\doxysection{C\+:/\+Users/\+Pedro/\+Documents/2\+LEIC/2º semestre/\+LC/\+MINIX-\/\+LCOM/shared/proj/src/logic/spaceinvaders.h File Reference}
+\label{spaceinvaders_8h}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/spaceinvaders.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/spaceinvaders.h}}
 
 
 Game logic functions. Stores the game elements and assures the interaction between them.  
@@ -12,11 +12,27 @@ Game logic functions. Stores the game elements and assures the interaction betwe
 {\ttfamily \#include \char`\"{}framework/video/video.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}framework/mouse/mouse.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}framework/rtc/rtc.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}alien.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}player.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}shield.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}shot.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}direction.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}logic/alien.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}logic/player.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}logic/shield.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}logic/shot.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}logic/direction.\+h\char`\"{}}\newline
+Include dependency graph for spaceinvaders.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
@@ -25,98 +41,70 @@ struct \mbox{\hyperlink{struct_score}{Score}}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90}\label{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90}} 
-enum {\bfseries state} \{ \newline
-{\bfseries game}
-, {\bfseries main\+Menu}
-, {\bfseries highscores}
-, {\bfseries quit}
+enum \mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90}{state}} \{ \newline
+\mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90a98ed613d1d1a3c9820695fdac4f79a3d}{game}}
+, \mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90a3766dca84536a644e2f680f520e63180}{main\+Menu}}
+, \mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90a7e8f96001f5407266d3c582135bcc095}{highscores}}
+, \mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90a3b81dce366295e52b47ca4d263ba8335}{quit}}
 , \newline
-{\bfseries game\+Over\+Menu}
+\mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90a479968c9f06486d3c41d83567f978bad}{game\+Over\+Menu}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Possible app states, on which the artifacts to draw and the logic depends. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void() \mbox{\hyperlink{spaceinvaders_8h_aff9ce2c80067181fa64a67450da2c6fa}{init\+\_\+game}} ()
 \begin{DoxyCompactList}\small\item\em Initializes the game elements. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{spaceinvaders_8h_a5c1ddfb8c2734979f5bc00098a2aed89}\label{spaceinvaders_8h_a5c1ddfb8c2734979f5bc00098a2aed89}} 
-\mbox{\hyperlink{struct_score}{Score}} $\ast$() {\bfseries load\+Scores} ()
-\item 
-\mbox{\Hypertarget{spaceinvaders_8h_a6f64c8195800ea7b368c2fa4fa584c38}\label{spaceinvaders_8h_a6f64c8195800ea7b368c2fa4fa584c38}} 
-\mbox{\hyperlink{struct_score}{Score}}() {\bfseries build\+Score} (int points, \mbox{\hyperlink{structrtc__time}{rtc\+\_\+time}} $\ast$time)
-\item 
-\mbox{\Hypertarget{spaceinvaders_8h_a7d4fb88b1ced99ae8c99cb239a8e9f84}\label{spaceinvaders_8h_a7d4fb88b1ced99ae8c99cb239a8e9f84}} 
-bool() {\bfseries process\+Score} (\mbox{\hyperlink{struct_score}{Score}} score, \mbox{\hyperlink{struct_score}{Score}} $\ast$array)
-\item 
-\mbox{\Hypertarget{spaceinvaders_8h_a549e0bafccc40da52849a07356235789}\label{spaceinvaders_8h_a549e0bafccc40da52849a07356235789}} 
-void() {\bfseries store\+Scores} (\mbox{\hyperlink{struct_score}{Score}} $\ast$array)
-\item 
-\mbox{\Hypertarget{spaceinvaders_8h_a84aa668c4684547c795670fc72531598}\label{spaceinvaders_8h_a84aa668c4684547c795670fc72531598}} 
-void() {\bfseries draw} ()
-\item 
-\mbox{\Hypertarget{spaceinvaders_8h_a0b2a6a62c1f41986be80686c764dd19a}\label{spaceinvaders_8h_a0b2a6a62c1f41986be80686c764dd19a}} 
-void() {\bfseries update} (int $\ast$no\+\_\+lives)
-\item 
-\mbox{\Hypertarget{spaceinvaders_8h_ab6265073efb7030ef133d31ac663e9ad}\label{spaceinvaders_8h_ab6265073efb7030ef133d31ac663e9ad}} 
-void() {\bfseries draw\+Main\+Menu} ()
-\item 
-\mbox{\Hypertarget{spaceinvaders_8h_ae6b62536175593ead3bcd3bf919f054a}\label{spaceinvaders_8h_ae6b62536175593ead3bcd3bf919f054a}} 
-void() {\bfseries draw\+Highscores} (\mbox{\hyperlink{struct_score}{Score}} $\ast$scores)
-\item 
-\mbox{\Hypertarget{spaceinvaders_8h_a48aac508e55818d757f7e28ac7229a6c}\label{spaceinvaders_8h_a48aac508e55818d757f7e28ac7229a6c}} 
-void() {\bfseries draw\+Game\+Over\+Menu} ()
-\item 
-\mbox{\Hypertarget{spaceinvaders_8h_a0b361528e5b1e54470b00ef064464b95}\label{spaceinvaders_8h_a0b361528e5b1e54470b00ef064464b95}} 
-void() {\bfseries reload\+\_\+aliens} ()
-\item 
-\mbox{\Hypertarget{spaceinvaders_8h_a278ccf0c99908024f4b96d1d2c7d4747}\label{spaceinvaders_8h_a278ccf0c99908024f4b96d1d2c7d4747}} 
-void() {\bfseries init\+Scores} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{struct_score}{Score}} $\ast$() \mbox{\hyperlink{spaceinvaders_8h_a4c53c60b9eb88e3c00d9d0fc59dae462}{load\+\_\+scores}} ()
+\begin{DoxyCompactList}\small\item\em Loads information from the file the top-\/10 highscores are stored in, parses them into \mbox{\hyperlink{struct_score}{Score}} struct instances and returns them in an array. The file reading was adapted from \href{https://www.geeksforgeeks.org/relational-database-from-csv-files-in-c/}{\texttt{ https\+://www.\+geeksforgeeks.\+org/relational-\/database-\/from-\/csv-\/files-\/in-\/c/}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_score}{Score}}() \mbox{\hyperlink{spaceinvaders_8h_abd975f557a5c526551dafdb6242ea898}{build\+\_\+score}} (int points, \mbox{\hyperlink{structrtc__time}{rtc\+\_\+time}} $\ast$time)
+\begin{DoxyCompactList}\small\item\em Builds a \mbox{\hyperlink{struct_score}{Score}} struct instance according to a given points number and \mbox{\hyperlink{structrtc__time}{rtc\+\_\+time}} struct instance. \end{DoxyCompactList}\item 
+bool() \mbox{\hyperlink{spaceinvaders_8h_ae0cafa3b93c40f3eb66676d574f9985e}{process\+\_\+score}} (\mbox{\hyperlink{struct_score}{Score}} score, \mbox{\hyperlink{struct_score}{Score}} $\ast$array)
+\begin{DoxyCompactList}\small\item\em Processes a score and determines if it is elegible to be amongst the top-\/10. If so, stores it in the scores array and returns true, returning false otherwise. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{spaceinvaders_8h_afceda483e03bbe9320d74e45df9f9c32}{store\+\_\+scores}} (\mbox{\hyperlink{struct_score}{Score}} $\ast$array)
+\begin{DoxyCompactList}\small\item\em Stores the given score array in the highscores file. File writing adapted from \href{https://www.programiz.com/c-programming/c-file-input-output}{\texttt{ https\+://www.\+programiz.\+com/c-\/programming/c-\/file-\/input-\/output}}. NOTE\+: The file path must be absolute. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{spaceinvaders_8h_a84aa668c4684547c795670fc72531598}{draw}} ()
+\begin{DoxyCompactList}\small\item\em General game drawing function. Calls the elements\textquotesingle{} respective drawing functions. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{spaceinvaders_8h_a0b2a6a62c1f41986be80686c764dd19a}{update}} (int $\ast$no\+\_\+lives)
+\begin{DoxyCompactList}\small\item\em Updates the game\textquotesingle{}s elements position (if appliable), checks colisions and updates the involved elements\textquotesingle{} lives/state. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{spaceinvaders_8h_a867892903e6eb31b07fcbc8da05bee16}{draw\+\_\+main\+\_\+menu}} ()
+\begin{DoxyCompactList}\small\item\em Draws the main menu. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{spaceinvaders_8h_ad571496285082d7d70e3ca362c1b04bb}{draw\+\_\+high\+\_\+scores}} (\mbox{\hyperlink{struct_score}{Score}} $\ast$scores)
+\begin{DoxyCompactList}\small\item\em Draws the highscore page, given a pre-\/generated top-\/10 score array. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{spaceinvaders_8h_a0af91f71746c9e649dd1f2305c674e38}{draw\+\_\+game\+\_\+over\+\_\+menu}} ()
+\begin{DoxyCompactList}\small\item\em Draws the game over menu. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{spaceinvaders_8h_a0b361528e5b1e54470b00ef064464b95}{reload\+\_\+aliens}} ()
+\begin{DoxyCompactList}\small\item\em Regenerates all the aliens when a new game wave is started. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{spaceinvaders_8h_a93a24e067b9083bed6fb5c0336fd7a01}\label{spaceinvaders_8h_a93a24e067b9083bed6fb5c0336fd7a01}} 
-char $\ast$ {\bfseries video\+\_\+mem}
+char $\ast$ \mbox{\hyperlink{spaceinvaders_8h_a93a24e067b9083bed6fb5c0336fd7a01}{video\+\_\+mem}}
 \item 
-\mbox{\Hypertarget{spaceinvaders_8h_a6f27020d1fd79626a71c9c65cd61ca8c}\label{spaceinvaders_8h_a6f27020d1fd79626a71c9c65cd61ca8c}} 
-uint8\+\_\+t $\ast$ {\bfseries vg\+\_\+buffer}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{spaceinvaders_8h_a6f27020d1fd79626a71c9c65cd61ca8c}{vg\+\_\+buffer}}
 \item 
-\mbox{\Hypertarget{spaceinvaders_8h_a43e7e5a0a8f9069e6413b2066ca52f3e}\label{spaceinvaders_8h_a43e7e5a0a8f9069e6413b2066ca52f3e}} 
-unsigned {\bfseries h\+\_\+res}
+unsigned \mbox{\hyperlink{spaceinvaders_8h_a43e7e5a0a8f9069e6413b2066ca52f3e}{h\+\_\+res}}
 \item 
-\mbox{\Hypertarget{spaceinvaders_8h_a5bda1b499253a8fbf3cab646f8760391}\label{spaceinvaders_8h_a5bda1b499253a8fbf3cab646f8760391}} 
-unsigned {\bfseries v\+\_\+res}
+unsigned \mbox{\hyperlink{spaceinvaders_8h_a5bda1b499253a8fbf3cab646f8760391}{v\+\_\+res}}
 \item 
-\mbox{\Hypertarget{spaceinvaders_8h_a144d9a9cabab9de0142a6baee835ca6b}\label{spaceinvaders_8h_a144d9a9cabab9de0142a6baee835ca6b}} 
-unsigned {\bfseries bytes\+\_\+per\+\_\+pixel}
+unsigned \mbox{\hyperlink{spaceinvaders_8h_a144d9a9cabab9de0142a6baee835ca6b}{bytes\+\_\+per\+\_\+pixel}}
 \item 
-\mbox{\Hypertarget{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}\label{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}} 
-\mbox{\hyperlink{struct_player}{Player}} $\ast$ {\bfseries ship}
+\mbox{\hyperlink{struct_player}{Player}} $\ast$ \mbox{\hyperlink{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}{ship}}
 \item 
-\mbox{\Hypertarget{spaceinvaders_8h_a8f621f1e0b4e4176f1e67dc5031d891a}\label{spaceinvaders_8h_a8f621f1e0b4e4176f1e67dc5031d891a}} 
-\mbox{\hyperlink{struct_shield}{Shield}} $\ast$ {\bfseries shield1}
+\mbox{\hyperlink{struct_shield}{Shield}} $\ast$ \mbox{\hyperlink{spaceinvaders_8h_a8f621f1e0b4e4176f1e67dc5031d891a}{shield1}}
 \item 
-\mbox{\Hypertarget{spaceinvaders_8h_a48c72259ab4c049372115f62cd64d41f}\label{spaceinvaders_8h_a48c72259ab4c049372115f62cd64d41f}} 
-\mbox{\hyperlink{struct_shield}{Shield}} $\ast$ {\bfseries shield2}
+\mbox{\hyperlink{struct_shield}{Shield}} $\ast$ \mbox{\hyperlink{spaceinvaders_8h_a48c72259ab4c049372115f62cd64d41f}{shield2}}
 \item 
-\mbox{\Hypertarget{spaceinvaders_8h_ae216136d85958771f5667b34391f6b80}\label{spaceinvaders_8h_ae216136d85958771f5667b34391f6b80}} 
-\mbox{\hyperlink{struct_shield}{Shield}} $\ast$ {\bfseries shield3}
+\mbox{\hyperlink{struct_shield}{Shield}} $\ast$ \mbox{\hyperlink{spaceinvaders_8h_ae216136d85958771f5667b34391f6b80}{shield3}}
 \item 
-\mbox{\Hypertarget{spaceinvaders_8h_a6bce1d88738df39ce6fb4603118aaf4c}\label{spaceinvaders_8h_a6bce1d88738df39ce6fb4603118aaf4c}} 
-\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$ {\bfseries aliens}
+\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$ \mbox{\hyperlink{spaceinvaders_8h_a6bce1d88738df39ce6fb4603118aaf4c}{aliens}}
 \item 
-\mbox{\Hypertarget{spaceinvaders_8h_aa573dfe9991bd08b90eb8edaf34a19f6}\label{spaceinvaders_8h_aa573dfe9991bd08b90eb8edaf34a19f6}} 
-\mbox{\hyperlink{struct_shot}{Shot}} $\ast$ {\bfseries shots}
+\mbox{\hyperlink{struct_shot}{Shot}} $\ast$ \mbox{\hyperlink{spaceinvaders_8h_aa573dfe9991bd08b90eb8edaf34a19f6}{shots}}
 \item 
-\mbox{\Hypertarget{spaceinvaders_8h_a05b298baa5d10b97c81240a52890aee5}\label{spaceinvaders_8h_a05b298baa5d10b97c81240a52890aee5}} 
-int {\bfseries wave}
+int \mbox{\hyperlink{spaceinvaders_8h_a05b298baa5d10b97c81240a52890aee5}{wave}}
 \item 
-\mbox{\Hypertarget{spaceinvaders_8h_a911a4532bbc485f9a6b43e24878c9096}\label{spaceinvaders_8h_a911a4532bbc485f9a6b43e24878c9096}} 
-enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} {\bfseries last\+\_\+alien\+\_\+mov}
+enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} \mbox{\hyperlink{spaceinvaders_8h_a911a4532bbc485f9a6b43e24878c9096}{last\+\_\+alien\+\_\+mov}}
 \item 
-\mbox{\Hypertarget{spaceinvaders_8h_a7c957f768142ea25b66fd1e434c52c54}\label{spaceinvaders_8h_a7c957f768142ea25b66fd1e434c52c54}} 
-unsigned int {\bfseries updates}
+unsigned int \mbox{\hyperlink{spaceinvaders_8h_a7c957f768142ea25b66fd1e434c52c54}{updates}}
 \end{DoxyCompactItemize}
 
 
@@ -125,7 +113,179 @@ Game logic functions. Stores the game elements and assures the interaction betwe
 
 
 
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90}\label{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!state@{state}}
+\index{state@{state}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90}{state}}}
+
+
+
+Possible app states, on which the artifacts to draw and the logic depends. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{game@{game}!spaceinvaders.h@{spaceinvaders.h}}\index{spaceinvaders.h@{spaceinvaders.h}!game@{game}}}\mbox{\Hypertarget{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90a98ed613d1d1a3c9820695fdac4f79a3d}\label{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90a98ed613d1d1a3c9820695fdac4f79a3d}} 
+game&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{mainMenu@{mainMenu}!spaceinvaders.h@{spaceinvaders.h}}\index{spaceinvaders.h@{spaceinvaders.h}!mainMenu@{mainMenu}}}\mbox{\Hypertarget{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90a3766dca84536a644e2f680f520e63180}\label{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90a3766dca84536a644e2f680f520e63180}} 
+main\+Menu&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{highscores@{highscores}!spaceinvaders.h@{spaceinvaders.h}}\index{spaceinvaders.h@{spaceinvaders.h}!highscores@{highscores}}}\mbox{\Hypertarget{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90a7e8f96001f5407266d3c582135bcc095}\label{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90a7e8f96001f5407266d3c582135bcc095}} 
+highscores&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{quit@{quit}!spaceinvaders.h@{spaceinvaders.h}}\index{spaceinvaders.h@{spaceinvaders.h}!quit@{quit}}}\mbox{\Hypertarget{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90a3b81dce366295e52b47ca4d263ba8335}\label{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90a3b81dce366295e52b47ca4d263ba8335}} 
+quit&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{gameOverMenu@{gameOverMenu}!spaceinvaders.h@{spaceinvaders.h}}\index{spaceinvaders.h@{spaceinvaders.h}!gameOverMenu@{gameOverMenu}}}\mbox{\Hypertarget{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90a479968c9f06486d3c41d83567f978bad}\label{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90a479968c9f06486d3c41d83567f978bad}} 
+game\+Over\+Menu&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{spaceinvaders_8h_abd975f557a5c526551dafdb6242ea898}\label{spaceinvaders_8h_abd975f557a5c526551dafdb6242ea898}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!build\_score@{build\_score}}
+\index{build\_score@{build\_score}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{build\_score()}{build\_score()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_score}{Score}}() build\+\_\+score (\begin{DoxyParamCaption}\item[{int}]{points,  }\item[{\mbox{\hyperlink{structrtc__time}{rtc\+\_\+time}} $\ast$}]{time }\end{DoxyParamCaption})}
+
+
+
+Builds a \mbox{\hyperlink{struct_score}{Score}} struct instance according to a given points number and \mbox{\hyperlink{structrtc__time}{rtc\+\_\+time}} struct instance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & Number of the score\textquotesingle{}s points. \\
+\hline
+{\em time} & \mbox{\hyperlink{structrtc__time}{rtc\+\_\+time}} struct instance representing the date and time the score was achieved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Built score struct instance. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8h_abd975f557a5c526551dafdb6242ea898_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{spaceinvaders_8h_a84aa668c4684547c795670fc72531598}\label{spaceinvaders_8h_a84aa668c4684547c795670fc72531598}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!draw@{draw}}
+\index{draw@{draw}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void() draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+General game drawing function. Calls the elements\textquotesingle{} respective drawing functions. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8h_a84aa668c4684547c795670fc72531598_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{spaceinvaders_8h_a84aa668c4684547c795670fc72531598_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{spaceinvaders_8h_a0af91f71746c9e649dd1f2305c674e38}\label{spaceinvaders_8h_a0af91f71746c9e649dd1f2305c674e38}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!draw\_game\_over\_menu@{draw\_game\_over\_menu}}
+\index{draw\_game\_over\_menu@{draw\_game\_over\_menu}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{draw\_game\_over\_menu()}{draw\_game\_over\_menu()}}
+{\footnotesize\ttfamily void() draw\+\_\+game\+\_\+over\+\_\+menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the game over menu. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8h_a0af91f71746c9e649dd1f2305c674e38_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8h_a0af91f71746c9e649dd1f2305c674e38_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{spaceinvaders_8h_ad571496285082d7d70e3ca362c1b04bb}\label{spaceinvaders_8h_ad571496285082d7d70e3ca362c1b04bb}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!draw\_high\_scores@{draw\_high\_scores}}
+\index{draw\_high\_scores@{draw\_high\_scores}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{draw\_high\_scores()}{draw\_high\_scores()}}
+{\footnotesize\ttfamily void() draw\+\_\+high\+\_\+scores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_score}{Score}} $\ast$}]{scores }\end{DoxyParamCaption})}
+
+
+
+Draws the highscore page, given a pre-\/generated top-\/10 score array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scores} & Array with the top-\/10 scores to be drawn. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8h_ad571496285082d7d70e3ca362c1b04bb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8h_ad571496285082d7d70e3ca362c1b04bb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{spaceinvaders_8h_a867892903e6eb31b07fcbc8da05bee16}\label{spaceinvaders_8h_a867892903e6eb31b07fcbc8da05bee16}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!draw\_main\_menu@{draw\_main\_menu}}
+\index{draw\_main\_menu@{draw\_main\_menu}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{draw\_main\_menu()}{draw\_main\_menu()}}
+{\footnotesize\ttfamily void() draw\+\_\+main\+\_\+menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Draws the main menu. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8h_a867892903e6eb31b07fcbc8da05bee16_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8h_a867892903e6eb31b07fcbc8da05bee16_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{spaceinvaders_8h_aff9ce2c80067181fa64a67450da2c6fa}\label{spaceinvaders_8h_aff9ce2c80067181fa64a67450da2c6fa}} 
 \index{spaceinvaders.h@{spaceinvaders.h}!init\_game@{init\_game}}
 \index{init\_game@{init\_game}!spaceinvaders.h@{spaceinvaders.h}}
@@ -135,4 +295,236 @@ Game logic functions. Stores the game elements and assures the interaction betwe
 
 
 Initializes the game elements. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{spaceinvaders_8h_aff9ce2c80067181fa64a67450da2c6fa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8h_aff9ce2c80067181fa64a67450da2c6fa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{spaceinvaders_8h_a4c53c60b9eb88e3c00d9d0fc59dae462}\label{spaceinvaders_8h_a4c53c60b9eb88e3c00d9d0fc59dae462}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!load\_scores@{load\_scores}}
+\index{load\_scores@{load\_scores}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{load\_scores()}{load\_scores()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_score}{Score}} $\ast$() load\+\_\+scores (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads information from the file the top-\/10 highscores are stored in, parses them into \mbox{\hyperlink{struct_score}{Score}} struct instances and returns them in an array. The file reading was adapted from \href{https://www.geeksforgeeks.org/relational-database-from-csv-files-in-c/}{\texttt{ https\+://www.\+geeksforgeeks.\+org/relational-\/database-\/from-\/csv-\/files-\/in-\/c/}}. 
+
+NOTE\+: The file path must be absolute. \begin{DoxyReturn}{Returns}
+Dinamically alocated array of read scores. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8h_a4c53c60b9eb88e3c00d9d0fc59dae462_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{spaceinvaders_8h_ae0cafa3b93c40f3eb66676d574f9985e}\label{spaceinvaders_8h_ae0cafa3b93c40f3eb66676d574f9985e}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!process\_score@{process\_score}}
+\index{process\_score@{process\_score}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{process\_score()}{process\_score()}}
+{\footnotesize\ttfamily bool() process\+\_\+score (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_score}{Score}}}]{score,  }\item[{\mbox{\hyperlink{struct_score}{Score}} $\ast$}]{array }\end{DoxyParamCaption})}
+
+
+
+Processes a score and determines if it is elegible to be amongst the top-\/10. If so, stores it in the scores array and returns true, returning false otherwise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em score} & The score to be processed. \\
+\hline
+{\em array} & Current top-\/10 scores array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the given score is elegible to be amongst the top-\/10. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8h_ae0cafa3b93c40f3eb66676d574f9985e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{spaceinvaders_8h_a0b361528e5b1e54470b00ef064464b95}\label{spaceinvaders_8h_a0b361528e5b1e54470b00ef064464b95}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!reload\_aliens@{reload\_aliens}}
+\index{reload\_aliens@{reload\_aliens}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{reload\_aliens()}{reload\_aliens()}}
+{\footnotesize\ttfamily void() reload\+\_\+aliens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Regenerates all the aliens when a new game wave is started. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{spaceinvaders_8h_a0b361528e5b1e54470b00ef064464b95_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8h_a0b361528e5b1e54470b00ef064464b95_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{spaceinvaders_8h_afceda483e03bbe9320d74e45df9f9c32}\label{spaceinvaders_8h_afceda483e03bbe9320d74e45df9f9c32}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!store\_scores@{store\_scores}}
+\index{store\_scores@{store\_scores}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{store\_scores()}{store\_scores()}}
+{\footnotesize\ttfamily void() store\+\_\+scores (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_score}{Score}} $\ast$}]{array }\end{DoxyParamCaption})}
+
+
+
+Stores the given score array in the highscores file. File writing adapted from \href{https://www.programiz.com/c-programming/c-file-input-output}{\texttt{ https\+://www.\+programiz.\+com/c-\/programming/c-\/file-\/input-\/output}}. NOTE\+: The file path must be absolute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & Array of the scores to be stored. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8h_afceda483e03bbe9320d74e45df9f9c32_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{spaceinvaders_8h_a0b2a6a62c1f41986be80686c764dd19a}\label{spaceinvaders_8h_a0b2a6a62c1f41986be80686c764dd19a}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!update@{update}}
+\index{update@{update}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void() update (\begin{DoxyParamCaption}\item[{int $\ast$}]{no\+\_\+lives }\end{DoxyParamCaption})}
+
+
+
+Updates the game\textquotesingle{}s elements position (if appliable), checks colisions and updates the involved elements\textquotesingle{} lives/state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em no\+\_\+lives} & Current number of the game\textquotesingle{}s player lives. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spaceinvaders_8h_a0b2a6a62c1f41986be80686c764dd19a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{spaceinvaders_8h_a0b2a6a62c1f41986be80686c764dd19a_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{spaceinvaders_8h_a6bce1d88738df39ce6fb4603118aaf4c}\label{spaceinvaders_8h_a6bce1d88738df39ce6fb4603118aaf4c}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!aliens@{aliens}}
+\index{aliens@{aliens}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{aliens}{aliens}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_alien_group}{Alien\+Group}}$\ast$ aliens}
+
+\mbox{\Hypertarget{spaceinvaders_8h_a144d9a9cabab9de0142a6baee835ca6b}\label{spaceinvaders_8h_a144d9a9cabab9de0142a6baee835ca6b}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!bytes\_per\_pixel@{bytes\_per\_pixel}}
+\index{bytes\_per\_pixel@{bytes\_per\_pixel}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{bytes\_per\_pixel}{bytes\_per\_pixel}}
+{\footnotesize\ttfamily unsigned bytes\+\_\+per\+\_\+pixel\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{spaceinvaders_8h_a43e7e5a0a8f9069e6413b2066ca52f3e}\label{spaceinvaders_8h_a43e7e5a0a8f9069e6413b2066ca52f3e}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!h\_res@{h\_res}}
+\index{h\_res@{h\_res}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{h\_res}{h\_res}}
+{\footnotesize\ttfamily unsigned h\+\_\+res\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{spaceinvaders_8h_a911a4532bbc485f9a6b43e24878c9096}\label{spaceinvaders_8h_a911a4532bbc485f9a6b43e24878c9096}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!last\_alien\_mov@{last\_alien\_mov}}
+\index{last\_alien\_mov@{last\_alien\_mov}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{last\_alien\_mov}{last\_alien\_mov}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} last\+\_\+alien\+\_\+mov}
+
+\mbox{\Hypertarget{spaceinvaders_8h_a8f621f1e0b4e4176f1e67dc5031d891a}\label{spaceinvaders_8h_a8f621f1e0b4e4176f1e67dc5031d891a}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!shield1@{shield1}}
+\index{shield1@{shield1}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{shield1}{shield1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_shield}{Shield}}$\ast$ shield1}
+
+\mbox{\Hypertarget{spaceinvaders_8h_a48c72259ab4c049372115f62cd64d41f}\label{spaceinvaders_8h_a48c72259ab4c049372115f62cd64d41f}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!shield2@{shield2}}
+\index{shield2@{shield2}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{shield2}{shield2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_shield}{Shield}}$\ast$ shield2}
+
+\mbox{\Hypertarget{spaceinvaders_8h_ae216136d85958771f5667b34391f6b80}\label{spaceinvaders_8h_ae216136d85958771f5667b34391f6b80}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!shield3@{shield3}}
+\index{shield3@{shield3}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{shield3}{shield3}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_shield}{Shield}}$\ast$ shield3}
+
+\mbox{\Hypertarget{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}\label{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!ship@{ship}}
+\index{ship@{ship}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{ship}{ship}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_player}{Player}}$\ast$ ship}
+
+\mbox{\Hypertarget{spaceinvaders_8h_aa573dfe9991bd08b90eb8edaf34a19f6}\label{spaceinvaders_8h_aa573dfe9991bd08b90eb8edaf34a19f6}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!shots@{shots}}
+\index{shots@{shots}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{shots}{shots}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_shot}{Shot}}$\ast$ shots}
+
+\mbox{\Hypertarget{spaceinvaders_8h_a7c957f768142ea25b66fd1e434c52c54}\label{spaceinvaders_8h_a7c957f768142ea25b66fd1e434c52c54}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!updates@{updates}}
+\index{updates@{updates}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{updates}{updates}}
+{\footnotesize\ttfamily unsigned int updates}
+
+\mbox{\Hypertarget{spaceinvaders_8h_a5bda1b499253a8fbf3cab646f8760391}\label{spaceinvaders_8h_a5bda1b499253a8fbf3cab646f8760391}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!v\_res@{v\_res}}
+\index{v\_res@{v\_res}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{v\_res}{v\_res}}
+{\footnotesize\ttfamily unsigned v\+\_\+res\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{spaceinvaders_8h_a6f27020d1fd79626a71c9c65cd61ca8c}\label{spaceinvaders_8h_a6f27020d1fd79626a71c9c65cd61ca8c}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!vg\_buffer@{vg\_buffer}}
+\index{vg\_buffer@{vg\_buffer}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{vg\_buffer}{vg\_buffer}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ vg\+\_\+buffer\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{spaceinvaders_8h_a93a24e067b9083bed6fb5c0336fd7a01}\label{spaceinvaders_8h_a93a24e067b9083bed6fb5c0336fd7a01}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!video\_mem@{video\_mem}}
+\index{video\_mem@{video\_mem}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{video\_mem}{video\_mem}}
+{\footnotesize\ttfamily char$\ast$ video\+\_\+mem\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{spaceinvaders_8h_a05b298baa5d10b97c81240a52890aee5}\label{spaceinvaders_8h_a05b298baa5d10b97c81240a52890aee5}} 
+\index{spaceinvaders.h@{spaceinvaders.h}!wave@{wave}}
+\index{wave@{wave}!spaceinvaders.h@{spaceinvaders.h}}
+\doxysubsubsection{\texorpdfstring{wave}{wave}}
+{\footnotesize\ttfamily int wave}
 

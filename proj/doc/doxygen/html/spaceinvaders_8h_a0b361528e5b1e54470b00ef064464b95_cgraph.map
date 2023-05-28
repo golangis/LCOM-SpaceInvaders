@@ -1,0 +1,6 @@
+<map id="reload_aliens" name="reload_aliens">
+<area shape="rect" id="node1" title="Regenerates all the aliens when a new game wave is started." alt="" coords="5,31,103,57"/>
+<area shape="rect" id="node2" href="$alien_8c.html#af8f859696eaefd6cc2f765baaa8c6313" title="Initializes a group of aliens." alt="" coords="151,5,230,32"/>
+<area shape="rect" id="node4" href="$shield_8c.html#a46f87a7a9730d61f4db91cc66d61b2c6" title="Initializes a Shield with a given left uppermost x coordinate and id." alt="" coords="151,56,230,83"/>
+<area shape="rect" id="node3" href="$alien_8c.html#af19ba8e0046253fb160c07592b0e1be2" title="Initializes an alien with a given id and leftmost upper position." alt="" coords="278,5,350,32"/>
+</map>

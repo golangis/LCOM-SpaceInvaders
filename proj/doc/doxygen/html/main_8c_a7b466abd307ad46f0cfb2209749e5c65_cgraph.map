@@ -1,0 +1,21 @@
+<map id="game_over_menu_loop" name="game_over_menu_loop">
+<area shape="rect" id="node1" title="Processes the interrupts and calls correct functions while in the Game Over menu state." alt="" coords="5,259,159,285"/>
+<area shape="rect" id="node2" href="$spaceinvaders_8c.html#a0af91f71746c9e649dd1f2305c674e38" title="Draws the game over menu." alt="" coords="210,44,367,71"/>
+<area shape="rect" id="node5" href="$spaceinvaders_8c.html#aff9ce2c80067181fa64a67450da2c6fa" title="Initializes the game elements." alt="" coords="250,132,327,159"/>
+<area shape="rect" id="node10" href="$kbd_8c.html#aea970a154161a35f6894898a092ed70a" title="Handles Keyboard interrupts. Reads and stores the KBD data for later processing/interpretation." alt="" coords="259,208,318,235"/>
+<area shape="rect" id="node12" href="$kbd_8c.html#a349e104e331ffa69feb42f7c6d5682ff" title="Translates the KBD data into a key." alt="" coords="241,259,336,285"/>
+<area shape="rect" id="node14" href="$mouse_8c.html#a0c616957f5de45ec0a075a15b2438888" title="Returns whether the mouse&#39;s left button was clicked." alt="" coords="252,309,325,336"/>
+<area shape="rect" id="node15" href="$mouse_8c.html#a310254edf59d5de2a8df1b2888cc7431" title="Mouse interrupt handler. Gets the mouse packet and updates the user interface mouse struct." alt="" coords="207,360,370,387"/>
+<area shape="rect" id="node19" href="$timer_8c.html#aa327d05db9461ba7bcfc05072fc28b3e" title="Timer interrupt handler. Increments the timer counter." alt="" coords="212,411,365,437"/>
+<area shape="rect" id="node3" href="$video_8c.html#a1d7817e4e5198831c8e33e05a64e8ecf" title="Draws a XPM image with the leftmost upper pixel at the given coordinates." alt="" coords="421,5,537,32"/>
+<area shape="rect" id="node4" href="$video_8c.html#ab0332ee565f978f725c021b4eb35958e" title="Sets the pixel at the given coordinates to the given color." alt="" coords="587,5,706,32"/>
+<area shape="rect" id="node6" href="$alien_8c.html#af8f859696eaefd6cc2f765baaa8c6313" title="Initializes a group of aliens." alt="" coords="439,56,518,83"/>
+<area shape="rect" id="node8" href="$player_8c.html#a94d01ea7c997ed46d9f77cedbeb149c9" title="Initializes a Player (space ship)." alt="" coords="439,107,519,133"/>
+<area shape="rect" id="node9" href="$shield_8c.html#a46f87a7a9730d61f4db91cc66d61b2c6" title="Initializes a Shield with a given left uppermost x coordinate and id." alt="" coords="439,157,518,184"/>
+<area shape="rect" id="node7" href="$alien_8c.html#af19ba8e0046253fb160c07592b0e1be2" title="Initializes an alien with a given id and leftmost upper position." alt="" coords="610,56,683,83"/>
+<area shape="rect" id="node11" href="$utils_8c.html#ac001a9276b9ecff0ddabd111fac79211" title="Reads a byte from a given port." alt="" coords="604,309,689,336"/>
+<area shape="rect" id="node13" href="$kbd_8c.html#ac687b1a8ed53a6d9a506dbf1ccb920e1" title=" " alt="" coords="443,259,514,285"/>
+<area shape="rect" id="node16" href="$mouse_8c.html#a7fe4a8e593d4206f11916156e5d46574" title="Reads and parses the packet from the mouse output buffer." alt="" coords="433,309,525,336"/>
+<area shape="rect" id="node17" href="$mouse_8c.html#a988fc64ae581c0f124ad68f50714f24a" title="Reads the mouse status byte." alt="" coords="418,360,539,387"/>
+<area shape="rect" id="node18" href="$mouse_8c.html#aeff6e8956d863ef6147b8c9475422574" title="Updates the user interface mouse." alt="" coords="426,411,532,437"/>
+</map>

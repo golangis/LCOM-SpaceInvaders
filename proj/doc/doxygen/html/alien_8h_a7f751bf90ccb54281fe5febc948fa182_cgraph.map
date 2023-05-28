@@ -1,0 +1,4 @@
+<map id="can_alien_group_move" name="can_alien_group_move">
+<area shape="rect" id="node1" title="Returns whether a group of aliens can move in a given direction." alt="" coords="5,5,158,32"/>
+<area shape="rect" id="node2" href="$alien_8c.html#a71ebc52ed3ad063304bfbad6e0466e91" title="Returns whether an alien can move in a given direction." alt="" coords="206,5,319,32"/>
+</map>

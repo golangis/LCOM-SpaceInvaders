@@ -89,54 +89,846 @@ $(function() {
 <code>#include &quot;<a class="el" href="timer_8h_source.html">framework/timer/timer.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="mouse_8h_source.html">framework/mouse/mouse.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="video_8h_source.html">framework/video/video.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="spaceinvaders_8h_source.html">spaceinvaders.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="spaceinvaders_8h_source.html">logic/spaceinvaders.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for main.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c__incl.png" border="0" usemap="#a_c_1_2_users_2_pedro_2_documents_22_l_e_i_c_22_xC2_xBA_01semestre_2_l_c_2_m_i_n_i_x-_l_c_o_m_2shared_2proj_2src_2main_8c" alt=""/></div>
+<map name="a_c_1_2_users_2_pedro_2_documents_22_l_e_i_c_22_xC2_xBA_01semestre_2_l_c_2_m_i_n_i_x-_l_c_o_m_2shared_2proj_2src_2main_8c" id="a_c_1_2_users_2_pedro_2_documents_22_l_e_i_c_22_xC2_xBA_01semestre_2_l_c_2_m_i_n_i_x-_l_c_o_m_2shared_2proj_2src_2main_8c">
+<area shape="rect" title="General functions that manage the app logic." alt="" coords="392,5,573,80"/>
+<area shape="rect" title=" " alt="" coords="328,443,405,469"/>
+<area shape="rect" title=" " alt="" coords="360,368,424,395"/>
+<area shape="rect" href="kbd_8h.html" title="Constants for programming the KBC. Functions of the KBC framework." alt="" coords="638,203,775,245"/>
+<area shape="rect" href="rtc_8h.html" title="Constants for programming the RTC. Functions of the RTC framework." alt="" coords="484,211,614,237"/>
+<area shape="rect" href="timer_8h.html" title="Functions to program the i8254 Timer." alt="" coords="56,293,213,320"/>
+<area shape="rect" href="mouse_8h.html" title="Framework for the Mouse." alt="" coords="283,211,460,237"/>
+<area shape="rect" href="video_8h.html" title="Functions for programming the video card. Also contains variables to store the xpm images and maps dr..." alt="" coords="1348,368,1505,395"/>
+<area shape="rect" href="spaceinvaders_8h.html" title="Game logic functions. Stores the game elements and assures the interaction between them." alt="" coords="892,128,1038,155"/>
+<area shape="rect" title=" " alt="" coords="877,293,952,320"/>
+<area shape="rect" title=" " alt="" coords="738,293,798,320"/>
+<area shape="rect" href="utils_8h.html" title="Set of auxiliary functions to be used in the framework." alt="" coords="438,293,535,320"/>
+<area shape="rect" title=" " alt="" coords="44,368,137,395"/>
+<area shape="rect" href="i8254_8h.html" title="Constants for programming the i8254 Timer." alt="" coords="161,368,225,395"/>
+<area shape="rect" href="i8042_8h.html" title="Constants for programming the i8042 (mouse oriented)." alt="" coords="351,293,414,320"/>
+<area shape="rect" title=" " alt="" coords="429,443,493,469"/>
+<area shape="rect" title=" " alt="" coords="872,443,1000,469"/>
+<area shape="rect" title=" " alt="" coords="1024,443,1159,469"/>
+<area shape="rect" title=" " alt="" coords="1183,443,1296,469"/>
+<area shape="rect" title=" " alt="" coords="1320,443,1429,469"/>
+<area shape="rect" title=" " alt="" coords="1452,443,1555,469"/>
+<area shape="rect" title=" " alt="" coords="1579,443,1698,469"/>
+<area shape="rect" title=" " alt="" coords="1721,443,1865,469"/>
+<area shape="rect" title=" " alt="" coords="1888,443,2050,469"/>
+<area shape="rect" title=" " alt="" coords="2074,443,2189,469"/>
+<area shape="rect" title=" " alt="" coords="2213,443,2325,469"/>
+<area shape="rect" title=" " alt="" coords="2348,443,2462,469"/>
+<area shape="rect" title=" " alt="" coords="2486,443,2591,469"/>
+<area shape="rect" title=" " alt="" coords="2615,443,2755,469"/>
+<area shape="rect" title=" " alt="" coords="517,443,672,469"/>
+<area shape="rect" title=" " alt="" coords="696,443,847,469"/>
+<area shape="rect" title=" " alt="" coords="976,293,1039,320"/>
+<area shape="rect" href="alien_8h.html" title="Represent and manipulate the game&#39;s aliens." alt="" coords="1003,211,1093,237"/>
+<area shape="rect" href="direction_8h.html" title="Enumerated type for a game&#39;s movement direction." alt="" coords="1114,293,1227,320"/>
+<area shape="rect" href="shot_8h.html" title="Represents and manipulates the game&#39;s shots." alt="" coords="1301,293,1389,320"/>
+<area shape="rect" href="player_8h.html" title="Represents and manipulates the game&#39;s player (space ship). Note: The terms &quot;Ship&quot; and &quot;Player&quot; are us..." alt="" coords="1168,211,1266,237"/>
+<area shape="rect" href="shield_8h.html" title="Represents and manipulates the game&#39;s shields." alt="" coords="1342,211,1439,237"/>
+</map>
+</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top"><a id="a0ddf1224851353fc92bfbff6f499fa97" name="a0ddf1224851353fc92bfbff6f499fa97"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, char *argv[])</td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
 <tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31f00e3232e268b63b905a17a164542b"><td class="memItemLeft" align="right" valign="top"><a id="a31f00e3232e268b63b905a17a164542b" name="a31f00e3232e268b63b905a17a164542b"></a>
-void()&#160;</td><td class="memItemRight" valign="bottom"><b>highscores_loop</b> (bool *make, enum <a class="el" href="kbd_8h.html#a635055f02cc43001acef32526cac2a45">kbd_key</a> *key, bool *two_bytes, uint8_t *scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state *state, <a class="el" href="struct_score.html">Score</a> *scores)</td></tr>
+<tr class="memitem:a31f00e3232e268b63b905a17a164542b"><td class="memItemLeft" align="right" valign="top">void()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a31f00e3232e268b63b905a17a164542b">highscores_loop</a> (bool *make, enum <a class="el" href="kbd_8h.html#a635055f02cc43001acef32526cac2a45">kbd_key</a> *key, bool *two_bytes, uint8_t *scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum <a class="el" href="spaceinvaders_8h.html#adc6e5733fc3c22f0a7b2914188c49c90">state</a> *<a class="el" href="spaceinvaders_8h.html#adc6e5733fc3c22f0a7b2914188c49c90">state</a>, <a class="el" href="struct_score.html">Score</a> *scores)</td></tr>
+<tr class="memdesc:a31f00e3232e268b63b905a17a164542b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes the interrupts and calls correct functions while in the Highscores menu state.  <a href="main_8c.html#a31f00e3232e268b63b905a17a164542b">More...</a><br /></td></tr>
 <tr class="separator:a31f00e3232e268b63b905a17a164542b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca94587a192dc9d6e25886d009f3ee76"><td class="memItemLeft" align="right" valign="top"><a id="aca94587a192dc9d6e25886d009f3ee76" name="aca94587a192dc9d6e25886d009f3ee76"></a>
-void()&#160;</td><td class="memItemRight" valign="bottom"><b>game_loop</b> (bool *make, enum <a class="el" href="kbd_8h.html#a635055f02cc43001acef32526cac2a45">kbd_key</a> *key, bool *two_bytes, uint8_t *scan, bool *can_shoot, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state *state)</td></tr>
+<tr class="memitem:aca94587a192dc9d6e25886d009f3ee76"><td class="memItemLeft" align="right" valign="top">void()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#aca94587a192dc9d6e25886d009f3ee76">game_loop</a> (bool *make, enum <a class="el" href="kbd_8h.html#a635055f02cc43001acef32526cac2a45">kbd_key</a> *key, bool *two_bytes, uint8_t *scan, bool *can_shoot, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum <a class="el" href="spaceinvaders_8h.html#adc6e5733fc3c22f0a7b2914188c49c90">state</a> *<a class="el" href="spaceinvaders_8h.html#adc6e5733fc3c22f0a7b2914188c49c90">state</a>)</td></tr>
+<tr class="memdesc:aca94587a192dc9d6e25886d009f3ee76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes the interrupts and calls correct functions while in the Game state.  <a href="main_8c.html#aca94587a192dc9d6e25886d009f3ee76">More...</a><br /></td></tr>
 <tr class="separator:aca94587a192dc9d6e25886d009f3ee76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fe23b1eda8779f64c72241020b3f61a"><td class="memItemLeft" align="right" valign="top"><a id="a5fe23b1eda8779f64c72241020b3f61a" name="a5fe23b1eda8779f64c72241020b3f61a"></a>
-void()&#160;</td><td class="memItemRight" valign="bottom"><b>mainMenu_loop</b> (bool *make, enum <a class="el" href="kbd_8h.html#a635055f02cc43001acef32526cac2a45">kbd_key</a> *key, bool *two_bytes, uint8_t *scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state *state)</td></tr>
-<tr class="separator:a5fe23b1eda8779f64c72241020b3f61a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b9bbd70f3beb8bf28ec1244cc483122"><td class="memItemLeft" align="right" valign="top"><a id="a1b9bbd70f3beb8bf28ec1244cc483122" name="a1b9bbd70f3beb8bf28ec1244cc483122"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>gameOverMenu_loop</b> (bool *make, enum <a class="el" href="kbd_8h.html#a635055f02cc43001acef32526cac2a45">kbd_key</a> *key, bool *two_bytes, uint8_t *scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state *state)</td></tr>
-<tr class="separator:a1b9bbd70f3beb8bf28ec1244cc483122"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad290208c74ef25eb347d1d96a390cd66"><td class="memItemLeft" align="right" valign="top"><a id="ad290208c74ef25eb347d1d96a390cd66" name="ad290208c74ef25eb347d1d96a390cd66"></a>
-int()&#160;</td><td class="memItemRight" valign="bottom"><b>proj_main_loop</b> (int argc, char **argv)</td></tr>
+<tr class="memitem:a85ddf0bf65650526685ffbfddd3e897f"><td class="memItemLeft" align="right" valign="top">void()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a85ddf0bf65650526685ffbfddd3e897f">main_menu_loop</a> (bool *make, enum <a class="el" href="kbd_8h.html#a635055f02cc43001acef32526cac2a45">kbd_key</a> *key, bool *two_bytes, uint8_t *scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum <a class="el" href="spaceinvaders_8h.html#adc6e5733fc3c22f0a7b2914188c49c90">state</a> *<a class="el" href="spaceinvaders_8h.html#adc6e5733fc3c22f0a7b2914188c49c90">state</a>)</td></tr>
+<tr class="memdesc:a85ddf0bf65650526685ffbfddd3e897f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes the interrupts and calls correct functions while in the Main menu state.  <a href="main_8c.html#a85ddf0bf65650526685ffbfddd3e897f">More...</a><br /></td></tr>
+<tr class="separator:a85ddf0bf65650526685ffbfddd3e897f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b466abd307ad46f0cfb2209749e5c65"><td class="memItemLeft" align="right" valign="top">void()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a7b466abd307ad46f0cfb2209749e5c65">game_over_menu_loop</a> (bool *make, enum <a class="el" href="kbd_8h.html#a635055f02cc43001acef32526cac2a45">kbd_key</a> *key, bool *two_bytes, uint8_t *scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum <a class="el" href="spaceinvaders_8h.html#adc6e5733fc3c22f0a7b2914188c49c90">state</a> *<a class="el" href="spaceinvaders_8h.html#adc6e5733fc3c22f0a7b2914188c49c90">state</a>)</td></tr>
+<tr class="memdesc:a7b466abd307ad46f0cfb2209749e5c65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes the interrupts and calls correct functions while in the Game Over menu state.  <a href="main_8c.html#a7b466abd307ad46f0cfb2209749e5c65">More...</a><br /></td></tr>
+<tr class="separator:a7b466abd307ad46f0cfb2209749e5c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad290208c74ef25eb347d1d96a390cd66"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ad290208c74ef25eb347d1d96a390cd66">proj_main_loop</a> (int argc, char **argv)</td></tr>
+<tr class="memdesc:ad290208c74ef25eb347d1d96a390cd66"><td class="mdescLeft">&#160;</td><td class="mdescRight">App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts. Checks interrupt existance and calls different loops according to the state, sending the interrupt flags for the loops to process them. Unsubscribes interrupts and exits video card video mode to text mode.  <a href="main_8c.html#ad290208c74ef25eb347d1d96a390cd66">More...</a><br /></td></tr>
 <tr class="separator:ad290208c74ef25eb347d1d96a390cd66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a8cd4690e8c52dc256304da4d3ce4ba4f"><td class="memItemLeft" align="right" valign="top"><a id="a8cd4690e8c52dc256304da4d3ce4ba4f" name="a8cd4690e8c52dc256304da4d3ce4ba4f"></a>
-<a class="el" href="struct_player.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>ship</b></td></tr>
+<tr class="memitem:a970a1571b3380fa3d045308e4e9b4996"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a970a1571b3380fa3d045308e4e9b4996">x_mouse_delta</a></td></tr>
+<tr class="separator:a970a1571b3380fa3d045308e4e9b4996"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cd4690e8c52dc256304da4d3ce4ba4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_player.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a8cd4690e8c52dc256304da4d3ce4ba4f">ship</a></td></tr>
 <tr class="separator:a8cd4690e8c52dc256304da4d3ce4ba4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f621f1e0b4e4176f1e67dc5031d891a"><td class="memItemLeft" align="right" valign="top"><a id="a8f621f1e0b4e4176f1e67dc5031d891a" name="a8f621f1e0b4e4176f1e67dc5031d891a"></a>
-<a class="el" href="struct_shield.html">Shield</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>shield1</b></td></tr>
+<tr class="memitem:a8f621f1e0b4e4176f1e67dc5031d891a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_shield.html">Shield</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a8f621f1e0b4e4176f1e67dc5031d891a">shield1</a></td></tr>
 <tr class="separator:a8f621f1e0b4e4176f1e67dc5031d891a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48c72259ab4c049372115f62cd64d41f"><td class="memItemLeft" align="right" valign="top"><a id="a48c72259ab4c049372115f62cd64d41f" name="a48c72259ab4c049372115f62cd64d41f"></a>
-<a class="el" href="struct_shield.html">Shield</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>shield2</b></td></tr>
+<tr class="memitem:a48c72259ab4c049372115f62cd64d41f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_shield.html">Shield</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a48c72259ab4c049372115f62cd64d41f">shield2</a></td></tr>
 <tr class="separator:a48c72259ab4c049372115f62cd64d41f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae216136d85958771f5667b34391f6b80"><td class="memItemLeft" align="right" valign="top"><a id="ae216136d85958771f5667b34391f6b80" name="ae216136d85958771f5667b34391f6b80"></a>
-<a class="el" href="struct_shield.html">Shield</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>shield3</b></td></tr>
+<tr class="memitem:ae216136d85958771f5667b34391f6b80"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_shield.html">Shield</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ae216136d85958771f5667b34391f6b80">shield3</a></td></tr>
 <tr class="separator:ae216136d85958771f5667b34391f6b80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f08eb193e0aedb134a1481913b6a823"><td class="memItemLeft" align="right" valign="top"><a id="a0f08eb193e0aedb134a1481913b6a823" name="a0f08eb193e0aedb134a1481913b6a823"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>timer_counter</b></td></tr>
+<tr class="memitem:a0f08eb193e0aedb134a1481913b6a823"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a0f08eb193e0aedb134a1481913b6a823">timer_counter</a></td></tr>
 <tr class="separator:a0f08eb193e0aedb134a1481913b6a823"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9eab91667db4d35c7231dcddf7b89a76"><td class="memItemLeft" align="right" valign="top"><a id="a9eab91667db4d35c7231dcddf7b89a76" name="a9eab91667db4d35c7231dcddf7b89a76"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
+<tr class="memitem:a9eab91667db4d35c7231dcddf7b89a76"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a9eab91667db4d35c7231dcddf7b89a76">data</a></td></tr>
 <tr class="separator:a9eab91667db4d35c7231dcddf7b89a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12550c2b9cf9c80ecdc701dede9c4e4c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_score.html">Score</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a12550c2b9cf9c80ecdc701dede9c4e4c">hs</a></td></tr>
+<tr class="separator:a12550c2b9cf9c80ecdc701dede9c4e4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >General functions that manage the app logic. </p>
 <p >Loops that receive interrupt information, call the interrupt handlers and send commands and information to the functions delcared in <a class="el" href="spaceinvaders_8h.html" title="Game logic functions. Stores the game elements and assures the interaction between them.">spaceinvaders.h</a>. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="aca94587a192dc9d6e25886d009f3ee76" name="aca94587a192dc9d6e25886d009f3ee76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca94587a192dc9d6e25886d009f3ee76">&#9670;&#160;</a></span>game_loop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void() game_loop </td>
+          <td>(</td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>make</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="kbd_8h.html#a635055f02cc43001acef32526cac2a45">kbd_key</a> *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>two_bytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>scan</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>can_shoot</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ipc_timer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ipc_keyboard</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ipc_mouse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">message&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="spaceinvaders_8h.html#adc6e5733fc3c22f0a7b2914188c49c90">state</a> *&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Processes the interrupts and calls correct functions while in the Game state. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_aca94587a192dc9d6e25886d009f3ee76_cgraph.png" border="0" usemap="#amain_8c_aca94587a192dc9d6e25886d009f3ee76_cgraph" alt=""/></div>
+<map name="amain_8c_aca94587a192dc9d6e25886d009f3ee76_cgraph" id="amain_8c_aca94587a192dc9d6e25886d009f3ee76_cgraph">
+<area shape="rect" title="Processes the interrupts and calls correct functions while in the Game state." alt="" coords="5,588,90,615"/>
+<area shape="rect" href="spaceinvaders_8c.html#abd975f557a5c526551dafdb6242ea898" title="Builds a Score struct instance according to a given points number and rtc_time struct instance." alt="" coords="176,157,263,184"/>
+<area shape="rect" href="spaceinvaders_8c.html#a84aa668c4684547c795670fc72531598" title="General game drawing function. Calls the elements&#39; respective drawing functions." alt="" coords="195,208,244,235"/>
+<area shape="rect" href="player_8c.html#a0df41d797d15f08f94cbf3fa3edbef3d" title="Creates a shot fired from the given player, according to its coordinates." alt="" coords="200,309,239,336"/>
+<area shape="rect" href="rtc_8c.html#a4ad822f0b94f8d0c1e0071219174b6ef" title="Gets the current time from the RTC and stores into a given rtc_time struct instance." alt="" coords="184,461,255,488"/>
+<area shape="rect" href="kbd_8c.html#aea970a154161a35f6894898a092ed70a" title="Handles Keyboard interrupts. Reads and stores the KBD data for later processing/interpretation." alt="" coords="190,385,249,412"/>
+<area shape="rect" href="kbd_8c.html#a349e104e331ffa69feb42f7c6d5682ff" title="Translates the KBD data into a key." alt="" coords="172,512,267,539"/>
+<area shape="rect" href="mouse_8c.html#a0c616957f5de45ec0a075a15b2438888" title="Returns whether the mouse&#39;s left button was clicked." alt="" coords="183,563,256,589"/>
+<area shape="rect" href="spaceinvaders_8c.html#a4c53c60b9eb88e3c00d9d0fc59dae462" title="Loads information from the file the top&#45;10 highscores are stored in, parses them into Score struct in..." alt="" coords="174,613,265,640"/>
+<area shape="rect" href="mouse_8c.html#a310254edf59d5de2a8df1b2888cc7431" title="Mouse interrupt handler. Gets the mouse packet and updates the user interface mouse struct." alt="" coords="138,664,301,691"/>
+<area shape="rect" href="player_8c.html#a87366d070986baef7c91357e49539f12" title="Moves a given player in the desired direction if possible." alt="" coords="173,715,266,741"/>
+<area shape="rect" href="spaceinvaders_8c.html#ae0cafa3b93c40f3eb66676d574f9985e" title="Processes a score and determines if it is elegible to be amongst the top&#45;10. If so,..." alt="" coords="166,765,273,792"/>
+<area shape="rect" href="spaceinvaders_8c.html#afceda483e03bbe9320d74e45df9f9c32" title="Stores the given score array in the highscores file. File writing adapted from https://www...." alt="" coords="171,816,268,843"/>
+<area shape="rect" href="timer_8c.html#aa327d05db9461ba7bcfc05072fc28b3e" title="Timer interrupt handler. Increments the timer counter." alt="" coords="143,867,296,893"/>
+<area shape="rect" href="spaceinvaders_8c.html#a0b2a6a62c1f41986be80686c764dd19a" title="Updates the game&#39;s elements position (if appliable), checks colisions and updates the involved elemen..." alt="" coords="189,1069,250,1096"/>
+<area shape="rect" href="alien_8c.html#a54999c9c1299cdf99a0c3b8a2a176fae" title="Draws a group of aliens." alt="" coords="381,157,470,184"/>
+<area shape="rect" href="player_8c.html#a06db67ec61088b16360980f24230e62f" title="Draws hearts representing the given (player&#39;s) lives." alt="" coords="717,309,798,336"/>
+<area shape="rect" href="player_8c.html#a6a7c558ce856f450303ab6ad449ad50f" title="Draws a player by its coordinates and corresponding XPM image." alt="" coords="562,208,652,235"/>
+<area shape="rect" href="player_8c.html#af50ad9e73493590a4d110b25b70030c6" title="Draws the given player&#39;s score in the screen." alt="" coords="382,56,469,83"/>
+<area shape="rect" href="shield_8c.html#aa29aea8cc95d1b319a3d12697032d6b1" title="Draws a given shield according to its position and lives." alt="" coords="713,107,802,133"/>
+<area shape="rect" href="alien_8c.html#a7a09a76bbff752e5cb6eeac7c56fd622" title="Draws an alien." alt="" coords="566,157,648,184"/>
+<area shape="rect" href="shot_8c.html#a3c1b5ef797a64fc81d09d04f68f99673" title="Draws a given shot in the screen according to its position and source." alt="" coords="717,208,798,235"/>
+<area shape="rect" href="video_8c.html#a1d7817e4e5198831c8e33e05a64e8ecf" title="Draws a XPM image with the leftmost upper pixel at the given coordinates." alt="" coords="850,183,966,209"/>
+<area shape="rect" href="player_8c.html#a9d343b802719d4768760c1e9b146f518" title="Auxiliary function to draw the score." alt="" coords="549,5,665,32"/>
+<area shape="rect" href="shot_8c.html#adbf78f340c9cb30ad382b64ad88b3bb4" title="Initializes a shot with given left uppermost coordinates and source." alt="" coords="390,309,460,336"/>
+<area shape="rect" href="utils_8c.html#aff3396c8be829b5b1dd36fc4f81382ff" title="Converts a given value in BCD to binary. Got the function body from https://github...." alt="" coords="383,411,467,437"/>
+<area shape="rect" href="rtc_8c.html#a200e0e9e22af694e13f67b81022196e7" title="Reads a byte from the RTC&#39;s data register." alt="" coords="391,512,459,539"/>
+<area shape="rect" href="rtc_8c.html#a3d0e0832042b95a85fc00e7baa9f1e19" title="Writes a given address to be read from the RTC to the RTC&#39;s address register." alt="" coords="367,461,483,488"/>
+<area shape="rect" href="utils_8c.html#ac001a9276b9ecff0ddabd111fac79211" title="Reads a byte from a given port." alt="" coords="565,563,649,589"/>
+<area shape="rect" href="kbd_8c.html#ac687b1a8ed53a6d9a506dbf1ccb920e1" title=" " alt="" coords="390,563,461,589"/>
+<area shape="rect" href="mouse_8c.html#a7fe4a8e593d4206f11916156e5d46574" title="Reads and parses the packet from the mouse output buffer." alt="" coords="379,613,471,640"/>
+<area shape="rect" href="mouse_8c.html#a988fc64ae581c0f124ad68f50714f24a" title="Reads the mouse status byte." alt="" coords="365,664,486,691"/>
+<area shape="rect" href="mouse_8c.html#aeff6e8956d863ef6147b8c9475422574" title="Updates the user interface mouse." alt="" coords="372,715,478,741"/>
+<area shape="rect" href="player_8c.html#a3d5d52b16a8103ff777bfa1ff14ea44f" title="Returns whether the given player can be moved in the given direction." alt="" coords="365,765,486,792"/>
+<area shape="rect" href="alien_8c.html#a7f751bf90ccb54281fe5febc948fa182" title="Returns whether a group of aliens can move in a given direction." alt="" coords="349,968,501,995"/>
+<area shape="rect" href="shield_8c.html#a05c98b39588bdedcdf3876bd81acca62" title="Causes damage to a given shield (decrements its lives) and alters its coordinates to match the new th..." alt="" coords="392,1019,459,1045"/>
+<area shape="rect" href="alien_8c.html#a609f32ec375ba493430c600774033d75" title="Deletes an alien&#39;s shot." alt="" coords="364,1069,486,1096"/>
+<area shape="rect" href="player_8c.html#a05477977a2ba3cb090037ee5bb753bdf" title="Deletes a given player&#39;s shot with a given index within the active player&#39;s shots array." alt="" coords="360,1120,490,1147"/>
+<area shape="rect" href="alien_8c.html#abf25c5836219ff077d2841a77a4ed187" title="Kills an alien with a given id from a group." alt="" coords="389,1171,461,1197"/>
+<area shape="rect" href="alien_8c.html#a682db2db98543956c7eb146ea0cc5731" title="Checks if a given shot hit any alien within a group and returns the index of the hit alien." alt="" coords="389,1221,462,1248"/>
+<area shape="rect" href="player_8c.html#a7ea936c93adb43f078c34be6a831b0c2" title="Increments the given player&#39;s score according to the id of the alien they killed, since the number of..." alt="" coords="367,1272,484,1299"/>
+<area shape="rect" href="player_8c.html#a03020012085a4bc95ab704a0a858d7b3" title="Decrements the given player&#39;s lives by a unit." alt="" coords="388,1323,463,1349"/>
+<area shape="rect" href="alien_8c.html#a90225bb26dbfe22e476bab8087e6eb2a" title="Moves a group of aliens in a given direction." alt="" coords="379,1373,471,1400"/>
+<area shape="rect" href="shot_8c.html#af59b390a2e0c4b2a0e2f648a42bb1b91" title="Moves the given shot according to its source." alt="" coords="384,816,467,843"/>
+<area shape="rect" href="spaceinvaders_8c.html#a0b361528e5b1e54470b00ef064464b95" title="Regenerates all the aliens when a new game wave is started." alt="" coords="377,867,474,893"/>
+<area shape="rect" href="alien_8c.html#a449d802007e914ce4460e85d116cb35c" title="Makes a random alien within a group shoot." alt="" coords="378,917,472,944"/>
+<area shape="rect" href="alien_8c.html#a71ebc52ed3ad063304bfbad6e0466e91" title="Returns whether an alien can move in a given direction." alt="" coords="550,968,664,995"/>
+<area shape="rect" href="alien_8c.html#a425ecb9da8fca28910d8513379d819a8" title="Returns whether a given alien was hit by a given shot." alt="" coords="552,1221,662,1248"/>
+<area shape="rect" href="alien_8c.html#af8f859696eaefd6cc2f765baaa8c6313" title="Initializes a group of aliens." alt="" coords="567,892,647,919"/>
+<area shape="rect" href="shield_8c.html#a46f87a7a9730d61f4db91cc66d61b2c6" title="Initializes a Shield with a given left uppermost x coordinate and id." alt="" coords="567,841,647,868"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_aca94587a192dc9d6e25886d009f3ee76_icgraph.png" border="0" usemap="#amain_8c_aca94587a192dc9d6e25886d009f3ee76_icgraph" alt=""/></div>
+<map name="amain_8c_aca94587a192dc9d6e25886d009f3ee76_icgraph" id="amain_8c_aca94587a192dc9d6e25886d009f3ee76_icgraph">
+<area shape="rect" title="Processes the interrupts and calls correct functions while in the Game state." alt="" coords="162,5,246,32"/>
+<area shape="rect" href="main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,5,114,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7b466abd307ad46f0cfb2209749e5c65" name="a7b466abd307ad46f0cfb2209749e5c65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b466abd307ad46f0cfb2209749e5c65">&#9670;&#160;</a></span>game_over_menu_loop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void() game_over_menu_loop </td>
+          <td>(</td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>make</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="kbd_8h.html#a635055f02cc43001acef32526cac2a45">kbd_key</a> *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>two_bytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>scan</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ipc_timer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ipc_keyboard</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ipc_mouse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">message&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="spaceinvaders_8h.html#adc6e5733fc3c22f0a7b2914188c49c90">state</a> *&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Processes the interrupts and calls correct functions while in the Game Over menu state. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_a7b466abd307ad46f0cfb2209749e5c65_cgraph.png" border="0" usemap="#amain_8c_a7b466abd307ad46f0cfb2209749e5c65_cgraph" alt=""/></div>
+<map name="amain_8c_a7b466abd307ad46f0cfb2209749e5c65_cgraph" id="amain_8c_a7b466abd307ad46f0cfb2209749e5c65_cgraph">
+<area shape="rect" title="Processes the interrupts and calls correct functions while in the Game Over menu state." alt="" coords="5,259,159,285"/>
+<area shape="rect" href="spaceinvaders_8c.html#a0af91f71746c9e649dd1f2305c674e38" title="Draws the game over menu." alt="" coords="210,44,367,71"/>
+<area shape="rect" href="spaceinvaders_8c.html#aff9ce2c80067181fa64a67450da2c6fa" title="Initializes the game elements." alt="" coords="250,132,327,159"/>
+<area shape="rect" href="kbd_8c.html#aea970a154161a35f6894898a092ed70a" title="Handles Keyboard interrupts. Reads and stores the KBD data for later processing/interpretation." alt="" coords="259,208,318,235"/>
+<area shape="rect" href="kbd_8c.html#a349e104e331ffa69feb42f7c6d5682ff" title="Translates the KBD data into a key." alt="" coords="241,259,336,285"/>
+<area shape="rect" href="mouse_8c.html#a0c616957f5de45ec0a075a15b2438888" title="Returns whether the mouse&#39;s left button was clicked." alt="" coords="252,309,325,336"/>
+<area shape="rect" href="mouse_8c.html#a310254edf59d5de2a8df1b2888cc7431" title="Mouse interrupt handler. Gets the mouse packet and updates the user interface mouse struct." alt="" coords="207,360,370,387"/>
+<area shape="rect" href="timer_8c.html#aa327d05db9461ba7bcfc05072fc28b3e" title="Timer interrupt handler. Increments the timer counter." alt="" coords="212,411,365,437"/>
+<area shape="rect" href="video_8c.html#a1d7817e4e5198831c8e33e05a64e8ecf" title="Draws a XPM image with the leftmost upper pixel at the given coordinates." alt="" coords="421,5,537,32"/>
+<area shape="rect" href="video_8c.html#ab0332ee565f978f725c021b4eb35958e" title="Sets the pixel at the given coordinates to the given color." alt="" coords="587,5,706,32"/>
+<area shape="rect" href="alien_8c.html#af8f859696eaefd6cc2f765baaa8c6313" title="Initializes a group of aliens." alt="" coords="439,56,518,83"/>
+<area shape="rect" href="player_8c.html#a94d01ea7c997ed46d9f77cedbeb149c9" title="Initializes a Player (space ship)." alt="" coords="439,107,519,133"/>
+<area shape="rect" href="shield_8c.html#a46f87a7a9730d61f4db91cc66d61b2c6" title="Initializes a Shield with a given left uppermost x coordinate and id." alt="" coords="439,157,518,184"/>
+<area shape="rect" href="alien_8c.html#af19ba8e0046253fb160c07592b0e1be2" title="Initializes an alien with a given id and leftmost upper position." alt="" coords="610,56,683,83"/>
+<area shape="rect" href="utils_8c.html#ac001a9276b9ecff0ddabd111fac79211" title="Reads a byte from a given port." alt="" coords="604,309,689,336"/>
+<area shape="rect" href="kbd_8c.html#ac687b1a8ed53a6d9a506dbf1ccb920e1" title=" " alt="" coords="443,259,514,285"/>
+<area shape="rect" href="mouse_8c.html#a7fe4a8e593d4206f11916156e5d46574" title="Reads and parses the packet from the mouse output buffer." alt="" coords="433,309,525,336"/>
+<area shape="rect" href="mouse_8c.html#a988fc64ae581c0f124ad68f50714f24a" title="Reads the mouse status byte." alt="" coords="418,360,539,387"/>
+<area shape="rect" href="mouse_8c.html#aeff6e8956d863ef6147b8c9475422574" title="Updates the user interface mouse." alt="" coords="426,411,532,437"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_a7b466abd307ad46f0cfb2209749e5c65_icgraph.png" border="0" usemap="#amain_8c_a7b466abd307ad46f0cfb2209749e5c65_icgraph" alt=""/></div>
+<map name="amain_8c_a7b466abd307ad46f0cfb2209749e5c65_icgraph" id="amain_8c_a7b466abd307ad46f0cfb2209749e5c65_icgraph">
+<area shape="rect" title="Processes the interrupts and calls correct functions while in the Game Over menu state." alt="" coords="162,5,315,32"/>
+<area shape="rect" href="main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,5,114,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a31f00e3232e268b63b905a17a164542b" name="a31f00e3232e268b63b905a17a164542b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31f00e3232e268b63b905a17a164542b">&#9670;&#160;</a></span>highscores_loop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void() highscores_loop </td>
+          <td>(</td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>make</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="kbd_8h.html#a635055f02cc43001acef32526cac2a45">kbd_key</a> *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>two_bytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>scan</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ipc_timer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ipc_keyboard</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ipc_mouse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">message&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="spaceinvaders_8h.html#adc6e5733fc3c22f0a7b2914188c49c90">state</a> *&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_score.html">Score</a> *&#160;</td>
+          <td class="paramname"><em>scores</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Processes the interrupts and calls correct functions while in the Highscores menu state. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_a31f00e3232e268b63b905a17a164542b_cgraph.png" border="0" usemap="#amain_8c_a31f00e3232e268b63b905a17a164542b_cgraph" alt=""/></div>
+<map name="amain_8c_a31f00e3232e268b63b905a17a164542b_cgraph" id="amain_8c_a31f00e3232e268b63b905a17a164542b_cgraph">
+<area shape="rect" title="Processes the interrupts and calls correct functions while in the Highscores menu state." alt="" coords="5,107,121,133"/>
+<area shape="rect" href="spaceinvaders_8c.html#ad571496285082d7d70e3ca362c1b04bb" title="Draws the highscore page, given a pre&#45;generated top&#45;10 score array." alt="" coords="188,5,313,32"/>
+<area shape="rect" href="kbd_8c.html#aea970a154161a35f6894898a092ed70a" title="Handles Keyboard interrupts. Reads and stores the KBD data for later processing/interpretation." alt="" coords="221,56,280,83"/>
+<area shape="rect" href="kbd_8c.html#a349e104e331ffa69feb42f7c6d5682ff" title="Translates the KBD data into a key." alt="" coords="203,107,298,133"/>
+<area shape="rect" href="mouse_8c.html#a310254edf59d5de2a8df1b2888cc7431" title="Mouse interrupt handler. Gets the mouse packet and updates the user interface mouse struct." alt="" coords="169,157,332,184"/>
+<area shape="rect" href="timer_8c.html#aa327d05db9461ba7bcfc05072fc28b3e" title="Timer interrupt handler. Increments the timer counter." alt="" coords="174,208,327,235"/>
+<area shape="rect" href="video_8c.html#a1d7817e4e5198831c8e33e05a64e8ecf" title="Draws a XPM image with the leftmost upper pixel at the given coordinates." alt="" coords="383,5,499,32"/>
+<area shape="rect" href="video_8c.html#ab0332ee565f978f725c021b4eb35958e" title="Sets the pixel at the given coordinates to the given color." alt="" coords="549,5,668,32"/>
+<area shape="rect" href="utils_8c.html#ac001a9276b9ecff0ddabd111fac79211" title="Reads a byte from a given port." alt="" coords="566,157,651,184"/>
+<area shape="rect" href="kbd_8c.html#ac687b1a8ed53a6d9a506dbf1ccb920e1" title=" " alt="" coords="405,107,476,133"/>
+<area shape="rect" href="mouse_8c.html#a7fe4a8e593d4206f11916156e5d46574" title="Reads and parses the packet from the mouse output buffer." alt="" coords="395,157,487,184"/>
+<area shape="rect" href="mouse_8c.html#a988fc64ae581c0f124ad68f50714f24a" title="Reads the mouse status byte." alt="" coords="380,208,501,235"/>
+<area shape="rect" href="mouse_8c.html#aeff6e8956d863ef6147b8c9475422574" title="Updates the user interface mouse." alt="" coords="388,259,494,285"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_a31f00e3232e268b63b905a17a164542b_icgraph.png" border="0" usemap="#amain_8c_a31f00e3232e268b63b905a17a164542b_icgraph" alt=""/></div>
+<map name="amain_8c_a31f00e3232e268b63b905a17a164542b_icgraph" id="amain_8c_a31f00e3232e268b63b905a17a164542b_icgraph">
+<area shape="rect" title="Processes the interrupts and calls correct functions while in the Highscores menu state." alt="" coords="162,5,277,32"/>
+<area shape="rect" href="main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,5,114,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0ddf1224851353fc92bfbff6f499fa97" name="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ddf1224851353fc92bfbff6f499fa97">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>argv</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a85ddf0bf65650526685ffbfddd3e897f" name="a85ddf0bf65650526685ffbfddd3e897f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85ddf0bf65650526685ffbfddd3e897f">&#9670;&#160;</a></span>main_menu_loop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void() main_menu_loop </td>
+          <td>(</td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>make</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="kbd_8h.html#a635055f02cc43001acef32526cac2a45">kbd_key</a> *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>two_bytes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>scan</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ipc_timer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ipc_keyboard</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ipc_mouse</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">message&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">enum <a class="el" href="spaceinvaders_8h.html#adc6e5733fc3c22f0a7b2914188c49c90">state</a> *&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Processes the interrupts and calls correct functions while in the Main menu state. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_a85ddf0bf65650526685ffbfddd3e897f_cgraph.png" border="0" usemap="#amain_8c_a85ddf0bf65650526685ffbfddd3e897f_cgraph" alt=""/></div>
+<map name="amain_8c_a85ddf0bf65650526685ffbfddd3e897f_cgraph" id="amain_8c_a85ddf0bf65650526685ffbfddd3e897f_cgraph">
+<area shape="rect" title="Processes the interrupts and calls correct functions while in the Main menu state." alt="" coords="5,259,125,285"/>
+<area shape="rect" href="spaceinvaders_8c.html#a867892903e6eb31b07fcbc8da05bee16" title="Draws the main menu." alt="" coords="193,44,316,71"/>
+<area shape="rect" href="spaceinvaders_8c.html#aff9ce2c80067181fa64a67450da2c6fa" title="Initializes the game elements." alt="" coords="216,132,293,159"/>
+<area shape="rect" href="kbd_8c.html#aea970a154161a35f6894898a092ed70a" title="Handles Keyboard interrupts. Reads and stores the KBD data for later processing/interpretation." alt="" coords="225,208,284,235"/>
+<area shape="rect" href="kbd_8c.html#a349e104e331ffa69feb42f7c6d5682ff" title="Translates the KBD data into a key." alt="" coords="207,259,302,285"/>
+<area shape="rect" href="mouse_8c.html#a0c616957f5de45ec0a075a15b2438888" title="Returns whether the mouse&#39;s left button was clicked." alt="" coords="218,309,291,336"/>
+<area shape="rect" href="mouse_8c.html#a310254edf59d5de2a8df1b2888cc7431" title="Mouse interrupt handler. Gets the mouse packet and updates the user interface mouse struct." alt="" coords="173,360,336,387"/>
+<area shape="rect" href="timer_8c.html#aa327d05db9461ba7bcfc05072fc28b3e" title="Timer interrupt handler. Increments the timer counter." alt="" coords="178,411,331,437"/>
+<area shape="rect" href="video_8c.html#a1d7817e4e5198831c8e33e05a64e8ecf" title="Draws a XPM image with the leftmost upper pixel at the given coordinates." alt="" coords="387,5,503,32"/>
+<area shape="rect" href="video_8c.html#ab0332ee565f978f725c021b4eb35958e" title="Sets the pixel at the given coordinates to the given color." alt="" coords="553,5,672,32"/>
+<area shape="rect" href="alien_8c.html#af8f859696eaefd6cc2f765baaa8c6313" title="Initializes a group of aliens." alt="" coords="405,56,484,83"/>
+<area shape="rect" href="player_8c.html#a94d01ea7c997ed46d9f77cedbeb149c9" title="Initializes a Player (space ship)." alt="" coords="405,107,485,133"/>
+<area shape="rect" href="shield_8c.html#a46f87a7a9730d61f4db91cc66d61b2c6" title="Initializes a Shield with a given left uppermost x coordinate and id." alt="" coords="405,157,484,184"/>
+<area shape="rect" href="alien_8c.html#af19ba8e0046253fb160c07592b0e1be2" title="Initializes an alien with a given id and leftmost upper position." alt="" coords="576,56,649,83"/>
+<area shape="rect" href="utils_8c.html#ac001a9276b9ecff0ddabd111fac79211" title="Reads a byte from a given port." alt="" coords="570,309,655,336"/>
+<area shape="rect" href="kbd_8c.html#ac687b1a8ed53a6d9a506dbf1ccb920e1" title=" " alt="" coords="409,259,480,285"/>
+<area shape="rect" href="mouse_8c.html#a7fe4a8e593d4206f11916156e5d46574" title="Reads and parses the packet from the mouse output buffer." alt="" coords="399,309,491,336"/>
+<area shape="rect" href="mouse_8c.html#a988fc64ae581c0f124ad68f50714f24a" title="Reads the mouse status byte." alt="" coords="384,360,505,387"/>
+<area shape="rect" href="mouse_8c.html#aeff6e8956d863ef6147b8c9475422574" title="Updates the user interface mouse." alt="" coords="392,411,498,437"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_a85ddf0bf65650526685ffbfddd3e897f_icgraph.png" border="0" usemap="#amain_8c_a85ddf0bf65650526685ffbfddd3e897f_icgraph" alt=""/></div>
+<map name="amain_8c_a85ddf0bf65650526685ffbfddd3e897f_icgraph" id="amain_8c_a85ddf0bf65650526685ffbfddd3e897f_icgraph">
+<area shape="rect" title="Processes the interrupts and calls correct functions while in the Main menu state." alt="" coords="162,5,281,32"/>
+<area shape="rect" href="main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,5,114,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad290208c74ef25eb347d1d96a390cd66" name="ad290208c74ef25eb347d1d96a390cd66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad290208c74ef25eb347d1d96a390cd66">&#9670;&#160;</a></span>proj_main_loop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int() proj_main_loop </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts. Checks interrupt existance and calls different loops according to the state, sending the interrupt flags for the loops to process them. Unsubscribes interrupts and exits video card video mode to text mode. </p>
+<dl class="section return"><dt>Returns</dt><dd>0 upon success in all operations, non-zero otherwise. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_ad290208c74ef25eb347d1d96a390cd66_cgraph.png" border="0" usemap="#amain_8c_ad290208c74ef25eb347d1d96a390cd66_cgraph" alt=""/></div>
+<map name="amain_8c_ad290208c74ef25eb347d1d96a390cd66_cgraph" id="amain_8c_ad290208c74ef25eb347d1d96a390cd66_cgraph">
+<area shape="rect" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,892,114,919"/>
+<area shape="rect" href="main_8c.html#aca94587a192dc9d6e25886d009f3ee76" title="Processes the interrupts and calls correct functions while in the Game state." alt="" coords="199,512,283,539"/>
+<area shape="rect" href="spaceinvaders_8c.html#a4c53c60b9eb88e3c00d9d0fc59dae462" title="Loads information from the file the top&#45;10 highscores are stored in, parses them into Score struct in..." alt="" coords="404,107,495,133"/>
+<area shape="rect" href="main_8c.html#a7b466abd307ad46f0cfb2209749e5c65" title="Processes the interrupts and calls correct functions while in the Game Over menu state." alt="" coords="164,765,318,792"/>
+<area shape="rect" href="main_8c.html#a31f00e3232e268b63b905a17a164542b" title="Processes the interrupts and calls correct functions while in the Highscores menu state." alt="" coords="183,715,299,741"/>
+<area shape="rect" href="kbd_8c.html#a02884ada1971dbade466081413210b18" title="Subscribes and enables Keyboard interrupts." alt="" coords="178,816,304,843"/>
+<area shape="rect" href="kbd_8c.html#a1102381e6a9e876e05dd78c58ccb5673" title="Unsubscribes Keyboard interrupts." alt="" coords="171,867,311,893"/>
+<area shape="rect" href="main_8c.html#a85ddf0bf65650526685ffbfddd3e897f" title="Processes the interrupts and calls correct functions while in the Main menu state." alt="" coords="181,917,301,944"/>
+<area shape="rect" href="mouse_8c.html#af9674903e38c0378821477f9be3e0b2e" title="Subscribes and enables Mouse interrupts." alt="" coords="169,968,313,995"/>
+<area shape="rect" href="timer_8c.html#a0ceff2b17079610e025042290d1fae99" title="Subscribes and enables Timer 0 interrupts." alt="" coords="174,1019,308,1045"/>
+<area shape="rect" href="mouse_8c.html#a4c04b6e71466c545f39ca49a830e0779" title="Unsubscribes Mouse interrupts." alt="" coords="162,1069,320,1096"/>
+<area shape="rect" href="timer_8c.html#a5fbfca26bec887463f37e7f66527dad4" title="Unsubscribes Timer 0 interrupts." alt="" coords="167,1120,315,1147"/>
+<area shape="rect" href="video_8c.html#a27f9047879cee35f24ae69729e89c732" title="Initializes the video card in the given mode and maps the VRAM." alt="" coords="204,1171,278,1197"/>
+<area shape="rect" href="spaceinvaders_8c.html#abd975f557a5c526551dafdb6242ea898" title="Builds a Score struct instance according to a given points number and rtc_time struct instance." alt="" coords="406,157,493,184"/>
+<area shape="rect" href="spaceinvaders_8c.html#a84aa668c4684547c795670fc72531598" title="General game drawing function. Calls the elements&#39; respective drawing functions." alt="" coords="426,309,474,336"/>
+<area shape="rect" href="player_8c.html#a0df41d797d15f08f94cbf3fa3edbef3d" title="Creates a shot fired from the given player, according to its coordinates." alt="" coords="430,360,469,387"/>
+<area shape="rect" href="rtc_8c.html#a4ad822f0b94f8d0c1e0071219174b6ef" title="Gets the current time from the RTC and stores into a given rtc_time struct instance." alt="" coords="414,512,485,539"/>
+<area shape="rect" href="kbd_8c.html#aea970a154161a35f6894898a092ed70a" title="Handles Keyboard interrupts. Reads and stores the KBD data for later processing/interpretation." alt="" coords="420,664,479,691"/>
+<area shape="rect" href="kbd_8c.html#a349e104e331ffa69feb42f7c6d5682ff" title="Translates the KBD data into a key." alt="" coords="402,765,497,792"/>
+<area shape="rect" href="mouse_8c.html#a0c616957f5de45ec0a075a15b2438888" title="Returns whether the mouse&#39;s left button was clicked." alt="" coords="414,917,486,944"/>
+<area shape="rect" href="mouse_8c.html#a310254edf59d5de2a8df1b2888cc7431" title="Mouse interrupt handler. Gets the mouse packet and updates the user interface mouse struct." alt="" coords="368,816,531,843"/>
+<area shape="rect" href="player_8c.html#a87366d070986baef7c91357e49539f12" title="Moves a given player in the desired direction if possible." alt="" coords="403,563,496,589"/>
+<area shape="rect" href="spaceinvaders_8c.html#ae0cafa3b93c40f3eb66676d574f9985e" title="Processes a score and determines if it is elegible to be amongst the top&#45;10. If so,..." alt="" coords="397,411,503,437"/>
+<area shape="rect" href="spaceinvaders_8c.html#afceda483e03bbe9320d74e45df9f9c32" title="Stores the given score array in the highscores file. File writing adapted from https://www...." alt="" coords="402,461,498,488"/>
+<area shape="rect" href="timer_8c.html#aa327d05db9461ba7bcfc05072fc28b3e" title="Timer interrupt handler. Increments the timer counter." alt="" coords="373,715,526,741"/>
+<area shape="rect" href="spaceinvaders_8c.html#a0b2a6a62c1f41986be80686c764dd19a" title="Updates the game&#39;s elements position (if appliable), checks colisions and updates the involved elemen..." alt="" coords="420,208,480,235"/>
+<area shape="rect" href="alien_8c.html#a54999c9c1299cdf99a0c3b8a2a176fae" title="Draws a group of aliens." alt="" coords="611,360,700,387"/>
+<area shape="rect" href="player_8c.html#a06db67ec61088b16360980f24230e62f" title="Draws hearts representing the given (player&#39;s) lives." alt="" coords="615,411,696,437"/>
+<area shape="rect" href="player_8c.html#a6a7c558ce856f450303ab6ad449ad50f" title="Draws a player by its coordinates and corresponding XPM image." alt="" coords="610,208,701,235"/>
+<area shape="rect" href="player_8c.html#af50ad9e73493590a4d110b25b70030c6" title="Draws the given player&#39;s score in the screen." alt="" coords="612,259,699,285"/>
+<area shape="rect" href="shield_8c.html#aa29aea8cc95d1b319a3d12697032d6b1" title="Draws a given shield according to its position and lives." alt="" coords="611,309,700,336"/>
+<area shape="rect" href="shot_8c.html#adbf78f340c9cb30ad382b64ad88b3bb4" title="Initializes a shot with given left uppermost coordinates and source." alt="" coords="620,461,691,488"/>
+<area shape="rect" href="utils_8c.html#aff3396c8be829b5b1dd36fc4f81382ff" title="Converts a given value in BCD to binary. Got the function body from https://github...." alt="" coords="613,512,698,539"/>
+<area shape="rect" href="rtc_8c.html#a200e0e9e22af694e13f67b81022196e7" title="Reads a byte from the RTC&#39;s data register." alt="" coords="621,613,690,640"/>
+<area shape="rect" href="rtc_8c.html#a3d0e0832042b95a85fc00e7baa9f1e19" title="Writes a given address to be read from the RTC to the RTC&#39;s address register." alt="" coords="597,563,714,589"/>
+<area shape="rect" href="utils_8c.html#ac001a9276b9ecff0ddabd111fac79211" title="Reads a byte from a given port." alt="" coords="780,765,864,792"/>
+<area shape="rect" href="kbd_8c.html#ac687b1a8ed53a6d9a506dbf1ccb920e1" title=" " alt="" coords="620,765,691,792"/>
+<area shape="rect" href="mouse_8c.html#a7fe4a8e593d4206f11916156e5d46574" title="Reads and parses the packet from the mouse output buffer." alt="" coords="609,816,702,843"/>
+<area shape="rect" href="mouse_8c.html#a988fc64ae581c0f124ad68f50714f24a" title="Reads the mouse status byte." alt="" coords="595,917,716,944"/>
+<area shape="rect" href="mouse_8c.html#aeff6e8956d863ef6147b8c9475422574" title="Updates the user interface mouse." alt="" coords="602,867,709,893"/>
+<area shape="rect" href="player_8c.html#a3d5d52b16a8103ff777bfa1ff14ea44f" title="Returns whether the given player can be moved in the given direction." alt="" coords="595,664,716,691"/>
+<area shape="rect" href="alien_8c.html#a7f751bf90ccb54281fe5febc948fa182" title="Returns whether a group of aliens can move in a given direction." alt="" coords="579,5,732,32"/>
+<area shape="rect" href="shield_8c.html#a05c98b39588bdedcdf3876bd81acca62" title="Causes damage to a given shield (decrements its lives) and alters its coordinates to match the new th..." alt="" coords="622,56,689,83"/>
+<area shape="rect" href="alien_8c.html#a609f32ec375ba493430c600774033d75" title="Deletes an alien&#39;s shot." alt="" coords="594,107,717,133"/>
+<area shape="rect" href="player_8c.html#a05477977a2ba3cb090037ee5bb753bdf" title="Deletes a given player&#39;s shot with a given index within the active player&#39;s shots array." alt="" coords="590,157,721,184"/>
+<area shape="rect" href="spaceinvaders_8c.html#a0af91f71746c9e649dd1f2305c674e38" title="Draws the game over menu." alt="" coords="372,867,528,893"/>
+<area shape="rect" href="spaceinvaders_8c.html#aff9ce2c80067181fa64a67450da2c6fa" title="Initializes the game elements." alt="" coords="411,968,488,995"/>
+<area shape="rect" href="spaceinvaders_8c.html#ad571496285082d7d70e3ca362c1b04bb" title="Draws the highscore page, given a pre&#45;generated top&#45;10 score array." alt="" coords="387,613,512,640"/>
+<area shape="rect" href="spaceinvaders_8c.html#a867892903e6eb31b07fcbc8da05bee16" title="Draws the main menu." alt="" coords="389,1019,511,1045"/>
+<area shape="rect" href="video_8c.html#a43eca9753118b540d01327d3c4a7068c" title="Loads the XPM images used in the app." alt="" coords="390,1171,510,1197"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a9eab91667db4d35c7231dcddf7b89a76" name="a9eab91667db4d35c7231dcddf7b89a76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9eab91667db4d35c7231dcddf7b89a76">&#9670;&#160;</a></span>data</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int data</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a12550c2b9cf9c80ecdc701dede9c4e4c" name="a12550c2b9cf9c80ecdc701dede9c4e4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12550c2b9cf9c80ecdc701dede9c4e4c">&#9670;&#160;</a></span>hs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_score.html">Score</a>* hs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8f621f1e0b4e4176f1e67dc5031d891a" name="a8f621f1e0b4e4176f1e67dc5031d891a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f621f1e0b4e4176f1e67dc5031d891a">&#9670;&#160;</a></span>shield1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_shield.html">Shield</a>* shield1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a48c72259ab4c049372115f62cd64d41f" name="a48c72259ab4c049372115f62cd64d41f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48c72259ab4c049372115f62cd64d41f">&#9670;&#160;</a></span>shield2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_shield.html">Shield</a>* shield2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae216136d85958771f5667b34391f6b80" name="ae216136d85958771f5667b34391f6b80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae216136d85958771f5667b34391f6b80">&#9670;&#160;</a></span>shield3</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_shield.html">Shield</a>* shield3</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8cd4690e8c52dc256304da4d3ce4ba4f" name="a8cd4690e8c52dc256304da4d3ce4ba4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cd4690e8c52dc256304da4d3ce4ba4f">&#9670;&#160;</a></span>ship</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_player.html">Player</a>* ship</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0f08eb193e0aedb134a1481913b6a823" name="a0f08eb193e0aedb134a1481913b6a823"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f08eb193e0aedb134a1481913b6a823">&#9670;&#160;</a></span>timer_counter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int timer_counter</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a970a1571b3380fa3d045308e4e9b4996" name="a970a1571b3380fa3d045308e4e9b4996"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a970a1571b3380fa3d045308e4e9b4996">&#9670;&#160;</a></span>x_mouse_delta</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int x_mouse_delta</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5

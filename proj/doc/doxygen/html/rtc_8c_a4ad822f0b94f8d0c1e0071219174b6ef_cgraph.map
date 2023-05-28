@@ -1,0 +1,7 @@
+<map id="get_time" name="get_time">
+<area shape="rect" id="node1" title="Gets the current time from the RTC and stores into a given rtc_time struct instance." alt="" coords="5,56,77,83"/>
+<area shape="rect" id="node2" href="$utils_8c.html#aff3396c8be829b5b1dd36fc4f81382ff" title="Converts a given value in BCD to binary. Got the function body from https://github...." alt="" coords="141,5,225,32"/>
+<area shape="rect" id="node3" href="$rtc_8c.html#a200e0e9e22af694e13f67b81022196e7" title="Reads a byte from the RTC&#39;s data register." alt="" coords="149,56,217,83"/>
+<area shape="rect" id="node5" href="$rtc_8c.html#a3d0e0832042b95a85fc00e7baa9f1e19" title="Writes a given address to be read from the RTC to the RTC&#39;s address register." alt="" coords="125,107,241,133"/>
+<area shape="rect" id="node4" href="$utils_8c.html#ac001a9276b9ecff0ddabd111fac79211" title="Reads a byte from a given port." alt="" coords="289,56,373,83"/>
+</map>

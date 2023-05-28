@@ -81,57 +81,253 @@ $(function() {
 
 <p>Constants for programming the i8042 (mouse oriented).  
 <a href="#details">More...</a></p>
-
+<div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="i8042_8h__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_pedro_2_documents_22_l_e_i_c_22_xC2_xBA_01semestre_2_l_c_2_m_i_n_i_x-_l_c_o_m_2shared_2proj_2src_2framework_2mouse_2i8042_8hdep" alt=""/></div>
+<map name="a_c_1_2_users_2_pedro_2_documents_22_l_e_i_c_22_xC2_xBA_01semestre_2_l_c_2_m_i_n_i_x-_l_c_o_m_2shared_2proj_2src_2framework_2mouse_2i8042_8hdep" id="a_c_1_2_users_2_pedro_2_documents_22_l_e_i_c_22_xC2_xBA_01semestre_2_l_c_2_m_i_n_i_x-_l_c_o_m_2shared_2proj_2src_2framework_2mouse_2i8042_8hdep">
+<area shape="rect" title="Constants for programming the i8042 (mouse oriented)." alt="" coords="225,5,421,80"/>
+<area shape="rect" href="mouse_8h.html" title="Framework for the Mouse." alt="" coords="221,128,425,203"/>
+<area shape="rect" href="mouse_8c.html" title=" " alt="" coords="5,251,209,325"/>
+<area shape="rect" href="spaceinvaders_8h.html" title="Game logic functions. Stores the game elements and assures the interaction between them." alt="" coords="233,251,413,325"/>
+<area shape="rect" href="main_8c.html" title="General functions that manage the app logic." alt="" coords="361,373,541,448"/>
+<area shape="rect" href="spaceinvaders_8c.html" title=" " alt="" coords="157,373,337,448"/>
+</map>
+</div>
+</div>
 <p><a href="i8042_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a85964cb90343bb1a029b1d1b4229f910"><td class="memItemLeft" align="right" valign="top"><a id="a85964cb90343bb1a029b1d1b4229f910" name="a85964cb90343bb1a029b1d1b4229f910"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MOUSE_IRQ</b>&#160;&#160;&#160;12</td></tr>
+<tr class="memitem:a85964cb90343bb1a029b1d1b4229f910"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i8042_8h.html#a85964cb90343bb1a029b1d1b4229f910">MOUSE_IRQ</a>&#160;&#160;&#160;12</td></tr>
 <tr class="separator:a85964cb90343bb1a029b1d1b4229f910"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e944ce9ec2d9759b485c55a448afc7c"><td class="memItemLeft" align="right" valign="top"><a id="a6e944ce9ec2d9759b485c55a448afc7c" name="a6e944ce9ec2d9759b485c55a448afc7c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>INPUT_BUFFER</b>&#160;&#160;&#160;0x64</td></tr>
+<tr class="memitem:a6e944ce9ec2d9759b485c55a448afc7c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i8042_8h.html#a6e944ce9ec2d9759b485c55a448afc7c">INPUT_BUFFER</a>&#160;&#160;&#160;0x64</td></tr>
 <tr class="separator:a6e944ce9ec2d9759b485c55a448afc7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85dd25ad45d47136734196ec996419cd"><td class="memItemLeft" align="right" valign="top"><a id="a85dd25ad45d47136734196ec996419cd" name="a85dd25ad45d47136734196ec996419cd"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>OUTPUT_BUFFER</b>&#160;&#160;&#160;0x60</td></tr>
+<tr class="memitem:a85dd25ad45d47136734196ec996419cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i8042_8h.html#a85dd25ad45d47136734196ec996419cd">OUTPUT_BUFFER</a>&#160;&#160;&#160;0x60</td></tr>
 <tr class="separator:a85dd25ad45d47136734196ec996419cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aade608c2b485d0c1238c401e073bbbdc"><td class="memItemLeft" align="right" valign="top"><a id="aade608c2b485d0c1238c401e073bbbdc" name="aade608c2b485d0c1238c401e073bbbdc"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>STATUS_REGISTER</b>&#160;&#160;&#160;0x64</td></tr>
+<tr class="memitem:aade608c2b485d0c1238c401e073bbbdc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i8042_8h.html#aade608c2b485d0c1238c401e073bbbdc">STATUS_REGISTER</a>&#160;&#160;&#160;0x64</td></tr>
 <tr class="separator:aade608c2b485d0c1238c401e073bbbdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f6489887e08bff4887d0bc5dcf214d8"><td class="memItemLeft" align="right" valign="top"><a id="a6f6489887e08bff4887d0bc5dcf214d8" name="a6f6489887e08bff4887d0bc5dcf214d8"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>ACK</b>&#160;&#160;&#160;0xFA</td></tr>
+<tr class="memitem:a6f6489887e08bff4887d0bc5dcf214d8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i8042_8h.html#a6f6489887e08bff4887d0bc5dcf214d8">ACK</a>&#160;&#160;&#160;0xFA</td></tr>
 <tr class="separator:a6f6489887e08bff4887d0bc5dcf214d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a958518a45b12053ae33606ee7cb68a55"><td class="memItemLeft" align="right" valign="top"><a id="a958518a45b12053ae33606ee7cb68a55" name="a958518a45b12053ae33606ee7cb68a55"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>NACK</b>&#160;&#160;&#160;0xFE</td></tr>
+<tr class="memitem:a958518a45b12053ae33606ee7cb68a55"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i8042_8h.html#a958518a45b12053ae33606ee7cb68a55">NACK</a>&#160;&#160;&#160;0xFE</td></tr>
 <tr class="separator:a958518a45b12053ae33606ee7cb68a55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af13dd8b60fe1826314d26f2dbd25363d"><td class="memItemLeft" align="right" valign="top"><a id="af13dd8b60fe1826314d26f2dbd25363d" name="af13dd8b60fe1826314d26f2dbd25363d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MOUSE_HOOK_BIT</b>&#160;&#160;&#160;10</td></tr>
+<tr class="memitem:af13dd8b60fe1826314d26f2dbd25363d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i8042_8h.html#af13dd8b60fe1826314d26f2dbd25363d">MOUSE_HOOK_BIT</a>&#160;&#160;&#160;10</td></tr>
 <tr class="separator:af13dd8b60fe1826314d26f2dbd25363d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81c0f94add844b0761bd142f7f708431"><td class="memItemLeft" align="right" valign="top"><a id="a81c0f94add844b0761bd142f7f708431" name="a81c0f94add844b0761bd142f7f708431"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MOUSE_LB</b>&#160;&#160;&#160;BIT(0)</td></tr>
+<tr class="memitem:a81c0f94add844b0761bd142f7f708431"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i8042_8h.html#a81c0f94add844b0761bd142f7f708431">MOUSE_LB</a>&#160;&#160;&#160;BIT(0)</td></tr>
 <tr class="separator:a81c0f94add844b0761bd142f7f708431"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f47c1d60579c8691054c939c1d7c20e"><td class="memItemLeft" align="right" valign="top"><a id="a5f47c1d60579c8691054c939c1d7c20e" name="a5f47c1d60579c8691054c939c1d7c20e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MOUSE_RB</b>&#160;&#160;&#160;BIT(1)</td></tr>
+<tr class="memitem:a5f47c1d60579c8691054c939c1d7c20e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i8042_8h.html#a5f47c1d60579c8691054c939c1d7c20e">MOUSE_RB</a>&#160;&#160;&#160;BIT(1)</td></tr>
 <tr class="separator:a5f47c1d60579c8691054c939c1d7c20e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a934eaadd3536aabe6df0adf6728e8e"><td class="memItemLeft" align="right" valign="top"><a id="a5a934eaadd3536aabe6df0adf6728e8e" name="a5a934eaadd3536aabe6df0adf6728e8e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MOUSE_MB</b>&#160;&#160;&#160;BIT(2)</td></tr>
+<tr class="memitem:a5a934eaadd3536aabe6df0adf6728e8e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i8042_8h.html#a5a934eaadd3536aabe6df0adf6728e8e">MOUSE_MB</a>&#160;&#160;&#160;BIT(2)</td></tr>
 <tr class="separator:a5a934eaadd3536aabe6df0adf6728e8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd43b7d72e2f4da511b0f8a73df0fe79"><td class="memItemLeft" align="right" valign="top"><a id="acd43b7d72e2f4da511b0f8a73df0fe79" name="acd43b7d72e2f4da511b0f8a73df0fe79"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MOUSE_X_SIGN</b>&#160;&#160;&#160;BIT(4)</td></tr>
+<tr class="memitem:acd43b7d72e2f4da511b0f8a73df0fe79"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i8042_8h.html#acd43b7d72e2f4da511b0f8a73df0fe79">MOUSE_X_SIGN</a>&#160;&#160;&#160;BIT(4)</td></tr>
 <tr class="separator:acd43b7d72e2f4da511b0f8a73df0fe79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0f95694f6f137fcae25644972556873"><td class="memItemLeft" align="right" valign="top"><a id="ae0f95694f6f137fcae25644972556873" name="ae0f95694f6f137fcae25644972556873"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MOUSE_Y_SIGN</b>&#160;&#160;&#160;BIT(5)</td></tr>
+<tr class="memitem:ae0f95694f6f137fcae25644972556873"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i8042_8h.html#ae0f95694f6f137fcae25644972556873">MOUSE_Y_SIGN</a>&#160;&#160;&#160;BIT(5)</td></tr>
 <tr class="separator:ae0f95694f6f137fcae25644972556873"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cdb2646c0fe020dfd230c3bbceae07a"><td class="memItemLeft" align="right" valign="top"><a id="a0cdb2646c0fe020dfd230c3bbceae07a" name="a0cdb2646c0fe020dfd230c3bbceae07a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MOUSE_X_OV</b>&#160;&#160;&#160;BIT(6)</td></tr>
+<tr class="memitem:a0cdb2646c0fe020dfd230c3bbceae07a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i8042_8h.html#a0cdb2646c0fe020dfd230c3bbceae07a">MOUSE_X_OV</a>&#160;&#160;&#160;BIT(6)</td></tr>
 <tr class="separator:a0cdb2646c0fe020dfd230c3bbceae07a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42d79fab1c364106889698324b72ce5b"><td class="memItemLeft" align="right" valign="top"><a id="a42d79fab1c364106889698324b72ce5b" name="a42d79fab1c364106889698324b72ce5b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>MOUSE_Y_OV</b>&#160;&#160;&#160;BIT(7)</td></tr>
+<tr class="memitem:a42d79fab1c364106889698324b72ce5b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="i8042_8h.html#a42d79fab1c364106889698324b72ce5b">MOUSE_Y_OV</a>&#160;&#160;&#160;BIT(7)</td></tr>
 <tr class="separator:a42d79fab1c364106889698324b72ce5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Constants for programming the i8042 (mouse oriented). </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a6f6489887e08bff4887d0bc5dcf214d8" name="a6f6489887e08bff4887d0bc5dcf214d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f6489887e08bff4887d0bc5dcf214d8">&#9670;&#160;</a></span>ACK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ACK&#160;&#160;&#160;0xFA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6e944ce9ec2d9759b485c55a448afc7c" name="a6e944ce9ec2d9759b485c55a448afc7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e944ce9ec2d9759b485c55a448afc7c">&#9670;&#160;</a></span>INPUT_BUFFER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INPUT_BUFFER&#160;&#160;&#160;0x64</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af13dd8b60fe1826314d26f2dbd25363d" name="af13dd8b60fe1826314d26f2dbd25363d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af13dd8b60fe1826314d26f2dbd25363d">&#9670;&#160;</a></span>MOUSE_HOOK_BIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MOUSE_HOOK_BIT&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a85964cb90343bb1a029b1d1b4229f910" name="a85964cb90343bb1a029b1d1b4229f910"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85964cb90343bb1a029b1d1b4229f910">&#9670;&#160;</a></span>MOUSE_IRQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MOUSE_IRQ&#160;&#160;&#160;12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a81c0f94add844b0761bd142f7f708431" name="a81c0f94add844b0761bd142f7f708431"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81c0f94add844b0761bd142f7f708431">&#9670;&#160;</a></span>MOUSE_LB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MOUSE_LB&#160;&#160;&#160;BIT(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5a934eaadd3536aabe6df0adf6728e8e" name="a5a934eaadd3536aabe6df0adf6728e8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a934eaadd3536aabe6df0adf6728e8e">&#9670;&#160;</a></span>MOUSE_MB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MOUSE_MB&#160;&#160;&#160;BIT(2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5f47c1d60579c8691054c939c1d7c20e" name="a5f47c1d60579c8691054c939c1d7c20e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f47c1d60579c8691054c939c1d7c20e">&#9670;&#160;</a></span>MOUSE_RB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MOUSE_RB&#160;&#160;&#160;BIT(1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0cdb2646c0fe020dfd230c3bbceae07a" name="a0cdb2646c0fe020dfd230c3bbceae07a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cdb2646c0fe020dfd230c3bbceae07a">&#9670;&#160;</a></span>MOUSE_X_OV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MOUSE_X_OV&#160;&#160;&#160;BIT(6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acd43b7d72e2f4da511b0f8a73df0fe79" name="acd43b7d72e2f4da511b0f8a73df0fe79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd43b7d72e2f4da511b0f8a73df0fe79">&#9670;&#160;</a></span>MOUSE_X_SIGN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MOUSE_X_SIGN&#160;&#160;&#160;BIT(4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a42d79fab1c364106889698324b72ce5b" name="a42d79fab1c364106889698324b72ce5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42d79fab1c364106889698324b72ce5b">&#9670;&#160;</a></span>MOUSE_Y_OV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MOUSE_Y_OV&#160;&#160;&#160;BIT(7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae0f95694f6f137fcae25644972556873" name="ae0f95694f6f137fcae25644972556873"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0f95694f6f137fcae25644972556873">&#9670;&#160;</a></span>MOUSE_Y_SIGN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MOUSE_Y_SIGN&#160;&#160;&#160;BIT(5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a958518a45b12053ae33606ee7cb68a55" name="a958518a45b12053ae33606ee7cb68a55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a958518a45b12053ae33606ee7cb68a55">&#9670;&#160;</a></span>NACK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NACK&#160;&#160;&#160;0xFE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a85dd25ad45d47136734196ec996419cd" name="a85dd25ad45d47136734196ec996419cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85dd25ad45d47136734196ec996419cd">&#9670;&#160;</a></span>OUTPUT_BUFFER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OUTPUT_BUFFER&#160;&#160;&#160;0x60</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aade608c2b485d0c1238c401e073bbbdc" name="aade608c2b485d0c1238c401e073bbbdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aade608c2b485d0c1238c401e073bbbdc">&#9670;&#160;</a></span>STATUS_REGISTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STATUS_REGISTER&#160;&#160;&#160;0x64</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.5

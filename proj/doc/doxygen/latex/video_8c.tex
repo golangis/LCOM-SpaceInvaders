@@ -1,0 +1,137 @@
+\hypertarget{video_8c}{}\doxysection{C\+:/\+Users/\+Pedro/\+Documents/2\+LEIC/2º semestre/\+LC/\+MINIX-\/\+LCOM/shared/proj/src/framework/video/video.c File Reference}
+\label{video_8c}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/video/video.c@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/video/video.c}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}video.\+h\char`\"{}}\newline
+Include dependency graph for video.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{video_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$() \mbox{\hyperlink{video_8c_a27f9047879cee35f24ae69729e89c732}{video\+\_\+init}} (uint16\+\_\+t mode)
+\begin{DoxyCompactList}\small\item\em Initializes the video card in the given mode and maps the VRAM. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{video_8c_ab0332ee565f978f725c021b4eb35958e}{video\+\_\+draw\+\_\+pixel}} (uint16\+\_\+t x, uint16\+\_\+t y, uint32\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Sets the pixel at the given coordinates to the given color. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{video_8c_a43eca9753118b540d01327d3c4a7068c}{video\+\_\+load\+\_\+xpms}} ()
+\begin{DoxyCompactList}\small\item\em Loads the XPM images used in the app. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{video_8c_a1d7817e4e5198831c8e33e05a64e8ecf}{video\+\_\+draw\+\_\+xpm}} (uint16\+\_\+t x, uint16\+\_\+t y, char xpm\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Draws a XPM image with the leftmost upper pixel at the given coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{video_8c_ab0332ee565f978f725c021b4eb35958e}\label{video_8c_ab0332ee565f978f725c021b4eb35958e}} 
+\index{video.c@{video.c}!video\_draw\_pixel@{video\_draw\_pixel}}
+\index{video\_draw\_pixel@{video\_draw\_pixel}!video.c@{video.c}}
+\doxysubsubsection{\texorpdfstring{video\_draw\_pixel()}{video\_draw\_pixel()}}
+{\footnotesize\ttfamily void() video\+\_\+draw\+\_\+pixel (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint32\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+
+
+Sets the pixel at the given coordinates to the given color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of the pixel. \\
+\hline
+{\em y} & Y coordinate of the pixel. \\
+\hline
+{\em color} & Color to set the pixel to. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{video_8c_ab0332ee565f978f725c021b4eb35958e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{video_8c_a1d7817e4e5198831c8e33e05a64e8ecf}\label{video_8c_a1d7817e4e5198831c8e33e05a64e8ecf}} 
+\index{video.c@{video.c}!video\_draw\_xpm@{video\_draw\_xpm}}
+\index{video\_draw\_xpm@{video\_draw\_xpm}!video.c@{video.c}}
+\doxysubsubsection{\texorpdfstring{video\_draw\_xpm()}{video\_draw\_xpm()}}
+{\footnotesize\ttfamily void() video\+\_\+draw\+\_\+xpm (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{char}]{xpm\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Draws a XPM image with the leftmost upper pixel at the given coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of the leftmost upper pixel. \\
+\hline
+{\em y} & Y coordinate of the leftmost upper pixel. \\
+\hline
+{\em xpm} & Name of the XPM image to draw. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{video_8c_a1d7817e4e5198831c8e33e05a64e8ecf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{video_8c_a1d7817e4e5198831c8e33e05a64e8ecf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{video_8c_a27f9047879cee35f24ae69729e89c732}\label{video_8c_a27f9047879cee35f24ae69729e89c732}} 
+\index{video.c@{video.c}!video\_init@{video\_init}}
+\index{video\_init@{video\_init}!video.c@{video.c}}
+\doxysubsubsection{\texorpdfstring{video\_init()}{video\_init()}}
+{\footnotesize\ttfamily void $\ast$() video\+\_\+init (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+
+
+Initializes the video card in the given mode and maps the VRAM. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & Mode to initialize the video card in. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{video_8c_a27f9047879cee35f24ae69729e89c732_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{video_8c_a27f9047879cee35f24ae69729e89c732_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{video_8c_a43eca9753118b540d01327d3c4a7068c}\label{video_8c_a43eca9753118b540d01327d3c4a7068c}} 
+\index{video.c@{video.c}!video\_load\_xpms@{video\_load\_xpms}}
+\index{video\_load\_xpms@{video\_load\_xpms}!video.c@{video.c}}
+\doxysubsubsection{\texorpdfstring{video\_load\_xpms()}{video\_load\_xpms()}}
+{\footnotesize\ttfamily void() video\+\_\+load\+\_\+xpms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads the XPM images used in the app. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{video_8c_a43eca9753118b540d01327d3c4a7068c_icgraph}
+\end{center}
+\end{figure}

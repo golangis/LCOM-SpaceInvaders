@@ -1,34 +1,101 @@
 \hypertarget{struct_player}{}\doxysection{Player Struct Reference}
 \label{struct_player}\index{Player@{Player}}
+
+
+Represents a player (space ship) by its coordinates, lives, score and fired shots that are still active (inside the screen borders or that did not kill any alien or damaged any shield.)  
+
+
+
+
+{\ttfamily \#include $<$player.\+h$>$}
+
+
+
+Collaboration diagram for Player\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=129pt]{struct_player__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{struct_player_ae0951dcafafdc96ac1d8361c672d47e2}\label{struct_player_ae0951dcafafdc96ac1d8361c672d47e2}} 
-int {\bfseries x\+\_\+min}
+int \mbox{\hyperlink{struct_player_ae0951dcafafdc96ac1d8361c672d47e2}{x\+\_\+min}}
 \item 
-\mbox{\Hypertarget{struct_player_a7941ddc7e35fffb8864af1e922814401}\label{struct_player_a7941ddc7e35fffb8864af1e922814401}} 
-int {\bfseries y\+\_\+min}
+int \mbox{\hyperlink{struct_player_a7941ddc7e35fffb8864af1e922814401}{y\+\_\+min}}
 \item 
-\mbox{\Hypertarget{struct_player_a5f0bb6d8a3e66525c3e6264cb8288e43}\label{struct_player_a5f0bb6d8a3e66525c3e6264cb8288e43}} 
-int {\bfseries x\+\_\+max}
+int \mbox{\hyperlink{struct_player_a5f0bb6d8a3e66525c3e6264cb8288e43}{x\+\_\+max}}
 \item 
-\mbox{\Hypertarget{struct_player_ad033aea530fbbcf5bcd6cd98d882e3a5}\label{struct_player_ad033aea530fbbcf5bcd6cd98d882e3a5}} 
-int {\bfseries y\+\_\+max}
+int \mbox{\hyperlink{struct_player_ad033aea530fbbcf5bcd6cd98d882e3a5}{y\+\_\+max}}
 \item 
-\mbox{\Hypertarget{struct_player_ac1d68ef9a5dd304c5015e07af7f2bb19}\label{struct_player_ac1d68ef9a5dd304c5015e07af7f2bb19}} 
-int {\bfseries lives}
+int \mbox{\hyperlink{struct_player_ac1d68ef9a5dd304c5015e07af7f2bb19}{lives}}
 \item 
-\mbox{\Hypertarget{struct_player_aef160b7437d94056f1dc59646cd5b87d}\label{struct_player_aef160b7437d94056f1dc59646cd5b87d}} 
-int {\bfseries score}
+int \mbox{\hyperlink{struct_player_aef160b7437d94056f1dc59646cd5b87d}{score}}
 \item 
-\mbox{\Hypertarget{struct_player_aa573dfe9991bd08b90eb8edaf34a19f6}\label{struct_player_aa573dfe9991bd08b90eb8edaf34a19f6}} 
-\mbox{\hyperlink{struct_shot}{Shot}} $\ast$ {\bfseries shots}
+\mbox{\hyperlink{struct_shot}{Shot}} $\ast$ \mbox{\hyperlink{struct_player_aa573dfe9991bd08b90eb8edaf34a19f6}{shots}}
 \item 
-\mbox{\Hypertarget{struct_player_af5bcd50f7d9d121824b07ad8e62fab80}\label{struct_player_af5bcd50f7d9d121824b07ad8e62fab80}} 
-int {\bfseries shots\+\_\+no}
+int \mbox{\hyperlink{struct_player_af5bcd50f7d9d121824b07ad8e62fab80}{shots\+\_\+no}}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a player (space ship) by its coordinates, lives, score and fired shots that are still active (inside the screen borders or that did not kill any alien or damaged any shield.) 
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{struct_player_ac1d68ef9a5dd304c5015e07af7f2bb19}\label{struct_player_ac1d68ef9a5dd304c5015e07af7f2bb19}} 
+\index{Player@{Player}!lives@{lives}}
+\index{lives@{lives}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{lives}{lives}}
+{\footnotesize\ttfamily int lives}
+
+\mbox{\Hypertarget{struct_player_aef160b7437d94056f1dc59646cd5b87d}\label{struct_player_aef160b7437d94056f1dc59646cd5b87d}} 
+\index{Player@{Player}!score@{score}}
+\index{score@{score}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{score}{score}}
+{\footnotesize\ttfamily int score}
+
+\mbox{\Hypertarget{struct_player_aa573dfe9991bd08b90eb8edaf34a19f6}\label{struct_player_aa573dfe9991bd08b90eb8edaf34a19f6}} 
+\index{Player@{Player}!shots@{shots}}
+\index{shots@{shots}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{shots}{shots}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_shot}{Shot}}$\ast$ shots}
+
+\mbox{\Hypertarget{struct_player_af5bcd50f7d9d121824b07ad8e62fab80}\label{struct_player_af5bcd50f7d9d121824b07ad8e62fab80}} 
+\index{Player@{Player}!shots\_no@{shots\_no}}
+\index{shots\_no@{shots\_no}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{shots\_no}{shots\_no}}
+{\footnotesize\ttfamily int shots\+\_\+no}
+
+\mbox{\Hypertarget{struct_player_a5f0bb6d8a3e66525c3e6264cb8288e43}\label{struct_player_a5f0bb6d8a3e66525c3e6264cb8288e43}} 
+\index{Player@{Player}!x\_max@{x\_max}}
+\index{x\_max@{x\_max}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{x\_max}{x\_max}}
+{\footnotesize\ttfamily int x\+\_\+max}
+
+\mbox{\Hypertarget{struct_player_ae0951dcafafdc96ac1d8361c672d47e2}\label{struct_player_ae0951dcafafdc96ac1d8361c672d47e2}} 
+\index{Player@{Player}!x\_min@{x\_min}}
+\index{x\_min@{x\_min}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{x\_min}{x\_min}}
+{\footnotesize\ttfamily int x\+\_\+min}
+
+\mbox{\Hypertarget{struct_player_ad033aea530fbbcf5bcd6cd98d882e3a5}\label{struct_player_ad033aea530fbbcf5bcd6cd98d882e3a5}} 
+\index{Player@{Player}!y\_max@{y\_max}}
+\index{y\_max@{y\_max}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{y\_max}{y\_max}}
+{\footnotesize\ttfamily int y\+\_\+max}
+
+\mbox{\Hypertarget{struct_player_a7941ddc7e35fffb8864af1e922814401}\label{struct_player_a7941ddc7e35fffb8864af1e922814401}} 
+\index{Player@{Player}!y\_min@{y\_min}}
+\index{y\_min@{y\_min}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{y\_min}{y\_min}}
+{\footnotesize\ttfamily int y\+\_\+min}
+
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/\+Pedro/\+Documents/2\+LEIC/2º semestre/\+LC/\+MINIX-\/\+LCOM/shared/proj/src/player.\+h\end{DoxyCompactItemize}
+C\+:/\+Users/\+Pedro/\+Documents/2\+LEIC/2º semestre/\+LC/\+MINIX-\/\+LCOM/shared/proj/src/logic/\mbox{\hyperlink{player_8h}{player.\+h}}\end{DoxyCompactItemize}

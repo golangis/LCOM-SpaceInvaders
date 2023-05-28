@@ -1,0 +1,4 @@
+<map id="game_over_menu_loop" name="game_over_menu_loop">
+<area shape="rect" id="node1" title="Processes the interrupts and calls correct functions while in the Game Over menu state." alt="" coords="162,5,315,32"/>
+<area shape="rect" id="node2" href="$main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,5,114,32"/>
+</map>

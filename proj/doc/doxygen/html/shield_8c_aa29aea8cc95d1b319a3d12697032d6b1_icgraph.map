@@ -1,0 +1,6 @@
+<map id="draw_shield" name="draw_shield">
+<area shape="rect" id="node1" title="Draws a given shield according to its position and lives." alt="" coords="390,5,480,32"/>
+<area shape="rect" id="node2" href="$spaceinvaders_8c.html#a84aa668c4684547c795670fc72531598" title="General game drawing function. Calls the elements&#39; respective drawing functions." alt="" coords="294,5,342,32"/>
+<area shape="rect" id="node3" href="$main_8c.html#aca94587a192dc9d6e25886d009f3ee76" title="Processes the interrupts and calls correct functions while in the Game state." alt="" coords="162,5,246,32"/>
+<area shape="rect" id="node4" href="$main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,5,114,32"/>
+</map>

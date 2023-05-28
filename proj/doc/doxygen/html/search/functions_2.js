@@ -1,7 +1,19 @@
 var searchData=
 [
-  ['deletealienshot_0',['deleteAlienShot',['../alien_8h.html#a0afbca3680ef3c81cbc646ff9c72cf97',1,'alien.c']]],
-  ['diealien_1',['dieAlien',['../alien_8h.html#ab87b5c2f39f4a07ce9b07c2ec7ffd391',1,'alien.c']]],
-  ['drawalien_2',['drawAlien',['../alien_8h.html#a7ae3bd74fbeeefc91a9c410bb42eb85f',1,'alien.c']]],
-  ['drawaliens_3',['drawAliens',['../alien_8h.html#abce7afa217ea827d457307642f4da888',1,'alien.c']]]
+  ['damage_0',['damage',['../shield_8c.html#a05c98b39588bdedcdf3876bd81acca62',1,'damage(Shield *shield):&#160;shield.c'],['../shield_8h.html#a05c98b39588bdedcdf3876bd81acca62',1,'damage(Shield *shield):&#160;shield.c']]],
+  ['delete_5falien_5fshot_1',['delete_alien_shot',['../alien_8c.html#a609f32ec375ba493430c600774033d75',1,'delete_alien_shot(Alien *alien, int i):&#160;alien.c'],['../alien_8h.html#a609f32ec375ba493430c600774033d75',1,'delete_alien_shot(Alien *alien, int i):&#160;alien.c']]],
+  ['delete_5fplayer_5fshot_2',['delete_player_shot',['../player_8c.html#a05477977a2ba3cb090037ee5bb753bdf',1,'delete_player_shot(Player *ship, int i):&#160;player.c'],['../player_8h.html#a05477977a2ba3cb090037ee5bb753bdf',1,'delete_player_shot(Player *ship, int i):&#160;player.c']]],
+  ['die_5falien_3',['die_alien',['../alien_8c.html#abf25c5836219ff077d2841a77a4ed187',1,'die_alien(AlienGroup *group, int i):&#160;alien.c'],['../alien_8h.html#abf25c5836219ff077d2841a77a4ed187',1,'die_alien(AlienGroup *group, int i):&#160;alien.c']]],
+  ['draw_4',['draw',['../spaceinvaders_8c.html#a84aa668c4684547c795670fc72531598',1,'draw():&#160;spaceinvaders.c'],['../spaceinvaders_8h.html#a84aa668c4684547c795670fc72531598',1,'draw():&#160;spaceinvaders.c']]],
+  ['draw_5falien_5',['draw_alien',['../alien_8c.html#a7a09a76bbff752e5cb6eeac7c56fd622',1,'draw_alien(Alien *alien):&#160;alien.c'],['../alien_8h.html#a7a09a76bbff752e5cb6eeac7c56fd622',1,'draw_alien(Alien *alien):&#160;alien.c']]],
+  ['draw_5faliens_6',['draw_aliens',['../alien_8c.html#a54999c9c1299cdf99a0c3b8a2a176fae',1,'draw_aliens(AlienGroup *group):&#160;alien.c'],['../alien_8h.html#a54999c9c1299cdf99a0c3b8a2a176fae',1,'draw_aliens(AlienGroup *group):&#160;alien.c']]],
+  ['draw_5fgame_5fover_5fmenu_7',['draw_game_over_menu',['../spaceinvaders_8c.html#a0af91f71746c9e649dd1f2305c674e38',1,'draw_game_over_menu():&#160;spaceinvaders.c'],['../spaceinvaders_8h.html#a0af91f71746c9e649dd1f2305c674e38',1,'draw_game_over_menu():&#160;spaceinvaders.c']]],
+  ['draw_5fhigh_5fscores_8',['draw_high_scores',['../spaceinvaders_8c.html#ad571496285082d7d70e3ca362c1b04bb',1,'draw_high_scores(Score *scores):&#160;spaceinvaders.c'],['../spaceinvaders_8h.html#ad571496285082d7d70e3ca362c1b04bb',1,'draw_high_scores(Score *scores):&#160;spaceinvaders.c']]],
+  ['draw_5flives_9',['draw_lives',['../player_8c.html#a06db67ec61088b16360980f24230e62f',1,'draw_lives(int lives):&#160;player.c'],['../player_8h.html#a06db67ec61088b16360980f24230e62f',1,'draw_lives(int lives):&#160;player.c']]],
+  ['draw_5fmain_5fmenu_10',['draw_main_menu',['../spaceinvaders_8c.html#a867892903e6eb31b07fcbc8da05bee16',1,'draw_main_menu():&#160;spaceinvaders.c'],['../spaceinvaders_8h.html#a867892903e6eb31b07fcbc8da05bee16',1,'draw_main_menu():&#160;spaceinvaders.c']]],
+  ['draw_5fplayer_11',['draw_player',['../player_8c.html#a6a7c558ce856f450303ab6ad449ad50f',1,'draw_player(Player *ship):&#160;player.c'],['../player_8h.html#a6a7c558ce856f450303ab6ad449ad50f',1,'draw_player(Player *ship):&#160;player.c']]],
+  ['draw_5fscore_12',['draw_score',['../player_8c.html#af50ad9e73493590a4d110b25b70030c6',1,'draw_score(Player *ship):&#160;player.c'],['../player_8h.html#af50ad9e73493590a4d110b25b70030c6',1,'draw_score(Player *ship):&#160;player.c']]],
+  ['draw_5fscore_5faux_13',['draw_score_aux',['../player_8c.html#a9d343b802719d4768760c1e9b146f518',1,'draw_score_aux(uint16_t x, uint16_t y, int score):&#160;player.c'],['../player_8h.html#a9d343b802719d4768760c1e9b146f518',1,'draw_score_aux(uint16_t x, uint16_t y, int score):&#160;player.c']]],
+  ['draw_5fshield_14',['draw_shield',['../shield_8c.html#aa29aea8cc95d1b319a3d12697032d6b1',1,'draw_shield(Shield *shield):&#160;shield.c'],['../shield_8h.html#aa29aea8cc95d1b319a3d12697032d6b1',1,'draw_shield(Shield *shield):&#160;shield.c']]],
+  ['draw_5fshot_15',['draw_shot',['../shot_8c.html#a3c1b5ef797a64fc81d09d04f68f99673',1,'draw_shot(Shot *shot):&#160;shot.c'],['../shot_8h.html#a3c1b5ef797a64fc81d09d04f68f99673',1,'draw_shot(Shot *shot):&#160;shot.c']]]
 ];

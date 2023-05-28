@@ -1,0 +1,5 @@
+<map id="draw_high_scores" name="draw_high_scores">
+<area shape="rect" id="node1" title="Draws the highscore page, given a pre&#45;generated top&#45;10 score array." alt="" coords="325,5,450,32"/>
+<area shape="rect" id="node2" href="$main_8c.html#a31f00e3232e268b63b905a17a164542b" title="Processes the interrupts and calls correct functions while in the Highscores menu state." alt="" coords="162,5,277,32"/>
+<area shape="rect" id="node3" href="$main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,5,114,32"/>
+</map>

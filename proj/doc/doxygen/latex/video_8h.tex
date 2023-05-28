@@ -14,11 +14,30 @@ Functions for programming the video card. Also contains variables to store the x
 {\ttfamily \#include \char`\"{}xpm/logo.\+xpm\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}xpm/mouse.\+xpm\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}xpm/play-\/button.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xpm/ranking-\/button.\+xpm\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}xpm/rocket.\+xpm\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}xpm/score.\+xpm\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}xpm/shield.\+xpm\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}xpm/shot.\+xpm\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}xpm/\+Game\+Over.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xpm/replay-\/button.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xpm/menu-\/button.\+xpm\char`\"{}}\newline
+Include dependency graph for video.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{video_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{video_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -33,221 +52,161 @@ void() \mbox{\hyperlink{video_8h_a1d7817e4e5198831c8e33e05a64e8ecf}{video\+\_\+d
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{video_8h_a43e7e5a0a8f9069e6413b2066ca52f3e}\label{video_8h_a43e7e5a0a8f9069e6413b2066ca52f3e}} 
-unsigned {\bfseries h\+\_\+res}
+unsigned \mbox{\hyperlink{video_8h_a43e7e5a0a8f9069e6413b2066ca52f3e}{h\+\_\+res}}
 \item 
-\mbox{\Hypertarget{video_8h_a5bda1b499253a8fbf3cab646f8760391}\label{video_8h_a5bda1b499253a8fbf3cab646f8760391}} 
-unsigned {\bfseries v\+\_\+res}
+unsigned \mbox{\hyperlink{video_8h_a5bda1b499253a8fbf3cab646f8760391}{v\+\_\+res}}
 \item 
-\mbox{\Hypertarget{video_8h_a89fa3fb58e975d148fcb2413e24b78a1}\label{video_8h_a89fa3fb58e975d148fcb2413e24b78a1}} 
-unsigned {\bfseries bits\+\_\+per\+\_\+pixel}
+unsigned \mbox{\hyperlink{video_8h_a89fa3fb58e975d148fcb2413e24b78a1}{bits\+\_\+per\+\_\+pixel}}
 \item 
-\mbox{\Hypertarget{video_8h_a144d9a9cabab9de0142a6baee835ca6b}\label{video_8h_a144d9a9cabab9de0142a6baee835ca6b}} 
-unsigned {\bfseries bytes\+\_\+per\+\_\+pixel}
+unsigned \mbox{\hyperlink{video_8h_a144d9a9cabab9de0142a6baee835ca6b}{bytes\+\_\+per\+\_\+pixel}}
 \item 
-\mbox{\Hypertarget{video_8h_a5e25f6a8eedde631fff577bcf7d4f6f4}\label{video_8h_a5e25f6a8eedde631fff577bcf7d4f6f4}} 
-uint8\+\_\+t {\bfseries Red\+Mask\+Size}
+uint8\+\_\+t \mbox{\hyperlink{video_8h_a5e25f6a8eedde631fff577bcf7d4f6f4}{Red\+Mask\+Size}}
 \item 
-\mbox{\Hypertarget{video_8h_ac7b4df72e505b74493e7d5144cbac743}\label{video_8h_ac7b4df72e505b74493e7d5144cbac743}} 
-uint8\+\_\+t {\bfseries Green\+Mask\+Size}
+uint8\+\_\+t \mbox{\hyperlink{video_8h_ac7b4df72e505b74493e7d5144cbac743}{Green\+Mask\+Size}}
 \item 
-\mbox{\Hypertarget{video_8h_a84842a6a42e881ce7be87482122bcc4e}\label{video_8h_a84842a6a42e881ce7be87482122bcc4e}} 
-uint8\+\_\+t {\bfseries Blue\+Mask\+Size}
+uint8\+\_\+t \mbox{\hyperlink{video_8h_a84842a6a42e881ce7be87482122bcc4e}{Blue\+Mask\+Size}}
 \item 
-\mbox{\Hypertarget{video_8h_a20cb142b8c1b0a2b41244fef469a11f4}\label{video_8h_a20cb142b8c1b0a2b41244fef469a11f4}} 
-uint8\+\_\+t {\bfseries Red\+Field\+Position}
+uint8\+\_\+t \mbox{\hyperlink{video_8h_a20cb142b8c1b0a2b41244fef469a11f4}{Red\+Field\+Position}}
 \item 
-\mbox{\Hypertarget{video_8h_a602b28f8e5da781eabfd736743a6ea09}\label{video_8h_a602b28f8e5da781eabfd736743a6ea09}} 
-uint8\+\_\+t {\bfseries Green\+Field\+Position}
+uint8\+\_\+t \mbox{\hyperlink{video_8h_a602b28f8e5da781eabfd736743a6ea09}{Green\+Field\+Position}}
 \item 
-\mbox{\Hypertarget{video_8h_a4d0396c07a4f07556332fec2b4a6c2bf}\label{video_8h_a4d0396c07a4f07556332fec2b4a6c2bf}} 
-uint8\+\_\+t {\bfseries Blue\+Field\+Position}
+uint8\+\_\+t \mbox{\hyperlink{video_8h_a4d0396c07a4f07556332fec2b4a6c2bf}{Blue\+Field\+Position}}
 \item 
-\mbox{\Hypertarget{video_8h_a93a24e067b9083bed6fb5c0336fd7a01}\label{video_8h_a93a24e067b9083bed6fb5c0336fd7a01}} 
-char $\ast$ {\bfseries video\+\_\+mem}
+char $\ast$ \mbox{\hyperlink{video_8h_a93a24e067b9083bed6fb5c0336fd7a01}{video\+\_\+mem}}
 \item 
-\mbox{\Hypertarget{video_8h_af1fd447b511687fa2d2c9d9a38cc8389}\label{video_8h_af1fd447b511687fa2d2c9d9a38cc8389}} 
-uint8\+\_\+t $\ast$ {\bfseries video\+\_\+buffer}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_af1fd447b511687fa2d2c9d9a38cc8389}{video\+\_\+buffer}}
 \item 
-\mbox{\Hypertarget{video_8h_a3132b7e8d354dff74051076ab2d977ec}\label{video_8h_a3132b7e8d354dff74051076ab2d977ec}} 
-xpm\+\_\+image\+\_\+t {\bfseries h\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_a3132b7e8d354dff74051076ab2d977ec}{h\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_a4cd11e01f21bf607b810a40a7ffa80d2}\label{video_8h_a4cd11e01f21bf607b810a40a7ffa80d2}} 
-xpm\+\_\+image\+\_\+t {\bfseries slash\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_a4cd11e01f21bf607b810a40a7ffa80d2}{slash\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_a8d6b586ff9c58e31bb7f89fe593b0496}\label{video_8h_a8d6b586ff9c58e31bb7f89fe593b0496}} 
-xpm\+\_\+image\+\_\+t {\bfseries zero\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_a8d6b586ff9c58e31bb7f89fe593b0496}{zero\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_a06a61310265e3b593c52bd2acae6bb5f}\label{video_8h_a06a61310265e3b593c52bd2acae6bb5f}} 
-xpm\+\_\+image\+\_\+t {\bfseries one\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_a06a61310265e3b593c52bd2acae6bb5f}{one\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_ac401d5f8271ba289a416e5efb8120e00}\label{video_8h_ac401d5f8271ba289a416e5efb8120e00}} 
-xpm\+\_\+image\+\_\+t {\bfseries two\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_ac401d5f8271ba289a416e5efb8120e00}{two\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_a640afed91f9bb514084a0e125a06409e}\label{video_8h_a640afed91f9bb514084a0e125a06409e}} 
-xpm\+\_\+image\+\_\+t {\bfseries three\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_a640afed91f9bb514084a0e125a06409e}{three\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_adc3540163af153a500a6cfb92cc2e3c9}\label{video_8h_adc3540163af153a500a6cfb92cc2e3c9}} 
-xpm\+\_\+image\+\_\+t {\bfseries four\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_adc3540163af153a500a6cfb92cc2e3c9}{four\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_a080a61f7d9bc7b8de2c430bf0cc9894d}\label{video_8h_a080a61f7d9bc7b8de2c430bf0cc9894d}} 
-xpm\+\_\+image\+\_\+t {\bfseries five\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_a080a61f7d9bc7b8de2c430bf0cc9894d}{five\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_ac54ea75e82fcce67ecf46d5ef51aba96}\label{video_8h_ac54ea75e82fcce67ecf46d5ef51aba96}} 
-xpm\+\_\+image\+\_\+t {\bfseries six\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_ac54ea75e82fcce67ecf46d5ef51aba96}{six\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_ab8fa08e2054134c1bf943c55820b058c}\label{video_8h_ab8fa08e2054134c1bf943c55820b058c}} 
-xpm\+\_\+image\+\_\+t {\bfseries seven\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_ab8fa08e2054134c1bf943c55820b058c}{seven\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_a99da0d80d136a98b4e9e41ffe339b49e}\label{video_8h_a99da0d80d136a98b4e9e41ffe339b49e}} 
-xpm\+\_\+image\+\_\+t {\bfseries eight\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_a99da0d80d136a98b4e9e41ffe339b49e}{eight\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_a743045a6c44330fc5ca69e36aa59a774}\label{video_8h_a743045a6c44330fc5ca69e36aa59a774}} 
-xpm\+\_\+image\+\_\+t {\bfseries nine\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_a743045a6c44330fc5ca69e36aa59a774}{nine\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_ae47f1e668d703a6eb64c69a90a8c8a80}\label{video_8h_ae47f1e668d703a6eb64c69a90a8c8a80}} 
-xpm\+\_\+image\+\_\+t {\bfseries alien1\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_ae47f1e668d703a6eb64c69a90a8c8a80}{alien1\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_a3d2b5ee03222e59ec79e5304d7d5f592}\label{video_8h_a3d2b5ee03222e59ec79e5304d7d5f592}} 
-xpm\+\_\+image\+\_\+t {\bfseries alien2\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_a3d2b5ee03222e59ec79e5304d7d5f592}{alien2\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_aa549f6eaf8a8d17111dd6656408fbfa3}\label{video_8h_aa549f6eaf8a8d17111dd6656408fbfa3}} 
-xpm\+\_\+image\+\_\+t {\bfseries alien3\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_aa549f6eaf8a8d17111dd6656408fbfa3}{alien3\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_a00dbecc177be352d0dc8bf3c9cac3847}\label{video_8h_a00dbecc177be352d0dc8bf3c9cac3847}} 
-xpm\+\_\+image\+\_\+t {\bfseries alien4\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_a00dbecc177be352d0dc8bf3c9cac3847}{alien4\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_ac8cbc2eae4f959a31bb2d620aa526fe9}\label{video_8h_ac8cbc2eae4f959a31bb2d620aa526fe9}} 
-xpm\+\_\+image\+\_\+t {\bfseries alien5\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_ac8cbc2eae4f959a31bb2d620aa526fe9}{alien5\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_ad996f2b351a7b01be54623a52f14f59b}\label{video_8h_ad996f2b351a7b01be54623a52f14f59b}} 
-xpm\+\_\+image\+\_\+t {\bfseries heart\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_ad996f2b351a7b01be54623a52f14f59b}{heart\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_a36c54fe7e62c8d42665620385f7592e7}\label{video_8h_a36c54fe7e62c8d42665620385f7592e7}} 
-xpm\+\_\+image\+\_\+t {\bfseries heart\+\_\+bad\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_a36c54fe7e62c8d42665620385f7592e7}{heart\+\_\+bad\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_ad973550294f2aabbd126d632d6fb5054}\label{video_8h_ad973550294f2aabbd126d632d6fb5054}} 
-xpm\+\_\+image\+\_\+t {\bfseries logo\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_ad973550294f2aabbd126d632d6fb5054}{logo\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_ac3106dc5b51827d911b34e5333092dad}\label{video_8h_ac3106dc5b51827d911b34e5333092dad}} 
-xpm\+\_\+image\+\_\+t {\bfseries mouse\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_ac3106dc5b51827d911b34e5333092dad}{mouse\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_abd25f542d85b6a1a10b48e425a288f79}\label{video_8h_abd25f542d85b6a1a10b48e425a288f79}} 
-xpm\+\_\+image\+\_\+t {\bfseries play\+\_\+button\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_abd25f542d85b6a1a10b48e425a288f79}{play\+\_\+button\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_ae899639fe7d602d422efd041ac67aeae}\label{video_8h_ae899639fe7d602d422efd041ac67aeae}} 
-xpm\+\_\+image\+\_\+t {\bfseries rocket\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_aeb2a62d9196ad41855a657200f59c9ea}{ranking\+\_\+button\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_aa00d256e7fe36151a6cbe99d45ad7d38}\label{video_8h_aa00d256e7fe36151a6cbe99d45ad7d38}} 
-xpm\+\_\+image\+\_\+t {\bfseries score\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_ae899639fe7d602d422efd041ac67aeae}{rocket\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_af25f3b79c54f5633c10bb2898fc1c16f}\label{video_8h_af25f3b79c54f5633c10bb2898fc1c16f}} 
-xpm\+\_\+image\+\_\+t {\bfseries shield3\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_aa00d256e7fe36151a6cbe99d45ad7d38}{score\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_af3853b59af0176ab62ed1dd05af724bb}\label{video_8h_af3853b59af0176ab62ed1dd05af724bb}} 
-xpm\+\_\+image\+\_\+t {\bfseries shield2\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_af25f3b79c54f5633c10bb2898fc1c16f}{shield3\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_a8ab5ef1d3bac28bb39346fdc8868bb86}\label{video_8h_a8ab5ef1d3bac28bb39346fdc8868bb86}} 
-xpm\+\_\+image\+\_\+t {\bfseries shield1\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_af3853b59af0176ab62ed1dd05af724bb}{shield2\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_a7c174a131a1f1b6a7feff30af70fce32}\label{video_8h_a7c174a131a1f1b6a7feff30af70fce32}} 
-xpm\+\_\+image\+\_\+t {\bfseries ship\+\_\+shot\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_a8ab5ef1d3bac28bb39346fdc8868bb86}{shield1\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_a49647480c99bd0db393dee840f486619}\label{video_8h_a49647480c99bd0db393dee840f486619}} 
-xpm\+\_\+image\+\_\+t {\bfseries alien\+\_\+shot\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_a7c174a131a1f1b6a7feff30af70fce32}{ship\+\_\+shot\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_aa21981659e1e836b2bfde17c315e3cbf}\label{video_8h_aa21981659e1e836b2bfde17c315e3cbf}} 
-xpm\+\_\+image\+\_\+t {\bfseries game\+Over\+\_\+img}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_a49647480c99bd0db393dee840f486619}{alien\+\_\+shot\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_a017d40f39839b82d717bf7d6ac008ff6}\label{video_8h_a017d40f39839b82d717bf7d6ac008ff6}} 
-uint8\+\_\+t $\ast$ {\bfseries h\+\_\+map}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_aa21981659e1e836b2bfde17c315e3cbf}{game\+Over\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_aa6168cd4ef0b65062316b40dc1f9ae92}\label{video_8h_aa6168cd4ef0b65062316b40dc1f9ae92}} 
-uint8\+\_\+t $\ast$ {\bfseries slash\+\_\+map}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_ae0ac742c295bece3f03b7fa0b106b36d}{replay\+\_\+button\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_ada7df97dea66a1c784322e068a3488c8}\label{video_8h_ada7df97dea66a1c784322e068a3488c8}} 
-uint8\+\_\+t $\ast$ {\bfseries zero\+\_\+map}
+xpm\+\_\+image\+\_\+t \mbox{\hyperlink{video_8h_a301336cea66e1d1c563be0b77ec40d8e}{menu\+\_\+button\+\_\+img}}
 \item 
-\mbox{\Hypertarget{video_8h_aac4d5543e43fc8e10b83bdcaccebb3d1}\label{video_8h_aac4d5543e43fc8e10b83bdcaccebb3d1}} 
-uint8\+\_\+t $\ast$ {\bfseries one\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_a017d40f39839b82d717bf7d6ac008ff6}{h\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_adf523d4cb622b45c0771e11f0cf137b7}\label{video_8h_adf523d4cb622b45c0771e11f0cf137b7}} 
-uint8\+\_\+t $\ast$ {\bfseries two\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_aa6168cd4ef0b65062316b40dc1f9ae92}{slash\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_ab944625d9a96eebd71583e33fcaa6a21}\label{video_8h_ab944625d9a96eebd71583e33fcaa6a21}} 
-uint8\+\_\+t $\ast$ {\bfseries three\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_ada7df97dea66a1c784322e068a3488c8}{zero\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_ae0c53b0aa59336bdcb3a33db238f52af}\label{video_8h_ae0c53b0aa59336bdcb3a33db238f52af}} 
-uint8\+\_\+t $\ast$ {\bfseries four\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_aac4d5543e43fc8e10b83bdcaccebb3d1}{one\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_ab092c553a2881666bb5beb0806edca89}\label{video_8h_ab092c553a2881666bb5beb0806edca89}} 
-uint8\+\_\+t $\ast$ {\bfseries five\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_adf523d4cb622b45c0771e11f0cf137b7}{two\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_ac81b0e393531223f1cad80b7010b9230}\label{video_8h_ac81b0e393531223f1cad80b7010b9230}} 
-uint8\+\_\+t $\ast$ {\bfseries six\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_ab944625d9a96eebd71583e33fcaa6a21}{three\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_a02c90b8708ac0c5de41d2187cc504796}\label{video_8h_a02c90b8708ac0c5de41d2187cc504796}} 
-uint8\+\_\+t $\ast$ {\bfseries seven\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_ae0c53b0aa59336bdcb3a33db238f52af}{four\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_a7c57efcfb3eeaf8fcf12cfda34bdc9ad}\label{video_8h_a7c57efcfb3eeaf8fcf12cfda34bdc9ad}} 
-uint8\+\_\+t $\ast$ {\bfseries eight\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_ab092c553a2881666bb5beb0806edca89}{five\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_a609cdf4484611c4d31bc61cfa37b20d9}\label{video_8h_a609cdf4484611c4d31bc61cfa37b20d9}} 
-uint8\+\_\+t $\ast$ {\bfseries nine\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_ac81b0e393531223f1cad80b7010b9230}{six\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_afe62c2554c5826547c8d66d84998493f}\label{video_8h_afe62c2554c5826547c8d66d84998493f}} 
-uint8\+\_\+t $\ast$ {\bfseries alien1\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_a02c90b8708ac0c5de41d2187cc504796}{seven\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_a19fd0888badb9d315210cf5bad4f61b1}\label{video_8h_a19fd0888badb9d315210cf5bad4f61b1}} 
-uint8\+\_\+t $\ast$ {\bfseries alien2\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_a7c57efcfb3eeaf8fcf12cfda34bdc9ad}{eight\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_a20a82bdde414dce6ef43901d5a90f8df}\label{video_8h_a20a82bdde414dce6ef43901d5a90f8df}} 
-uint8\+\_\+t $\ast$ {\bfseries alien3\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_a609cdf4484611c4d31bc61cfa37b20d9}{nine\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_a97b1e01362e8c96f798ae4dc29f9fda6}\label{video_8h_a97b1e01362e8c96f798ae4dc29f9fda6}} 
-uint8\+\_\+t $\ast$ {\bfseries alien4\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_afe62c2554c5826547c8d66d84998493f}{alien1\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_a215cc0d8e5602756c22f3ae5a2485541}\label{video_8h_a215cc0d8e5602756c22f3ae5a2485541}} 
-uint8\+\_\+t $\ast$ {\bfseries alien5\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_a19fd0888badb9d315210cf5bad4f61b1}{alien2\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_ac49b8356e33c39887cea3c38720adadc}\label{video_8h_ac49b8356e33c39887cea3c38720adadc}} 
-uint8\+\_\+t $\ast$ {\bfseries heart\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_a20a82bdde414dce6ef43901d5a90f8df}{alien3\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_ab8139708ce8d1aa4f73f3e12aff8a8d5}\label{video_8h_ab8139708ce8d1aa4f73f3e12aff8a8d5}} 
-uint8\+\_\+t $\ast$ {\bfseries heart\+\_\+bad\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_a97b1e01362e8c96f798ae4dc29f9fda6}{alien4\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_a14f78847a9d93ac384c19fc7aa237148}\label{video_8h_a14f78847a9d93ac384c19fc7aa237148}} 
-uint8\+\_\+t $\ast$ {\bfseries logo\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_a215cc0d8e5602756c22f3ae5a2485541}{alien5\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_a40cbec21681250f09fb19b18780e7f9b}\label{video_8h_a40cbec21681250f09fb19b18780e7f9b}} 
-uint8\+\_\+t $\ast$ {\bfseries mouse\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_ac49b8356e33c39887cea3c38720adadc}{heart\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_a53f3e055578ec24a86de76f12c20b40c}\label{video_8h_a53f3e055578ec24a86de76f12c20b40c}} 
-uint8\+\_\+t $\ast$ {\bfseries play\+\_\+button\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_ab8139708ce8d1aa4f73f3e12aff8a8d5}{heart\+\_\+bad\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_add3e020116f5c7077d4c8393764e0666}\label{video_8h_add3e020116f5c7077d4c8393764e0666}} 
-uint8\+\_\+t $\ast$ {\bfseries rocket\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_a14f78847a9d93ac384c19fc7aa237148}{logo\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_a4949c9c8a391f6c9ffc8c8a5af6a9677}\label{video_8h_a4949c9c8a391f6c9ffc8c8a5af6a9677}} 
-uint8\+\_\+t $\ast$ {\bfseries score\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_a40cbec21681250f09fb19b18780e7f9b}{mouse\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_aaf080ea1e3478c976d5dff880175281b}\label{video_8h_aaf080ea1e3478c976d5dff880175281b}} 
-uint8\+\_\+t $\ast$ {\bfseries shield3\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_a53f3e055578ec24a86de76f12c20b40c}{play\+\_\+button\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_ab5027de34a31604633306fa27d2a7d1b}\label{video_8h_ab5027de34a31604633306fa27d2a7d1b}} 
-uint8\+\_\+t $\ast$ {\bfseries shield2\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_ac9af3b4c4ea1328f43da53fb15daa79b}{ranking\+\_\+button\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_ab7dba869404e4d015a54f1b29db5897b}\label{video_8h_ab7dba869404e4d015a54f1b29db5897b}} 
-uint8\+\_\+t $\ast$ {\bfseries shield1\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_add3e020116f5c7077d4c8393764e0666}{rocket\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_a4c0039840e9b09739b674cc9315fb778}\label{video_8h_a4c0039840e9b09739b674cc9315fb778}} 
-uint8\+\_\+t $\ast$ {\bfseries ship\+\_\+shot\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_a4949c9c8a391f6c9ffc8c8a5af6a9677}{score\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_a9279d77503476c728251fd1c8bc40c9e}\label{video_8h_a9279d77503476c728251fd1c8bc40c9e}} 
-uint8\+\_\+t $\ast$ {\bfseries alien\+\_\+shot\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_aaf080ea1e3478c976d5dff880175281b}{shield3\+\_\+map}}
 \item 
-\mbox{\Hypertarget{video_8h_a91167116d335615d57a710ff1532ce11}\label{video_8h_a91167116d335615d57a710ff1532ce11}} 
-uint8\+\_\+t $\ast$ {\bfseries game\+Over\+\_\+map}
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_ab5027de34a31604633306fa27d2a7d1b}{shield2\+\_\+map}}
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_ab7dba869404e4d015a54f1b29db5897b}{shield1\+\_\+map}}
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_a4c0039840e9b09739b674cc9315fb778}{ship\+\_\+shot\+\_\+map}}
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_a9279d77503476c728251fd1c8bc40c9e}{alien\+\_\+shot\+\_\+map}}
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_a91167116d335615d57a710ff1532ce11}{game\+Over\+\_\+map}}
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_ae61cff3f4c7679476494bf7cb3e11557}{replay\+\_\+button\+\_\+map}}
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{video_8h_aa1da62afce5f2bf3f17cd859a97e1881}{menu\+\_\+button\+\_\+map}}
 \end{DoxyCompactItemize}
 
 
@@ -276,6 +235,14 @@ Sets the pixel at the given coordinates to the given color.
 {\em color} & Color to set the pixel to. \\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{video_8h_ab0332ee565f978f725c021b4eb35958e_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{video_8h_a1d7817e4e5198831c8e33e05a64e8ecf}\label{video_8h_a1d7817e4e5198831c8e33e05a64e8ecf}} 
 \index{video.h@{video.h}!video\_draw\_xpm@{video\_draw\_xpm}}
 \index{video\_draw\_xpm@{video\_draw\_xpm}!video.h@{video.h}}
@@ -295,6 +262,22 @@ Draws a XPM image with the leftmost upper pixel at the given coordinates.
 {\em xpm} & Name of the XPM image to draw. \\
 \hline
 \end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{video_8h_a1d7817e4e5198831c8e33e05a64e8ecf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{video_8h_a1d7817e4e5198831c8e33e05a64e8ecf_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{video_8h_a27f9047879cee35f24ae69729e89c732}\label{video_8h_a27f9047879cee35f24ae69729e89c732}} 
 \index{video.h@{video.h}!video\_init@{video\_init}}
 \index{video\_init@{video\_init}!video.h@{video.h}}
@@ -310,6 +293,22 @@ Initializes the video card in the given mode and maps the VRAM.
 {\em mode} & Mode to initialize the video card in. \\
 \hline
 \end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{video_8h_a27f9047879cee35f24ae69729e89c732_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{video_8h_a27f9047879cee35f24ae69729e89c732_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{video_8h_a43eca9753118b540d01327d3c4a7068c}\label{video_8h_a43eca9753118b540d01327d3c4a7068c}} 
 \index{video.h@{video.h}!video\_load\_xpms@{video\_load\_xpms}}
 \index{video\_load\_xpms@{video\_load\_xpms}!video.h@{video.h}}
@@ -319,4 +318,483 @@ Initializes the video card in the given mode and maps the VRAM.
 
 
 Loads the XPM images used in the app. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{video_8h_a43eca9753118b540d01327d3c4a7068c_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{video_8h_ae47f1e668d703a6eb64c69a90a8c8a80}\label{video_8h_ae47f1e668d703a6eb64c69a90a8c8a80}} 
+\index{video.h@{video.h}!alien1\_img@{alien1\_img}}
+\index{alien1\_img@{alien1\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{alien1\_img}{alien1\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t alien1\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_afe62c2554c5826547c8d66d84998493f}\label{video_8h_afe62c2554c5826547c8d66d84998493f}} 
+\index{video.h@{video.h}!alien1\_map@{alien1\_map}}
+\index{alien1\_map@{alien1\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{alien1\_map}{alien1\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ alien1\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_a3d2b5ee03222e59ec79e5304d7d5f592}\label{video_8h_a3d2b5ee03222e59ec79e5304d7d5f592}} 
+\index{video.h@{video.h}!alien2\_img@{alien2\_img}}
+\index{alien2\_img@{alien2\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{alien2\_img}{alien2\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t alien2\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_a19fd0888badb9d315210cf5bad4f61b1}\label{video_8h_a19fd0888badb9d315210cf5bad4f61b1}} 
+\index{video.h@{video.h}!alien2\_map@{alien2\_map}}
+\index{alien2\_map@{alien2\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{alien2\_map}{alien2\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ alien2\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_aa549f6eaf8a8d17111dd6656408fbfa3}\label{video_8h_aa549f6eaf8a8d17111dd6656408fbfa3}} 
+\index{video.h@{video.h}!alien3\_img@{alien3\_img}}
+\index{alien3\_img@{alien3\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{alien3\_img}{alien3\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t alien3\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_a20a82bdde414dce6ef43901d5a90f8df}\label{video_8h_a20a82bdde414dce6ef43901d5a90f8df}} 
+\index{video.h@{video.h}!alien3\_map@{alien3\_map}}
+\index{alien3\_map@{alien3\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{alien3\_map}{alien3\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ alien3\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_a00dbecc177be352d0dc8bf3c9cac3847}\label{video_8h_a00dbecc177be352d0dc8bf3c9cac3847}} 
+\index{video.h@{video.h}!alien4\_img@{alien4\_img}}
+\index{alien4\_img@{alien4\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{alien4\_img}{alien4\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t alien4\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_a97b1e01362e8c96f798ae4dc29f9fda6}\label{video_8h_a97b1e01362e8c96f798ae4dc29f9fda6}} 
+\index{video.h@{video.h}!alien4\_map@{alien4\_map}}
+\index{alien4\_map@{alien4\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{alien4\_map}{alien4\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ alien4\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_ac8cbc2eae4f959a31bb2d620aa526fe9}\label{video_8h_ac8cbc2eae4f959a31bb2d620aa526fe9}} 
+\index{video.h@{video.h}!alien5\_img@{alien5\_img}}
+\index{alien5\_img@{alien5\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{alien5\_img}{alien5\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t alien5\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_a215cc0d8e5602756c22f3ae5a2485541}\label{video_8h_a215cc0d8e5602756c22f3ae5a2485541}} 
+\index{video.h@{video.h}!alien5\_map@{alien5\_map}}
+\index{alien5\_map@{alien5\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{alien5\_map}{alien5\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ alien5\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_a49647480c99bd0db393dee840f486619}\label{video_8h_a49647480c99bd0db393dee840f486619}} 
+\index{video.h@{video.h}!alien\_shot\_img@{alien\_shot\_img}}
+\index{alien\_shot\_img@{alien\_shot\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{alien\_shot\_img}{alien\_shot\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t alien\+\_\+shot\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_a9279d77503476c728251fd1c8bc40c9e}\label{video_8h_a9279d77503476c728251fd1c8bc40c9e}} 
+\index{video.h@{video.h}!alien\_shot\_map@{alien\_shot\_map}}
+\index{alien\_shot\_map@{alien\_shot\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{alien\_shot\_map}{alien\_shot\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ alien\+\_\+shot\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_a89fa3fb58e975d148fcb2413e24b78a1}\label{video_8h_a89fa3fb58e975d148fcb2413e24b78a1}} 
+\index{video.h@{video.h}!bits\_per\_pixel@{bits\_per\_pixel}}
+\index{bits\_per\_pixel@{bits\_per\_pixel}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{bits\_per\_pixel}{bits\_per\_pixel}}
+{\footnotesize\ttfamily unsigned bits\+\_\+per\+\_\+pixel}
+
+\mbox{\Hypertarget{video_8h_a4d0396c07a4f07556332fec2b4a6c2bf}\label{video_8h_a4d0396c07a4f07556332fec2b4a6c2bf}} 
+\index{video.h@{video.h}!BlueFieldPosition@{BlueFieldPosition}}
+\index{BlueFieldPosition@{BlueFieldPosition}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{BlueFieldPosition}{BlueFieldPosition}}
+{\footnotesize\ttfamily uint8\+\_\+t Blue\+Field\+Position}
+
+\mbox{\Hypertarget{video_8h_a84842a6a42e881ce7be87482122bcc4e}\label{video_8h_a84842a6a42e881ce7be87482122bcc4e}} 
+\index{video.h@{video.h}!BlueMaskSize@{BlueMaskSize}}
+\index{BlueMaskSize@{BlueMaskSize}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{BlueMaskSize}{BlueMaskSize}}
+{\footnotesize\ttfamily uint8\+\_\+t Blue\+Mask\+Size}
+
+\mbox{\Hypertarget{video_8h_a144d9a9cabab9de0142a6baee835ca6b}\label{video_8h_a144d9a9cabab9de0142a6baee835ca6b}} 
+\index{video.h@{video.h}!bytes\_per\_pixel@{bytes\_per\_pixel}}
+\index{bytes\_per\_pixel@{bytes\_per\_pixel}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{bytes\_per\_pixel}{bytes\_per\_pixel}}
+{\footnotesize\ttfamily unsigned bytes\+\_\+per\+\_\+pixel}
+
+\mbox{\Hypertarget{video_8h_a99da0d80d136a98b4e9e41ffe339b49e}\label{video_8h_a99da0d80d136a98b4e9e41ffe339b49e}} 
+\index{video.h@{video.h}!eight\_img@{eight\_img}}
+\index{eight\_img@{eight\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{eight\_img}{eight\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t eight\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_a7c57efcfb3eeaf8fcf12cfda34bdc9ad}\label{video_8h_a7c57efcfb3eeaf8fcf12cfda34bdc9ad}} 
+\index{video.h@{video.h}!eight\_map@{eight\_map}}
+\index{eight\_map@{eight\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{eight\_map}{eight\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ eight\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_a080a61f7d9bc7b8de2c430bf0cc9894d}\label{video_8h_a080a61f7d9bc7b8de2c430bf0cc9894d}} 
+\index{video.h@{video.h}!five\_img@{five\_img}}
+\index{five\_img@{five\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{five\_img}{five\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t five\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_ab092c553a2881666bb5beb0806edca89}\label{video_8h_ab092c553a2881666bb5beb0806edca89}} 
+\index{video.h@{video.h}!five\_map@{five\_map}}
+\index{five\_map@{five\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{five\_map}{five\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ five\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_adc3540163af153a500a6cfb92cc2e3c9}\label{video_8h_adc3540163af153a500a6cfb92cc2e3c9}} 
+\index{video.h@{video.h}!four\_img@{four\_img}}
+\index{four\_img@{four\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{four\_img}{four\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t four\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_ae0c53b0aa59336bdcb3a33db238f52af}\label{video_8h_ae0c53b0aa59336bdcb3a33db238f52af}} 
+\index{video.h@{video.h}!four\_map@{four\_map}}
+\index{four\_map@{four\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{four\_map}{four\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ four\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_aa21981659e1e836b2bfde17c315e3cbf}\label{video_8h_aa21981659e1e836b2bfde17c315e3cbf}} 
+\index{video.h@{video.h}!gameOver\_img@{gameOver\_img}}
+\index{gameOver\_img@{gameOver\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{gameOver\_img}{gameOver\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t game\+Over\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_a91167116d335615d57a710ff1532ce11}\label{video_8h_a91167116d335615d57a710ff1532ce11}} 
+\index{video.h@{video.h}!gameOver\_map@{gameOver\_map}}
+\index{gameOver\_map@{gameOver\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{gameOver\_map}{gameOver\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ game\+Over\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_a602b28f8e5da781eabfd736743a6ea09}\label{video_8h_a602b28f8e5da781eabfd736743a6ea09}} 
+\index{video.h@{video.h}!GreenFieldPosition@{GreenFieldPosition}}
+\index{GreenFieldPosition@{GreenFieldPosition}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{GreenFieldPosition}{GreenFieldPosition}}
+{\footnotesize\ttfamily uint8\+\_\+t Green\+Field\+Position}
+
+\mbox{\Hypertarget{video_8h_ac7b4df72e505b74493e7d5144cbac743}\label{video_8h_ac7b4df72e505b74493e7d5144cbac743}} 
+\index{video.h@{video.h}!GreenMaskSize@{GreenMaskSize}}
+\index{GreenMaskSize@{GreenMaskSize}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{GreenMaskSize}{GreenMaskSize}}
+{\footnotesize\ttfamily uint8\+\_\+t Green\+Mask\+Size}
+
+\mbox{\Hypertarget{video_8h_a3132b7e8d354dff74051076ab2d977ec}\label{video_8h_a3132b7e8d354dff74051076ab2d977ec}} 
+\index{video.h@{video.h}!h\_img@{h\_img}}
+\index{h\_img@{h\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{h\_img}{h\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t h\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_a017d40f39839b82d717bf7d6ac008ff6}\label{video_8h_a017d40f39839b82d717bf7d6ac008ff6}} 
+\index{video.h@{video.h}!h\_map@{h\_map}}
+\index{h\_map@{h\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{h\_map}{h\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ h\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_a43e7e5a0a8f9069e6413b2066ca52f3e}\label{video_8h_a43e7e5a0a8f9069e6413b2066ca52f3e}} 
+\index{video.h@{video.h}!h\_res@{h\_res}}
+\index{h\_res@{h\_res}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{h\_res}{h\_res}}
+{\footnotesize\ttfamily unsigned h\+\_\+res}
+
+\mbox{\Hypertarget{video_8h_a36c54fe7e62c8d42665620385f7592e7}\label{video_8h_a36c54fe7e62c8d42665620385f7592e7}} 
+\index{video.h@{video.h}!heart\_bad\_img@{heart\_bad\_img}}
+\index{heart\_bad\_img@{heart\_bad\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{heart\_bad\_img}{heart\_bad\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t heart\+\_\+bad\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_ab8139708ce8d1aa4f73f3e12aff8a8d5}\label{video_8h_ab8139708ce8d1aa4f73f3e12aff8a8d5}} 
+\index{video.h@{video.h}!heart\_bad\_map@{heart\_bad\_map}}
+\index{heart\_bad\_map@{heart\_bad\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{heart\_bad\_map}{heart\_bad\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ heart\+\_\+bad\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_ad996f2b351a7b01be54623a52f14f59b}\label{video_8h_ad996f2b351a7b01be54623a52f14f59b}} 
+\index{video.h@{video.h}!heart\_img@{heart\_img}}
+\index{heart\_img@{heart\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{heart\_img}{heart\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t heart\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_ac49b8356e33c39887cea3c38720adadc}\label{video_8h_ac49b8356e33c39887cea3c38720adadc}} 
+\index{video.h@{video.h}!heart\_map@{heart\_map}}
+\index{heart\_map@{heart\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{heart\_map}{heart\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ heart\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_ad973550294f2aabbd126d632d6fb5054}\label{video_8h_ad973550294f2aabbd126d632d6fb5054}} 
+\index{video.h@{video.h}!logo\_img@{logo\_img}}
+\index{logo\_img@{logo\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{logo\_img}{logo\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t logo\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_a14f78847a9d93ac384c19fc7aa237148}\label{video_8h_a14f78847a9d93ac384c19fc7aa237148}} 
+\index{video.h@{video.h}!logo\_map@{logo\_map}}
+\index{logo\_map@{logo\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{logo\_map}{logo\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ logo\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_a301336cea66e1d1c563be0b77ec40d8e}\label{video_8h_a301336cea66e1d1c563be0b77ec40d8e}} 
+\index{video.h@{video.h}!menu\_button\_img@{menu\_button\_img}}
+\index{menu\_button\_img@{menu\_button\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{menu\_button\_img}{menu\_button\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t menu\+\_\+button\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_aa1da62afce5f2bf3f17cd859a97e1881}\label{video_8h_aa1da62afce5f2bf3f17cd859a97e1881}} 
+\index{video.h@{video.h}!menu\_button\_map@{menu\_button\_map}}
+\index{menu\_button\_map@{menu\_button\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{menu\_button\_map}{menu\_button\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ menu\+\_\+button\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_ac3106dc5b51827d911b34e5333092dad}\label{video_8h_ac3106dc5b51827d911b34e5333092dad}} 
+\index{video.h@{video.h}!mouse\_img@{mouse\_img}}
+\index{mouse\_img@{mouse\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{mouse\_img}{mouse\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t mouse\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_a40cbec21681250f09fb19b18780e7f9b}\label{video_8h_a40cbec21681250f09fb19b18780e7f9b}} 
+\index{video.h@{video.h}!mouse\_map@{mouse\_map}}
+\index{mouse\_map@{mouse\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{mouse\_map}{mouse\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ mouse\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_a743045a6c44330fc5ca69e36aa59a774}\label{video_8h_a743045a6c44330fc5ca69e36aa59a774}} 
+\index{video.h@{video.h}!nine\_img@{nine\_img}}
+\index{nine\_img@{nine\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{nine\_img}{nine\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t nine\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_a609cdf4484611c4d31bc61cfa37b20d9}\label{video_8h_a609cdf4484611c4d31bc61cfa37b20d9}} 
+\index{video.h@{video.h}!nine\_map@{nine\_map}}
+\index{nine\_map@{nine\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{nine\_map}{nine\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ nine\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_a06a61310265e3b593c52bd2acae6bb5f}\label{video_8h_a06a61310265e3b593c52bd2acae6bb5f}} 
+\index{video.h@{video.h}!one\_img@{one\_img}}
+\index{one\_img@{one\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{one\_img}{one\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t one\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_aac4d5543e43fc8e10b83bdcaccebb3d1}\label{video_8h_aac4d5543e43fc8e10b83bdcaccebb3d1}} 
+\index{video.h@{video.h}!one\_map@{one\_map}}
+\index{one\_map@{one\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{one\_map}{one\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ one\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_abd25f542d85b6a1a10b48e425a288f79}\label{video_8h_abd25f542d85b6a1a10b48e425a288f79}} 
+\index{video.h@{video.h}!play\_button\_img@{play\_button\_img}}
+\index{play\_button\_img@{play\_button\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{play\_button\_img}{play\_button\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t play\+\_\+button\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_a53f3e055578ec24a86de76f12c20b40c}\label{video_8h_a53f3e055578ec24a86de76f12c20b40c}} 
+\index{video.h@{video.h}!play\_button\_map@{play\_button\_map}}
+\index{play\_button\_map@{play\_button\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{play\_button\_map}{play\_button\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ play\+\_\+button\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_aeb2a62d9196ad41855a657200f59c9ea}\label{video_8h_aeb2a62d9196ad41855a657200f59c9ea}} 
+\index{video.h@{video.h}!ranking\_button\_img@{ranking\_button\_img}}
+\index{ranking\_button\_img@{ranking\_button\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{ranking\_button\_img}{ranking\_button\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t ranking\+\_\+button\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_ac9af3b4c4ea1328f43da53fb15daa79b}\label{video_8h_ac9af3b4c4ea1328f43da53fb15daa79b}} 
+\index{video.h@{video.h}!ranking\_button\_map@{ranking\_button\_map}}
+\index{ranking\_button\_map@{ranking\_button\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{ranking\_button\_map}{ranking\_button\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ ranking\+\_\+button\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_a20cb142b8c1b0a2b41244fef469a11f4}\label{video_8h_a20cb142b8c1b0a2b41244fef469a11f4}} 
+\index{video.h@{video.h}!RedFieldPosition@{RedFieldPosition}}
+\index{RedFieldPosition@{RedFieldPosition}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{RedFieldPosition}{RedFieldPosition}}
+{\footnotesize\ttfamily uint8\+\_\+t Red\+Field\+Position}
+
+\mbox{\Hypertarget{video_8h_a5e25f6a8eedde631fff577bcf7d4f6f4}\label{video_8h_a5e25f6a8eedde631fff577bcf7d4f6f4}} 
+\index{video.h@{video.h}!RedMaskSize@{RedMaskSize}}
+\index{RedMaskSize@{RedMaskSize}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{RedMaskSize}{RedMaskSize}}
+{\footnotesize\ttfamily uint8\+\_\+t Red\+Mask\+Size}
+
+\mbox{\Hypertarget{video_8h_ae0ac742c295bece3f03b7fa0b106b36d}\label{video_8h_ae0ac742c295bece3f03b7fa0b106b36d}} 
+\index{video.h@{video.h}!replay\_button\_img@{replay\_button\_img}}
+\index{replay\_button\_img@{replay\_button\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{replay\_button\_img}{replay\_button\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t replay\+\_\+button\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_ae61cff3f4c7679476494bf7cb3e11557}\label{video_8h_ae61cff3f4c7679476494bf7cb3e11557}} 
+\index{video.h@{video.h}!replay\_button\_map@{replay\_button\_map}}
+\index{replay\_button\_map@{replay\_button\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{replay\_button\_map}{replay\_button\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ replay\+\_\+button\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_ae899639fe7d602d422efd041ac67aeae}\label{video_8h_ae899639fe7d602d422efd041ac67aeae}} 
+\index{video.h@{video.h}!rocket\_img@{rocket\_img}}
+\index{rocket\_img@{rocket\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{rocket\_img}{rocket\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t rocket\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_add3e020116f5c7077d4c8393764e0666}\label{video_8h_add3e020116f5c7077d4c8393764e0666}} 
+\index{video.h@{video.h}!rocket\_map@{rocket\_map}}
+\index{rocket\_map@{rocket\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{rocket\_map}{rocket\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ rocket\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_aa00d256e7fe36151a6cbe99d45ad7d38}\label{video_8h_aa00d256e7fe36151a6cbe99d45ad7d38}} 
+\index{video.h@{video.h}!score\_img@{score\_img}}
+\index{score\_img@{score\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{score\_img}{score\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t score\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_a4949c9c8a391f6c9ffc8c8a5af6a9677}\label{video_8h_a4949c9c8a391f6c9ffc8c8a5af6a9677}} 
+\index{video.h@{video.h}!score\_map@{score\_map}}
+\index{score\_map@{score\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{score\_map}{score\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ score\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_ab8fa08e2054134c1bf943c55820b058c}\label{video_8h_ab8fa08e2054134c1bf943c55820b058c}} 
+\index{video.h@{video.h}!seven\_img@{seven\_img}}
+\index{seven\_img@{seven\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{seven\_img}{seven\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t seven\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_a02c90b8708ac0c5de41d2187cc504796}\label{video_8h_a02c90b8708ac0c5de41d2187cc504796}} 
+\index{video.h@{video.h}!seven\_map@{seven\_map}}
+\index{seven\_map@{seven\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{seven\_map}{seven\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ seven\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_a8ab5ef1d3bac28bb39346fdc8868bb86}\label{video_8h_a8ab5ef1d3bac28bb39346fdc8868bb86}} 
+\index{video.h@{video.h}!shield1\_img@{shield1\_img}}
+\index{shield1\_img@{shield1\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{shield1\_img}{shield1\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t shield1\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_ab7dba869404e4d015a54f1b29db5897b}\label{video_8h_ab7dba869404e4d015a54f1b29db5897b}} 
+\index{video.h@{video.h}!shield1\_map@{shield1\_map}}
+\index{shield1\_map@{shield1\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{shield1\_map}{shield1\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ shield1\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_af3853b59af0176ab62ed1dd05af724bb}\label{video_8h_af3853b59af0176ab62ed1dd05af724bb}} 
+\index{video.h@{video.h}!shield2\_img@{shield2\_img}}
+\index{shield2\_img@{shield2\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{shield2\_img}{shield2\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t shield2\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_ab5027de34a31604633306fa27d2a7d1b}\label{video_8h_ab5027de34a31604633306fa27d2a7d1b}} 
+\index{video.h@{video.h}!shield2\_map@{shield2\_map}}
+\index{shield2\_map@{shield2\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{shield2\_map}{shield2\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ shield2\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_af25f3b79c54f5633c10bb2898fc1c16f}\label{video_8h_af25f3b79c54f5633c10bb2898fc1c16f}} 
+\index{video.h@{video.h}!shield3\_img@{shield3\_img}}
+\index{shield3\_img@{shield3\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{shield3\_img}{shield3\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t shield3\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_aaf080ea1e3478c976d5dff880175281b}\label{video_8h_aaf080ea1e3478c976d5dff880175281b}} 
+\index{video.h@{video.h}!shield3\_map@{shield3\_map}}
+\index{shield3\_map@{shield3\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{shield3\_map}{shield3\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ shield3\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_a7c174a131a1f1b6a7feff30af70fce32}\label{video_8h_a7c174a131a1f1b6a7feff30af70fce32}} 
+\index{video.h@{video.h}!ship\_shot\_img@{ship\_shot\_img}}
+\index{ship\_shot\_img@{ship\_shot\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{ship\_shot\_img}{ship\_shot\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t ship\+\_\+shot\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_a4c0039840e9b09739b674cc9315fb778}\label{video_8h_a4c0039840e9b09739b674cc9315fb778}} 
+\index{video.h@{video.h}!ship\_shot\_map@{ship\_shot\_map}}
+\index{ship\_shot\_map@{ship\_shot\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{ship\_shot\_map}{ship\_shot\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ ship\+\_\+shot\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_ac54ea75e82fcce67ecf46d5ef51aba96}\label{video_8h_ac54ea75e82fcce67ecf46d5ef51aba96}} 
+\index{video.h@{video.h}!six\_img@{six\_img}}
+\index{six\_img@{six\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{six\_img}{six\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t six\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_ac81b0e393531223f1cad80b7010b9230}\label{video_8h_ac81b0e393531223f1cad80b7010b9230}} 
+\index{video.h@{video.h}!six\_map@{six\_map}}
+\index{six\_map@{six\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{six\_map}{six\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ six\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_a4cd11e01f21bf607b810a40a7ffa80d2}\label{video_8h_a4cd11e01f21bf607b810a40a7ffa80d2}} 
+\index{video.h@{video.h}!slash\_img@{slash\_img}}
+\index{slash\_img@{slash\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{slash\_img}{slash\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t slash\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_aa6168cd4ef0b65062316b40dc1f9ae92}\label{video_8h_aa6168cd4ef0b65062316b40dc1f9ae92}} 
+\index{video.h@{video.h}!slash\_map@{slash\_map}}
+\index{slash\_map@{slash\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{slash\_map}{slash\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ slash\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_a640afed91f9bb514084a0e125a06409e}\label{video_8h_a640afed91f9bb514084a0e125a06409e}} 
+\index{video.h@{video.h}!three\_img@{three\_img}}
+\index{three\_img@{three\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{three\_img}{three\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t three\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_ab944625d9a96eebd71583e33fcaa6a21}\label{video_8h_ab944625d9a96eebd71583e33fcaa6a21}} 
+\index{video.h@{video.h}!three\_map@{three\_map}}
+\index{three\_map@{three\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{three\_map}{three\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ three\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_ac401d5f8271ba289a416e5efb8120e00}\label{video_8h_ac401d5f8271ba289a416e5efb8120e00}} 
+\index{video.h@{video.h}!two\_img@{two\_img}}
+\index{two\_img@{two\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{two\_img}{two\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t two\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_adf523d4cb622b45c0771e11f0cf137b7}\label{video_8h_adf523d4cb622b45c0771e11f0cf137b7}} 
+\index{video.h@{video.h}!two\_map@{two\_map}}
+\index{two\_map@{two\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{two\_map}{two\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ two\+\_\+map}
+
+\mbox{\Hypertarget{video_8h_a5bda1b499253a8fbf3cab646f8760391}\label{video_8h_a5bda1b499253a8fbf3cab646f8760391}} 
+\index{video.h@{video.h}!v\_res@{v\_res}}
+\index{v\_res@{v\_res}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{v\_res}{v\_res}}
+{\footnotesize\ttfamily unsigned v\+\_\+res}
+
+\mbox{\Hypertarget{video_8h_af1fd447b511687fa2d2c9d9a38cc8389}\label{video_8h_af1fd447b511687fa2d2c9d9a38cc8389}} 
+\index{video.h@{video.h}!video\_buffer@{video\_buffer}}
+\index{video\_buffer@{video\_buffer}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{video\_buffer}{video\_buffer}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ video\+\_\+buffer}
+
+\mbox{\Hypertarget{video_8h_a93a24e067b9083bed6fb5c0336fd7a01}\label{video_8h_a93a24e067b9083bed6fb5c0336fd7a01}} 
+\index{video.h@{video.h}!video\_mem@{video\_mem}}
+\index{video\_mem@{video\_mem}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{video\_mem}{video\_mem}}
+{\footnotesize\ttfamily char$\ast$ video\+\_\+mem}
+
+\mbox{\Hypertarget{video_8h_a8d6b586ff9c58e31bb7f89fe593b0496}\label{video_8h_a8d6b586ff9c58e31bb7f89fe593b0496}} 
+\index{video.h@{video.h}!zero\_img@{zero\_img}}
+\index{zero\_img@{zero\_img}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{zero\_img}{zero\_img}}
+{\footnotesize\ttfamily xpm\+\_\+image\+\_\+t zero\+\_\+img}
+
+\mbox{\Hypertarget{video_8h_ada7df97dea66a1c784322e068a3488c8}\label{video_8h_ada7df97dea66a1c784322e068a3488c8}} 
+\index{video.h@{video.h}!zero\_map@{zero\_map}}
+\index{zero\_map@{zero\_map}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{zero\_map}{zero\_map}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ zero\+\_\+map}
 

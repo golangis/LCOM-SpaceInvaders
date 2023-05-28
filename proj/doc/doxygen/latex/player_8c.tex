@@ -1,0 +1,390 @@
+\hypertarget{player_8c}{}\doxysection{C\+:/\+Users/\+Pedro/\+Documents/2\+LEIC/2º semestre/\+LC/\+MINIX-\/\+LCOM/shared/proj/src/logic/player.c File Reference}
+\label{player_8c}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/player.c@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/player.c}}
+{\ttfamily \#include \char`\"{}player.\+h\char`\"{}}\newline
+Include dependency graph for player.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{player_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_player}{Player}} $\ast$() \mbox{\hyperlink{player_8c_a94d01ea7c997ed46d9f77cedbeb149c9}{init\+\_\+player}} ()
+\begin{DoxyCompactList}\small\item\em Initializes a \mbox{\hyperlink{struct_player}{Player}} (space ship). \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{player_8c_a87366d070986baef7c91357e49539f12}{move\+\_\+player}} (\mbox{\hyperlink{struct_player}{Player}} $\ast$\mbox{\hyperlink{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}{ship}}, enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} dir)
+\begin{DoxyCompactList}\small\item\em Moves a given player in the desired direction if possible. \end{DoxyCompactList}\item 
+bool() \mbox{\hyperlink{player_8c_a3d5d52b16a8103ff777bfa1ff14ea44f}{can\+\_\+player\+\_\+move}} (\mbox{\hyperlink{struct_player}{Player}} $\ast$\mbox{\hyperlink{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}{ship}}, enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} dir)
+\begin{DoxyCompactList}\small\item\em Returns whether the given player can be moved in the given direction. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{player_8c_a0df41d797d15f08f94cbf3fa3edbef3d}{fire}} (\mbox{\hyperlink{struct_player}{Player}} $\ast$\mbox{\hyperlink{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}{ship}})
+\begin{DoxyCompactList}\small\item\em Creates a shot fired from the given player, according to its coordinates. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{player_8c_a03020012085a4bc95ab704a0a858d7b3}{loose\+\_\+life}} (\mbox{\hyperlink{struct_player}{Player}} $\ast$\mbox{\hyperlink{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}{ship}})
+\begin{DoxyCompactList}\small\item\em Decrements the given player\textquotesingle{}s lives by a unit. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{player_8c_a05477977a2ba3cb090037ee5bb753bdf}{delete\+\_\+player\+\_\+shot}} (\mbox{\hyperlink{struct_player}{Player}} $\ast$\mbox{\hyperlink{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}{ship}}, int i)
+\begin{DoxyCompactList}\small\item\em Deletes a given player\textquotesingle{}s shot with a given index within the active player\textquotesingle{}s shots array. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{player_8c_a6a7c558ce856f450303ab6ad449ad50f}{draw\+\_\+player}} (\mbox{\hyperlink{struct_player}{Player}} $\ast$\mbox{\hyperlink{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}{ship}})
+\begin{DoxyCompactList}\small\item\em Draws a player by its coordinates and corresponding XPM image. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{player_8c_a7ea936c93adb43f078c34be6a831b0c2}{increment\+\_\+score}} (\mbox{\hyperlink{struct_player}{Player}} $\ast$\mbox{\hyperlink{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}{ship}}, int id)
+\begin{DoxyCompactList}\small\item\em Increments the given player\textquotesingle{}s score according to the id of the alien they killed, since the number of points earned depends on the alien\textquotesingle{}s vertical position (reflected in its id). \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{player_8c_af50ad9e73493590a4d110b25b70030c6}{draw\+\_\+score}} (\mbox{\hyperlink{struct_player}{Player}} $\ast$\mbox{\hyperlink{spaceinvaders_8h_a8cd4690e8c52dc256304da4d3ce4ba4f}{ship}})
+\begin{DoxyCompactList}\small\item\em Draws the given player\textquotesingle{}s score in the screen. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{player_8c_a06db67ec61088b16360980f24230e62f}{draw\+\_\+lives}} (int lives)
+\begin{DoxyCompactList}\small\item\em Draws hearts representing the given (player\textquotesingle{}s) lives. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{player_8c_a9d343b802719d4768760c1e9b146f518}{draw\+\_\+score\+\_\+aux}} (uint16\+\_\+t x, uint16\+\_\+t y, int score)
+\begin{DoxyCompactList}\small\item\em Auxiliary function to draw the score. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{player_8c_a236e6165c9a260f6a7a6eaa3eeea252c}{loop\+\_\+draw\+\_\+score\+\_\+aux}} (uint16\+\_\+t x, uint16\+\_\+t y, int score)
+\begin{DoxyCompactList}\small\item\em Draws the provided algarism\textquotesingle{}s XPM image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{player_8c_a3d5d52b16a8103ff777bfa1ff14ea44f}\label{player_8c_a3d5d52b16a8103ff777bfa1ff14ea44f}} 
+\index{player.c@{player.c}!can\_player\_move@{can\_player\_move}}
+\index{can\_player\_move@{can\_player\_move}!player.c@{player.c}}
+\doxysubsubsection{\texorpdfstring{can\_player\_move()}{can\_player\_move()}}
+{\footnotesize\ttfamily bool() can\+\_\+player\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_player}{Player}} $\ast$}]{ship,  }\item[{enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}}}]{dir }\end{DoxyParamCaption})}
+
+
+
+Returns whether the given player can be moved in the given direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ship} & Pointer to the player to be checked. \\
+\hline
+{\em dir} & Direction to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the given player can be moved to the given direction. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{player_8c_a3d5d52b16a8103ff777bfa1ff14ea44f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{player_8c_a05477977a2ba3cb090037ee5bb753bdf}\label{player_8c_a05477977a2ba3cb090037ee5bb753bdf}} 
+\index{player.c@{player.c}!delete\_player\_shot@{delete\_player\_shot}}
+\index{delete\_player\_shot@{delete\_player\_shot}!player.c@{player.c}}
+\doxysubsubsection{\texorpdfstring{delete\_player\_shot()}{delete\_player\_shot()}}
+{\footnotesize\ttfamily void() delete\+\_\+player\+\_\+shot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_player}{Player}} $\ast$}]{ship,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Deletes a given player\textquotesingle{}s shot with a given index within the active player\textquotesingle{}s shots array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ship} & Pointer to the ship whose shot will be deleted. \\
+\hline
+{\em i} & Index, within the ship\textquotesingle{}s active shots array, of the shot to be deleted. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{player_8c_a05477977a2ba3cb090037ee5bb753bdf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{player_8c_a06db67ec61088b16360980f24230e62f}\label{player_8c_a06db67ec61088b16360980f24230e62f}} 
+\index{player.c@{player.c}!draw\_lives@{draw\_lives}}
+\index{draw\_lives@{draw\_lives}!player.c@{player.c}}
+\doxysubsubsection{\texorpdfstring{draw\_lives()}{draw\_lives()}}
+{\footnotesize\ttfamily void() draw\+\_\+lives (\begin{DoxyParamCaption}\item[{int}]{lives }\end{DoxyParamCaption})}
+
+
+
+Draws hearts representing the given (player\textquotesingle{}s) lives. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lives} & The number of the lives which representation is to be drawn. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{player_8c_a06db67ec61088b16360980f24230e62f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{player_8c_a06db67ec61088b16360980f24230e62f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{player_8c_a6a7c558ce856f450303ab6ad449ad50f}\label{player_8c_a6a7c558ce856f450303ab6ad449ad50f}} 
+\index{player.c@{player.c}!draw\_player@{draw\_player}}
+\index{draw\_player@{draw\_player}!player.c@{player.c}}
+\doxysubsubsection{\texorpdfstring{draw\_player()}{draw\_player()}}
+{\footnotesize\ttfamily void() draw\+\_\+player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_player}{Player}} $\ast$}]{ship }\end{DoxyParamCaption})}
+
+
+
+Draws a player by its coordinates and corresponding XPM image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ship} & Pointer to the ship to be drawn. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{player_8c_a6a7c558ce856f450303ab6ad449ad50f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{player_8c_a6a7c558ce856f450303ab6ad449ad50f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{player_8c_af50ad9e73493590a4d110b25b70030c6}\label{player_8c_af50ad9e73493590a4d110b25b70030c6}} 
+\index{player.c@{player.c}!draw\_score@{draw\_score}}
+\index{draw\_score@{draw\_score}!player.c@{player.c}}
+\doxysubsubsection{\texorpdfstring{draw\_score()}{draw\_score()}}
+{\footnotesize\ttfamily void() draw\+\_\+score (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_player}{Player}} $\ast$}]{ship }\end{DoxyParamCaption})}
+
+
+
+Draws the given player\textquotesingle{}s score in the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ship} & Pointer to the player whose score will be drawn. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{player_8c_af50ad9e73493590a4d110b25b70030c6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{player_8c_af50ad9e73493590a4d110b25b70030c6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{player_8c_a9d343b802719d4768760c1e9b146f518}\label{player_8c_a9d343b802719d4768760c1e9b146f518}} 
+\index{player.c@{player.c}!draw\_score\_aux@{draw\_score\_aux}}
+\index{draw\_score\_aux@{draw\_score\_aux}!player.c@{player.c}}
+\doxysubsubsection{\texorpdfstring{draw\_score\_aux()}{draw\_score\_aux()}}
+{\footnotesize\ttfamily void() draw\+\_\+score\+\_\+aux (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{int}]{score }\end{DoxyParamCaption})}
+
+
+
+Auxiliary function to draw the score. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Upper leftmost x coordinate. \\
+\hline
+{\em y} & Upper leftmost y coordinate. \\
+\hline
+{\em score} & The value of the score to draw. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{player_8c_a9d343b802719d4768760c1e9b146f518_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{player_8c_a9d343b802719d4768760c1e9b146f518_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{player_8c_a0df41d797d15f08f94cbf3fa3edbef3d}\label{player_8c_a0df41d797d15f08f94cbf3fa3edbef3d}} 
+\index{player.c@{player.c}!fire@{fire}}
+\index{fire@{fire}!player.c@{player.c}}
+\doxysubsubsection{\texorpdfstring{fire()}{fire()}}
+{\footnotesize\ttfamily void() fire (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_player}{Player}} $\ast$}]{ship }\end{DoxyParamCaption})}
+
+
+
+Creates a shot fired from the given player, according to its coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ship} & Pointer to the ship that will fire. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{player_8c_a0df41d797d15f08f94cbf3fa3edbef3d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{player_8c_a0df41d797d15f08f94cbf3fa3edbef3d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{player_8c_a7ea936c93adb43f078c34be6a831b0c2}\label{player_8c_a7ea936c93adb43f078c34be6a831b0c2}} 
+\index{player.c@{player.c}!increment\_score@{increment\_score}}
+\index{increment\_score@{increment\_score}!player.c@{player.c}}
+\doxysubsubsection{\texorpdfstring{increment\_score()}{increment\_score()}}
+{\footnotesize\ttfamily void() increment\+\_\+score (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_player}{Player}} $\ast$}]{ship,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Increments the given player\textquotesingle{}s score according to the id of the alien they killed, since the number of points earned depends on the alien\textquotesingle{}s vertical position (reflected in its id). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ship} & Pointer to the ship whose score will be incremented. \\
+\hline
+{\em id} & Id of the alien the player killed. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{player_8c_a7ea936c93adb43f078c34be6a831b0c2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{player_8c_a94d01ea7c997ed46d9f77cedbeb149c9}\label{player_8c_a94d01ea7c997ed46d9f77cedbeb149c9}} 
+\index{player.c@{player.c}!init\_player@{init\_player}}
+\index{init\_player@{init\_player}!player.c@{player.c}}
+\doxysubsubsection{\texorpdfstring{init\_player()}{init\_player()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_player}{Player}} $\ast$() init\+\_\+player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes a \mbox{\hyperlink{struct_player}{Player}} (space ship). 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the initialized \mbox{\hyperlink{struct_player}{Player}}. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{player_8c_a94d01ea7c997ed46d9f77cedbeb149c9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{player_8c_a236e6165c9a260f6a7a6eaa3eeea252c}\label{player_8c_a236e6165c9a260f6a7a6eaa3eeea252c}} 
+\index{player.c@{player.c}!loop\_draw\_score\_aux@{loop\_draw\_score\_aux}}
+\index{loop\_draw\_score\_aux@{loop\_draw\_score\_aux}!player.c@{player.c}}
+\doxysubsubsection{\texorpdfstring{loop\_draw\_score\_aux()}{loop\_draw\_score\_aux()}}
+{\footnotesize\ttfamily void() loop\+\_\+draw\+\_\+score\+\_\+aux (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{int}]{score }\end{DoxyParamCaption})}
+
+
+
+Draws the provided algarism\textquotesingle{}s XPM image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Upper leftmost x coordinate. \\
+\hline
+{\em y} & Upper leftmost y coordinate. \\
+\hline
+{\em score} & Algarism to draw. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{player_8c_a236e6165c9a260f6a7a6eaa3eeea252c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{player_8c_a236e6165c9a260f6a7a6eaa3eeea252c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{player_8c_a03020012085a4bc95ab704a0a858d7b3}\label{player_8c_a03020012085a4bc95ab704a0a858d7b3}} 
+\index{player.c@{player.c}!loose\_life@{loose\_life}}
+\index{loose\_life@{loose\_life}!player.c@{player.c}}
+\doxysubsubsection{\texorpdfstring{loose\_life()}{loose\_life()}}
+{\footnotesize\ttfamily void() loose\+\_\+life (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_player}{Player}} $\ast$}]{ship }\end{DoxyParamCaption})}
+
+
+
+Decrements the given player\textquotesingle{}s lives by a unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ship} & Pointer to the ship that will loose a life. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{player_8c_a03020012085a4bc95ab704a0a858d7b3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{player_8c_a87366d070986baef7c91357e49539f12}\label{player_8c_a87366d070986baef7c91357e49539f12}} 
+\index{player.c@{player.c}!move\_player@{move\_player}}
+\index{move\_player@{move\_player}!player.c@{player.c}}
+\doxysubsubsection{\texorpdfstring{move\_player()}{move\_player()}}
+{\footnotesize\ttfamily void() move\+\_\+player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_player}{Player}} $\ast$}]{ship,  }\item[{enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}}}]{dir }\end{DoxyParamCaption})}
+
+
+
+Moves a given player in the desired direction if possible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ship} & Pointer to the player to be moved. \\
+\hline
+{\em dir} & Direction to move the ship to. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{player_8c_a87366d070986baef7c91357e49539f12_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{player_8c_a87366d070986baef7c91357e49539f12_icgraph}
+\end{center}
+\end{figure}

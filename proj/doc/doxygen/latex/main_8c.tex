@@ -12,48 +12,48 @@ General functions that manage the app logic.
 {\ttfamily \#include \char`\"{}framework/timer/timer.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}framework/mouse/mouse.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}framework/video/video.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}spaceinvaders.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}logic/spaceinvaders.\+h\char`\"{}}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c__incl}
+\end{center}
+\end{figure}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{main_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
-int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+int \mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
 \item 
-\mbox{\Hypertarget{main_8c_a31f00e3232e268b63b905a17a164542b}\label{main_8c_a31f00e3232e268b63b905a17a164542b}} 
-void() {\bfseries highscores\+\_\+loop} (bool $\ast$make, enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} $\ast$key, bool $\ast$two\+\_\+bytes, uint8\+\_\+t $\ast$scan, int ipc\+\_\+timer, int ipc\+\_\+keyboard, int ipc\+\_\+mouse, message msg, enum state $\ast$state, \mbox{\hyperlink{struct_score}{Score}} $\ast$scores)
-\item 
-\mbox{\Hypertarget{main_8c_aca94587a192dc9d6e25886d009f3ee76}\label{main_8c_aca94587a192dc9d6e25886d009f3ee76}} 
-void() {\bfseries game\+\_\+loop} (bool $\ast$make, enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} $\ast$key, bool $\ast$two\+\_\+bytes, uint8\+\_\+t $\ast$scan, bool $\ast$can\+\_\+shoot, int ipc\+\_\+timer, int ipc\+\_\+keyboard, int ipc\+\_\+mouse, message msg, enum state $\ast$state)
-\item 
-\mbox{\Hypertarget{main_8c_a5fe23b1eda8779f64c72241020b3f61a}\label{main_8c_a5fe23b1eda8779f64c72241020b3f61a}} 
-void() {\bfseries main\+Menu\+\_\+loop} (bool $\ast$make, enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} $\ast$key, bool $\ast$two\+\_\+bytes, uint8\+\_\+t $\ast$scan, int ipc\+\_\+timer, int ipc\+\_\+keyboard, int ipc\+\_\+mouse, message msg, enum state $\ast$state)
-\item 
-\mbox{\Hypertarget{main_8c_a1b9bbd70f3beb8bf28ec1244cc483122}\label{main_8c_a1b9bbd70f3beb8bf28ec1244cc483122}} 
-void {\bfseries game\+Over\+Menu\+\_\+loop} (bool $\ast$make, enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} $\ast$key, bool $\ast$two\+\_\+bytes, uint8\+\_\+t $\ast$scan, int ipc\+\_\+timer, int ipc\+\_\+keyboard, int ipc\+\_\+mouse, message msg, enum state $\ast$state)
-\item 
-\mbox{\Hypertarget{main_8c_ad290208c74ef25eb347d1d96a390cd66}\label{main_8c_ad290208c74ef25eb347d1d96a390cd66}} 
-int() {\bfseries proj\+\_\+main\+\_\+loop} (int argc, char $\ast$$\ast$argv)
-\end{DoxyCompactItemize}
+void() \mbox{\hyperlink{main_8c_a31f00e3232e268b63b905a17a164542b}{highscores\+\_\+loop}} (bool $\ast$make, enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} $\ast$key, bool $\ast$two\+\_\+bytes, uint8\+\_\+t $\ast$scan, int ipc\+\_\+timer, int ipc\+\_\+keyboard, int ipc\+\_\+mouse, message msg, enum \mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90}{state}} $\ast$\mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90}{state}}, \mbox{\hyperlink{struct_score}{Score}} $\ast$scores)
+\begin{DoxyCompactList}\small\item\em Processes the interrupts and calls correct functions while in the Highscores menu state. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{main_8c_aca94587a192dc9d6e25886d009f3ee76}{game\+\_\+loop}} (bool $\ast$make, enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} $\ast$key, bool $\ast$two\+\_\+bytes, uint8\+\_\+t $\ast$scan, bool $\ast$can\+\_\+shoot, int ipc\+\_\+timer, int ipc\+\_\+keyboard, int ipc\+\_\+mouse, message msg, enum \mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90}{state}} $\ast$\mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90}{state}})
+\begin{DoxyCompactList}\small\item\em Processes the interrupts and calls correct functions while in the Game state. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{main_8c_a85ddf0bf65650526685ffbfddd3e897f}{main\+\_\+menu\+\_\+loop}} (bool $\ast$make, enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} $\ast$key, bool $\ast$two\+\_\+bytes, uint8\+\_\+t $\ast$scan, int ipc\+\_\+timer, int ipc\+\_\+keyboard, int ipc\+\_\+mouse, message msg, enum \mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90}{state}} $\ast$\mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90}{state}})
+\begin{DoxyCompactList}\small\item\em Processes the interrupts and calls correct functions while in the Main menu state. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{main_8c_a7b466abd307ad46f0cfb2209749e5c65}{game\+\_\+over\+\_\+menu\+\_\+loop}} (bool $\ast$make, enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} $\ast$key, bool $\ast$two\+\_\+bytes, uint8\+\_\+t $\ast$scan, int ipc\+\_\+timer, int ipc\+\_\+keyboard, int ipc\+\_\+mouse, message msg, enum \mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90}{state}} $\ast$\mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90}{state}})
+\begin{DoxyCompactList}\small\item\em Processes the interrupts and calls correct functions while in the Game Over menu state. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{main_8c_ad290208c74ef25eb347d1d96a390cd66}{proj\+\_\+main\+\_\+loop}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts. Checks interrupt existance and calls different loops according to the state, sending the interrupt flags for the loops to process them. Unsubscribes interrupts and exits video card video mode to text mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{main_8c_a8cd4690e8c52dc256304da4d3ce4ba4f}\label{main_8c_a8cd4690e8c52dc256304da4d3ce4ba4f}} 
-\mbox{\hyperlink{struct_player}{Player}} $\ast$ {\bfseries ship}
+int \mbox{\hyperlink{main_8c_a970a1571b3380fa3d045308e4e9b4996}{x\+\_\+mouse\+\_\+delta}}
 \item 
-\mbox{\Hypertarget{main_8c_a8f621f1e0b4e4176f1e67dc5031d891a}\label{main_8c_a8f621f1e0b4e4176f1e67dc5031d891a}} 
-\mbox{\hyperlink{struct_shield}{Shield}} $\ast$ {\bfseries shield1}
+\mbox{\hyperlink{struct_player}{Player}} $\ast$ \mbox{\hyperlink{main_8c_a8cd4690e8c52dc256304da4d3ce4ba4f}{ship}}
 \item 
-\mbox{\Hypertarget{main_8c_a48c72259ab4c049372115f62cd64d41f}\label{main_8c_a48c72259ab4c049372115f62cd64d41f}} 
-\mbox{\hyperlink{struct_shield}{Shield}} $\ast$ {\bfseries shield2}
+\mbox{\hyperlink{struct_shield}{Shield}} $\ast$ \mbox{\hyperlink{main_8c_a8f621f1e0b4e4176f1e67dc5031d891a}{shield1}}
 \item 
-\mbox{\Hypertarget{main_8c_ae216136d85958771f5667b34391f6b80}\label{main_8c_ae216136d85958771f5667b34391f6b80}} 
-\mbox{\hyperlink{struct_shield}{Shield}} $\ast$ {\bfseries shield3}
+\mbox{\hyperlink{struct_shield}{Shield}} $\ast$ \mbox{\hyperlink{main_8c_a48c72259ab4c049372115f62cd64d41f}{shield2}}
 \item 
-\mbox{\Hypertarget{main_8c_a0f08eb193e0aedb134a1481913b6a823}\label{main_8c_a0f08eb193e0aedb134a1481913b6a823}} 
-int {\bfseries timer\+\_\+counter}
+\mbox{\hyperlink{struct_shield}{Shield}} $\ast$ \mbox{\hyperlink{main_8c_ae216136d85958771f5667b34391f6b80}{shield3}}
 \item 
-\mbox{\Hypertarget{main_8c_a9eab91667db4d35c7231dcddf7b89a76}\label{main_8c_a9eab91667db4d35c7231dcddf7b89a76}} 
-int {\bfseries data}
+int \mbox{\hyperlink{main_8c_a0f08eb193e0aedb134a1481913b6a823}{timer\+\_\+counter}}
+\item 
+int \mbox{\hyperlink{main_8c_a9eab91667db4d35c7231dcddf7b89a76}{data}}
+\item 
+\mbox{\hyperlink{struct_score}{Score}} $\ast$ \mbox{\hyperlink{main_8c_a12550c2b9cf9c80ecdc701dede9c4e4c}{hs}}
 \end{DoxyCompactItemize}
 
 
@@ -61,3 +61,187 @@ int {\bfseries data}
 General functions that manage the app logic. 
 
 Loops that receive interrupt information, call the interrupt handlers and send commands and information to the functions delcared in \mbox{\hyperlink{spaceinvaders_8h}{spaceinvaders.\+h}}. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_aca94587a192dc9d6e25886d009f3ee76}\label{main_8c_aca94587a192dc9d6e25886d009f3ee76}} 
+\index{main.c@{main.c}!game\_loop@{game\_loop}}
+\index{game\_loop@{game\_loop}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{game\_loop()}{game\_loop()}}
+{\footnotesize\ttfamily void() game\+\_\+loop (\begin{DoxyParamCaption}\item[{bool $\ast$}]{make,  }\item[{enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} $\ast$}]{key,  }\item[{bool $\ast$}]{two\+\_\+bytes,  }\item[{uint8\+\_\+t $\ast$}]{scan,  }\item[{bool $\ast$}]{can\+\_\+shoot,  }\item[{int}]{ipc\+\_\+timer,  }\item[{int}]{ipc\+\_\+keyboard,  }\item[{int}]{ipc\+\_\+mouse,  }\item[{message}]{msg,  }\item[{enum \mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90}{state}} $\ast$}]{state }\end{DoxyParamCaption})}
+
+
+
+Processes the interrupts and calls correct functions while in the Game state. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_aca94587a192dc9d6e25886d009f3ee76_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{main_8c_aca94587a192dc9d6e25886d009f3ee76_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_a7b466abd307ad46f0cfb2209749e5c65}\label{main_8c_a7b466abd307ad46f0cfb2209749e5c65}} 
+\index{main.c@{main.c}!game\_over\_menu\_loop@{game\_over\_menu\_loop}}
+\index{game\_over\_menu\_loop@{game\_over\_menu\_loop}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{game\_over\_menu\_loop()}{game\_over\_menu\_loop()}}
+{\footnotesize\ttfamily void() game\+\_\+over\+\_\+menu\+\_\+loop (\begin{DoxyParamCaption}\item[{bool $\ast$}]{make,  }\item[{enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} $\ast$}]{key,  }\item[{bool $\ast$}]{two\+\_\+bytes,  }\item[{uint8\+\_\+t $\ast$}]{scan,  }\item[{int}]{ipc\+\_\+timer,  }\item[{int}]{ipc\+\_\+keyboard,  }\item[{int}]{ipc\+\_\+mouse,  }\item[{message}]{msg,  }\item[{enum \mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90}{state}} $\ast$}]{state }\end{DoxyParamCaption})}
+
+
+
+Processes the interrupts and calls correct functions while in the Game Over menu state. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a7b466abd307ad46f0cfb2209749e5c65_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{main_8c_a7b466abd307ad46f0cfb2209749e5c65_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_a31f00e3232e268b63b905a17a164542b}\label{main_8c_a31f00e3232e268b63b905a17a164542b}} 
+\index{main.c@{main.c}!highscores\_loop@{highscores\_loop}}
+\index{highscores\_loop@{highscores\_loop}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{highscores\_loop()}{highscores\_loop()}}
+{\footnotesize\ttfamily void() highscores\+\_\+loop (\begin{DoxyParamCaption}\item[{bool $\ast$}]{make,  }\item[{enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} $\ast$}]{key,  }\item[{bool $\ast$}]{two\+\_\+bytes,  }\item[{uint8\+\_\+t $\ast$}]{scan,  }\item[{int}]{ipc\+\_\+timer,  }\item[{int}]{ipc\+\_\+keyboard,  }\item[{int}]{ipc\+\_\+mouse,  }\item[{message}]{msg,  }\item[{enum \mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90}{state}} $\ast$}]{state,  }\item[{\mbox{\hyperlink{struct_score}{Score}} $\ast$}]{scores }\end{DoxyParamCaption})}
+
+
+
+Processes the interrupts and calls correct functions while in the Highscores menu state. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a31f00e3232e268b63b905a17a164542b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{main_8c_a31f00e3232e268b63b905a17a164542b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a85ddf0bf65650526685ffbfddd3e897f}\label{main_8c_a85ddf0bf65650526685ffbfddd3e897f}} 
+\index{main.c@{main.c}!main\_menu\_loop@{main\_menu\_loop}}
+\index{main\_menu\_loop@{main\_menu\_loop}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main\_menu\_loop()}{main\_menu\_loop()}}
+{\footnotesize\ttfamily void() main\+\_\+menu\+\_\+loop (\begin{DoxyParamCaption}\item[{bool $\ast$}]{make,  }\item[{enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} $\ast$}]{key,  }\item[{bool $\ast$}]{two\+\_\+bytes,  }\item[{uint8\+\_\+t $\ast$}]{scan,  }\item[{int}]{ipc\+\_\+timer,  }\item[{int}]{ipc\+\_\+keyboard,  }\item[{int}]{ipc\+\_\+mouse,  }\item[{message}]{msg,  }\item[{enum \mbox{\hyperlink{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90}{state}} $\ast$}]{state }\end{DoxyParamCaption})}
+
+
+
+Processes the interrupts and calls correct functions while in the Main menu state. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a85ddf0bf65650526685ffbfddd3e897f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{main_8c_a85ddf0bf65650526685ffbfddd3e897f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_ad290208c74ef25eb347d1d96a390cd66}\label{main_8c_ad290208c74ef25eb347d1d96a390cd66}} 
+\index{main.c@{main.c}!proj\_main\_loop@{proj\_main\_loop}}
+\index{proj\_main\_loop@{proj\_main\_loop}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{proj\_main\_loop()}{proj\_main\_loop()}}
+{\footnotesize\ttfamily int() proj\+\_\+main\+\_\+loop (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts. Checks interrupt existance and calls different loops according to the state, sending the interrupt flags for the loops to process them. Unsubscribes interrupts and exits video card video mode to text mode. 
+
+\begin{DoxyReturn}{Returns}
+0 upon success in all operations, non-\/zero otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_ad290208c74ef25eb347d1d96a390cd66_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8c_a9eab91667db4d35c7231dcddf7b89a76}\label{main_8c_a9eab91667db4d35c7231dcddf7b89a76}} 
+\index{main.c@{main.c}!data@{data}}
+\index{data@{data}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily int data\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a12550c2b9cf9c80ecdc701dede9c4e4c}\label{main_8c_a12550c2b9cf9c80ecdc701dede9c4e4c}} 
+\index{main.c@{main.c}!hs@{hs}}
+\index{hs@{hs}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{hs}{hs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_score}{Score}}$\ast$ hs}
+
+\mbox{\Hypertarget{main_8c_a8f621f1e0b4e4176f1e67dc5031d891a}\label{main_8c_a8f621f1e0b4e4176f1e67dc5031d891a}} 
+\index{main.c@{main.c}!shield1@{shield1}}
+\index{shield1@{shield1}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{shield1}{shield1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_shield}{Shield}}$\ast$ shield1\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a48c72259ab4c049372115f62cd64d41f}\label{main_8c_a48c72259ab4c049372115f62cd64d41f}} 
+\index{main.c@{main.c}!shield2@{shield2}}
+\index{shield2@{shield2}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{shield2}{shield2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_shield}{Shield}}$\ast$ shield2\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_ae216136d85958771f5667b34391f6b80}\label{main_8c_ae216136d85958771f5667b34391f6b80}} 
+\index{main.c@{main.c}!shield3@{shield3}}
+\index{shield3@{shield3}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{shield3}{shield3}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_shield}{Shield}}$\ast$ shield3\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a8cd4690e8c52dc256304da4d3ce4ba4f}\label{main_8c_a8cd4690e8c52dc256304da4d3ce4ba4f}} 
+\index{main.c@{main.c}!ship@{ship}}
+\index{ship@{ship}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{ship}{ship}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_player}{Player}}$\ast$ ship\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a0f08eb193e0aedb134a1481913b6a823}\label{main_8c_a0f08eb193e0aedb134a1481913b6a823}} 
+\index{main.c@{main.c}!timer\_counter@{timer\_counter}}
+\index{timer\_counter@{timer\_counter}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{timer\_counter}{timer\_counter}}
+{\footnotesize\ttfamily int timer\+\_\+counter\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a970a1571b3380fa3d045308e4e9b4996}\label{main_8c_a970a1571b3380fa3d045308e4e9b4996}} 
+\index{main.c@{main.c}!x\_mouse\_delta@{x\_mouse\_delta}}
+\index{x\_mouse\_delta@{x\_mouse\_delta}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{x\_mouse\_delta}{x\_mouse\_delta}}
+{\footnotesize\ttfamily int x\+\_\+mouse\+\_\+delta\hspace{0.3cm}{\ttfamily [extern]}}
+

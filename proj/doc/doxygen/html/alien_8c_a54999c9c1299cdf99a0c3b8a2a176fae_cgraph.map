@@ -1,0 +1,7 @@
+<map id="draw_aliens" name="draw_aliens">
+<area shape="rect" id="node1" title="Draws a group of aliens." alt="" coords="5,31,95,57"/>
+<area shape="rect" id="node2" href="$alien_8c.html#a7a09a76bbff752e5cb6eeac7c56fd622" title="Draws an alien." alt="" coords="143,31,225,57"/>
+<area shape="rect" id="node3" href="$shot_8c.html#a3c1b5ef797a64fc81d09d04f68f99673" title="Draws a given shot in the screen according to its position and source." alt="" coords="273,5,353,32"/>
+<area shape="rect" id="node4" href="$video_8c.html#a1d7817e4e5198831c8e33e05a64e8ecf" title="Draws a XPM image with the leftmost upper pixel at the given coordinates." alt="" coords="401,31,518,57"/>
+<area shape="rect" id="node5" href="$video_8c.html#ab0332ee565f978f725c021b4eb35958e" title="Sets the pixel at the given coordinates to the given color." alt="" coords="566,31,684,57"/>
+</map>

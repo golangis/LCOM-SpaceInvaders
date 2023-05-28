@@ -84,6 +84,30 @@ $(function() {
 <div class="textblock"><code>#include &lt;lcom/lcf.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="utils_8h_source.html">../utils/utils.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="i8042_8h_source.html">i8042.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for mouse.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="mouse_8h__incl.png" border="0" usemap="#a_c_1_2_users_2_pedro_2_documents_22_l_e_i_c_22_xC2_xBA_01semestre_2_l_c_2_m_i_n_i_x-_l_c_o_m_2shared_2proj_2src_2framework_2mouse_2mouse_8h" alt=""/></div>
+<map name="a_c_1_2_users_2_pedro_2_documents_22_l_e_i_c_22_xC2_xBA_01semestre_2_l_c_2_m_i_n_i_x-_l_c_o_m_2shared_2proj_2src_2framework_2mouse_2mouse_8h" id="a_c_1_2_users_2_pedro_2_documents_22_l_e_i_c_22_xC2_xBA_01semestre_2_l_c_2_m_i_n_i_x-_l_c_o_m_2shared_2proj_2src_2framework_2mouse_2mouse_8h">
+<area shape="rect" title="Framework for the Mouse." alt="" coords="28,5,231,80"/>
+<area shape="rect" title=" " alt="" coords="5,203,83,229"/>
+<area shape="rect" href="utils_8h.html" title="Set of auxiliary functions to be used in the framework." alt="" coords="81,128,178,155"/>
+<area shape="rect" href="i8042_8h.html" title="Constants for programming the i8042 (mouse oriented)." alt="" coords="202,128,265,155"/>
+<area shape="rect" title=" " alt="" coords="107,203,171,229"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="mouse_8h__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_pedro_2_documents_22_l_e_i_c_22_xC2_xBA_01semestre_2_l_c_2_m_i_n_i_x-_l_c_o_m_2shared_2proj_2src_2framework_2mouse_2mouse_8hdep" alt=""/></div>
+<map name="a_c_1_2_users_2_pedro_2_documents_22_l_e_i_c_22_xC2_xBA_01semestre_2_l_c_2_m_i_n_i_x-_l_c_o_m_2shared_2proj_2src_2framework_2mouse_2mouse_8hdep" id="a_c_1_2_users_2_pedro_2_documents_22_l_e_i_c_22_xC2_xBA_01semestre_2_l_c_2_m_i_n_i_x-_l_c_o_m_2shared_2proj_2src_2framework_2mouse_2mouse_8hdep">
+<area shape="rect" title="Framework for the Mouse." alt="" coords="221,5,425,80"/>
+<area shape="rect" href="mouse_8c.html" title=" " alt="" coords="5,128,209,203"/>
+<area shape="rect" href="spaceinvaders_8h.html" title="Game logic functions. Stores the game elements and assures the interaction between them." alt="" coords="233,128,413,203"/>
+<area shape="rect" href="main_8c.html" title="General functions that manage the app logic." alt="" coords="361,251,541,325"/>
+<area shape="rect" href="spaceinvaders_8c.html" title=" " alt="" coords="157,251,337,325"/>
+</map>
+</div>
 </div>
 <p><a href="mouse_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -98,19 +122,54 @@ Functions</h2></td></tr>
 <tr class="memitem:a4c04b6e71466c545f39ca49a830e0779"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse_8h.html#a4c04b6e71466c545f39ca49a830e0779">unsubscribe_mouse_int</a> ()</td></tr>
 <tr class="memdesc:a4c04b6e71466c545f39ca49a830e0779"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribes Mouse interrupts.  <a href="mouse_8h.html#a4c04b6e71466c545f39ca49a830e0779">More...</a><br /></td></tr>
 <tr class="separator:a4c04b6e71466c545f39ca49a830e0779"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9202c3a6ed6ca6aabddde76974b4725"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse_8h.html#aa9202c3a6ed6ca6aabddde76974b4725">readStatusByte</a> ()</td></tr>
-<tr class="memdesc:aa9202c3a6ed6ca6aabddde76974b4725"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the mouse status byte.  <a href="mouse_8h.html#aa9202c3a6ed6ca6aabddde76974b4725">More...</a><br /></td></tr>
-<tr class="separator:aa9202c3a6ed6ca6aabddde76974b4725"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47a45f8c7f3fb6ac5e856f1e14071e69"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse_8h.html#a47a45f8c7f3fb6ac5e856f1e14071e69">readPacket</a> ()</td></tr>
-<tr class="memdesc:a47a45f8c7f3fb6ac5e856f1e14071e69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads and parses the packet from the mouse output buffer.  <a href="mouse_8h.html#a47a45f8c7f3fb6ac5e856f1e14071e69">More...</a><br /></td></tr>
-<tr class="separator:a47a45f8c7f3fb6ac5e856f1e14071e69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a988fc64ae581c0f124ad68f50714f24a"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse_8h.html#a988fc64ae581c0f124ad68f50714f24a">read_status_byte</a> ()</td></tr>
+<tr class="memdesc:a988fc64ae581c0f124ad68f50714f24a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the mouse status byte.  <a href="mouse_8h.html#a988fc64ae581c0f124ad68f50714f24a">More...</a><br /></td></tr>
+<tr class="separator:a988fc64ae581c0f124ad68f50714f24a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fe4a8e593d4206f11916156e5d46574"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse_8h.html#a7fe4a8e593d4206f11916156e5d46574">read_packet</a> ()</td></tr>
+<tr class="memdesc:a7fe4a8e593d4206f11916156e5d46574"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads and parses the packet from the mouse output buffer.  <a href="mouse_8h.html#a7fe4a8e593d4206f11916156e5d46574">More...</a><br /></td></tr>
+<tr class="separator:a7fe4a8e593d4206f11916156e5d46574"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeff6e8956d863ef6147b8c9475422574"><td class="memItemLeft" align="right" valign="top">int()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse_8h.html#aeff6e8956d863ef6147b8c9475422574">update_mouse</a> ()</td></tr>
 <tr class="memdesc:aeff6e8956d863ef6147b8c9475422574"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the user interface mouse.  <a href="mouse_8h.html#aeff6e8956d863ef6147b8c9475422574">More...</a><br /></td></tr>
 <tr class="separator:aeff6e8956d863ef6147b8c9475422574"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c616957f5de45ec0a075a15b2438888"><td class="memItemLeft" align="right" valign="top">bool()&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mouse_8h.html#a0c616957f5de45ec0a075a15b2438888">left_click</a> ()</td></tr>
+<tr class="memdesc:a0c616957f5de45ec0a075a15b2438888"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the mouse's left button was clicked.  <a href="mouse_8h.html#a0c616957f5de45ec0a075a15b2438888">More...</a><br /></td></tr>
+<tr class="separator:a0c616957f5de45ec0a075a15b2438888"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Framework for the Mouse. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a0c616957f5de45ec0a075a15b2438888" name="a0c616957f5de45ec0a075a15b2438888"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c616957f5de45ec0a075a15b2438888">&#9670;&#160;</a></span>left_click()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool() left_click </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns whether the mouse's left button was clicked. </p>
+<dl class="section return"><dt>Returns</dt><dd>Whether the mouse's left button was clicked. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="mouse_8h_a0c616957f5de45ec0a075a15b2438888_icgraph.png" border="0" usemap="#amouse_8h_a0c616957f5de45ec0a075a15b2438888_icgraph" alt=""/></div>
+<map name="amouse_8h_a0c616957f5de45ec0a075a15b2438888_icgraph" id="amouse_8h_a0c616957f5de45ec0a075a15b2438888_icgraph">
+<area shape="rect" title="Returns whether the mouse&#39;s left button was clicked." alt="" coords="363,56,435,83"/>
+<area shape="rect" href="main_8c.html#aca94587a192dc9d6e25886d009f3ee76" title="Processes the interrupts and calls correct functions while in the Game state." alt="" coords="196,5,281,32"/>
+<area shape="rect" href="main_8c.html#a7b466abd307ad46f0cfb2209749e5c65" title="Processes the interrupts and calls correct functions while in the Game Over menu state." alt="" coords="162,56,315,83"/>
+<area shape="rect" href="main_8c.html#a85ddf0bf65650526685ffbfddd3e897f" title="Processes the interrupts and calls correct functions while in the Main menu state." alt="" coords="179,107,298,133"/>
+<area shape="rect" href="main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,56,114,83"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a310254edf59d5de2a8df1b2888cc7431" name="a310254edf59d5de2a8df1b2888cc7431"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a310254edf59d5de2a8df1b2888cc7431">&#9670;&#160;</a></span>mouse_interrupt_handler()</h2>
 
@@ -128,17 +187,42 @@ Functions</h2></td></tr>
 
 <p>Mouse interrupt handler. Gets the mouse packet and updates the user interface mouse struct. </p>
 <dl class="section return"><dt>Returns</dt><dd>int 0 upon success, non-zero otherwise </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="mouse_8h_a310254edf59d5de2a8df1b2888cc7431_cgraph.png" border="0" usemap="#amouse_8h_a310254edf59d5de2a8df1b2888cc7431_cgraph" alt=""/></div>
+<map name="amouse_8h_a310254edf59d5de2a8df1b2888cc7431_cgraph" id="amouse_8h_a310254edf59d5de2a8df1b2888cc7431_cgraph">
+<area shape="rect" title="Mouse interrupt handler. Gets the mouse packet and updates the user interface mouse struct." alt="" coords="5,56,169,83"/>
+<area shape="rect" href="mouse_8c.html#a7fe4a8e593d4206f11916156e5d46574" title="Reads and parses the packet from the mouse output buffer." alt="" coords="231,5,324,32"/>
+<area shape="rect" href="mouse_8c.html#a988fc64ae581c0f124ad68f50714f24a" title="Reads the mouse status byte." alt="" coords="217,56,338,83"/>
+<area shape="rect" href="mouse_8c.html#aeff6e8956d863ef6147b8c9475422574" title="Updates the user interface mouse." alt="" coords="224,107,331,133"/>
+<area shape="rect" href="utils_8c.html#ac001a9276b9ecff0ddabd111fac79211" title="Reads a byte from a given port." alt="" coords="386,31,470,57"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="mouse_8h_a310254edf59d5de2a8df1b2888cc7431_icgraph.png" border="0" usemap="#amouse_8h_a310254edf59d5de2a8df1b2888cc7431_icgraph" alt=""/></div>
+<map name="amouse_8h_a310254edf59d5de2a8df1b2888cc7431_icgraph" id="amouse_8h_a310254edf59d5de2a8df1b2888cc7431_icgraph">
+<area shape="rect" title="Mouse interrupt handler. Gets the mouse packet and updates the user interface mouse struct." alt="" coords="363,81,526,108"/>
+<area shape="rect" href="main_8c.html#aca94587a192dc9d6e25886d009f3ee76" title="Processes the interrupts and calls correct functions while in the Game state." alt="" coords="196,5,281,32"/>
+<area shape="rect" href="main_8c.html#a7b466abd307ad46f0cfb2209749e5c65" title="Processes the interrupts and calls correct functions while in the Game Over menu state." alt="" coords="162,56,315,83"/>
+<area shape="rect" href="main_8c.html#a31f00e3232e268b63b905a17a164542b" title="Processes the interrupts and calls correct functions while in the Highscores menu state." alt="" coords="181,107,296,133"/>
+<area shape="rect" href="main_8c.html#a85ddf0bf65650526685ffbfddd3e897f" title="Processes the interrupts and calls correct functions while in the Main menu state." alt="" coords="179,157,298,184"/>
+<area shape="rect" href="main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,81,114,108"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a47a45f8c7f3fb6ac5e856f1e14071e69" name="a47a45f8c7f3fb6ac5e856f1e14071e69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47a45f8c7f3fb6ac5e856f1e14071e69">&#9670;&#160;</a></span>readPacket()</h2>
+<a id="a7fe4a8e593d4206f11916156e5d46574" name="a7fe4a8e593d4206f11916156e5d46574"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fe4a8e593d4206f11916156e5d46574">&#9670;&#160;</a></span>read_packet()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int() readPacket </td>
+          <td class="memname">int() read_packet </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -148,17 +232,40 @@ Functions</h2></td></tr>
 
 <p>Reads and parses the packet from the mouse output buffer. </p>
 <dl class="section return"><dt>Returns</dt><dd>int 0 upon success, non-zero otherwise </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="mouse_8h_a7fe4a8e593d4206f11916156e5d46574_cgraph.png" border="0" usemap="#amouse_8h_a7fe4a8e593d4206f11916156e5d46574_cgraph" alt=""/></div>
+<map name="amouse_8h_a7fe4a8e593d4206f11916156e5d46574_cgraph" id="amouse_8h_a7fe4a8e593d4206f11916156e5d46574_cgraph">
+<area shape="rect" title="Reads and parses the packet from the mouse output buffer." alt="" coords="5,5,98,32"/>
+<area shape="rect" href="utils_8c.html#ac001a9276b9ecff0ddabd111fac79211" title="Reads a byte from a given port." alt="" coords="146,5,230,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="mouse_8h_a7fe4a8e593d4206f11916156e5d46574_icgraph.png" border="0" usemap="#amouse_8h_a7fe4a8e593d4206f11916156e5d46574_icgraph" alt=""/></div>
+<map name="amouse_8h_a7fe4a8e593d4206f11916156e5d46574_icgraph" id="amouse_8h_a7fe4a8e593d4206f11916156e5d46574_icgraph">
+<area shape="rect" title="Reads and parses the packet from the mouse output buffer." alt="" coords="574,81,667,108"/>
+<area shape="rect" href="mouse_8c.html#a310254edf59d5de2a8df1b2888cc7431" title="Mouse interrupt handler. Gets the mouse packet and updates the user interface mouse struct." alt="" coords="363,81,526,108"/>
+<area shape="rect" href="main_8c.html#aca94587a192dc9d6e25886d009f3ee76" title="Processes the interrupts and calls correct functions while in the Game state." alt="" coords="196,5,281,32"/>
+<area shape="rect" href="main_8c.html#a7b466abd307ad46f0cfb2209749e5c65" title="Processes the interrupts and calls correct functions while in the Game Over menu state." alt="" coords="162,56,315,83"/>
+<area shape="rect" href="main_8c.html#a31f00e3232e268b63b905a17a164542b" title="Processes the interrupts and calls correct functions while in the Highscores menu state." alt="" coords="181,107,296,133"/>
+<area shape="rect" href="main_8c.html#a85ddf0bf65650526685ffbfddd3e897f" title="Processes the interrupts and calls correct functions while in the Main menu state." alt="" coords="179,157,298,184"/>
+<area shape="rect" href="main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,81,114,108"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="aa9202c3a6ed6ca6aabddde76974b4725" name="aa9202c3a6ed6ca6aabddde76974b4725"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9202c3a6ed6ca6aabddde76974b4725">&#9670;&#160;</a></span>readStatusByte()</h2>
+<a id="a988fc64ae581c0f124ad68f50714f24a" name="a988fc64ae581c0f124ad68f50714f24a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a988fc64ae581c0f124ad68f50714f24a">&#9670;&#160;</a></span>read_status_byte()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int() readStatusByte </td>
+          <td class="memname">int() read_status_byte </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -168,6 +275,29 @@ Functions</h2></td></tr>
 
 <p>Reads the mouse status byte. </p>
 <dl class="section return"><dt>Returns</dt><dd>int 0 upon success, non-zero otherwise </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="mouse_8h_a988fc64ae581c0f124ad68f50714f24a_cgraph.png" border="0" usemap="#amouse_8h_a988fc64ae581c0f124ad68f50714f24a_cgraph" alt=""/></div>
+<map name="amouse_8h_a988fc64ae581c0f124ad68f50714f24a_cgraph" id="amouse_8h_a988fc64ae581c0f124ad68f50714f24a_cgraph">
+<area shape="rect" title="Reads the mouse status byte." alt="" coords="5,5,127,32"/>
+<area shape="rect" href="utils_8c.html#ac001a9276b9ecff0ddabd111fac79211" title="Reads a byte from a given port." alt="" coords="175,5,259,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="mouse_8h_a988fc64ae581c0f124ad68f50714f24a_icgraph.png" border="0" usemap="#amouse_8h_a988fc64ae581c0f124ad68f50714f24a_icgraph" alt=""/></div>
+<map name="amouse_8h_a988fc64ae581c0f124ad68f50714f24a_icgraph" id="amouse_8h_a988fc64ae581c0f124ad68f50714f24a_icgraph">
+<area shape="rect" title="Reads the mouse status byte." alt="" coords="574,81,696,108"/>
+<area shape="rect" href="mouse_8c.html#a310254edf59d5de2a8df1b2888cc7431" title="Mouse interrupt handler. Gets the mouse packet and updates the user interface mouse struct." alt="" coords="363,81,526,108"/>
+<area shape="rect" href="main_8c.html#aca94587a192dc9d6e25886d009f3ee76" title="Processes the interrupts and calls correct functions while in the Game state." alt="" coords="196,5,281,32"/>
+<area shape="rect" href="main_8c.html#a7b466abd307ad46f0cfb2209749e5c65" title="Processes the interrupts and calls correct functions while in the Game Over menu state." alt="" coords="162,56,315,83"/>
+<area shape="rect" href="main_8c.html#a31f00e3232e268b63b905a17a164542b" title="Processes the interrupts and calls correct functions while in the Highscores menu state." alt="" coords="181,107,296,133"/>
+<area shape="rect" href="main_8c.html#a85ddf0bf65650526685ffbfddd3e897f" title="Processes the interrupts and calls correct functions while in the Main menu state." alt="" coords="179,157,298,184"/>
+<area shape="rect" href="main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,81,114,108"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -195,6 +325,15 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>int 0 upon success, non-zero otherwise </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="mouse_8h_af9674903e38c0378821477f9be3e0b2e_icgraph.png" border="0" usemap="#amouse_8h_af9674903e38c0378821477f9be3e0b2e_icgraph" alt=""/></div>
+<map name="amouse_8h_af9674903e38c0378821477f9be3e0b2e_icgraph" id="amouse_8h_af9674903e38c0378821477f9be3e0b2e_icgraph">
+<area shape="rect" title="Subscribes and enables Mouse interrupts." alt="" coords="162,5,306,32"/>
+<area shape="rect" href="main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,5,114,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -215,6 +354,15 @@ Functions</h2></td></tr>
 
 <p>Unsubscribes Mouse interrupts. </p>
 <dl class="section return"><dt>Returns</dt><dd>int 0 upon success, non-zero otherwise </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="mouse_8h_a4c04b6e71466c545f39ca49a830e0779_icgraph.png" border="0" usemap="#amouse_8h_a4c04b6e71466c545f39ca49a830e0779_icgraph" alt=""/></div>
+<map name="amouse_8h_a4c04b6e71466c545f39ca49a830e0779_icgraph" id="amouse_8h_a4c04b6e71466c545f39ca49a830e0779_icgraph">
+<area shape="rect" title="Unsubscribes Mouse interrupts." alt="" coords="162,5,320,32"/>
+<area shape="rect" href="main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,5,114,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -235,6 +383,20 @@ Functions</h2></td></tr>
 
 <p>Updates the user interface mouse. </p>
 <dl class="section return"><dt>Returns</dt><dd>int 0 upon success, non-zero otherwise </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="mouse_8h_aeff6e8956d863ef6147b8c9475422574_icgraph.png" border="0" usemap="#amouse_8h_aeff6e8956d863ef6147b8c9475422574_icgraph" alt=""/></div>
+<map name="amouse_8h_aeff6e8956d863ef6147b8c9475422574_icgraph" id="amouse_8h_aeff6e8956d863ef6147b8c9475422574_icgraph">
+<area shape="rect" title="Updates the user interface mouse." alt="" coords="574,81,681,108"/>
+<area shape="rect" href="mouse_8c.html#a310254edf59d5de2a8df1b2888cc7431" title="Mouse interrupt handler. Gets the mouse packet and updates the user interface mouse struct." alt="" coords="363,81,526,108"/>
+<area shape="rect" href="main_8c.html#aca94587a192dc9d6e25886d009f3ee76" title="Processes the interrupts and calls correct functions while in the Game state." alt="" coords="196,5,281,32"/>
+<area shape="rect" href="main_8c.html#a7b466abd307ad46f0cfb2209749e5c65" title="Processes the interrupts and calls correct functions while in the Game Over menu state." alt="" coords="162,56,315,83"/>
+<area shape="rect" href="main_8c.html#a31f00e3232e268b63b905a17a164542b" title="Processes the interrupts and calls correct functions while in the Highscores menu state." alt="" coords="181,107,296,133"/>
+<area shape="rect" href="main_8c.html#a85ddf0bf65650526685ffbfddd3e897f" title="Processes the interrupts and calls correct functions while in the Main menu state." alt="" coords="179,157,298,184"/>
+<area shape="rect" href="main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,81,114,108"/>
+</map>
+</div>
 
 </div>
 </div>

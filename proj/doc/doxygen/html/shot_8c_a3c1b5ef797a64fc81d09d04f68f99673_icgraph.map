@@ -1,0 +1,9 @@
+<map id="draw_shot" name="draw_shot">
+<area shape="rect" id="node1" title="Draws a given shot in the screen according to its position and source." alt="" coords="659,31,739,57"/>
+<area shape="rect" id="node2" href="$alien_8c.html#a7a09a76bbff752e5cb6eeac7c56fd622" title="Draws an alien." alt="" coords="529,5,611,32"/>
+<area shape="rect" id="node7" href="$player_8c.html#a6a7c558ce856f450303ab6ad449ad50f" title="Draws a player by its coordinates and corresponding XPM image." alt="" coords="390,56,481,83"/>
+<area shape="rect" id="node3" href="$alien_8c.html#a54999c9c1299cdf99a0c3b8a2a176fae" title="Draws a group of aliens." alt="" coords="391,5,480,32"/>
+<area shape="rect" id="node4" href="$spaceinvaders_8c.html#a84aa668c4684547c795670fc72531598" title="General game drawing function. Calls the elements&#39; respective drawing functions." alt="" coords="294,31,342,57"/>
+<area shape="rect" id="node5" href="$main_8c.html#aca94587a192dc9d6e25886d009f3ee76" title="Processes the interrupts and calls correct functions while in the Game state." alt="" coords="162,31,246,57"/>
+<area shape="rect" id="node6" href="$main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,31,114,57"/>
+</map>

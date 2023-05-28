@@ -1,0 +1,22 @@
+<map id="update" name="update">
+<area shape="rect" id="node1" title="Updates the game&#39;s elements position (if appliable), checks colisions and updates the involved elemen..." alt="" coords="5,284,66,311"/>
+<area shape="rect" id="node2" href="$alien_8c.html#a7f751bf90ccb54281fe5febc948fa182" title="Returns whether a group of aliens can move in a given direction." alt="" coords="114,5,266,32"/>
+<area shape="rect" id="node4" href="$shield_8c.html#a05c98b39588bdedcdf3876bd81acca62" title="Causes damage to a given shield (decrements its lives) and alters its coordinates to match the new th..." alt="" coords="156,56,224,83"/>
+<area shape="rect" id="node5" href="$alien_8c.html#a609f32ec375ba493430c600774033d75" title="Deletes an alien&#39;s shot." alt="" coords="129,107,251,133"/>
+<area shape="rect" id="node6" href="$player_8c.html#a05477977a2ba3cb090037ee5bb753bdf" title="Deletes a given player&#39;s shot with a given index within the active player&#39;s shots array." alt="" coords="125,157,255,184"/>
+<area shape="rect" id="node7" href="$alien_8c.html#abf25c5836219ff077d2841a77a4ed187" title="Kills an alien with a given id from a group." alt="" coords="154,208,226,235"/>
+<area shape="rect" id="node8" href="$alien_8c.html#a682db2db98543956c7eb146ea0cc5731" title="Checks if a given shot hit any alien within a group and returns the index of the hit alien." alt="" coords="153,259,227,285"/>
+<area shape="rect" id="node10" href="$player_8c.html#a7ea936c93adb43f078c34be6a831b0c2" title="Increments the given player&#39;s score according to the id of the alien they killed, since the number of..." alt="" coords="131,309,249,336"/>
+<area shape="rect" id="node11" href="$player_8c.html#a03020012085a4bc95ab704a0a858d7b3" title="Decrements the given player&#39;s lives by a unit." alt="" coords="152,360,228,387"/>
+<area shape="rect" id="node12" href="$alien_8c.html#a90225bb26dbfe22e476bab8087e6eb2a" title="Moves a group of aliens in a given direction." alt="" coords="144,411,236,437"/>
+<area shape="rect" id="node13" href="$shot_8c.html#af59b390a2e0c4b2a0e2f648a42bb1b91" title="Moves the given shot according to its source." alt="" coords="148,461,232,488"/>
+<area shape="rect" id="node14" href="$spaceinvaders_8c.html#a0b361528e5b1e54470b00ef064464b95" title="Regenerates all the aliens when a new game wave is started." alt="" coords="141,512,239,539"/>
+<area shape="rect" id="node18" href="$alien_8c.html#a449d802007e914ce4460e85d116cb35c" title="Makes a random alien within a group shoot." alt="" coords="143,563,237,589"/>
+<area shape="rect" id="node3" href="$alien_8c.html#a71ebc52ed3ad063304bfbad6e0466e91" title="Returns whether an alien can move in a given direction." alt="" coords="314,5,427,32"/>
+<area shape="rect" id="node9" href="$alien_8c.html#a425ecb9da8fca28910d8513379d819a8" title="Returns whether a given alien was hit by a given shot." alt="" coords="316,259,425,285"/>
+<area shape="rect" id="node15" href="$alien_8c.html#af8f859696eaefd6cc2f765baaa8c6313" title="Initializes a group of aliens." alt="" coords="331,461,410,488"/>
+<area shape="rect" id="node17" href="$shield_8c.html#a46f87a7a9730d61f4db91cc66d61b2c6" title="Initializes a Shield with a given left uppermost x coordinate and id." alt="" coords="331,512,410,539"/>
+<area shape="rect" id="node16" href="$alien_8c.html#af19ba8e0046253fb160c07592b0e1be2" title="Initializes an alien with a given id and leftmost upper position." alt="" coords="475,461,548,488"/>
+<area shape="rect" id="node19" href="$alien_8c.html#acb9776923be1b4538bc66cc72116d45b" title="Makes an alien shoot." alt="" coords="327,563,414,589"/>
+<area shape="rect" id="node20" href="$shot_8c.html#adbf78f340c9cb30ad382b64ad88b3bb4" title="Initializes a shot with given left uppermost coordinates and source." alt="" coords="476,563,547,589"/>
+</map>

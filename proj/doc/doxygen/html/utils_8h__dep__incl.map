@@ -1,0 +1,13 @@
+<map id="C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX&#45;LCOM/shared/proj/src/framework/utils/utils.h" name="C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX&#45;LCOM/shared/proj/src/framework/utils/utils.h">
+<area shape="rect" id="node1" title="Set of auxiliary functions to be used in the framework." alt="" coords="467,5,647,80"/>
+<area shape="rect" id="node2" href="$kbd_8h.html" title="Constants for programming the KBC. Functions of the KBC framework." alt="" coords="124,128,323,203"/>
+<area shape="rect" id="node5" href="$mouse_8h.html" title="Framework for the Mouse." alt="" coords="347,128,551,203"/>
+<area shape="rect" id="node9" href="$rtc_8h.html" title="Constants for programming the RTC. Functions of the RTC framework." alt="" coords="575,128,755,203"/>
+<area shape="rect" id="node11" href="$utils_8c.html" title=" " alt="" coords="779,128,959,203"/>
+<area shape="rect" id="node3" href="$kbd_8c.html" title=" " alt="" coords="5,251,205,325"/>
+<area shape="rect" id="node4" href="$main_8c.html" title="General functions that manage the app logic." alt="" coords="279,373,459,448"/>
+<area shape="rect" id="node6" href="$mouse_8c.html" title=" " alt="" coords="330,251,533,325"/>
+<area shape="rect" id="node7" href="$spaceinvaders_8h.html" title="Game logic functions. Stores the game elements and assures the interaction between them." alt="" coords="558,251,738,325"/>
+<area shape="rect" id="node8" href="$spaceinvaders_8c.html" title=" " alt="" coords="558,373,738,448"/>
+<area shape="rect" id="node10" href="$rtc_8c.html" title=" " alt="" coords="814,251,994,325"/>
+</map>

@@ -1,0 +1,88 @@
+\hypertarget{timer_8c}{}\doxysection{C\+:/\+Users/\+Pedro/\+Documents/2\+LEIC/2º semestre/\+LC/\+MINIX-\/\+LCOM/shared/proj/src/framework/timer/timer.c File Reference}
+\label{timer_8c}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/timer/timer.c@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/timer/timer.c}}
+{\ttfamily \#include \char`\"{}timer.\+h\char`\"{}}\newline
+Include dependency graph for timer.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{timer_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{timer_8c_a0ceff2b17079610e025042290d1fae99}{subscribe\+\_\+timer\+\_\+int}} (uint8\+\_\+t $\ast$bit\+\_\+no)
+\begin{DoxyCompactList}\small\item\em Subscribes and enables Timer 0 interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{timer_8c_a5fbfca26bec887463f37e7f66527dad4}{unsubscribe\+\_\+timer\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes Timer 0 interrupts. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{timer_8c_aa327d05db9461ba7bcfc05072fc28b3e}{timer\+\_\+interrupt\+\_\+handler}} ()
+\begin{DoxyCompactList}\small\item\em Timer interrupt handler. Increments the timer counter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{timer_8c_a0ceff2b17079610e025042290d1fae99}\label{timer_8c_a0ceff2b17079610e025042290d1fae99}} 
+\index{timer.c@{timer.c}!subscribe\_timer\_int@{subscribe\_timer\_int}}
+\index{subscribe\_timer\_int@{subscribe\_timer\_int}!timer.c@{timer.c}}
+\doxysubsubsection{\texorpdfstring{subscribe\_timer\_int()}{subscribe\_timer\_int()}}
+{\footnotesize\ttfamily int() subscribe\+\_\+timer\+\_\+int (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{bit\+\_\+no }\end{DoxyParamCaption})}
+
+
+
+Subscribes and enables Timer 0 interrupts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+\_\+no} & Variable to store the timer\textquotesingle{}s hook id correspondent bit number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 upon success, non-\/zero otherwise 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{timer_8c_a0ceff2b17079610e025042290d1fae99_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{timer_8c_aa327d05db9461ba7bcfc05072fc28b3e}\label{timer_8c_aa327d05db9461ba7bcfc05072fc28b3e}} 
+\index{timer.c@{timer.c}!timer\_interrupt\_handler@{timer\_interrupt\_handler}}
+\index{timer\_interrupt\_handler@{timer\_interrupt\_handler}!timer.c@{timer.c}}
+\doxysubsubsection{\texorpdfstring{timer\_interrupt\_handler()}{timer\_interrupt\_handler()}}
+{\footnotesize\ttfamily void() timer\+\_\+interrupt\+\_\+handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Timer interrupt handler. Increments the timer counter. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{timer_8c_aa327d05db9461ba7bcfc05072fc28b3e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{timer_8c_a5fbfca26bec887463f37e7f66527dad4}\label{timer_8c_a5fbfca26bec887463f37e7f66527dad4}} 
+\index{timer.c@{timer.c}!unsubscribe\_timer\_int@{unsubscribe\_timer\_int}}
+\index{unsubscribe\_timer\_int@{unsubscribe\_timer\_int}!timer.c@{timer.c}}
+\doxysubsubsection{\texorpdfstring{unsubscribe\_timer\_int()}{unsubscribe\_timer\_int()}}
+{\footnotesize\ttfamily int() unsubscribe\+\_\+timer\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Unsubscribes Timer 0 interrupts. 
+
+\begin{DoxyReturn}{Returns}
+int 0 upon success, non-\/zero otherwise 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{timer_8c_a5fbfca26bec887463f37e7f66527dad4_icgraph}
+\end{center}
+\end{figure}

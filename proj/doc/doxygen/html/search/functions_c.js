@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['video_5fdraw_5fpixel_0',['video_draw_pixel',['../video_8h.html#ab0332ee565f978f725c021b4eb35958e',1,'video.c']]],
-  ['video_5fdraw_5fxpm_1',['video_draw_xpm',['../video_8h.html#a1d7817e4e5198831c8e33e05a64e8ecf',1,'video.c']]],
-  ['video_5finit_2',['video_init',['../video_8h.html#a27f9047879cee35f24ae69729e89c732',1,'video.c']]],
-  ['video_5fload_5fxpms_3',['video_load_xpms',['../video_8h.html#a43eca9753118b540d01327d3c4a7068c',1,'video.c']]]
+  ['shoot_5falien_0',['shoot_alien',['../alien_8c.html#acb9776923be1b4538bc66cc72116d45b',1,'shoot_alien(Alien *a):&#160;alien.c'],['../alien_8h.html#acb9776923be1b4538bc66cc72116d45b',1,'shoot_alien(Alien *a):&#160;alien.c']]],
+  ['shoot_5faliens_1',['shoot_aliens',['../alien_8c.html#a449d802007e914ce4460e85d116cb35c',1,'shoot_aliens(AlienGroup *group):&#160;alien.c'],['../alien_8h.html#a449d802007e914ce4460e85d116cb35c',1,'shoot_aliens(AlienGroup *group):&#160;alien.c']]],
+  ['store_5fscores_2',['store_scores',['../spaceinvaders_8c.html#afceda483e03bbe9320d74e45df9f9c32',1,'store_scores(Score *array):&#160;spaceinvaders.c'],['../spaceinvaders_8h.html#afceda483e03bbe9320d74e45df9f9c32',1,'store_scores(Score *array):&#160;spaceinvaders.c']]],
+  ['subscribe_5fmouse_5fint_3',['subscribe_mouse_int',['../mouse_8c.html#af9674903e38c0378821477f9be3e0b2e',1,'subscribe_mouse_int(uint8_t *bit_no):&#160;mouse.c'],['../mouse_8h.html#af9674903e38c0378821477f9be3e0b2e',1,'subscribe_mouse_int(uint8_t *bit_no):&#160;mouse.c']]],
+  ['subscribe_5ftimer_5fint_4',['subscribe_timer_int',['../timer_8c.html#a0ceff2b17079610e025042290d1fae99',1,'subscribe_timer_int(uint8_t *bit_no):&#160;timer.c'],['../timer_8h.html#a0ceff2b17079610e025042290d1fae99',1,'subscribe_timer_int(uint8_t *bit_no):&#160;timer.c']]]
 ];

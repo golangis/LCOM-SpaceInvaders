@@ -1,5 +1,5 @@
-\hypertarget{alien_8h}{}\doxysection{C\+:/\+Users/\+Pedro/\+Documents/2\+LEIC/2º semestre/\+LC/\+MINIX-\/\+LCOM/shared/proj/src/alien.h File Reference}
-\label{alien_8h}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/alien.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/alien.h}}
+\hypertarget{alien_8h}{}\doxysection{C\+:/\+Users/\+Pedro/\+Documents/2\+LEIC/2º semestre/\+LC/\+MINIX-\/\+LCOM/shared/proj/src/logic/alien.h File Reference}
+\label{alien_8h}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/alien.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/alien.h}}
 
 
 Represent and manipulate the game\textquotesingle{}s aliens.  
@@ -7,9 +7,25 @@ Represent and manipulate the game\textquotesingle{}s aliens.
 
 {\ttfamily \#include $<$stdbool.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
-{\ttfamily \#include \char`\"{}direction.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}logic/direction.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}framework/video/video.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}shot.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}logic/shot.\+h\char`\"{}}\newline
+Include dependency graph for alien.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{alien_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{alien_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
@@ -20,31 +36,31 @@ struct \mbox{\hyperlink{struct_alien_group}{Alien\+Group}}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$() \mbox{\hyperlink{alien_8h_a4398d0a22fab3bc7954d339f2095e6f3}{init\+Aliens}} ()
+\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$() \mbox{\hyperlink{alien_8h_af8f859696eaefd6cc2f765baaa8c6313}{init\+\_\+aliens}} ()
 \begin{DoxyCompactList}\small\item\em Initializes a group of aliens. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_alien}{Alien}}() \mbox{\hyperlink{alien_8h_af0a5d39d7904876961a7f25d6756bfec}{init\+Alien}} (int id, int x\+\_\+min, int y\+\_\+min)
+\mbox{\hyperlink{struct_alien}{Alien}}() \mbox{\hyperlink{alien_8h_af19ba8e0046253fb160c07592b0e1be2}{init\+\_\+alien}} (int id, int x\+\_\+min, int y\+\_\+min)
 \begin{DoxyCompactList}\small\item\em Initializes an alien with a given id and leftmost upper position. \end{DoxyCompactList}\item 
-void() \mbox{\hyperlink{alien_8h_a50696a94c059f237747e7676d4216260}{move\+Aliens}} (\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$group, enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} dir)
+void() \mbox{\hyperlink{alien_8h_a90225bb26dbfe22e476bab8087e6eb2a}{move\+\_\+aliens}} (\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$group, enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} dir)
 \begin{DoxyCompactList}\small\item\em Moves a group of aliens in a given direction. \end{DoxyCompactList}\item 
-void() \mbox{\hyperlink{alien_8h_ab87b5c2f39f4a07ce9b07c2ec7ffd391}{die\+Alien}} (\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$group, int i)
+void() \mbox{\hyperlink{alien_8h_abf25c5836219ff077d2841a77a4ed187}{die\+\_\+alien}} (\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$group, int i)
 \begin{DoxyCompactList}\small\item\em Kills an alien with a given id from a group. \end{DoxyCompactList}\item 
-void() \mbox{\hyperlink{alien_8h_a7c201ebc707cfcc73bfc1e192b68a815}{shoot\+Alien}} (\mbox{\hyperlink{struct_alien}{Alien}} $\ast$a)
+void() \mbox{\hyperlink{alien_8h_acb9776923be1b4538bc66cc72116d45b}{shoot\+\_\+alien}} (\mbox{\hyperlink{struct_alien}{Alien}} $\ast$a)
 \begin{DoxyCompactList}\small\item\em Makes an alien shoot. \end{DoxyCompactList}\item 
-void() \mbox{\hyperlink{alien_8h_a35c41bb91d3e8e061a849102bee1d94d}{shoot\+Aliens}} (\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$group)
+void() \mbox{\hyperlink{alien_8h_a449d802007e914ce4460e85d116cb35c}{shoot\+\_\+aliens}} (\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$group)
 \begin{DoxyCompactList}\small\item\em Makes a random alien within a group shoot. \end{DoxyCompactList}\item 
-void() \mbox{\hyperlink{alien_8h_a0afbca3680ef3c81cbc646ff9c72cf97}{delete\+Alien\+Shot}} (\mbox{\hyperlink{struct_alien}{Alien}} $\ast$alien, int i)
+void() \mbox{\hyperlink{alien_8h_a609f32ec375ba493430c600774033d75}{delete\+\_\+alien\+\_\+shot}} (\mbox{\hyperlink{struct_alien}{Alien}} $\ast$\mbox{\hyperlink{shot_8h_aabe4a9c6d80770059ada9f0808ee586ca1a78895fb22dbb259b5520694212090c}{alien}}, int i)
 \begin{DoxyCompactList}\small\item\em Deletes an alien\textquotesingle{}s shot. \end{DoxyCompactList}\item 
-bool() \mbox{\hyperlink{alien_8h_ab80ac8f04abe3b4517e4cdba3a2ab1c6}{can\+Alien\+Move}} (\mbox{\hyperlink{struct_alien}{Alien}} $\ast$alien, enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} dir)
+bool() \mbox{\hyperlink{alien_8h_a71ebc52ed3ad063304bfbad6e0466e91}{can\+\_\+alien\+\_\+move}} (\mbox{\hyperlink{struct_alien}{Alien}} $\ast$\mbox{\hyperlink{shot_8h_aabe4a9c6d80770059ada9f0808ee586ca1a78895fb22dbb259b5520694212090c}{alien}}, enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} dir)
 \begin{DoxyCompactList}\small\item\em Returns whether an alien can move in a given direction. \end{DoxyCompactList}\item 
-bool() \mbox{\hyperlink{alien_8h_afef33b859fd60a0b119da3b36126a92a}{can\+Alien\+Group\+Move}} (\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$group, enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} dir)
+bool() \mbox{\hyperlink{alien_8h_a7f751bf90ccb54281fe5febc948fa182}{can\+\_\+alien\+\_\+group\+\_\+move}} (\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$group, enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} dir)
 \begin{DoxyCompactList}\small\item\em Returns whether a group of aliens can move in a given direction. \end{DoxyCompactList}\item 
-bool() \mbox{\hyperlink{alien_8h_aa87f236305a830686c38d7f99590a333}{was\+IHit\+Alien}} (\mbox{\hyperlink{struct_alien}{Alien}} $\ast$alien, \mbox{\hyperlink{struct_shot}{Shot}} $\ast$shot)
+bool() \mbox{\hyperlink{alien_8h_a425ecb9da8fca28910d8513379d819a8}{was\+\_\+i\+\_\+hit\+\_\+alien}} (\mbox{\hyperlink{struct_alien}{Alien}} $\ast$\mbox{\hyperlink{shot_8h_aabe4a9c6d80770059ada9f0808ee586ca1a78895fb22dbb259b5520694212090c}{alien}}, \mbox{\hyperlink{struct_shot}{Shot}} $\ast$shot)
 \begin{DoxyCompactList}\small\item\em Returns whether a given alien was hit by a given shot. \end{DoxyCompactList}\item 
-int() \mbox{\hyperlink{alien_8h_a33d90e50f1024b2f1c228b70db2d79f7}{hit\+Index}} (\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$group, \mbox{\hyperlink{struct_shot}{Shot}} $\ast$shot)
+int() \mbox{\hyperlink{alien_8h_a682db2db98543956c7eb146ea0cc5731}{hit\+\_\+index}} (\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$group, \mbox{\hyperlink{struct_shot}{Shot}} $\ast$shot)
 \begin{DoxyCompactList}\small\item\em Checks if a given shot hit any alien within a group and returns the index of the hit alien. \end{DoxyCompactList}\item 
-void() \mbox{\hyperlink{alien_8h_abce7afa217ea827d457307642f4da888}{draw\+Aliens}} (\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$group)
+void() \mbox{\hyperlink{alien_8h_a54999c9c1299cdf99a0c3b8a2a176fae}{draw\+\_\+aliens}} (\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$group)
 \begin{DoxyCompactList}\small\item\em Draws a group of aliens. \end{DoxyCompactList}\item 
-void() \mbox{\hyperlink{alien_8h_a7ae3bd74fbeeefc91a9c410bb42eb85f}{draw\+Alien}} (\mbox{\hyperlink{struct_alien}{Alien}} $\ast$alien)
+void() \mbox{\hyperlink{alien_8h_a7a09a76bbff752e5cb6eeac7c56fd622}{draw\+\_\+alien}} (\mbox{\hyperlink{struct_alien}{Alien}} $\ast$\mbox{\hyperlink{shot_8h_aabe4a9c6d80770059ada9f0808ee586ca1a78895fb22dbb259b5520694212090c}{alien}})
 \begin{DoxyCompactList}\small\item\em Draws an alien. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -54,11 +70,11 @@ Represent and manipulate the game\textquotesingle{}s aliens.
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{alien_8h_afef33b859fd60a0b119da3b36126a92a}\label{alien_8h_afef33b859fd60a0b119da3b36126a92a}} 
-\index{alien.h@{alien.h}!canAlienGroupMove@{canAlienGroupMove}}
-\index{canAlienGroupMove@{canAlienGroupMove}!alien.h@{alien.h}}
-\doxysubsubsection{\texorpdfstring{canAlienGroupMove()}{canAlienGroupMove()}}
-{\footnotesize\ttfamily bool() can\+Alien\+Group\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$}]{group,  }\item[{enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}}}]{dir }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{alien_8h_a7f751bf90ccb54281fe5febc948fa182}\label{alien_8h_a7f751bf90ccb54281fe5febc948fa182}} 
+\index{alien.h@{alien.h}!can\_alien\_group\_move@{can\_alien\_group\_move}}
+\index{can\_alien\_group\_move@{can\_alien\_group\_move}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{can\_alien\_group\_move()}{can\_alien\_group\_move()}}
+{\footnotesize\ttfamily bool() can\+\_\+alien\+\_\+group\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$}]{group,  }\item[{enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}}}]{dir }\end{DoxyParamCaption})}
 
 
 
@@ -74,11 +90,27 @@ Returns whether a group of aliens can move in a given direction.
 \begin{DoxyReturn}{Returns}
 Whether the group of aliens can move in the given direction. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{alien_8h_ab80ac8f04abe3b4517e4cdba3a2ab1c6}\label{alien_8h_ab80ac8f04abe3b4517e4cdba3a2ab1c6}} 
-\index{alien.h@{alien.h}!canAlienMove@{canAlienMove}}
-\index{canAlienMove@{canAlienMove}!alien.h@{alien.h}}
-\doxysubsubsection{\texorpdfstring{canAlienMove()}{canAlienMove()}}
-{\footnotesize\ttfamily bool() can\+Alien\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien}{Alien}} $\ast$}]{alien,  }\item[{enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}}}]{dir }\end{DoxyParamCaption})}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{alien_8h_a7f751bf90ccb54281fe5febc948fa182_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{alien_8h_a7f751bf90ccb54281fe5febc948fa182_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{alien_8h_a71ebc52ed3ad063304bfbad6e0466e91}\label{alien_8h_a71ebc52ed3ad063304bfbad6e0466e91}} 
+\index{alien.h@{alien.h}!can\_alien\_move@{can\_alien\_move}}
+\index{can\_alien\_move@{can\_alien\_move}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{can\_alien\_move()}{can\_alien\_move()}}
+{\footnotesize\ttfamily bool() can\+\_\+alien\+\_\+move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien}{Alien}} $\ast$}]{alien,  }\item[{enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}}}]{dir }\end{DoxyParamCaption})}
 
 
 
@@ -94,11 +126,19 @@ Returns whether an alien can move in a given direction.
 \begin{DoxyReturn}{Returns}
 Whether the alien can move in the given direction. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{alien_8h_a0afbca3680ef3c81cbc646ff9c72cf97}\label{alien_8h_a0afbca3680ef3c81cbc646ff9c72cf97}} 
-\index{alien.h@{alien.h}!deleteAlienShot@{deleteAlienShot}}
-\index{deleteAlienShot@{deleteAlienShot}!alien.h@{alien.h}}
-\doxysubsubsection{\texorpdfstring{deleteAlienShot()}{deleteAlienShot()}}
-{\footnotesize\ttfamily void() delete\+Alien\+Shot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien}{Alien}} $\ast$}]{alien,  }\item[{int}]{i }\end{DoxyParamCaption})}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{alien_8h_a71ebc52ed3ad063304bfbad6e0466e91_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{alien_8h_a609f32ec375ba493430c600774033d75}\label{alien_8h_a609f32ec375ba493430c600774033d75}} 
+\index{alien.h@{alien.h}!delete\_alien\_shot@{delete\_alien\_shot}}
+\index{delete\_alien\_shot@{delete\_alien\_shot}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{delete\_alien\_shot()}{delete\_alien\_shot()}}
+{\footnotesize\ttfamily void() delete\+\_\+alien\+\_\+shot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien}{Alien}} $\ast$}]{alien,  }\item[{int}]{i }\end{DoxyParamCaption})}
 
 
 
@@ -111,11 +151,19 @@ Deletes an alien\textquotesingle{}s shot.
 {\em i} & The index of the shot to delete within the alien\textquotesingle{}s shots. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{alien_8h_ab87b5c2f39f4a07ce9b07c2ec7ffd391}\label{alien_8h_ab87b5c2f39f4a07ce9b07c2ec7ffd391}} 
-\index{alien.h@{alien.h}!dieAlien@{dieAlien}}
-\index{dieAlien@{dieAlien}!alien.h@{alien.h}}
-\doxysubsubsection{\texorpdfstring{dieAlien()}{dieAlien()}}
-{\footnotesize\ttfamily void() die\+Alien (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$}]{group,  }\item[{int}]{i }\end{DoxyParamCaption})}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{alien_8h_a609f32ec375ba493430c600774033d75_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{alien_8h_abf25c5836219ff077d2841a77a4ed187}\label{alien_8h_abf25c5836219ff077d2841a77a4ed187}} 
+\index{alien.h@{alien.h}!die\_alien@{die\_alien}}
+\index{die\_alien@{die\_alien}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{die\_alien()}{die\_alien()}}
+{\footnotesize\ttfamily void() die\+\_\+alien (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$}]{group,  }\item[{int}]{i }\end{DoxyParamCaption})}
 
 
 
@@ -128,11 +176,19 @@ Kills an alien with a given id from a group.
 {\em i} & The id of the alien to kill. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{alien_8h_a7ae3bd74fbeeefc91a9c410bb42eb85f}\label{alien_8h_a7ae3bd74fbeeefc91a9c410bb42eb85f}} 
-\index{alien.h@{alien.h}!drawAlien@{drawAlien}}
-\index{drawAlien@{drawAlien}!alien.h@{alien.h}}
-\doxysubsubsection{\texorpdfstring{drawAlien()}{drawAlien()}}
-{\footnotesize\ttfamily void() draw\+Alien (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien}{Alien}} $\ast$}]{alien }\end{DoxyParamCaption})}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{alien_8h_abf25c5836219ff077d2841a77a4ed187_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{alien_8h_a7a09a76bbff752e5cb6eeac7c56fd622}\label{alien_8h_a7a09a76bbff752e5cb6eeac7c56fd622}} 
+\index{alien.h@{alien.h}!draw\_alien@{draw\_alien}}
+\index{draw\_alien@{draw\_alien}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{draw\_alien()}{draw\_alien()}}
+{\footnotesize\ttfamily void() draw\+\_\+alien (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien}{Alien}} $\ast$}]{alien }\end{DoxyParamCaption})}
 
 
 
@@ -143,11 +199,27 @@ Draws an alien.
 {\em alien} & The alien to draw. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{alien_8h_abce7afa217ea827d457307642f4da888}\label{alien_8h_abce7afa217ea827d457307642f4da888}} 
-\index{alien.h@{alien.h}!drawAliens@{drawAliens}}
-\index{drawAliens@{drawAliens}!alien.h@{alien.h}}
-\doxysubsubsection{\texorpdfstring{drawAliens()}{drawAliens()}}
-{\footnotesize\ttfamily void() draw\+Aliens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$}]{group }\end{DoxyParamCaption})}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{alien_8h_a7a09a76bbff752e5cb6eeac7c56fd622_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{alien_8h_a7a09a76bbff752e5cb6eeac7c56fd622_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{alien_8h_a54999c9c1299cdf99a0c3b8a2a176fae}\label{alien_8h_a54999c9c1299cdf99a0c3b8a2a176fae}} 
+\index{alien.h@{alien.h}!draw\_aliens@{draw\_aliens}}
+\index{draw\_aliens@{draw\_aliens}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{draw\_aliens()}{draw\_aliens()}}
+{\footnotesize\ttfamily void() draw\+\_\+aliens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$}]{group }\end{DoxyParamCaption})}
 
 
 
@@ -158,11 +230,27 @@ Draws a group of aliens.
 {\em group} & The group of aliens to draw. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{alien_8h_a33d90e50f1024b2f1c228b70db2d79f7}\label{alien_8h_a33d90e50f1024b2f1c228b70db2d79f7}} 
-\index{alien.h@{alien.h}!hitIndex@{hitIndex}}
-\index{hitIndex@{hitIndex}!alien.h@{alien.h}}
-\doxysubsubsection{\texorpdfstring{hitIndex()}{hitIndex()}}
-{\footnotesize\ttfamily int() hit\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$}]{group,  }\item[{\mbox{\hyperlink{struct_shot}{Shot}} $\ast$}]{shot }\end{DoxyParamCaption})}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{alien_8h_a54999c9c1299cdf99a0c3b8a2a176fae_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{alien_8h_a54999c9c1299cdf99a0c3b8a2a176fae_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{alien_8h_a682db2db98543956c7eb146ea0cc5731}\label{alien_8h_a682db2db98543956c7eb146ea0cc5731}} 
+\index{alien.h@{alien.h}!hit\_index@{hit\_index}}
+\index{hit\_index@{hit\_index}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{hit\_index()}{hit\_index()}}
+{\footnotesize\ttfamily int() hit\+\_\+index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$}]{group,  }\item[{\mbox{\hyperlink{struct_shot}{Shot}} $\ast$}]{shot }\end{DoxyParamCaption})}
 
 
 
@@ -178,11 +266,27 @@ Checks if a given shot hit any alien within a group and returns the index of the
 \begin{DoxyReturn}{Returns}
 The index of the hit alien or -\/1 if no alive alien was hit. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{alien_8h_af0a5d39d7904876961a7f25d6756bfec}\label{alien_8h_af0a5d39d7904876961a7f25d6756bfec}} 
-\index{alien.h@{alien.h}!initAlien@{initAlien}}
-\index{initAlien@{initAlien}!alien.h@{alien.h}}
-\doxysubsubsection{\texorpdfstring{initAlien()}{initAlien()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_alien}{Alien}}() init\+Alien (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{x\+\_\+min,  }\item[{int}]{y\+\_\+min }\end{DoxyParamCaption})}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{alien_8h_a682db2db98543956c7eb146ea0cc5731_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{alien_8h_a682db2db98543956c7eb146ea0cc5731_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{alien_8h_af19ba8e0046253fb160c07592b0e1be2}\label{alien_8h_af19ba8e0046253fb160c07592b0e1be2}} 
+\index{alien.h@{alien.h}!init\_alien@{init\_alien}}
+\index{init\_alien@{init\_alien}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{init\_alien()}{init\_alien()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_alien}{Alien}}() init\+\_\+alien (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{x\+\_\+min,  }\item[{int}]{y\+\_\+min }\end{DoxyParamCaption})}
 
 
 
@@ -200,11 +304,19 @@ Initializes an alien with a given id and leftmost upper position.
 \begin{DoxyReturn}{Returns}
 The initialized alien. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{alien_8h_a4398d0a22fab3bc7954d339f2095e6f3}\label{alien_8h_a4398d0a22fab3bc7954d339f2095e6f3}} 
-\index{alien.h@{alien.h}!initAliens@{initAliens}}
-\index{initAliens@{initAliens}!alien.h@{alien.h}}
-\doxysubsubsection{\texorpdfstring{initAliens()}{initAliens()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$() init\+Aliens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{alien_8h_af19ba8e0046253fb160c07592b0e1be2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{alien_8h_af8f859696eaefd6cc2f765baaa8c6313}\label{alien_8h_af8f859696eaefd6cc2f765baaa8c6313}} 
+\index{alien.h@{alien.h}!init\_aliens@{init\_aliens}}
+\index{init\_aliens@{init\_aliens}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{init\_aliens()}{init\_aliens()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$() init\+\_\+aliens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -213,11 +325,27 @@ Initializes a group of aliens.
 \begin{DoxyReturn}{Returns}
 The initialized group of aliens. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{alien_8h_a50696a94c059f237747e7676d4216260}\label{alien_8h_a50696a94c059f237747e7676d4216260}} 
-\index{alien.h@{alien.h}!moveAliens@{moveAliens}}
-\index{moveAliens@{moveAliens}!alien.h@{alien.h}}
-\doxysubsubsection{\texorpdfstring{moveAliens()}{moveAliens()}}
-{\footnotesize\ttfamily void() move\+Aliens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$}]{group,  }\item[{enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}}}]{dir }\end{DoxyParamCaption})}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{alien_8h_af8f859696eaefd6cc2f765baaa8c6313_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{alien_8h_af8f859696eaefd6cc2f765baaa8c6313_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{alien_8h_a90225bb26dbfe22e476bab8087e6eb2a}\label{alien_8h_a90225bb26dbfe22e476bab8087e6eb2a}} 
+\index{alien.h@{alien.h}!move\_aliens@{move\_aliens}}
+\index{move\_aliens@{move\_aliens}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{move\_aliens()}{move\_aliens()}}
+{\footnotesize\ttfamily void() move\+\_\+aliens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$}]{group,  }\item[{enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}}}]{dir }\end{DoxyParamCaption})}
 
 
 
@@ -230,11 +358,19 @@ Moves a group of aliens in a given direction.
 {\em dir} & The direction to move the aliens. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{alien_8h_a7c201ebc707cfcc73bfc1e192b68a815}\label{alien_8h_a7c201ebc707cfcc73bfc1e192b68a815}} 
-\index{alien.h@{alien.h}!shootAlien@{shootAlien}}
-\index{shootAlien@{shootAlien}!alien.h@{alien.h}}
-\doxysubsubsection{\texorpdfstring{shootAlien()}{shootAlien()}}
-{\footnotesize\ttfamily void() shoot\+Alien (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien}{Alien}} $\ast$}]{a }\end{DoxyParamCaption})}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{alien_8h_a90225bb26dbfe22e476bab8087e6eb2a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{alien_8h_acb9776923be1b4538bc66cc72116d45b}\label{alien_8h_acb9776923be1b4538bc66cc72116d45b}} 
+\index{alien.h@{alien.h}!shoot\_alien@{shoot\_alien}}
+\index{shoot\_alien@{shoot\_alien}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{shoot\_alien()}{shoot\_alien()}}
+{\footnotesize\ttfamily void() shoot\+\_\+alien (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien}{Alien}} $\ast$}]{a }\end{DoxyParamCaption})}
 
 
 
@@ -245,11 +381,27 @@ Makes an alien shoot.
 {\em a} & The alien that will fire. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{alien_8h_a35c41bb91d3e8e061a849102bee1d94d}\label{alien_8h_a35c41bb91d3e8e061a849102bee1d94d}} 
-\index{alien.h@{alien.h}!shootAliens@{shootAliens}}
-\index{shootAliens@{shootAliens}!alien.h@{alien.h}}
-\doxysubsubsection{\texorpdfstring{shootAliens()}{shootAliens()}}
-{\footnotesize\ttfamily void() shoot\+Aliens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$}]{group }\end{DoxyParamCaption})}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{alien_8h_acb9776923be1b4538bc66cc72116d45b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{alien_8h_acb9776923be1b4538bc66cc72116d45b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{alien_8h_a449d802007e914ce4460e85d116cb35c}\label{alien_8h_a449d802007e914ce4460e85d116cb35c}} 
+\index{alien.h@{alien.h}!shoot\_aliens@{shoot\_aliens}}
+\index{shoot\_aliens@{shoot\_aliens}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{shoot\_aliens()}{shoot\_aliens()}}
+{\footnotesize\ttfamily void() shoot\+\_\+aliens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$}]{group }\end{DoxyParamCaption})}
 
 
 
@@ -260,11 +412,27 @@ Makes a random alien within a group shoot.
 {\em group} & The group of aliens. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{alien_8h_aa87f236305a830686c38d7f99590a333}\label{alien_8h_aa87f236305a830686c38d7f99590a333}} 
-\index{alien.h@{alien.h}!wasIHitAlien@{wasIHitAlien}}
-\index{wasIHitAlien@{wasIHitAlien}!alien.h@{alien.h}}
-\doxysubsubsection{\texorpdfstring{wasIHitAlien()}{wasIHitAlien()}}
-{\footnotesize\ttfamily bool() was\+IHit\+Alien (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien}{Alien}} $\ast$}]{alien,  }\item[{\mbox{\hyperlink{struct_shot}{Shot}} $\ast$}]{shot }\end{DoxyParamCaption})}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{alien_8h_a449d802007e914ce4460e85d116cb35c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{alien_8h_a449d802007e914ce4460e85d116cb35c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{alien_8h_a425ecb9da8fca28910d8513379d819a8}\label{alien_8h_a425ecb9da8fca28910d8513379d819a8}} 
+\index{alien.h@{alien.h}!was\_i\_hit\_alien@{was\_i\_hit\_alien}}
+\index{was\_i\_hit\_alien@{was\_i\_hit\_alien}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{was\_i\_hit\_alien()}{was\_i\_hit\_alien()}}
+{\footnotesize\ttfamily bool() was\+\_\+i\+\_\+hit\+\_\+alien (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien}{Alien}} $\ast$}]{alien,  }\item[{\mbox{\hyperlink{struct_shot}{Shot}} $\ast$}]{shot }\end{DoxyParamCaption})}
 
 
 
@@ -280,3 +448,11 @@ Returns whether a given alien was hit by a given shot.
 \begin{DoxyReturn}{Returns}
 Whether the alien was hit by the shot. 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{alien_8h_a425ecb9da8fca28910d8513379d819a8_icgraph}
+\end{center}
+\end{figure}

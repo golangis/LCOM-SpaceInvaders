@@ -1,0 +1,4 @@
+<map id="read_packet" name="read_packet">
+<area shape="rect" id="node1" title="Reads and parses the packet from the mouse output buffer." alt="" coords="5,5,98,32"/>
+<area shape="rect" id="node2" href="$utils_8c.html#ac001a9276b9ecff0ddabd111fac79211" title="Reads a byte from a given port." alt="" coords="146,5,230,32"/>
+</map>

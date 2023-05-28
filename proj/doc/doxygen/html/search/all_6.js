@@ -1,7 +1,12 @@
 var searchData=
 [
-  ['i8042_2eh_0',['i8042.h',['../i8042_8h.html',1,'']]],
-  ['init_5fgame_1',['init_game',['../spaceinvaders_8h.html#aff9ce2c80067181fa64a67450da2c6fa',1,'spaceinvaders.c']]],
-  ['initalien_2',['initAlien',['../alien_8h.html#af0a5d39d7904876961a7f25d6756bfec',1,'alien.c']]],
-  ['initaliens_3',['initAliens',['../alien_8h.html#a4398d0a22fab3bc7954d339f2095e6f3',1,'alien.c']]]
+  ['game_0',['game',['../spaceinvaders_8h.html#adc6e5733fc3c22f0a7b2914188c49c90a98ed613d1d1a3c9820695fdac4f79a3d',1,'spaceinvaders.h']]],
+  ['game_5floop_1',['game_loop',['../main_8c.html#aca94587a192dc9d6e25886d009f3ee76',1,'main.c']]],
+  ['game_5fover_5fmenu_5floop_2',['game_over_menu_loop',['../main_8c.html#a7b466abd307ad46f0cfb2209749e5c65',1,'main.c']]],
+  ['gameover_5fimg_3',['gameOver_img',['../video_8h.html#aa21981659e1e836b2bfde17c315e3cbf',1,'video.h']]],
+  ['gameover_5fmap_4',['gameOver_map',['../video_8h.html#a91167116d335615d57a710ff1532ce11',1,'video.h']]],
+  ['gameovermenu_5',['gameOverMenu',['../spaceinvaders_8h.html#adc6e5733fc3c22f0a7b2914188c49c90a479968c9f06486d3c41d83567f978bad',1,'spaceinvaders.h']]],
+  ['get_5ftime_6',['get_time',['../rtc_8c.html#a4ad822f0b94f8d0c1e0071219174b6ef',1,'get_time(rtc_time *time):&#160;rtc.c'],['../rtc_8h.html#a4ad822f0b94f8d0c1e0071219174b6ef',1,'get_time(rtc_time *time):&#160;rtc.c']]],
+  ['greenfieldposition_7',['GreenFieldPosition',['../video_8h.html#a602b28f8e5da781eabfd736743a6ea09',1,'video.h']]],
+  ['greenmasksize_8',['GreenMaskSize',['../video_8h.html#ac7b4df72e505b74493e7d5144cbac743',1,'video.h']]]
 ];

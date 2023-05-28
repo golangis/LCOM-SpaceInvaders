@@ -1,27 +1,29 @@
 \hypertarget{shield_8h_source}{}\doxysection{shield.\+h}
-\label{shield_8h_source}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/shield.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/shield.h}}
-
+\label{shield_8h_source}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/shield.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/shield.h}}
+\mbox{\hyperlink{shield_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SHIELD\_H}}
 \DoxyCodeLine{2 \textcolor{preprocessor}{\#define SHIELD\_H}}
 \DoxyCodeLine{3 }
 \DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{video_8h}{framework/video/video.h}}"{}}}
 \DoxyCodeLine{5 }
-\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}shot.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{shot_8h}{logic/shot.h}}"{}}}
 \DoxyCodeLine{7 }
-\DoxyCodeLine{8 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
-\DoxyCodeLine{9     \textcolor{keywordtype}{int} x\_min;}
-\DoxyCodeLine{10     \textcolor{keywordtype}{int} x\_max;}
-\DoxyCodeLine{11     \textcolor{keywordtype}{int} y\_min;}
-\DoxyCodeLine{12     \textcolor{keywordtype}{int} y\_max;}
-\DoxyCodeLine{13     \textcolor{keywordtype}{int} lives;}
-\DoxyCodeLine{14     \textcolor{keywordtype}{int} id;}
-\DoxyCodeLine{15 \} \mbox{\hyperlink{struct_shield}{Shield}};}
-\DoxyCodeLine{16 }
-\DoxyCodeLine{17 \mbox{\hyperlink{struct_shield}{Shield}}* (initShield)(\textcolor{keywordtype}{int} x\_min, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
-\DoxyCodeLine{18 void (drawShield)(\mbox{\hyperlink{struct_shield}{Shield}}* shield);}
-\DoxyCodeLine{19 void (damage)(\mbox{\hyperlink{struct_shield}{Shield}}* shield, \textcolor{keyword}{enum} shot\_source src);}
-\DoxyCodeLine{20 }
-\DoxyCodeLine{21 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{18 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{19     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_shield_ae0951dcafafdc96ac1d8361c672d47e2}{x\_min}};}
+\DoxyCodeLine{20     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_shield_a5f0bb6d8a3e66525c3e6264cb8288e43}{x\_max}};}
+\DoxyCodeLine{21     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_shield_a7941ddc7e35fffb8864af1e922814401}{y\_min}};}
+\DoxyCodeLine{22     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_shield_ad033aea530fbbcf5bcd6cd98d882e3a5}{y\_max}};}
+\DoxyCodeLine{23     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_shield_ac1d68ef9a5dd304c5015e07af7f2bb19}{lives}};}
+\DoxyCodeLine{24     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_shield_a7441ef0865bcb3db9b8064dd7375c1ea}{id}};}
+\DoxyCodeLine{25 \} \mbox{\hyperlink{struct_shield}{Shield}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{33 \mbox{\hyperlink{struct_shield}{Shield}}* (\mbox{\hyperlink{shield_8h_a46f87a7a9730d61f4db91cc66d61b2c6}{init\_shield}})(\textcolor{keywordtype}{int} x\_min, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{39 void (\mbox{\hyperlink{shield_8h_aa29aea8cc95d1b319a3d12697032d6b1}{draw\_shield}})(\mbox{\hyperlink{struct_shield}{Shield}}* shield);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{45 void (\mbox{\hyperlink{shield_8h_a05c98b39588bdedcdf3876bd81acca62}{damage}})(\mbox{\hyperlink{struct_shield}{Shield}}* shield);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

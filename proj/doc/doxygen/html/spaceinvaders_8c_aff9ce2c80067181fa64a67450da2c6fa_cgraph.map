@@ -1,0 +1,7 @@
+<map id="init_game" name="init_game">
+<area shape="rect" id="node1" title="Initializes the game elements." alt="" coords="5,56,83,83"/>
+<area shape="rect" id="node2" href="$alien_8c.html#af8f859696eaefd6cc2f765baaa8c6313" title="Initializes a group of aliens." alt="" coords="131,5,211,32"/>
+<area shape="rect" id="node4" href="$player_8c.html#a94d01ea7c997ed46d9f77cedbeb149c9" title="Initializes a Player (space ship)." alt="" coords="131,56,211,83"/>
+<area shape="rect" id="node5" href="$shield_8c.html#a46f87a7a9730d61f4db91cc66d61b2c6" title="Initializes a Shield with a given left uppermost x coordinate and id." alt="" coords="131,107,211,133"/>
+<area shape="rect" id="node3" href="$alien_8c.html#af19ba8e0046253fb160c07592b0e1be2" title="Initializes an alien with a given id and leftmost upper position." alt="" coords="259,5,331,32"/>
+</map>

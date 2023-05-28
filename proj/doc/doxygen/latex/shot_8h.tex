@@ -1,0 +1,160 @@
+\hypertarget{shot_8h}{}\doxysection{C\+:/\+Users/\+Pedro/\+Documents/2\+LEIC/2º semestre/\+LC/\+MINIX-\/\+LCOM/shared/proj/src/logic/shot.h File Reference}
+\label{shot_8h}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/shot.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/shot.h}}
+
+
+Represents and manipulates the game\textquotesingle{}s shots.  
+
+
+{\ttfamily \#include \char`\"{}framework/video/video.\+h\char`\"{}}\newline
+Include dependency graph for shot.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{shot_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{shot_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_shot}{Shot}}
+\begin{DoxyCompactList}\small\item\em Represents a \mbox{\hyperlink{struct_shot}{Shot}} by its coordinates (area) and its source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{shot_8h_aabe4a9c6d80770059ada9f0808ee586c}{shot\+\_\+source}} \{ \mbox{\hyperlink{shot_8h_aabe4a9c6d80770059ada9f0808ee586ca1a78895fb22dbb259b5520694212090c}{alien}}
+, \mbox{\hyperlink{shot_8h_aabe4a9c6d80770059ada9f0808ee586cac37f0609760d22ed92a4d81c3f46dcdb}{player}}
+ \}
+\begin{DoxyCompactList}\small\item\em Represents possible shot sources (alien or player). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_shot}{Shot}}() \mbox{\hyperlink{shot_8h_abdeb3d4efd4511a28da6a4a589c85ab3}{init\+\_\+shot}} (int x, int y, enum \mbox{\hyperlink{shot_8h_aabe4a9c6d80770059ada9f0808ee586c}{shot\+\_\+source}} source)
+\begin{DoxyCompactList}\small\item\em Initializes a shot with given left uppermost coordinates and source. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{shot_8h_af59b390a2e0c4b2a0e2f648a42bb1b91}{move\+\_\+shot}} (\mbox{\hyperlink{struct_shot}{Shot}} $\ast$shot)
+\begin{DoxyCompactList}\small\item\em Moves the given shot according to its source. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{shot_8h_a3c1b5ef797a64fc81d09d04f68f99673}{draw\+\_\+shot}} (\mbox{\hyperlink{struct_shot}{Shot}} $\ast$shot)
+\begin{DoxyCompactList}\small\item\em Draws a given shot in the screen according to its position and source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents and manipulates the game\textquotesingle{}s shots. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{shot_8h_aabe4a9c6d80770059ada9f0808ee586c}\label{shot_8h_aabe4a9c6d80770059ada9f0808ee586c}} 
+\index{shot.h@{shot.h}!shot\_source@{shot\_source}}
+\index{shot\_source@{shot\_source}!shot.h@{shot.h}}
+\doxysubsubsection{\texorpdfstring{shot\_source}{shot\_source}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{shot_8h_aabe4a9c6d80770059ada9f0808ee586c}{shot\+\_\+source}}}
+
+
+
+Represents possible shot sources (alien or player). 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{alien@{alien}!shot.h@{shot.h}}\index{shot.h@{shot.h}!alien@{alien}}}\mbox{\Hypertarget{shot_8h_aabe4a9c6d80770059ada9f0808ee586ca1a78895fb22dbb259b5520694212090c}\label{shot_8h_aabe4a9c6d80770059ada9f0808ee586ca1a78895fb22dbb259b5520694212090c}} 
+alien&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{player@{player}!shot.h@{shot.h}}\index{shot.h@{shot.h}!player@{player}}}\mbox{\Hypertarget{shot_8h_aabe4a9c6d80770059ada9f0808ee586cac37f0609760d22ed92a4d81c3f46dcdb}\label{shot_8h_aabe4a9c6d80770059ada9f0808ee586cac37f0609760d22ed92a4d81c3f46dcdb}} 
+player&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{shot_8h_a3c1b5ef797a64fc81d09d04f68f99673}\label{shot_8h_a3c1b5ef797a64fc81d09d04f68f99673}} 
+\index{shot.h@{shot.h}!draw\_shot@{draw\_shot}}
+\index{draw\_shot@{draw\_shot}!shot.h@{shot.h}}
+\doxysubsubsection{\texorpdfstring{draw\_shot()}{draw\_shot()}}
+{\footnotesize\ttfamily void() draw\+\_\+shot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_shot}{Shot}} $\ast$}]{shot }\end{DoxyParamCaption})}
+
+
+
+Draws a given shot in the screen according to its position and source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shot} & Pointer to the shot to be drawn. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{shot_8h_a3c1b5ef797a64fc81d09d04f68f99673_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{shot_8h_a3c1b5ef797a64fc81d09d04f68f99673_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{shot_8h_abdeb3d4efd4511a28da6a4a589c85ab3}\label{shot_8h_abdeb3d4efd4511a28da6a4a589c85ab3}} 
+\index{shot.h@{shot.h}!init\_shot@{init\_shot}}
+\index{init\_shot@{init\_shot}!shot.h@{shot.h}}
+\doxysubsubsection{\texorpdfstring{init\_shot()}{init\_shot()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_shot}{Shot}}() init\+\_\+shot (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{enum \mbox{\hyperlink{shot_8h_aabe4a9c6d80770059ada9f0808ee586c}{shot\+\_\+source}}}]{source }\end{DoxyParamCaption})}
+
+
+
+Initializes a shot with given left uppermost coordinates and source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Left uppermost x coordinate. \\
+\hline
+{\em y} & Left uppermost y coordinate. \\
+\hline
+{\em source} & \mbox{\hyperlink{struct_shot}{Shot}} source. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The generated and initialized shot. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{shot_8h_abdeb3d4efd4511a28da6a4a589c85ab3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{shot_8h_af59b390a2e0c4b2a0e2f648a42bb1b91}\label{shot_8h_af59b390a2e0c4b2a0e2f648a42bb1b91}} 
+\index{shot.h@{shot.h}!move\_shot@{move\_shot}}
+\index{move\_shot@{move\_shot}!shot.h@{shot.h}}
+\doxysubsubsection{\texorpdfstring{move\_shot()}{move\_shot()}}
+{\footnotesize\ttfamily void() move\+\_\+shot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_shot}{Shot}} $\ast$}]{shot }\end{DoxyParamCaption})}
+
+
+
+Moves the given shot according to its source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shot} & Pointer to the shot to be moved. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{shot_8h_af59b390a2e0c4b2a0e2f648a42bb1b91_icgraph}
+\end{center}
+\end{figure}

@@ -79,22 +79,22 @@ $(function() {
 <a href="i8042_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef I8042_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define I8042_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define MOUSE_IRQ 12</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define INPUT_BUFFER 0x64</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define OUTPUT_BUFFER 0x60</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define STATUS_REGISTER 0x64</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#define ACK 0xFA</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#define NACK 0xFE</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="i8042_8h.html#a85964cb90343bb1a029b1d1b4229f910">   10</a></span><span class="preprocessor">#define MOUSE_IRQ 12</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="i8042_8h.html#a6e944ce9ec2d9759b485c55a448afc7c">   11</a></span><span class="preprocessor">#define INPUT_BUFFER 0x64</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="i8042_8h.html#a85dd25ad45d47136734196ec996419cd">   12</a></span><span class="preprocessor">#define OUTPUT_BUFFER 0x60</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="i8042_8h.html#aade608c2b485d0c1238c401e073bbbdc">   13</a></span><span class="preprocessor">#define STATUS_REGISTER 0x64</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="i8042_8h.html#a6f6489887e08bff4887d0bc5dcf214d8">   14</a></span><span class="preprocessor">#define ACK 0xFA</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="i8042_8h.html#a958518a45b12053ae33606ee7cb68a55">   15</a></span><span class="preprocessor">#define NACK 0xFE</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#define MOUSE_HOOK_BIT 10</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="i8042_8h.html#af13dd8b60fe1826314d26f2dbd25363d">   17</a></span><span class="preprocessor">#define MOUSE_HOOK_BIT 10</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#define MOUSE_LB BIT(0)</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define MOUSE_RB BIT(1)</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define MOUSE_MB BIT(2)</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define MOUSE_X_SIGN BIT(4)</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#define MOUSE_Y_SIGN BIT(5)</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define MOUSE_X_OV BIT(6)</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#define MOUSE_Y_OV BIT(7)</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="i8042_8h.html#a81c0f94add844b0761bd142f7f708431">   19</a></span><span class="preprocessor">#define MOUSE_LB BIT(0)</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="i8042_8h.html#a5f47c1d60579c8691054c939c1d7c20e">   20</a></span><span class="preprocessor">#define MOUSE_RB BIT(1)</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="i8042_8h.html#a5a934eaadd3536aabe6df0adf6728e8e">   21</a></span><span class="preprocessor">#define MOUSE_MB BIT(2)</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="i8042_8h.html#acd43b7d72e2f4da511b0f8a73df0fe79">   22</a></span><span class="preprocessor">#define MOUSE_X_SIGN BIT(4)</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="i8042_8h.html#ae0f95694f6f137fcae25644972556873">   23</a></span><span class="preprocessor">#define MOUSE_Y_SIGN BIT(5)</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="i8042_8h.html#a0cdb2646c0fe020dfd230c3bbceae07a">   24</a></span><span class="preprocessor">#define MOUSE_X_OV BIT(6)</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="i8042_8h.html#a42d79fab1c364106889698324b72ce5b">   25</a></span><span class="preprocessor">#define MOUSE_Y_OV BIT(7)</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>

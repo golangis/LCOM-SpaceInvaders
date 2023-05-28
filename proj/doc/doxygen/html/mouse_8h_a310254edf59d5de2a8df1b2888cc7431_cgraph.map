@@ -1,0 +1,7 @@
+<map id="mouse_interrupt_handler" name="mouse_interrupt_handler">
+<area shape="rect" id="node1" title="Mouse interrupt handler. Gets the mouse packet and updates the user interface mouse struct." alt="" coords="5,56,169,83"/>
+<area shape="rect" id="node2" href="$mouse_8c.html#a7fe4a8e593d4206f11916156e5d46574" title="Reads and parses the packet from the mouse output buffer." alt="" coords="231,5,324,32"/>
+<area shape="rect" id="node4" href="$mouse_8c.html#a988fc64ae581c0f124ad68f50714f24a" title="Reads the mouse status byte." alt="" coords="217,56,338,83"/>
+<area shape="rect" id="node5" href="$mouse_8c.html#aeff6e8956d863ef6147b8c9475422574" title="Updates the user interface mouse." alt="" coords="224,107,331,133"/>
+<area shape="rect" id="node3" href="$utils_8c.html#ac001a9276b9ecff0ddabd111fac79211" title="Reads a byte from a given port." alt="" coords="386,31,470,57"/>
+</map>

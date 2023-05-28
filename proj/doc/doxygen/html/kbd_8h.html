@@ -88,86 +88,88 @@ $(function() {
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="utils_8h_source.html">../utils/utils.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for kbd.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="kbd_8h__incl.png" border="0" usemap="#a_c_1_2_users_2_pedro_2_documents_22_l_e_i_c_22_xC2_xBA_01semestre_2_l_c_2_m_i_n_i_x-_l_c_o_m_2shared_2proj_2src_2framework_2keyboard_2kbd_8h" alt=""/></div>
+<map name="a_c_1_2_users_2_pedro_2_documents_22_l_e_i_c_22_xC2_xBA_01semestre_2_l_c_2_m_i_n_i_x-_l_c_o_m_2shared_2proj_2src_2framework_2keyboard_2kbd_8h" id="a_c_1_2_users_2_pedro_2_documents_22_l_e_i_c_22_xC2_xBA_01semestre_2_l_c_2_m_i_n_i_x-_l_c_o_m_2shared_2proj_2src_2framework_2keyboard_2kbd_8h">
+<area shape="rect" title="Constants for programming the KBC. Functions of the KBC framework." alt="" coords="69,5,269,80"/>
+<area shape="rect" title=" " alt="" coords="61,203,138,229"/>
+<area shape="rect" title=" " alt="" coords="23,128,97,155"/>
+<area shape="rect" title=" " alt="" coords="206,203,271,229"/>
+<area shape="rect" title=" " alt="" coords="242,128,302,155"/>
+<area shape="rect" href="utils_8h.html" title="Set of auxiliary functions to be used in the framework." alt="" coords="121,128,217,155"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="kbd_8h__dep__incl.png" border="0" usemap="#a_c_1_2_users_2_pedro_2_documents_22_l_e_i_c_22_xC2_xBA_01semestre_2_l_c_2_m_i_n_i_x-_l_c_o_m_2shared_2proj_2src_2framework_2keyboard_2kbd_8hdep" alt=""/></div>
+<map name="a_c_1_2_users_2_pedro_2_documents_22_l_e_i_c_22_xC2_xBA_01semestre_2_l_c_2_m_i_n_i_x-_l_c_o_m_2shared_2proj_2src_2framework_2keyboard_2kbd_8hdep" id="a_c_1_2_users_2_pedro_2_documents_22_l_e_i_c_22_xC2_xBA_01semestre_2_l_c_2_m_i_n_i_x-_l_c_o_m_2shared_2proj_2src_2framework_2keyboard_2kbd_8hdep">
+<area shape="rect" title="Constants for programming the KBC. Functions of the KBC framework." alt="" coords="112,5,311,80"/>
+<area shape="rect" href="kbd_8c.html" title=" " alt="" coords="5,128,205,203"/>
+<area shape="rect" href="main_8c.html" title="General functions that manage the app logic." alt="" coords="228,128,409,203"/>
+</map>
+</div>
 </div>
 <p><a href="kbd_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a16c5827f043d82f87c726c2d4369c11d"><td class="memItemLeft" align="right" valign="top"><a id="a16c5827f043d82f87c726c2d4369c11d" name="a16c5827f043d82f87c726c2d4369c11d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>KBC_IRQ</b>&#160;&#160;&#160;1</td></tr>
+<tr class="memitem:a16c5827f043d82f87c726c2d4369c11d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbd_8h.html#a16c5827f043d82f87c726c2d4369c11d">KBC_IRQ</a>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:a16c5827f043d82f87c726c2d4369c11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34b14687d83496940a236351fbbb1aea"><td class="memItemLeft" align="right" valign="top"><a id="a34b14687d83496940a236351fbbb1aea" name="a34b14687d83496940a236351fbbb1aea"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>KBC_STAT_REG</b>&#160;&#160;&#160;0x64</td></tr>
+<tr class="memitem:a34b14687d83496940a236351fbbb1aea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbd_8h.html#a34b14687d83496940a236351fbbb1aea">KBC_STAT_REG</a>&#160;&#160;&#160;0x64</td></tr>
 <tr class="separator:a34b14687d83496940a236351fbbb1aea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ccde68b2b6d4e45b50eef1403e10bb7"><td class="memItemLeft" align="right" valign="top"><a id="a1ccde68b2b6d4e45b50eef1403e10bb7" name="a1ccde68b2b6d4e45b50eef1403e10bb7"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>KBC_OUT_BUF</b>&#160;&#160;&#160;0x60</td></tr>
+<tr class="memitem:a1ccde68b2b6d4e45b50eef1403e10bb7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbd_8h.html#a1ccde68b2b6d4e45b50eef1403e10bb7">KBC_OUT_BUF</a>&#160;&#160;&#160;0x60</td></tr>
 <tr class="separator:a1ccde68b2b6d4e45b50eef1403e10bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac9289c99cf0a693a211da6d6cb1bb65"><td class="memItemLeft" align="right" valign="top"><a id="aac9289c99cf0a693a211da6d6cb1bb65" name="aac9289c99cf0a693a211da6d6cb1bb65"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>KBC_IN_BUF</b>&#160;&#160;&#160;0x60</td></tr>
+<tr class="memitem:aac9289c99cf0a693a211da6d6cb1bb65"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbd_8h.html#aac9289c99cf0a693a211da6d6cb1bb65">KBC_IN_BUF</a>&#160;&#160;&#160;0x60</td></tr>
 <tr class="separator:aac9289c99cf0a693a211da6d6cb1bb65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d57c7927a10f638c83046b52c8caac9"><td class="memItemLeft" align="right" valign="top"><a id="a6d57c7927a10f638c83046b52c8caac9" name="a6d57c7927a10f638c83046b52c8caac9"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>KBC_CMD_REG</b>&#160;&#160;&#160;0x64</td></tr>
+<tr class="memitem:a6d57c7927a10f638c83046b52c8caac9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbd_8h.html#a6d57c7927a10f638c83046b52c8caac9">KBC_CMD_REG</a>&#160;&#160;&#160;0x64</td></tr>
 <tr class="separator:a6d57c7927a10f638c83046b52c8caac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a595a5cad2d3c793963da50865b2c1b47"><td class="memItemLeft" align="right" valign="top"><a id="a595a5cad2d3c793963da50865b2c1b47" name="a595a5cad2d3c793963da50865b2c1b47"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>KBC_READ_CMD</b>&#160;&#160;&#160;0x20</td></tr>
+<tr class="memitem:a595a5cad2d3c793963da50865b2c1b47"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbd_8h.html#a595a5cad2d3c793963da50865b2c1b47">KBC_READ_CMD</a>&#160;&#160;&#160;0x20</td></tr>
 <tr class="separator:a595a5cad2d3c793963da50865b2c1b47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa62a6987753a109d2f7a609ce8b7334"><td class="memItemLeft" align="right" valign="top"><a id="aaa62a6987753a109d2f7a609ce8b7334" name="aaa62a6987753a109d2f7a609ce8b7334"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>KBC_WRITE_CMD</b>&#160;&#160;&#160;0x60</td></tr>
+<tr class="memitem:aaa62a6987753a109d2f7a609ce8b7334"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbd_8h.html#aaa62a6987753a109d2f7a609ce8b7334">KBC_WRITE_CMD</a>&#160;&#160;&#160;0x60</td></tr>
 <tr class="separator:aaa62a6987753a109d2f7a609ce8b7334"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52f707af5bc6d693c1d6ce1b78d17d93"><td class="memItemLeft" align="right" valign="top"><a id="a52f707af5bc6d693c1d6ce1b78d17d93" name="a52f707af5bc6d693c1d6ce1b78d17d93"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>KBC_HOOK_BIT</b>&#160;&#160;&#160;1</td></tr>
+<tr class="memitem:a52f707af5bc6d693c1d6ce1b78d17d93"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbd_8h.html#a52f707af5bc6d693c1d6ce1b78d17d93">KBC_HOOK_BIT</a>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:a52f707af5bc6d693c1d6ce1b78d17d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72cdf0038a85a698fce1c4fea5630937"><td class="memItemLeft" align="right" valign="top"><a id="a72cdf0038a85a698fce1c4fea5630937" name="a72cdf0038a85a698fce1c4fea5630937"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>KBD_TWO_BYTE</b>&#160;&#160;&#160;0xe0</td></tr>
+<tr class="memitem:a72cdf0038a85a698fce1c4fea5630937"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbd_8h.html#a72cdf0038a85a698fce1c4fea5630937">KBD_TWO_BYTE</a>&#160;&#160;&#160;0xe0</td></tr>
 <tr class="separator:a72cdf0038a85a698fce1c4fea5630937"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62249e384b997229a3e2ae74ade334e2"><td class="memItemLeft" align="right" valign="top"><a id="a62249e384b997229a3e2ae74ade334e2" name="a62249e384b997229a3e2ae74ade334e2"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DELAY</b>&#160;&#160;&#160;20000</td></tr>
+<tr class="memitem:a62249e384b997229a3e2ae74ade334e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbd_8h.html#a62249e384b997229a3e2ae74ade334e2">DELAY</a>&#160;&#160;&#160;20000</td></tr>
 <tr class="separator:a62249e384b997229a3e2ae74ade334e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6addd819c1594c0f9285169048db5ab"><td class="memItemLeft" align="right" valign="top"><a id="aa6addd819c1594c0f9285169048db5ab" name="aa6addd819c1594c0f9285169048db5ab"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>KBD_ESC_KEY</b>&#160;&#160;&#160;129</td></tr>
+<tr class="memitem:aa6addd819c1594c0f9285169048db5ab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbd_8h.html#aa6addd819c1594c0f9285169048db5ab">KBD_ESC_KEY</a>&#160;&#160;&#160;129</td></tr>
 <tr class="separator:aa6addd819c1594c0f9285169048db5ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae986fbe55c87e6470ce26129fe08f3aa"><td class="memItemLeft" align="right" valign="top"><a id="ae986fbe55c87e6470ce26129fe08f3aa" name="ae986fbe55c87e6470ce26129fe08f3aa"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SPACE_MAKE</b>&#160;&#160;&#160;57</td></tr>
+<tr class="memitem:ae986fbe55c87e6470ce26129fe08f3aa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbd_8h.html#ae986fbe55c87e6470ce26129fe08f3aa">SPACE_MAKE</a>&#160;&#160;&#160;57</td></tr>
 <tr class="separator:ae986fbe55c87e6470ce26129fe08f3aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95d6e4b61bac77469ecc47b205709af6"><td class="memItemLeft" align="right" valign="top"><a id="a95d6e4b61bac77469ecc47b205709af6" name="a95d6e4b61bac77469ecc47b205709af6"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SPACE_BREAK</b>&#160;&#160;&#160;185</td></tr>
+<tr class="memitem:a95d6e4b61bac77469ecc47b205709af6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbd_8h.html#a95d6e4b61bac77469ecc47b205709af6">SPACE_BREAK</a>&#160;&#160;&#160;185</td></tr>
 <tr class="separator:a95d6e4b61bac77469ecc47b205709af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3a9e08d95e1ed804eabefc24bd43c1f"><td class="memItemLeft" align="right" valign="top"><a id="ab3a9e08d95e1ed804eabefc24bd43c1f" name="ab3a9e08d95e1ed804eabefc24bd43c1f"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>LEFT_MAKE</b>&#160;&#160;&#160;75</td></tr>
+<tr class="memitem:ab3a9e08d95e1ed804eabefc24bd43c1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbd_8h.html#ab3a9e08d95e1ed804eabefc24bd43c1f">LEFT_MAKE</a>&#160;&#160;&#160;75</td></tr>
 <tr class="separator:ab3a9e08d95e1ed804eabefc24bd43c1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa94f3bc417dddecbbb61868652497e9f"><td class="memItemLeft" align="right" valign="top"><a id="aa94f3bc417dddecbbb61868652497e9f" name="aa94f3bc417dddecbbb61868652497e9f"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>LEFT_BREAK</b>&#160;&#160;&#160;203</td></tr>
+<tr class="memitem:aa94f3bc417dddecbbb61868652497e9f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbd_8h.html#aa94f3bc417dddecbbb61868652497e9f">LEFT_BREAK</a>&#160;&#160;&#160;203</td></tr>
 <tr class="separator:aa94f3bc417dddecbbb61868652497e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1729ecbd84901fd8bd712f6cf1efa6c"><td class="memItemLeft" align="right" valign="top"><a id="af1729ecbd84901fd8bd712f6cf1efa6c" name="af1729ecbd84901fd8bd712f6cf1efa6c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>UP_MAKE</b>&#160;&#160;&#160;72</td></tr>
+<tr class="memitem:af1729ecbd84901fd8bd712f6cf1efa6c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbd_8h.html#af1729ecbd84901fd8bd712f6cf1efa6c">UP_MAKE</a>&#160;&#160;&#160;72</td></tr>
 <tr class="separator:af1729ecbd84901fd8bd712f6cf1efa6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7da1c128f696c681cbbe81a540865cc8"><td class="memItemLeft" align="right" valign="top"><a id="a7da1c128f696c681cbbe81a540865cc8" name="a7da1c128f696c681cbbe81a540865cc8"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>UP_BREAK</b>&#160;&#160;&#160;200</td></tr>
+<tr class="memitem:a7da1c128f696c681cbbe81a540865cc8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbd_8h.html#a7da1c128f696c681cbbe81a540865cc8">UP_BREAK</a>&#160;&#160;&#160;200</td></tr>
 <tr class="separator:a7da1c128f696c681cbbe81a540865cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6c7e1fc7d0f7e024bee1f0091a52e02"><td class="memItemLeft" align="right" valign="top"><a id="ae6c7e1fc7d0f7e024bee1f0091a52e02" name="ae6c7e1fc7d0f7e024bee1f0091a52e02"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DOWN_MAKE</b>&#160;&#160;&#160;80</td></tr>
+<tr class="memitem:ae6c7e1fc7d0f7e024bee1f0091a52e02"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbd_8h.html#ae6c7e1fc7d0f7e024bee1f0091a52e02">DOWN_MAKE</a>&#160;&#160;&#160;80</td></tr>
 <tr class="separator:ae6c7e1fc7d0f7e024bee1f0091a52e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bda5a4305170a4f4433d2bc03be423c"><td class="memItemLeft" align="right" valign="top"><a id="a9bda5a4305170a4f4433d2bc03be423c" name="a9bda5a4305170a4f4433d2bc03be423c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>DOWN_BREAK</b>&#160;&#160;&#160;208</td></tr>
+<tr class="memitem:a9bda5a4305170a4f4433d2bc03be423c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbd_8h.html#a9bda5a4305170a4f4433d2bc03be423c">DOWN_BREAK</a>&#160;&#160;&#160;208</td></tr>
 <tr class="separator:a9bda5a4305170a4f4433d2bc03be423c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80b3878eb7339923b42f0acd492a5fd3"><td class="memItemLeft" align="right" valign="top"><a id="a80b3878eb7339923b42f0acd492a5fd3" name="a80b3878eb7339923b42f0acd492a5fd3"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RIGHT_MAKE</b>&#160;&#160;&#160;77</td></tr>
+<tr class="memitem:a80b3878eb7339923b42f0acd492a5fd3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbd_8h.html#a80b3878eb7339923b42f0acd492a5fd3">RIGHT_MAKE</a>&#160;&#160;&#160;77</td></tr>
 <tr class="separator:a80b3878eb7339923b42f0acd492a5fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c2291f3ce4b075fe429b7c661260774"><td class="memItemLeft" align="right" valign="top"><a id="a4c2291f3ce4b075fe429b7c661260774" name="a4c2291f3ce4b075fe429b7c661260774"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>RIGHT_BREAK</b>&#160;&#160;&#160;205</td></tr>
+<tr class="memitem:a4c2291f3ce4b075fe429b7c661260774"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbd_8h.html#a4c2291f3ce4b075fe429b7c661260774">RIGHT_BREAK</a>&#160;&#160;&#160;205</td></tr>
 <tr class="separator:a4c2291f3ce4b075fe429b7c661260774"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:a635055f02cc43001acef32526cac2a45"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="kbd_8h.html#a635055f02cc43001acef32526cac2a45">kbd_key</a> { <br />
-&#160;&#160;<b>kbd_right</b>
-, <b>kbd_left</b>
-, <b>kbd_up</b>
-, <b>kbd_down</b>
+&#160;&#160;<a class="el" href="kbd_8h.html#a635055f02cc43001acef32526cac2a45a35c8fa63766d6dfa6e917becc54ca752">kbd_right</a>
+, <a class="el" href="kbd_8h.html#a635055f02cc43001acef32526cac2a45a34e392192bc32ae7917ac865ff54608f">kbd_left</a>
+, <a class="el" href="kbd_8h.html#a635055f02cc43001acef32526cac2a45a1c4e4ac7831260d425527e49e6ced829">kbd_up</a>
+, <a class="el" href="kbd_8h.html#a635055f02cc43001acef32526cac2a45abd6c9a1770026f549c3b857eec63f93e">kbd_down</a>
 , <br />
-&#160;&#160;<b>kbd_space</b>
-, <b>kbd_esc</b>
-, <b>INVALID</b>
+&#160;&#160;<a class="el" href="kbd_8h.html#a635055f02cc43001acef32526cac2a45a16e942c023d3ec20e76f9a92e2c7f953">kbd_space</a>
+, <a class="el" href="kbd_8h.html#a635055f02cc43001acef32526cac2a45aa1678ecb26fdced52f0ce3eac2136ce6">kbd_esc</a>
+, <a class="el" href="kbd_8h.html#a635055f02cc43001acef32526cac2a45aef2863a469df3ea6871d640e3669a2f2">INVALID</a>
 <br />
  }</td></tr>
 <tr class="memdesc:a635055f02cc43001acef32526cac2a45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents different keys that the information received from the keyboard can be mapped to.  <a href="kbd_8h.html#a635055f02cc43001acef32526cac2a45">More...</a><br /></td></tr>
@@ -190,7 +192,302 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Constants for programming the KBC. Functions of the KBC framework. </p>
-</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a62249e384b997229a3e2ae74ade334e2" name="a62249e384b997229a3e2ae74ade334e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62249e384b997229a3e2ae74ade334e2">&#9670;&#160;</a></span>DELAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DELAY&#160;&#160;&#160;20000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9bda5a4305170a4f4433d2bc03be423c" name="a9bda5a4305170a4f4433d2bc03be423c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bda5a4305170a4f4433d2bc03be423c">&#9670;&#160;</a></span>DOWN_BREAK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOWN_BREAK&#160;&#160;&#160;208</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae6c7e1fc7d0f7e024bee1f0091a52e02" name="ae6c7e1fc7d0f7e024bee1f0091a52e02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6c7e1fc7d0f7e024bee1f0091a52e02">&#9670;&#160;</a></span>DOWN_MAKE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DOWN_MAKE&#160;&#160;&#160;80</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6d57c7927a10f638c83046b52c8caac9" name="a6d57c7927a10f638c83046b52c8caac9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d57c7927a10f638c83046b52c8caac9">&#9670;&#160;</a></span>KBC_CMD_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KBC_CMD_REG&#160;&#160;&#160;0x64</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a52f707af5bc6d693c1d6ce1b78d17d93" name="a52f707af5bc6d693c1d6ce1b78d17d93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52f707af5bc6d693c1d6ce1b78d17d93">&#9670;&#160;</a></span>KBC_HOOK_BIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KBC_HOOK_BIT&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aac9289c99cf0a693a211da6d6cb1bb65" name="aac9289c99cf0a693a211da6d6cb1bb65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac9289c99cf0a693a211da6d6cb1bb65">&#9670;&#160;</a></span>KBC_IN_BUF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KBC_IN_BUF&#160;&#160;&#160;0x60</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a16c5827f043d82f87c726c2d4369c11d" name="a16c5827f043d82f87c726c2d4369c11d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16c5827f043d82f87c726c2d4369c11d">&#9670;&#160;</a></span>KBC_IRQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KBC_IRQ&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ccde68b2b6d4e45b50eef1403e10bb7" name="a1ccde68b2b6d4e45b50eef1403e10bb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ccde68b2b6d4e45b50eef1403e10bb7">&#9670;&#160;</a></span>KBC_OUT_BUF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KBC_OUT_BUF&#160;&#160;&#160;0x60</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a595a5cad2d3c793963da50865b2c1b47" name="a595a5cad2d3c793963da50865b2c1b47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a595a5cad2d3c793963da50865b2c1b47">&#9670;&#160;</a></span>KBC_READ_CMD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KBC_READ_CMD&#160;&#160;&#160;0x20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a34b14687d83496940a236351fbbb1aea" name="a34b14687d83496940a236351fbbb1aea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34b14687d83496940a236351fbbb1aea">&#9670;&#160;</a></span>KBC_STAT_REG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KBC_STAT_REG&#160;&#160;&#160;0x64</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaa62a6987753a109d2f7a609ce8b7334" name="aaa62a6987753a109d2f7a609ce8b7334"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa62a6987753a109d2f7a609ce8b7334">&#9670;&#160;</a></span>KBC_WRITE_CMD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KBC_WRITE_CMD&#160;&#160;&#160;0x60</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa6addd819c1594c0f9285169048db5ab" name="aa6addd819c1594c0f9285169048db5ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6addd819c1594c0f9285169048db5ab">&#9670;&#160;</a></span>KBD_ESC_KEY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KBD_ESC_KEY&#160;&#160;&#160;129</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a72cdf0038a85a698fce1c4fea5630937" name="a72cdf0038a85a698fce1c4fea5630937"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72cdf0038a85a698fce1c4fea5630937">&#9670;&#160;</a></span>KBD_TWO_BYTE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KBD_TWO_BYTE&#160;&#160;&#160;0xe0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa94f3bc417dddecbbb61868652497e9f" name="aa94f3bc417dddecbbb61868652497e9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa94f3bc417dddecbbb61868652497e9f">&#9670;&#160;</a></span>LEFT_BREAK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LEFT_BREAK&#160;&#160;&#160;203</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab3a9e08d95e1ed804eabefc24bd43c1f" name="ab3a9e08d95e1ed804eabefc24bd43c1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3a9e08d95e1ed804eabefc24bd43c1f">&#9670;&#160;</a></span>LEFT_MAKE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LEFT_MAKE&#160;&#160;&#160;75</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4c2291f3ce4b075fe429b7c661260774" name="a4c2291f3ce4b075fe429b7c661260774"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c2291f3ce4b075fe429b7c661260774">&#9670;&#160;</a></span>RIGHT_BREAK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RIGHT_BREAK&#160;&#160;&#160;205</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a80b3878eb7339923b42f0acd492a5fd3" name="a80b3878eb7339923b42f0acd492a5fd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80b3878eb7339923b42f0acd492a5fd3">&#9670;&#160;</a></span>RIGHT_MAKE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RIGHT_MAKE&#160;&#160;&#160;77</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a95d6e4b61bac77469ecc47b205709af6" name="a95d6e4b61bac77469ecc47b205709af6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95d6e4b61bac77469ecc47b205709af6">&#9670;&#160;</a></span>SPACE_BREAK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPACE_BREAK&#160;&#160;&#160;185</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae986fbe55c87e6470ce26129fe08f3aa" name="ae986fbe55c87e6470ce26129fe08f3aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae986fbe55c87e6470ce26129fe08f3aa">&#9670;&#160;</a></span>SPACE_MAKE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPACE_MAKE&#160;&#160;&#160;57</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7da1c128f696c681cbbe81a540865cc8" name="a7da1c128f696c681cbbe81a540865cc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7da1c128f696c681cbbe81a540865cc8">&#9670;&#160;</a></span>UP_BREAK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UP_BREAK&#160;&#160;&#160;200</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af1729ecbd84901fd8bd712f6cf1efa6c" name="af1729ecbd84901fd8bd712f6cf1efa6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1729ecbd84901fd8bd712f6cf1efa6c">&#9670;&#160;</a></span>UP_MAKE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UP_MAKE&#160;&#160;&#160;72</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a635055f02cc43001acef32526cac2a45" name="a635055f02cc43001acef32526cac2a45"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a635055f02cc43001acef32526cac2a45">&#9670;&#160;</a></span>kbd_key</h2>
 
@@ -204,6 +501,15 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Represents different keys that the information received from the keyboard can be mapped to. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a635055f02cc43001acef32526cac2a45a35c8fa63766d6dfa6e917becc54ca752" name="a635055f02cc43001acef32526cac2a45a35c8fa63766d6dfa6e917becc54ca752"></a>kbd_right&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a635055f02cc43001acef32526cac2a45a34e392192bc32ae7917ac865ff54608f" name="a635055f02cc43001acef32526cac2a45a34e392192bc32ae7917ac865ff54608f"></a>kbd_left&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a635055f02cc43001acef32526cac2a45a1c4e4ac7831260d425527e49e6ced829" name="a635055f02cc43001acef32526cac2a45a1c4e4ac7831260d425527e49e6ced829"></a>kbd_up&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a635055f02cc43001acef32526cac2a45abd6c9a1770026f549c3b857eec63f93e" name="a635055f02cc43001acef32526cac2a45abd6c9a1770026f549c3b857eec63f93e"></a>kbd_down&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a635055f02cc43001acef32526cac2a45a16e942c023d3ec20e76f9a92e2c7f953" name="a635055f02cc43001acef32526cac2a45a16e942c023d3ec20e76f9a92e2c7f953"></a>kbd_space&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a635055f02cc43001acef32526cac2a45aa1678ecb26fdced52f0ce3eac2136ce6" name="a635055f02cc43001acef32526cac2a45aa1678ecb26fdced52f0ce3eac2136ce6"></a>kbd_esc&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a635055f02cc43001acef32526cac2a45aef2863a469df3ea6871d640e3669a2f2" name="a635055f02cc43001acef32526cac2a45aef2863a469df3ea6871d640e3669a2f2"></a>INVALID&#160;</td><td class="fielddoc"></td></tr>
+</table>
 
 </div>
 </div>
@@ -224,6 +530,28 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Handles Keyboard interrupts. Reads and stores the KBD data for later processing/interpretation. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="kbd_8h_aea970a154161a35f6894898a092ed70a_cgraph.png" border="0" usemap="#akbd_8h_aea970a154161a35f6894898a092ed70a_cgraph" alt=""/></div>
+<map name="akbd_8h_aea970a154161a35f6894898a092ed70a_cgraph" id="akbd_8h_aea970a154161a35f6894898a092ed70a_cgraph">
+<area shape="rect" title="Handles Keyboard interrupts. Reads and stores the KBD data for later processing/interpretation." alt="" coords="5,5,65,32"/>
+<area shape="rect" href="utils_8c.html#ac001a9276b9ecff0ddabd111fac79211" title="Reads a byte from a given port." alt="" coords="113,5,197,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="kbd_8h_aea970a154161a35f6894898a092ed70a_icgraph.png" border="0" usemap="#akbd_8h_aea970a154161a35f6894898a092ed70a_icgraph" alt=""/></div>
+<map name="akbd_8h_aea970a154161a35f6894898a092ed70a_icgraph" id="akbd_8h_aea970a154161a35f6894898a092ed70a_icgraph">
+<area shape="rect" title="Handles Keyboard interrupts. Reads and stores the KBD data for later processing/interpretation." alt="" coords="363,81,422,108"/>
+<area shape="rect" href="main_8c.html#aca94587a192dc9d6e25886d009f3ee76" title="Processes the interrupts and calls correct functions while in the Game state." alt="" coords="196,5,281,32"/>
+<area shape="rect" href="main_8c.html#a7b466abd307ad46f0cfb2209749e5c65" title="Processes the interrupts and calls correct functions while in the Game Over menu state." alt="" coords="162,56,315,83"/>
+<area shape="rect" href="main_8c.html#a31f00e3232e268b63b905a17a164542b" title="Processes the interrupts and calls correct functions while in the Highscores menu state." alt="" coords="181,107,296,133"/>
+<area shape="rect" href="main_8c.html#a85ddf0bf65650526685ffbfddd3e897f" title="Processes the interrupts and calls correct functions while in the Main menu state." alt="" coords="179,157,298,184"/>
+<area shape="rect" href="main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,81,114,108"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -251,6 +579,15 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Return 0 upon success and non-zero otherwise. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="kbd_8h_a02884ada1971dbade466081413210b18_icgraph.png" border="0" usemap="#akbd_8h_a02884ada1971dbade466081413210b18_icgraph" alt=""/></div>
+<map name="akbd_8h_a02884ada1971dbade466081413210b18_icgraph" id="akbd_8h_a02884ada1971dbade466081413210b18_icgraph">
+<area shape="rect" title="Subscribes and enables Keyboard interrupts." alt="" coords="162,5,288,32"/>
+<area shape="rect" href="main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,5,114,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -271,6 +608,15 @@ Functions</h2></td></tr>
 
 <p>Unsubscribes Keyboard interrupts. </p>
 <dl class="section return"><dt>Returns</dt><dd>Return 0 upon success and non-zero otherwise. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="kbd_8h_a1102381e6a9e876e05dd78c58ccb5673_icgraph.png" border="0" usemap="#akbd_8h_a1102381e6a9e876e05dd78c58ccb5673_icgraph" alt=""/></div>
+<map name="akbd_8h_a1102381e6a9e876e05dd78c58ccb5673_icgraph" id="akbd_8h_a1102381e6a9e876e05dd78c58ccb5673_icgraph">
+<area shape="rect" title="Unsubscribes Keyboard interrupts." alt="" coords="162,5,302,32"/>
+<area shape="rect" href="main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,5,114,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -314,7 +660,29 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Return the key correspondent to the KBD data. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the key correspondent to the KBD data. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="kbd_8h_a349e104e331ffa69feb42f7c6d5682ff_cgraph.png" border="0" usemap="#akbd_8h_a349e104e331ffa69feb42f7c6d5682ff_cgraph" alt=""/></div>
+<map name="akbd_8h_a349e104e331ffa69feb42f7c6d5682ff_cgraph" id="akbd_8h_a349e104e331ffa69feb42f7c6d5682ff_cgraph">
+<area shape="rect" title="Translates the KBD data into a key." alt="" coords="5,5,101,32"/>
+<area shape="rect" href="kbd_8c.html#ac687b1a8ed53a6d9a506dbf1ccb920e1" title=" " alt="" coords="149,5,220,32"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="kbd_8h_a349e104e331ffa69feb42f7c6d5682ff_icgraph.png" border="0" usemap="#akbd_8h_a349e104e331ffa69feb42f7c6d5682ff_icgraph" alt=""/></div>
+<map name="akbd_8h_a349e104e331ffa69feb42f7c6d5682ff_icgraph" id="akbd_8h_a349e104e331ffa69feb42f7c6d5682ff_icgraph">
+<area shape="rect" title="Translates the KBD data into a key." alt="" coords="363,81,458,108"/>
+<area shape="rect" href="main_8c.html#aca94587a192dc9d6e25886d009f3ee76" title="Processes the interrupts and calls correct functions while in the Game state." alt="" coords="196,5,281,32"/>
+<area shape="rect" href="main_8c.html#a7b466abd307ad46f0cfb2209749e5c65" title="Processes the interrupts and calls correct functions while in the Game Over menu state." alt="" coords="162,56,315,83"/>
+<area shape="rect" href="main_8c.html#a31f00e3232e268b63b905a17a164542b" title="Processes the interrupts and calls correct functions while in the Highscores menu state." alt="" coords="181,107,296,133"/>
+<area shape="rect" href="main_8c.html#a85ddf0bf65650526685ffbfddd3e897f" title="Processes the interrupts and calls correct functions while in the Main menu state." alt="" coords="179,157,298,184"/>
+<area shape="rect" href="main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,81,114,108"/>
+</map>
+</div>
 
 </div>
 </div>

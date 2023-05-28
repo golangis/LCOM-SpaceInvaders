@@ -1,0 +1,4 @@
+<map id="read_status_byte" name="read_status_byte">
+<area shape="rect" id="node1" title="Reads the mouse status byte." alt="" coords="5,5,127,32"/>
+<area shape="rect" id="node2" href="$utils_8c.html#ac001a9276b9ecff0ddabd111fac79211" title="Reads a byte from a given port." alt="" coords="175,5,259,32"/>
+</map>

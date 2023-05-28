@@ -1,0 +1,8 @@
+<map id="mouse_interrupt_handler" name="mouse_interrupt_handler">
+<area shape="rect" id="node1" title="Mouse interrupt handler. Gets the mouse packet and updates the user interface mouse struct." alt="" coords="363,81,526,108"/>
+<area shape="rect" id="node2" href="$main_8c.html#aca94587a192dc9d6e25886d009f3ee76" title="Processes the interrupts and calls correct functions while in the Game state." alt="" coords="196,5,281,32"/>
+<area shape="rect" id="node4" href="$main_8c.html#a7b466abd307ad46f0cfb2209749e5c65" title="Processes the interrupts and calls correct functions while in the Game Over menu state." alt="" coords="162,56,315,83"/>
+<area shape="rect" id="node5" href="$main_8c.html#a31f00e3232e268b63b905a17a164542b" title="Processes the interrupts and calls correct functions while in the Highscores menu state." alt="" coords="181,107,296,133"/>
+<area shape="rect" id="node6" href="$main_8c.html#a85ddf0bf65650526685ffbfddd3e897f" title="Processes the interrupts and calls correct functions while in the Main menu state." alt="" coords="179,157,298,184"/>
+<area shape="rect" id="node3" href="$main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,81,114,108"/>
+</map>

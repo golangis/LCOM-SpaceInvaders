@@ -1,0 +1,52 @@
+<map id="proj_main_loop" name="proj_main_loop">
+<area shape="rect" id="node1" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,892,114,919"/>
+<area shape="rect" id="node2" href="$main_8c.html#aca94587a192dc9d6e25886d009f3ee76" title="Processes the interrupts and calls correct functions while in the Game state." alt="" coords="199,512,283,539"/>
+<area shape="rect" id="node21" href="$spaceinvaders_8c.html#a4c53c60b9eb88e3c00d9d0fc59dae462" title="Loads information from the file the top&#45;10 highscores are stored in, parses them into Score struct in..." alt="" coords="404,107,495,133"/>
+<area shape="rect" id="node36" href="$main_8c.html#a7b466abd307ad46f0cfb2209749e5c65" title="Processes the interrupts and calls correct functions while in the Game Over menu state." alt="" coords="164,765,318,792"/>
+<area shape="rect" id="node39" href="$main_8c.html#a31f00e3232e268b63b905a17a164542b" title="Processes the interrupts and calls correct functions while in the Highscores menu state." alt="" coords="183,715,299,741"/>
+<area shape="rect" id="node41" href="$kbd_8c.html#a02884ada1971dbade466081413210b18" title="Subscribes and enables Keyboard interrupts." alt="" coords="178,816,304,843"/>
+<area shape="rect" id="node42" href="$kbd_8c.html#a1102381e6a9e876e05dd78c58ccb5673" title="Unsubscribes Keyboard interrupts." alt="" coords="171,867,311,893"/>
+<area shape="rect" id="node43" href="$main_8c.html#a85ddf0bf65650526685ffbfddd3e897f" title="Processes the interrupts and calls correct functions while in the Main menu state." alt="" coords="181,917,301,944"/>
+<area shape="rect" id="node45" href="$mouse_8c.html#af9674903e38c0378821477f9be3e0b2e" title="Subscribes and enables Mouse interrupts." alt="" coords="169,968,313,995"/>
+<area shape="rect" id="node46" href="$timer_8c.html#a0ceff2b17079610e025042290d1fae99" title="Subscribes and enables Timer 0 interrupts." alt="" coords="174,1019,308,1045"/>
+<area shape="rect" id="node47" href="$mouse_8c.html#a4c04b6e71466c545f39ca49a830e0779" title="Unsubscribes Mouse interrupts." alt="" coords="162,1069,320,1096"/>
+<area shape="rect" id="node48" href="$timer_8c.html#a5fbfca26bec887463f37e7f66527dad4" title="Unsubscribes Timer 0 interrupts." alt="" coords="167,1120,315,1147"/>
+<area shape="rect" id="node49" href="$video_8c.html#a27f9047879cee35f24ae69729e89c732" title="Initializes the video card in the given mode and maps the VRAM." alt="" coords="204,1171,278,1197"/>
+<area shape="rect" id="node3" href="$spaceinvaders_8c.html#abd975f557a5c526551dafdb6242ea898" title="Builds a Score struct instance according to a given points number and rtc_time struct instance." alt="" coords="406,157,493,184"/>
+<area shape="rect" id="node4" href="$spaceinvaders_8c.html#a84aa668c4684547c795670fc72531598" title="General game drawing function. Calls the elements&#39; respective drawing functions." alt="" coords="426,309,474,336"/>
+<area shape="rect" id="node10" href="$player_8c.html#a0df41d797d15f08f94cbf3fa3edbef3d" title="Creates a shot fired from the given player, according to its coordinates." alt="" coords="430,360,469,387"/>
+<area shape="rect" id="node12" href="$rtc_8c.html#a4ad822f0b94f8d0c1e0071219174b6ef" title="Gets the current time from the RTC and stores into a given rtc_time struct instance." alt="" coords="414,512,485,539"/>
+<area shape="rect" id="node17" href="$kbd_8c.html#aea970a154161a35f6894898a092ed70a" title="Handles Keyboard interrupts. Reads and stores the KBD data for later processing/interpretation." alt="" coords="420,664,479,691"/>
+<area shape="rect" id="node18" href="$kbd_8c.html#a349e104e331ffa69feb42f7c6d5682ff" title="Translates the KBD data into a key." alt="" coords="402,765,497,792"/>
+<area shape="rect" id="node20" href="$mouse_8c.html#a0c616957f5de45ec0a075a15b2438888" title="Returns whether the mouse&#39;s left button was clicked." alt="" coords="414,917,486,944"/>
+<area shape="rect" id="node22" href="$mouse_8c.html#a310254edf59d5de2a8df1b2888cc7431" title="Mouse interrupt handler. Gets the mouse packet and updates the user interface mouse struct." alt="" coords="368,816,531,843"/>
+<area shape="rect" id="node26" href="$player_8c.html#a87366d070986baef7c91357e49539f12" title="Moves a given player in the desired direction if possible." alt="" coords="403,563,496,589"/>
+<area shape="rect" id="node28" href="$spaceinvaders_8c.html#ae0cafa3b93c40f3eb66676d574f9985e" title="Processes a score and determines if it is elegible to be amongst the top&#45;10. If so,..." alt="" coords="397,411,503,437"/>
+<area shape="rect" id="node29" href="$spaceinvaders_8c.html#afceda483e03bbe9320d74e45df9f9c32" title="Stores the given score array in the highscores file. File writing adapted from https://www...." alt="" coords="402,461,498,488"/>
+<area shape="rect" id="node30" href="$timer_8c.html#aa327d05db9461ba7bcfc05072fc28b3e" title="Timer interrupt handler. Increments the timer counter." alt="" coords="373,715,526,741"/>
+<area shape="rect" id="node31" href="$spaceinvaders_8c.html#a0b2a6a62c1f41986be80686c764dd19a" title="Updates the game&#39;s elements position (if appliable), checks colisions and updates the involved elemen..." alt="" coords="420,208,480,235"/>
+<area shape="rect" id="node5" href="$alien_8c.html#a54999c9c1299cdf99a0c3b8a2a176fae" title="Draws a group of aliens." alt="" coords="611,360,700,387"/>
+<area shape="rect" id="node6" href="$player_8c.html#a06db67ec61088b16360980f24230e62f" title="Draws hearts representing the given (player&#39;s) lives." alt="" coords="615,411,696,437"/>
+<area shape="rect" id="node7" href="$player_8c.html#a6a7c558ce856f450303ab6ad449ad50f" title="Draws a player by its coordinates and corresponding XPM image." alt="" coords="610,208,701,235"/>
+<area shape="rect" id="node8" href="$player_8c.html#af50ad9e73493590a4d110b25b70030c6" title="Draws the given player&#39;s score in the screen." alt="" coords="612,259,699,285"/>
+<area shape="rect" id="node9" href="$shield_8c.html#aa29aea8cc95d1b319a3d12697032d6b1" title="Draws a given shield according to its position and lives." alt="" coords="611,309,700,336"/>
+<area shape="rect" id="node11" href="$shot_8c.html#adbf78f340c9cb30ad382b64ad88b3bb4" title="Initializes a shot with given left uppermost coordinates and source." alt="" coords="620,461,691,488"/>
+<area shape="rect" id="node13" href="$utils_8c.html#aff3396c8be829b5b1dd36fc4f81382ff" title="Converts a given value in BCD to binary. Got the function body from https://github...." alt="" coords="613,512,698,539"/>
+<area shape="rect" id="node14" href="$rtc_8c.html#a200e0e9e22af694e13f67b81022196e7" title="Reads a byte from the RTC&#39;s data register." alt="" coords="621,613,690,640"/>
+<area shape="rect" id="node16" href="$rtc_8c.html#a3d0e0832042b95a85fc00e7baa9f1e19" title="Writes a given address to be read from the RTC to the RTC&#39;s address register." alt="" coords="597,563,714,589"/>
+<area shape="rect" id="node15" href="$utils_8c.html#ac001a9276b9ecff0ddabd111fac79211" title="Reads a byte from a given port." alt="" coords="780,765,864,792"/>
+<area shape="rect" id="node19" href="$kbd_8c.html#ac687b1a8ed53a6d9a506dbf1ccb920e1" title=" " alt="" coords="620,765,691,792"/>
+<area shape="rect" id="node23" href="$mouse_8c.html#a7fe4a8e593d4206f11916156e5d46574" title="Reads and parses the packet from the mouse output buffer." alt="" coords="609,816,702,843"/>
+<area shape="rect" id="node24" href="$mouse_8c.html#a988fc64ae581c0f124ad68f50714f24a" title="Reads the mouse status byte." alt="" coords="595,917,716,944"/>
+<area shape="rect" id="node25" href="$mouse_8c.html#aeff6e8956d863ef6147b8c9475422574" title="Updates the user interface mouse." alt="" coords="602,867,709,893"/>
+<area shape="rect" id="node27" href="$player_8c.html#a3d5d52b16a8103ff777bfa1ff14ea44f" title="Returns whether the given player can be moved in the given direction." alt="" coords="595,664,716,691"/>
+<area shape="rect" id="node32" href="$alien_8c.html#a7f751bf90ccb54281fe5febc948fa182" title="Returns whether a group of aliens can move in a given direction." alt="" coords="579,5,732,32"/>
+<area shape="rect" id="node33" href="$shield_8c.html#a05c98b39588bdedcdf3876bd81acca62" title="Causes damage to a given shield (decrements its lives) and alters its coordinates to match the new th..." alt="" coords="622,56,689,83"/>
+<area shape="rect" id="node34" href="$alien_8c.html#a609f32ec375ba493430c600774033d75" title="Deletes an alien&#39;s shot." alt="" coords="594,107,717,133"/>
+<area shape="rect" id="node35" href="$player_8c.html#a05477977a2ba3cb090037ee5bb753bdf" title="Deletes a given player&#39;s shot with a given index within the active player&#39;s shots array." alt="" coords="590,157,721,184"/>
+<area shape="rect" id="node37" href="$spaceinvaders_8c.html#a0af91f71746c9e649dd1f2305c674e38" title="Draws the game over menu." alt="" coords="372,867,528,893"/>
+<area shape="rect" id="node38" href="$spaceinvaders_8c.html#aff9ce2c80067181fa64a67450da2c6fa" title="Initializes the game elements." alt="" coords="411,968,488,995"/>
+<area shape="rect" id="node40" href="$spaceinvaders_8c.html#ad571496285082d7d70e3ca362c1b04bb" title="Draws the highscore page, given a pre&#45;generated top&#45;10 score array." alt="" coords="387,613,512,640"/>
+<area shape="rect" id="node44" href="$spaceinvaders_8c.html#a867892903e6eb31b07fcbc8da05bee16" title="Draws the main menu." alt="" coords="389,1019,511,1045"/>
+<area shape="rect" id="node50" href="$video_8c.html#a43eca9753118b540d01327d3c4a7068c" title="Loads the XPM images used in the app." alt="" coords="390,1171,510,1197"/>
+</map>

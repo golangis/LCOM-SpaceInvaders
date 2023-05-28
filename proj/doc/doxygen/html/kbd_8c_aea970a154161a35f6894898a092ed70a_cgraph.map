@@ -1,0 +1,4 @@
+<map id="kbc_ih" name="kbc_ih">
+<area shape="rect" id="node1" title="Handles Keyboard interrupts. Reads and stores the KBD data for later processing/interpretation." alt="" coords="5,5,65,32"/>
+<area shape="rect" id="node2" href="$utils_8c.html#ac001a9276b9ecff0ddabd111fac79211" title="Reads a byte from a given port." alt="" coords="113,5,197,32"/>
+</map>

@@ -1,5 +1,5 @@
 \hypertarget{alien_8h_source}{}\doxysection{alien.\+h}
-\label{alien_8h_source}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/alien.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/alien.h}}
+\label{alien_8h_source}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/alien.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/logic/alien.h}}
 \mbox{\hyperlink{alien_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef ALIEN\_H}}
@@ -8,54 +8,54 @@
 \DoxyCodeLine{9 \textcolor{preprocessor}{\#include <stdbool.h>}}
 \DoxyCodeLine{10 \textcolor{preprocessor}{\#include <stdlib.h>}}
 \DoxyCodeLine{11 }
-\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{direction_8h}{direction.h}}"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{direction_8h}{logic/direction.h}}"{}}}
 \DoxyCodeLine{13 }
 \DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{video_8h}{framework/video/video.h}}"{}}}
 \DoxyCodeLine{15 }
-\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}shot.h"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{shot_8h}{logic/shot.h}}"{}}}
 \DoxyCodeLine{17 }
 \DoxyCodeLine{22 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
-\DoxyCodeLine{23     \textcolor{keywordtype}{int} id;}
-\DoxyCodeLine{24     \textcolor{keywordtype}{int} x\_min;}
-\DoxyCodeLine{25     \textcolor{keywordtype}{int} y\_min;}
-\DoxyCodeLine{26     \textcolor{keywordtype}{int} x\_max;}
-\DoxyCodeLine{27     \textcolor{keywordtype}{int} y\_max;}
-\DoxyCodeLine{28     \mbox{\hyperlink{struct_shot}{Shot}}* shots;}
-\DoxyCodeLine{29     \textcolor{keywordtype}{int} shots\_no;}
-\DoxyCodeLine{30     \textcolor{keywordtype}{bool} alive;}
+\DoxyCodeLine{23     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_alien_a7441ef0865bcb3db9b8064dd7375c1ea}{id}};}
+\DoxyCodeLine{24     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_alien_ae0951dcafafdc96ac1d8361c672d47e2}{x\_min}};}
+\DoxyCodeLine{25     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_alien_a7941ddc7e35fffb8864af1e922814401}{y\_min}};}
+\DoxyCodeLine{26     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_alien_a5f0bb6d8a3e66525c3e6264cb8288e43}{x\_max}};}
+\DoxyCodeLine{27     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_alien_ad033aea530fbbcf5bcd6cd98d882e3a5}{y\_max}};}
+\DoxyCodeLine{28     \mbox{\hyperlink{struct_shot}{Shot}}* \mbox{\hyperlink{struct_alien_aa573dfe9991bd08b90eb8edaf34a19f6}{shots}};}
+\DoxyCodeLine{29     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_alien_af5bcd50f7d9d121824b07ad8e62fab80}{shots\_no}};}
+\DoxyCodeLine{30     \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_alien_a23a0742ddb120a88b03c4eaa61daab72}{alive}};}
 \DoxyCodeLine{31 \} \mbox{\hyperlink{struct_alien}{Alien}};}
 \DoxyCodeLine{32 }
 \DoxyCodeLine{37 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
-\DoxyCodeLine{38     \mbox{\hyperlink{struct_alien}{Alien}}* set;}
-\DoxyCodeLine{39     \textcolor{keywordtype}{int} size;}
-\DoxyCodeLine{40     \textcolor{keywordtype}{int} alive\_no;}
+\DoxyCodeLine{38     \mbox{\hyperlink{struct_alien}{Alien}}* \mbox{\hyperlink{struct_alien_group_a484d216fcc28685ca69e2d9ec20bd64b}{set}};}
+\DoxyCodeLine{39     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_alien_group_a439227feff9d7f55384e8780cfc2eb82}{size}};}
+\DoxyCodeLine{40     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_alien_group_a0b8c8b91371d5df7beb8bfc3237b98d4}{alive\_no}};}
 \DoxyCodeLine{41 \} \mbox{\hyperlink{struct_alien_group}{AlienGroup}};}
 \DoxyCodeLine{42 }
-\DoxyCodeLine{47 \mbox{\hyperlink{struct_alien_group}{AlienGroup}}* (\mbox{\hyperlink{alien_8h_a4398d0a22fab3bc7954d339f2095e6f3}{initAliens}})();}
+\DoxyCodeLine{47 \mbox{\hyperlink{struct_alien_group}{AlienGroup}}* (\mbox{\hyperlink{alien_8h_af8f859696eaefd6cc2f765baaa8c6313}{init\_aliens}})();}
 \DoxyCodeLine{48 }
-\DoxyCodeLine{56 \mbox{\hyperlink{struct_alien}{Alien}} (\mbox{\hyperlink{alien_8h_af0a5d39d7904876961a7f25d6756bfec}{initAlien}})(\textcolor{keywordtype}{int} id, \textcolor{keywordtype}{int} x\_min, \textcolor{keywordtype}{int} y\_min);}
+\DoxyCodeLine{56 \mbox{\hyperlink{struct_alien}{Alien}} (\mbox{\hyperlink{alien_8h_af19ba8e0046253fb160c07592b0e1be2}{init\_alien}})(\textcolor{keywordtype}{int} id, \textcolor{keywordtype}{int} x\_min, \textcolor{keywordtype}{int} y\_min);}
 \DoxyCodeLine{57 }
-\DoxyCodeLine{63 void (\mbox{\hyperlink{alien_8h_a50696a94c059f237747e7676d4216260}{moveAliens}})(\mbox{\hyperlink{struct_alien_group}{AlienGroup}}* group, \textcolor{keyword}{enum} \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} dir);}
+\DoxyCodeLine{63 void (\mbox{\hyperlink{alien_8h_a90225bb26dbfe22e476bab8087e6eb2a}{move\_aliens}})(\mbox{\hyperlink{struct_alien_group}{AlienGroup}}* group, \textcolor{keyword}{enum} \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} dir);}
 \DoxyCodeLine{64 }
-\DoxyCodeLine{70 void (\mbox{\hyperlink{alien_8h_ab87b5c2f39f4a07ce9b07c2ec7ffd391}{dieAlien}})(\mbox{\hyperlink{struct_alien_group}{AlienGroup}}* group, \textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{70 void (\mbox{\hyperlink{alien_8h_abf25c5836219ff077d2841a77a4ed187}{die\_alien}})(\mbox{\hyperlink{struct_alien_group}{AlienGroup}}* group, \textcolor{keywordtype}{int} i);}
 \DoxyCodeLine{71 }
-\DoxyCodeLine{76 void (\mbox{\hyperlink{alien_8h_a7c201ebc707cfcc73bfc1e192b68a815}{shootAlien}})(\mbox{\hyperlink{struct_alien}{Alien}}* a);}
+\DoxyCodeLine{76 void (\mbox{\hyperlink{alien_8h_acb9776923be1b4538bc66cc72116d45b}{shoot\_alien}})(\mbox{\hyperlink{struct_alien}{Alien}}* a);}
 \DoxyCodeLine{77 }
-\DoxyCodeLine{82 void (\mbox{\hyperlink{alien_8h_a35c41bb91d3e8e061a849102bee1d94d}{shootAliens}})(\mbox{\hyperlink{struct_alien_group}{AlienGroup}}* group);}
+\DoxyCodeLine{82 void (\mbox{\hyperlink{alien_8h_a449d802007e914ce4460e85d116cb35c}{shoot\_aliens}})(\mbox{\hyperlink{struct_alien_group}{AlienGroup}}* group);}
 \DoxyCodeLine{83 }
-\DoxyCodeLine{89 void (\mbox{\hyperlink{alien_8h_a0afbca3680ef3c81cbc646ff9c72cf97}{deleteAlienShot}})(\mbox{\hyperlink{struct_alien}{Alien}}* alien, \textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{89 void (\mbox{\hyperlink{alien_8h_a609f32ec375ba493430c600774033d75}{delete\_alien\_shot}})(\mbox{\hyperlink{struct_alien}{Alien}}* \mbox{\hyperlink{shot_8h_aabe4a9c6d80770059ada9f0808ee586ca1a78895fb22dbb259b5520694212090c}{alien}}, \textcolor{keywordtype}{int} i);}
 \DoxyCodeLine{90 }
-\DoxyCodeLine{97 bool (\mbox{\hyperlink{alien_8h_ab80ac8f04abe3b4517e4cdba3a2ab1c6}{canAlienMove}})(\mbox{\hyperlink{struct_alien}{Alien}}* alien, \textcolor{keyword}{enum} \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} dir);}
+\DoxyCodeLine{97 bool (\mbox{\hyperlink{alien_8h_a71ebc52ed3ad063304bfbad6e0466e91}{can\_alien\_move}})(\mbox{\hyperlink{struct_alien}{Alien}}* \mbox{\hyperlink{shot_8h_aabe4a9c6d80770059ada9f0808ee586ca1a78895fb22dbb259b5520694212090c}{alien}}, \textcolor{keyword}{enum} \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} dir);}
 \DoxyCodeLine{98 }
-\DoxyCodeLine{105 bool (\mbox{\hyperlink{alien_8h_afef33b859fd60a0b119da3b36126a92a}{canAlienGroupMove}})(\mbox{\hyperlink{struct_alien_group}{AlienGroup}}* group, \textcolor{keyword}{enum} \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} dir);}
+\DoxyCodeLine{105 bool (\mbox{\hyperlink{alien_8h_a7f751bf90ccb54281fe5febc948fa182}{can\_alien\_group\_move}})(\mbox{\hyperlink{struct_alien_group}{AlienGroup}}* group, \textcolor{keyword}{enum} \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} dir);}
 \DoxyCodeLine{106 }
-\DoxyCodeLine{113 bool (\mbox{\hyperlink{alien_8h_aa87f236305a830686c38d7f99590a333}{wasIHitAlien}})(\mbox{\hyperlink{struct_alien}{Alien}}* alien, \mbox{\hyperlink{struct_shot}{Shot}}* shot);}
+\DoxyCodeLine{113 bool (\mbox{\hyperlink{alien_8h_a425ecb9da8fca28910d8513379d819a8}{was\_i\_hit\_alien}})(\mbox{\hyperlink{struct_alien}{Alien}}* \mbox{\hyperlink{shot_8h_aabe4a9c6d80770059ada9f0808ee586ca1a78895fb22dbb259b5520694212090c}{alien}}, \mbox{\hyperlink{struct_shot}{Shot}}* shot);}
 \DoxyCodeLine{114 }
-\DoxyCodeLine{121 int (\mbox{\hyperlink{alien_8h_a33d90e50f1024b2f1c228b70db2d79f7}{hitIndex}})(\mbox{\hyperlink{struct_alien_group}{AlienGroup}}* group, \mbox{\hyperlink{struct_shot}{Shot}}* shot);}
+\DoxyCodeLine{121 int (\mbox{\hyperlink{alien_8h_a682db2db98543956c7eb146ea0cc5731}{hit\_index}})(\mbox{\hyperlink{struct_alien_group}{AlienGroup}}* group, \mbox{\hyperlink{struct_shot}{Shot}}* shot);}
 \DoxyCodeLine{122 }
-\DoxyCodeLine{127 void (\mbox{\hyperlink{alien_8h_abce7afa217ea827d457307642f4da888}{drawAliens}})(\mbox{\hyperlink{struct_alien_group}{AlienGroup}}* group);}
+\DoxyCodeLine{127 void (\mbox{\hyperlink{alien_8h_a54999c9c1299cdf99a0c3b8a2a176fae}{draw\_aliens}})(\mbox{\hyperlink{struct_alien_group}{AlienGroup}}* group);}
 \DoxyCodeLine{128 }
-\DoxyCodeLine{133 void (\mbox{\hyperlink{alien_8h_a7ae3bd74fbeeefc91a9c410bb42eb85f}{drawAlien}})(\mbox{\hyperlink{struct_alien}{Alien}}* alien);}
+\DoxyCodeLine{133 void (\mbox{\hyperlink{alien_8h_a7a09a76bbff752e5cb6eeac7c56fd622}{draw\_alien}})(\mbox{\hyperlink{struct_alien}{Alien}}* \mbox{\hyperlink{shot_8h_aabe4a9c6d80770059ada9f0808ee586ca1a78895fb22dbb259b5520694212090c}{alien}});}
 \DoxyCodeLine{134 }
 \DoxyCodeLine{135 \textcolor{preprocessor}{\#endif}}
 

@@ -1,0 +1,4 @@
+<map id="shoot_alien" name="shoot_alien">
+<area shape="rect" id="node1" title="Makes an alien shoot." alt="" coords="5,5,93,32"/>
+<area shape="rect" id="node2" href="$shot_8c.html#adbf78f340c9cb30ad382b64ad88b3bb4" title="Initializes a shot with given left uppermost coordinates and source." alt="" coords="141,5,211,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="fire" name="fire">
+<area shape="rect" id="node1" title="Creates a shot fired from the given player, according to its coordinates." alt="" coords="5,5,44,32"/>
+<area shape="rect" id="node2" href="$shot_8c.html#adbf78f340c9cb30ad382b64ad88b3bb4" title="Initializes a shot with given left uppermost coordinates and source." alt="" coords="92,5,162,32"/>
+</map>

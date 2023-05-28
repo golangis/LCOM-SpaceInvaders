@@ -10,84 +10,79 @@ Constants for programming the KBC. Functions of the KBC framework.
 {\ttfamily \#include $<$stdint.\+h$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}../utils/utils.\+h\char`\"{}}\newline
+Include dependency graph for kbd.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{kbd_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbd_8h__dep__incl}
+\end{center}
+\end{figure}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{kbd_8h_a16c5827f043d82f87c726c2d4369c11d}\label{kbd_8h_a16c5827f043d82f87c726c2d4369c11d}} 
-\#define {\bfseries KBC\+\_\+\+IRQ}~1
+\#define \mbox{\hyperlink{kbd_8h_a16c5827f043d82f87c726c2d4369c11d}{KBC\+\_\+\+IRQ}}~1
 \item 
-\mbox{\Hypertarget{kbd_8h_a34b14687d83496940a236351fbbb1aea}\label{kbd_8h_a34b14687d83496940a236351fbbb1aea}} 
-\#define {\bfseries KBC\+\_\+\+STAT\+\_\+\+REG}~0x64
+\#define \mbox{\hyperlink{kbd_8h_a34b14687d83496940a236351fbbb1aea}{KBC\+\_\+\+STAT\+\_\+\+REG}}~0x64
 \item 
-\mbox{\Hypertarget{kbd_8h_a1ccde68b2b6d4e45b50eef1403e10bb7}\label{kbd_8h_a1ccde68b2b6d4e45b50eef1403e10bb7}} 
-\#define {\bfseries KBC\+\_\+\+OUT\+\_\+\+BUF}~0x60
+\#define \mbox{\hyperlink{kbd_8h_a1ccde68b2b6d4e45b50eef1403e10bb7}{KBC\+\_\+\+OUT\+\_\+\+BUF}}~0x60
 \item 
-\mbox{\Hypertarget{kbd_8h_aac9289c99cf0a693a211da6d6cb1bb65}\label{kbd_8h_aac9289c99cf0a693a211da6d6cb1bb65}} 
-\#define {\bfseries KBC\+\_\+\+IN\+\_\+\+BUF}~0x60
+\#define \mbox{\hyperlink{kbd_8h_aac9289c99cf0a693a211da6d6cb1bb65}{KBC\+\_\+\+IN\+\_\+\+BUF}}~0x60
 \item 
-\mbox{\Hypertarget{kbd_8h_a6d57c7927a10f638c83046b52c8caac9}\label{kbd_8h_a6d57c7927a10f638c83046b52c8caac9}} 
-\#define {\bfseries KBC\+\_\+\+CMD\+\_\+\+REG}~0x64
+\#define \mbox{\hyperlink{kbd_8h_a6d57c7927a10f638c83046b52c8caac9}{KBC\+\_\+\+CMD\+\_\+\+REG}}~0x64
 \item 
-\mbox{\Hypertarget{kbd_8h_a595a5cad2d3c793963da50865b2c1b47}\label{kbd_8h_a595a5cad2d3c793963da50865b2c1b47}} 
-\#define {\bfseries KBC\+\_\+\+READ\+\_\+\+CMD}~0x20
+\#define \mbox{\hyperlink{kbd_8h_a595a5cad2d3c793963da50865b2c1b47}{KBC\+\_\+\+READ\+\_\+\+CMD}}~0x20
 \item 
-\mbox{\Hypertarget{kbd_8h_aaa62a6987753a109d2f7a609ce8b7334}\label{kbd_8h_aaa62a6987753a109d2f7a609ce8b7334}} 
-\#define {\bfseries KBC\+\_\+\+WRITE\+\_\+\+CMD}~0x60
+\#define \mbox{\hyperlink{kbd_8h_aaa62a6987753a109d2f7a609ce8b7334}{KBC\+\_\+\+WRITE\+\_\+\+CMD}}~0x60
 \item 
-\mbox{\Hypertarget{kbd_8h_a52f707af5bc6d693c1d6ce1b78d17d93}\label{kbd_8h_a52f707af5bc6d693c1d6ce1b78d17d93}} 
-\#define {\bfseries KBC\+\_\+\+HOOK\+\_\+\+BIT}~1
+\#define \mbox{\hyperlink{kbd_8h_a52f707af5bc6d693c1d6ce1b78d17d93}{KBC\+\_\+\+HOOK\+\_\+\+BIT}}~1
 \item 
-\mbox{\Hypertarget{kbd_8h_a72cdf0038a85a698fce1c4fea5630937}\label{kbd_8h_a72cdf0038a85a698fce1c4fea5630937}} 
-\#define {\bfseries KBD\+\_\+\+TWO\+\_\+\+BYTE}~0xe0
+\#define \mbox{\hyperlink{kbd_8h_a72cdf0038a85a698fce1c4fea5630937}{KBD\+\_\+\+TWO\+\_\+\+BYTE}}~0xe0
 \item 
-\mbox{\Hypertarget{kbd_8h_a62249e384b997229a3e2ae74ade334e2}\label{kbd_8h_a62249e384b997229a3e2ae74ade334e2}} 
-\#define {\bfseries DELAY}~20000
+\#define \mbox{\hyperlink{kbd_8h_a62249e384b997229a3e2ae74ade334e2}{DELAY}}~20000
 \item 
-\mbox{\Hypertarget{kbd_8h_aa6addd819c1594c0f9285169048db5ab}\label{kbd_8h_aa6addd819c1594c0f9285169048db5ab}} 
-\#define {\bfseries KBD\+\_\+\+ESC\+\_\+\+KEY}~129
+\#define \mbox{\hyperlink{kbd_8h_aa6addd819c1594c0f9285169048db5ab}{KBD\+\_\+\+ESC\+\_\+\+KEY}}~129
 \item 
-\mbox{\Hypertarget{kbd_8h_ae986fbe55c87e6470ce26129fe08f3aa}\label{kbd_8h_ae986fbe55c87e6470ce26129fe08f3aa}} 
-\#define {\bfseries SPACE\+\_\+\+MAKE}~57
+\#define \mbox{\hyperlink{kbd_8h_ae986fbe55c87e6470ce26129fe08f3aa}{SPACE\+\_\+\+MAKE}}~57
 \item 
-\mbox{\Hypertarget{kbd_8h_a95d6e4b61bac77469ecc47b205709af6}\label{kbd_8h_a95d6e4b61bac77469ecc47b205709af6}} 
-\#define {\bfseries SPACE\+\_\+\+BREAK}~185
+\#define \mbox{\hyperlink{kbd_8h_a95d6e4b61bac77469ecc47b205709af6}{SPACE\+\_\+\+BREAK}}~185
 \item 
-\mbox{\Hypertarget{kbd_8h_ab3a9e08d95e1ed804eabefc24bd43c1f}\label{kbd_8h_ab3a9e08d95e1ed804eabefc24bd43c1f}} 
-\#define {\bfseries LEFT\+\_\+\+MAKE}~75
+\#define \mbox{\hyperlink{kbd_8h_ab3a9e08d95e1ed804eabefc24bd43c1f}{LEFT\+\_\+\+MAKE}}~75
 \item 
-\mbox{\Hypertarget{kbd_8h_aa94f3bc417dddecbbb61868652497e9f}\label{kbd_8h_aa94f3bc417dddecbbb61868652497e9f}} 
-\#define {\bfseries LEFT\+\_\+\+BREAK}~203
+\#define \mbox{\hyperlink{kbd_8h_aa94f3bc417dddecbbb61868652497e9f}{LEFT\+\_\+\+BREAK}}~203
 \item 
-\mbox{\Hypertarget{kbd_8h_af1729ecbd84901fd8bd712f6cf1efa6c}\label{kbd_8h_af1729ecbd84901fd8bd712f6cf1efa6c}} 
-\#define {\bfseries UP\+\_\+\+MAKE}~72
+\#define \mbox{\hyperlink{kbd_8h_af1729ecbd84901fd8bd712f6cf1efa6c}{UP\+\_\+\+MAKE}}~72
 \item 
-\mbox{\Hypertarget{kbd_8h_a7da1c128f696c681cbbe81a540865cc8}\label{kbd_8h_a7da1c128f696c681cbbe81a540865cc8}} 
-\#define {\bfseries UP\+\_\+\+BREAK}~200
+\#define \mbox{\hyperlink{kbd_8h_a7da1c128f696c681cbbe81a540865cc8}{UP\+\_\+\+BREAK}}~200
 \item 
-\mbox{\Hypertarget{kbd_8h_ae6c7e1fc7d0f7e024bee1f0091a52e02}\label{kbd_8h_ae6c7e1fc7d0f7e024bee1f0091a52e02}} 
-\#define {\bfseries DOWN\+\_\+\+MAKE}~80
+\#define \mbox{\hyperlink{kbd_8h_ae6c7e1fc7d0f7e024bee1f0091a52e02}{DOWN\+\_\+\+MAKE}}~80
 \item 
-\mbox{\Hypertarget{kbd_8h_a9bda5a4305170a4f4433d2bc03be423c}\label{kbd_8h_a9bda5a4305170a4f4433d2bc03be423c}} 
-\#define {\bfseries DOWN\+\_\+\+BREAK}~208
+\#define \mbox{\hyperlink{kbd_8h_a9bda5a4305170a4f4433d2bc03be423c}{DOWN\+\_\+\+BREAK}}~208
 \item 
-\mbox{\Hypertarget{kbd_8h_a80b3878eb7339923b42f0acd492a5fd3}\label{kbd_8h_a80b3878eb7339923b42f0acd492a5fd3}} 
-\#define {\bfseries RIGHT\+\_\+\+MAKE}~77
+\#define \mbox{\hyperlink{kbd_8h_a80b3878eb7339923b42f0acd492a5fd3}{RIGHT\+\_\+\+MAKE}}~77
 \item 
-\mbox{\Hypertarget{kbd_8h_a4c2291f3ce4b075fe429b7c661260774}\label{kbd_8h_a4c2291f3ce4b075fe429b7c661260774}} 
-\#define {\bfseries RIGHT\+\_\+\+BREAK}~205
+\#define \mbox{\hyperlink{kbd_8h_a4c2291f3ce4b075fe429b7c661260774}{RIGHT\+\_\+\+BREAK}}~205
 \end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
 enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} \{ \newline
-{\bfseries kbd\+\_\+right}
-, {\bfseries kbd\+\_\+left}
-, {\bfseries kbd\+\_\+up}
-, {\bfseries kbd\+\_\+down}
+\mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45a35c8fa63766d6dfa6e917becc54ca752}{kbd\+\_\+right}}
+, \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45a34e392192bc32ae7917ac865ff54608f}{kbd\+\_\+left}}
+, \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45a1c4e4ac7831260d425527e49e6ced829}{kbd\+\_\+up}}
+, \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45abd6c9a1770026f549c3b857eec63f93e}{kbd\+\_\+down}}
 , \newline
-{\bfseries kbd\+\_\+space}
-, {\bfseries kbd\+\_\+esc}
-, {\bfseries INVALID}
+\mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45a16e942c023d3ec20e76f9a92e2c7f953}{kbd\+\_\+space}}
+, \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45aa1678ecb26fdced52f0ce3eac2136ce6}{kbd\+\_\+esc}}
+, \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45aef2863a469df3ea6871d640e3669a2f2}{INVALID}}
  \}
 \begin{DoxyCompactList}\small\item\em Represents different keys that the information received from the keyboard can be mapped to. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
@@ -108,6 +103,135 @@ Constants for programming the KBC. Functions of the KBC framework.
 
 
 
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{kbd_8h_a62249e384b997229a3e2ae74ade334e2}\label{kbd_8h_a62249e384b997229a3e2ae74ade334e2}} 
+\index{kbd.h@{kbd.h}!DELAY@{DELAY}}
+\index{DELAY@{DELAY}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{DELAY}{DELAY}}
+{\footnotesize\ttfamily \#define DELAY~20000}
+
+\mbox{\Hypertarget{kbd_8h_a9bda5a4305170a4f4433d2bc03be423c}\label{kbd_8h_a9bda5a4305170a4f4433d2bc03be423c}} 
+\index{kbd.h@{kbd.h}!DOWN\_BREAK@{DOWN\_BREAK}}
+\index{DOWN\_BREAK@{DOWN\_BREAK}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{DOWN\_BREAK}{DOWN\_BREAK}}
+{\footnotesize\ttfamily \#define DOWN\+\_\+\+BREAK~208}
+
+\mbox{\Hypertarget{kbd_8h_ae6c7e1fc7d0f7e024bee1f0091a52e02}\label{kbd_8h_ae6c7e1fc7d0f7e024bee1f0091a52e02}} 
+\index{kbd.h@{kbd.h}!DOWN\_MAKE@{DOWN\_MAKE}}
+\index{DOWN\_MAKE@{DOWN\_MAKE}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{DOWN\_MAKE}{DOWN\_MAKE}}
+{\footnotesize\ttfamily \#define DOWN\+\_\+\+MAKE~80}
+
+\mbox{\Hypertarget{kbd_8h_a6d57c7927a10f638c83046b52c8caac9}\label{kbd_8h_a6d57c7927a10f638c83046b52c8caac9}} 
+\index{kbd.h@{kbd.h}!KBC\_CMD\_REG@{KBC\_CMD\_REG}}
+\index{KBC\_CMD\_REG@{KBC\_CMD\_REG}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{KBC\_CMD\_REG}{KBC\_CMD\_REG}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+CMD\+\_\+\+REG~0x64}
+
+\mbox{\Hypertarget{kbd_8h_a52f707af5bc6d693c1d6ce1b78d17d93}\label{kbd_8h_a52f707af5bc6d693c1d6ce1b78d17d93}} 
+\index{kbd.h@{kbd.h}!KBC\_HOOK\_BIT@{KBC\_HOOK\_BIT}}
+\index{KBC\_HOOK\_BIT@{KBC\_HOOK\_BIT}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{KBC\_HOOK\_BIT}{KBC\_HOOK\_BIT}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+HOOK\+\_\+\+BIT~1}
+
+\mbox{\Hypertarget{kbd_8h_aac9289c99cf0a693a211da6d6cb1bb65}\label{kbd_8h_aac9289c99cf0a693a211da6d6cb1bb65}} 
+\index{kbd.h@{kbd.h}!KBC\_IN\_BUF@{KBC\_IN\_BUF}}
+\index{KBC\_IN\_BUF@{KBC\_IN\_BUF}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{KBC\_IN\_BUF}{KBC\_IN\_BUF}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+IN\+\_\+\+BUF~0x60}
+
+\mbox{\Hypertarget{kbd_8h_a16c5827f043d82f87c726c2d4369c11d}\label{kbd_8h_a16c5827f043d82f87c726c2d4369c11d}} 
+\index{kbd.h@{kbd.h}!KBC\_IRQ@{KBC\_IRQ}}
+\index{KBC\_IRQ@{KBC\_IRQ}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{KBC\_IRQ}{KBC\_IRQ}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+IRQ~1}
+
+\mbox{\Hypertarget{kbd_8h_a1ccde68b2b6d4e45b50eef1403e10bb7}\label{kbd_8h_a1ccde68b2b6d4e45b50eef1403e10bb7}} 
+\index{kbd.h@{kbd.h}!KBC\_OUT\_BUF@{KBC\_OUT\_BUF}}
+\index{KBC\_OUT\_BUF@{KBC\_OUT\_BUF}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{KBC\_OUT\_BUF}{KBC\_OUT\_BUF}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+OUT\+\_\+\+BUF~0x60}
+
+\mbox{\Hypertarget{kbd_8h_a595a5cad2d3c793963da50865b2c1b47}\label{kbd_8h_a595a5cad2d3c793963da50865b2c1b47}} 
+\index{kbd.h@{kbd.h}!KBC\_READ\_CMD@{KBC\_READ\_CMD}}
+\index{KBC\_READ\_CMD@{KBC\_READ\_CMD}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{KBC\_READ\_CMD}{KBC\_READ\_CMD}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+READ\+\_\+\+CMD~0x20}
+
+\mbox{\Hypertarget{kbd_8h_a34b14687d83496940a236351fbbb1aea}\label{kbd_8h_a34b14687d83496940a236351fbbb1aea}} 
+\index{kbd.h@{kbd.h}!KBC\_STAT\_REG@{KBC\_STAT\_REG}}
+\index{KBC\_STAT\_REG@{KBC\_STAT\_REG}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{KBC\_STAT\_REG}{KBC\_STAT\_REG}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+STAT\+\_\+\+REG~0x64}
+
+\mbox{\Hypertarget{kbd_8h_aaa62a6987753a109d2f7a609ce8b7334}\label{kbd_8h_aaa62a6987753a109d2f7a609ce8b7334}} 
+\index{kbd.h@{kbd.h}!KBC\_WRITE\_CMD@{KBC\_WRITE\_CMD}}
+\index{KBC\_WRITE\_CMD@{KBC\_WRITE\_CMD}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{KBC\_WRITE\_CMD}{KBC\_WRITE\_CMD}}
+{\footnotesize\ttfamily \#define KBC\+\_\+\+WRITE\+\_\+\+CMD~0x60}
+
+\mbox{\Hypertarget{kbd_8h_aa6addd819c1594c0f9285169048db5ab}\label{kbd_8h_aa6addd819c1594c0f9285169048db5ab}} 
+\index{kbd.h@{kbd.h}!KBD\_ESC\_KEY@{KBD\_ESC\_KEY}}
+\index{KBD\_ESC\_KEY@{KBD\_ESC\_KEY}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{KBD\_ESC\_KEY}{KBD\_ESC\_KEY}}
+{\footnotesize\ttfamily \#define KBD\+\_\+\+ESC\+\_\+\+KEY~129}
+
+\mbox{\Hypertarget{kbd_8h_a72cdf0038a85a698fce1c4fea5630937}\label{kbd_8h_a72cdf0038a85a698fce1c4fea5630937}} 
+\index{kbd.h@{kbd.h}!KBD\_TWO\_BYTE@{KBD\_TWO\_BYTE}}
+\index{KBD\_TWO\_BYTE@{KBD\_TWO\_BYTE}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{KBD\_TWO\_BYTE}{KBD\_TWO\_BYTE}}
+{\footnotesize\ttfamily \#define KBD\+\_\+\+TWO\+\_\+\+BYTE~0xe0}
+
+\mbox{\Hypertarget{kbd_8h_aa94f3bc417dddecbbb61868652497e9f}\label{kbd_8h_aa94f3bc417dddecbbb61868652497e9f}} 
+\index{kbd.h@{kbd.h}!LEFT\_BREAK@{LEFT\_BREAK}}
+\index{LEFT\_BREAK@{LEFT\_BREAK}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{LEFT\_BREAK}{LEFT\_BREAK}}
+{\footnotesize\ttfamily \#define LEFT\+\_\+\+BREAK~203}
+
+\mbox{\Hypertarget{kbd_8h_ab3a9e08d95e1ed804eabefc24bd43c1f}\label{kbd_8h_ab3a9e08d95e1ed804eabefc24bd43c1f}} 
+\index{kbd.h@{kbd.h}!LEFT\_MAKE@{LEFT\_MAKE}}
+\index{LEFT\_MAKE@{LEFT\_MAKE}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{LEFT\_MAKE}{LEFT\_MAKE}}
+{\footnotesize\ttfamily \#define LEFT\+\_\+\+MAKE~75}
+
+\mbox{\Hypertarget{kbd_8h_a4c2291f3ce4b075fe429b7c661260774}\label{kbd_8h_a4c2291f3ce4b075fe429b7c661260774}} 
+\index{kbd.h@{kbd.h}!RIGHT\_BREAK@{RIGHT\_BREAK}}
+\index{RIGHT\_BREAK@{RIGHT\_BREAK}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{RIGHT\_BREAK}{RIGHT\_BREAK}}
+{\footnotesize\ttfamily \#define RIGHT\+\_\+\+BREAK~205}
+
+\mbox{\Hypertarget{kbd_8h_a80b3878eb7339923b42f0acd492a5fd3}\label{kbd_8h_a80b3878eb7339923b42f0acd492a5fd3}} 
+\index{kbd.h@{kbd.h}!RIGHT\_MAKE@{RIGHT\_MAKE}}
+\index{RIGHT\_MAKE@{RIGHT\_MAKE}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{RIGHT\_MAKE}{RIGHT\_MAKE}}
+{\footnotesize\ttfamily \#define RIGHT\+\_\+\+MAKE~77}
+
+\mbox{\Hypertarget{kbd_8h_a95d6e4b61bac77469ecc47b205709af6}\label{kbd_8h_a95d6e4b61bac77469ecc47b205709af6}} 
+\index{kbd.h@{kbd.h}!SPACE\_BREAK@{SPACE\_BREAK}}
+\index{SPACE\_BREAK@{SPACE\_BREAK}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{SPACE\_BREAK}{SPACE\_BREAK}}
+{\footnotesize\ttfamily \#define SPACE\+\_\+\+BREAK~185}
+
+\mbox{\Hypertarget{kbd_8h_ae986fbe55c87e6470ce26129fe08f3aa}\label{kbd_8h_ae986fbe55c87e6470ce26129fe08f3aa}} 
+\index{kbd.h@{kbd.h}!SPACE\_MAKE@{SPACE\_MAKE}}
+\index{SPACE\_MAKE@{SPACE\_MAKE}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{SPACE\_MAKE}{SPACE\_MAKE}}
+{\footnotesize\ttfamily \#define SPACE\+\_\+\+MAKE~57}
+
+\mbox{\Hypertarget{kbd_8h_a7da1c128f696c681cbbe81a540865cc8}\label{kbd_8h_a7da1c128f696c681cbbe81a540865cc8}} 
+\index{kbd.h@{kbd.h}!UP\_BREAK@{UP\_BREAK}}
+\index{UP\_BREAK@{UP\_BREAK}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{UP\_BREAK}{UP\_BREAK}}
+{\footnotesize\ttfamily \#define UP\+\_\+\+BREAK~200}
+
+\mbox{\Hypertarget{kbd_8h_af1729ecbd84901fd8bd712f6cf1efa6c}\label{kbd_8h_af1729ecbd84901fd8bd712f6cf1efa6c}} 
+\index{kbd.h@{kbd.h}!UP\_MAKE@{UP\_MAKE}}
+\index{UP\_MAKE@{UP\_MAKE}!kbd.h@{kbd.h}}
+\doxysubsubsection{\texorpdfstring{UP\_MAKE}{UP\_MAKE}}
+{\footnotesize\ttfamily \#define UP\+\_\+\+MAKE~72}
+
+
+
 \doxysubsection{Enumeration Type Documentation}
 \mbox{\Hypertarget{kbd_8h_a635055f02cc43001acef32526cac2a45}\label{kbd_8h_a635055f02cc43001acef32526cac2a45}} 
 \index{kbd.h@{kbd.h}!kbd\_key@{kbd\_key}}
@@ -119,6 +243,36 @@ Constants for programming the KBC. Functions of the KBC framework.
 
 Represents different keys that the information received from the keyboard can be mapped to. 
 
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kbd\_right@{kbd\_right}!kbd.h@{kbd.h}}\index{kbd.h@{kbd.h}!kbd\_right@{kbd\_right}}}\mbox{\Hypertarget{kbd_8h_a635055f02cc43001acef32526cac2a45a35c8fa63766d6dfa6e917becc54ca752}\label{kbd_8h_a635055f02cc43001acef32526cac2a45a35c8fa63766d6dfa6e917becc54ca752}} 
+kbd\+\_\+right&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kbd\_left@{kbd\_left}!kbd.h@{kbd.h}}\index{kbd.h@{kbd.h}!kbd\_left@{kbd\_left}}}\mbox{\Hypertarget{kbd_8h_a635055f02cc43001acef32526cac2a45a34e392192bc32ae7917ac865ff54608f}\label{kbd_8h_a635055f02cc43001acef32526cac2a45a34e392192bc32ae7917ac865ff54608f}} 
+kbd\+\_\+left&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kbd\_up@{kbd\_up}!kbd.h@{kbd.h}}\index{kbd.h@{kbd.h}!kbd\_up@{kbd\_up}}}\mbox{\Hypertarget{kbd_8h_a635055f02cc43001acef32526cac2a45a1c4e4ac7831260d425527e49e6ced829}\label{kbd_8h_a635055f02cc43001acef32526cac2a45a1c4e4ac7831260d425527e49e6ced829}} 
+kbd\+\_\+up&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kbd\_down@{kbd\_down}!kbd.h@{kbd.h}}\index{kbd.h@{kbd.h}!kbd\_down@{kbd\_down}}}\mbox{\Hypertarget{kbd_8h_a635055f02cc43001acef32526cac2a45abd6c9a1770026f549c3b857eec63f93e}\label{kbd_8h_a635055f02cc43001acef32526cac2a45abd6c9a1770026f549c3b857eec63f93e}} 
+kbd\+\_\+down&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kbd\_space@{kbd\_space}!kbd.h@{kbd.h}}\index{kbd.h@{kbd.h}!kbd\_space@{kbd\_space}}}\mbox{\Hypertarget{kbd_8h_a635055f02cc43001acef32526cac2a45a16e942c023d3ec20e76f9a92e2c7f953}\label{kbd_8h_a635055f02cc43001acef32526cac2a45a16e942c023d3ec20e76f9a92e2c7f953}} 
+kbd\+\_\+space&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{kbd\_esc@{kbd\_esc}!kbd.h@{kbd.h}}\index{kbd.h@{kbd.h}!kbd\_esc@{kbd\_esc}}}\mbox{\Hypertarget{kbd_8h_a635055f02cc43001acef32526cac2a45aa1678ecb26fdced52f0ce3eac2136ce6}\label{kbd_8h_a635055f02cc43001acef32526cac2a45aa1678ecb26fdced52f0ce3eac2136ce6}} 
+kbd\+\_\+esc&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID@{INVALID}!kbd.h@{kbd.h}}\index{kbd.h@{kbd.h}!INVALID@{INVALID}}}\mbox{\Hypertarget{kbd_8h_a635055f02cc43001acef32526cac2a45aef2863a469df3ea6871d640e3669a2f2}\label{kbd_8h_a635055f02cc43001acef32526cac2a45aef2863a469df3ea6871d640e3669a2f2}} 
+INVALID&\\
+\hline
+
+\end{DoxyEnumFields}
 
 
 \doxysubsection{Function Documentation}
@@ -132,6 +286,22 @@ Represents different keys that the information received from the keyboard can be
 
 Handles Keyboard interrupts. Reads and stores the KBD data for later processing/interpretation. 
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{kbd_8h_aea970a154161a35f6894898a092ed70a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbd_8h_aea970a154161a35f6894898a092ed70a_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{kbd_8h_a02884ada1971dbade466081413210b18}\label{kbd_8h_a02884ada1971dbade466081413210b18}} 
 \index{kbd.h@{kbd.h}!kbc\_subscribe\_int@{kbc\_subscribe\_int}}
 \index{kbc\_subscribe\_int@{kbc\_subscribe\_int}!kbd.h@{kbd.h}}
@@ -150,6 +320,14 @@ Subscribes and enables Keyboard interrupts.
 \begin{DoxyReturn}{Returns}
 Return 0 upon success and non-\/zero otherwise. 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{kbd_8h_a02884ada1971dbade466081413210b18_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{kbd_8h_a1102381e6a9e876e05dd78c58ccb5673}\label{kbd_8h_a1102381e6a9e876e05dd78c58ccb5673}} 
 \index{kbd.h@{kbd.h}!kbc\_unsubscribe\_int@{kbc\_unsubscribe\_int}}
 \index{kbc\_unsubscribe\_int@{kbc\_unsubscribe\_int}!kbd.h@{kbd.h}}
@@ -163,6 +341,14 @@ Unsubscribes Keyboard interrupts.
 \begin{DoxyReturn}{Returns}
 Return 0 upon success and non-\/zero otherwise. 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{kbd_8h_a1102381e6a9e876e05dd78c58ccb5673_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{kbd_8h_a349e104e331ffa69feb42f7c6d5682ff}\label{kbd_8h_a349e104e331ffa69feb42f7c6d5682ff}} 
 \index{kbd.h@{kbd.h}!kbd\_get\_key@{kbd\_get\_key}}
 \index{kbd\_get\_key@{kbd\_get\_key}!kbd.h@{kbd.h}}
@@ -181,5 +367,21 @@ Translates the KBD data into a key.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Return the key correspondent to the KBD data. 
+Returns the key correspondent to the KBD data. 
 \end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{kbd_8h_a349e104e331ffa69feb42f7c6d5682ff_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{kbd_8h_a349e104e331ffa69feb42f7c6d5682ff_icgraph}
+\end{center}
+\end{figure}

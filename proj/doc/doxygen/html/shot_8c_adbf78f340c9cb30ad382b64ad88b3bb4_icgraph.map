@@ -1,0 +1,9 @@
+<map id="init_shot" name="init_shot">
+<area shape="rect" id="node1" title="Initializes a shot with given left uppermost coordinates and source." alt="" coords="680,31,750,57"/>
+<area shape="rect" id="node2" href="$player_8c.html#a0df41d797d15f08f94cbf3fa3edbef3d" title="Creates a shot fired from the given player, according to its coordinates." alt="" coords="430,5,469,32"/>
+<area shape="rect" id="node5" href="$alien_8c.html#acb9776923be1b4538bc66cc72116d45b" title="Makes an alien shoot." alt="" coords="545,56,632,83"/>
+<area shape="rect" id="node3" href="$main_8c.html#aca94587a192dc9d6e25886d009f3ee76" title="Processes the interrupts and calls correct functions while in the Game state." alt="" coords="162,31,246,57"/>
+<area shape="rect" id="node4" href="$main_8c.html#ad290208c74ef25eb347d1d96a390cd66" title="App main loop. Initializes the video card and subscribes the mouse, kbd and timer interrupts...." alt="" coords="5,31,114,57"/>
+<area shape="rect" id="node6" href="$alien_8c.html#a449d802007e914ce4460e85d116cb35c" title="Makes a random alien within a group shoot." alt="" coords="402,56,497,83"/>
+<area shape="rect" id="node7" href="$spaceinvaders_8c.html#a0b2a6a62c1f41986be80686c764dd19a" title="Updates the game&#39;s elements position (if appliable), checks colisions and updates the involved elemen..." alt="" coords="294,56,354,83"/>
+</map>
