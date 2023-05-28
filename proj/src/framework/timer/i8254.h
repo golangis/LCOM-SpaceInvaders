@@ -2,6 +2,7 @@
 #define I8254_H
 
 /**
+ * @file i8254.h
  * @brief Constants for programming the i8254 Timer.
  * 
  */

@@ -91,14 +91,6 @@ bool (process_score)(Score score, Score* array) {
   return false;
 }
 
-void (init_scores)() {
-  FILE *fp = fopen("/home/lcom/labs/proj/src/highscores.csv", "w");
-
-  for (size_t i = 0; i < 10; i++) fprintf(fp, "0,00/00/0000 00:00\n");
-
-  fclose(fp);
-}
-
 void (store_scores)(Score* array) {
   FILE* fp = fopen("/home/lcom/labs/proj/src/highscores.csv", "w");
 
@@ -192,15 +184,15 @@ void (update)(int* no_lives) {
         return;
       } else if (shield1->lives > 0 && a->shots[j].y_max >= (shield1->y_min - 30) && a->shots[j].x_min <= shield1->x_max && a->shots[j].x_max >= shield1->x_min) {
         delete_alien_shot(a, j);
-        damage(shield1, alien);
+        damage(shield1);
         return;
       } else if (shield2->lives > 0 && a->shots[j].y_max >= (shield2->y_min - 30) && a->shots[j].x_min <= shield2->x_max && a->shots[j].x_max >= shield2->x_min) {
         delete_alien_shot(a, j);
-        damage(shield2, alien);
+        damage(shield2);
         return;
       } else if (shield3->lives > 0 && a->shots[j].y_max >= (shield3->y_min - 30) && a->shots[j].x_min <= shield3->x_max && a->shots[j].x_max >= shield3->x_min) {
         delete_alien_shot(a, j);
-        damage(shield3, alien);
+        damage(shield3);
         return;
       } else if (a->shots[j].y_max >= ship->y_min && a->shots[j].x_min <= ship->x_max && a->shots[j].x_max >= ship->x_min) {
         delete_alien_shot(a, j);
@@ -218,15 +210,15 @@ void (update)(int* no_lives) {
       return;
     } else if (shield1->lives > 0 && ship->shots[i].y_min <= shield1->y_max && ship->shots[i].x_min <= shield1->x_max && ship->shots[i].x_max >= shield1->x_min) {
       delete_player_shot(ship, i);
-      damage(shield1, player);
+      damage(shield1);
       return;
     } else if (shield2->lives > 0 && ship->shots[i].y_min <= shield2->y_max && ship->shots[i].x_min <= shield2->x_max && ship->shots[i].x_max >= shield2->x_min) {
       delete_player_shot(ship, i);
-      damage(shield2, player);
+      damage(shield2);
       return;
     } else if (shield3->lives > 0 && ship->shots[i].y_min <= shield3->y_max && ship->shots[i].x_min <= shield3->x_max && ship->shots[i].x_max >= shield3->x_min) {
       delete_player_shot(ship, i);
-      damage(shield3, player);
+      damage(shield3);
       return;
     } else if ((alien_idx = hit_index(aliens, &(ship->shots[i]))) != -1) {
       delete_player_shot(ship, i);

@@ -86,8 +86,28 @@ void (increment_score)(Player* ship, int id);
  */
 void (draw_score)(Player* ship);
 
+/**
+ * @brief Auxiliary function to draw the score.
+ * @param x Upper leftmost x coordinate.
+ * @param y Upper leftmost y coordinate.
+ * @param score The value of the score to draw.
+ * 
+ */
 void (draw_score_aux)(uint16_t x, uint16_t y, int score);
+
+/**
+ * @brief Draws the provided algarism's XPM image.
+ * @param x Upper leftmost x coordinate.
+ * @param y Upper leftmost y coordinate.
+ * @param score Algarism to draw.
+ */
 void (loop_draw_score_aux)(uint16_t x, uint16_t y, int score);
+
+/**
+ * @brief Draws hearts representing the given (player's) lives.
+ * @param lives The number of the lives which representation is to be drawn.
+ * 
+ */
 void (draw_lives)(int lives);
 
 #endif

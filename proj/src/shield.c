@@ -22,7 +22,7 @@ void (draw_shield)(Shield* shield) {
   }
 }
 
-void (damage)(Shield* shield, enum shot_source src) {
+void (damage)(Shield* shield) {
   shield->lives--;
   switch (shield->lives) {
     case 2: shield->x_min += 7; shield->x_max -= 7; shield->y_min += 5; shield->y_max -= 5; break;
@@ -30,9 +30,3 @@ void (damage)(Shield* shield, enum shot_source src) {
     default: break;
   }
 }
-
-/*
-3 vidas: 100x32
-2 vidas: 86x22
-1 vida : 71x10
-*/

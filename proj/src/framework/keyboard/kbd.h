@@ -87,7 +87,7 @@ void (kbc_ih)();
  * @brief Translates the KBD data into a key.
  * @param value KBD data.
  * @param make Whether the data is a makecode or a breakcode.
- * @return Return the key correspondent to the KBD data.
+ * @return Returns the key correspondent to the KBD data.
  * 
  */
 enum kbd_key kbd_get_key(bool make, uint8_t size, uint8_t bytes[]);

@@ -47,6 +47,11 @@ int (read_packet)();
  * @return int 0 upon success, non-zero otherwise
  */
 int (update_mouse)();
+
+/**
+ * @brief Returns whether the mouse's left button was clicked.
+ * @return Whether the mouse's left button was clicked. 
+ */
 bool (left_click)();
 
 #endif
