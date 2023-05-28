@@ -27,6 +27,7 @@ uint8_t BlueFieldPosition;
 char* video_mem;
 uint8_t* video_buffer;
 
+#include "xpm/alphabet.xpm"
 #include "xpm/algarisms.xpm"
 #include "xpm/aliens.xpm"
 #include "xpm/heart.xpm"
@@ -39,6 +40,8 @@ uint8_t* video_buffer;
 #include "xpm/shot.xpm"
 #include "xpm/GameOver.xpm"
 
+xpm_image_t h_img;
+xpm_image_t slash_img;
 xpm_image_t zero_img;
 xpm_image_t one_img;
 xpm_image_t two_img;
@@ -68,6 +71,8 @@ xpm_image_t ship_shot_img;
 xpm_image_t alien_shot_img;
 xpm_image_t gameOver_img;
 
+uint8_t* h_map;
+uint8_t* slash_map;
 uint8_t* zero_map;
 uint8_t* one_map;
 uint8_t* two_map;

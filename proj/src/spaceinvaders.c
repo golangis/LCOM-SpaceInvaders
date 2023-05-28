@@ -52,6 +52,7 @@ Score* (loadScores)() {
 
     Score score;
     score.points = points;
+    datetime[16] = 0;
     strcpy(score.datetime, datetime);
 
     array[row] = score;
@@ -64,7 +65,38 @@ Score* (loadScores)() {
   return array;
 }
 
-void (updateScores)(Score* array) {
+Score (buildScore)(int points, rtc_time* time) {
+  Score score;
+  score.points = points;
+  char str[17];
+  if (time->month < 10 && time->hour < 10) sprintf(str, "%d/0%d/20%d 0%d:%d", time->day, time->month, time->year, time->hour, time->minute);
+  else if (time->month < 10) sprintf(str, "%d/0%d/20%d %d:%d", time->day, time->month, time->year, time->hour, time->minute);
+  else if (time->hour < 10) sprintf(str, "%d/%d/20%d 0%d:%d", time->day, time->month, time->year, time->hour, time->minute);
+  else sprintf(str, "%d/%d/20%d %d:%d", time->day, time->month, time->year, time->hour, time->minute);
+  strcpy(score.datetime, str);
+  return score;
+}
+
+bool (processScore)(Score score, Score* array) {
+  for (size_t i = 0; i < 10; i++) {
+    if (score.points > array[i].points) {
+      for (size_t j = 9; j > i; j--) array[j] = array[j - 1];
+      array[i] = score;
+      return true;
+    }
+  }
+  return false;
+}
+
+void (initScores)() {
+  FILE *fp = fopen("/home/lcom/labs/proj/src/highscores.csv", "w");
+
+  for (size_t i = 0; i < 10; i++) fprintf(fp, "0,00/00/0000 00:00\n");
+
+  fclose(fp);
+}
+
+void (storeScores)(Score* array) {
   FILE* fp = fopen("/home/lcom/labs/proj/src/highscores.csv", "w");
 
   if (!fp) fp = fopen("/home/lcom/labs/g3/proj/src/highscore.csv", "w");
@@ -75,7 +107,7 @@ void (updateScores)(Score* array) {
 
   for (size_t i = 0; i < 10; i++) {
     Score score = array[i];
-    fprintf(fp, "%d,%s", score.points, score.datetime);
+    fprintf(fp, "%d,%s\n", score.points, score.datetime);
   }
 
   fclose(fp);
@@ -216,6 +248,73 @@ void (drawMainMenu)() {
   video_draw_xpm(100, 40, "logo");
   video_draw_xpm(200, 400, "play_button");
   video_draw_xpm(x_mouse, y_mouse, "mouse");
+  memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
+}
+
+void (drawHighscores)(Score* scores) {
+  memset(video_buffer, 0, h_res*v_res*bytes_per_pixel);
+  for (int i = 0; i < 10; i++) {
+    int points = scores[i].points;
+    int alg_count = 0;
+    while (points != 0) {
+      points /= 10;
+      alg_count++;
+    }
+    points = scores[i].points;
+    for (int j = alg_count; j > 0; j--) {
+      int x = 10 + (22 * j);
+      int y = 20 + (50 * i);
+
+      switch (points % 10) {
+        case 0: video_draw_xpm(x, y, "zero"); break;
+        case 1: video_draw_xpm(x, y, "one"); break;
+        case 2: video_draw_xpm(x, y, "two"); break;
+        case 3: video_draw_xpm(x, y, "three"); break;
+        case 4: video_draw_xpm(x, y, "four"); break;
+        case 5: video_draw_xpm(x, y, "five"); break;
+        case 6: video_draw_xpm(x, y, "six"); break;
+        case 7: video_draw_xpm(x, y, "seven"); break;
+        case 8: video_draw_xpm(x, y, "eight"); break;
+        case 9: video_draw_xpm(x, y, "nine"); break;
+        default: break;
+      }
+      points /= 10;
+    }
+
+    for (int j = 0; j < 16; j++) {
+      char c = scores[i].datetime[j];
+
+      int x = 278 + (32 * j);
+      int y = 20 + (50 * i);
+
+      if (c == '0') {
+        video_draw_xpm(x, y, "zero");
+      } else if (c == '1') {
+        video_draw_xpm(x, y, "one");
+      } else if (c == '2') {
+        video_draw_xpm(x, y, "two");
+      } else if (c == '3') {
+        video_draw_xpm(x, y, "three");
+      } else if (c == '4') {
+        video_draw_xpm(x, y, "four");
+      } else if (c == '5') {
+        video_draw_xpm(x, y, "five");
+      } else if (c == '6') {
+        video_draw_xpm(x, y, "six");
+      } else if (c == '7') {
+        video_draw_xpm(x, y, "seven");
+      } else if (c == '8') {
+        video_draw_xpm(x, y, "eight");
+      } else if (c == '9') {
+        video_draw_xpm(x, y, "nine");
+      } else if (c == '/') {
+        video_draw_xpm(x, y, "slash");
+      } else if (c == ':') {
+        video_draw_xpm(x, y, "h");
+      } else continue;
+    }
+  }
+  //video_draw_xpm(x_mouse, y_mouse, "mouse");
   memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
 }
 

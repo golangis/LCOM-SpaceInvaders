@@ -62,6 +62,8 @@ void (video_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
 }
 
 void (video_load_xpms)() {
+    h_map = xpm_load(h_xpm, XPM_8_8_8, &h_img);
+    slash_map = xpm_load(slash_xpm, XPM_8_8_8, &slash_img);
     zero_map = xpm_load(zero_xpm, XPM_8_8_8, &zero_img);
     one_map = xpm_load(one_xpm, XPM_8_8_8, &one_img);
     two_map = xpm_load(two_xpm, XPM_8_8_8, &two_img);
@@ -96,7 +98,13 @@ void (video_draw_xpm)(uint16_t x, uint16_t y, char xpm[]) {
     uint8_t* map;
     xpm_image_t img;
 
-    if (strcmp(xpm, "zero") == 0) {
+    if (strcmp(xpm, "h") == 0) {
+        map = h_map;
+        img = h_img;
+    } else if (strcmp(xpm, "slash") == 0) {
+        map = slash_map;
+        img = slash_img;
+    } else if (strcmp(xpm, "zero") == 0) {
         map = zero_map;
         img = zero_img;
     } else if (strcmp(xpm, "one") == 0) {
