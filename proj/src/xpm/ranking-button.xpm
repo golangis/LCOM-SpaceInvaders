@@ -1,5 +1,5 @@
 /* XPM */
-static char * ranking_button_xpm[] = {
+static const char * ranking_button_xpm[] = {
 "175 70 217 2",
 "  	c #000000",
 ". 	c #FFFFFF",

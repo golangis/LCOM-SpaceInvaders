@@ -36,6 +36,10 @@ int (readStatusByte)() {
   return 0; // NÃO DEU ERRO 
 }
 
+bool (leftClick)() {
+  return mouse_packet.lb;
+}
+
 int (readPacket)() {
   uint8_t data;
 

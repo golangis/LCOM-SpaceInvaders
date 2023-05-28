@@ -47,5 +47,6 @@ int (readPacket)();
  * @return int 0 upon success, non-zero otherwise
  */
 int (update_mouse)();
+bool (leftClick)();
 
 #endif

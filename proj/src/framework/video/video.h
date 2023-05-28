@@ -34,6 +34,7 @@ uint8_t* video_buffer;
 #include "xpm/logo.xpm"
 #include "xpm/mouse.xpm"
 #include "xpm/play-button.xpm"
+#include "xpm/ranking-button.xpm"
 #include "xpm/rocket.xpm"
 #include "xpm/score.xpm"
 #include "xpm/shield.xpm"
@@ -62,6 +63,7 @@ xpm_image_t heart_bad_img;
 xpm_image_t logo_img;
 xpm_image_t mouse_img;
 xpm_image_t play_button_img;
+xpm_image_t ranking_button_img;
 xpm_image_t rocket_img;
 xpm_image_t score_img;
 xpm_image_t shield3_img;
@@ -93,6 +95,7 @@ uint8_t* heart_bad_map;
 uint8_t* logo_map;
 uint8_t* mouse_map;
 uint8_t* play_button_map;
+uint8_t* ranking_button_map;
 uint8_t* rocket_map;
 uint8_t* score_map;
 uint8_t* shield3_map;
