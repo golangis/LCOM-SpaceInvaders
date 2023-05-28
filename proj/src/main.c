@@ -202,6 +202,10 @@ void (main_menu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* s
 }
 
 void (game_over_menu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state){
+    extern int x_mouse;
+    extern int y_mouse;
+    bool is_on_replay_button = x_mouse <= 312 + 175 && x_mouse >= 312 && y_mouse <= 420 + 70 && y_mouse >= 420;
+
     if (msg.m_notify.interrupts & ipc_timer) {
         timer_interrupt_handler();
         if (timer_counter % 2 == 0) draw_game_over_menu();
@@ -234,6 +238,10 @@ void (game_over_menu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8
         }
     }
     if (msg.m_notify.interrupts & ipc_mouse) {
+        if (is_on_replay_button && left_click()) {
+            *state = game;
+            init_game();
+        }
         mouse_interrupt_handler();
     }
 }
