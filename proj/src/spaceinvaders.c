@@ -249,7 +249,8 @@ extern int y_mouse;
 void (drawMainMenu)() {
   memset(video_buffer, 0, h_res*v_res*bytes_per_pixel);
   video_draw_xpm(100, 40, "logo");
-  video_draw_xpm(200, 400, "play_button");
+  video_draw_xpm(150, 400, "play_button");
+  video_draw_xpm(800-175-150, 400, "ranking_button");
   video_draw_xpm(x_mouse, y_mouse, "mouse");
   memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
 }
