@@ -1,0 +1,116 @@
+\hypertarget{mouse_8h}{}\doxysection{C\+:/\+Users/\+Pedro/\+Documents/2\+LEIC/2º semestre/\+LC/\+MINIX-\/\+LCOM/shared/proj/src/framework/mouse/mouse.h File Reference}
+\label{mouse_8h}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/mouse/mouse.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/mouse/mouse.h}}
+
+
+Framework for the Mouse.  
+
+
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../utils/utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}i8042.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{mouse_8h_af9674903e38c0378821477f9be3e0b2e}{subscribe\+\_\+mouse\+\_\+int}} (uint8\+\_\+t $\ast$bit\+\_\+no)
+\begin{DoxyCompactList}\small\item\em Subscribes and enables Mouse interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{mouse_8h_a310254edf59d5de2a8df1b2888cc7431}{mouse\+\_\+interrupt\+\_\+handler}} ()
+\begin{DoxyCompactList}\small\item\em Mouse interrupt handler. Gets the mouse packet and updates the user interface mouse struct. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{mouse_8h_a4c04b6e71466c545f39ca49a830e0779}{unsubscribe\+\_\+mouse\+\_\+int}} ()
+\begin{DoxyCompactList}\small\item\em Unsubscribes Mouse interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{mouse_8h_aa9202c3a6ed6ca6aabddde76974b4725}{read\+Status\+Byte}} ()
+\begin{DoxyCompactList}\small\item\em Reads the mouse status byte. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{mouse_8h_a47a45f8c7f3fb6ac5e856f1e14071e69}{read\+Packet}} ()
+\begin{DoxyCompactList}\small\item\em Reads and parses the packet from the mouse output buffer. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{mouse_8h_aeff6e8956d863ef6147b8c9475422574}{update\+\_\+mouse}} ()
+\begin{DoxyCompactList}\small\item\em Updates the user interface mouse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Framework for the Mouse. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mouse_8h_a310254edf59d5de2a8df1b2888cc7431}\label{mouse_8h_a310254edf59d5de2a8df1b2888cc7431}} 
+\index{mouse.h@{mouse.h}!mouse\_interrupt\_handler@{mouse\_interrupt\_handler}}
+\index{mouse\_interrupt\_handler@{mouse\_interrupt\_handler}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{mouse\_interrupt\_handler()}{mouse\_interrupt\_handler()}}
+{\footnotesize\ttfamily int() mouse\+\_\+interrupt\+\_\+handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Mouse interrupt handler. Gets the mouse packet and updates the user interface mouse struct. 
+
+\begin{DoxyReturn}{Returns}
+int 0 upon success, non-\/zero otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mouse_8h_a47a45f8c7f3fb6ac5e856f1e14071e69}\label{mouse_8h_a47a45f8c7f3fb6ac5e856f1e14071e69}} 
+\index{mouse.h@{mouse.h}!readPacket@{readPacket}}
+\index{readPacket@{readPacket}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{readPacket()}{readPacket()}}
+{\footnotesize\ttfamily int() read\+Packet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reads and parses the packet from the mouse output buffer. 
+
+\begin{DoxyReturn}{Returns}
+int 0 upon success, non-\/zero otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mouse_8h_aa9202c3a6ed6ca6aabddde76974b4725}\label{mouse_8h_aa9202c3a6ed6ca6aabddde76974b4725}} 
+\index{mouse.h@{mouse.h}!readStatusByte@{readStatusByte}}
+\index{readStatusByte@{readStatusByte}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{readStatusByte()}{readStatusByte()}}
+{\footnotesize\ttfamily int() read\+Status\+Byte (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reads the mouse status byte. 
+
+\begin{DoxyReturn}{Returns}
+int 0 upon success, non-\/zero otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mouse_8h_af9674903e38c0378821477f9be3e0b2e}\label{mouse_8h_af9674903e38c0378821477f9be3e0b2e}} 
+\index{mouse.h@{mouse.h}!subscribe\_mouse\_int@{subscribe\_mouse\_int}}
+\index{subscribe\_mouse\_int@{subscribe\_mouse\_int}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{subscribe\_mouse\_int()}{subscribe\_mouse\_int()}}
+{\footnotesize\ttfamily int() subscribe\+\_\+mouse\+\_\+int (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{bit\+\_\+no }\end{DoxyParamCaption})}
+
+
+
+Subscribes and enables Mouse interrupts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bit\+\_\+no} & Variable to store the mouse\textquotesingle{}s hook id correspondent bit number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 0 upon success, non-\/zero otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mouse_8h_a4c04b6e71466c545f39ca49a830e0779}\label{mouse_8h_a4c04b6e71466c545f39ca49a830e0779}} 
+\index{mouse.h@{mouse.h}!unsubscribe\_mouse\_int@{unsubscribe\_mouse\_int}}
+\index{unsubscribe\_mouse\_int@{unsubscribe\_mouse\_int}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{unsubscribe\_mouse\_int()}{unsubscribe\_mouse\_int()}}
+{\footnotesize\ttfamily int() unsubscribe\+\_\+mouse\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Unsubscribes Mouse interrupts. 
+
+\begin{DoxyReturn}{Returns}
+int 0 upon success, non-\/zero otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{mouse_8h_aeff6e8956d863ef6147b8c9475422574}\label{mouse_8h_aeff6e8956d863ef6147b8c9475422574}} 
+\index{mouse.h@{mouse.h}!update\_mouse@{update\_mouse}}
+\index{update\_mouse@{update\_mouse}!mouse.h@{mouse.h}}
+\doxysubsubsection{\texorpdfstring{update\_mouse()}{update\_mouse()}}
+{\footnotesize\ttfamily int() update\+\_\+mouse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates the user interface mouse. 
+
+\begin{DoxyReturn}{Returns}
+int 0 upon success, non-\/zero otherwise 
+\end{DoxyReturn}

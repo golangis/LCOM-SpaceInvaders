@@ -1,35 +1,105 @@
 \hypertarget{video_8h_source}{}\doxysection{video.\+h}
 \label{video_8h_source}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/video/video.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/video/video.h}}
-
+\mbox{\hyperlink{video_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef VIDEO\_H}}
 \DoxyCodeLine{2 \textcolor{preprocessor}{\#define VIDEO\_H}}
 \DoxyCodeLine{3 }
-\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <lcom/lcf.h>}}
-\DoxyCodeLine{5 }
-\DoxyCodeLine{6 \textcolor{keywordtype}{unsigned} h\_res;}
-\DoxyCodeLine{7 \textcolor{keywordtype}{unsigned} v\_res;}
-\DoxyCodeLine{8 \textcolor{keywordtype}{unsigned} bits\_per\_pixel;}
-\DoxyCodeLine{9 \textcolor{keywordtype}{unsigned} bytes\_per\_pixel;}
-\DoxyCodeLine{10 }
-\DoxyCodeLine{11 uint8\_t RedMaskSize;}
-\DoxyCodeLine{12 uint8\_t GreenMaskSize;}
-\DoxyCodeLine{13 uint8\_t BlueMaskSize;}
-\DoxyCodeLine{14 }
-\DoxyCodeLine{15 uint8\_t RedFieldPosition;}
-\DoxyCodeLine{16 uint8\_t GreenFieldPosition;}
-\DoxyCodeLine{17 uint8\_t BlueFieldPosition;}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <lcom/lcf.h>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keywordtype}{unsigned} h\_res;}
+\DoxyCodeLine{15 \textcolor{keywordtype}{unsigned} v\_res;}
+\DoxyCodeLine{16 \textcolor{keywordtype}{unsigned} bits\_per\_pixel;}
+\DoxyCodeLine{17 \textcolor{keywordtype}{unsigned} bytes\_per\_pixel;}
 \DoxyCodeLine{18 }
-\DoxyCodeLine{19 \textcolor{keywordtype}{char}* video\_mem;}
-\DoxyCodeLine{20 uint8\_t* video\_buffer;}
-\DoxyCodeLine{21 }
-\DoxyCodeLine{22 \textcolor{keywordtype}{void}* (video\_init)(uint16\_t mode);}
-\DoxyCodeLine{23 void (video\_draw\_hline)(uint16\_t x, uint16\_t y, uint16\_t len, uint32\_t color);}
-\DoxyCodeLine{24 void (video\_draw\_rectangle)(uint16\_t x, uint16\_t y, uint16\_t width, uint16\_t height, uint32\_t color);}
-\DoxyCodeLine{25 void (video\_draw\_pixel)(uint16\_t x, uint16\_t y, uint32\_t color);}
-\DoxyCodeLine{26 void (video\_draw\_xpm)(uint16\_t x, uint16\_t y, xpm\_map\_t xpm);}
-\DoxyCodeLine{27 void (video\_draw\_score)(uint16\_t x, uint16\_t y, \textcolor{keywordtype}{int} score);}
-\DoxyCodeLine{28 }
-\DoxyCodeLine{29 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{19 uint8\_t RedMaskSize;}
+\DoxyCodeLine{20 uint8\_t GreenMaskSize;}
+\DoxyCodeLine{21 uint8\_t BlueMaskSize;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 uint8\_t RedFieldPosition;}
+\DoxyCodeLine{24 uint8\_t GreenFieldPosition;}
+\DoxyCodeLine{25 uint8\_t BlueFieldPosition;}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keywordtype}{char}* video\_mem;}
+\DoxyCodeLine{28 uint8\_t* video\_buffer;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}xpm/algarisms.xpm"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}xpm/aliens.xpm"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include "{}xpm/heart.xpm"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#include "{}xpm/logo.xpm"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#include "{}xpm/mouse.xpm"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#include "{}xpm/play-\/button.xpm"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#include "{}xpm/rocket.xpm"{}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#include "{}xpm/score.xpm"{}}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include "{}xpm/shield.xpm"{}}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}xpm/shot.xpm"{}}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 xpm\_image\_t zero\_img;}
+\DoxyCodeLine{42 xpm\_image\_t one\_img;}
+\DoxyCodeLine{43 xpm\_image\_t two\_img;}
+\DoxyCodeLine{44 xpm\_image\_t three\_img;}
+\DoxyCodeLine{45 xpm\_image\_t four\_img;}
+\DoxyCodeLine{46 xpm\_image\_t five\_img;}
+\DoxyCodeLine{47 xpm\_image\_t six\_img;}
+\DoxyCodeLine{48 xpm\_image\_t seven\_img;}
+\DoxyCodeLine{49 xpm\_image\_t eight\_img;}
+\DoxyCodeLine{50 xpm\_image\_t nine\_img;}
+\DoxyCodeLine{51 xpm\_image\_t alien1\_img;}
+\DoxyCodeLine{52 xpm\_image\_t alien2\_img;}
+\DoxyCodeLine{53 xpm\_image\_t alien3\_img;}
+\DoxyCodeLine{54 xpm\_image\_t alien4\_img;}
+\DoxyCodeLine{55 xpm\_image\_t alien5\_img;}
+\DoxyCodeLine{56 xpm\_image\_t heart\_img;}
+\DoxyCodeLine{57 xpm\_image\_t heart\_bad\_img;}
+\DoxyCodeLine{58 xpm\_image\_t logo\_img;}
+\DoxyCodeLine{59 xpm\_image\_t mouse\_img;}
+\DoxyCodeLine{60 xpm\_image\_t play\_button\_img;}
+\DoxyCodeLine{61 xpm\_image\_t rocket\_img;}
+\DoxyCodeLine{62 xpm\_image\_t score\_img;}
+\DoxyCodeLine{63 xpm\_image\_t shield3\_img;}
+\DoxyCodeLine{64 xpm\_image\_t shield2\_img;}
+\DoxyCodeLine{65 xpm\_image\_t shield1\_img;}
+\DoxyCodeLine{66 xpm\_image\_t ship\_shot\_img;}
+\DoxyCodeLine{67 xpm\_image\_t alien\_shot\_img;}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 uint8\_t* zero\_map;}
+\DoxyCodeLine{70 uint8\_t* one\_map;}
+\DoxyCodeLine{71 uint8\_t* two\_map;}
+\DoxyCodeLine{72 uint8\_t* three\_map;}
+\DoxyCodeLine{73 uint8\_t* four\_map;}
+\DoxyCodeLine{74 uint8\_t* five\_map;}
+\DoxyCodeLine{75 uint8\_t* six\_map;}
+\DoxyCodeLine{76 uint8\_t* seven\_map;}
+\DoxyCodeLine{77 uint8\_t* eight\_map;}
+\DoxyCodeLine{78 uint8\_t* nine\_map;}
+\DoxyCodeLine{79 uint8\_t* alien1\_map;}
+\DoxyCodeLine{80 uint8\_t* alien2\_map;}
+\DoxyCodeLine{81 uint8\_t* alien3\_map;}
+\DoxyCodeLine{82 uint8\_t* alien4\_map;}
+\DoxyCodeLine{83 uint8\_t* alien5\_map;}
+\DoxyCodeLine{84 uint8\_t* heart\_map;}
+\DoxyCodeLine{85 uint8\_t* heart\_bad\_map;}
+\DoxyCodeLine{86 uint8\_t* logo\_map;}
+\DoxyCodeLine{87 uint8\_t* mouse\_map;}
+\DoxyCodeLine{88 uint8\_t* play\_button\_map;}
+\DoxyCodeLine{89 uint8\_t* rocket\_map;}
+\DoxyCodeLine{90 uint8\_t* score\_map;}
+\DoxyCodeLine{91 uint8\_t* shield3\_map;}
+\DoxyCodeLine{92 uint8\_t* shield2\_map;}
+\DoxyCodeLine{93 uint8\_t* shield1\_map;}
+\DoxyCodeLine{94 uint8\_t* ship\_shot\_map;}
+\DoxyCodeLine{95 uint8\_t* alien\_shot\_map;}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{101 \textcolor{keywordtype}{void}* (\mbox{\hyperlink{video_8h_a27f9047879cee35f24ae69729e89c732}{video\_init}})(uint16\_t mode);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{109 void (\mbox{\hyperlink{video_8h_ab0332ee565f978f725c021b4eb35958e}{video\_draw\_pixel}})(uint16\_t x, uint16\_t y, uint32\_t color);}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{115 void (\mbox{\hyperlink{video_8h_a43eca9753118b540d01327d3c4a7068c}{video\_load\_xpms}})();}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{123 void (\mbox{\hyperlink{video_8h_a1d7817e4e5198831c8e33e05a64e8ecf}{video\_draw\_xpm}})(uint16\_t x, uint16\_t y, \textcolor{keywordtype}{char} xpm[]);}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

@@ -1,0 +1,282 @@
+\hypertarget{alien_8h}{}\doxysection{C\+:/\+Users/\+Pedro/\+Documents/2\+LEIC/2º semestre/\+LC/\+MINIX-\/\+LCOM/shared/proj/src/alien.h File Reference}
+\label{alien_8h}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/alien.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/alien.h}}
+
+
+Represent and manipulate the game\textquotesingle{}s aliens.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}direction.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}framework/video/video.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}shot.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_alien}{Alien}}
+\begin{DoxyCompactList}\small\item\em Represents a Space Invaders alien. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_alien_group}{Alien\+Group}}
+\begin{DoxyCompactList}\small\item\em Represents a group of Space Invaders aliens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$() \mbox{\hyperlink{alien_8h_a4398d0a22fab3bc7954d339f2095e6f3}{init\+Aliens}} ()
+\begin{DoxyCompactList}\small\item\em Initializes a group of aliens. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_alien}{Alien}}() \mbox{\hyperlink{alien_8h_af0a5d39d7904876961a7f25d6756bfec}{init\+Alien}} (int id, int x\+\_\+min, int y\+\_\+min)
+\begin{DoxyCompactList}\small\item\em Initializes an alien with a given id and leftmost upper position. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{alien_8h_a50696a94c059f237747e7676d4216260}{move\+Aliens}} (\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$group, enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} dir)
+\begin{DoxyCompactList}\small\item\em Moves a group of aliens in a given direction. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{alien_8h_ab87b5c2f39f4a07ce9b07c2ec7ffd391}{die\+Alien}} (\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$group, int i)
+\begin{DoxyCompactList}\small\item\em Kills an alien with a given id from a group. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{alien_8h_a7c201ebc707cfcc73bfc1e192b68a815}{shoot\+Alien}} (\mbox{\hyperlink{struct_alien}{Alien}} $\ast$a)
+\begin{DoxyCompactList}\small\item\em Makes an alien shoot. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{alien_8h_a35c41bb91d3e8e061a849102bee1d94d}{shoot\+Aliens}} (\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$group)
+\begin{DoxyCompactList}\small\item\em Makes a random alien within a group shoot. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{alien_8h_a0afbca3680ef3c81cbc646ff9c72cf97}{delete\+Alien\+Shot}} (\mbox{\hyperlink{struct_alien}{Alien}} $\ast$alien, int i)
+\begin{DoxyCompactList}\small\item\em Deletes an alien\textquotesingle{}s shot. \end{DoxyCompactList}\item 
+bool() \mbox{\hyperlink{alien_8h_ab80ac8f04abe3b4517e4cdba3a2ab1c6}{can\+Alien\+Move}} (\mbox{\hyperlink{struct_alien}{Alien}} $\ast$alien, enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} dir)
+\begin{DoxyCompactList}\small\item\em Returns whether an alien can move in a given direction. \end{DoxyCompactList}\item 
+bool() \mbox{\hyperlink{alien_8h_afef33b859fd60a0b119da3b36126a92a}{can\+Alien\+Group\+Move}} (\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$group, enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}} dir)
+\begin{DoxyCompactList}\small\item\em Returns whether a group of aliens can move in a given direction. \end{DoxyCompactList}\item 
+bool() \mbox{\hyperlink{alien_8h_aa87f236305a830686c38d7f99590a333}{was\+IHit\+Alien}} (\mbox{\hyperlink{struct_alien}{Alien}} $\ast$alien, \mbox{\hyperlink{struct_shot}{Shot}} $\ast$shot)
+\begin{DoxyCompactList}\small\item\em Returns whether a given alien was hit by a given shot. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{alien_8h_a33d90e50f1024b2f1c228b70db2d79f7}{hit\+Index}} (\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$group, \mbox{\hyperlink{struct_shot}{Shot}} $\ast$shot)
+\begin{DoxyCompactList}\small\item\em Checks if a given shot hit any alien within a group and returns the index of the hit alien. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{alien_8h_abce7afa217ea827d457307642f4da888}{draw\+Aliens}} (\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$group)
+\begin{DoxyCompactList}\small\item\em Draws a group of aliens. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{alien_8h_a7ae3bd74fbeeefc91a9c410bb42eb85f}{draw\+Alien}} (\mbox{\hyperlink{struct_alien}{Alien}} $\ast$alien)
+\begin{DoxyCompactList}\small\item\em Draws an alien. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represent and manipulate the game\textquotesingle{}s aliens. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{alien_8h_afef33b859fd60a0b119da3b36126a92a}\label{alien_8h_afef33b859fd60a0b119da3b36126a92a}} 
+\index{alien.h@{alien.h}!canAlienGroupMove@{canAlienGroupMove}}
+\index{canAlienGroupMove@{canAlienGroupMove}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{canAlienGroupMove()}{canAlienGroupMove()}}
+{\footnotesize\ttfamily bool() can\+Alien\+Group\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$}]{group,  }\item[{enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}}}]{dir }\end{DoxyParamCaption})}
+
+
+
+Returns whether a group of aliens can move in a given direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group} & The group of aliens to check. \\
+\hline
+{\em dir} & The direction to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the group of aliens can move in the given direction. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{alien_8h_ab80ac8f04abe3b4517e4cdba3a2ab1c6}\label{alien_8h_ab80ac8f04abe3b4517e4cdba3a2ab1c6}} 
+\index{alien.h@{alien.h}!canAlienMove@{canAlienMove}}
+\index{canAlienMove@{canAlienMove}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{canAlienMove()}{canAlienMove()}}
+{\footnotesize\ttfamily bool() can\+Alien\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien}{Alien}} $\ast$}]{alien,  }\item[{enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}}}]{dir }\end{DoxyParamCaption})}
+
+
+
+Returns whether an alien can move in a given direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alien} & The alien to check. \\
+\hline
+{\em dir} & The direction to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the alien can move in the given direction. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{alien_8h_a0afbca3680ef3c81cbc646ff9c72cf97}\label{alien_8h_a0afbca3680ef3c81cbc646ff9c72cf97}} 
+\index{alien.h@{alien.h}!deleteAlienShot@{deleteAlienShot}}
+\index{deleteAlienShot@{deleteAlienShot}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{deleteAlienShot()}{deleteAlienShot()}}
+{\footnotesize\ttfamily void() delete\+Alien\+Shot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien}{Alien}} $\ast$}]{alien,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Deletes an alien\textquotesingle{}s shot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alien} & The alien that fired the shot. \\
+\hline
+{\em i} & The index of the shot to delete within the alien\textquotesingle{}s shots. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{alien_8h_ab87b5c2f39f4a07ce9b07c2ec7ffd391}\label{alien_8h_ab87b5c2f39f4a07ce9b07c2ec7ffd391}} 
+\index{alien.h@{alien.h}!dieAlien@{dieAlien}}
+\index{dieAlien@{dieAlien}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{dieAlien()}{dieAlien()}}
+{\footnotesize\ttfamily void() die\+Alien (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$}]{group,  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Kills an alien with a given id from a group. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group} & The group of aliens. \\
+\hline
+{\em i} & The id of the alien to kill. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{alien_8h_a7ae3bd74fbeeefc91a9c410bb42eb85f}\label{alien_8h_a7ae3bd74fbeeefc91a9c410bb42eb85f}} 
+\index{alien.h@{alien.h}!drawAlien@{drawAlien}}
+\index{drawAlien@{drawAlien}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{drawAlien()}{drawAlien()}}
+{\footnotesize\ttfamily void() draw\+Alien (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien}{Alien}} $\ast$}]{alien }\end{DoxyParamCaption})}
+
+
+
+Draws an alien. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alien} & The alien to draw. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{alien_8h_abce7afa217ea827d457307642f4da888}\label{alien_8h_abce7afa217ea827d457307642f4da888}} 
+\index{alien.h@{alien.h}!drawAliens@{drawAliens}}
+\index{drawAliens@{drawAliens}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{drawAliens()}{drawAliens()}}
+{\footnotesize\ttfamily void() draw\+Aliens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$}]{group }\end{DoxyParamCaption})}
+
+
+
+Draws a group of aliens. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group} & The group of aliens to draw. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{alien_8h_a33d90e50f1024b2f1c228b70db2d79f7}\label{alien_8h_a33d90e50f1024b2f1c228b70db2d79f7}} 
+\index{alien.h@{alien.h}!hitIndex@{hitIndex}}
+\index{hitIndex@{hitIndex}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{hitIndex()}{hitIndex()}}
+{\footnotesize\ttfamily int() hit\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$}]{group,  }\item[{\mbox{\hyperlink{struct_shot}{Shot}} $\ast$}]{shot }\end{DoxyParamCaption})}
+
+
+
+Checks if a given shot hit any alien within a group and returns the index of the hit alien. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group} & The group of aliens to check. \\
+\hline
+{\em shot} & The shot to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The index of the hit alien or -\/1 if no alive alien was hit. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{alien_8h_af0a5d39d7904876961a7f25d6756bfec}\label{alien_8h_af0a5d39d7904876961a7f25d6756bfec}} 
+\index{alien.h@{alien.h}!initAlien@{initAlien}}
+\index{initAlien@{initAlien}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{initAlien()}{initAlien()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_alien}{Alien}}() init\+Alien (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{x\+\_\+min,  }\item[{int}]{y\+\_\+min }\end{DoxyParamCaption})}
+
+
+
+Initializes an alien with a given id and leftmost upper position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The alien\textquotesingle{}s id. \\
+\hline
+{\em x\+\_\+min} & The alien\textquotesingle{}s minimum x coordinate. \\
+\hline
+{\em y\+\_\+min} & The alien\textquotesingle{}s minimum y coordinate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The initialized alien. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{alien_8h_a4398d0a22fab3bc7954d339f2095e6f3}\label{alien_8h_a4398d0a22fab3bc7954d339f2095e6f3}} 
+\index{alien.h@{alien.h}!initAliens@{initAliens}}
+\index{initAliens@{initAliens}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{initAliens()}{initAliens()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$() init\+Aliens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes a group of aliens. 
+
+\begin{DoxyReturn}{Returns}
+The initialized group of aliens. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{alien_8h_a50696a94c059f237747e7676d4216260}\label{alien_8h_a50696a94c059f237747e7676d4216260}} 
+\index{alien.h@{alien.h}!moveAliens@{moveAliens}}
+\index{moveAliens@{moveAliens}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{moveAliens()}{moveAliens()}}
+{\footnotesize\ttfamily void() move\+Aliens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$}]{group,  }\item[{enum \mbox{\hyperlink{direction_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction}}}]{dir }\end{DoxyParamCaption})}
+
+
+
+Moves a group of aliens in a given direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group} & The group of aliens to move. \\
+\hline
+{\em dir} & The direction to move the aliens. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{alien_8h_a7c201ebc707cfcc73bfc1e192b68a815}\label{alien_8h_a7c201ebc707cfcc73bfc1e192b68a815}} 
+\index{alien.h@{alien.h}!shootAlien@{shootAlien}}
+\index{shootAlien@{shootAlien}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{shootAlien()}{shootAlien()}}
+{\footnotesize\ttfamily void() shoot\+Alien (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien}{Alien}} $\ast$}]{a }\end{DoxyParamCaption})}
+
+
+
+Makes an alien shoot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & The alien that will fire. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{alien_8h_a35c41bb91d3e8e061a849102bee1d94d}\label{alien_8h_a35c41bb91d3e8e061a849102bee1d94d}} 
+\index{alien.h@{alien.h}!shootAliens@{shootAliens}}
+\index{shootAliens@{shootAliens}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{shootAliens()}{shootAliens()}}
+{\footnotesize\ttfamily void() shoot\+Aliens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien_group}{Alien\+Group}} $\ast$}]{group }\end{DoxyParamCaption})}
+
+
+
+Makes a random alien within a group shoot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em group} & The group of aliens. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{alien_8h_aa87f236305a830686c38d7f99590a333}\label{alien_8h_aa87f236305a830686c38d7f99590a333}} 
+\index{alien.h@{alien.h}!wasIHitAlien@{wasIHitAlien}}
+\index{wasIHitAlien@{wasIHitAlien}!alien.h@{alien.h}}
+\doxysubsubsection{\texorpdfstring{wasIHitAlien()}{wasIHitAlien()}}
+{\footnotesize\ttfamily bool() was\+IHit\+Alien (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_alien}{Alien}} $\ast$}]{alien,  }\item[{\mbox{\hyperlink{struct_shot}{Shot}} $\ast$}]{shot }\end{DoxyParamCaption})}
+
+
+
+Returns whether a given alien was hit by a given shot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alien} & The alien to check. \\
+\hline
+{\em shot} & The shot to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the alien was hit by the shot. 
+\end{DoxyReturn}

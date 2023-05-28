@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 
-#include "framework/keyboard/kbdframework.h"
+#include "framework/keyboard/kbd.h"
 #include "framework/rtc/rtc.h"
 #include "framework/timer/timer.h"
 #include "framework/mouse/mouse.h"
@@ -80,6 +80,7 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
         timer_interrupt_handler();
         if (timer_counter % 2 == 0) {
             update(&no_lives);
+<<<<<<< proj/src/main.c
             if(no_lives == 1) {
                 Score* scores = loadScores();
                 rtc_time time;
@@ -88,6 +89,9 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
                 if (processScore(score, scores)) storeScores(scores);
                 *state = mainMenu;
             }
+=======
+            if(no_lives == 1) *state = gameOverMenu;
+>>>>>>> proj/src/main.c
             draw();
         }
         if (timer_counter % 40 == 0) *can_shoot = true;
@@ -177,6 +181,43 @@ void (mainMenu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* sc
     }
 }
 
+void gameOverMenu_loop(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state){
+    if (msg.m_notify.interrupts & ipc_timer) {
+        timer_interrupt_handler();
+        if (timer_counter % 2 == 0) drawGameOverMenu();
+        if (timer_counter >= 600) timer_counter = 0;
+    }
+    if (msg.m_notify.interrupts & ipc_keyboard) {
+        kbc_ih();
+        if (*two_bytes) {
+            scan[1] = data;
+            *two_bytes = false;
+            *make = data & BIT(7);
+            *key = kbd_get_key(!make, 2, scan);
+            switch (*key) {
+                case kbd_space: *state = mainMenu; break;
+                case kbd_esc: *state = quit; break;
+                default: break;
+            }
+        } else {
+            scan[0] = data;
+            *make = data & BIT(7);
+            if (data == KBD_TWO_BYTE) *two_bytes = true;
+            else {
+                *key = kbd_get_key(!make, 1, scan);
+                switch (*key) {
+                    case kbd_space: *state = mainMenu; break;
+                    case kbd_esc: *state = quit; break;
+                    default: break;
+                }  
+            }
+        }
+    }
+    if (msg.m_notify.interrupts & ipc_mouse) {
+        mouse_interrupt_handler();
+    }
+}
+
 int (proj_main_loop)(int argc, char **argv) {
     int ipc_status;
     message msg;
@@ -233,8 +274,13 @@ int (proj_main_loop)(int argc, char **argv) {
                         case highscores:
                             highscores_loop(&make, &key, &two_bytes, scan, ipc_timer, ipc_keyboard, ipc_mouse, msg, &state, hs);
                             break;
+                        case quit:
+                            break;
+                        case gameOverMenu:
+                            gameOverMenu_loop(&make, &key, &two_bytes, scan, ipc_timer, ipc_keyboard, ipc_mouse, msg, &state);
+                            break;
                         default:
-                            break;    
+                            break;
                     }
                     break;
                 default:

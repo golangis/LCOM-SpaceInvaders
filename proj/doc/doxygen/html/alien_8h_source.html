@@ -76,55 +76,81 @@ $(function() {
   <div class="headertitle"><div class="title">alien.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef ALIEN_H</span></div>
+<a href="alien_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef ALIEN_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define ALIEN_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;direction.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;xpm/aliens.xpm&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;framework/video/video.h&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;shot.h&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct_alien.html">   15</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordtype">int</span> id;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">int</span> x_min;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">int</span> y_min;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">int</span> x_max;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">int</span> y_max;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_struct" href="struct_shot.html">Shot</a>* shots;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">int</span> shots_no;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">bool</span> alive;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>} <a class="code hl_struct" href="struct_alien.html">Alien</a>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="struct_alien_group.html">   26</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_struct" href="struct_alien.html">Alien</a>* set;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">int</span> size;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">int</span> alive_no;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>} <a class="code hl_struct" href="struct_alien_group.html">AlienGroup</a>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><a class="code hl_struct" href="struct_alien_group.html">AlienGroup</a>* (initAliens)();</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><a class="code hl_struct" href="struct_alien.html">Alien</a> (initAlien)(<span class="keywordtype">int</span> id, <span class="keywordtype">int</span> x_min, <span class="keywordtype">int</span> y_min);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>void (moveAliens)(<a class="code hl_struct" href="struct_alien_group.html">AlienGroup</a>* group, <span class="keyword">enum</span> direction dir);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>void (dieAlien)(<a class="code hl_struct" href="struct_alien_group.html">AlienGroup</a>* group, <span class="keywordtype">int</span> i);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>void (shootAlien)(<a class="code hl_struct" href="struct_alien.html">Alien</a>* a);</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>void (shootAliens)(<a class="code hl_struct" href="struct_alien_group.html">AlienGroup</a>* group);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>void (deleteAlienShot)(<a class="code hl_struct" href="struct_alien.html">Alien</a>* alien, <span class="keywordtype">int</span> i);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>bool (canAlienMove)(<a class="code hl_struct" href="struct_alien.html">Alien</a>* alien, <span class="keyword">enum</span> direction dir);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>bool (canAlienGroupMove)(<a class="code hl_struct" href="struct_alien_group.html">AlienGroup</a>* group, <span class="keyword">enum</span> direction dir);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>bool (wasIHitAlien)(<a class="code hl_struct" href="struct_alien.html">Alien</a>* alien, <a class="code hl_struct" href="struct_shot.html">Shot</a>* shot);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>int (hitIndex)(<a class="code hl_struct" href="struct_alien_group.html">AlienGroup</a>* group, <a class="code hl_struct" href="struct_shot.html">Shot</a>* shot);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>void (drawAliens)(<a class="code hl_struct" href="struct_alien_group.html">AlienGroup</a>* group);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>void (drawAlien)(<a class="code hl_struct" href="struct_alien.html">Alien</a>* alien);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="astruct_alien_group_html"><div class="ttname"><a href="struct_alien_group.html">AlienGroup</a></div><div class="ttdef"><b>Definition:</b> alien.h:26</div></div>
-<div class="ttc" id="astruct_alien_html"><div class="ttname"><a href="struct_alien.html">Alien</a></div><div class="ttdef"><b>Definition:</b> alien.h:15</div></div>
-<div class="ttc" id="astruct_shot_html"><div class="ttname"><a href="struct_shot.html">Shot</a></div><div class="ttdef"><b>Definition:</b> shot.h:13</div></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="direction_8h.html">direction.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="video_8h.html">framework/video/video.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;shot.h&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_alien.html">   22</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">int</span> id;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">int</span> x_min;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">int</span> y_min;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">int</span> x_max;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">int</span> y_max;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_struct" href="struct_shot.html">Shot</a>* shots;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">int</span> shots_no;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">bool</span> alive;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>} <a class="code hl_struct" href="struct_alien.html">Alien</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="struct_alien_group.html">   37</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_struct" href="struct_alien.html">Alien</a>* set;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">int</span> size;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">int</span> alive_no;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>} <a class="code hl_struct" href="struct_alien_group.html">AlienGroup</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><a class="code hl_struct" href="struct_alien_group.html">AlienGroup</a>* (<a class="code hl_function" href="alien_8h.html#a4398d0a22fab3bc7954d339f2095e6f3">initAliens</a>)();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><a class="code hl_struct" href="struct_alien.html">Alien</a> (<a class="code hl_function" href="alien_8h.html#af0a5d39d7904876961a7f25d6756bfec">initAlien</a>)(<span class="keywordtype">int</span> id, <span class="keywordtype">int</span> x_min, <span class="keywordtype">int</span> y_min);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>void (<a class="code hl_function" href="alien_8h.html#a50696a94c059f237747e7676d4216260">moveAliens</a>)(<a class="code hl_struct" href="struct_alien_group.html">AlienGroup</a>* group, <span class="keyword">enum</span> <a class="code hl_enumeration" href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098">direction</a> dir);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>void (<a class="code hl_function" href="alien_8h.html#ab87b5c2f39f4a07ce9b07c2ec7ffd391">dieAlien</a>)(<a class="code hl_struct" href="struct_alien_group.html">AlienGroup</a>* group, <span class="keywordtype">int</span> i);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>void (<a class="code hl_function" href="alien_8h.html#a7c201ebc707cfcc73bfc1e192b68a815">shootAlien</a>)(<a class="code hl_struct" href="struct_alien.html">Alien</a>* a);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>void (<a class="code hl_function" href="alien_8h.html#a35c41bb91d3e8e061a849102bee1d94d">shootAliens</a>)(<a class="code hl_struct" href="struct_alien_group.html">AlienGroup</a>* group);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>void (<a class="code hl_function" href="alien_8h.html#a0afbca3680ef3c81cbc646ff9c72cf97">deleteAlienShot</a>)(<a class="code hl_struct" href="struct_alien.html">Alien</a>* alien, <span class="keywordtype">int</span> i);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>bool (<a class="code hl_function" href="alien_8h.html#ab80ac8f04abe3b4517e4cdba3a2ab1c6">canAlienMove</a>)(<a class="code hl_struct" href="struct_alien.html">Alien</a>* alien, <span class="keyword">enum</span> <a class="code hl_enumeration" href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098">direction</a> dir);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>bool (<a class="code hl_function" href="alien_8h.html#afef33b859fd60a0b119da3b36126a92a">canAlienGroupMove</a>)(<a class="code hl_struct" href="struct_alien_group.html">AlienGroup</a>* group, <span class="keyword">enum</span> <a class="code hl_enumeration" href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098">direction</a> dir);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>bool (<a class="code hl_function" href="alien_8h.html#aa87f236305a830686c38d7f99590a333">wasIHitAlien</a>)(<a class="code hl_struct" href="struct_alien.html">Alien</a>* alien, <a class="code hl_struct" href="struct_shot.html">Shot</a>* shot);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>int (<a class="code hl_function" href="alien_8h.html#a33d90e50f1024b2f1c228b70db2d79f7">hitIndex</a>)(<a class="code hl_struct" href="struct_alien_group.html">AlienGroup</a>* group, <a class="code hl_struct" href="struct_shot.html">Shot</a>* shot);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>void (<a class="code hl_function" href="alien_8h.html#abce7afa217ea827d457307642f4da888">drawAliens</a>)(<a class="code hl_struct" href="struct_alien_group.html">AlienGroup</a>* group);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>void (<a class="code hl_function" href="alien_8h.html#a7ae3bd74fbeeefc91a9c410bb42eb85f">drawAlien</a>)(<a class="code hl_struct" href="struct_alien.html">Alien</a>* alien);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aalien_8h_html_a0afbca3680ef3c81cbc646ff9c72cf97"><div class="ttname"><a href="alien_8h.html#a0afbca3680ef3c81cbc646ff9c72cf97">deleteAlienShot</a></div><div class="ttdeci">void() deleteAlienShot(Alien *alien, int i)</div><div class="ttdoc">Deletes an alien's shot.</div><div class="ttdef"><b>Definition:</b> alien.c:84</div></div>
+<div class="ttc" id="aalien_8h_html_a33d90e50f1024b2f1c228b70db2d79f7"><div class="ttname"><a href="alien_8h.html#a33d90e50f1024b2f1c228b70db2d79f7">hitIndex</a></div><div class="ttdeci">int() hitIndex(AlienGroup *group, Shot *shot)</div><div class="ttdoc">Checks if a given shot hit any alien within a group and returns the index of the hit alien.</div><div class="ttdef"><b>Definition:</b> alien.c:117</div></div>
+<div class="ttc" id="aalien_8h_html_a35c41bb91d3e8e061a849102bee1d94d"><div class="ttname"><a href="alien_8h.html#a35c41bb91d3e8e061a849102bee1d94d">shootAliens</a></div><div class="ttdeci">void() shootAliens(AlienGroup *group)</div><div class="ttdoc">Makes a random alien within a group shoot.</div><div class="ttdef"><b>Definition:</b> alien.c:91</div></div>
+<div class="ttc" id="aalien_8h_html_a4398d0a22fab3bc7954d339f2095e6f3"><div class="ttname"><a href="alien_8h.html#a4398d0a22fab3bc7954d339f2095e6f3">initAliens</a></div><div class="ttdeci">AlienGroup *() initAliens()</div><div class="ttdoc">Initializes a group of aliens.</div><div class="ttdef"><b>Definition:</b> alien.c:16</div></div>
+<div class="ttc" id="aalien_8h_html_a50696a94c059f237747e7676d4216260"><div class="ttname"><a href="alien_8h.html#a50696a94c059f237747e7676d4216260">moveAliens</a></div><div class="ttdeci">void() moveAliens(AlienGroup *group, enum direction dir)</div><div class="ttdoc">Moves a group of aliens in a given direction.</div><div class="ttdef"><b>Definition:</b> alien.c:45</div></div>
+<div class="ttc" id="aalien_8h_html_a7ae3bd74fbeeefc91a9c410bb42eb85f"><div class="ttname"><a href="alien_8h.html#a7ae3bd74fbeeefc91a9c410bb42eb85f">drawAlien</a></div><div class="ttdeci">void() drawAlien(Alien *alien)</div><div class="ttdoc">Draws an alien.</div><div class="ttdef"><b>Definition:</b> alien.c:122</div></div>
+<div class="ttc" id="aalien_8h_html_a7c201ebc707cfcc73bfc1e192b68a815"><div class="ttname"><a href="alien_8h.html#a7c201ebc707cfcc73bfc1e192b68a815">shootAlien</a></div><div class="ttdeci">void() shootAlien(Alien *a)</div><div class="ttdoc">Makes an alien shoot.</div><div class="ttdef"><b>Definition:</b> alien.c:74</div></div>
+<div class="ttc" id="aalien_8h_html_aa87f236305a830686c38d7f99590a333"><div class="ttname"><a href="alien_8h.html#aa87f236305a830686c38d7f99590a333">wasIHitAlien</a></div><div class="ttdeci">bool() wasIHitAlien(Alien *alien, Shot *shot)</div><div class="ttdoc">Returns whether a given alien was hit by a given shot.</div><div class="ttdef"><b>Definition:</b> alien.c:113</div></div>
+<div class="ttc" id="aalien_8h_html_ab80ac8f04abe3b4517e4cdba3a2ab1c6"><div class="ttname"><a href="alien_8h.html#ab80ac8f04abe3b4517e4cdba3a2ab1c6">canAlienMove</a></div><div class="ttdeci">bool() canAlienMove(Alien *alien, enum direction dir)</div><div class="ttdoc">Returns whether an alien can move in a given direction.</div><div class="ttdef"><b>Definition:</b> alien.c:98</div></div>
+<div class="ttc" id="aalien_8h_html_ab87b5c2f39f4a07ce9b07c2ec7ffd391"><div class="ttname"><a href="alien_8h.html#ab87b5c2f39f4a07ce9b07c2ec7ffd391">dieAlien</a></div><div class="ttdeci">void() dieAlien(AlienGroup *group, int i)</div><div class="ttdoc">Kills an alien with a given id from a group.</div><div class="ttdef"><b>Definition:</b> alien.c:69</div></div>
+<div class="ttc" id="aalien_8h_html_abce7afa217ea827d457307642f4da888"><div class="ttname"><a href="alien_8h.html#abce7afa217ea827d457307642f4da888">drawAliens</a></div><div class="ttdeci">void() drawAliens(AlienGroup *group)</div><div class="ttdoc">Draws a group of aliens.</div><div class="ttdef"><b>Definition:</b> alien.c:134</div></div>
+<div class="ttc" id="aalien_8h_html_af0a5d39d7904876961a7f25d6756bfec"><div class="ttname"><a href="alien_8h.html#af0a5d39d7904876961a7f25d6756bfec">initAlien</a></div><div class="ttdeci">Alien() initAlien(int id, int x_min, int y_min)</div><div class="ttdoc">Initializes an alien with a given id and leftmost upper position.</div><div class="ttdef"><b>Definition:</b> alien.c:3</div></div>
+<div class="ttc" id="aalien_8h_html_afef33b859fd60a0b119da3b36126a92a"><div class="ttname"><a href="alien_8h.html#afef33b859fd60a0b119da3b36126a92a">canAlienGroupMove</a></div><div class="ttdeci">bool() canAlienGroupMove(AlienGroup *group, enum direction dir)</div><div class="ttdoc">Returns whether a group of aliens can move in a given direction.</div><div class="ttdef"><b>Definition:</b> alien.c:108</div></div>
+<div class="ttc" id="adirection_8h_html"><div class="ttname"><a href="direction_8h.html">direction.h</a></div><div class="ttdoc">Enumerated type for a game's movement direction.</div></div>
+<div class="ttc" id="adirection_8h_html_a99f26e6ee9fcd62f75203b5402df8098"><div class="ttname"><a href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098">direction</a></div><div class="ttdeci">direction</div><div class="ttdoc">Enumerated type for a game's movement direction.</div><div class="ttdef"><b>Definition:</b> direction.h:14</div></div>
+<div class="ttc" id="astruct_alien_group_html"><div class="ttname"><a href="struct_alien_group.html">AlienGroup</a></div><div class="ttdoc">Represents a group of Space Invaders aliens.</div><div class="ttdef"><b>Definition:</b> alien.h:37</div></div>
+<div class="ttc" id="astruct_alien_html"><div class="ttname"><a href="struct_alien.html">Alien</a></div><div class="ttdoc">Represents a Space Invaders alien.</div><div class="ttdef"><b>Definition:</b> alien.h:22</div></div>
+<div class="ttc" id="astruct_shot_html"><div class="ttname"><a href="struct_shot.html">Shot</a></div><div class="ttdef"><b>Definition:</b> shot.h:11</div></div>
+<div class="ttc" id="avideo_8h_html"><div class="ttname"><a href="video_8h.html">video.h</a></div><div class="ttdoc">Functions for programming the video card. Also contains variables to store the xpm images and maps dr...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

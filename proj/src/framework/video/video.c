@@ -61,14 +61,6 @@ void (video_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
     }
 }
 
-void (video_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
-    for (uint16_t i = 0; i < len; i++) video_draw_pixel(x+i, y, color);
-}
-
-void (video_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color) {
-    for (uint16_t i = 0; i < height; i++) video_draw_hline(x, y+i, width, color);
-}
-
 void (video_load_xpms)() {
     h_map = xpm_load(h_xpm, XPM_8_8_8, &h_img);
     slash_map = xpm_load(slash_xpm, XPM_8_8_8, &slash_img);
@@ -99,6 +91,7 @@ void (video_load_xpms)() {
     shield1_map = xpm_load(shield1_xpm, XPM_8_8_8, &shield1_img);
     ship_shot_map = xpm_load(ship_shot_xpm, XPM_8_8_8, &ship_shot_img);
     alien_shot_map = xpm_load(alien_shot_xpm, XPM_8_8_8, &alien_shot_img);
+    gameOver_map = xpm_load(gameOver_xpm, XPM_8_8_8, &gameOver_img);
 }
 
 void (video_draw_xpm)(uint16_t x, uint16_t y, char xpm[]) {
@@ -192,7 +185,11 @@ void (video_draw_xpm)(uint16_t x, uint16_t y, char xpm[]) {
     } else if (strcmp(xpm, "alien_shot") == 0) {
         map = alien_shot_map;
         img = alien_shot_img;
-    } else return;
+    } else if (strcmp(xpm, "gameOver") == 0) {
+        map = gameOver_map;
+        img = gameOver_img;
+    }    
+    else return;
 
     for (uint16_t i = 0; i < img.width; i++) {
         for (uint16_t j = 0; j < img.height; j++) {

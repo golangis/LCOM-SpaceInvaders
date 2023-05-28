@@ -79,39 +79,41 @@ $(function() {
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef PLAYER_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define PLAYER_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;direction.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="direction_8h.html">direction.h</a>&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;shot.h&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;framework/video/video.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;xpm/rocket.xpm&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;xpm/SCORE.xpm&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;xpm/um.xpm&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;xpm/dois.xpm&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_player.html">   13</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordtype">int</span> x_min;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">int</span> y_min;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordtype">int</span> x_max;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">int</span> y_max;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">int</span> lives;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">int</span> score;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_struct" href="struct_shot.html">Shot</a>* shots;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">int</span> shots_no;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>} <a class="code hl_struct" href="struct_player.html">Player</a>;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><a class="code hl_struct" href="struct_player.html">Player</a>* (initPlayer)();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>void (movePlayer)(<a class="code hl_struct" href="struct_player.html">Player</a>* ship, <span class="keyword">enum</span> direction dir);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>bool (canPlayerMove)(<a class="code hl_struct" href="struct_player.html">Player</a>* ship, <span class="keyword">enum</span> direction dir);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>void (fire)(<a class="code hl_struct" href="struct_player.html">Player</a>* ship);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>void (looseLife)(<a class="code hl_struct" href="struct_player.html">Player</a>* ship);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>void (deletePlayerShot)(<a class="code hl_struct" href="struct_player.html">Player</a>* ship, <span class="keywordtype">int</span> i);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>void (drawPlayer)(<a class="code hl_struct" href="struct_player.html">Player</a>* ship);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>void (incrementScore)(<a class="code hl_struct" href="struct_player.html">Player</a>* ship, <span class="keywordtype">int</span> id);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>void (drawScore)(<a class="code hl_struct" href="struct_player.html">Player</a>* ship);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="astruct_player_html"><div class="ttname"><a href="struct_player.html">Player</a></div><div class="ttdef"><b>Definition:</b> player.h:13</div></div>
-<div class="ttc" id="astruct_shot_html"><div class="ttname"><a href="struct_shot.html">Shot</a></div><div class="ttdef"><b>Definition:</b> shot.h:13</div></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="video_8h.html">framework/video/video.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="struct_player.html">    9</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">int</span> x_min;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">int</span> y_min;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">int</span> x_max;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">int</span> y_max;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordtype">int</span> lives;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">int</span> score;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_struct" href="struct_shot.html">Shot</a>* shots;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">int</span> shots_no;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>} <a class="code hl_struct" href="struct_player.html">Player</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><a class="code hl_struct" href="struct_player.html">Player</a>* (initPlayer)();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>void (movePlayer)(<a class="code hl_struct" href="struct_player.html">Player</a>* ship, <span class="keyword">enum</span> <a class="code hl_enumeration" href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098">direction</a> dir);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>bool (canPlayerMove)(<a class="code hl_struct" href="struct_player.html">Player</a>* ship, <span class="keyword">enum</span> <a class="code hl_enumeration" href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098">direction</a> dir);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>void (fire)(<a class="code hl_struct" href="struct_player.html">Player</a>* ship);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>void (looseLife)(<a class="code hl_struct" href="struct_player.html">Player</a>* ship);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>void (deletePlayerShot)(<a class="code hl_struct" href="struct_player.html">Player</a>* ship, <span class="keywordtype">int</span> i);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>void (drawPlayer)(<a class="code hl_struct" href="struct_player.html">Player</a>* ship);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>void (incrementScore)(<a class="code hl_struct" href="struct_player.html">Player</a>* ship, <span class="keywordtype">int</span> id);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>void (drawScore)(<a class="code hl_struct" href="struct_player.html">Player</a>* ship);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>void (draw_score_aux)(uint16_t x, uint16_t y, <span class="keywordtype">int</span> score);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>void (loop_draw_score_aux)(uint16_t x, uint16_t y, <span class="keywordtype">int</span> score);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>void (drawLives)(<span class="keywordtype">int</span> lives);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="adirection_8h_html"><div class="ttname"><a href="direction_8h.html">direction.h</a></div><div class="ttdoc">Enumerated type for a game's movement direction.</div></div>
+<div class="ttc" id="adirection_8h_html_a99f26e6ee9fcd62f75203b5402df8098"><div class="ttname"><a href="direction_8h.html#a99f26e6ee9fcd62f75203b5402df8098">direction</a></div><div class="ttdeci">direction</div><div class="ttdoc">Enumerated type for a game's movement direction.</div><div class="ttdef"><b>Definition:</b> direction.h:14</div></div>
+<div class="ttc" id="astruct_player_html"><div class="ttname"><a href="struct_player.html">Player</a></div><div class="ttdef"><b>Definition:</b> player.h:9</div></div>
+<div class="ttc" id="astruct_shot_html"><div class="ttname"><a href="struct_shot.html">Shot</a></div><div class="ttdef"><b>Definition:</b> shot.h:11</div></div>
+<div class="ttc" id="avideo_8h_html"><div class="ttname"><a href="video_8h.html">video.h</a></div><div class="ttdoc">Functions for programming the video card. Also contains variables to store the xpm images and maps dr...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

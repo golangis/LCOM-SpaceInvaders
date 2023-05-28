@@ -1,0 +1,302 @@
+\hypertarget{video_8h}{}\doxysection{C\+:/\+Users/\+Pedro/\+Documents/2\+LEIC/2º semestre/\+LC/\+MINIX-\/\+LCOM/shared/proj/src/framework/video/video.h File Reference}
+\label{video_8h}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/video/video.h@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/framework/video/video.h}}
+
+
+Functions for programming the video card. Also contains variables to store the xpm images and maps drawn in the app.  
+
+
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}xpm/algarisms.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xpm/aliens.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xpm/heart.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xpm/logo.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xpm/mouse.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xpm/play-\/button.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xpm/rocket.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xpm/score.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xpm/shield.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xpm/shot.\+xpm\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$() \mbox{\hyperlink{video_8h_a27f9047879cee35f24ae69729e89c732}{video\+\_\+init}} (uint16\+\_\+t mode)
+\begin{DoxyCompactList}\small\item\em Initializes the video card in the given mode and maps the VRAM. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{video_8h_ab0332ee565f978f725c021b4eb35958e}{video\+\_\+draw\+\_\+pixel}} (uint16\+\_\+t x, uint16\+\_\+t y, uint32\+\_\+t color)
+\begin{DoxyCompactList}\small\item\em Sets the pixel at the given coordinates to the given color. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{video_8h_a43eca9753118b540d01327d3c4a7068c}{video\+\_\+load\+\_\+xpms}} ()
+\begin{DoxyCompactList}\small\item\em Loads the XPM images used in the app. \end{DoxyCompactList}\item 
+void() \mbox{\hyperlink{video_8h_a1d7817e4e5198831c8e33e05a64e8ecf}{video\+\_\+draw\+\_\+xpm}} (uint16\+\_\+t x, uint16\+\_\+t y, char xpm\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Draws a XPM image with the leftmost upper pixel at the given coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{video_8h_a43e7e5a0a8f9069e6413b2066ca52f3e}\label{video_8h_a43e7e5a0a8f9069e6413b2066ca52f3e}} 
+unsigned {\bfseries h\+\_\+res}
+\item 
+\mbox{\Hypertarget{video_8h_a5bda1b499253a8fbf3cab646f8760391}\label{video_8h_a5bda1b499253a8fbf3cab646f8760391}} 
+unsigned {\bfseries v\+\_\+res}
+\item 
+\mbox{\Hypertarget{video_8h_a89fa3fb58e975d148fcb2413e24b78a1}\label{video_8h_a89fa3fb58e975d148fcb2413e24b78a1}} 
+unsigned {\bfseries bits\+\_\+per\+\_\+pixel}
+\item 
+\mbox{\Hypertarget{video_8h_a144d9a9cabab9de0142a6baee835ca6b}\label{video_8h_a144d9a9cabab9de0142a6baee835ca6b}} 
+unsigned {\bfseries bytes\+\_\+per\+\_\+pixel}
+\item 
+\mbox{\Hypertarget{video_8h_a5e25f6a8eedde631fff577bcf7d4f6f4}\label{video_8h_a5e25f6a8eedde631fff577bcf7d4f6f4}} 
+uint8\+\_\+t {\bfseries Red\+Mask\+Size}
+\item 
+\mbox{\Hypertarget{video_8h_ac7b4df72e505b74493e7d5144cbac743}\label{video_8h_ac7b4df72e505b74493e7d5144cbac743}} 
+uint8\+\_\+t {\bfseries Green\+Mask\+Size}
+\item 
+\mbox{\Hypertarget{video_8h_a84842a6a42e881ce7be87482122bcc4e}\label{video_8h_a84842a6a42e881ce7be87482122bcc4e}} 
+uint8\+\_\+t {\bfseries Blue\+Mask\+Size}
+\item 
+\mbox{\Hypertarget{video_8h_a20cb142b8c1b0a2b41244fef469a11f4}\label{video_8h_a20cb142b8c1b0a2b41244fef469a11f4}} 
+uint8\+\_\+t {\bfseries Red\+Field\+Position}
+\item 
+\mbox{\Hypertarget{video_8h_a602b28f8e5da781eabfd736743a6ea09}\label{video_8h_a602b28f8e5da781eabfd736743a6ea09}} 
+uint8\+\_\+t {\bfseries Green\+Field\+Position}
+\item 
+\mbox{\Hypertarget{video_8h_a4d0396c07a4f07556332fec2b4a6c2bf}\label{video_8h_a4d0396c07a4f07556332fec2b4a6c2bf}} 
+uint8\+\_\+t {\bfseries Blue\+Field\+Position}
+\item 
+\mbox{\Hypertarget{video_8h_a93a24e067b9083bed6fb5c0336fd7a01}\label{video_8h_a93a24e067b9083bed6fb5c0336fd7a01}} 
+char $\ast$ {\bfseries video\+\_\+mem}
+\item 
+\mbox{\Hypertarget{video_8h_af1fd447b511687fa2d2c9d9a38cc8389}\label{video_8h_af1fd447b511687fa2d2c9d9a38cc8389}} 
+uint8\+\_\+t $\ast$ {\bfseries video\+\_\+buffer}
+\item 
+\mbox{\Hypertarget{video_8h_a8d6b586ff9c58e31bb7f89fe593b0496}\label{video_8h_a8d6b586ff9c58e31bb7f89fe593b0496}} 
+xpm\+\_\+image\+\_\+t {\bfseries zero\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_a06a61310265e3b593c52bd2acae6bb5f}\label{video_8h_a06a61310265e3b593c52bd2acae6bb5f}} 
+xpm\+\_\+image\+\_\+t {\bfseries one\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_ac401d5f8271ba289a416e5efb8120e00}\label{video_8h_ac401d5f8271ba289a416e5efb8120e00}} 
+xpm\+\_\+image\+\_\+t {\bfseries two\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_a640afed91f9bb514084a0e125a06409e}\label{video_8h_a640afed91f9bb514084a0e125a06409e}} 
+xpm\+\_\+image\+\_\+t {\bfseries three\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_adc3540163af153a500a6cfb92cc2e3c9}\label{video_8h_adc3540163af153a500a6cfb92cc2e3c9}} 
+xpm\+\_\+image\+\_\+t {\bfseries four\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_a080a61f7d9bc7b8de2c430bf0cc9894d}\label{video_8h_a080a61f7d9bc7b8de2c430bf0cc9894d}} 
+xpm\+\_\+image\+\_\+t {\bfseries five\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_ac54ea75e82fcce67ecf46d5ef51aba96}\label{video_8h_ac54ea75e82fcce67ecf46d5ef51aba96}} 
+xpm\+\_\+image\+\_\+t {\bfseries six\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_ab8fa08e2054134c1bf943c55820b058c}\label{video_8h_ab8fa08e2054134c1bf943c55820b058c}} 
+xpm\+\_\+image\+\_\+t {\bfseries seven\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_a99da0d80d136a98b4e9e41ffe339b49e}\label{video_8h_a99da0d80d136a98b4e9e41ffe339b49e}} 
+xpm\+\_\+image\+\_\+t {\bfseries eight\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_a743045a6c44330fc5ca69e36aa59a774}\label{video_8h_a743045a6c44330fc5ca69e36aa59a774}} 
+xpm\+\_\+image\+\_\+t {\bfseries nine\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_ae47f1e668d703a6eb64c69a90a8c8a80}\label{video_8h_ae47f1e668d703a6eb64c69a90a8c8a80}} 
+xpm\+\_\+image\+\_\+t {\bfseries alien1\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_a3d2b5ee03222e59ec79e5304d7d5f592}\label{video_8h_a3d2b5ee03222e59ec79e5304d7d5f592}} 
+xpm\+\_\+image\+\_\+t {\bfseries alien2\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_aa549f6eaf8a8d17111dd6656408fbfa3}\label{video_8h_aa549f6eaf8a8d17111dd6656408fbfa3}} 
+xpm\+\_\+image\+\_\+t {\bfseries alien3\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_a00dbecc177be352d0dc8bf3c9cac3847}\label{video_8h_a00dbecc177be352d0dc8bf3c9cac3847}} 
+xpm\+\_\+image\+\_\+t {\bfseries alien4\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_ac8cbc2eae4f959a31bb2d620aa526fe9}\label{video_8h_ac8cbc2eae4f959a31bb2d620aa526fe9}} 
+xpm\+\_\+image\+\_\+t {\bfseries alien5\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_ad996f2b351a7b01be54623a52f14f59b}\label{video_8h_ad996f2b351a7b01be54623a52f14f59b}} 
+xpm\+\_\+image\+\_\+t {\bfseries heart\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_a36c54fe7e62c8d42665620385f7592e7}\label{video_8h_a36c54fe7e62c8d42665620385f7592e7}} 
+xpm\+\_\+image\+\_\+t {\bfseries heart\+\_\+bad\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_ad973550294f2aabbd126d632d6fb5054}\label{video_8h_ad973550294f2aabbd126d632d6fb5054}} 
+xpm\+\_\+image\+\_\+t {\bfseries logo\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_ac3106dc5b51827d911b34e5333092dad}\label{video_8h_ac3106dc5b51827d911b34e5333092dad}} 
+xpm\+\_\+image\+\_\+t {\bfseries mouse\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_abd25f542d85b6a1a10b48e425a288f79}\label{video_8h_abd25f542d85b6a1a10b48e425a288f79}} 
+xpm\+\_\+image\+\_\+t {\bfseries play\+\_\+button\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_ae899639fe7d602d422efd041ac67aeae}\label{video_8h_ae899639fe7d602d422efd041ac67aeae}} 
+xpm\+\_\+image\+\_\+t {\bfseries rocket\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_aa00d256e7fe36151a6cbe99d45ad7d38}\label{video_8h_aa00d256e7fe36151a6cbe99d45ad7d38}} 
+xpm\+\_\+image\+\_\+t {\bfseries score\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_af25f3b79c54f5633c10bb2898fc1c16f}\label{video_8h_af25f3b79c54f5633c10bb2898fc1c16f}} 
+xpm\+\_\+image\+\_\+t {\bfseries shield3\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_af3853b59af0176ab62ed1dd05af724bb}\label{video_8h_af3853b59af0176ab62ed1dd05af724bb}} 
+xpm\+\_\+image\+\_\+t {\bfseries shield2\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_a8ab5ef1d3bac28bb39346fdc8868bb86}\label{video_8h_a8ab5ef1d3bac28bb39346fdc8868bb86}} 
+xpm\+\_\+image\+\_\+t {\bfseries shield1\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_a7c174a131a1f1b6a7feff30af70fce32}\label{video_8h_a7c174a131a1f1b6a7feff30af70fce32}} 
+xpm\+\_\+image\+\_\+t {\bfseries ship\+\_\+shot\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_a49647480c99bd0db393dee840f486619}\label{video_8h_a49647480c99bd0db393dee840f486619}} 
+xpm\+\_\+image\+\_\+t {\bfseries alien\+\_\+shot\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_ada7df97dea66a1c784322e068a3488c8}\label{video_8h_ada7df97dea66a1c784322e068a3488c8}} 
+uint8\+\_\+t $\ast$ {\bfseries zero\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_aac4d5543e43fc8e10b83bdcaccebb3d1}\label{video_8h_aac4d5543e43fc8e10b83bdcaccebb3d1}} 
+uint8\+\_\+t $\ast$ {\bfseries one\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_adf523d4cb622b45c0771e11f0cf137b7}\label{video_8h_adf523d4cb622b45c0771e11f0cf137b7}} 
+uint8\+\_\+t $\ast$ {\bfseries two\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_ab944625d9a96eebd71583e33fcaa6a21}\label{video_8h_ab944625d9a96eebd71583e33fcaa6a21}} 
+uint8\+\_\+t $\ast$ {\bfseries three\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_ae0c53b0aa59336bdcb3a33db238f52af}\label{video_8h_ae0c53b0aa59336bdcb3a33db238f52af}} 
+uint8\+\_\+t $\ast$ {\bfseries four\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_ab092c553a2881666bb5beb0806edca89}\label{video_8h_ab092c553a2881666bb5beb0806edca89}} 
+uint8\+\_\+t $\ast$ {\bfseries five\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_ac81b0e393531223f1cad80b7010b9230}\label{video_8h_ac81b0e393531223f1cad80b7010b9230}} 
+uint8\+\_\+t $\ast$ {\bfseries six\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_a02c90b8708ac0c5de41d2187cc504796}\label{video_8h_a02c90b8708ac0c5de41d2187cc504796}} 
+uint8\+\_\+t $\ast$ {\bfseries seven\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_a7c57efcfb3eeaf8fcf12cfda34bdc9ad}\label{video_8h_a7c57efcfb3eeaf8fcf12cfda34bdc9ad}} 
+uint8\+\_\+t $\ast$ {\bfseries eight\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_a609cdf4484611c4d31bc61cfa37b20d9}\label{video_8h_a609cdf4484611c4d31bc61cfa37b20d9}} 
+uint8\+\_\+t $\ast$ {\bfseries nine\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_afe62c2554c5826547c8d66d84998493f}\label{video_8h_afe62c2554c5826547c8d66d84998493f}} 
+uint8\+\_\+t $\ast$ {\bfseries alien1\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_a19fd0888badb9d315210cf5bad4f61b1}\label{video_8h_a19fd0888badb9d315210cf5bad4f61b1}} 
+uint8\+\_\+t $\ast$ {\bfseries alien2\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_a20a82bdde414dce6ef43901d5a90f8df}\label{video_8h_a20a82bdde414dce6ef43901d5a90f8df}} 
+uint8\+\_\+t $\ast$ {\bfseries alien3\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_a97b1e01362e8c96f798ae4dc29f9fda6}\label{video_8h_a97b1e01362e8c96f798ae4dc29f9fda6}} 
+uint8\+\_\+t $\ast$ {\bfseries alien4\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_a215cc0d8e5602756c22f3ae5a2485541}\label{video_8h_a215cc0d8e5602756c22f3ae5a2485541}} 
+uint8\+\_\+t $\ast$ {\bfseries alien5\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_ac49b8356e33c39887cea3c38720adadc}\label{video_8h_ac49b8356e33c39887cea3c38720adadc}} 
+uint8\+\_\+t $\ast$ {\bfseries heart\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_ab8139708ce8d1aa4f73f3e12aff8a8d5}\label{video_8h_ab8139708ce8d1aa4f73f3e12aff8a8d5}} 
+uint8\+\_\+t $\ast$ {\bfseries heart\+\_\+bad\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_a14f78847a9d93ac384c19fc7aa237148}\label{video_8h_a14f78847a9d93ac384c19fc7aa237148}} 
+uint8\+\_\+t $\ast$ {\bfseries logo\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_a40cbec21681250f09fb19b18780e7f9b}\label{video_8h_a40cbec21681250f09fb19b18780e7f9b}} 
+uint8\+\_\+t $\ast$ {\bfseries mouse\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_a53f3e055578ec24a86de76f12c20b40c}\label{video_8h_a53f3e055578ec24a86de76f12c20b40c}} 
+uint8\+\_\+t $\ast$ {\bfseries play\+\_\+button\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_add3e020116f5c7077d4c8393764e0666}\label{video_8h_add3e020116f5c7077d4c8393764e0666}} 
+uint8\+\_\+t $\ast$ {\bfseries rocket\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_a4949c9c8a391f6c9ffc8c8a5af6a9677}\label{video_8h_a4949c9c8a391f6c9ffc8c8a5af6a9677}} 
+uint8\+\_\+t $\ast$ {\bfseries score\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_aaf080ea1e3478c976d5dff880175281b}\label{video_8h_aaf080ea1e3478c976d5dff880175281b}} 
+uint8\+\_\+t $\ast$ {\bfseries shield3\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_ab5027de34a31604633306fa27d2a7d1b}\label{video_8h_ab5027de34a31604633306fa27d2a7d1b}} 
+uint8\+\_\+t $\ast$ {\bfseries shield2\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_ab7dba869404e4d015a54f1b29db5897b}\label{video_8h_ab7dba869404e4d015a54f1b29db5897b}} 
+uint8\+\_\+t $\ast$ {\bfseries shield1\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_a4c0039840e9b09739b674cc9315fb778}\label{video_8h_a4c0039840e9b09739b674cc9315fb778}} 
+uint8\+\_\+t $\ast$ {\bfseries ship\+\_\+shot\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_a9279d77503476c728251fd1c8bc40c9e}\label{video_8h_a9279d77503476c728251fd1c8bc40c9e}} 
+uint8\+\_\+t $\ast$ {\bfseries alien\+\_\+shot\+\_\+map}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions for programming the video card. Also contains variables to store the xpm images and maps drawn in the app. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{video_8h_ab0332ee565f978f725c021b4eb35958e}\label{video_8h_ab0332ee565f978f725c021b4eb35958e}} 
+\index{video.h@{video.h}!video\_draw\_pixel@{video\_draw\_pixel}}
+\index{video\_draw\_pixel@{video\_draw\_pixel}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{video\_draw\_pixel()}{video\_draw\_pixel()}}
+{\footnotesize\ttfamily void() video\+\_\+draw\+\_\+pixel (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint32\+\_\+t}]{color }\end{DoxyParamCaption})}
+
+
+
+Sets the pixel at the given coordinates to the given color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of the pixel. \\
+\hline
+{\em y} & Y coordinate of the pixel. \\
+\hline
+{\em color} & Color to set the pixel to. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{video_8h_a1d7817e4e5198831c8e33e05a64e8ecf}\label{video_8h_a1d7817e4e5198831c8e33e05a64e8ecf}} 
+\index{video.h@{video.h}!video\_draw\_xpm@{video\_draw\_xpm}}
+\index{video\_draw\_xpm@{video\_draw\_xpm}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{video\_draw\_xpm()}{video\_draw\_xpm()}}
+{\footnotesize\ttfamily void() video\+\_\+draw\+\_\+xpm (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{char}]{xpm\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Draws a XPM image with the leftmost upper pixel at the given coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of the leftmost upper pixel. \\
+\hline
+{\em y} & Y coordinate of the leftmost upper pixel. \\
+\hline
+{\em xpm} & Name of the XPM image to draw. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{video_8h_a27f9047879cee35f24ae69729e89c732}\label{video_8h_a27f9047879cee35f24ae69729e89c732}} 
+\index{video.h@{video.h}!video\_init@{video\_init}}
+\index{video\_init@{video\_init}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{video\_init()}{video\_init()}}
+{\footnotesize\ttfamily void $\ast$() video\+\_\+init (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+
+
+Initializes the video card in the given mode and maps the VRAM. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & Mode to initialize the video card in. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{video_8h_a43eca9753118b540d01327d3c4a7068c}\label{video_8h_a43eca9753118b540d01327d3c4a7068c}} 
+\index{video.h@{video.h}!video\_load\_xpms@{video\_load\_xpms}}
+\index{video\_load\_xpms@{video\_load\_xpms}!video.h@{video.h}}
+\doxysubsubsection{\texorpdfstring{video\_load\_xpms()}{video\_load\_xpms()}}
+{\footnotesize\ttfamily void() video\+\_\+load\+\_\+xpms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads the XPM images used in the app. 
+
