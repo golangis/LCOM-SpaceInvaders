@@ -1,0 +1,63 @@
+\hypertarget{main_8c}{}\doxysection{C\+:/\+Users/\+Pedro/\+Documents/2\+LEIC/2º semestre/\+LC/\+MINIX-\/\+LCOM/shared/proj/src/main.c File Reference}
+\label{main_8c}\index{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/main.c@{C:/Users/Pedro/Documents/2LEIC/2º semestre/LC/MINIX-\/LCOM/shared/proj/src/main.c}}
+
+
+General functions that manage the app logic.  
+
+
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}framework/keyboard/kbd.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}framework/rtc/rtc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}framework/timer/timer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}framework/mouse/mouse.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}framework/video/video.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}spaceinvaders.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{main_8c_a31f00e3232e268b63b905a17a164542b}\label{main_8c_a31f00e3232e268b63b905a17a164542b}} 
+void() {\bfseries highscores\+\_\+loop} (bool $\ast$make, enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} $\ast$key, bool $\ast$two\+\_\+bytes, uint8\+\_\+t $\ast$scan, int ipc\+\_\+timer, int ipc\+\_\+keyboard, int ipc\+\_\+mouse, message msg, enum state $\ast$state, \mbox{\hyperlink{struct_score}{Score}} $\ast$scores)
+\item 
+\mbox{\Hypertarget{main_8c_aca94587a192dc9d6e25886d009f3ee76}\label{main_8c_aca94587a192dc9d6e25886d009f3ee76}} 
+void() {\bfseries game\+\_\+loop} (bool $\ast$make, enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} $\ast$key, bool $\ast$two\+\_\+bytes, uint8\+\_\+t $\ast$scan, bool $\ast$can\+\_\+shoot, int ipc\+\_\+timer, int ipc\+\_\+keyboard, int ipc\+\_\+mouse, message msg, enum state $\ast$state)
+\item 
+\mbox{\Hypertarget{main_8c_a5fe23b1eda8779f64c72241020b3f61a}\label{main_8c_a5fe23b1eda8779f64c72241020b3f61a}} 
+void() {\bfseries main\+Menu\+\_\+loop} (bool $\ast$make, enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} $\ast$key, bool $\ast$two\+\_\+bytes, uint8\+\_\+t $\ast$scan, int ipc\+\_\+timer, int ipc\+\_\+keyboard, int ipc\+\_\+mouse, message msg, enum state $\ast$state)
+\item 
+\mbox{\Hypertarget{main_8c_a1b9bbd70f3beb8bf28ec1244cc483122}\label{main_8c_a1b9bbd70f3beb8bf28ec1244cc483122}} 
+void {\bfseries game\+Over\+Menu\+\_\+loop} (bool $\ast$make, enum \mbox{\hyperlink{kbd_8h_a635055f02cc43001acef32526cac2a45}{kbd\+\_\+key}} $\ast$key, bool $\ast$two\+\_\+bytes, uint8\+\_\+t $\ast$scan, int ipc\+\_\+timer, int ipc\+\_\+keyboard, int ipc\+\_\+mouse, message msg, enum state $\ast$state)
+\item 
+\mbox{\Hypertarget{main_8c_ad290208c74ef25eb347d1d96a390cd66}\label{main_8c_ad290208c74ef25eb347d1d96a390cd66}} 
+int() {\bfseries proj\+\_\+main\+\_\+loop} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a8cd4690e8c52dc256304da4d3ce4ba4f}\label{main_8c_a8cd4690e8c52dc256304da4d3ce4ba4f}} 
+\mbox{\hyperlink{struct_player}{Player}} $\ast$ {\bfseries ship}
+\item 
+\mbox{\Hypertarget{main_8c_a8f621f1e0b4e4176f1e67dc5031d891a}\label{main_8c_a8f621f1e0b4e4176f1e67dc5031d891a}} 
+\mbox{\hyperlink{struct_shield}{Shield}} $\ast$ {\bfseries shield1}
+\item 
+\mbox{\Hypertarget{main_8c_a48c72259ab4c049372115f62cd64d41f}\label{main_8c_a48c72259ab4c049372115f62cd64d41f}} 
+\mbox{\hyperlink{struct_shield}{Shield}} $\ast$ {\bfseries shield2}
+\item 
+\mbox{\Hypertarget{main_8c_ae216136d85958771f5667b34391f6b80}\label{main_8c_ae216136d85958771f5667b34391f6b80}} 
+\mbox{\hyperlink{struct_shield}{Shield}} $\ast$ {\bfseries shield3}
+\item 
+\mbox{\Hypertarget{main_8c_a0f08eb193e0aedb134a1481913b6a823}\label{main_8c_a0f08eb193e0aedb134a1481913b6a823}} 
+int {\bfseries timer\+\_\+counter}
+\item 
+\mbox{\Hypertarget{main_8c_a9eab91667db4d35c7231dcddf7b89a76}\label{main_8c_a9eab91667db4d35c7231dcddf7b89a76}} 
+int {\bfseries data}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+General functions that manage the app logic. 
+
+Loops that receive interrupt information, call the interrupt handlers and send commands and information to the functions delcared in \mbox{\hyperlink{spaceinvaders_8h}{spaceinvaders.\+h}}. 

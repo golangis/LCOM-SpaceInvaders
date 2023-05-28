@@ -46,24 +46,32 @@
 \DoxyCodeLine{56 void (\mbox{\hyperlink{spaceinvaders_8h_aff9ce2c80067181fa64a67450da2c6fa}{init\_game}})();}
 \DoxyCodeLine{57 }
 \DoxyCodeLine{58 \mbox{\hyperlink{struct_score}{Score}}* (loadScores)();}
-\DoxyCodeLine{59 \textcolor{comment}{/*}}
-\DoxyCodeLine{60 \textcolor{comment}{leitura sacada de https://www.geeksforgeeks.org/relational-\/database-\/from-\/csv-\/files-\/in-\/c/}}
-\DoxyCodeLine{61 \textcolor{comment}{*/}}
-\DoxyCodeLine{62 void (updateScores)(\mbox{\hyperlink{struct_score}{Score}}* array);}
-\DoxyCodeLine{63 \textcolor{comment}{/*}}
-\DoxyCodeLine{64 \textcolor{comment}{escrita sacada de https://www.programiz.com/c-\/programming/c-\/file-\/input-\/output}}
-\DoxyCodeLine{65 \textcolor{comment}{*/}}
-\DoxyCodeLine{66 void (draw)();}
-\DoxyCodeLine{67 void (update)(\textcolor{keywordtype}{int}* no\_lives);}
-\DoxyCodeLine{68 void (drawMainMenu)();}
-\DoxyCodeLine{69 void (reload\_aliens)();}
-\DoxyCodeLine{70 }
-\DoxyCodeLine{71 \textcolor{keyword}{enum} state \{}
-\DoxyCodeLine{72   game,}
-\DoxyCodeLine{73   mainMenu,}
-\DoxyCodeLine{74   quit}
-\DoxyCodeLine{75 \};}
+\DoxyCodeLine{59 \mbox{\hyperlink{struct_score}{Score}} (buildScore)(\textcolor{keywordtype}{int} points, \mbox{\hyperlink{structrtc__time}{rtc\_time}}* time);}
+\DoxyCodeLine{60 bool (processScore)(\mbox{\hyperlink{struct_score}{Score}} score, \mbox{\hyperlink{struct_score}{Score}}* array);}
+\DoxyCodeLine{61 \textcolor{comment}{/*}}
+\DoxyCodeLine{62 \textcolor{comment}{leitura sacada de https://www.geeksforgeeks.org/relational-\/database-\/from-\/csv-\/files-\/in-\/c/}}
+\DoxyCodeLine{63 \textcolor{comment}{*/}}
+\DoxyCodeLine{64 void (storeScores)(\mbox{\hyperlink{struct_score}{Score}}* array);}
+\DoxyCodeLine{65 \textcolor{comment}{/*}}
+\DoxyCodeLine{66 \textcolor{comment}{escrita sacada de https://www.programiz.com/c-\/programming/c-\/file-\/input-\/output}}
+\DoxyCodeLine{67 \textcolor{comment}{*/}}
+\DoxyCodeLine{68 void (draw)();}
+\DoxyCodeLine{69 void (update)(\textcolor{keywordtype}{int}* no\_lives);}
+\DoxyCodeLine{70 void (drawMainMenu)();}
+\DoxyCodeLine{71 void (drawHighscores)(\mbox{\hyperlink{struct_score}{Score}}* scores);}
+\DoxyCodeLine{72 void (drawGameOverMenu)();}
+\DoxyCodeLine{73 void (reload\_aliens)();}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 void (initScores)();}
 \DoxyCodeLine{76 }
-\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{77 \textcolor{keyword}{enum} state \{}
+\DoxyCodeLine{78   game,}
+\DoxyCodeLine{79   mainMenu,}
+\DoxyCodeLine{80   highscores,}
+\DoxyCodeLine{81   quit,}
+\DoxyCodeLine{82   gameOverMenu}
+\DoxyCodeLine{83 \};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

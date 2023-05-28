@@ -107,9 +107,14 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:adc6e5733fc3c22f0a7b2914188c49c90"><td class="memItemLeft" align="right" valign="top"><a id="adc6e5733fc3c22f0a7b2914188c49c90" name="adc6e5733fc3c22f0a7b2914188c49c90"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>state</b> { <b>game</b>
+<tr class="memitem:adc6e5733fc3c22f0a7b2914188c49c90"><td class="memItemLeft" align="right" valign="top"><a id="adc6e5733fc3c22f0a7b2914188c49c90" name="adc6e5733fc3c22f0a7b2914188c49c90"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>state</b> { <br />
+&#160;&#160;<b>game</b>
 , <b>mainMenu</b>
+, <b>highscores</b>
 , <b>quit</b>
+, <br />
+&#160;&#160;<b>gameOverMenu</b>
+<br />
  }</td></tr>
 <tr class="separator:adc6e5733fc3c22f0a7b2914188c49c90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -121,9 +126,15 @@ Functions</h2></td></tr>
 <tr class="memitem:a5c1ddfb8c2734979f5bc00098a2aed89"><td class="memItemLeft" align="right" valign="top"><a id="a5c1ddfb8c2734979f5bc00098a2aed89" name="a5c1ddfb8c2734979f5bc00098a2aed89"></a>
 <a class="el" href="struct_score.html">Score</a> *()&#160;</td><td class="memItemRight" valign="bottom"><b>loadScores</b> ()</td></tr>
 <tr class="separator:a5c1ddfb8c2734979f5bc00098a2aed89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8255bb1954152b3147a17558f321d742"><td class="memItemLeft" align="right" valign="top"><a id="a8255bb1954152b3147a17558f321d742" name="a8255bb1954152b3147a17558f321d742"></a>
-void()&#160;</td><td class="memItemRight" valign="bottom"><b>updateScores</b> (<a class="el" href="struct_score.html">Score</a> *array)</td></tr>
-<tr class="separator:a8255bb1954152b3147a17558f321d742"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f64c8195800ea7b368c2fa4fa584c38"><td class="memItemLeft" align="right" valign="top"><a id="a6f64c8195800ea7b368c2fa4fa584c38" name="a6f64c8195800ea7b368c2fa4fa584c38"></a>
+<a class="el" href="struct_score.html">Score</a>()&#160;</td><td class="memItemRight" valign="bottom"><b>buildScore</b> (int points, <a class="el" href="structrtc__time.html">rtc_time</a> *time)</td></tr>
+<tr class="separator:a6f64c8195800ea7b368c2fa4fa584c38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d4fb88b1ced99ae8c99cb239a8e9f84"><td class="memItemLeft" align="right" valign="top"><a id="a7d4fb88b1ced99ae8c99cb239a8e9f84" name="a7d4fb88b1ced99ae8c99cb239a8e9f84"></a>
+bool()&#160;</td><td class="memItemRight" valign="bottom"><b>processScore</b> (<a class="el" href="struct_score.html">Score</a> score, <a class="el" href="struct_score.html">Score</a> *array)</td></tr>
+<tr class="separator:a7d4fb88b1ced99ae8c99cb239a8e9f84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a549e0bafccc40da52849a07356235789"><td class="memItemLeft" align="right" valign="top"><a id="a549e0bafccc40da52849a07356235789" name="a549e0bafccc40da52849a07356235789"></a>
+void()&#160;</td><td class="memItemRight" valign="bottom"><b>storeScores</b> (<a class="el" href="struct_score.html">Score</a> *array)</td></tr>
+<tr class="separator:a549e0bafccc40da52849a07356235789"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84aa668c4684547c795670fc72531598"><td class="memItemLeft" align="right" valign="top"><a id="a84aa668c4684547c795670fc72531598" name="a84aa668c4684547c795670fc72531598"></a>
 void()&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> ()</td></tr>
 <tr class="separator:a84aa668c4684547c795670fc72531598"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,9 +144,18 @@ void()&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (int *no
 <tr class="memitem:ab6265073efb7030ef133d31ac663e9ad"><td class="memItemLeft" align="right" valign="top"><a id="ab6265073efb7030ef133d31ac663e9ad" name="ab6265073efb7030ef133d31ac663e9ad"></a>
 void()&#160;</td><td class="memItemRight" valign="bottom"><b>drawMainMenu</b> ()</td></tr>
 <tr class="separator:ab6265073efb7030ef133d31ac663e9ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6b62536175593ead3bcd3bf919f054a"><td class="memItemLeft" align="right" valign="top"><a id="ae6b62536175593ead3bcd3bf919f054a" name="ae6b62536175593ead3bcd3bf919f054a"></a>
+void()&#160;</td><td class="memItemRight" valign="bottom"><b>drawHighscores</b> (<a class="el" href="struct_score.html">Score</a> *scores)</td></tr>
+<tr class="separator:ae6b62536175593ead3bcd3bf919f054a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48aac508e55818d757f7e28ac7229a6c"><td class="memItemLeft" align="right" valign="top"><a id="a48aac508e55818d757f7e28ac7229a6c" name="a48aac508e55818d757f7e28ac7229a6c"></a>
+void()&#160;</td><td class="memItemRight" valign="bottom"><b>drawGameOverMenu</b> ()</td></tr>
+<tr class="separator:a48aac508e55818d757f7e28ac7229a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b361528e5b1e54470b00ef064464b95"><td class="memItemLeft" align="right" valign="top"><a id="a0b361528e5b1e54470b00ef064464b95" name="a0b361528e5b1e54470b00ef064464b95"></a>
 void()&#160;</td><td class="memItemRight" valign="bottom"><b>reload_aliens</b> ()</td></tr>
 <tr class="separator:a0b361528e5b1e54470b00ef064464b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a278ccf0c99908024f4b96d1d2c7d4747"><td class="memItemLeft" align="right" valign="top"><a id="a278ccf0c99908024f4b96d1d2c7d4747" name="a278ccf0c99908024f4b96d1d2c7d4747"></a>
+void()&#160;</td><td class="memItemRight" valign="bottom"><b>initScores</b> ()</td></tr>
+<tr class="separator:a278ccf0c99908024f4b96d1d2c7d4747"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>

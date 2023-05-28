@@ -7,6 +7,7 @@ Functions for programming the video card. Also contains variables to store the x
 
 {\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}xpm/alphabet.\+xpm\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}xpm/algarisms.\+xpm\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}xpm/aliens.\+xpm\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}xpm/heart.\+xpm\char`\"{}}\newline
@@ -17,6 +18,7 @@ Functions for programming the video card. Also contains variables to store the x
 {\ttfamily \#include \char`\"{}xpm/score.\+xpm\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}xpm/shield.\+xpm\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}xpm/shot.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xpm/\+Game\+Over.\+xpm\char`\"{}}\newline
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -66,6 +68,12 @@ char $\ast$ {\bfseries video\+\_\+mem}
 \item 
 \mbox{\Hypertarget{video_8h_af1fd447b511687fa2d2c9d9a38cc8389}\label{video_8h_af1fd447b511687fa2d2c9d9a38cc8389}} 
 uint8\+\_\+t $\ast$ {\bfseries video\+\_\+buffer}
+\item 
+\mbox{\Hypertarget{video_8h_a3132b7e8d354dff74051076ab2d977ec}\label{video_8h_a3132b7e8d354dff74051076ab2d977ec}} 
+xpm\+\_\+image\+\_\+t {\bfseries h\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_a4cd11e01f21bf607b810a40a7ffa80d2}\label{video_8h_a4cd11e01f21bf607b810a40a7ffa80d2}} 
+xpm\+\_\+image\+\_\+t {\bfseries slash\+\_\+img}
 \item 
 \mbox{\Hypertarget{video_8h_a8d6b586ff9c58e31bb7f89fe593b0496}\label{video_8h_a8d6b586ff9c58e31bb7f89fe593b0496}} 
 xpm\+\_\+image\+\_\+t {\bfseries zero\+\_\+img}
@@ -148,6 +156,15 @@ xpm\+\_\+image\+\_\+t {\bfseries ship\+\_\+shot\+\_\+img}
 \mbox{\Hypertarget{video_8h_a49647480c99bd0db393dee840f486619}\label{video_8h_a49647480c99bd0db393dee840f486619}} 
 xpm\+\_\+image\+\_\+t {\bfseries alien\+\_\+shot\+\_\+img}
 \item 
+\mbox{\Hypertarget{video_8h_aa21981659e1e836b2bfde17c315e3cbf}\label{video_8h_aa21981659e1e836b2bfde17c315e3cbf}} 
+xpm\+\_\+image\+\_\+t {\bfseries game\+Over\+\_\+img}
+\item 
+\mbox{\Hypertarget{video_8h_a017d40f39839b82d717bf7d6ac008ff6}\label{video_8h_a017d40f39839b82d717bf7d6ac008ff6}} 
+uint8\+\_\+t $\ast$ {\bfseries h\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_aa6168cd4ef0b65062316b40dc1f9ae92}\label{video_8h_aa6168cd4ef0b65062316b40dc1f9ae92}} 
+uint8\+\_\+t $\ast$ {\bfseries slash\+\_\+map}
+\item 
 \mbox{\Hypertarget{video_8h_ada7df97dea66a1c784322e068a3488c8}\label{video_8h_ada7df97dea66a1c784322e068a3488c8}} 
 uint8\+\_\+t $\ast$ {\bfseries zero\+\_\+map}
 \item 
@@ -228,6 +245,9 @@ uint8\+\_\+t $\ast$ {\bfseries ship\+\_\+shot\+\_\+map}
 \item 
 \mbox{\Hypertarget{video_8h_a9279d77503476c728251fd1c8bc40c9e}\label{video_8h_a9279d77503476c728251fd1c8bc40c9e}} 
 uint8\+\_\+t $\ast$ {\bfseries alien\+\_\+shot\+\_\+map}
+\item 
+\mbox{\Hypertarget{video_8h_a91167116d335615d57a710ff1532ce11}\label{video_8h_a91167116d335615d57a710ff1532ce11}} 
+uint8\+\_\+t $\ast$ {\bfseries game\+Over\+\_\+map}
 \end{DoxyCompactItemize}
 
 

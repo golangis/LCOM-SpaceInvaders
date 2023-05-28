@@ -26,9 +26,13 @@ struct \mbox{\hyperlink{struct_score}{Score}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90}\label{spaceinvaders_8h_adc6e5733fc3c22f0a7b2914188c49c90}} 
-enum {\bfseries state} \{ {\bfseries game}
+enum {\bfseries state} \{ \newline
+{\bfseries game}
 , {\bfseries main\+Menu}
+, {\bfseries highscores}
 , {\bfseries quit}
+, \newline
+{\bfseries game\+Over\+Menu}
  \}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
@@ -39,8 +43,14 @@ void() \mbox{\hyperlink{spaceinvaders_8h_aff9ce2c80067181fa64a67450da2c6fa}{init
 \mbox{\Hypertarget{spaceinvaders_8h_a5c1ddfb8c2734979f5bc00098a2aed89}\label{spaceinvaders_8h_a5c1ddfb8c2734979f5bc00098a2aed89}} 
 \mbox{\hyperlink{struct_score}{Score}} $\ast$() {\bfseries load\+Scores} ()
 \item 
-\mbox{\Hypertarget{spaceinvaders_8h_a8255bb1954152b3147a17558f321d742}\label{spaceinvaders_8h_a8255bb1954152b3147a17558f321d742}} 
-void() {\bfseries update\+Scores} (\mbox{\hyperlink{struct_score}{Score}} $\ast$array)
+\mbox{\Hypertarget{spaceinvaders_8h_a6f64c8195800ea7b368c2fa4fa584c38}\label{spaceinvaders_8h_a6f64c8195800ea7b368c2fa4fa584c38}} 
+\mbox{\hyperlink{struct_score}{Score}}() {\bfseries build\+Score} (int points, \mbox{\hyperlink{structrtc__time}{rtc\+\_\+time}} $\ast$time)
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a7d4fb88b1ced99ae8c99cb239a8e9f84}\label{spaceinvaders_8h_a7d4fb88b1ced99ae8c99cb239a8e9f84}} 
+bool() {\bfseries process\+Score} (\mbox{\hyperlink{struct_score}{Score}} score, \mbox{\hyperlink{struct_score}{Score}} $\ast$array)
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a549e0bafccc40da52849a07356235789}\label{spaceinvaders_8h_a549e0bafccc40da52849a07356235789}} 
+void() {\bfseries store\+Scores} (\mbox{\hyperlink{struct_score}{Score}} $\ast$array)
 \item 
 \mbox{\Hypertarget{spaceinvaders_8h_a84aa668c4684547c795670fc72531598}\label{spaceinvaders_8h_a84aa668c4684547c795670fc72531598}} 
 void() {\bfseries draw} ()
@@ -51,8 +61,17 @@ void() {\bfseries update} (int $\ast$no\+\_\+lives)
 \mbox{\Hypertarget{spaceinvaders_8h_ab6265073efb7030ef133d31ac663e9ad}\label{spaceinvaders_8h_ab6265073efb7030ef133d31ac663e9ad}} 
 void() {\bfseries draw\+Main\+Menu} ()
 \item 
+\mbox{\Hypertarget{spaceinvaders_8h_ae6b62536175593ead3bcd3bf919f054a}\label{spaceinvaders_8h_ae6b62536175593ead3bcd3bf919f054a}} 
+void() {\bfseries draw\+Highscores} (\mbox{\hyperlink{struct_score}{Score}} $\ast$scores)
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a48aac508e55818d757f7e28ac7229a6c}\label{spaceinvaders_8h_a48aac508e55818d757f7e28ac7229a6c}} 
+void() {\bfseries draw\+Game\+Over\+Menu} ()
+\item 
 \mbox{\Hypertarget{spaceinvaders_8h_a0b361528e5b1e54470b00ef064464b95}\label{spaceinvaders_8h_a0b361528e5b1e54470b00ef064464b95}} 
 void() {\bfseries reload\+\_\+aliens} ()
+\item 
+\mbox{\Hypertarget{spaceinvaders_8h_a278ccf0c99908024f4b96d1d2c7d4747}\label{spaceinvaders_8h_a278ccf0c99908024f4b96d1d2c7d4747}} 
+void() {\bfseries init\+Scores} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}

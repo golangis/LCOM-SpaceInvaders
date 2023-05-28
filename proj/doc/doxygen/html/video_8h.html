@@ -84,6 +84,7 @@ $(function() {
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;lcom/lcf.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;xpm/alphabet.xpm&quot;</code><br />
 <code>#include &quot;xpm/algarisms.xpm&quot;</code><br />
 <code>#include &quot;xpm/aliens.xpm&quot;</code><br />
 <code>#include &quot;xpm/heart.xpm&quot;</code><br />
@@ -94,6 +95,7 @@ $(function() {
 <code>#include &quot;xpm/score.xpm&quot;</code><br />
 <code>#include &quot;xpm/shield.xpm&quot;</code><br />
 <code>#include &quot;xpm/shot.xpm&quot;</code><br />
+<code>#include &quot;xpm/GameOver.xpm&quot;</code><br />
 </div>
 <p><a href="video_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -150,6 +152,12 @@ char *&#160;</td><td class="memItemRight" valign="bottom"><b>video_mem</b></td><
 <tr class="memitem:af1fd447b511687fa2d2c9d9a38cc8389"><td class="memItemLeft" align="right" valign="top"><a id="af1fd447b511687fa2d2c9d9a38cc8389" name="af1fd447b511687fa2d2c9d9a38cc8389"></a>
 uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><b>video_buffer</b></td></tr>
 <tr class="separator:af1fd447b511687fa2d2c9d9a38cc8389"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3132b7e8d354dff74051076ab2d977ec"><td class="memItemLeft" align="right" valign="top"><a id="a3132b7e8d354dff74051076ab2d977ec" name="a3132b7e8d354dff74051076ab2d977ec"></a>
+xpm_image_t&#160;</td><td class="memItemRight" valign="bottom"><b>h_img</b></td></tr>
+<tr class="separator:a3132b7e8d354dff74051076ab2d977ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cd11e01f21bf607b810a40a7ffa80d2"><td class="memItemLeft" align="right" valign="top"><a id="a4cd11e01f21bf607b810a40a7ffa80d2" name="a4cd11e01f21bf607b810a40a7ffa80d2"></a>
+xpm_image_t&#160;</td><td class="memItemRight" valign="bottom"><b>slash_img</b></td></tr>
+<tr class="separator:a4cd11e01f21bf607b810a40a7ffa80d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d6b586ff9c58e31bb7f89fe593b0496"><td class="memItemLeft" align="right" valign="top"><a id="a8d6b586ff9c58e31bb7f89fe593b0496" name="a8d6b586ff9c58e31bb7f89fe593b0496"></a>
 xpm_image_t&#160;</td><td class="memItemRight" valign="bottom"><b>zero_img</b></td></tr>
 <tr class="separator:a8d6b586ff9c58e31bb7f89fe593b0496"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -231,6 +239,15 @@ xpm_image_t&#160;</td><td class="memItemRight" valign="bottom"><b>ship_shot_img<
 <tr class="memitem:a49647480c99bd0db393dee840f486619"><td class="memItemLeft" align="right" valign="top"><a id="a49647480c99bd0db393dee840f486619" name="a49647480c99bd0db393dee840f486619"></a>
 xpm_image_t&#160;</td><td class="memItemRight" valign="bottom"><b>alien_shot_img</b></td></tr>
 <tr class="separator:a49647480c99bd0db393dee840f486619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa21981659e1e836b2bfde17c315e3cbf"><td class="memItemLeft" align="right" valign="top"><a id="aa21981659e1e836b2bfde17c315e3cbf" name="aa21981659e1e836b2bfde17c315e3cbf"></a>
+xpm_image_t&#160;</td><td class="memItemRight" valign="bottom"><b>gameOver_img</b></td></tr>
+<tr class="separator:aa21981659e1e836b2bfde17c315e3cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a017d40f39839b82d717bf7d6ac008ff6"><td class="memItemLeft" align="right" valign="top"><a id="a017d40f39839b82d717bf7d6ac008ff6" name="a017d40f39839b82d717bf7d6ac008ff6"></a>
+uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><b>h_map</b></td></tr>
+<tr class="separator:a017d40f39839b82d717bf7d6ac008ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6168cd4ef0b65062316b40dc1f9ae92"><td class="memItemLeft" align="right" valign="top"><a id="aa6168cd4ef0b65062316b40dc1f9ae92" name="aa6168cd4ef0b65062316b40dc1f9ae92"></a>
+uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><b>slash_map</b></td></tr>
+<tr class="separator:aa6168cd4ef0b65062316b40dc1f9ae92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada7df97dea66a1c784322e068a3488c8"><td class="memItemLeft" align="right" valign="top"><a id="ada7df97dea66a1c784322e068a3488c8" name="ada7df97dea66a1c784322e068a3488c8"></a>
 uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><b>zero_map</b></td></tr>
 <tr class="separator:ada7df97dea66a1c784322e068a3488c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -312,6 +329,9 @@ uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><b>ship_shot_map</b
 <tr class="memitem:a9279d77503476c728251fd1c8bc40c9e"><td class="memItemLeft" align="right" valign="top"><a id="a9279d77503476c728251fd1c8bc40c9e" name="a9279d77503476c728251fd1c8bc40c9e"></a>
 uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><b>alien_shot_map</b></td></tr>
 <tr class="separator:a9279d77503476c728251fd1c8bc40c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91167116d335615d57a710ff1532ce11"><td class="memItemLeft" align="right" valign="top"><a id="a91167116d335615d57a710ff1532ce11" name="a91167116d335615d57a710ff1532ce11"></a>
+uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><b>gameOver_map</b></td></tr>
+<tr class="separator:a91167116d335615d57a710ff1532ce11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Functions for programming the video card. Also contains variables to store the xpm images and maps drawn in the app. </p>

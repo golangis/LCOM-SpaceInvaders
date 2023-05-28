@@ -9,6 +9,13 @@
 #include <lcom/lcf.h>
 #include <stdint.h>
 
+/**
+ * @file main.c
+ * @brief General functions that manage the app logic.
+ * 
+ * Loops that receive interrupt information, call the interrupt handlers and send commands and information to the functions delcared in spaceinvaders.h.
+ */
+
 int main(int argc, char *argv[]) {
   lcf_set_language("EN-US");
   lcf_trace_calls("/home/lcom/labs/proj/src/trace.txt");
