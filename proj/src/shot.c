@@ -1,6 +1,6 @@
 #include "shot.h"
 
-Shot (initShot)(int x_min, int y_min, enum shot_source source) {
+Shot (init_shot)(int x_min, int y_min, enum shot_source source) {
   Shot shot;
   /*
   width = 20px
@@ -15,7 +15,7 @@ Shot (initShot)(int x_min, int y_min, enum shot_source source) {
   return shot;
 }
 
-void (moveShot)(Shot* shot) {
+void (move_shot)(Shot* shot) {
   switch (shot->source) {
     case alien:
       shot->y_min += 4;
@@ -29,7 +29,7 @@ void (moveShot)(Shot* shot) {
   }
 }
 
-void (drawShot)(Shot* shot) {
+void (draw_shot)(Shot* shot) {
   switch (shot->source) {
     case alien: video_draw_xpm(shot->x_min, shot->y_max, "alien_shot"); break;
     case player: video_draw_xpm(shot->x_min, shot->y_max, "ship_shot"); break;

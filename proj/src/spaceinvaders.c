@@ -1,11 +1,11 @@
 #include "spaceinvaders.h"
 
 void (init_game)() {
-  ship = initPlayer();
-  shield1 = initShield(100, 1);
-  shield2 = initShield(350, 2);
-  shield3 = initShield(600, 3);
-  aliens = initAliens();
+  ship = init_player();
+  shield1 = init_shield(100, 1);
+  shield2 = init_shield(350, 2);
+  shield3 = init_shield(600, 3);
+  aliens = init_aliens();
   last_alien_mov = right;
   updates = 0;
 }
@@ -19,7 +19,7 @@ void (reload_aliens)() {
   updates = 0;
 }
 
-Score* (loadScores)() {
+Score* (load_scores)() {
   Score* array = (Score*) malloc (sizeof(Score) * 10);
 
   FILE* fp = fopen("/home/lcom/labs/proj/src/highscores.csv", "r");
@@ -68,7 +68,7 @@ Score* (loadScores)() {
   return array;
 }
 
-Score (buildScore)(int points, rtc_time* time) {
+Score (build_score)(int points, rtc_time* time) {
   Score score;
   score.points = points;
   char str[17];
@@ -80,7 +80,7 @@ Score (buildScore)(int points, rtc_time* time) {
   return score;
 }
 
-bool (processScore)(Score score, Score* array) {
+bool (process_score)(Score score, Score* array) {
   for (size_t i = 0; i < 10; i++) {
     if (score.points > array[i].points) {
       for (size_t j = 9; j > i; j--) array[j] = array[j - 1];
@@ -91,7 +91,7 @@ bool (processScore)(Score score, Score* array) {
   return false;
 }
 
-void (initScores)() {
+void (init_scores)() {
   FILE *fp = fopen("/home/lcom/labs/proj/src/highscores.csv", "w");
 
   for (size_t i = 0; i < 10; i++) fprintf(fp, "0,00/00/0000 00:00\n");
@@ -99,7 +99,7 @@ void (initScores)() {
   fclose(fp);
 }
 
-void (storeScores)(Score* array) {
+void (store_scores)(Score* array) {
   FILE* fp = fopen("/home/lcom/labs/proj/src/highscores.csv", "w");
 
   if (!fp) fp = fopen("/home/lcom/labs/g3/proj/src/highscores.csv", "w");
@@ -119,23 +119,23 @@ void (storeScores)(Score* array) {
 void (draw)() {
   memset(video_buffer, 0, h_res*v_res*bytes_per_pixel);
 
-  drawShield(shield1);
-  drawShield(shield2);
-  drawShield(shield3);
+  draw_shield(shield1);
+  draw_shield(shield2);
+  draw_shield(shield3);
 
-  drawPlayer(ship);
+  draw_player(ship);
 
-  drawAliens(aliens);
+  draw_aliens(aliens);
   
-  drawScore(ship);
-  drawLives(ship->lives);
+  draw_score(ship);
+  draw_lives(ship->lives);
 
   memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
 }
 
 void (update)(int* no_lives) {
   updates++;
-  unsigned int shootAlienTime = 0;
+  unsigned int shoot_alienTime = 0;
   unsigned int moveAlienTime = 0;
 
   switch(wave){
@@ -160,26 +160,26 @@ void (update)(int* no_lives) {
       moveAlienTime = 15; 
       break; 
   }
-  if (updates == shootAlienTime) {
-    shootAliens(aliens);
+  if (updates == shoot_alienTime) {
+    shoot_aliens(aliens);
     updates = 0;
   }
   else if (updates % moveAlienTime == 0) {
     switch (last_alien_mov) {
       case right:
-        if (!canAlienGroupMove(aliens, right)) {
-          moveAliens(aliens, down);
+        if (!can_alien_group_move(aliens, right)) {
+          move_aliens(aliens, down);
           last_alien_mov = down_after_right;
-        } else moveAliens(aliens, right);
+        } else move_aliens(aliens, right);
         break;
       case left:
-        if (!canAlienGroupMove(aliens, left)) {
-          moveAliens(aliens, down);
+        if (!can_alien_group_move(aliens, left)) {
+          move_aliens(aliens, down);
           last_alien_mov = down_after_left;
-        } else moveAliens(aliens, left);
+        } else move_aliens(aliens, left);
         break;
-      case down_after_right: moveAliens(aliens, left); last_alien_mov = left; break;
-      case down_after_left: moveAliens(aliens, right); last_alien_mov = right; break;
+      case down_after_right: move_aliens(aliens, left); last_alien_mov = left; break;
+      case down_after_left: move_aliens(aliens, right); last_alien_mov = right; break;
       default: break;
     }
   }
@@ -191,20 +191,20 @@ void (update)(int* no_lives) {
         deleteAlienShot(a, j);
         return;
       } else if (shield1->lives > 0 && a->shots[j].y_max >= shield1->y_min && a->shots[j].x_min <= shield1->x_max && a->shots[j].x_max >= shield1->x_min) {
-        deleteAlienShot(a, j);
+        delete_alien_shot(a, j);
         damage(shield1, alien);
         return;
       } else if (shield2->lives > 0 && a->shots[j].y_max >= shield2->y_min && a->shots[j].x_min <= shield2->x_max && a->shots[j].x_max >= shield2->x_min) {
-        deleteAlienShot(a, j);
+        delete_alien_shot(a, j);
         damage(shield2, alien);
         return;
       } else if (shield3->lives > 0 && a->shots[j].y_max >= shield3->y_min && a->shots[j].x_min <= shield3->x_max && a->shots[j].x_max >= shield3->x_min) {
-        deleteAlienShot(a, j);
+        delete_alien_shot(a, j);
         damage(shield3, alien);
         return;
       } else if (a->shots[j].y_max >= ship->y_min && a->shots[j].x_min <= ship->x_max && a->shots[j].x_max >= ship->x_min) {
-        deleteAlienShot(a, j);
-        looseLife(ship);
+        delete_alien_shot(a, j);
+        loose_life(ship);
         if(ship->lives == 0) *no_lives = 1;
         return;
       }
@@ -212,26 +212,26 @@ void (update)(int* no_lives) {
   }
   for (int i = 0; i < ship->shots_no; i++) {
     int alien_idx;
-    moveShot(&(ship->shots[i]));
+    move_shot(&(ship->shots[i]));
     if ((ship->shots[i].y_min) <= -50) {
-      deletePlayerShot(ship, i);
+      delete_player_shot(ship, i);
       return;
     } else if (shield1->lives > 0 && ship->shots[i].y_min <= shield1->y_max && ship->shots[i].x_min <= shield1->x_max && ship->shots[i].x_max >= shield1->x_min) {
-      deletePlayerShot(ship, i);
+      delete_player_shot(ship, i);
       damage(shield1, player);
       return;
     } else if (shield2->lives > 0 && ship->shots[i].y_min <= shield2->y_max && ship->shots[i].x_min <= shield2->x_max && ship->shots[i].x_max >= shield2->x_min) {
-      deletePlayerShot(ship, i);
+      delete_player_shot(ship, i);
       damage(shield2, player);
       return;
     } else if (shield3->lives > 0 && ship->shots[i].y_min <= shield3->y_max && ship->shots[i].x_min <= shield3->x_max && ship->shots[i].x_max >= shield3->x_min) {
-      deletePlayerShot(ship, i);
+      delete_player_shot(ship, i);
       damage(shield3, player);
       return;
-    } else if ((alien_idx = hitIndex(aliens, &(ship->shots[i]))) != -1) {
-      deletePlayerShot(ship, i);
-      dieAlien(aliens, alien_idx);
-      incrementScore(ship, alien_idx);
+    } else if ((alien_idx = hit_index(aliens, &(ship->shots[i]))) != -1) {
+      delete_player_shot(ship, i);
+      die_alien(aliens, alien_idx);
+      increment_score(ship, alien_idx);
       return;
     }
   }
@@ -246,7 +246,7 @@ void (update)(int* no_lives) {
 extern int x_mouse;
 extern int y_mouse;
 
-void (drawMainMenu)() {
+void (draw_main_menu)() {
   memset(video_buffer, 0, h_res*v_res*bytes_per_pixel);
   video_draw_xpm(100, 40, "logo");
   video_draw_xpm(150, 400, "play_button");
@@ -255,7 +255,7 @@ void (drawMainMenu)() {
   memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
 }
 
-void (drawHighscores)(Score* scores) {
+void (draw_high_scores)(Score* scores) {
   memset(video_buffer, 0, h_res*v_res*bytes_per_pixel);
   for (int i = 0; i < 10; i++) {
     int points = scores[i].points;
@@ -322,7 +322,7 @@ void (drawHighscores)(Score* scores) {
   memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
 }
 
-void (drawGameOverMenu)() {
+void (draw_game_over_menu)() {
   memset(video_buffer, 0, h_res*v_res*bytes_per_pixel);
   video_draw_xpm(250, 200, "gameOver");
   video_draw_xpm(312, 420, "replay_button");

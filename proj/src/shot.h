@@ -16,8 +16,8 @@ typedef struct {
     enum shot_source source;
 } Shot;
 
-Shot (initShot)(int x, int y, enum shot_source source);
-void (moveShot)(Shot* shot);
-void (drawShot)(Shot* shot);
+Shot (init_shot)(int x, int y, enum shot_source source);
+void (move_shot)(Shot* shot);
+void (draw_shot)(Shot* shot);
 
 #endif

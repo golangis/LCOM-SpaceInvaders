@@ -49,7 +49,7 @@ extern int data;
 void (highscores_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state, Score* scores) {
     if (msg.m_notify.interrupts & ipc_timer) {
         timer_interrupt_handler();
-        if (timer_counter % 2 == 0) drawHighscores(scores);
+        if (timer_counter % 2 == 0) draw_high_scores(scores);
         if (timer_counter >= 600) timer_counter = 0;
     }
     if (msg.m_notify.interrupts & ipc_keyboard) {
@@ -88,7 +88,7 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
         if (timer_counter % 2 == 0) {
             update(&no_lives);
             if(no_lives == 1) {
-                Score* scores = loadScores();
+                Score* scores = load_scores();
                 rtc_time time;
                 while (get_time(&time));
                 Score score = buildScore(ship->score, &time);
@@ -108,8 +108,8 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
             *make = data & BIT(7);
             *key = kbd_get_key(!make, 2, scan);
             switch (*key) {
-                case kbd_left: movePlayer(ship, left); *key = INVALID; break;
-                case kbd_right: movePlayer(ship, right); *key = INVALID; break;
+                case kbd_left: move_player(ship, left); *key = INVALID; break;
+                case kbd_right: move_player(ship, right); *key = INVALID; break;
                 case kbd_up: case kbd_space: 
                     if(*can_shoot){
                         fire(ship); 
@@ -127,8 +127,8 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
             else {
                 *key = kbd_get_key(!make, 1, scan);
                 switch (*key) {
-                    case kbd_left: movePlayer(ship, left); *key = INVALID; break;
-                    case kbd_right: movePlayer(ship, right); *key = INVALID; break;
+                    case kbd_left: move_player(ship, left); *key = INVALID; break;
+                    case kbd_right: move_player(ship, right); *key = INVALID; break;
                     case kbd_up: case kbd_space: 
                         if(*can_shoot){
                             fire(ship); 
@@ -143,7 +143,7 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
         }
     }
     if (msg.m_notify.interrupts & ipc_mouse) {
-        if (leftClick()){
+        if (left_click()){
             if(*can_shoot){
                 fire(ship); 
                 *can_shoot = false;
@@ -153,7 +153,7 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
     }
 }
 
-void (mainMenu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state) {
+void (main_menu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state) {
     extern int x_mouse;
     extern int y_mouse;
 
@@ -162,7 +162,7 @@ void (mainMenu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* sc
 
     if (msg.m_notify.interrupts & ipc_timer) {
         timer_interrupt_handler();
-        if (timer_counter % 2 == 0) drawMainMenu();
+        if (timer_counter % 2 == 0) draw_main_menu();
         if (timer_counter >= 600) timer_counter = 0;
     }
     if (msg.m_notify.interrupts & ipc_keyboard) {
@@ -192,16 +192,19 @@ void (mainMenu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* sc
         }
     }
     if (msg.m_notify.interrupts & ipc_mouse) {
-        if (is_on_play_button && leftClick()) *state = game;
-        if (is_on_rank_button && leftClick()) *state = highscores;
+        if (is_on_play_button && left_click()) {
+            *state = game;
+            init_game();
+        }
+        if (is_on_rank_button && left_click()) *state = highscores;
         mouse_interrupt_handler();
     }
 }
 
-void gameOverMenu_loop(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state){
+void (game_over_menu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state){
     if (msg.m_notify.interrupts & ipc_timer) {
         timer_interrupt_handler();
-        if (timer_counter % 2 == 0) drawGameOverMenu();
+        if (timer_counter % 2 == 0) draw_game_over_menu();
         if (timer_counter >= 600) timer_counter = 0;
     }
     if (msg.m_notify.interrupts & ipc_keyboard) {
@@ -271,7 +274,7 @@ int (proj_main_loop)(int argc, char **argv) {
 
     state = mainMenu;
 
-    Score* hs = loadScores();
+    Score* hs = load_scores();
 
     while (state != quit) {
         if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
@@ -283,7 +286,7 @@ int (proj_main_loop)(int argc, char **argv) {
                 case HARDWARE:
                     switch (state) {
                         case mainMenu:
-                            mainMenu_loop(&make, &key, &two_bytes, scan, ipc_timer, ipc_keyboard, ipc_mouse, msg, &state);
+                            main_menu_loop(&make, &key, &two_bytes, scan, ipc_timer, ipc_keyboard, ipc_mouse, msg, &state);
                             break;
                         case game:    
                             game_loop(&make, &key, &two_bytes, scan, &can_shoot, ipc_timer, ipc_keyboard, ipc_mouse, msg, &state);
@@ -294,7 +297,7 @@ int (proj_main_loop)(int argc, char **argv) {
                         case quit:
                             break;
                         case gameOverMenu:
-                            gameOverMenu_loop(&make, &key, &two_bytes, scan, ipc_timer, ipc_keyboard, ipc_mouse, msg, &state);
+                            game_over_menu_loop(&make, &key, &two_bytes, scan, ipc_timer, ipc_keyboard, ipc_mouse, msg, &state);
                             break;
                         default:
                             break;

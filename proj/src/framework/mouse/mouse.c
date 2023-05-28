@@ -11,13 +11,13 @@ bool mouse_read = false;
 struct packet mouse_packet;
 
 int (mouse_interrupt_handler)() {
-  if (readStatusByte() != 0) return 1; // DEU ERRO
-  if (readPacket() != 0) return 1; // DEU ERRO
+  if (read_status_byte() != 0) return 1; // DEU ERRO
+  if (read_packet() != 0) return 1; // DEU ERRO
   if (update_mouse() != 0) return 1; // DEU ERRO
   return 0;
 }
 
-int (readStatusByte)() {
+int (read_status_byte)() {
   uint8_t status = 0;
   ut_sys_inb(STATUS_REGISTER, &status);
 
@@ -36,11 +36,11 @@ int (readStatusByte)() {
   return 0; // NÃO DEU ERRO 
 }
 
-bool (leftClick)() {
+bool (left_click)() {
   return mouse_packet.lb;
 }
 
-int (readPacket)() {
+int (read_packet)() {
   uint8_t data;
 
   if (ut_sys_inb(OUTPUT_BUFFER, &data) != 0)
