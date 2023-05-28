@@ -99,6 +99,12 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
 }
 
 void (mainMenu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state) {
+    extern int x_mouse;
+    extern int y_mouse;
+
+    bool is_on_play_button = x_mouse <= 150 + 175 && x_mouse >= 150 && y_mouse <= 400 + 70 && y_mouse >= 400;
+    //bool is_on_rank_button = x_mouse <= 475 + 175 && x_mouse >= 475 && y_mouse <= 400 + 70 && y_mouse >= 400;
+
     if (msg.m_notify.interrupts & ipc_timer) {
         timer_interrupt_handler();
         if (timer_counter % 2 == 0) drawMainMenu();
@@ -131,6 +137,8 @@ void (mainMenu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* sc
         }
     }
     if (msg.m_notify.interrupts & ipc_mouse) {
+        if (is_on_play_button && leftClick()) *state = game;
+        //if (is_on_rank_button && leftClick()) *state = game; //mudar aqui januario
         mouse_interrupt_handler();
     }
 }

@@ -12,5 +12,6 @@ int (readPacket)();
 int (subscribe_mouse_int)(uint8_t *bit_no);
 int (unsubscribe_mouse_int)();
 int (update_mouse)();
+bool (leftClick)();
 
 #endif
