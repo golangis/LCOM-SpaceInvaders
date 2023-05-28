@@ -94,6 +94,7 @@ void (video_load_xpms)() {
     alien_shot_map = xpm_load(alien_shot_xpm, XPM_8_8_8, &alien_shot_img);
     gameOver_map = xpm_load(gameOver_xpm, XPM_8_8_8, &gameOver_img);
     replay_button_map = xpm_load(replay_button_xpm, XPM_8_8_8, &replay_button_img);
+    menu_button_map = xpm_load(menu_button_xpm, XPM_8_8_8, &menu_button_img);
 }
 
 void (video_draw_xpm)(uint16_t x, uint16_t y, char xpm[]) {
@@ -196,7 +197,10 @@ void (video_draw_xpm)(uint16_t x, uint16_t y, char xpm[]) {
     } else if (strcmp(xpm, "replay_button") == 0) {
         map = replay_button_map;
         img = replay_button_img;
-    }   
+    } else if (strcmp(xpm, "menu_button") == 0) {
+        map = menu_button_map;
+        img = menu_button_img;
+    }  
     else return;
 
     for (uint16_t i = 0; i < img.width; i++) {

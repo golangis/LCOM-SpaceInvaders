@@ -145,8 +145,8 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
         }
     }
     if (msg.m_notify.interrupts & ipc_mouse) {
-        if (x_mouse_delta < -100) move_player(ship, left);
-        if (x_mouse_delta > 100) move_player(ship, right);
+        if (x_mouse_delta < -50) move_player(ship, left);
+        if (x_mouse_delta > 50) move_player(ship, right);
   
         if (left_click()){
             if(*can_shoot){
@@ -198,7 +198,9 @@ void (main_menu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* s
     }
     if (msg.m_notify.interrupts & ipc_mouse) {
         if (is_on_play_button && left_click()) {
+            extern struct packet mouse_packet;
             *state = game;
+            mouse_packet.lb = false;
             init_game();
         }
         if (is_on_rank_button && left_click()) *state = highscores;
@@ -209,7 +211,8 @@ void (main_menu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* s
 void (game_over_menu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, int ipc_timer, int ipc_keyboard, int ipc_mouse, message msg, enum state* state){
     extern int x_mouse;
     extern int y_mouse;
-    bool is_on_replay_button = x_mouse <= 312 + 175 && x_mouse >= 312 && y_mouse <= 420 + 70 && y_mouse >= 420;
+    bool is_on_replay_button = x_mouse <= 150 + 175 && x_mouse >= 150 && y_mouse <= 400 + 70 && y_mouse >= 400;
+    bool is_on_menu_button = x_mouse <= 475 + 175 && x_mouse >= 475 && y_mouse <= 400 + 70 && y_mouse >= 400;
 
     if (msg.m_notify.interrupts & ipc_timer) {
         timer_interrupt_handler();
@@ -225,7 +228,7 @@ void (game_over_menu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8
             *key = kbd_get_key(!make, 2, scan);
             switch (*key) {
                 case kbd_space: *state = game; init_game(); break;
-                case kbd_esc: *state = quit; break;
+                case kbd_esc: *state = mainMenu; break;
                 default: break;
             }
         } else {
@@ -236,7 +239,7 @@ void (game_over_menu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8
                 *key = kbd_get_key(!make, 1, scan);
                 switch (*key) {
                     case kbd_space: *state = game; init_game(); break;
-                    case kbd_esc: *state = quit; break;
+                    case kbd_esc: *state = mainMenu; break;
                     default: break;
                 }  
             }
@@ -248,6 +251,11 @@ void (game_over_menu_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8
             *state = game;
             mouse_packet.lb = false;
             init_game();
+        }
+        if (is_on_menu_button && left_click()) {
+            extern struct packet mouse_packet;
+            *state = mainMenu;
+            mouse_packet.lb = false;
         }
         mouse_interrupt_handler();
     }

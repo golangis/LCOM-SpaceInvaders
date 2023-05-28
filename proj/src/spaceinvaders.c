@@ -187,18 +187,18 @@ void (update)(int* no_lives) {
     Alien* a = &(aliens->set[i]);
     for (int j = 0; j < a->shots_no; j++) {
       move_shot(&(a->shots[j]));
-      if ((a->shots[j].y_max) >= 630) {
+      if (a->shots[j].y_max >= (ship->y_min + 8) && (a->shots[j].x_min > ship->x_max || a->shots[j].x_max < ship->x_min)) {
         delete_alien_shot(a, j);
         return;
-      } else if (shield1->lives > 0 && a->shots[j].y_max >= shield1->y_min && a->shots[j].x_min <= shield1->x_max && a->shots[j].x_max >= shield1->x_min) {
+      } else if (shield1->lives > 0 && a->shots[j].y_max >= (shield1->y_min - 30) && a->shots[j].x_min <= shield1->x_max && a->shots[j].x_max >= shield1->x_min) {
         delete_alien_shot(a, j);
         damage(shield1, alien);
         return;
-      } else if (shield2->lives > 0 && a->shots[j].y_max >= shield2->y_min && a->shots[j].x_min <= shield2->x_max && a->shots[j].x_max >= shield2->x_min) {
+      } else if (shield2->lives > 0 && a->shots[j].y_max >= (shield2->y_min - 30) && a->shots[j].x_min <= shield2->x_max && a->shots[j].x_max >= shield2->x_min) {
         delete_alien_shot(a, j);
         damage(shield2, alien);
         return;
-      } else if (shield3->lives > 0 && a->shots[j].y_max >= shield3->y_min && a->shots[j].x_min <= shield3->x_max && a->shots[j].x_max >= shield3->x_min) {
+      } else if (shield3->lives > 0 && a->shots[j].y_max >= (shield3->y_min - 30) && a->shots[j].x_min <= shield3->x_max && a->shots[j].x_max >= shield3->x_min) {
         delete_alien_shot(a, j);
         damage(shield3, alien);
         return;
@@ -325,7 +325,8 @@ void (draw_high_scores)(Score* scores) {
 void (draw_game_over_menu)() {
   memset(video_buffer, 0, h_res*v_res*bytes_per_pixel);
   video_draw_xpm(250, 200, "gameOver");
-  video_draw_xpm(312, 420, "replay_button");
+  video_draw_xpm(150, 400, "replay_button");
+  video_draw_xpm(800-175-150, 400, "menu_button");
   video_draw_xpm(x_mouse, y_mouse, "mouse");
   memcpy(video_mem, video_buffer, h_res*v_res*bytes_per_pixel);
 }
