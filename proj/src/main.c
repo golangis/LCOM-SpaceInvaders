@@ -94,6 +94,12 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
         }
     }
     if (msg.m_notify.interrupts & ipc_mouse) {
+        if (leftClick()){
+            if(*can_shoot){
+                fire(ship); 
+                *can_shoot = false;
+            } 
+        }
         mouse_interrupt_handler();
     }
 }
