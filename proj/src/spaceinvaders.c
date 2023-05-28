@@ -24,7 +24,7 @@ Score* (loadScores)() {
 
   FILE* fp = fopen("/home/lcom/labs/proj/src/highscores.csv", "r");
 
-  if (!fp) fp = fopen("/home/lcom/labs/g3/proj/src/highscore.csv", "r");
+  if (!fp) fp = fopen("/home/lcom/labs/g3/proj/src/highscores.csv", "r");
   if (!fp) {
     printf("Error opening file\n");
     return array;
@@ -102,7 +102,7 @@ void (initScores)() {
 void (storeScores)(Score* array) {
   FILE* fp = fopen("/home/lcom/labs/proj/src/highscores.csv", "w");
 
-  if (!fp) fp = fopen("/home/lcom/labs/g3/proj/src/highscore.csv", "w");
+  if (!fp) fp = fopen("/home/lcom/labs/g3/proj/src/highscores.csv", "w");
   if (!fp) {
     printf("Error opening file\n");
     return;

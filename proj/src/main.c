@@ -212,7 +212,7 @@ void gameOverMenu_loop(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* 
             *make = data & BIT(7);
             *key = kbd_get_key(!make, 2, scan);
             switch (*key) {
-                case kbd_space: *state = mainMenu; break;
+                case kbd_space: *state = game; init_game(); break;
                 case kbd_esc: *state = quit; break;
                 default: break;
             }
@@ -223,7 +223,7 @@ void gameOverMenu_loop(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* 
             else {
                 *key = kbd_get_key(!make, 1, scan);
                 switch (*key) {
-                    case kbd_space: *state = mainMenu; break;
+                    case kbd_space: *state = game; init_game(); break;
                     case kbd_esc: *state = quit; break;
                     default: break;
                 }  
