@@ -1,6 +1,6 @@
 #include "player.h"
 
-Player* (initPlayer)(){
+Player* (init_player)(){
   Player* ship = (Player*) malloc (sizeof(Player));
   /*
   width = 40px;
@@ -17,14 +17,14 @@ Player* (initPlayer)(){
   return ship;
 }
 
-void (movePlayer)(Player* ship, enum direction dir) {
-  if (canPlayerMove(ship, dir)) {
+void (move_player)(Player* ship, enum direction dir) {
+  if (can_player_move(ship, dir)) {
     ship->x_min += dir == left ? -10 : 10;
     ship->x_max += dir == left ? -10 : 10;
   }
 }
 
-bool (canPlayerMove)(Player* ship, enum direction dir) {
+bool (can_player_move)(Player* ship, enum direction dir) {
   switch (dir) {
     case left: if (ship->x_min <= 1) return false; break;
     case right: if (ship->x_max >= 798) return false; break;
@@ -36,29 +36,29 @@ bool (canPlayerMove)(Player* ship, enum direction dir) {
 void (fire)(Player* ship) {
   Shot* array = (Shot*) malloc (sizeof(Shot) * (ship->shots_no + 1));
   for (int i = 0; i < ship->shots_no; i++) array[i] = ship->shots[i];
-  Shot new_shot = initShot(ship->x_min + 10, ship->y_min - 60, player);
+  Shot new_shot = init_shot(ship->x_min + 10, ship->y_min - 60, player);
   ship->shots_no++;
   array[ship->shots_no - 1] = new_shot;
   ship->shots = array;
 }
 
-void (looseLife)(Player* ship) {
+void (loose_life)(Player* ship) {
   ship->lives--;
 }
 
-void (deletePlayerShot)(Player* ship, int i) {
+void (delete_player_shot)(Player* ship, int i) {
   Shot* s = &(ship->shots[i]);
   for (int x = i; x < ship->shots_no - 1; x++) ship->shots[x] = ship->shots[x + 1];
   free(s);
   ship->shots_no--;
 }
 
-void (drawPlayer)(Player* ship) {
+void (draw_player)(Player* ship) {
   video_draw_xpm(ship->x_min, ship->y_min, "rocket");
-  for (int i = 0; i < ship->shots_no; i++) drawShot(&(ship->shots[i]));
+  for (int i = 0; i < ship->shots_no; i++) draw_shot(&(ship->shots[i]));
 }
 
-void (incrementScore)(Player* ship, int id) {
+void (increment_score)(Player* ship, int id) {
   int increment;
   if(id >= 0 && id <= 9) increment = 5;
   else if(id >= 10 && id <= 19) increment = 4;
@@ -68,13 +68,13 @@ void (incrementScore)(Player* ship, int id) {
   ship->score = ship->score + increment;
 }
 
-void (drawScore)(Player* ship){
+void (draw_score)(Player* ship){
   int score = ship->score;
   video_draw_xpm(10, 10, "score");
   draw_score_aux(112, 10, score);
 }
 
-void (drawLives)(int lives){
+void (draw_lives)(int lives){
   switch(lives){
     case 6:
       video_draw_xpm(751, 10, "heart");

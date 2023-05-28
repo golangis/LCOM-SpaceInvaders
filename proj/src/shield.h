@@ -14,8 +14,8 @@ typedef struct {
     int id;
 } Shield;
 
-Shield* (initShield)(int x_min, int id);
-void (drawShield)(Shield* shield);
+Shield* (init_shield)(int x_min, int id);
+void (draw_shield)(Shield* shield);
 void (damage)(Shield* shield, enum shot_source src);
 
 #endif

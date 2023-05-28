@@ -34,19 +34,19 @@ int (unsubscribe_mouse_int)();
  * @brief Reads the mouse status byte.
  * @return int 0 upon success, non-zero otherwise
  */
-int (readStatusByte)();
+int (read_status_byte)();
 
 /**
  * @brief Reads and parses the packet from the mouse output buffer.
  * @return int 0 upon success, non-zero otherwise
  */
-int (readPacket)();
+int (read_packet)();
 
 /**
  * @brief Updates the user interface mouse.
  * @return int 0 upon success, non-zero otherwise
  */
 int (update_mouse)();
-bool (leftClick)();
+bool (left_click)();
 
 #endif

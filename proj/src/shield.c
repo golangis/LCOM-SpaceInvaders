@@ -1,6 +1,6 @@
 #include "shield.h"
 
-Shield* (initShield)(int x_min, int id) {
+Shield* (init_shield)(int x_min, int id) {
   Shield* shield = (Shield*) malloc (sizeof(Shield));
   
   shield->x_min = x_min;
@@ -13,7 +13,7 @@ Shield* (initShield)(int x_min, int id) {
   return shield;
 }
 
-void (drawShield)(Shield* shield) {
+void (draw_shield)(Shield* shield) {
   switch (shield->lives) {
     case 1: video_draw_xpm(shield->x_min, shield->y_min, "shield1"); break;
     case 2: video_draw_xpm(shield->x_min, shield->y_min, "shield2"); break;

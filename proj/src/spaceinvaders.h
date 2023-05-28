@@ -55,24 +55,24 @@ typedef struct {
  */
 void (init_game)();
 
-Score* (loadScores)();
-Score (buildScore)(int points, rtc_time* time);
-bool (processScore)(Score score, Score* array);
+Score* (load_scores)();
+Score (build_score)(int points, rtc_time* time);
+bool (process_score)(Score score, Score* array);
 /*
 leitura sacada de https://www.geeksforgeeks.org/relational-database-from-csv-files-in-c/
 */
-void (storeScores)(Score* array);
+void (store_scores)(Score* array);
 /*
 escrita sacada de https://www.programiz.com/c-programming/c-file-input-output
 */
 void (draw)();
 void (update)(int* no_lives);
-void (drawMainMenu)();
-void (drawHighscores)(Score* scores);
-void (drawGameOverMenu)();
+void (draw_main_menu)();
+void (draw_high_scores)(Score* scores);
+void (draw_game_over_menu)();
 void (reload_aliens)();
 
-void (initScores)();
+void (init_scores)();
 
 enum state {
   game,
