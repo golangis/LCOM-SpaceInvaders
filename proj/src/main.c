@@ -80,7 +80,6 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
         timer_interrupt_handler();
         if (timer_counter % 2 == 0) {
             update(&no_lives);
-<<<<<<< proj/src/main.c
             if(no_lives == 1) {
                 Score* scores = loadScores();
                 rtc_time time;
@@ -89,9 +88,6 @@ void (game_loop)(bool* make, enum kbd_key* key, bool* two_bytes, uint8_t* scan, 
                 if (processScore(score, scores)) storeScores(scores);
                 *state = mainMenu;
             }
-=======
-            if(no_lives == 1) *state = gameOverMenu;
->>>>>>> proj/src/main.c
             draw();
         }
         if (timer_counter % 40 == 0) *can_shoot = true;
