@@ -1,9 +1,10 @@
-# LCOM Project
+# LCOM Project - Space Invaders 🚀👽👾
 
-LCOM Project for group T05G3.
+This repository contains our project developed for the LCOM course. This project is inspired in the iconic video-game "Space Invaders" 🕹️.
+If you want, you can check a video of our project in [here 📽️](https://www.youtube.com/watch?v=oxW0pKJgFJg&feature=youtu.be).
 
-Group members:
+## 👥 Group members:
 
-1. Guilherme Ribeiro (up202108731@up.pt)
-2. Mariana Rocha (up202004656@up.pt)
-3. Pedro Januário (up202108768@up.pt)
+- Guilherme Ribeiro (up202108731@up.pt)
+- Mariana Rocha (up202004656@up.pt)
+- Pedro Januário (up202108768@up.pt)
